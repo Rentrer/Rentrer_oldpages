@@ -2088,7 +2088,7 @@ a.toc-link {
 }
 
 .article-entry .gist .gist-file .gist-meta {
-    background: #272822;
+    background: #dedede;
     color: #8e908c;
     font: .85em Helvetica Neue, Helvetica, Arial, sans-serif;
     text-shadow: 0 0;
@@ -2186,7 +2186,7 @@ pre .id {
 
 .gitalk,
 .markdown-body {
-    font-size: 1.4rem!important
+    font-size: 1.3rem!important
 }
 
 .gt-container .gt-avatar.gt-comment-avatar img {
