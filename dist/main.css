@@ -1929,7 +1929,7 @@ a.toc-link {
 
 .article-entry .highlight,
 .article-entry pre {
-    background: #a39f9f;
+    background: #ebe2e2;
     margin: 10px 0;
     padding: 10px;
     overflow: hidden;
@@ -2122,7 +2122,7 @@ pre .doctype,
 pre .function,
 pre .params,
 pre .tag {
-    color: #dedede
+    color: #2e2b2b
 }
 
 pre .at_rule,
@@ -2144,11 +2144,11 @@ pre .function .title {
 
 pre .string,
 pre .value {
-    color: #dedede
+    color: #222020
 }
 
 pre .number {
-    color: #c9c
+    color: rgb(1, 255, 14)
 }
 
 pre .css~* .id,
