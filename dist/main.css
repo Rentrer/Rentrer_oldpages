@@ -2829,7 +2829,7 @@ code {
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
     font-size: 1.2rem;
     color: #e96900;
-    background-color: #f8f8f8;
+    background-color: #222020;
     border-radius: 2px;
 }
 
@@ -2878,7 +2878,7 @@ code {
 pre code {
     padding: 0;
     color: #1b1b1d;
-    background-color: #b7b8b2;
+    background-color: #272725;
 }
 
 pre[class*="language-"] {
