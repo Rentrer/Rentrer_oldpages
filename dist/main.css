@@ -2755,7 +2755,7 @@ pre .id {
 }
 
 code {
-    padding: 1px 5px;
+    padding: 1px 4px;
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
     /* font-size: 0.91rem; */
     color: #26ffff;
@@ -2785,7 +2785,7 @@ pre[class*="language-"] {
 }
 
 .line-numbers {
-    padding: 1.5rem 1.5rem 1.5rem 3.2rem !important;
+    padding: 1.5rem 1.5rem 1.5rem 3rem !important;
     margin: 1rem 0 !important;
     background: #272822;
     overflow: auto;
@@ -2826,7 +2826,7 @@ pre::after {
 code {
     padding: 1px 5px;
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
-    font-size: 0.91rem;
+    font-size: 1.2rem;
     color: #e96900;
     background-color: #f8f8f8;
     border-radius: 2px;
