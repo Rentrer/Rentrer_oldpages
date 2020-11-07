@@ -2767,7 +2767,7 @@ code {
 pre code {
     padding: 0;
     color: #19191a;
-    background-color: #8683859a;
+    background-color: #0f0e0e9a;
 }
 
 pre[class*="language-"] {
@@ -2797,7 +2797,7 @@ pre[class*="language-"] {
 pre {
     padding: 1.5rem !important;
     margin: 1rem 0 !important;
-    background: #a9aaa5;
+    background: #2a2b29;
     overflow: auto;
     border-radius: 0.35rem;
     tab-size: 4;
