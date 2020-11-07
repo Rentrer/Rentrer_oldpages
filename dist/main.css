@@ -1979,7 +1979,8 @@ a.toc-link {
 
 .article-entry code,
 .article-entry pre {
-    font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace
+    font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+    font-size: 2rem
 }
 
 .article-entry code {
