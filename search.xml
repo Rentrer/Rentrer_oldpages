@@ -4,12 +4,6 @@
     <title>序</title>
     <url>/2020/09/28/%E5%BA%8F/</url>
     <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -73,7 +67,7 @@
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Lchild</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Rchild</span>;</span></span><br><span class="line">&#125;TNode,*Tree;</span><br></pre></td></tr></table></figure>
 
 <p>满二叉树：一棵高度为k且具有2^k-1个结点的二叉树</p>
-<p><img src="E:\myblog\Procrastination\source\images\image-20201107145107965.png" alt="image-20201107145107965">（k=4)</p>
+<p><img src="image-20201107145107965.png">（k=4)</p>
 <p><strong>完全二叉树：高度为k，结点个数∈[2^(k-1),2^k-1]，且第k层结点都集中在左侧的二叉树。</strong></p>
 <p><img src="E:\myblog\Procrastination\source\images\image-20201107145401000.png" alt="image-20201107145401000"></p>
 <h4 id="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。"><a href="#例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。" class="headerlink" title="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。"></a>例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。</h4><p>证明：</p>
@@ -108,5 +102,8 @@
 <h3 id="5-2二叉树转换成树"><a href="#5-2二叉树转换成树" class="headerlink" title="5.2二叉树转换成树"></a>5.2二叉树转换成树</h3><p>（1）加虚线  若某结点i是其父结点的左子树的根结点，<strong>则将该结点ⅰ的右子结点以及沿右子链不断地搜索所有的右子结点，将所有这些右子结点与i结点的父结点之间加虚线相连</strong></p>
 <p>（2）去连线  去掉二叉树中所有其右子结点之间的连线<br>（3）规整化  将图中各结点按层次排列且将所有的虚线变成实线</p>
 <img src="E:\myblog\Procrastination\source\images\image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" />]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
   </entry>
 </search>
