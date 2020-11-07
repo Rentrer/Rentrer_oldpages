@@ -2108,13 +2108,13 @@ a.toc-link {
 }
 
 pre .comment {
-    color: #9c9
+    color: rgb(46, 150, 46)
 }
 
 pre .class .params,
 pre .function .keyword,
 pre .keyword {
-    color: #66d9ef
+    color: #e168ec
 }
 
 pre .css .value,
@@ -2139,7 +2139,7 @@ pre .built_in,
 pre .class,
 pre .css~* .class,
 pre .function .title {
-    color: #a6e22e
+    color: #77a51b
 }
 
 pre .string,
@@ -2148,7 +2148,7 @@ pre .value {
 }
 
 pre .number {
-    color: rgb(1, 255, 14)
+    color: rgb(255, 9, 62)
 }
 
 pre .css~* .id,
