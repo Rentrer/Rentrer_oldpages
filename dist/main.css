@@ -2760,7 +2760,7 @@ code {
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
     /* font-size: 0.91rem; */
     color: #26ffff;
-    background-color: #f8f8f8;
+    background-color: #302d2d;
     border-radius: 2px;
 }
 
@@ -2877,7 +2877,7 @@ code {
 
 pre code {
     padding: 0;
-    color: #e8eaf6;
+    color: #1b1b1d;
     background-color: #b7b8b2;
 }
 
@@ -2888,6 +2888,6 @@ pre[class*="language-"] {
 
 code[class*="language-"],
 pre[class*="language-"] {
-    color: #e8eaf6;
+    color: #1f1f20;
     white-space: pre-wrap !important;
 }
