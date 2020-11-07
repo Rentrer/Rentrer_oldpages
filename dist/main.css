@@ -1984,7 +1984,7 @@ a.toc-link {
 }
 
 .article-entry code {
-    background: rgb(255, 244, 244);
+    background: rgb(34, 33, 33);
     color: #c7254e;
     padding: 0 .3em;
     border: none
@@ -2090,7 +2090,7 @@ a.toc-link {
 
 .article-entry .gist .gist-file .gist-meta {
     background: #dedede;
-    color: #8e908c;
+    color: #2e302c;
     font: .85em Helvetica Neue, Helvetica, Arial, sans-serif;
     text-shadow: 0 0;
     padding: 0;
