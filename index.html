@@ -225,9 +225,9 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Lchild</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Rchild</span>;</span></span><br><span class="line">&#125;TNode,*Tree;</span><br></pre></td></tr></table></figure>
 
 <p>满二叉树：一棵高度为k且具有2^k-1个结点的二叉树</p>
-<p><img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107145107965.png" alt="image-20201107145107965">（k=4)</p>
+<p><img src="E:\myblog\Procrastination\source\images\image-20201107145107965.png" alt="image-20201107145107965">（k=4)</p>
 <p><strong>完全二叉树：高度为k，结点个数∈[2^(k-1),2^k-1]，且第k层结点都集中在左侧的二叉树。</strong></p>
-<p><img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107145401000.png" alt="image-20201107145401000"></p>
+<p><img src="E:\myblog\Procrastination\source\images\image-20201107145401000.png" alt="image-20201107145401000"></p>
 <h4 id="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。"><a href="#例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。" class="headerlink" title="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。"></a>例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。</h4><p>证明：</p>
 <p>设二叉树T共有n个结点</p>
 <p>度为0的结点数为n0，度为1的结点数为n1,度为2的结点数为n2，</p>
@@ -238,28 +238,28 @@
 <p>联立上式得：n0=n2+1，证毕。</p>
 <h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    preOrder(T-&gt;Lchild);</span><br><span class="line">    preOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107151650060.png" alt="image-20201107151650060"></p>
+<p><img src="E:\myblog\Procrastination\source\images\image-20201107151650060.png" alt="image-20201107151650060"></p>
 <h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span>;</span><br><span class="line">    InOrder(T-&gt;Lchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    InOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107151715620.png" alt="image-20201107151715620"></p>
+<p><img src="E:\myblog\Procrastination\source\images\image-20201107151715620.png" alt="image-20201107151715620"></p>
 <h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    PostOrder(T-&gt;Lchild);</span><br><span class="line">    PostOrder(T-&gt;Rchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107151732351.png" alt="image-20201107151732351"></p>
+<p><img src="E:\myblog\Procrastination\source\images\image-20201107151732351.png" alt="image-20201107151732351"></p>
 <h4 id="例：简述由先序序列和中序序列构造二叉树的基本操作方法"><a href="#例：简述由先序序列和中序序列构造二叉树的基本操作方法" class="headerlink" title="例：简述由先序序列和中序序列构造二叉树的基本操作方法"></a>例：简述由先序序列和中序序列构造二叉树的基本操作方法</h4><p>答：如果前序序列和中序序列都为空，那么构造一棵空树。否则</p>
 <p>1、根据前序可确定根。</p>
 <p>2、根据根和中序，可以确定左子树集合和右子树集合，并得到左子树中序序列和右子树中序序列。</p>
 <p>3、在前序序列中划分出左子树前序序列和右子树前序序列。</p>
 <p>4、根据左子树前序序列和左子树中序序列构造左子树。</p>
 <p>5、根据右子树前序序列和右子树中序序列构造右子树。</p>
-<h2 id="4-哈夫曼树"><a href="#4-哈夫曼树" class="headerlink" title="4.哈夫曼树"></a>4.哈夫曼树</h2><p><img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107154325482.png" alt="image-20201107154325482"></p>
+<h2 id="4-哈夫曼树"><a href="#4-哈夫曼树" class="headerlink" title="4.哈夫曼树"></a>4.哈夫曼树</h2><p><img src="E:\myblog\Procrastination\source\images\image-20201107154325482.png" alt="image-20201107154325482"></p>
 <h2 id="5-森林与二叉树的转换"><a href="#5-森林与二叉树的转换" class="headerlink" title="5.森林与二叉树的转换"></a>5.森林与二叉树的转换</h2><h3 id="5-1树转换为二叉树"><a href="#5-1树转换为二叉树" class="headerlink" title="5.1树转换为二叉树"></a>5.1树转换为二叉树</h3><p>（1）<strong>加虚线</strong> 在树的每层按从“左至右”的顺序<strong>在兄弟结点之间加虚线相连</strong><br>（2）去连线。<strong>除最左的第一个子结点</strong>外，父结点与所 其它子结点的连线都去掉<br>（3）旋转。将<strong>树顺时针旋转45°</strong>，原有的实线左斜<br>（4）整型。将旋转后树中的所有虛线改为实线，并向右斜。</p>
-<img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107155306011.png" alt="image-20201107155306011" style="zoom:67%;" />
+<img src="E:\myblog\Procrastination\source\images\image-20201107155306011.png" alt="image-20201107155306011" style="zoom:67%;" />
 
-<img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107155341354.png" alt="image-20201107155341354" style="zoom: 67%;" />
+<img src="E:\myblog\Procrastination\source\images\image-20201107155341354.png" alt="image-20201107155341354" style="zoom: 67%;" />
 
 <h3 id="5-2二叉树转换成树"><a href="#5-2二叉树转换成树" class="headerlink" title="5.2二叉树转换成树"></a>5.2二叉树转换成树</h3><p>（1）加虚线  若某结点i是其父结点的左子树的根结点，<strong>则将该结点ⅰ的右子结点以及沿右子链不断地搜索所有的右子结点，将所有这些右子结点与i结点的父结点之间加虚线相连</strong></p>
 <p>（2）去连线  去掉二叉树中所有其右子结点之间的连线<br>（3）规整化  将图中各结点按层次排列且将所有的虚线变成实线</p>
-<img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" /> 
+<img src="E:\myblog\Procrastination\source\images\image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" /> 
       <!-- reward -->
       
     </div>
