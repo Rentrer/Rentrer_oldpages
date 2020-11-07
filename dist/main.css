@@ -2131,7 +2131,7 @@ pre .css~* .tag,
 pre .preprocessor,
 pre .preprocessor .keyword,
 pre .title {
-    color: #27ffd0
+    color: #dad61c
 }
 
 pre .attribute,
@@ -2688,10 +2688,10 @@ pre .id {
     display: block;
     overflow: hidden;
     cursor: pointer;
-    width: 3.2rem;
-    height: 3.2rem;
-    border-radius: 3.2rem;
-    background-color: #797676;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 3.5rem;
+    background-color: #b4b0b0;
     line-height: 3rem;
     opacity: .6;
     transition: opacity 1s ease
