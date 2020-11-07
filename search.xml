@@ -4,6 +4,10 @@
     <title>序</title>
     <url>/2020/09/28/%E5%BA%8F/</url>
     <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a&#x3D;1
+a&#x3D;str(a)
+print(a)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 ]]></content>
   </entry>
   <entry>
