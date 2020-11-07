@@ -17,8 +17,6 @@
     <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
 <p>本文只针对作者认为可能考到的知识点进行整理，存在不足，欢迎补充。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
-
 <h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><h2 id="1-什么是数据结构"><a href="#1-什么是数据结构" class="headerlink" title="1.什么是数据结构"></a>1.什么是数据结构</h2><p>数据结构是相互之间存在一种或多种特定关系的数据元素的集合。</p>
 <p>数据对象：即具有相同性质的数据元素的集合</p>
 <p>例：英文字母数据对象：C={‘A’, ‘B’, ……, ‘Z’, ‘a’, ‘b’, ……, ‘z’}。</p>
@@ -28,7 +26,7 @@
 <p>顺序存储结构，是借助元素在存储器中的相对位置来表示数据之间逻辑关系，要求<strong>所有的元素依次放在一片连续空间中</strong>，通常借助程序设计语言的<strong>数组类型</strong>来描述。<br>链式存储结构<br>链式存储结构无需占用一整块存储空间。但为了表示结点之 间的关系， 需要给每个结点附加指针字段用于存放后继元素的储地址。所以链式结构通常借助程序设计语言<strong>指针类型</strong>来描述。</p>
 <p>抽象数据类型的定义取决于数据类型的逻辑特性，<strong>与其在计算机内部如何表示和实现无关。</strong></p>
 <p>两个重要特征：数据抽象性和数据封装性。</p>
-<h3 id="例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。"><a href="#例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。" class="headerlink" title="例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。"></a>例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。</h3><p>答：例如有一张学生基本信息表，包括学生的学号、姓名、性别、籍贯、专业等。每个学<br> 生基本信息记录对应一个数据元素，学生记录按顺序号排列，形成了学生基本信息记录的线性序列。对于整个表来说，只有一个开始结点（它的前面无记录）和一个终端结点（它的后面无记录），其他的结点则各有一个也只有一个直接前趋和直接后继。<strong>学生记录之间的这种关系就确定了学生表的逻辑结构，即线性结构</strong>。<strong>这些学生记录在计算机中的存储表示就是存储结构。</strong>如果用连续的存储单元（如用数组表示）来存放这些记录，则称为顺序存储结构；如果存储单元不连续，而是随机存放各个记录，然后用指针进行链接，则称为链式存储结构。即相同的逻辑结构，可以对应不同的存储结构</p>
+<h4 id="例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。"><a href="#例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。" class="headerlink" title="例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。"></a>例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。</h4><p>答：例如有一张学生基本信息表，包括学生的学号、姓名、性别、籍贯、专业等。每个学生基本信息记录对应一个数据元素，学生记录按顺序号排列，形成了学生基本信息记录的线性序列。对于整个表来说，只有一个开始结点（它的前面无记录）和一个终端结点（它的后面无记录），其他的结点则各有一个也只有一个直接前趋和直接后继。<strong>学生记录之间的这种关系就确定了学生表的逻辑结构，即线性结构</strong>。<strong>这些学生记录在计算机中的存储表示就是存储结构。</strong>如果用连续的存储单元（如用数组表示）来存放这些记录，则称为顺序存储结构；如果存储单元不连续，而是随机存放各个记录，然后用指针进行链接，则称为链式存储结构。即相同的逻辑结构，可以对应不同的存储结构</p>
 <h2 id="2-什么是算法"><a href="#2-什么是算法" class="headerlink" title="2.什么是算法"></a>2.什么是算法</h2><p>算法，简单来说就是解决问题的方法。它是规则的有限集合，是求解特定问题的过程描述、操作步骤或指令序列。</p>
 <p>它具有5个重要特性：<strong>有穷性、确定性、可行性、输入、输出</strong></p>
 <p><strong>算法时间复杂度的估算方法</strong>：</p>
@@ -44,11 +42,11 @@
 <p>补：链表的定义：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;Node,*LinkList;</span><br></pre></td></tr></table></figure>
 
-<h3 id="例1：综合比较顺序表和链表"><a href="#例1：综合比较顺序表和链表" class="headerlink" title="例1：综合比较顺序表和链表"></a>例1：综合比较顺序表和链表</h3><p>答：顺序表在内存中是一段连续的存储空间， 通过头指针和偏移地址直接访问数据，访问数据的效率较高，为O（1），但是插入数据和删除数据的效率较低。<br> 链表在内存中是不连续的，通过每一个节点保存指向下一个节点的指针的方式来存储数据，访问数据的效率较低，但同时，插入数据和删除数据的效率较高。</p>
-<h3 id="例2：解释链表的”头指针、头结点和首元素结点“三个概念"><a href="#例2：解释链表的”头指针、头结点和首元素结点“三个概念" class="headerlink" title="例2：解释链表的”头指针、头结点和首元素结点“三个概念"></a>例2：解释链表的”头指针、头结点和首元素结点“三个概念</h3><p>答：头指针：线性链表中第一个结点或头结点的存储地址，它是访问链表的起始点。</p>
+<h4 id="例1：综合比较顺序表和链表"><a href="#例1：综合比较顺序表和链表" class="headerlink" title="例1：综合比较顺序表和链表"></a>例1：综合比较顺序表和链表</h4><p>答：顺序表在内存中是一段连续的存储空间， 通过头指针和偏移地址直接访问数据，访问数据的效率较高，为O（1），但是插入数据和删除数据的效率较低。<br> 链表在内存中是不连续的，通过每一个节点保存指向下一个节点的指针的方式来存储数据，访问数据的效率较低，但同时，插入数据和删除数据的效率较高。</p>
+<h4 id="例2：解释链表的”头指针、头结点和首元素结点“三个概念"><a href="#例2：解释链表的”头指针、头结点和首元素结点“三个概念" class="headerlink" title="例2：解释链表的”头指针、头结点和首元素结点“三个概念"></a>例2：解释链表的”头指针、头结点和首元素结点“三个概念</h4><p>答：头指针：线性链表中第一个结点或头结点的存储地址，它是访问链表的起始点。</p>
 <p>​        头结点：附加在第一个数据元素之前的结点，该结点的数据域一般为“空”、指针域存放第一个数据元素的地址。</p>
 <p>​        首元素节点：链表中第一个存储着数据的节点。</p>
-<h3 id="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"><a href="#例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。" class="headerlink" title="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"></a>例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。</h3><p>答：</p>
+<h4 id="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"><a href="#例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。" class="headerlink" title="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"></a>例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。</h4><p>答：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">LinkList <span class="title">LinkSearch</span><span class="params">(ListList L,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k0=<span class="number">1</span>;</span><br><span class="line">    LinkList p=<span class="keyword">new</span> LinkList;</span><br><span class="line">    p=L-&gt;next;</span><br><span class="line">    LinkList q=p;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k0&lt;=k)++k0;</span><br><span class="line">        <span class="keyword">else</span> q=q-&gt;next;</span><br><span class="line">        </span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> q;</span><br><span class="line">&#125;<span class="comment">//时间复杂度为O(N)</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="2-栈与队列"><a href="#2-栈与队列" class="headerlink" title="2.栈与队列"></a>2.栈与队列</h2><p>我觉得期中考不了很难，鸽了（）</p>
@@ -68,7 +66,7 @@
 <p>树的度=<strong>max(结点的度)</strong></p>
 <p>结点的层次：第l层结点的孩子定义为l+1层。</p>
 <p><strong>树的高度（深度）=max（结点的层次）</strong></p>
-<h3 id="例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"><a href="#例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。" class="headerlink" title="例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"></a>例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。</h3><p>答：<strong>n0=1+0<em>n1+1</em>n2+2*n3+…+(K-1)*nK</strong></p>
+<h4 id="例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"><a href="#例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。" class="headerlink" title="例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"></a>例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。</h4><p>答：<strong>n0=1+0<em>n1+1</em>n2+2*n3+…+(K-1)*nK</strong></p>
 <h2 id="2-二叉树"><a href="#2-二叉树" class="headerlink" title="2.二叉树"></a>2.二叉树</h2><p>二叉树：每个结点至多只有两棵子树</p>
 <p>即：<strong>结点的度&lt;=2的有序树</strong></p>
 <p>二叉树的定义：</p>
@@ -78,7 +76,7 @@
 <p><img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107145107965.png" alt="image-20201107145107965">（k=4)</p>
 <p><strong>完全二叉树：高度为k，结点个数∈[2^(k-1),2^k-1]，且第k层结点都集中在左侧的二叉树。</strong></p>
 <p><img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107145401000.png" alt="image-20201107145401000"></p>
-<h3 id="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。"><a href="#例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。" class="headerlink" title="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。"></a>例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。</h3><p>证明：</p>
+<h4 id="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。"><a href="#例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。" class="headerlink" title="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。"></a>例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。</h4><p>证明：</p>
 <p>设二叉树T共有n个结点</p>
 <p>度为0的结点数为n0，度为1的结点数为n1,度为2的结点数为n2，</p>
 <p>T的分支数为m</p>
@@ -95,7 +93,7 @@
 <h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    PostOrder(T-&gt;Lchild);</span><br><span class="line">    PostOrder(T-&gt;Rchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="C:\Users\10971\AppData\Roaming\Typora\typora-user-images\image-20201107151732351.png" alt="image-20201107151732351"></p>
-<h3 id="例：简述由先序序列和中序序列构造二叉树的基本操作方法"><a href="#例：简述由先序序列和中序序列构造二叉树的基本操作方法" class="headerlink" title="例：简述由先序序列和中序序列构造二叉树的基本操作方法"></a>例：简述由先序序列和中序序列构造二叉树的基本操作方法</h3><p>答：如果前序序列和中序序列都为空，那么构造一棵空树。否则</p>
+<h4 id="例：简述由先序序列和中序序列构造二叉树的基本操作方法"><a href="#例：简述由先序序列和中序序列构造二叉树的基本操作方法" class="headerlink" title="例：简述由先序序列和中序序列构造二叉树的基本操作方法"></a>例：简述由先序序列和中序序列构造二叉树的基本操作方法</h4><p>答：如果前序序列和中序序列都为空，那么构造一棵空树。否则</p>
 <p>1、根据前序可确定根。</p>
 <p>2、根据根和中序，可以确定左子树集合和右子树集合，并得到左子树中序序列和右子树中序序列。</p>
 <p>3、在前序序列中划分出左子树前序序列和右子树前序序列。</p>
