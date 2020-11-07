@@ -2766,7 +2766,7 @@ code {
 
 pre code {
     padding: 0;
-    color: #e8eaf6;
+    color: #19191a;
     background-color: #8683859a;
 }
 
@@ -2777,7 +2777,7 @@ pre[class*="language-"] {
 
 code[class*="language-"],
 pre[class*="language-"] {
-    color: #e8eaf6;
+    color: #1f1f20;
     white-space: pre-wrap !important;
 }
 
