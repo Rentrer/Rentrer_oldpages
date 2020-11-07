@@ -35,7 +35,7 @@
 
   
 
-<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </html>
 
@@ -192,15 +192,31 @@
 <p><strong>顺序表：顺序存储结构：用位置描述逻辑关系</strong></p>
 <p><strong>链表：链式存储结构：由指针描述逻辑关系</strong></p>
 <p>补：链表的定义：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;Node,*LinkList;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-C++"><code class="language-C++">typedef struct Node
+&#123;
+    Type data;
+    struct Node *next;
+&#125;Node,*LinkList;</code></pre>
 <h4 id="例1：综合比较顺序表和链表"><a href="#例1：综合比较顺序表和链表" class="headerlink" title="例1：综合比较顺序表和链表"></a>例1：综合比较顺序表和链表</h4><p>答：顺序表在内存中是一段连续的存储空间， 通过头指针和偏移地址直接访问数据，访问数据的效率较高，为O（1），但是插入数据和删除数据的效率较低。<br> 链表在内存中是不连续的，通过每一个节点保存指向下一个节点的指针的方式来存储数据，访问数据的效率较低，但同时，插入数据和删除数据的效率较高。</p>
 <h4 id="例2：解释链表的”头指针、头结点和首元素结点“三个概念"><a href="#例2：解释链表的”头指针、头结点和首元素结点“三个概念" class="headerlink" title="例2：解释链表的”头指针、头结点和首元素结点“三个概念"></a>例2：解释链表的”头指针、头结点和首元素结点“三个概念</h4><p>答：头指针：线性链表中第一个结点或头结点的存储地址，它是访问链表的起始点。</p>
 <p>​        头结点：附加在第一个数据元素之前的结点，该结点的数据域一般为“空”、指针域存放第一个数据元素的地址。</p>
 <p>​        首元素节点：链表中第一个存储着数据的节点。</p>
 <h4 id="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"><a href="#例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。" class="headerlink" title="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"></a>例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。</h4><p>答：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">LinkList <span class="title">LinkSearch</span><span class="params">(ListList L,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k0=<span class="number">1</span>;</span><br><span class="line">    LinkList p=<span class="keyword">new</span> LinkList;</span><br><span class="line">    p=L-&gt;next;</span><br><span class="line">    LinkList q=p;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k0&lt;=k)++k0;</span><br><span class="line">        <span class="keyword">else</span> q=q-&gt;next;</span><br><span class="line">        </span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> q;</span><br><span class="line">&#125;<span class="comment">//时间复杂度为O(N)</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-C++"><code class="language-C++">LinkList LinkSearch(ListList L,int k)
+&#123;
+    int k0=1;
+    LinkList p=new LinkList;
+    p=L->next;
+    LinkList q=p;
+    while(p)
+    &#123;
+        if(k0<=k)++k0;
+        else q=q->next;
 
+        p=p->next;
+    &#125;
+    return q;
+&#125;//时间复杂度为O(N)</code></pre>
 <h2 id="2-栈与队列"><a href="#2-栈与队列" class="headerlink" title="2.栈与队列"></a>2.栈与队列</h2><p>我觉得期中考不了很难，鸽了（）</p>
 <p>想了解的话请移步我朋友的博客：</p>
 <p><a target="_blank" rel="noopener" href="https://linyx.tk/2020/10/04/data-structure-study-note-1/">https://linyx.tk/2020/10/04/data-structure-study-note-1/</a></p>
@@ -209,8 +225,17 @@
 <p>（1）出口至少有一个</p>
 <p>（2）在经过有限次的递归调用后，能够导致递归出口的出现（<strong>递归算法必需具有终止递归的条件</strong>）</p>
 <p>例：实现Hanoi塔问题</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hanoi</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">char</span> x,<span class="keyword">char</span> y,<span class="keyword">char</span> z)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">        move(x,<span class="number">1</span>,z);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        hanoi(n<span class="number">-1</span>,x,z,y);</span><br><span class="line">        move(x,n,z);</span><br><span class="line">        hanoi(n<span class="number">-1</span>,y,x,z);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-C++"><code class="language-C++">void hanoi(int n,char x,char y,char z)
+&#123;
+    if(n==1)
+        move(x,1,z);
+    else
+    &#123;
+        hanoi(n-1,x,z,y);
+        move(x,n,z);
+        hanoi(n-1,y,x,z);
+    &#125;
+&#125;</code></pre>
 <h1 id="第三章：树结构"><a href="#第三章：树结构" class="headerlink" title="第三章：树结构"></a>第三章：树结构</h1><h2 id="1-树"><a href="#1-树" class="headerlink" title="1.树"></a>1.树</h2><p>树是有n个结点的有限集合（n&gt;=0)</p>
 <p>树的结点包含一个数据元素以及若干个指针</p>
 <p>结点拥有子树的个数称为<strong>结点的度</strong>。</p>
@@ -222,8 +247,12 @@
 <h2 id="2-二叉树"><a href="#2-二叉树" class="headerlink" title="2.二叉树"></a>2.二叉树</h2><p>二叉树：每个结点至多只有两棵子树</p>
 <p>即：<strong>结点的度&lt;=2的有序树</strong></p>
 <p>二叉树的定义：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Lchild</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Rchild</span>;</span></span><br><span class="line">&#125;TNode,*Tree;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-C++"><code class="language-C++">typedef struct TNode
+&#123;
+    Type data;
+    struct TNode *Lchild;
+    struct TNode *Rchild;
+&#125;TNode,*Tree;</code></pre>
 <p>满二叉树：一棵高度为k且具有2^k-1个结点的二叉树</p>
 <p><img src="image-20201107145107965.png">（k=4)</p>
 <p><strong>完全二叉树：高度为k，结点个数∈[2^(k-1),2^k-1]，且第k层结点都集中在左侧的二叉树。</strong></p>
@@ -236,14 +265,29 @@
 <p>（2）除根节点外，其余节点都有唯一前驱，则: n-1=m</p>
 <p>（3）由于度=i（i=0，1，2）的结点具有i个分支，则：m=0+n1+2n2</p>
 <p>联立上式得：n0=n2+1，证毕。</p>
-<h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    preOrder(T-&gt;Lchild);</span><br><span class="line">    preOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><pre class=" language-C++"><code class="language-C++">void preOrder(Tree T)
+&#123;
+    if(!T) return ;
+    cout<<T->data;
+    preOrder(T->Lchild);
+    preOrder(T->Rchild);
+&#125;</code></pre>
 <p><img src="image-20201107151650060.png"></p>
-<h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span>;</span><br><span class="line">    InOrder(T-&gt;Lchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    InOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><pre class=" language-C++"><code class="language-C++">void InOrder(Tree T)
+&#123;
+    if(!T) return;
+    InOrder(T->Lchild);
+    cout<<T->data;
+    InOrder(T->Rchild);
+&#125;</code></pre>
 <p><img src="image-20201107151715620.png"></p>
-<h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    PostOrder(T-&gt;Lchild);</span><br><span class="line">    PostOrder(T-&gt;Rchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><pre class=" language-C++"><code class="language-C++">void PostOrder(Tree T)
+&#123;
+    if(!T) return ;
+    PostOrder(T->Lchild);
+    PostOrder(T->Rchild);
+    cout<<T->data;
+&#125;</code></pre>
 <p><img src="image-20201107151732351.png"></p>
 <h4 id="例：简述由先序序列和中序序列构造二叉树的基本操作方法"><a href="#例：简述由先序序列和中序序列构造二叉树的基本操作方法" class="headerlink" title="例：简述由先序序列和中序序列构造二叉树的基本操作方法"></a>例：简述由先序序列和中序序列构造二叉树的基本操作方法</h4><p>答：如果前序序列和中序序列都为空，那么构造一棵空树。否则</p>
 <p>1、根据前序可确定根。</p>
