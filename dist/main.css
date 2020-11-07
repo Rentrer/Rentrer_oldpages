@@ -1984,7 +1984,7 @@ a.toc-link {
 }
 
 .article-entry code {
-    background: #eee;
+    background: rgb(245, 239, 239);
     color: #c7254e;
     padding: 0 .3em;
     border: none
@@ -1994,7 +1994,7 @@ a.toc-link {
     background: none;
     text-shadow: none;
     padding: 0;
-    color: #dedede
+    color: #0c0c0c
 }
 
 .article-entry .highlight {
