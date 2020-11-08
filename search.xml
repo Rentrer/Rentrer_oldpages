@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>word2vec</title>
+    <url>/2020/11/08/word2vec/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>序</title>
     <url>/2020/09/28/%E5%BA%8F/</url>
     <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
@@ -102,6 +107,9 @@
 <h3 id="5-2二叉树转换成树"><a href="#5-2二叉树转换成树" class="headerlink" title="5.2二叉树转换成树"></a>5.2二叉树转换成树</h3><p>（1）加虚线  若某结点i是其父结点的左子树的根结点，<strong>则将该结点ⅰ的右子结点以及沿右子链不断地搜索所有的右子结点，将所有这些右子结点与i结点的父结点之间加虚线相连</strong></p>
 <p>（2）去连线  去掉二叉树中所有其右子结点之间的连线<br>（3）规整化  将图中各结点按层次排列且将所有的虚线变成实线</p>
 <img src="image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" />]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
       <tags>
         <tag>数据结构</tag>
       </tags>
