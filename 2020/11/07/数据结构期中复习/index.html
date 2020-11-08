@@ -154,9 +154,9 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Lchild</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Rchild</span>;</span></span><br><span class="line">&#125;TNode,*Tree;</span><br></pre></td></tr></table></figure>
 
 <p>满二叉树：一棵高度为k且具有2^k-1个结点的二叉树</p>
-<p><img src="image-20201107145107965.png">（k=4)</p>
+<p><img src="%E5%9B%BE%E7%89%871.png">（k=4)</p>
 <p><strong>完全二叉树：高度为k，结点个数∈[2^(k-1),2^k-1]，且第k层结点都集中在左侧的二叉树。</strong></p>
-<p><img src="image-20201107145401000.png"></p>
+<p><img src="%E5%9B%BE%E7%89%872.png"></p>
 <h4 id="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。"><a href="#例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。" class="headerlink" title="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。"></a>例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。</h4><p>证明：</p>
 <p>设二叉树T共有n个结点</p>
 <p>度为0的结点数为n0，度为1的结点数为n1,度为2的结点数为n2，</p>
@@ -167,7 +167,7 @@
 <p>联立上式得：n0=n2+1，证毕。</p>
 <h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    preOrder(T-&gt;Lchild);</span><br><span class="line">    preOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="image-20201107151650060.png"></p>
+<p><img src="%E5%9B%BE%E7%89%873.png"></p>
 <h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span>;</span><br><span class="line">    InOrder(T-&gt;Lchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    InOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="image-20201107151715620.png"></p>
