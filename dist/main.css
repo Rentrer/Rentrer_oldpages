@@ -1943,7 +1943,7 @@ a.toc-link {
 .article-entry pre::-webkit-scrollbar {
     height: 10px;
     width: 7px;
-    background: rgb(36, 35, 35)
+    background: rgba(0, 0, 0, .1)
 }
 
 .article-entry .highlight::-webkit-scrollbar:hover,
@@ -1984,7 +1984,7 @@ a.toc-link {
 }
 
 .article-entry code {
-    background: rgb(34, 33, 33);
+    background: #eee;
     color: #c7254e;
     padding: 0 .3em;
     border: none
