@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>word2vec</title>
-    <url>/2020/11/08/word2vec/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>自然语言处理</category>
-      </categories>
-      <tags>
-        <tag>自然语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数据结构期中复习</title>
     <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
@@ -96,17 +76,17 @@
 <p>联立上式得：n0=n2+1，证毕。</p>
 <h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span><span class="comment">//递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    preOrder(T-&gt;Lchild);</span><br><span class="line">    preOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span><span class="comment">//非递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; temp;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            temp.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">            temp.pop();</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span><span class="comment">//非递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; temp;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            temp.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            p=temp.top();</span><br><span class="line">            temp.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="%E5%9B%BE%E7%89%873.png"></p>
 <h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span><span class="comment">//递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span>;</span><br><span class="line">    InOrder(T-&gt;Lchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    InOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span><span class="comment">//非递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; temp;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            temp.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            temp.pop();</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span><span class="comment">//非递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; temp;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            temp.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            p=temp.top();</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            temp.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="image-20201107151715620.png"></p>
 <h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    PostOrder(T-&gt;Lchild);</span><br><span class="line">    PostOrder(T-&gt;Rchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; tempL，tempR;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            tempL.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            <span class="keyword">while</span>(tempR.top()-&gt;Rchild==p)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;tempR.top()-&gt;data;<span class="comment">//获取R栈顶部指针的数据</span></span><br><span class="line">                tempR.pop();<span class="comment">//弹出</span></span><br><span class="line">            &#125;</span><br><span class="line">            tempL.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            tempR.push(p);</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; tempL，tempR;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            tempL.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            <span class="keyword">while</span>(tempR.top()-&gt;Rchild==p)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;tempR.top()-&gt;data;<span class="comment">//获取R栈顶部指针的数据</span></span><br><span class="line">                tempR.pop();<span class="comment">//弹出</span></span><br><span class="line">            &#125;</span><br><span class="line">            p=tempL.top();</span><br><span class="line">            tempL.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            tempR.push(p);</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="image-20201107151732351.png"></p>
 <h4 id="例：简述由先序序列和中序序列构造二叉树的基本操作方法"><a href="#例：简述由先序序列和中序序列构造二叉树的基本操作方法" class="headerlink" title="例：简述由先序序列和中序序列构造二叉树的基本操作方法"></a>例：简述由先序序列和中序序列构造二叉树的基本操作方法</h4><p>答：如果前序序列和中序序列都为空，那么构造一棵空树。否则</p>
@@ -129,6 +109,26 @@
       </categories>
       <tags>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>word2vec</title>
+    <url>/2020/11/08/word2vec/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>自然语言处理</category>
+      </categories>
+      <tags>
+        <tag>自然语言</tag>
       </tags>
   </entry>
 </search>
