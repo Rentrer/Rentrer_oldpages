@@ -3,7 +3,7 @@ var OriginTitle = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
-        $('[rel="icon"]').attr('href', "/bcy.ico");
+        $('[rel="icon"]').attr('href', "/failure.ico");
         document.title = '╭(°A°`)╮ 页面崩溃啦 ~';
         clearTimeout(titleTime);
     } else {
