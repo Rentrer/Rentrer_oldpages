@@ -2688,9 +2688,9 @@ pre .id {
     display: block;
     overflow: hidden;
     cursor: pointer;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 3.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 4rem;
     background-color: #b4b0b0;
     line-height: 3rem;
     opacity: .6;
