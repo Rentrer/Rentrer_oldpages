@@ -50,7 +50,10 @@
                         
                             
                                     <main class="content on">
-                                        <section class="outer">
+                                        <div>
+    {% if not is_index %} {% include 'passage-end-tag.njk' %} {% endif %}
+</div>
+<section class="outer">
     <article
   id="post-word2vec"
   class="article article-type-post"
