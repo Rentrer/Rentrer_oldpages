@@ -1377,7 +1377,7 @@ button {
     position: absolute;
     right: -28rem;
     top: 14rem;
-    font-size: 85%;
+    font-size: 90%;
     opacity: .95;
     max-width: 255px;
     border-radius: 8px
@@ -1396,7 +1396,7 @@ button {
 
 a.toc-link {
     height: 100%;
-    color: #12d6e4;
+    color: #57aeff;
     text-decoration: none;
     font-size: 115%
 }
