@@ -44,10 +44,13 @@
         <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="app">
             
                     
-                        <canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+                        <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
+                        <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+                        <script type="text/javascript" src="/js/fireworks.js"></script>
                         
-                            <main class="content on">
-                                <section class="outer">
+                            
+                                    <main class="content on">
+                                        <section class="outer">
     <article
   id="post-数据结构期中复习"
   class="article article-type-post"
@@ -317,7 +320,7 @@
         white-space: pre !important;
     }
 </style>
-                                    <footer class="footer">
+                                            <footer class="footer">
     <div class="outer">
         <ul>
             <li>
@@ -411,8 +414,8 @@
 
 
 </footer>
-                                        <div class="float_btns">
-                                            <div class="totop" id="totop">
+                                                <div class="float_btns">
+                                                    <div class="totop" id="totop">
   <i class="ri-arrow-up-line"></i>
 </div>
 
@@ -420,10 +423,10 @@
   <i class="ri-moon-line"></i>
 </div>
 
-                                        </div>
-                            </main>
-                            <aside class="sidebar on">
-                                <button class="navbar-toggle"></button>
+                                                </div>
+                                    </main>
+                                    <aside class="sidebar on">
+                                        <button class="navbar-toggle"></button>
 <nav class="navbar">
   
   <div class="logo">
@@ -480,15 +483,15 @@
   <div id="local-search-result" class="local-search-result"></div>
 </div>
 </div>
-                            </aside>
-                            <script>
-                                if (window.matchMedia("(max-width: 768px)").matches) {
-                                    document.querySelector('.content').classList.remove('on');
-                                    document.querySelector('.sidebar').classList.remove('on');
-                                }
-                            </script>
-                            <script type="text/javascript" src="/js/FunnyTitle.js"></script>
-                            <div id="mask"></div>
+                                    </aside>
+                                    <script>
+                                        if (window.matchMedia("(max-width: 768px)").matches) {
+                                            document.querySelector('.content').classList.remove('on');
+                                            document.querySelector('.sidebar').classList.remove('on');
+                                        }
+                                    </script>
+                                    <script type="text/javascript" src="/js/FunnyTitle.js"></script>
+                                    <div id="mask"></div>
 
 <!-- #reward -->
 <div id="reward">
@@ -509,7 +512,7 @@
     
   </div>
 </div>
-                                
+                                        
 <script src="/js/jquery-2.0.3.min.js"></script>
 
 
@@ -665,10 +668,6 @@
 
 <!-- ClickBoom2 -->
 
-
-<script src="/js/clickBoom2.js"></script>
-
-
 <!-- CodeCopy -->
 
 
@@ -733,7 +732,7 @@
 <!-- CanvasBackground -->
 
 
-                                    
+                                            
         </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     </body>
 
