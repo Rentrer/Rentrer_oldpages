@@ -5,7 +5,7 @@
     <url>/2020/11/14/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/</url>
     <content><![CDATA[<p>可能你还不了解XML，只是听说课水分高就报了(<del>我也是</del>)，那就跟着我的笔记，来一起了解XML吧！</p>
 <p>本系列笔记适合读过课本后过来进行总结，所以还是要先预习啊(<del>双关</del>)</p>
-<p><code>注：这系列的笔记将多采用Q E C形式，即 question evidence conclusion 的形式</code> </p>
+<p><code>注：这系列的笔记将多采用Q E C形式，即 Question Evidence Conclusion 的形式</code> </p>
 <a id="more"></a>
 
 <h1 id="XML基础知识"><a href="#XML基础知识" class="headerlink" title="XML基础知识"></a>XML基础知识</h1><h2 id="1-1-XML及其相关技术概述"><a href="#1-1-XML及其相关技术概述" class="headerlink" title="1.1 XML及其相关技术概述"></a>1.1 XML及其相关技术概述</h2><p>Q1：什么是XML？</p>
@@ -162,9 +162,9 @@
 
 <p>C18：由例子：根元素company的<strong>开始标记中声明了一个无前缀名的命名空间，它的作用范围为整个XML文档</strong>。因此在该文档中，<strong>任何没有显示地指定命名空间的元素和属性</strong>（即除了disivion命名空间下的其他），都属于这个缺省的无名命名空间。</p>
 <p>教学要求：能较系统地了解XML及其相关技术概述，XML在各个领域方面的应用，XML规范及XML文档分类，命名空间，XML数据模型规范等；</p>
-<h2 id="1-4-XML文档的数据模型规范"><a href="#1-4-XML文档的数据模型规范" class="headerlink" title="1.4 XML文档的数据模型规范"></a>1.4 XML文档的数据模型规范</h2><p>以下片段都将转化为<a b='upcase'> Hello! </a></p>
-<p><a b='upcase'> &lt;[CDATA[Hello!]]&gt; </a></p>
-<p><a b='upcase'> Hello&amp;#33 </a></p>
+<h2 id="1-4-XML文档的数据模型规范"><a href="#1-4-XML文档的数据模型规范" class="headerlink" title="1.4 XML文档的数据模型规范"></a>1.4 XML文档的数据模型规范</h2><p>以下片段都将转化为<code>&lt;a b=&#39;upcase&#39;&gt; Hello! &lt;/a&gt;</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">b</span>=<span class="string">&#x27;upcase&#x27;</span>&gt;</span> <span class="tag">&lt;<span class="name">[CDATA[Hello!]]</span>&gt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">b</span>=<span class="string">&#x27;upcase&#x27;</span>&gt;</span> Hello&amp;#33 <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>XML第一章的内容都属于基础，比较简单，多考于选择题，因此需要广覆盖知识点，不要在这里失分。</p>
 ]]></content>
       <categories>
