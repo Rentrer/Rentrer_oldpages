@@ -5,7 +5,7 @@
     
 
             <head>
-                <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+                <meta charset="utf-8" />
                 
                     
                                 
@@ -33,7 +33,7 @@
 
                                                                 
                                                                     
-<script src="../../../../https:/cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="../../../../https:/cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
 
                                                                         
                                                                             
@@ -45,7 +45,7 @@
         </html>
 
     <body>
-        <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="app">
+        <div id="app">
             
                     
                         <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
@@ -89,7 +89,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">2.5k</span>
+            <span class="post-count">2.4k</span>
         </span>
     </span>
 
@@ -143,10 +143,17 @@
 <li>由XML解析器对这两个文档进行解析，将XML文档转换为所对应的文档树结构，<strong>将xslt(xsl)文档看作是一系列的转换规则</strong>。</li>
 <li><strong>由XSLT引擎调用这些规则</strong>，对文档树进行遍历，分别处理其中指定的数据节点，将其转换为所需的结果集，并序列化为结果文档。</li>
 </ol>
-<h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;hello.xlst&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">message</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">message</span>&gt;</span>       <span class="comment">&lt;!--这是hello.xsl文档--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xsl:stylesheet</span> <span class="attr">version</span>=<span class="string">&quot;2.0&quot;</span> <span class="attr">xmlns:xsl</span>=<span class="string">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- transform the input root (/) --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsl:template</span> <span class="attr">match</span>=<span class="string">&quot;/&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line">        		<span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">            		<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">	        			<span class="tag">&lt;<span class="name">xsl:value-of</span> <span class="attr">select</span>=<span class="string">&quot;message&quot;</span>/&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line">        		<span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br><span class="line">    		<span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">xsl:template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xsl:stylesheet</span>&gt;</span>              <span class="comment">&lt;!--这是hello.xslt文档--&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
+<h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><p>```xml</p>
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="hello.xlst"?>
+<p><message>Hello!</message>       <!--这是hello.xsl文档--></p>
+<?xml version="1.0" encoding="UTF-8"?>
+<p>&lt;xsl:stylesheet version=”2.0” xmlns:xsl=”<a target="_blank" rel="noopener" href="http://www.w3.org/1999/XSL/Transform&quot;&gt;">http://www.w3.org/1999/XSL/Transform&quot;&gt;</a><br>        <!-- transform the input root (/) --><br>        &lt;xsl:template match=”/“&gt;<br>            <html><br>                <body> </p>
+<pre><code>                &lt;h1&gt;
+                    &lt;xsl:value-of select=&quot;message&quot;/&gt;
+                &lt;/h1&gt; </code></pre>
+<p>​                </body><br>​            </html><br>​        </xsl:template><br></xsl:stylesheet>              <!--这是hello.xslt文档--></p>
+<p>```</p>
 <h2 id="5-2-XSLT中模板的创建以及内置模板的使用"><a href="#5-2-XSLT中模板的创建以及内置模板的使用" class="headerlink" title="5.2 XSLT中模板的创建以及内置模板的使用"></a>5.2 XSLT中模板的创建以及内置模板的使用</h2><h3 id="5-2-1-XSLT中模板的声明"><a href="#5-2-1-XSLT中模板的声明" class="headerlink" title="5.2.1 XSLT中模板的声明"></a>5.2.1 XSLT中模板的声明</h3><p>Q4：怎么声明模板？</p>
 <p>E4：<img src="%E6%A8%A1%E6%9D%BF%E5%A3%B0%E6%98%8E.png"></p>
 <p>C4：模板标记之间的内容相当于一个<strong>函数的函数体</strong>，表示在调用该模板时应该执行的具体操作。而元素开始标记中的属性match、name、mode和priority则用于描述该模板的相关信息。</p>
@@ -412,7 +419,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：8.8k</span>
+                    <span class="post-count">字数统计：8.7k</span>
                     
             </li>
         </ul>
@@ -750,7 +757,7 @@
 
 
                                             
-        </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+        </div>
     </body>
 
     </html>
