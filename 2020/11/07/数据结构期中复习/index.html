@@ -42,7 +42,7 @@
                                                                                 
 
             </head>
-            <link href="/js/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+            <link href="/js/prettify.css" type="text/css" rel="stylesheet" />
 
         </html>
     <script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>
@@ -449,7 +449,15 @@
                 white-space: pre !important;
             }
         </style>
-                                            <footer class="footer">
+                                            <script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('pre').addClass('prettyprint linenums');
+        $('code').addClass('prettyprint');
+        prettyPrint();
+    })
+</script>
+<footer class="footer">
     <div class="outer">
         <ul>
             <li>
@@ -539,15 +547,6 @@
             </li>
         </ul>
     </div>
-    <script src="/js/prettify.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('pre').addClass('prettyprint linenums');
-            $('code').addClass('prettyprint');
-            prettyPrint();
-        })
-    </script>
-
 
 </footer>
                                                 <div class="float_btns">
