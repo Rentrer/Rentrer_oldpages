@@ -151,32 +151,14 @@
 <p><strong>顺序表：顺序存储结构：用位置描述逻辑关系</strong></p>
 <p><strong>链表：链式存储结构：由指针描述逻辑关系</strong></p>
 <p>补：链表的定义：</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">typedef struct Node
-&#123;
-    Type data;
-    struct Node *next;
-&#125;Node,*LinkList;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span></span><br><span class="hljs-class">&#123;</span><br>    Type data;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">next</span>;</span><br>&#125;Node,*LinkList;<br></code></pre></td></tr></table></figure>
 
 <h4 id="例1：综合比较顺序表和链表"><a href="#例1：综合比较顺序表和链表" class="headerlink" title="例1：综合比较顺序表和链表"></a>例1：综合比较顺序表和链表</h4><p>答：顺序表在内存中是一段连续的存储空间， 通过头指针和偏移地址直接访问数据，访问数据的效率较高，为O（1），但是插入数据和删除数据的效率较低。<br> 链表在内存中是不连续的，通过每一个节点保存指向下一个节点的指针的方式来存储数据，访问数据的效率较低，但同时，插入数据和删除数据的效率较高。</p>
 <h4 id="例2：解释链表的”头指针、头结点和首元素结点“三个概念"><a href="#例2：解释链表的”头指针、头结点和首元素结点“三个概念" class="headerlink" title="例2：解释链表的”头指针、头结点和首元素结点“三个概念"></a>例2：解释链表的”头指针、头结点和首元素结点“三个概念</h4><p>答：头指针：线性链表中第一个结点或头结点的存储地址，它是访问链表的起始点。</p>
 <p>​        头结点：附加在第一个数据元素之前的结点，该结点的数据域一般为“空”、指针域存放第一个数据元素的地址。</p>
 <p>​        首元素节点：链表中第一个存储着数据的节点。</p>
 <h4 id="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"><a href="#例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。" class="headerlink" title="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"></a>例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。</h4><p>答：</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">LinkList LinkSearch(ListList L,int k)
-&#123;
-    int k0&#x3D;1;
-    LinkList p&#x3D;new LinkList;
-    p&#x3D;L-&gt;next;
-    LinkList q&#x3D;p;
-    while(p)
-    &#123;
-        if(k0&lt;&#x3D;k)++k0;
-        else q&#x3D;q-&gt;next;
-        
-        p&#x3D;p-&gt;next;
-    &#125;
-    return q;
-&#125;&#x2F;&#x2F;时间复杂度为O(N)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function">LinkList <span class="hljs-title">LinkSearch</span><span class="hljs-params">(ListList L,<span class="hljs-keyword">int</span> k)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> k0=<span class="hljs-number">1</span>;<br>    LinkList p=<span class="hljs-keyword">new</span> LinkList;<br>    p=L-&gt;next;<br>    LinkList q=p;<br>    <span class="hljs-keyword">while</span>(p)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(k0&lt;=k)++k0;<br>        <span class="hljs-keyword">else</span> q=q-&gt;next;<br>        <br>        p=p-&gt;next;<br>    &#125;<br>    <span class="hljs-keyword">return</span> q;<br>&#125;<span class="hljs-comment">//时间复杂度为O(N)</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="2-栈与队列"><a href="#2-栈与队列" class="headerlink" title="2.栈与队列"></a>2.栈与队列</h2><p>我觉得期中考不了很难，鸽了（）</p>
 <p>想了解的话请移步我朋友的博客：</p>
@@ -186,17 +168,7 @@
 <p>（1）出口至少有一个</p>
 <p>（2）在经过有限次的递归调用后，能够导致递归出口的出现（<strong>递归算法必需具有终止递归的条件</strong>）</p>
 <p>例：实现Hanoi塔问题</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void hanoi(int n,char x,char y,char z)
-&#123;
-    if(n&#x3D;&#x3D;1)
-        move(x,1,z);
-    else
-    &#123;
-        hanoi(n-1,x,z,y);
-        move(x,n,z);
-        hanoi(n-1,y,x,z);
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">hanoi</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">char</span> x,<span class="hljs-keyword">char</span> y,<span class="hljs-keyword">char</span> z)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)<br>        move(x,<span class="hljs-number">1</span>,z);<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        hanoi(n<span class="hljs-number">-1</span>,x,z,y);<br>        move(x,n,z);<br>        hanoi(n<span class="hljs-number">-1</span>,y,x,z);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h1 id="第三章：树结构"><a href="#第三章：树结构" class="headerlink" title="第三章：树结构"></a>第三章：树结构</h1><h2 id="1-树"><a href="#1-树" class="headerlink" title="1.树"></a>1.树</h2><p>树是有n个结点的有限集合（n&gt;=0)</p>
 <p>树的结点包含一个数据元素以及若干个指针</p>
@@ -209,12 +181,7 @@
 <h2 id="2-二叉树"><a href="#2-二叉树" class="headerlink" title="2.二叉树"></a>2.二叉树</h2><p>二叉树：每个结点至多只有两棵子树</p>
 <p>即：<strong>结点的度&lt;=2的有序树</strong></p>
 <p>二叉树的定义：</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">typedef struct TNode
-&#123;
-    Type data;
-    struct TNode *Lchild;
-    struct TNode *Rchild;
-&#125;TNode,*Tree;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">TNode</span></span><br><span class="hljs-class">&#123;</span><br>    Type data;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">TNode</span> *<span class="hljs-title">Lchild</span>;</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">TNode</span> *<span class="hljs-title">Rchild</span>;</span><br>&#125;TNode,*Tree;<br></code></pre></td></tr></table></figure>
 
 <p>满二叉树：一棵高度为k且具有2^k-1个结点的二叉树</p>
 <p><img src="%E5%9B%BE%E7%89%871.png">（k=4)</p>
@@ -228,108 +195,19 @@
 <p>（2）除根节点外，其余节点都有唯一前驱，则: n-1=m</p>
 <p>（3）由于度=i（i=0，1，2）的结点具有i个分支，则：m=0+n1+2n2</p>
 <p>联立上式得：n0=n2+1，证毕。</p>
-<h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void preOrder(Tree T)&#x2F;&#x2F;递归写法
-&#123;
-    if(!T) return ;
-    cout&lt;&lt;T-&gt;data;
-    preOrder(T-&gt;Lchild);
-    preOrder(T-&gt;Rchild);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">preOrder</span><span class="hljs-params">(Tree T)</span><span class="hljs-comment">//递归写法</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(!T) <span class="hljs-keyword">return</span> ;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;T-&gt;data;<br>    preOrder(T-&gt;Lchild);<br>    preOrder(T-&gt;Rchild);<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void preOrder(Tree T)&#x2F;&#x2F;非递归写法
-&#123;
-    stack&lt;Tree&gt; temp;
-    Tree p&#x3D;T-&gt;Lchild;
-    while(p)
-    &#123;
-        while(p-&gt;Lchild)
-        &#123;
-            cout&lt;&lt;p-&gt;data;
-            temp.push(p);
-            p&#x3D;p-&gt;Lchild;
-        &#125;
-        cout&lt;&lt;p-&gt;data;
-        while(!p-&gt;Rchild)
-        &#123;
-            p&#x3D;temp.top();
-            temp.pop();
-        &#125;
-        if(p-&gt;Rchild)
-            p&#x3D;p-&gt;Rchild;
-    &#125;
-    
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">preOrder</span><span class="hljs-params">(Tree T)</span><span class="hljs-comment">//非递归写法</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">stack</span>&lt;Tree&gt; temp;<br>    Tree p=T-&gt;Lchild;<br>    <span class="hljs-keyword">while</span>(p)<br>    &#123;<br>        <span class="hljs-keyword">while</span>(p-&gt;Lchild)<br>        &#123;<br>            <span class="hljs-built_in">cout</span>&lt;&lt;p-&gt;data;<br>            temp.push(p);<br>            p=p-&gt;Lchild;<br>        &#125;<br>        <span class="hljs-built_in">cout</span>&lt;&lt;p-&gt;data;<br>        <span class="hljs-keyword">while</span>(!p-&gt;Rchild)<br>        &#123;<br>            p=temp.top();<br>            temp.pop();<br>        &#125;<br>        <span class="hljs-keyword">if</span>(p-&gt;Rchild)<br>            p=p-&gt;Rchild;<br>    &#125;<br>    <br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><img src="%E5%9B%BE%E7%89%873.png"></p>
-<h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void InOrder(Tree T)&#x2F;&#x2F;递归写法
-&#123;
-    if(!T) return;
-    InOrder(T-&gt;Lchild);
-    cout&lt;&lt;T-&gt;data;
-    InOrder(T-&gt;Rchild);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InOrder</span><span class="hljs-params">(Tree T)</span><span class="hljs-comment">//递归写法</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(!T) <span class="hljs-keyword">return</span>;<br>    InOrder(T-&gt;Lchild);<br>    <span class="hljs-built_in">cout</span>&lt;&lt;T-&gt;data;<br>    InOrder(T-&gt;Rchild);<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void InOrder(Tree T)&#x2F;&#x2F;非递归写法
-&#123;
-    stack&lt;Tree&gt; temp;
-    Tree p&#x3D;T-&gt;Lchild;
-    while(p)
-    &#123;
-        while(p-&gt;Lchild)
-        &#123;
-            temp.push(p);
-            p&#x3D;p-&gt;Lchild;
-        &#125;
-        cout&lt;&lt;p-&gt;data;
-        while(!p-&gt;Rchild)
-        &#123;
-            p&#x3D;temp.top();
-            cout&lt;&lt;p-&gt;data;
-            temp.pop();
-        &#125;
-        if(p-&gt;Rchild)
-            p&#x3D;p-&gt;Rchild;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InOrder</span><span class="hljs-params">(Tree T)</span><span class="hljs-comment">//非递归写法</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">stack</span>&lt;Tree&gt; temp;<br>    Tree p=T-&gt;Lchild;<br>    <span class="hljs-keyword">while</span>(p)<br>    &#123;<br>        <span class="hljs-keyword">while</span>(p-&gt;Lchild)<br>        &#123;<br>            temp.push(p);<br>            p=p-&gt;Lchild;<br>        &#125;<br>        <span class="hljs-built_in">cout</span>&lt;&lt;p-&gt;data;<br>        <span class="hljs-keyword">while</span>(!p-&gt;Rchild)<br>        &#123;<br>            p=temp.top();<br>            <span class="hljs-built_in">cout</span>&lt;&lt;p-&gt;data;<br>            temp.pop();<br>        &#125;<br>        <span class="hljs-keyword">if</span>(p-&gt;Rchild)<br>            p=p-&gt;Rchild;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><img src="image-20201107151715620.png"></p>
-<h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void PostOrder(Tree T)
-&#123;
-    if(!T) return ;
-    PostOrder(T-&gt;Lchild);
-    PostOrder(T-&gt;Rchild);
-    cout&lt;&lt;T-&gt;data;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PostOrder</span><span class="hljs-params">(Tree T)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(!T) <span class="hljs-keyword">return</span> ;<br>    PostOrder(T-&gt;Lchild);<br>    PostOrder(T-&gt;Rchild);<br>    <span class="hljs-built_in">cout</span>&lt;&lt;T-&gt;data;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void PostOrder(Tree T)
-&#123;
-    stack&lt;Tree&gt; tempL，tempR;
-    Tree p&#x3D;T-&gt;Lchild;
-    while(p)
-    &#123;
-        while(p-&gt;Lchild)
-        &#123;
-            tempL.push(p);
-            p&#x3D;p-&gt;Lchild;
-        &#125;
-        while(!p-&gt;Rchild)
-        &#123;
-            cout&lt;&lt;p-&gt;data;
-            while(tempR.top()-&gt;Rchild&#x3D;&#x3D;p)
-            &#123;
-                cout&lt;&lt;tempR.top()-&gt;data;&#x2F;&#x2F;获取R栈顶部指针的数据
-                tempR.pop();&#x2F;&#x2F;弹出
-            &#125;
-            p&#x3D;tempL.top();
-            tempL.pop();
-        &#125;
-        if(p-&gt;Rchild)
-        &#123;
-            tempR.push(p);
-            p&#x3D;p-&gt;Rchild;
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PostOrder</span><span class="hljs-params">(Tree T)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">stack</span>&lt;Tree&gt; tempL，tempR;<br>    Tree p=T-&gt;Lchild;<br>    <span class="hljs-keyword">while</span>(p)<br>    &#123;<br>        <span class="hljs-keyword">while</span>(p-&gt;Lchild)<br>        &#123;<br>            tempL.push(p);<br>            p=p-&gt;Lchild;<br>        &#125;<br>        <span class="hljs-keyword">while</span>(!p-&gt;Rchild)<br>        &#123;<br>            <span class="hljs-built_in">cout</span>&lt;&lt;p-&gt;data;<br>            <span class="hljs-keyword">while</span>(tempR.top()-&gt;Rchild==p)<br>            &#123;<br>                <span class="hljs-built_in">cout</span>&lt;&lt;tempR.top()-&gt;data;<span class="hljs-comment">//获取R栈顶部指针的数据</span><br>                tempR.pop();<span class="hljs-comment">//弹出</span><br>            &#125;<br>            p=tempL.top();<br>            tempL.pop();<br>        &#125;<br>        <span class="hljs-keyword">if</span>(p-&gt;Rchild)<br>        &#123;<br>            tempR.push(p);<br>            p=p-&gt;Rchild;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><img src="image-20201107151732351.png"></p>
 <h4 id="例：简述由先序序列和中序序列构造二叉树的基本操作方法"><a href="#例：简述由先序序列和中序序列构造二叉树的基本操作方法" class="headerlink" title="例：简述由先序序列和中序序列构造二叉树的基本操作方法"></a>例：简述由先序序列和中序序列构造二叉树的基本操作方法</h4><p>答：如果前序序列和中序序列都为空，那么构造一棵空树。否则</p>
@@ -541,7 +419,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：8.7k</span>
+                    <span class="post-count">字数统计：8.8k</span>
                     
             </li>
         </ul>
