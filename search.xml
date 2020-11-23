@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>1</title>
+    <url>/2020/11/16/1/</url>
+    <content><![CDATA[<p>经过了上一次的学习，我们对XML有了一个初步的认识，了解了概念。这次学习，我们将对 XML 数据模式及其描述语言进行概要地介绍，并以文档类型定义（Document Type Definition，DTD）为例，说明如何为数据编写相应的模式，从而确保数据的有效性。</p>
+<a id="more"></a>
+
+<h1 id="第二章-文档类型定义DTD"><a href="#第二章-文档类型定义DTD" class="headerlink" title="第二章 文档类型定义DTD"></a>第二章 文档类型定义DTD</h1><h2 id="2-1-数据模式与DTD"><a href="#2-1-数据模式与DTD" class="headerlink" title="2.1 数据模式与DTD"></a>2.1 数据模式与DTD</h2><h3 id="2-11-数据模式的用途"><a href="#2-11-数据模式的用途" class="headerlink" title="2.11 数据模式的用途"></a>2.11 数据模式的用途</h3>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>XML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>XML开发技术--第五章</title>
     <url>/2020/11/16/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
     <content><![CDATA[<p>经过了上一次的学习，</p>
@@ -140,20 +154,6 @@
 <p>E10：<img src="text%E7%A9%BA%E7%99%BD%E5%AD%97%E7%AC%A6.png"></p>
 <p>C10：此时应该使用<code>&lt;xsl:text&gt;&lt;xsl:text/&gt;</code>。xsl:text元素开始标记和结束标记<strong>之间的内容会原封不动的输出到结果中</strong>，但是其中不能包含其他XML的标记。</p>
 <h3 id="5-3-2-for-each-sort"><a href="#5-3-2-for-each-sort" class="headerlink" title="5.3.2 for-each  sort"></a>5.3.2 for-each  sort</h3>]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>XML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>1</title>
-    <url>/2020/11/16/1/</url>
-    <content><![CDATA[<p>经过了上一次的学习，我们对XML有了一个初步的认识，了解了概念。这次学习，我们将对 XML 数据模式及其描述语言进行概要地介绍，并以文档类型定义（Document Type Definition，DTD）为例，说明如何为数据编写相应的模式，从而确保数据的有效性。</p>
-<a id="more"></a>
-
-<h1 id="第二章-文档类型定义DTD"><a href="#第二章-文档类型定义DTD" class="headerlink" title="第二章 文档类型定义DTD"></a>第二章 文档类型定义DTD</h1><h2 id="2-1-数据模式与DTD"><a href="#2-1-数据模式与DTD" class="headerlink" title="2.1 数据模式与DTD"></a>2.1 数据模式与DTD</h2><h3 id="2-11-数据模式的用途"><a href="#2-11-数据模式的用途" class="headerlink" title="2.11 数据模式的用途"></a>2.11 数据模式的用途</h3>]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
@@ -342,15 +342,6 @@
       </tags>
   </entry>
   <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>word2vec</title>
     <url>/2020/11/08/word2vec/</url>
     <content><![CDATA[]]></content>
@@ -360,6 +351,15 @@
       <tags>
         <tag>自然语言</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
   </entry>
   <entry>
     <title>数据结构期中复习</title>
