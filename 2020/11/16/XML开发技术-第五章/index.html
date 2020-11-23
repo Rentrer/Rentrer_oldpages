@@ -15,7 +15,7 @@
                                             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
                                             <title>
                                                 
-                                                    XML开发技术——第一章 |
+                                                    XML开发技术--第五章 |
                                                         
                                                             My Utopia
                                             </title>
@@ -58,7 +58,7 @@
                                     <main class="content on">
                                         <section class="outer">
     <article
-  id="post-XML开发技术——第一章"
+  id="post-XML开发技术-第五章"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -69,7 +69,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  XML开发技术——第一章
+  XML开发技术--第五章
 </h1>
  
 
@@ -77,7 +77,7 @@
      
     <div class="article-meta">
       <a href="" class="article-date">
-  <time datetime="2020-11-14T06:00:00.000Z" itemprop="datePublished">2020-11-14</time>
+  <time datetime="2020-11-16T11:44:55.000Z" itemprop="datePublished">2020-11-16</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="../../../../categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
@@ -88,7 +88,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">3.5k</span>
+            <span class="post-count">2.5k</span>
         </span>
     </span>
 
@@ -97,7 +97,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">13 min</span>
+            <span class="post-count">9 min</span>
         </span>
     </span>
 </div>
@@ -112,176 +112,143 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>可能你还不了解XML，只是听说课水分高就报了(<del>我也是</del>)，那就跟着我的笔记，来一起了解XML吧！</p>
-<p>本系列笔记适合读过课本后过来进行总结，所以还是要先预习啊(<del>双关</del>)</p>
-<p><code>注：这系列的笔记将多采用Q E C形式，即 Question Evidence Conclusion 的形式</code> </p>
+  <p>经过了上一次的学习，</p>
 <a id="more"></a>
 
-<h1 id="XML基础知识"><a href="#XML基础知识" class="headerlink" title="XML基础知识"></a>XML基础知识</h1><h2 id="1-1-XML及其相关技术概述"><a href="#1-1-XML及其相关技术概述" class="headerlink" title="1.1 XML及其相关技术概述"></a>1.1 XML及其相关技术概述</h2><p>Q1：什么是XML？</p>
-<p>C1：XML(eXtensible Markup Language)，即<strong>可扩展性标记语言</strong>，是标记语言中的一种。</p>
-<p>Q2：什么是标记？</p>
-<p>C2：标记是指计算机所能理解的信息符号，通过标记，计算机之间可以相互表示包含各种信息的文档。</p>
-<h3 id="1-1-1-XML的发展史"><a href="#1-1-1-XML的发展史" class="headerlink" title="1.1.1 XML的发展史"></a>1.1.1 XML的发展史</h3><p>Q3：标记语言(ML)的发展过程是什么？</p>
+<h1 id="第五章-XSLT"><a href="#第五章-XSLT" class="headerlink" title="第五章 XSLT"></a>第五章 XSLT</h1><p>本章内容的学习目的：</p>
+<ol>
+<li>理解和掌握XML文档的转换过程。</li>
+<li>学习如何使用XSLT中的模板实现XML文档的转换。</li>
+<li>学习如何使用XSLT中的排序、循环、条件分支语句实现各种处理。</li>
+<li>创建使用参数和变量的XSLT文档。</li>
+</ol>
+<h2 id="5-1-XSLT"><a href="#5-1-XSLT" class="headerlink" title="5.1 XSLT"></a>5.1 XSLT</h2><p>Q1：什么是XSLT？</p>
+<p>C1：XSLT(e<strong>X</strong>tensible <strong>S</strong>tylesheet <strong>L</strong>anguage <strong>Transformations</strong>)，其中的T表示“转换”，它是一种专门用于对XML树型数据进行<strong>结构重组转换</strong>的有力工具，可以根据指定的<strong>转换规则</strong>（在XSLT中称之为模板）将一个XML文档树或者其中的部分内容转换为另一种文档树形式。</p>
+<p>XSLT不仅局限于结构上的重组，它可以<strong>将XML文档转换为任何形式</strong>，包括XML、HTML和普通文本。</p>
+<p>XSL是它的前身,本来包含了XML数据表达和数据转换。数据转换部分从中独立出来成为XSLT。剩下的数据表达部分成为XSL-FO</p>
+<p>Q2：XSLT有什么注意事项？</p>
+<p>C2：</p>
+<ol>
+<li>XSLT语言是一种声明性的语言，即XSLT程序本身<strong>只是包含了一些转换规则的XML文档。</strong></li>
+<li>XSLT处理程序（或称之为执行引擎）将首先确定 XSLT规则，然后根据规则的<strong>匹配条件</strong>（<strong>通过XPath 表达式</strong>指定）、以及优先顺序完成相应的转换操作。</li>
+<li><strong>XSLT本身也是一个XML文档</strong>，所以它必须严格遵守XML规范。其根元素的命名空间为<code>http://www.w3.org/1999/XSL/Transform</code> 即：</li>
+</ol>
+<p><code>&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</code></p>
+<h3 id="5-1-1-XSLT的工作原理"><a href="#5-1-1-XSLT的工作原理" class="headerlink" title="5.1.1 XSLT的工作原理"></a>5.1.1 XSLT的工作原理</h3><p>Q3：XSLT是怎样工作的？</p>
+<p>E3：<img src="%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png"></p>
 <p>C3：</p>
 <ol>
-<li>SGML，它是XML的前身，由三部分构成，即语法定义、文件类型定义DTD和文件实例。但由于它<strong>过于庞大复杂，难以理解学习</strong>，真正大行其道的是其子集，如HTML和XML。</li>
-<li>HTML，它是SGML的一种实际应用，其DTD作为标准被固定下来。因此，<strong>HTML的功能单一，只能用于编写网页</strong>。</li>
-<li>XML，它是一套使用上规则严谨，但是语法简单的信息描述语言。它的目的是以一种更中立的方式，让用户自行决定要如何理解、呈现从服务端所提供的信息，<strong>而着重表示数据以及数据之间的联系。</strong></li>
+<li>在进行XSLT的转换任务时，需要<strong>两个输入文档</strong>，一个是包含源数据的<strong>XML文档</strong>，一个是包含转换任务规则的<strong>XSLT文档</strong>。</li>
+<li>由XML解析器对这两个文档进行解析，将XML文档转换为所对应的文档树结构，<strong>将xslt(xsl)文档看作是一系列的转换规则</strong>。</li>
+<li><strong>由XSLT引擎调用这些规则</strong>，对文档树进行遍历，分别处理其中指定的数据节点，将其转换为所需的结果集，并序列化为结果文档。</li>
 </ol>
-<h3 id="1-1-2-XML的特点"><a href="#1-1-2-XML的特点" class="headerlink" title="1.1.2  XML的特点"></a>1.1.2  XML的特点</h3><p>Q4：XML的特点主要包含什么？</p>
-<p>C4：主要包含四个方面：</p>
-<ol>
-<li><strong>可扩展性</strong>：XML允许使用者<strong>创建和使用他们自己的标记</strong>，而不是HTML的有限词汇表。</li>
-<li><strong>灵活性</strong>：XML提供了一种<strong>结构化的数据表示方式</strong>，使得用户界面分离于结构化数据，使得Web用户所追求的许多先进功能在XML环境下更容易实现。</li>
-<li><strong>自描述性</strong>：XML文档通常包含一个文档类型声明，<strong>不仅人能读懂，计算机也能处理</strong>，XML表示数据的方式真正做到了独立于应用系统，并且数据能够重用。</li>
-</ol>
-<p>示例文档</p>
-<p><img src="%E7%A4%BA%E4%BE%8B.png"></p>
-<ol start="4">
-<li><strong>简洁性</strong>：XML比完整的SGML简单得多，<strong>易学、易用并且以实现</strong>。</li>
-</ol>
-<p>XML文档包含三个不同的组成部分：</p>
-<ol>
-<li><p>数据内容：即文档本身（<strong>对应XML</strong>）</p>
-</li>
-<li><p>结构：文档类型及其元素的组织形式，文档包括何种类型的元素，以及他们的排列次序（<strong>对应DTD/SCHEMA</strong>)</p>
-</li>
-<li><p>表现形式：在一张纸上、浏览器屏幕上向读者描述数据的方法，还有对每种元素类型使用何种字体等。(<strong>对应XSL/CSS</strong>)</p>
-</li>
-</ol>
-<p><img src="%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86.png"></p>
-<h3 id="1-1-3-XML的实际应用"><a href="#1-1-3-XML的实际应用" class="headerlink" title="1.1.3 XML的实际应用"></a>1.1.3 XML的实际应用</h3><p>XML 成为一种<strong>与平台无关</strong>的、<strong>数据表示</strong>和<strong>数据交换</strong>的载体。</p>
-<h2 id="1-2-XML规范及XML文档分类"><a href="#1-2-XML规范及XML文档分类" class="headerlink" title="1.2 XML规范及XML文档分类"></a>1.2 XML规范及XML文档分类</h2><p>XML文档实际上是一个文本文件，但并不是任何文本文件都是正确的XML文档，W3C的XML1.0规范对XML文档的语法格式进行了严格的定义。</p>
-<h3 id="1-2-1-XML文档中的XML声明"><a href="#1-2-1-XML文档中的XML声明" class="headerlink" title="1.2.1 XML文档中的XML声明"></a>1.2.1 XML文档中的XML声明</h3><p>Q5：声明有哪些特点和注意事项？</p>
-<p>E5：</p>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</code></pre>
+<h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><pre><code class="xml">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;hello.xlst&quot;?&gt;
+&lt;message&gt;Hello!&lt;/message&gt;       &lt;!--这是hello.xsl文档--&gt;
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+        &lt;!-- transform the input root (/) --&gt;
+        &lt;xsl:template match=&quot;/&quot;&gt;
+            &lt;html&gt; 
+                &lt;body&gt; 
+                    &lt;h1&gt;
+                        &lt;xsl:value-of select=&quot;message&quot;/&gt;
+                    &lt;/h1&gt; 
+                &lt;/body&gt; 
+            &lt;/html&gt;
+        &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;              &lt;!--这是hello.xslt文档--&gt;</code></pre>
+<h2 id="5-2-XSLT中模板的创建以及内置模板的使用"><a href="#5-2-XSLT中模板的创建以及内置模板的使用" class="headerlink" title="5.2 XSLT中模板的创建以及内置模板的使用"></a>5.2 XSLT中模板的创建以及内置模板的使用</h2><h3 id="5-2-1-XSLT中模板的声明"><a href="#5-2-1-XSLT中模板的声明" class="headerlink" title="5.2.1 XSLT中模板的声明"></a>5.2.1 XSLT中模板的声明</h3><p>Q4：怎么声明模板？</p>
+<p>E4：<img src="%E6%A8%A1%E6%9D%BF%E5%A3%B0%E6%98%8E.png"></p>
+<p>C4：模板标记之间的内容相当于一个<strong>函数的函数体</strong>，表示在调用该模板时应该执行的具体操作。而元素开始标记中的属性match、name、mode和priority则用于描述该模板的相关信息。</p>
+<p>Q5：模板有哪些属性？</p>
 <p>C5：</p>
-<p>XML声明部分<strong>本身是可选的</strong>（可以没有声明）。但如果包含声明部分，必须是整个XML文档的第一行内容（<strong>第一行不能为注释或空行</strong>）。&lt;?xml要顶格，且中间无空格。</p>
-<p>完整的 XML 声明包括三个部分：</p>
-<p>(1) 版本声明 (<strong>version</strong>)通常情况下为1.0，<strong>在声明中是必须的</strong>，并且必须为作为<strong>第一个属性</strong>出现。</p>
-<p>(2) 编码声明 (<strong>encoding</strong>)该属性的取值用于指明当前XML文档中所使用的符号的编码方式。一般采用”UTF-8”,这个属性是<strong>可选</strong>的（默认为UTF-8)。</p>
-<p>注：<strong>这个编码方式与XML在文档在系统中保存时使用的编码方式没有直接关系</strong>。</p>
-<p>(3) 文档独立性声明 (<strong>standalone</strong>)该属性的取值表明当前XML文件是否独立使用、还是与其他标记文件配套使用。若为“yes”,则解析当前XML文档时无需其他的外部标记声明文件。若为”no“，则可能需要使用外部的标记声明文件。这个属性是<strong>可选</strong>的。</p>
-<p><img src="%E7%8B%AC%E7%AB%8B%E6%80%A7.png"></p>
-<p>示例中，no的原因是因为该文档引用了外部1.ent中定义的实体：*&amp;nbsp*</p>
-<p>而<strong>如果存在外部标记声明</strong>，且没有standalone声明，则解析器将认为<strong>standalone的值为no</strong></p>
-<p>如果有encoding 属性和standalone属性，那么<strong>encoding属性必须放standalone属性前面</strong>。</p>
-<h3 id="1-2-2-处理指令和注释"><a href="#1-2-2-处理指令和注释" class="headerlink" title="1.2.2 处理指令和注释"></a>1.2.2 处理指令和注释</h3><p>Q6：什么是处理指令？</p>
-<p>E6：</p>
-<pre><code class="xml">&lt;?xml-stylesheet href=&quot;style.xsl&quot; type=&quot;text/xsl&quot;?&gt;</code></pre>
-<p>C6：处理指令是表示将XML文档用于特殊的应用程序时表示需要执行的特定操作，而XML解析器不会执行特定的操作。</p>
-<p>语法格式：<code>&lt;? target-name data ?&gt;</code></p>
-<p>其中，**<?和?>表示处理指令的开始与结束<strong>；target-name表示该处理指令的</strong>名称<strong>，data部分描述该指令的</strong>具体内容**。E6的含义为：当XSL的执行引擎碰到这个处理指令时，将会根据href的取值获得指定的xsl文件，并对输入的xml文档进行相应的转换。</p>
-<p>Q7：注释的注意事项是什么？</p>
-<p>C7：语法格式 <code>&lt;!--......--&gt;</code>,与HTML一致。</p>
-<p>​        在注释的内容中，<strong>不应该出现两个连续的横线</strong>。</p>
-<p>​        注释不应该出现在元素的标记中，<strong>注释之中不应该嵌套注释</strong>。</p>
-<h3 id="1-2-3-XML文档中的元素和属性"><a href="#1-2-3-XML文档中的元素和属性" class="headerlink" title="1.2.3 XML文档中的元素和属性"></a>1.2.3 XML文档中的元素和属性</h3><p>Q8：什么是元素？</p>
-<p>E8：</p>
-<pre><code class="xml">&lt;element_name att1=&quot;val1&quot; att2=&quot;val2&quot;&gt;
-    ...content...
-&lt;/element_name&gt;</code></pre>
-<p>C8：元素是最基本的组成单元，在元素的开始标记中还可以包含相关的属性。元素中可以包含文本、子元素、或者两者的组合。可以存在空元素，即<strong>不包含任何内容</strong>的元素，但它<strong>可以包含属性</strong>：</p>
-<pre><code class="xml">&lt;details&gt;&lt;/details&gt;
-&lt;details/&gt;&lt;!--上述两种空元素是等价的--&gt;
-&lt;details about=&quot;Location&quot;&gt;&lt;/details&gt;&lt;!--空元素可以包含属性--&gt;</code></pre>
-<p>一个元素可以包含任意多个子元素，<strong>可以包含多个同名的子元素</strong>；子元素的<strong>顺序非常重要</strong>。</p>
-<p>Q9：什么是属性？</p>
-<p>E9：</p>
-<pre><code class="xml">&lt;author firstname=&quot;Tom&quot; lastname=&quot;hanks&quot;&gt;&lt;/author&gt;</code></pre>
-<p>C9：<strong>属性不能独立于元素而存在</strong>，通常以名-值对的形式出现，用于描述当前元素的某个方面的特征。</p>
-<p>​        <strong>属性的取值必须加上引号（单引号或者双引号）</strong></p>
-<p>元素在其开始标记中可以包含任意多个属性，但<strong>不能包含同名的属性</strong>。</p>
-<p>对于一个元素所有的属性，<strong>它们不分先后顺序</strong>，因为它们之间可以通过名称相互区别。</p>
-<p>Q10：如何命名元素和属性？</p>
-<p>E10：</p>
-<pre><code class="xml">&lt;example-one/&gt; &lt;_example2/&gt; &lt;:Example.Three/&gt; &lt;!--这些标记名称都是正确的--&gt;
-&lt;bad*character/&gt; &lt;illegal space/&gt; &lt;12number-start/&gt;&lt;!--这些都是错误的--&gt;</code></pre>
-<p>C10：</p>
 <ol>
-<li>名称的开头必须以<strong>字母、下划线或者冒号</strong>开头。</li>
-<li>除开头之外的其他部分可以是字母、数字、<strong>横线(-)**、下划线、</strong>点号(.)、冒号**的任意组合。</li>
-<li><strong>元素名称分大小写</strong>。</li>
-<li>元素和属性的名称长度没有限制。</li>
-<li>可以使用非英文的元素名。</li>
+<li>匹配路径属性 match</li>
 </ol>
-<p>Q11：如何选择子元素和属性的使用？</p>
-<p>C11：</p>
-<ol>
-<li>对于简单的标量数据（<strong>无结构的数据</strong>），可以采用属性，否则应该采用子元素。</li>
-<li>对于可能在<strong>数目上发生变化的特性</strong>，应该使用子元素，比如某本书籍可能有多个作者。</li>
+<p>在XSLT中，模板的调用分为两种方式：</p>
+<p><strong>●根据模板的匹配路径</strong>（在遍历的过程中）调用，具体又有两种情况：</p>
+<p>i. 对于模板 xsl:template match=”/“，XSLT 处理器在碰到 XML 文档的文档节点时自动调用该模板，就好像作为<strong>程序执行的入口</strong>。</p>
+<p>ii. 对于其他的模板match=other-pattern，将在模板xsl:template match=”/“的转换规则（函数体）中通过指出匹配路径的方式（使用xsl:apply-templates）进行隐式地或者显式地调用。</p>
+<p>●<strong>根据模板名称属性</strong>，使用 xsl:call-template name=template-name  进行调用。 </p>
+<ol start="2">
+<li>名称属性 name</li>
 </ol>
-<h3 id="1-2-4-XML文档中的文本内容和CDATA段"><a href="#1-2-4-XML文档中的文本内容和CDATA段" class="headerlink" title="1.2.4 XML文档中的文本内容和CDATA段"></a>1.2.4 XML文档中的文本内容和CDATA段</h3><p>在文本内容中，一些符号会产生歧义，使得解析器不能正确辨识。比如</p>
-<pre><code class="xml">&lt;lessthan&gt;one&lt;two&lt;/lessthan&gt; &lt;!--文本中的小于号产生了歧义--&gt;</code></pre>
-<p>XML 1.0 规范中定义了五种预定义实体：而<strong>除此以外的的其他实体，必须在使用前进行声明</strong>。</p>
-<p><img src="%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%9E%E4%BD%93.png"></p>
-<pre><code class="xml">&lt;lessthan&gt;one &amp;it;two&lt;/lessthan&gt;</code></pre>
-<p>注：预定义实体<strong>以&amp;表示实体的开始</strong>，<strong>最后有一个分号</strong>表示实体的结束，容易遗漏，特别注意 </p>
-<p>Q12：什么是CDATA段？</p>
-<p>E12：</p>
-<pre><code class="xml">&lt;customer&gt;
-&lt;name&gt;&lt;![CDATA[YOU &amp; ME,&lt;Tom&gt;&amp;&lt;Jerry&gt;]]&gt;&lt;/name&gt;
-&lt;/customer&gt;</code></pre>
-<p>C12: 假设XML文档的某块文本内容中<strong>包含大量的特殊字符</strong>，那么可以将整个文本块的内容放入到一个CDATA段中</p>
-<p>即：<code>&lt;![CDATA[]]&gt;</code></p>
-<p>使用 CDATA 段，可以告诉<strong>解析器不要试图从该文本块中查找 XML 标记</strong>，<strong>它仅仅就是文本内容</strong>，从而避免了歧义的产生，因此<strong>可以使用非法字符</strong>。</p>
-<p>同理，CDATA段的文本内容中<strong>不能直接出现]]&gt;**，并且CDATA段</strong>不应该嵌套使用**。（与注释类似）</p>
-<p>Q13：什么是空白字符？</p>
-<p>C13：XML文档中的空白字符包括空格、回车、换行、制表等四种符号。</p>
-<p>注：在<strong>缺省</strong>的情况下，对于连续出现的空白字符，解析器会将其<strong>缩减为一个空格字符</strong>。如果准备<strong>显示标记包含的全部空格</strong>，在编辑xml文件时将输入法换成<strong>“中文”输入法</strong>，并选择“<strong>全角状态”来编辑空格字符</strong>。</p>
-<h3 id="1-2-5-XML文档的良构性规则"><a href="#1-2-5-XML文档的良构性规则" class="headerlink" title="1.2.5 XML文档的良构性规则"></a>1.2.5 XML文档的良构性规则</h3><p>Q14：良构的XML文档要满足什么要求？</p>
-<p>C14:</p>
-<ol>
-<li>开始标记必须与结束标记相对应。</li>
-<li>标记是大小写敏感的。</li>
-<li>标记必须正确的嵌套。</li>
+<p>模板&lt;xsl:template match=“/”&gt;和&lt;xsl:template match=“message”&gt;都没有具体的名称，因此将其称为<strong>无名模板</strong>。这些模板之所以没有名称，是因为<strong>它们的调用是在遍历文档树的过程中自动进行的</strong>，不需要名称。</p>
+<p>也可以使用name属性为模板指定一个名称，使其成为命名模板 。例</p>
+<pre><code class="xml">&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+    &lt;xsl:template match=&quot;/&quot; name=&quot;one&quot;&gt;              &lt;!--命名模板 one--&gt;
+        &lt;xsl:call-template name=&quot;another&quot;/&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xsl:template name=&quot;another&quot;&gt;                    &lt;!--命名模板 another--&gt;
+        &lt;output&gt;Simple output&lt;/output&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</code></pre>
+<p>XSLT 处理器将调用命名模板 one（实际上名称 one 没有作用，因为是自动调用的），然后<strong>在模板 one 中使用 xsl:call-template 直接调用名为 another 的模板</strong>，在模板 another 执行结束之后，继续执行模板 one 的后续指令，<strong>这个过程非常类似于函数的调用</strong>。 </p>
+<ol start="3">
+<li>模式属性 mode</li>
 </ol>
-<pre><code class="xml">&lt;book&gt;&lt;author&gt;tom hanks&lt;/book&gt;&lt;/author&gt; &lt;!--这是错误的--&gt;</code></pre>
+<p><img src="mode.png"></p>
 <ol start="4">
-<li>属性值必须使用引号括起来：</li>
+<li>优先级属性 priority</li>
 </ol>
-<pre><code class="xml">&lt;details about=Location/&gt; &lt;!--不加引号是错误的，可加单引号或双引号--&gt;</code></pre>
+<p><img src="%E4%BC%98%E5%85%88%E7%BA%A7.png"></p>
+<p>注意：XSLT中<strong>允许存在同名的模板</strong>；</p>
+<p>当没有priority属性时，将执行<strong>后声明的模板</strong>；</p>
+<p>有priority属性时，将使用 <strong>priority取值较大</strong>的模板。 </p>
 <ol start="5">
-<li>有且只有一个根元素。</li>
+<li>返回类型属性 as</li>
 </ol>
-<pre><code class="xml">&lt;author&gt;tom hanks&lt;/author&gt;
-&lt;author&gt;mike jimmy&lt;/author&gt;&lt;!--这段内容称为XML片段--&gt;</code></pre>
-<h3 id="1-2-6-XML文档的分类"><a href="#1-2-6-XML文档的分类" class="headerlink" title="1.2.6 XML文档的分类"></a>1.2.6 XML文档的分类</h3><p>XML 既可以是<strong>面向数据</strong>（Data Centric）的，又可以是<strong>面向文档</strong>（Document Centric）的。</p>
-<p>面向数据的文档主要利用 XML 来传送应用数据，这些文档包括销售订单（参见 data-centric.xml）、病人记录和科学数据等。</p>
-<p>面向数据的 XML 文档的物理结构，如元素的顺序、或者数据被存储为属性还是子元素，通常不是很重要。它们的特征是高度有序的结构，并且同时带有那些数据结构的多个项目，类似于关系数据库系统中的多条记录。 </p>
-<p>面向文档的 XML 文件几乎没有结构，元素结构粗糙。面向文档的文档是利用 XML 来获取自然（人类）语言的那些文档，如留言信息（参见 doc-centric.xml）、用户手册。 </p>
-<p>它们以复杂或无规则的结构和混合内容为特征，而且文档的物理结构非常重要。这些文档的处理侧重于给用户提供信息的最终表示，因此它们也被称作面向表示的文档。 </p>
-<h2 id="1-3-命名空间"><a href="#1-3-命名空间" class="headerlink" title="1.3 命名空间"></a>1.3 命名空间</h2><p>Q15：什么是命名空间？</p>
-<p>C15：命名空间 (namespace) 主要是通过某种形式来表示标识符 (identifier) 的上下文，可以将逻辑上相关的标识符组织成相应的命名空间，可使整个系统更加模块化。 </p>
-<h3 id="1-3-2-XML中命名空间的声明和使用"><a href="#1-3-2-XML中命名空间的声明和使用" class="headerlink" title="1.3.2 XML中命名空间的声明和使用"></a>1.3.2 XML中命名空间的声明和使用</h3><p>Q16：如何声明命名空间？</p>
-<p>E16：</p>
-<pre><code class="xml">&lt;myns:element xmlns:myns=&quot;http://www.myns.com&quot;&gt;
-    .....
-&lt;/myns:element&gt;</code></pre>
-<p>C16：声明XML命名空间的语法为：<strong>xmlns:prefix-name=”URI”**。其中，</strong>xmlns是XML的保留属性，用来声明命名空间<strong>。命名空间的前缀名称是以字母或下划线（_）开头的、</strong>不包含空白字符和冒号（:）<strong>的字符串，通常规定</strong>不应该使用 XML 中的保留字**，比如 xml、xsl 等等。</p>
-<p>对于例子，myns:element表示element元素属于myns这个命名空间，而myns只是命名空间的简称，后面的语句才是命名空间的声明，表示myns命名空间的全程为字符串”<a target="_blank" rel="noopener" href="http://www.myns.com&quot;./">http://www.myns.com&quot;。</a></p>
-<p>Q17：为什么不建议用简短的字符串作为命名空间的全称？</p>
-<p>C17：为了减少不同命名空间标识符冲突的可能性。</p>
-<p>Q18：怎样使用缺省命名空间？</p>
-<p>E18：</p>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;company xmlns=&quot;http://www.myns.com&quot;&gt;
-    &lt;company-info&gt;
-        &lt;name&gt;SoftwareBG&lt;/name&gt;
-         &lt;fdate&gt;2007-03-17&lt;/fdate&gt;
-         &lt;ns1:division xmlns:ns1=&quot;http://www.myns.com/division&quot;&gt;
-             &lt;ns1:name&gt;Development&lt;/ns1:name&gt;
-             &lt;ns1:employees&gt;100&lt;/ns1:employees&gt;
-         &lt;/ns1:division&gt;
-    &lt;/company-info&gt;
-&lt;/company&gt; </code></pre>
-<p>C18：由例子：根元素company的<strong>开始标记中声明了一个无前缀名的命名空间，它的作用范围为整个XML文档</strong>。因此在该文档中，<strong>任何没有显示地指定命名空间的元素和属性</strong>（即除了disivion命名空间下的其他），都属于这个缺省的无名命名空间。</p>
-<p>教学要求：能较系统地了解XML及其相关技术概述，XML在各个领域方面的应用，XML规范及XML文档分类，命名空间，XML数据模型规范等；</p>
-<h2 id="1-4-XML文档的数据模型规范"><a href="#1-4-XML文档的数据模型规范" class="headerlink" title="1.4 XML文档的数据模型规范"></a>1.4 XML文档的数据模型规范</h2><p>以下片段都将转化为<code>&lt;a b=&#39;upcase&#39;&gt; Hello! &lt;/a&gt;</code></p>
-<pre><code class="xml">&lt;a b=&#39;upcase&#39;&gt; &lt;[CDATA[Hello!]]&gt; &lt;/a&gt;
-&lt;a b=&#39;upcase&#39;&gt; Hello&amp;#33 &lt;/a&gt;</code></pre>
-<h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>XML第一章的内容都属于基础，比较简单，多考于选择题，因此需要广覆盖知识点，不要在这里失分。</p>
- 
+<p>模板返回类型属性as的取值，表示<strong>该模板应该返回的数据类型</strong>。</p>
+<p><img src="as.png"></p>
+<p>注：该返回的XML元素<strong>包含了子元素和文本内容</strong>。</p>
+<p>模板的返回类型属性<strong>as是一个可选的参数</strong>，如果不指定该参数，则模块可以<strong>输出任意的文本内容</strong>。</p>
+<h3 id="5-2-1-XSLT中模板的调用"><a href="#5-2-1-XSLT中模板的调用" class="headerlink" title="5.2.1 XSLT中模板的调用"></a>5.2.1 XSLT中模板的调用</h3><h4 id="1-使用xsl-apply-templates-调用模板"><a href="#1-使用xsl-apply-templates-调用模板" class="headerlink" title="1.使用xsl:apply-templates 调用模板"></a>1.使用xsl:apply-templates 调用模板</h4><p>调用顺序：在<strong>广度优先</strong>、逐层向下的遍历过程中，指定继续遍历<strong>当前节点的所有子节点</strong></p>
+<p>完整语法：</p>
+<pre><code class="xml">&lt;xsl:apply-templates select=Expression mode=QName&gt;
+        ......
+&lt;/xsl:apply-templates&gt;
+</code></pre>
+<p>对于xsl:apply-templates元素，<strong>select和mode属性都是可选的</strong>，即可以直接使用<code>&lt;xsl:apply-templates/&gt;</code></p>
+<p><img src="%E6%A8%A1%E6%9D%BF1.png"></p>
+<p>对于上例，XSLT自动调用模板1，开始对整个XML文档树的遍历，即依次调用“处理指令”、“message元素”所对应的模板。所以模板1中使用了<code>&lt;xsl:apply-templates/&gt;</code>，表示<strong>调用当前节点的所有子节点所对应的模板</strong>。若模板1中无<code>&lt;xsl:apply-templates/&gt;</code>，<strong>遍历过程将中断</strong>，不会处理除文档节点”/“之外的任何节点。</p>
+<p>下面介绍该元素的两个属性</p>
+<ol>
+<li>select(<strong>取值为一个XPath表达式</strong>）允许指定<strong>仅遍历当前节点的哪些子节点</strong>（以调用相应的模板）</li>
+</ol>
+<p>例：<code>&lt;xsl:apply-templates select=&quot;message&quot;/&gt;</code>仅调用“message元素”所对应的模板</p>
+<ol start="2">
+<li>mode属性指定需要在match属性取值相同的模板中，选择哪一个进行调用。</li>
+</ol>
+<p><img src="mode2.png"></p>
+<h4 id="2-使用xsl-call-template-调用模板"><a href="#2-使用xsl-call-template-调用模板" class="headerlink" title="2.使用xsl:call-template 调用模板"></a>2.使用xsl:call-template 调用模板</h4><p>在xsl:template元素开始标记和结束标记之间，使用 xsl:param元素为所在的模板声明参数，其as属性可以指定参数的数据类型。 例</p>
+<p><img src="%E5%8F%82%E6%95%B0.png"></p>
+<p>注：用于为模板声明参数的<strong>xsl:param元素必须出现在模板正文的前面</strong></p>
+<p>​        在模板正文中，使用**$+’模板参数名’**来引用模板参数，以避免将其作为字符串进行处理。</p>
+<h3 id="5-2-2-XSLT中的内置模板"><a href="#5-2-2-XSLT中的内置模板" class="headerlink" title="5.2.2 XSLT中的内置模板"></a>5.2.2 XSLT中的内置模板</h3><p>Q6：怎样分析内置模板？</p>
+<p>E6：<img src="%E5%86%85%E7%BD%AE%E6%A8%A1%E6%9D%BF.png"></p>
+<p>C6：模板1’的<code>match=“*|/”</code>是用于处理文档节点和所有元素节点（使用了通配符*），该模板的任务是调用所有子节点的处理模板。</p>
+<p>​        模板2‘的<code>match=“text()|@*”,</code>表示它用于处理文本节点和所有属性节点（使用了通配符@*），由于文本节点和属性节点不可能再包含子节点，所以这个模板的任务是直接打印出当前节点（文本节点和属性节点）的内容(<strong>&lt;xsl:value-of select=”.”/&gt;</strong>)</p>
+<p>Q7：内置模板有什么作用？</p>
+<p>C7：内置模板中仅对<strong>文本节点和属性节点</strong>进行了处理，即输出了其文本内容。其作用在于：让我们<strong>集中精力编写相关节点的处理模板，而无需过多地操心整个遍历过程中模板的逐层调用</strong>。只有在用户没有自定义处理某个节点的模块规则时，才会调用内置模块中的规则；否则，<strong>用户自定义的模块规则将覆盖内置模块中的规则</strong>。</p>
+<p>Q8：内置模板存在什么问题？</p>
+<p>E8：</p>
+<p><img src="%E9%94%99%E8%AF%AFXML.png"></p>
+<p>  <img src="模板错误.png"  style="float:left;"  >     <img src="错误解答.png"  style="float:right;"  >   </p>
+<p>C8：在Company模板中，<code>&lt;xsl:apply-templates/&gt;</code>将调用其子节点(Name和Person)的处理模板。但这时<strong>不存在match=“Name”的模板</strong>（修改错误时则只需要加上空模板Name即可），于是调用默认模板（先1后2），<strong>输出了文本节点的内容</strong>，导致文本节点的内容输出了两次，而Person的子元素Name没有出现两次。</p>
+<h2 id="5-3-XSLT模板中各种转换功能的实现"><a href="#5-3-XSLT模板中各种转换功能的实现" class="headerlink" title="5.3 XSLT模板中各种转换功能的实现"></a>5.3 XSLT模板中各种转换功能的实现</h2><h3 id="5-3-1-value-of-text"><a href="#5-3-1-value-of-text" class="headerlink" title="5.3.1 value-of   text"></a>5.3.1 value-of   text</h3><p>Q9：如何使用value-of？</p>
+<p>E9：</p>
+<pre><code class="xml">&lt;message&gt;
+        &lt;subject&gt;I&lt;/subject&gt;&lt;predicate&gt;Love&lt;/predicate&gt;&lt;object&gt;You&lt;/object&gt;
+&lt;/message&gt; 
+&lt;xsl:value-of select=&quot;.&quot;/&gt;   &lt;!--会输出ILoveYou--&gt;</code></pre>
+<p>C9：对于文本节点和属性节点，xsl:value-of select=“.” 当然提取的是文本节点的内容和属性节点的取值；对元素节点使用 &lt;xsl:value-of select=“.”/&gt;，那么将得到元素节点的 String-Value,如上例。</p>
+<p>Q10：如何输出空格？</p>
+<p>E10：<img src="text%E7%A9%BA%E7%99%BD%E5%AD%97%E7%AC%A6.png"></p>
+<p>C10：此时应该使用<code>&lt;xsl:text&gt;&lt;xsl:text/&gt;</code>。xsl:text元素开始标记和结束标记<strong>之间的内容会原封不动的输出到结果中</strong>，但是其中不能包含其他XML的标记。</p>
+<h3 id="5-3-2-for-each-sort"><a href="#5-3-2-for-each-sort" class="headerlink" title="5.3.2 for-each  sort"></a>5.3.2 for-each  sort</h3> 
       <!-- reward -->
       
     </div>
@@ -345,7 +312,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2020/11/14/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2020/11/16/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%94%E7%AB%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -358,19 +325,19 @@
    
   <nav class="article-nav">
     
-      <a href="../../16/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%94%E7%AB%A0/" class="article-nav-link">
+      <a href="../XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            XML开发技术--第五章
+            word2vec
           
         </div>
       </a>
     
     
-      <a href="../../08/word2vec/" class="article-nav-link">
+      <a href="../../14/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">word2vec</div>
+        <div class="article-nav-title">XML开发技术——第一章</div>
       </a>
     
   </nav>
