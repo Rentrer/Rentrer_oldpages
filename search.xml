@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>1</title>
-    <url>/2020/11/16/1/</url>
-    <content><![CDATA[<p>经过了上一次的学习，我们对XML有了一个初步的认识，了解了概念。这次学习，我们将对 XML 数据模式及其描述语言进行概要地介绍，并以文档类型定义（Document Type Definition，DTD）为例，说明如何为数据编写相应的模式，从而确保数据的有效性。</p>
-<a id="more"></a>
-
-<h1 id="第二章-文档类型定义DTD"><a href="#第二章-文档类型定义DTD" class="headerlink" title="第二章 文档类型定义DTD"></a>第二章 文档类型定义DTD</h1><h2 id="2-1-数据模式与DTD"><a href="#2-1-数据模式与DTD" class="headerlink" title="2.1 数据模式与DTD"></a>2.1 数据模式与DTD</h2><h3 id="2-11-数据模式的用途"><a href="#2-11-数据模式的用途" class="headerlink" title="2.11 数据模式的用途"></a>2.11 数据模式的用途</h3>]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>XML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>XML开发技术--第五章</title>
     <url>/2020/11/16/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
     <content><![CDATA[<p>经过了上一次的学习，</p>
