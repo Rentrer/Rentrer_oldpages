@@ -47,23 +47,26 @@
 <li>由XML解析器对这两个文档进行解析，将XML文档转换为所对应的文档树结构，<strong>将xslt(xsl)文档看作是一系列的转换规则</strong>。</li>
 <li><strong>由XSLT引擎调用这些规则</strong>，对文档树进行遍历，分别处理其中指定的数据节点，将其转换为所需的结果集，并序列化为结果文档。</li>
 </ol>
-<h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><pre><code class="xml">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;hello.xlst&quot;?&gt;
-&lt;message&gt;Hello!&lt;/message&gt;       &lt;!--这是hello.xsl文档--&gt;
+<h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0"?></span>
+<span class="token prolog">&lt;?xml-stylesheet type="text/xsl" href="hello.xlst"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>message</span><span class="token punctuation">></span></span>Hello!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>message</span><span class="token punctuation">></span></span>       <span class="token comment">&lt;!--这是hello.xsl文档--></span>
 
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
-        &lt;!-- transform the input root (/) --&gt;
-        &lt;xsl:template match=&quot;/&quot;&gt;
-            &lt;html&gt; 
-                &lt;body&gt; 
-                    &lt;h1&gt;
-                        &lt;xsl:value-of select=&quot;message&quot;/&gt;
-                    &lt;/h1&gt; 
-                &lt;/body&gt; 
-            &lt;/html&gt;
-        &lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;              &lt;!--这是hello.xslt文档--&gt;</code></pre>
+<span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>stylesheet</span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsl</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/XSL/Transform<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token comment">&lt;!-- transform the input root (/) --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>template</span> <span class="token attr-name">match</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span> 
+        		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span> 
+            		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>
+	        			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>value-of</span> <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span> 
+        		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span> 
+    		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>stylesheet</span><span class="token punctuation">></span></span>              <span class="token comment">&lt;!--这是hello.xslt文档--></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="5-2-XSLT中模板的创建以及内置模板的使用"><a href="#5-2-XSLT中模板的创建以及内置模板的使用" class="headerlink" title="5.2 XSLT中模板的创建以及内置模板的使用"></a>5.2 XSLT中模板的创建以及内置模板的使用</h2><h3 id="5-2-1-XSLT中模板的声明"><a href="#5-2-1-XSLT中模板的声明" class="headerlink" title="5.2.1 XSLT中模板的声明"></a>5.2.1 XSLT中模板的声明</h3><p>Q4：怎么声明模板？</p>
 <p>E4：<img src="%E6%A8%A1%E6%9D%BF%E5%A3%B0%E6%98%8E.png"></p>
 <p>C4：模板标记之间的内容相当于一个<strong>函数的函数体</strong>，表示在调用该模板时应该执行的具体操作。而元素开始标记中的属性match、name、mode和priority则用于描述该模板的相关信息。</p>
@@ -82,15 +85,16 @@
 </ol>
 <p>模板&lt;xsl:template match=“/”&gt;和&lt;xsl:template match=“message”&gt;都没有具体的名称，因此将其称为<strong>无名模板</strong>。这些模板之所以没有名称，是因为<strong>它们的调用是在遍历文档树的过程中自动进行的</strong>，不需要名称。</p>
 <p>也可以使用name属性为模板指定一个名称，使其成为命名模板 。例</p>
-<pre><code class="xml">&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
-    &lt;xsl:template match=&quot;/&quot; name=&quot;one&quot;&gt;              &lt;!--命名模板 one--&gt;
-        &lt;xsl:call-template name=&quot;another&quot;/&gt;
-    &lt;/xsl:template&gt;
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>stylesheet</span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsl</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/XSL/Transform<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>template</span> <span class="token attr-name">match</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>              <span class="token comment">&lt;!--命名模板 one--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>call-template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>another<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>template</span><span class="token punctuation">></span></span>
+    
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>another<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>                    <span class="token comment">&lt;!--命名模板 another--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>output</span><span class="token punctuation">></span></span>Simple output<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>output</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>stylesheet</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    &lt;xsl:template name=&quot;another&quot;&gt;                    &lt;!--命名模板 another--&gt;
-        &lt;output&gt;Simple output&lt;/output&gt;
-    &lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;</code></pre>
 <p>XSLT 处理器将调用命名模板 one（实际上名称 one 没有作用，因为是自动调用的），然后<strong>在模板 one 中使用 xsl:call-template 直接调用名为 another 的模板</strong>，在模板 another 执行结束之后，继续执行模板 one 的后续指令，<strong>这个过程非常类似于函数的调用</strong>。 </p>
 <ol start="3">
 <li>模式属性 mode</li>
@@ -112,10 +116,11 @@
 <p>模板的返回类型属性<strong>as是一个可选的参数</strong>，如果不指定该参数，则模块可以<strong>输出任意的文本内容</strong>。</p>
 <h3 id="5-2-1-XSLT中模板的调用"><a href="#5-2-1-XSLT中模板的调用" class="headerlink" title="5.2.1 XSLT中模板的调用"></a>5.2.1 XSLT中模板的调用</h3><h4 id="1-使用xsl-apply-templates-调用模板"><a href="#1-使用xsl-apply-templates-调用模板" class="headerlink" title="1.使用xsl:apply-templates 调用模板"></a>1.使用xsl:apply-templates 调用模板</h4><p>调用顺序：在<strong>广度优先</strong>、逐层向下的遍历过程中，指定继续遍历<strong>当前节点的所有子节点</strong></p>
 <p>完整语法：</p>
-<pre><code class="xml">&lt;xsl:apply-templates select=Expression mode=QName&gt;
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>apply-templates</span> <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>Expression</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>QName</span><span class="token punctuation">></span></span>
         ......
-&lt;/xsl:apply-templates&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>apply-templates</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>对于xsl:apply-templates元素，<strong>select和mode属性都是可选的</strong>，即可以直接使用<code>&lt;xsl:apply-templates/&gt;</code></p>
 <p><img src="%E6%A8%A1%E6%9D%BF1.png"></p>
 <p>对于上例，XSLT自动调用模板1，开始对整个XML文档树的遍历，即依次调用“处理指令”、“message元素”所对应的模板。所以模板1中使用了<code>&lt;xsl:apply-templates/&gt;</code>，表示<strong>调用当前节点的所有子节点所对应的模板</strong>。若模板1中无<code>&lt;xsl:apply-templates/&gt;</code>，<strong>遍历过程将中断</strong>，不会处理除文档节点”/“之外的任何节点。</p>
@@ -145,10 +150,11 @@
 <p>C8：在Company模板中，<code>&lt;xsl:apply-templates/&gt;</code>将调用其子节点(Name和Person)的处理模板。但这时<strong>不存在match=“Name”的模板</strong>（修改错误时则只需要加上空模板Name即可），于是调用默认模板（先1后2），<strong>输出了文本节点的内容</strong>，导致文本节点的内容输出了两次，而Person的子元素Name没有出现两次。</p>
 <h2 id="5-3-XSLT模板中各种转换功能的实现"><a href="#5-3-XSLT模板中各种转换功能的实现" class="headerlink" title="5.3 XSLT模板中各种转换功能的实现"></a>5.3 XSLT模板中各种转换功能的实现</h2><h3 id="5-3-1-value-of-text"><a href="#5-3-1-value-of-text" class="headerlink" title="5.3.1 value-of   text"></a>5.3.1 value-of   text</h3><p>Q9：如何使用value-of？</p>
 <p>E9：</p>
-<pre><code class="xml">&lt;message&gt;
-        &lt;subject&gt;I&lt;/subject&gt;&lt;predicate&gt;Love&lt;/predicate&gt;&lt;object&gt;You&lt;/object&gt;
-&lt;/message&gt; 
-&lt;xsl:value-of select=&quot;.&quot;/&gt;   &lt;!--会输出ILoveYou--&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>message</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>subject</span><span class="token punctuation">></span></span>I<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>subject</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>predicate</span><span class="token punctuation">></span></span>Love<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>predicate</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>object</span><span class="token punctuation">></span></span>You<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>object</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>message</span><span class="token punctuation">></span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>value-of</span> <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>.<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>   <span class="token comment">&lt;!--会输出ILoveYou--></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>C9：对于文本节点和属性节点，xsl:value-of select=“.” 当然提取的是文本节点的内容和属性节点的取值；对元素节点使用 &lt;xsl:value-of select=“.”/&gt;，那么将得到元素节点的 String-Value,如上例。</p>
 <p>Q10：如何输出空格？</p>
 <p>E10：<img src="text%E7%A9%BA%E7%99%BD%E5%AD%97%E7%AC%A6.png"></p>
@@ -206,7 +212,8 @@
 <h2 id="1-2-XML规范及XML文档分类"><a href="#1-2-XML规范及XML文档分类" class="headerlink" title="1.2 XML规范及XML文档分类"></a>1.2 XML规范及XML文档分类</h2><p>XML文档实际上是一个文本文件，但并不是任何文本文件都是正确的XML文档，W3C的XML1.0规范对XML文档的语法格式进行了严格的定义。</p>
 <h3 id="1-2-1-XML文档中的XML声明"><a href="#1-2-1-XML文档中的XML声明" class="headerlink" title="1.2.1 XML文档中的XML声明"></a>1.2.1 XML文档中的XML声明</h3><p>Q5：声明有哪些特点和注意事项？</p>
 <p>E5：</p>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>C5：</p>
 <p>XML声明部分<strong>本身是可选的</strong>（可以没有声明）。但如果包含声明部分，必须是整个XML文档的第一行内容（<strong>第一行不能为注释或空行</strong>）。&lt;?xml要顶格，且中间无空格。</p>
 <p>完整的 XML 声明包括三个部分：</p>
@@ -220,7 +227,8 @@
 <p>如果有encoding 属性和standalone属性，那么<strong>encoding属性必须放standalone属性前面</strong>。</p>
 <h3 id="1-2-2-处理指令和注释"><a href="#1-2-2-处理指令和注释" class="headerlink" title="1.2.2 处理指令和注释"></a>1.2.2 处理指令和注释</h3><p>Q6：什么是处理指令？</p>
 <p>E6：</p>
-<pre><code class="xml">&lt;?xml-stylesheet href=&quot;style.xsl&quot; type=&quot;text/xsl&quot;?&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml-stylesheet href="style.xsl" type="text/xsl"?></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>C6：处理指令是表示将XML文档用于特殊的应用程序时表示需要执行的特定操作，而XML解析器不会执行特定的操作。</p>
 <p>语法格式：<code>&lt;? target-name data ?&gt;</code></p>
 <p>其中，**<?和?>表示处理指令的开始与结束<strong>；target-name表示该处理指令的</strong>名称<strong>，data部分描述该指令的</strong>具体内容**。E6的含义为：当XSL的执行引擎碰到这个处理指令时，将会根据href的取值获得指定的xsl文件，并对输入的xml文档进行相应的转换。</p>
@@ -230,25 +238,29 @@
 <p>​        注释不应该出现在元素的标记中，<strong>注释之中不应该嵌套注释</strong>。</p>
 <h3 id="1-2-3-XML文档中的元素和属性"><a href="#1-2-3-XML文档中的元素和属性" class="headerlink" title="1.2.3 XML文档中的元素和属性"></a>1.2.3 XML文档中的元素和属性</h3><p>Q8：什么是元素？</p>
 <p>E8：</p>
-<pre><code class="xml">&lt;element_name att1=&quot;val1&quot; att2=&quot;val2&quot;&gt;
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element_name</span> <span class="token attr-name">att1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>val1<span class="token punctuation">"</span></span> <span class="token attr-name">att2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>val2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     ...content...
-&lt;/element_name&gt;</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>element_name</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>C8：元素是最基本的组成单元，在元素的开始标记中还可以包含相关的属性。元素中可以包含文本、子元素、或者两者的组合。可以存在空元素，即<strong>不包含任何内容</strong>的元素，但它<strong>可以包含属性</strong>：</p>
-<pre><code class="xml">&lt;details&gt;&lt;/details&gt;
-&lt;details/&gt;&lt;!--上述两种空元素是等价的--&gt;
-&lt;details about=&quot;Location&quot;&gt;&lt;/details&gt;&lt;!--空元素可以包含属性--&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span><span class="token punctuation">/></span></span><span class="token comment">&lt;!--上述两种空元素是等价的--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span> <span class="token attr-name">about</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Location<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">></span></span><span class="token comment">&lt;!--空元素可以包含属性--></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>一个元素可以包含任意多个子元素，<strong>可以包含多个同名的子元素</strong>；子元素的<strong>顺序非常重要</strong>。</p>
 <p>Q9：什么是属性？</p>
 <p>E9：</p>
-<pre><code class="xml">&lt;author firstname=&quot;Tom&quot; lastname=&quot;hanks&quot;&gt;&lt;/author&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>author</span> <span class="token attr-name">firstname</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Tom<span class="token punctuation">"</span></span> <span class="token attr-name">lastname</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hanks<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>author</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>C9：<strong>属性不能独立于元素而存在</strong>，通常以名-值对的形式出现，用于描述当前元素的某个方面的特征。</p>
 <p>​        <strong>属性的取值必须加上引号（单引号或者双引号）</strong></p>
 <p>元素在其开始标记中可以包含任意多个属性，但<strong>不能包含同名的属性</strong>。</p>
 <p>对于一个元素所有的属性，<strong>它们不分先后顺序</strong>，因为它们之间可以通过名称相互区别。</p>
 <p>Q10：如何命名元素和属性？</p>
 <p>E10：</p>
-<pre><code class="xml">&lt;example-one/&gt; &lt;_example2/&gt; &lt;:Example.Three/&gt; &lt;!--这些标记名称都是正确的--&gt;
-&lt;bad*character/&gt; &lt;illegal space/&gt; &lt;12number-start/&gt;&lt;!--这些都是错误的--&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>example-one</span><span class="token punctuation">/></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>_example2</span><span class="token punctuation">/></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>:Example.Three</span><span class="token punctuation">/></span></span> <span class="token comment">&lt;!--这些标记名称都是正确的--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bad*character</span><span class="token punctuation">/></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>illegal</span> <span class="token attr-name">space</span><span class="token punctuation">/></span></span> &lt;12number-start/><span class="token comment">&lt;!--这些都是错误的--></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>C10：</p>
 <ol>
 <li>名称的开头必须以<strong>字母、下划线或者冒号</strong>开头。</li>
@@ -264,16 +276,19 @@
 <li>对于可能在<strong>数目上发生变化的特性</strong>，应该使用子元素，比如某本书籍可能有多个作者。</li>
 </ol>
 <h3 id="1-2-4-XML文档中的文本内容和CDATA段"><a href="#1-2-4-XML文档中的文本内容和CDATA段" class="headerlink" title="1.2.4 XML文档中的文本内容和CDATA段"></a>1.2.4 XML文档中的文本内容和CDATA段</h3><p>在文本内容中，一些符号会产生歧义，使得解析器不能正确辨识。比如</p>
-<pre><code class="xml">&lt;lessthan&gt;one&lt;two&lt;/lessthan&gt; &lt;!--文本中的小于号产生了歧义--&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>lessthan</span><span class="token punctuation">></span></span>one&lt;two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>lessthan</span><span class="token punctuation">></span></span> <span class="token comment">&lt;!--文本中的小于号产生了歧义--></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>XML 1.0 规范中定义了五种预定义实体：而<strong>除此以外的的其他实体，必须在使用前进行声明</strong>。</p>
 <p><img src="%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%9E%E4%BD%93.png"></p>
-<pre><code class="xml">&lt;lessthan&gt;one &amp;it;two&lt;/lessthan&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>lessthan</span><span class="token punctuation">></span></span>one <span class="token entity named-entity" title="&it;">&amp;it;</span>two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>lessthan</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>注：预定义实体<strong>以&amp;表示实体的开始</strong>，<strong>最后有一个分号</strong>表示实体的结束，容易遗漏，特别注意 </p>
 <p>Q12：什么是CDATA段？</p>
 <p>E12：</p>
-<pre><code class="xml">&lt;customer&gt;
-&lt;name&gt;&lt;![CDATA[YOU &amp; ME,&lt;Tom&gt;&amp;&lt;Jerry&gt;]]&gt;&lt;/name&gt;
-&lt;/customer&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>customer</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span><span class="token cdata">&lt;![CDATA[YOU &amp; ME,&lt;Tom>&amp;&lt;Jerry>]]></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>customer</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>C12: 假设XML文档的某块文本内容中<strong>包含大量的特殊字符</strong>，那么可以将整个文本块的内容放入到一个CDATA段中</p>
 <p>即：<code>&lt;![CDATA[]]&gt;</code></p>
 <p>使用 CDATA 段，可以告诉<strong>解析器不要试图从该文本块中查找 XML 标记</strong>，<strong>它仅仅就是文本内容</strong>，从而避免了歧义的产生，因此<strong>可以使用非法字符</strong>。</p>
@@ -288,16 +303,19 @@
 <li>标记是大小写敏感的。</li>
 <li>标记必须正确的嵌套。</li>
 </ol>
-<pre><code class="xml">&lt;book&gt;&lt;author&gt;tom hanks&lt;/book&gt;&lt;/author&gt; &lt;!--这是错误的--&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>book</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>author</span><span class="token punctuation">></span></span>tom hanks<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>book</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>author</span><span class="token punctuation">></span></span> <span class="token comment">&lt;!--这是错误的--></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <ol start="4">
 <li>属性值必须使用引号括起来：</li>
 </ol>
-<pre><code class="xml">&lt;details about=Location/&gt; &lt;!--不加引号是错误的，可加单引号或双引号--&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span> <span class="token attr-name">about</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>Location/</span><span class="token punctuation">></span></span> <span class="token comment">&lt;!--不加引号是错误的，可加单引号或双引号--></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <ol start="5">
 <li>有且只有一个根元素。</li>
 </ol>
-<pre><code class="xml">&lt;author&gt;tom hanks&lt;/author&gt;
-&lt;author&gt;mike jimmy&lt;/author&gt;&lt;!--这段内容称为XML片段--&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>author</span><span class="token punctuation">></span></span>tom hanks<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>author</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>author</span><span class="token punctuation">></span></span>mike jimmy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>author</span><span class="token punctuation">></span></span><span class="token comment">&lt;!--这段内容称为XML片段--></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h3 id="1-2-6-XML文档的分类"><a href="#1-2-6-XML文档的分类" class="headerlink" title="1.2.6 XML文档的分类"></a>1.2.6 XML文档的分类</h3><p>XML 既可以是<strong>面向数据</strong>（Data Centric）的，又可以是<strong>面向文档</strong>（Document Centric）的。</p>
 <p>面向数据的文档主要利用 XML 来传送应用数据，这些文档包括销售订单（参见 data-centric.xml）、病人记录和科学数据等。</p>
 <p>面向数据的 XML 文档的物理结构，如元素的顺序、或者数据被存储为属性还是子元素，通常不是很重要。它们的特征是高度有序的结构，并且同时带有那些数据结构的多个项目，类似于关系数据库系统中的多条记录。 </p>
@@ -307,31 +325,34 @@
 <p>C15：命名空间 (namespace) 主要是通过某种形式来表示标识符 (identifier) 的上下文，可以将逻辑上相关的标识符组织成相应的命名空间，可使整个系统更加模块化。 </p>
 <h3 id="1-3-2-XML中命名空间的声明和使用"><a href="#1-3-2-XML中命名空间的声明和使用" class="headerlink" title="1.3.2 XML中命名空间的声明和使用"></a>1.3.2 XML中命名空间的声明和使用</h3><p>Q16：如何声明命名空间？</p>
 <p>E16：</p>
-<pre><code class="xml">&lt;myns:element xmlns:myns=&quot;http://www.myns.com&quot;&gt;
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">myns:</span>element</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>myns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.myns.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     .....
-&lt;/myns:element&gt;</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">myns:</span>element</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>C16：声明XML命名空间的语法为：<strong>xmlns:prefix-name=”URI”**。其中，</strong>xmlns是XML的保留属性，用来声明命名空间<strong>。命名空间的前缀名称是以字母或下划线（_）开头的、</strong>不包含空白字符和冒号（:）<strong>的字符串，通常规定</strong>不应该使用 XML 中的保留字**，比如 xml、xsl 等等。</p>
 <p>对于例子，myns:element表示element元素属于myns这个命名空间，而myns只是命名空间的简称，后面的语句才是命名空间的声明，表示myns命名空间的全程为字符串”<a href="http://www.myns.com&quot;./">http://www.myns.com&quot;。</a></p>
 <p>Q17：为什么不建议用简短的字符串作为命名空间的全称？</p>
 <p>C17：为了减少不同命名空间标识符冲突的可能性。</p>
 <p>Q18：怎样使用缺省命名空间？</p>
 <p>E18：</p>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;company xmlns=&quot;http://www.myns.com&quot;&gt;
-    &lt;company-info&gt;
-        &lt;name&gt;SoftwareBG&lt;/name&gt;
-         &lt;fdate&gt;2007-03-17&lt;/fdate&gt;
-         &lt;ns1:division xmlns:ns1=&quot;http://www.myns.com/division&quot;&gt;
-             &lt;ns1:name&gt;Development&lt;/ns1:name&gt;
-             &lt;ns1:employees&gt;100&lt;/ns1:employees&gt;
-         &lt;/ns1:division&gt;
-    &lt;/company-info&gt;
-&lt;/company&gt; </code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>company</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.myns.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>company-info</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>SoftwareBG<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fdate</span><span class="token punctuation">></span></span>2007-03-17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fdate</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">ns1:</span>division</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>ns1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.myns.com/division<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">ns1:</span>name</span><span class="token punctuation">></span></span>Development<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">ns1:</span>name</span><span class="token punctuation">></span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">ns1:</span>employees</span><span class="token punctuation">></span></span>100<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">ns1:</span>employees</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">ns1:</span>division</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>company-info</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>company</span><span class="token punctuation">></span></span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>C18：由例子：根元素company的<strong>开始标记中声明了一个无前缀名的命名空间，它的作用范围为整个XML文档</strong>。因此在该文档中，<strong>任何没有显示地指定命名空间的元素和属性</strong>（即除了disivion命名空间下的其他），都属于这个缺省的无名命名空间。</p>
 <p>教学要求：能较系统地了解XML及其相关技术概述，XML在各个领域方面的应用，XML规范及XML文档分类，命名空间，XML数据模型规范等；</p>
 <h2 id="1-4-XML文档的数据模型规范"><a href="#1-4-XML文档的数据模型规范" class="headerlink" title="1.4 XML文档的数据模型规范"></a>1.4 XML文档的数据模型规范</h2><p>以下片段都将转化为<code>&lt;a b=&#39;upcase&#39;&gt; Hello! &lt;/a&gt;</code></p>
-<pre><code class="xml">&lt;a b=&#39;upcase&#39;&gt; &lt;[CDATA[Hello!]]&gt; &lt;/a&gt;
-&lt;a b=&#39;upcase&#39;&gt; Hello&amp;#33 &lt;/a&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">b</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>upcase<span class="token punctuation">'</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>[CDATA[Hello!]]</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">b</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>upcase<span class="token punctuation">'</span></span><span class="token punctuation">></span></span> Hello&amp;#33 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>XML第一章的内容都属于基础，比较简单，多考于选择题，因此需要广覆盖知识点，不要在这里失分。</p>
 ]]></content>
       <categories>
@@ -391,31 +412,33 @@
 <p><strong>顺序表：顺序存储结构：用位置描述逻辑关系</strong></p>
 <p><strong>链表：链式存储结构：由指针描述逻辑关系</strong></p>
 <p>补：链表的定义：</p>
-<pre><code class="C++">typedef struct Node
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">typedef struct Node
 &#123;
     Type data;
     struct Node *next;
-&#125;Node,*LinkList;</code></pre>
+&#125;Node,*LinkList;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="例1：综合比较顺序表和链表"><a href="#例1：综合比较顺序表和链表" class="headerlink" title="例1：综合比较顺序表和链表"></a>例1：综合比较顺序表和链表</h4><p>答：顺序表在内存中是一段连续的存储空间， 通过头指针和偏移地址直接访问数据，访问数据的效率较高，为O（1），但是插入数据和删除数据的效率较低。<br> 链表在内存中是不连续的，通过每一个节点保存指向下一个节点的指针的方式来存储数据，访问数据的效率较低，但同时，插入数据和删除数据的效率较高。</p>
 <h4 id="例2：解释链表的”头指针、头结点和首元素结点“三个概念"><a href="#例2：解释链表的”头指针、头结点和首元素结点“三个概念" class="headerlink" title="例2：解释链表的”头指针、头结点和首元素结点“三个概念"></a>例2：解释链表的”头指针、头结点和首元素结点“三个概念</h4><p>答：头指针：线性链表中第一个结点或头结点的存储地址，它是访问链表的起始点。</p>
 <p>​        头结点：附加在第一个数据元素之前的结点，该结点的数据域一般为“空”、指针域存放第一个数据元素的地址。</p>
 <p>​        首元素节点：链表中第一个存储着数据的节点。</p>
 <h4 id="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"><a href="#例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。" class="headerlink" title="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"></a>例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。</h4><p>答：</p>
-<pre><code class="C++">LinkList LinkSearch(ListList L,int k)
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">LinkList LinkSearch(ListList L,int k)
 &#123;
-    int k0=1;
-    LinkList p=new LinkList;
-    p=L-&gt;next;
-    LinkList q=p;
+    int k0&#x3D;1;
+    LinkList p&#x3D;new LinkList;
+    p&#x3D;L-&gt;next;
+    LinkList q&#x3D;p;
     while(p)
     &#123;
-        if(k0&lt;=k)++k0;
-        else q=q-&gt;next;
-
-        p=p-&gt;next;
+        if(k0&lt;&#x3D;k)++k0;
+        else q&#x3D;q-&gt;next;
+        
+        p&#x3D;p-&gt;next;
     &#125;
     return q;
-&#125;//时间复杂度为O(N)</code></pre>
+&#125;&#x2F;&#x2F;时间复杂度为O(N)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="2-栈与队列"><a href="#2-栈与队列" class="headerlink" title="2.栈与队列"></a>2.栈与队列</h2><p>我觉得期中考不了很难，鸽了（）</p>
 <p>想了解的话请移步我朋友的博客：</p>
 <p><a href="https://linyx.tk/2020/10/04/data-structure-study-note-1/">https://linyx.tk/2020/10/04/data-structure-study-note-1/</a></p>
@@ -424,9 +447,9 @@
 <p>（1）出口至少有一个</p>
 <p>（2）在经过有限次的递归调用后，能够导致递归出口的出现（<strong>递归算法必需具有终止递归的条件</strong>）</p>
 <p>例：实现Hanoi塔问题</p>
-<pre><code class="C++">void hanoi(int n,char x,char y,char z)
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void hanoi(int n,char x,char y,char z)
 &#123;
-    if(n==1)
+    if(n&#x3D;&#x3D;1)
         move(x,1,z);
     else
     &#123;
@@ -434,7 +457,8 @@
         move(x,n,z);
         hanoi(n-1,y,x,z);
     &#125;
-&#125;</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h1 id="第三章：树结构"><a href="#第三章：树结构" class="headerlink" title="第三章：树结构"></a>第三章：树结构</h1><h2 id="1-树"><a href="#1-树" class="headerlink" title="1.树"></a>1.树</h2><p>树是有n个结点的有限集合（n&gt;=0)</p>
 <p>树的结点包含一个数据元素以及若干个指针</p>
 <p>结点拥有子树的个数称为<strong>结点的度</strong>。</p>
@@ -446,12 +470,13 @@
 <h2 id="2-二叉树"><a href="#2-二叉树" class="headerlink" title="2.二叉树"></a>2.二叉树</h2><p>二叉树：每个结点至多只有两棵子树</p>
 <p>即：<strong>结点的度&lt;=2的有序树</strong></p>
 <p>二叉树的定义：</p>
-<pre><code class="C++">typedef struct TNode
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">typedef struct TNode
 &#123;
     Type data;
     struct TNode *Lchild;
     struct TNode *Rchild;
-&#125;TNode,*Tree;</code></pre>
+&#125;TNode,*Tree;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>满二叉树：一棵高度为k且具有2^k-1个结点的二叉树</p>
 <p><img src="%E5%9B%BE%E7%89%871.png">（k=4)</p>
 <p><strong>完全二叉树：高度为k，结点个数∈[2^(k-1),2^k-1]，且第k层结点都集中在左侧的二叉树。</strong></p>
@@ -464,103 +489,109 @@
 <p>（2）除根节点外，其余节点都有唯一前驱，则: n-1=m</p>
 <p>（3）由于度=i（i=0，1，2）的结点具有i个分支，则：m=0+n1+2n2</p>
 <p>联立上式得：n0=n2+1，证毕。</p>
-<h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><pre><code class="C++">void preOrder(Tree T)//递归写法
+<h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void preOrder(Tree T)&#x2F;&#x2F;递归写法
 &#123;
     if(!T) return ;
     cout&lt;&lt;T-&gt;data;
     preOrder(T-&gt;Lchild);
     preOrder(T-&gt;Rchild);
-&#125;</code></pre>
-<pre><code class="C++">void preOrder(Tree T)//非递归写法
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void preOrder(Tree T)&#x2F;&#x2F;非递归写法
 &#123;
     stack&lt;Tree&gt; temp;
-    Tree p=T-&gt;Lchild;
+    Tree p&#x3D;T-&gt;Lchild;
     while(p)
     &#123;
         while(p-&gt;Lchild)
         &#123;
             cout&lt;&lt;p-&gt;data;
             temp.push(p);
-            p=p-&gt;Lchild;
+            p&#x3D;p-&gt;Lchild;
         &#125;
         cout&lt;&lt;p-&gt;data;
         while(!p-&gt;Rchild)
         &#123;
-            p=temp.top();
+            p&#x3D;temp.top();
             temp.pop();
         &#125;
         if(p-&gt;Rchild)
-            p=p-&gt;Rchild;
+            p&#x3D;p-&gt;Rchild;
     &#125;
+    
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-&#125;</code></pre>
 <p><img src="%E5%9B%BE%E7%89%873.png"></p>
-<h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><pre><code class="C++">void InOrder(Tree T)//递归写法
+<h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void InOrder(Tree T)&#x2F;&#x2F;递归写法
 &#123;
     if(!T) return;
     InOrder(T-&gt;Lchild);
     cout&lt;&lt;T-&gt;data;
     InOrder(T-&gt;Rchild);
-&#125;</code></pre>
-<pre><code class="C++">void InOrder(Tree T)//非递归写法
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void InOrder(Tree T)&#x2F;&#x2F;非递归写法
 &#123;
     stack&lt;Tree&gt; temp;
-    Tree p=T-&gt;Lchild;
+    Tree p&#x3D;T-&gt;Lchild;
     while(p)
     &#123;
         while(p-&gt;Lchild)
         &#123;
             temp.push(p);
-            p=p-&gt;Lchild;
+            p&#x3D;p-&gt;Lchild;
         &#125;
         cout&lt;&lt;p-&gt;data;
         while(!p-&gt;Rchild)
         &#123;
-            p=temp.top();
+            p&#x3D;temp.top();
             cout&lt;&lt;p-&gt;data;
             temp.pop();
         &#125;
         if(p-&gt;Rchild)
-            p=p-&gt;Rchild;
+            p&#x3D;p-&gt;Rchild;
     &#125;
-&#125;</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="image-20201107151715620.png"></p>
-<h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><pre><code class="C++">void PostOrder(Tree T)
+<h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void PostOrder(Tree T)
 &#123;
     if(!T) return ;
     PostOrder(T-&gt;Lchild);
     PostOrder(T-&gt;Rchild);
     cout&lt;&lt;T-&gt;data;
-&#125;</code></pre>
-<pre><code class="C++">void PostOrder(Tree T)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void PostOrder(Tree T)
 &#123;
     stack&lt;Tree&gt; tempL，tempR;
-    Tree p=T-&gt;Lchild;
+    Tree p&#x3D;T-&gt;Lchild;
     while(p)
     &#123;
         while(p-&gt;Lchild)
         &#123;
             tempL.push(p);
-            p=p-&gt;Lchild;
+            p&#x3D;p-&gt;Lchild;
         &#125;
         while(!p-&gt;Rchild)
         &#123;
             cout&lt;&lt;p-&gt;data;
-            while(tempR.top()-&gt;Rchild==p)
+            while(tempR.top()-&gt;Rchild&#x3D;&#x3D;p)
             &#123;
-                cout&lt;&lt;tempR.top()-&gt;data;//获取R栈顶部指针的数据
-                tempR.pop();//弹出
+                cout&lt;&lt;tempR.top()-&gt;data;&#x2F;&#x2F;获取R栈顶部指针的数据
+                tempR.pop();&#x2F;&#x2F;弹出
             &#125;
-            p=tempL.top();
+            p&#x3D;tempL.top();
             tempL.pop();
         &#125;
         if(p-&gt;Rchild)
         &#123;
             tempR.push(p);
-            p=p-&gt;Rchild;
+            p&#x3D;p-&gt;Rchild;
         &#125;
     &#125;
-&#125;</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="image-20201107151732351.png"></p>
 <h4 id="例：简述由先序序列和中序序列构造二叉树的基本操作方法"><a href="#例：简述由先序序列和中序序列构造二叉树的基本操作方法" class="headerlink" title="例：简述由先序序列和中序序列构造二叉树的基本操作方法"></a>例：简述由先序序列和中序序列构造二叉树的基本操作方法</h4><p>答：如果前序序列和中序序列都为空，那么构造一棵空树。否则</p>
 <p>1、根据前序可确定根。</p>

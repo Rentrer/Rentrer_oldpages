@@ -100,7 +100,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">2.5k</span>
+            <span class="post-count">2.4k</span>
         </span>
     </span>
 
@@ -154,23 +154,26 @@
 <li>由XML解析器对这两个文档进行解析，将XML文档转换为所对应的文档树结构，<strong>将xslt(xsl)文档看作是一系列的转换规则</strong>。</li>
 <li><strong>由XSLT引擎调用这些规则</strong>，对文档树进行遍历，分别处理其中指定的数据节点，将其转换为所需的结果集，并序列化为结果文档。</li>
 </ol>
-<h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><pre><code class="xml">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;hello.xlst&quot;?&gt;
-&lt;message&gt;Hello!&lt;/message&gt;       &lt;!--这是hello.xsl文档--&gt;
+<h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0"?></span>
+<span class="token prolog">&lt;?xml-stylesheet type="text/xsl" href="hello.xlst"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>message</span><span class="token punctuation">></span></span>Hello!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>message</span><span class="token punctuation">></span></span>       <span class="token comment">&lt;!--这是hello.xsl文档--></span>
 
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
-        &lt;!-- transform the input root (/) --&gt;
-        &lt;xsl:template match=&quot;/&quot;&gt;
-            &lt;html&gt; 
-                &lt;body&gt; 
-                    &lt;h1&gt;
-                        &lt;xsl:value-of select=&quot;message&quot;/&gt;
-                    &lt;/h1&gt; 
-                &lt;/body&gt; 
-            &lt;/html&gt;
-        &lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;              &lt;!--这是hello.xslt文档--&gt;</code></pre>
+<span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>stylesheet</span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsl</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/XSL/Transform<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token comment">&lt;!-- transform the input root (/) --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>template</span> <span class="token attr-name">match</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span> 
+        		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span> 
+            		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>
+	        			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>value-of</span> <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span> 
+        		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span> 
+    		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>stylesheet</span><span class="token punctuation">></span></span>              <span class="token comment">&lt;!--这是hello.xslt文档--></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="5-2-XSLT中模板的创建以及内置模板的使用"><a href="#5-2-XSLT中模板的创建以及内置模板的使用" class="headerlink" title="5.2 XSLT中模板的创建以及内置模板的使用"></a>5.2 XSLT中模板的创建以及内置模板的使用</h2><h3 id="5-2-1-XSLT中模板的声明"><a href="#5-2-1-XSLT中模板的声明" class="headerlink" title="5.2.1 XSLT中模板的声明"></a>5.2.1 XSLT中模板的声明</h3><p>Q4：怎么声明模板？</p>
 <p>E4：<img src="%E6%A8%A1%E6%9D%BF%E5%A3%B0%E6%98%8E.png"></p>
 <p>C4：模板标记之间的内容相当于一个<strong>函数的函数体</strong>，表示在调用该模板时应该执行的具体操作。而元素开始标记中的属性match、name、mode和priority则用于描述该模板的相关信息。</p>
@@ -189,15 +192,16 @@
 </ol>
 <p>模板&lt;xsl:template match=“/”&gt;和&lt;xsl:template match=“message”&gt;都没有具体的名称，因此将其称为<strong>无名模板</strong>。这些模板之所以没有名称，是因为<strong>它们的调用是在遍历文档树的过程中自动进行的</strong>，不需要名称。</p>
 <p>也可以使用name属性为模板指定一个名称，使其成为命名模板 。例</p>
-<pre><code class="xml">&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
-    &lt;xsl:template match=&quot;/&quot; name=&quot;one&quot;&gt;              &lt;!--命名模板 one--&gt;
-        &lt;xsl:call-template name=&quot;another&quot;/&gt;
-    &lt;/xsl:template&gt;
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>stylesheet</span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsl</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/XSL/Transform<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>template</span> <span class="token attr-name">match</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>              <span class="token comment">&lt;!--命名模板 one--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>call-template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>another<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>template</span><span class="token punctuation">></span></span>
+    
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>another<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>                    <span class="token comment">&lt;!--命名模板 another--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>output</span><span class="token punctuation">></span></span>Simple output<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>output</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>stylesheet</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    &lt;xsl:template name=&quot;another&quot;&gt;                    &lt;!--命名模板 another--&gt;
-        &lt;output&gt;Simple output&lt;/output&gt;
-    &lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;</code></pre>
 <p>XSLT 处理器将调用命名模板 one（实际上名称 one 没有作用，因为是自动调用的），然后<strong>在模板 one 中使用 xsl:call-template 直接调用名为 another 的模板</strong>，在模板 another 执行结束之后，继续执行模板 one 的后续指令，<strong>这个过程非常类似于函数的调用</strong>。 </p>
 <ol start="3">
 <li>模式属性 mode</li>
@@ -219,10 +223,11 @@
 <p>模板的返回类型属性<strong>as是一个可选的参数</strong>，如果不指定该参数，则模块可以<strong>输出任意的文本内容</strong>。</p>
 <h3 id="5-2-1-XSLT中模板的调用"><a href="#5-2-1-XSLT中模板的调用" class="headerlink" title="5.2.1 XSLT中模板的调用"></a>5.2.1 XSLT中模板的调用</h3><h4 id="1-使用xsl-apply-templates-调用模板"><a href="#1-使用xsl-apply-templates-调用模板" class="headerlink" title="1.使用xsl:apply-templates 调用模板"></a>1.使用xsl:apply-templates 调用模板</h4><p>调用顺序：在<strong>广度优先</strong>、逐层向下的遍历过程中，指定继续遍历<strong>当前节点的所有子节点</strong></p>
 <p>完整语法：</p>
-<pre><code class="xml">&lt;xsl:apply-templates select=Expression mode=QName&gt;
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>apply-templates</span> <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>Expression</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>QName</span><span class="token punctuation">></span></span>
         ......
-&lt;/xsl:apply-templates&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">xsl:</span>apply-templates</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>对于xsl:apply-templates元素，<strong>select和mode属性都是可选的</strong>，即可以直接使用<code>&lt;xsl:apply-templates/&gt;</code></p>
 <p><img src="%E6%A8%A1%E6%9D%BF1.png"></p>
 <p>对于上例，XSLT自动调用模板1，开始对整个XML文档树的遍历，即依次调用“处理指令”、“message元素”所对应的模板。所以模板1中使用了<code>&lt;xsl:apply-templates/&gt;</code>，表示<strong>调用当前节点的所有子节点所对应的模板</strong>。若模板1中无<code>&lt;xsl:apply-templates/&gt;</code>，<strong>遍历过程将中断</strong>，不会处理除文档节点”/“之外的任何节点。</p>
@@ -252,10 +257,11 @@
 <p>C8：在Company模板中，<code>&lt;xsl:apply-templates/&gt;</code>将调用其子节点(Name和Person)的处理模板。但这时<strong>不存在match=“Name”的模板</strong>（修改错误时则只需要加上空模板Name即可），于是调用默认模板（先1后2），<strong>输出了文本节点的内容</strong>，导致文本节点的内容输出了两次，而Person的子元素Name没有出现两次。</p>
 <h2 id="5-3-XSLT模板中各种转换功能的实现"><a href="#5-3-XSLT模板中各种转换功能的实现" class="headerlink" title="5.3 XSLT模板中各种转换功能的实现"></a>5.3 XSLT模板中各种转换功能的实现</h2><h3 id="5-3-1-value-of-text"><a href="#5-3-1-value-of-text" class="headerlink" title="5.3.1 value-of   text"></a>5.3.1 value-of   text</h3><p>Q9：如何使用value-of？</p>
 <p>E9：</p>
-<pre><code class="xml">&lt;message&gt;
-        &lt;subject&gt;I&lt;/subject&gt;&lt;predicate&gt;Love&lt;/predicate&gt;&lt;object&gt;You&lt;/object&gt;
-&lt;/message&gt; 
-&lt;xsl:value-of select=&quot;.&quot;/&gt;   &lt;!--会输出ILoveYou--&gt;</code></pre>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>message</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>subject</span><span class="token punctuation">></span></span>I<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>subject</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>predicate</span><span class="token punctuation">></span></span>Love<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>predicate</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>object</span><span class="token punctuation">></span></span>You<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>object</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>message</span><span class="token punctuation">></span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>value-of</span> <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>.<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>   <span class="token comment">&lt;!--会输出ILoveYou--></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>C9：对于文本节点和属性节点，xsl:value-of select=“.” 当然提取的是文本节点的内容和属性节点的取值；对元素节点使用 &lt;xsl:value-of select=“.”/&gt;，那么将得到元素节点的 String-Value,如上例。</p>
 <p>Q10：如何输出空格？</p>
 <p>E10：<img src="text%E7%A9%BA%E7%99%BD%E5%AD%97%E7%AC%A6.png"></p>
@@ -455,7 +461,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：8.8k</span>
+                    <span class="post-count">字数统计：8.7k</span>
                     
             </li>
         </ul>
