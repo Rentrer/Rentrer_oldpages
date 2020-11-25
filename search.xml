@@ -175,6 +175,17 @@
       </tags>
   </entry>
   <entry>
+    <title>word2vec</title>
+    <url>/2020/11/08/word2vec/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>自然语言处理</category>
+      </categories>
+      <tags>
+        <tag>自然语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>XML开发技术——第五章</title>
     <url>/2020/11/25/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
     <content><![CDATA[<p>经过了上一次的学习，我们学到了用于查询的XPATH，它会在之后的很多地方予以应用。</p>
@@ -306,8 +317,8 @@
 <h3 id="5-3-3-xsl-if"><a href="#5-3-3-xsl-if" class="headerlink" title="5.3.3 xsl:if"></a>5.3.3 xsl:if</h3><p>Q12：怎么使用if？</p>
 <p>E12：</p>
 <table><tr>
-<td><img src="XML开发技术——第五章\if.jpg" border=0></td>
-<td><img src="XML开发技术——第五章\if2.jpg" border=0></td>
+<td><img src="if.jpg" border=0></td>
+<td><img src="if2.jpg" border=0></td>
 </tr>
 </table>
 
@@ -335,17 +346,6 @@
       </categories>
       <tags>
         <tag>XML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>word2vec</title>
-    <url>/2020/11/08/word2vec/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>自然语言处理</category>
-      </categories>
-      <tags>
-        <tag>自然语言</tag>
       </tags>
   </entry>
   <entry>
