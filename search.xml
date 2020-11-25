@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>word2vec</title>
-    <url>/2020/11/08/word2vec/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>自然语言处理</category>
-      </categories>
-      <tags>
-        <tag>自然语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>XML开发技术——第一章</title>
     <url>/2020/11/14/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/</url>
     <content><![CDATA[<p>可能你还不了解XML，只是听说课水分高就报了(<del>我也是</del>)，那就跟着我的笔记，来一起了解XML吧！</p>
@@ -337,6 +326,17 @@
       </categories>
       <tags>
         <tag>XML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>word2vec</title>
+    <url>/2020/11/08/word2vec/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>自然语言处理</category>
+      </categories>
+      <tags>
+        <tag>自然语言</tag>
       </tags>
   </entry>
   <entry>
