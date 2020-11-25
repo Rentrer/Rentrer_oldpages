@@ -213,7 +213,10 @@
 <p>Q8：内置模板存在什么问题？</p>
 <p>E8：</p>
 <p><img src="%E9%94%99%E8%AF%AFXML.png"></p>
-<p>  <img src="模板错误.png"  style="float:left;"  >     <img src="错误解答.png"  style="float:right;"  >   </p>
+  <img src="模板错误.png"  style="float:left;"  >  
+
+ <img src="错误解答.png"  style="float:right;"  >   
+
 <p>C8：在Company模板中，<code>&lt;xsl:apply-templates/&gt;</code>将调用其子节点(Name和Person)的处理模板。但这时<strong>不存在match=“Name”的模板</strong>（修改错误时则只需要加上空模板Name即可），于是调用默认模板（先1后2），<strong>输出了文本节点的内容</strong>，导致文本节点的内容输出了两次，而Person的子元素Name没有出现两次。</p>
 <h2 id="5-3-XSLT模板中各种转换功能的实现"><a href="#5-3-XSLT模板中各种转换功能的实现" class="headerlink" title="5.3 XSLT模板中各种转换功能的实现"></a>5.3 XSLT模板中各种转换功能的实现</h2><h3 id="5-3-1-value-of-text"><a href="#5-3-1-value-of-text" class="headerlink" title="5.3.1 value-of   text"></a>5.3.1 value-of   text</h3><p>Q9：如何使用value-of？</p>
 <p>E9：</p>
@@ -224,7 +227,11 @@
 <p>E10：<img src="text%E7%A9%BA%E7%99%BD%E5%AD%97%E7%AC%A6.png"></p>
 <p>C10：此时应该使用<code>&lt;xsl:text&gt;&lt;xsl:text/&gt;</code>。xsl:text元素开始标记和结束标记<strong>之间的内容会原封不动的输出到结果中</strong>，但是其中不能包含其他XML的标记。</p>
 <h3 id="5-3-2-xsl-for-each-xsl-sort"><a href="#5-3-2-xsl-for-each-xsl-sort" class="headerlink" title="5.3.2 xsl:for-each xsl:sort"></a>5.3.2 xsl:for-each xsl:sort</h3><p>Q11：怎么使用<strong>for-each与sort</strong>？</p>
-<p>E11：<img src="for-each.png"  style="float:left;"  >     <img src="结果.png"  style="float:right;"  >   </p>
+<p>E11：</p>
+<img src="for-each.png"  style="float:left;"  >    
+
+ <img src="结果.png"  style="float:right;"  >   
+
 <p>C11：例中选择出了所有person的子元素Name，并将它们进行排序，随后进行输出。</p>
 <p>关于sort的语法：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:sort</span> <span class="attr">select</span>=<span class="string">expression</span> </span></span><br><span class="line"><span class="tag">          <span class="attr">data-type</span>=<span class="string">&#123;</span>&quot;<span class="attr">text</span>&quot;|&quot;<span class="attr">number</span>&quot;|<span class="attr">QName</span>&#125; </span></span><br><span class="line"><span class="tag">          <span class="attr">order</span>=<span class="string">&#123;</span>&quot;<span class="attr">ascending</span>&quot;|&quot;<span class="attr">descending</span>&quot;&#125; </span></span><br><span class="line"><span class="tag">          <span class="attr">case-order</span>=<span class="string">&#123;</span>&quot;<span class="attr">upper-first</span>&quot;|&quot;<span class="attr">lower-first</span>&quot;&#125;/&gt;</span></span><br></pre></td></tr></table></figure>
