@@ -175,17 +175,6 @@
       </tags>
   </entry>
   <entry>
-    <title>word2vec</title>
-    <url>/2020/11/08/word2vec/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>自然语言处理</category>
-      </categories>
-      <tags>
-        <tag>自然语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>XML开发技术——第五章</title>
     <url>/2020/11/25/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
     <content><![CDATA[<p>经过了上一次的学习，我们学到了用于查询的XPATH，它会在之后的很多地方予以应用。</p>
@@ -264,7 +253,7 @@
 <p>模板的返回类型属性<strong>as是一个可选的参数</strong>，如果不指定该参数，则模块可以<strong>输出任意的文本内容</strong>。</p>
 <h3 id="5-2-1-XSLT中模板的调用"><a href="#5-2-1-XSLT中模板的调用" class="headerlink" title="5.2.1 XSLT中模板的调用"></a>5.2.1 XSLT中模板的调用</h3><h4 id="1-使用xsl-apply-templates-调用模板"><a href="#1-使用xsl-apply-templates-调用模板" class="headerlink" title="1.使用xsl:apply-templates 调用模板"></a>1.使用xsl:apply-templates 调用模板</h4><p>调用顺序：在<strong>广度优先</strong>、逐层向下的遍历过程中，指定继续遍历<strong>当前节点的所有子节点</strong></p>
 <p>完整语法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:apply-templates</span> <span class="attr">select</span>=<span class="string">Expression</span> <span class="attr">mode</span>=<span class="string">QName</span>&gt;</span></span><br><span class="line">        ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">xsl:apply-templates</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;xsl:apply-templates select=Expression mode=QName&gt;</span><br><span class="line">        ......</span><br><span class="line">&lt;/xsl:apply-templates&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>对于xsl:apply-templates元素，<strong>select和mode属性都是可选的</strong>，即可以直接使用<code>&lt;xsl:apply-templates/&gt;</code></p>
 <p><img src="%E6%A8%A1%E6%9D%BF1.png"></p>
@@ -296,7 +285,7 @@
 <p>C8：在Company模板中，<code>&lt;xsl:apply-templates/&gt;</code>将调用其子节点(Name和Person)的处理模板。但这时<strong>不存在match=“Name”的模板</strong>（修改错误时则只需要加上空模板Name即可），于是调用默认模板（先1后2），<strong>输出了文本节点的内容</strong>，导致文本节点的内容输出了两次，而Person的子元素Name没有出现两次。</p>
 <h2 id="5-3-XSLT模板中各种转换功能的实现"><a href="#5-3-XSLT模板中各种转换功能的实现" class="headerlink" title="5.3 XSLT模板中各种转换功能的实现"></a>5.3 XSLT模板中各种转换功能的实现</h2><h3 id="5-3-1-value-of-text"><a href="#5-3-1-value-of-text" class="headerlink" title="5.3.1 value-of   text"></a>5.3.1 value-of   text</h3><p>Q9：如何使用value-of？</p>
 <p>E9：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">subject</span>&gt;</span>I<span class="tag">&lt;/<span class="name">subject</span>&gt;</span><span class="tag">&lt;<span class="name">predicate</span>&gt;</span>Love<span class="tag">&lt;/<span class="name">predicate</span>&gt;</span><span class="tag">&lt;<span class="name">object</span>&gt;</span>You<span class="tag">&lt;/<span class="name">object</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">message</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">xsl:value-of</span> <span class="attr">select</span>=<span class="string">&quot;.&quot;</span>/&gt;</span>   <span class="comment">&lt;!--会输出ILoveYou--&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">subject</span>&gt;</span>I<span class="tag">&lt;/<span class="name">subject</span>&gt;</span><span class="tag">&lt;<span class="name">predicate</span>&gt;</span>Love<span class="tag">&lt;/<span class="name">predicate</span>&gt;</span><span class="tag">&lt;<span class="name">object</span>&gt;</span>You<span class="tag">&lt;/<span class="name">object</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">message</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">xsl:value-of</span> <span class="attr">select</span>=<span class="string">&quot;.&quot;</span>/&gt;</span>   <span class="comment">&lt;!--会输出ILoveYou--&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>C9：对于文本节点和属性节点，xsl:value-of select=“.” 当然提取的是文本节点的内容和属性节点的取值；对元素节点使用 &lt;xsl:value-of select=“.”/&gt;，那么将得到元素节点的 String-Value,如上例。</p>
 <p>Q10：如何输出空格？</p>
@@ -312,7 +301,7 @@
 
 <p>C11：例中选择出了所有person的子元素Name，并将它们进行排序，随后进行输出。</p>
 <p>关于sort的语法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:sort</span> <span class="attr">select</span>=<span class="string">expression</span> </span></span><br><span class="line"><span class="tag">          <span class="attr">data-type</span>=<span class="string">&#123;</span>&quot;<span class="attr">text</span>&quot;|&quot;<span class="attr">number</span>&quot;|<span class="attr">QName</span>&#125; </span></span><br><span class="line"><span class="tag">          <span class="attr">order</span>=<span class="string">&#123;</span>&quot;<span class="attr">ascending</span>&quot;|&quot;<span class="attr">descending</span>&quot;&#125; </span></span><br><span class="line"><span class="tag">          <span class="attr">case-order</span>=<span class="string">&#123;</span>&quot;<span class="attr">upper-first</span>&quot;|&quot;<span class="attr">lower-first</span>&quot;&#125;/&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;xsl:sort select=expression </span><br><span class="line">          data-type=&#123;&quot;text&quot;|&quot;number&quot;|QName&#125; </span><br><span class="line">          order=&#123;&quot;ascending&quot;|&quot;descending&quot;&#125; </span><br><span class="line">          case-order=&#123;&quot;upper-first&quot;|&quot;lower-first&quot;&#125;/&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="5-3-3-xsl-if"><a href="#5-3-3-xsl-if" class="headerlink" title="5.3.3 xsl:if"></a>5.3.3 xsl:if</h3><p>Q12：怎么使用if？</p>
 <p>E12：</p>
@@ -346,6 +335,17 @@
       </categories>
       <tags>
         <tag>XML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>word2vec</title>
+    <url>/2020/11/08/word2vec/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>自然语言处理</category>
+      </categories>
+      <tags>
+        <tag>自然语言</tag>
       </tags>
   </entry>
   <entry>
