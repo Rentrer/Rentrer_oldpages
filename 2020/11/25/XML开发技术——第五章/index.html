@@ -339,6 +339,15 @@
    
   <nav class="article-nav">
     
+      <a href="/2020/11/30/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            汇编语言
+          
+        </div>
+      </a>
+    
     
       <a href="/2020/11/14/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
@@ -347,7 +356,55 @@
     
   </nav>
 
-  
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "odrNVS0StfimPNNXYQdS7rCF-gzGzoHsz",
+    app_key: "UYmfLGvV5yrAR6LMF8kgvVU1",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
      
 </article>
 
@@ -373,8 +430,6 @@
             <li>
                 Copyrights &copy;
                 
-                    2015-
-                        
                             2020
                                 <i class="ri-heart-fill heart_icon"></i>
                                 Silas
@@ -440,7 +495,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：9.2k</span>
+                    <span class="post-count">字数统计：11.3k</span>
                     
             </li>
         </ul>
