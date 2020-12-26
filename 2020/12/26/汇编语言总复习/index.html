@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">318</span>
+            <span class="post-count">606</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">2 min</span>
         </span>
     </span>
 </div>
@@ -114,7 +114,7 @@
 <p>顺序有点乱，如果有时间会再调一下。</p>
 <a id="more"></a>
 
-<h2 id="一、子程序与主程序"><a href="#一、子程序与主程序" class="headerlink" title="一、子程序与主程序"></a>一、子程序与主程序</h2><p>•把功能相对独立的程序段单独编写和调试，作为一个相对独立的模块供程序使用，就形成子程序</p>
+<h2 id="一、子程序与主程序"><a href="#一、子程序与主程序" class="headerlink" title="一、子程序与主程序"></a>一、子程序与主程序</h2><h3 id="（一）什么是子程序"><a href="#（一）什么是子程序" class="headerlink" title="（一）什么是子程序"></a>（一）什么是子程序</h3><p>•把功能相对独立的程序段单独编写和调试，作为一个相对独立的模块供程序使用，就形成子程序</p>
 <p>•子程序可以实现源程序的模块化，可简化源程序结构，可以提高编程效率</p>
 <p><strong>参数传递是子程序设计的重点和难点</strong></p>
 <p>子程序的调用和返回是由指令<strong>CALL和RET</strong>(return)来完成的</p>
@@ -123,9 +123,24 @@
 <p><img src="%E5%AD%90%E7%A8%8B%E5%BA%8F%E7%A4%BA%E4%BE%8B.png"></p>
 <p>注意：</p>
 <ol>
-<li>对简化段定义格式，在tiny和small下，过程(PROC)的默认属性为near；对完整段定义格式下，过程的默认属性为near</li>
+<li>对简化段定义格式，在tiny和small下，过程(PROC)的默认属性为near；对完整段定义格式下，过程的默认属性为near。</li>
 <li>进行过程设计时，需要注意寄存器的保护和恢复，即<strong>开始时将要修改的寄存器内容压入栈，结束后再逆序弹出</strong>。</li>
 </ol>
+<h3 id="（二）如何进行参数传递"><a href="#（二）如何进行参数传递" class="headerlink" title="（二）如何进行参数传递"></a>（二）如何进行参数传递</h3><p>主程序在调用子程序时，通常需要提供一些数据，即<strong>入口参数（输入参数）</strong></p>
+<p>子程序执行结束后要返回主程序数据，即<strong>出口参数（输出参数）</strong></p>
+<p>参数的形式分为两种</p>
+<p>① 数据本身（传值）②数据的地址（传址）</p>
+<p>下面介绍如何传递参数</p>
+<h4 id="1-寄存器传递参数"><a href="#1-寄存器传递参数" class="headerlink" title="1.寄存器传递参数"></a>1.寄存器传递参数</h4><p>把参数存于约定的寄存器中，可以传值，也可以传址。</p>
+<p><img src="%E5%AF%84%E5%AD%98%E5%99%A8%E4%BC%A0%E5%8F%82.png"></p>
+<p>上图的子程序将和存在了al中，返回后再将其mov到result中，实现了参数传递。</p>
+<p>注:子程序对带有入口参数的寄存器可以保护，也可以不保护；上图未保护</p>
+<p>​     子程序对带有出口参数的寄存器不能保护和恢复</p>
+<h4 id="2-变量传递参数"><a href="#2-变量传递参数" class="headerlink" title="2.变量传递参数"></a>2.变量传递参数</h4><p>主程序和子程序直接采用同一个变量名共享同一个变量。</p>
+<p>类比于C++中的加引用，<strong>直接改变了变量的值</strong>。</p>
+<p><img src="%E5%8F%98%E9%87%8F%E4%BC%A0%E5%8F%821.png"></p>
+<p><img src="%E5%8F%98%E9%87%8F%E4%BC%A0%E5%8F%822.png"></p>
+<h4 id="3-堆栈传递参数"><a href="#3-堆栈传递参数" class="headerlink" title="3.堆栈传递参数"></a>3.堆栈传递参数</h4><p>把参数存于约定的寄存器中，可以传值，也可以传址。</p>
  
       <!-- reward -->
       
@@ -350,7 +365,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：9.6k</span>
+                    <span class="post-count">字数统计：9.8k</span>
                     
             </li>
         </ul>
