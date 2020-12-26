@@ -336,6 +336,12 @@
 <p>​        MOV AX,ES</p>
 <p>​        MOV DS,AX</p>
 <p>上述两个语句可以实现从<strong>一个段到另一个段的传送（通过寄存器中转）</strong></p>
+<h2 id="十、堆栈"><a href="#十、堆栈" class="headerlink" title="十、堆栈"></a>十、堆栈</h2><p><img src="%E5%A0%86%E6%A0%88.png"></p>
+<p>注意：</p>
+<ol>
+<li><strong>堆栈操作的单位是字</strong>，进栈和出栈只对字量</li>
+<li>字量数据从栈顶压入和弹出时，都是<strong>低地址字节送低字节，高地址字节送高字节</strong></li>
+</ol>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
@@ -563,7 +569,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：12.8k</span>
+                    <span class="post-count">字数统计：12.9k</span>
                     
             </li>
         </ul>
