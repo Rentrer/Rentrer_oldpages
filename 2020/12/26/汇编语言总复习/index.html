@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.7k</span>
+            <span class="post-count">1.8k</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">5 min</span>
+            <span class="post-count">6 min</span>
         </span>
     </span>
 </div>
@@ -198,7 +198,20 @@
 <p>mod＝01时，为<strong>带有8位位移量的存储器寻址方式</strong></p>
 <p>mod＝01和r/m＝000表示源操作数为[BX+SI+D8]</p>
 <p>最后一个字节就是8位位移量[D8]=06</p>
-<h2 id="六、常用的ASCII码"><a href="#六、常用的ASCII码" class="headerlink" title="六、常用的ASCII码"></a>六、常用的ASCII码</h2><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
+<h2 id="六、常用的ASCII码"><a href="#六、常用的ASCII码" class="headerlink" title="六、常用的ASCII码"></a>六、常用的ASCII码</h2><p><strong>回车：0DH    换行：0AH</strong>   响铃：07H</p>
+<p><strong>空格：20H</strong></p>
+<p><strong>数字0<del>9：30H</del>39H</strong></p>
+<p>大写字母A<del>Z：41H</del>5AH</p>
+<p>小写字母a<del>z：61H</del>7AH</p>
+<h2 id="七、BCD码"><a href="#七、BCD码" class="headerlink" title="七、BCD码"></a>七、BCD码</h2><p>Binary Coded Decimal（二进制编码的十进制数），即<strong>一个十进制数位（0-9）在计算机中用4位二进制编码表示</strong>。常用的BCD码是8421BCD码，即用4位二进制编码的低19个编码表示0-9这十个数字，如图。</p>
+<p><img src="BCD%E7%A0%81.png"></p>
+<p>例：0100 1001 0111 1000.0001 0100 1001  十进制真值：4978.149（上图对应）</p>
+<p>00111010B=3AH   F2H=11110010B</p>
+<p>10H=00010000B=16D                        ABH=10101011B=171D</p>
+<p>压缩BCD码：一个字节表达两位BCD码      10000111B（87H)</p>
+<p>非压缩BCD码：<strong>一个字节表达一位BCD码</strong>（<strong>低4位表达数值，高4位常设置为0</strong>）   </p>
+<p>00001000 00000111B（0807H）</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
  
@@ -425,7 +438,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：10.9k</span>
+                    <span class="post-count">字数统计：11.1k</span>
                     
             </li>
         </ul>
