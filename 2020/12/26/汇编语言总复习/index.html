@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">855</span>
+            <span class="post-count">1.2k</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">2 min</span>
+            <span class="post-count">4 min</span>
         </span>
     </span>
 </div>
@@ -150,8 +150,22 @@
 <p>程序在保护bp后，将bp置为栈顶，并通过偏移位置来分别寻址获得压入的偏移地址和元素参数。最后按反序弹出栈内值和址。</p>
 <p>上述程序堆栈的使用情况如下图</p>
 <p><img src="%E5%A0%86%E6%A0%88%E6%83%85%E5%86%B5.png"></p>
+<p>由于<strong>主程序压入了2个参数，使用了堆栈区的4字节</strong>，故采用上述办法平衡堆栈。</p>
 <p>注：由于寄存器的保护也存于堆栈中，所以在子程序退出时<strong>要特别注意pop的顺序</strong>。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
+<h2 id="二、缓冲区"><a href="#二、缓冲区" class="headerlink" title="二、缓冲区"></a>二、缓冲区</h2><h3 id="（一）如何定义缓冲区"><a href="#（一）如何定义缓冲区" class="headerlink" title="（一）如何定义缓冲区"></a>（一）如何定义缓冲区</h3><p>例</p>
+<p><img src="%E7%BC%93%E5%86%B2%E5%8C%BA%E5%AE%9A%E4%B9%89.png"></p>
+<p>该例表示在内存中申请一个<strong>缓冲区为83个字节，首地址给BUF</strong>。</p>
+<p>缓冲区分为<strong>三个部分</strong></p>
+<p>第一个字节内放的是<strong>事先填入最多欲接收的字符个数</strong>（包括回车字符，可以是1～255），在例中为81，表示申请的存放数据的缓冲区的字节数为81个。</p>
+<p>第二个字节 ‘ ？‘表示的是实际存放的字节个数（不包括回车）</p>
+<p>就是说，你放入2个字节的数据，“？”变成2，放10个字节的数据，变成10）；</p>
+<p>DB表示的是分配一个或多个字节；</p>
+<p><strong>输入的数据（字符串）从第三个字节开始存放</strong>，存放至第82个字节，<strong>第81个字节存放回车符（0DH）,0DH作为输入数据的结束</strong>。</p>
+<p><strong>DUP(0)**表示的是</strong>存放数据的81个字节初始值全为0**，即为：81 0 0 0 0······（第82个字节）0 ODH。</p>
+<p>注：实际输入的字符数多于定义数时，多出的字符丢掉，且响铃</p>
+<h3 id="（二）如何使用缓冲区"><a href="#（二）如何使用缓冲区" class="headerlink" title="（二）如何使用缓冲区"></a>（二）如何使用缓冲区</h3><p>下例实现了字符串的输入</p>
+<p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5.png"></p>
+<h2 id="三、串操作指令"><a href="#三、串操作指令" class="headerlink" title="三、串操作指令"></a>三、串操作指令</h2><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
  
@@ -378,7 +392,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：10.1k</span>
+                    <span class="post-count">字数统计：10.4k</span>
                     
             </li>
         </ul>
