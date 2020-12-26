@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">3.6k</span>
+            <span class="post-count">4.9k</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">13 min</span>
+            <span class="post-count">18 min</span>
         </span>
     </span>
 </div>
@@ -341,7 +341,74 @@
 <ol>
 <li><strong>堆栈操作的单位是字</strong>，进栈和出栈只对字量</li>
 <li>字量数据从栈顶压入和弹出时，都是<strong>低地址字节送低字节，高地址字节送高字节</strong></li>
+<li>在pop指令中，<strong>POP CS 为非法指令</strong></li>
+<li>堆栈操作不影响标志</li>
 </ol>
+<h2 id="十一、标志寄存器"><a href="#十一、标志寄存器" class="headerlink" title="十一、标志寄存器"></a>十一、标志寄存器</h2><p>标志（Flag）用于反映指令执行结果或控制指令执行形式。</p>
+<p>8086中，各种常用的标志形成<strong>16位标志寄存器FLAGS</strong>（程序状态字PSW寄存器）分成两类：</p>
+<p><img src="%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8.png"></p>
+<p>(1) 状态标志</p>
+<p>状态标志是最基本的标志，用来记录指令执行结果的辅助信息。加、减运算和逻辑运算指令是主要设置他们的指令，有些其他指令的执行也会相应地设置它们。</p>
+<h3 id="①进位标志CF（Carry-Flag）"><a href="#①进位标志CF（Carry-Flag）" class="headerlink" title="①进位标志CF（Carry Flag）"></a><strong>①进位标志CF（Carry Flag）</strong></h3><p>当运算结果的最高有效位<strong>有进位（加法）或借位</strong>（减法）时，进位标志置1，即<strong>CF = 1</strong>；否则CF = 0。</p>
+<p>例：AAH + 7CH＝（1）26H，有进位：CF = 1</p>
+<h3 id="②溢出标志OF（Overflow-Flag）"><a href="#②溢出标志OF（Overflow-Flag）" class="headerlink" title="②溢出标志OF（Overflow Flag）"></a><strong>②溢出标志OF（Overflow Flag）</strong></h3><p>若算术运算的结果<strong>有溢出</strong>，则<strong>OF＝1</strong>；否则 OF＝0</p>
+<p>例：3AH+ 7CH＝B6H，就是58＋124＝182，超出了+127~-128范围。</p>
+<p>产生溢出：OF = 1</p>
+<h4 id="重点：什么是溢出？"><a href="#重点：什么是溢出？" class="headerlink" title="重点：什么是溢出？"></a>重点：什么是溢出？</h4><p>处理器内部<strong>以补码表示有符号数</strong></p>
+<p>8位表达的整数范围是：<strong>＋127～－128</strong></p>
+<p>16位表达的范围是：<strong>＋32767～－32768</strong></p>
+<p>如果运算结果超出这个范围，就产生了溢出。有溢出，说明有符号数的运算结果不正确</p>
+<h4 id="溢出和进位有什么区别？"><a href="#溢出和进位有什么区别？" class="headerlink" title="溢出和进位有什么区别？"></a>溢出和进位有什么区别？</h4><p>进位标志表示<strong>无符号数</strong>运算结果是否超出范围，<strong>超出范围后加上进位或借位运算结果仍然正确</strong></p>
+<p>溢出标志表示<strong>有符号数</strong>运算结果是否超出范围，<strong>超出范围后运算结果不正确</strong>。</p>
+<h4 id="如何判断溢出？"><a href="#如何判断溢出？" class="headerlink" title="如何判断溢出？"></a>如何判断溢出？</h4><p>只有当<strong>两个相同符号数相加</strong>（包括不同符号数相减），而<strong>运算结果的符号与原数据符号相反</strong>时，产生溢出；因为，此时的运算结果显然不正确</p>
+<p><strong>其他情况下，则不会产生溢出</strong></p>
+<p>奇偶标志PF（Parity Flag）</p>
+<p><strong>1的个数为偶数时，PF=1，奇数为0</strong></p>
+<p>仅反映最低8位中“1”的个数是偶或奇，即使是进行16位字操作</p>
+<p>例：3AH + 7CH＝B6H＝10110110B  结果中有5个1，是奇数：PF = 0</p>
+<p>零标志ZF（Zero Flag）</p>
+<p><strong>运算结果为0，则ZF=1</strong></p>
+<p>符号标志SF（Sign Flag）</p>
+<p><strong>运算结果最高位为1，则SF = 1；否则SF = 0</strong></p>
+<p>例：3AH + 7CH＝B6H，最高位D7＝1：SF = 1</p>
+<p>​        84H + 7CH＝（1）00H，最高位D7＝0：SF = 0</p>
+<p>(2) 控制标志</p>
+<p>控制标志可由程序根据需要用指令设置，用于控制处理器执行指令的方式</p>
+<p><strong>方向标志DF（Direction Flag）仅用于串操作指令中</strong>。</p>
+<p>中断允许标志IF（Interruptenable Flag）简称中断标志。</p>
+<p>陷阱标志TF（Trap Flag），常称为单步标志。</p>
+<p>3.指令指针寄存器（Instruction Pointer）</p>
+<p>IP是<strong>专用寄存器</strong>，具有自动增量的能力。处理器执行完一条指令，IP中的值就加上该指令的字节数，从而指向下一条指令。即：<strong>指示代码段中指令的偏移地址</strong>。</p>
+<p>•<strong>它与代码段寄存器CS联用，确定下一条指令的物理地址</strong></p>
+<p>•计算机通过CS : IP寄存器来控制指令序列的执行流程</p>
+<h2 id="十二、物理地址和逻辑地址"><a href="#十二、物理地址和逻辑地址" class="headerlink" title="十二、物理地址和逻辑地址"></a>十二、物理地址和逻辑地址</h2><p>每个物理存储单元有一个唯一的<strong>20位编号，即物理地址</strong>：</p>
+<p> 00000H～FFFFFH</p>
+<p>•分段后用户编程时，采用<strong>逻辑地址：</strong></p>
+<p>   <strong>段基地址 : 段内偏移地址</strong></p>
+<p>段地址说明逻辑段在主存中的起始位置，8086规定段地址必须是模16地址：xxxx0H</p>
+<p>将逻辑地址中的段地址左移四位，加上偏移地址就得到物理地址。</p>
+<p><img src="%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2.png"></p>
+<h2 id="十三、8086的寻址方式"><a href="#十三、8086的寻址方式" class="headerlink" title="十三、8086的寻址方式"></a>十三、8086的寻址方式</h2><h3 id="（一）立即数寻址"><a href="#（一）立即数寻址" class="headerlink" title="（一）立即数寻址"></a>（一）立即数寻址</h3><p>立即数寻址方式常用来给寄存器赋值</p>
+<p>例：MOV AX,0102H ;AX,&lt;-0102H</p>
+<p><img src="%E7%AB%8B%E5%8D%B3%E6%95%B0.png"></p>
+<h3 id="二-寄存器寻址"><a href="#二-寄存器寻址" class="headerlink" title="(二)寄存器寻址"></a>(二)寄存器寻址</h3><p> MOV AX,1234H ；AX←1234H</p>
+<p> MOV BX,AX ；BX←AX</p>
+<h3 id="（三）存储器寻址"><a href="#（三）存储器寻址" class="headerlink" title="（三）存储器寻址"></a>（三）存储器寻址</h3><h4 id="1-直接寻址方式"><a href="#1-直接寻址方式" class="headerlink" title="1.直接寻址方式"></a>1.直接寻址方式</h4><p>默认的段地址在DS段寄存器，可使用段超越前缀改变</p>
+<p>MOV AX,ES:[2000H]（用ES改变）</p>
+<h4 id="2-寄存器间接寻址"><a href="#2-寄存器间接寻址" class="headerlink" title="2.寄存器间接寻址"></a>2.寄存器间接寻址</h4><p>有效地址存放在基址寄存器BX或变址寄存器SI、DI中</p>
+<p>默认的段地址在DS段寄存器，可使用段超越前缀改变</p>
+<p>MOV AX,[SI]  ；AX←DS:[SI]</p>
+<h4 id="3-寄存器相对寻址"><a href="#3-寄存器相对寻址" class="headerlink" title="3.寄存器相对寻址"></a>3.寄存器相对寻址</h4><p>段地址对应BX/SI/DI寄存器默认在DS，对应BP寄存器默认在SS；可用段超越前缀</p>
+<p>MOV AX,[DI+06H]    ；AX←DS:[DI+06H]</p>
+<p>MOV AX,[BP+06H]   ；AX←SS:[BP+06H]</p>
+<h4 id="4-基址变址寻址方式"><a href="#4-基址变址寻址方式" class="headerlink" title="4.基址变址寻址方式"></a>4.基址变址寻址方式</h4><p>有效地址＝BX/BP＋SI/DI</p>
+<p>段地址对应<strong>BX基址寄存器默认是DS</strong>，对应<strong>BP基址寄存器默认是SS</strong>；可用段超越前缀</p>
+<p> MOV AX,[BX+SI]       ；AX←DS:[BX+SI]</p>
+<p> MOV AX,[BP+DI]       ；AX←SS:[BP+DI]</p>
+<p> MOV AX,DS:[BP+DI]    ；AX←DS:[BP+DI]</p>
+<h4 id="5-相对基址变址寻址"><a href="#5-相对基址变址寻址" class="headerlink" title="5.相对基址变址寻址"></a>5.相对基址变址寻址</h4><p>有效地址＝BX/BP＋SI/DI＋8/16位位移量</p>
+<p>MOV AX,[BX+SI+06H] ；AX←DS:[BX+SI+06H]</p>
+<h3 id="（四）多种表示"><a href="#（四）多种表示" class="headerlink" title="（四）多种表示"></a>（四）多种表示</h3><p><img src="%E5%A4%9A%E7%A7%8D%E8%A1%A8%E7%A4%BA.png"></p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
@@ -569,7 +636,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：12.9k</span>
+                    <span class="post-count">字数统计：14.1k</span>
                     
             </li>
         </ul>
