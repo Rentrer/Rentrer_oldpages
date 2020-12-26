@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">50</span>
+            <span class="post-count">318</span>
         </span>
     </span>
 
@@ -102,16 +102,30 @@
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>本文将结合老师说的考试范围，对所涉及的知识点作个人总结，面向考试复习<del>（高星，yyds）</del></p>
+  <p>本文将结合老师说的考试范围与PPT，对所涉及的知识点作个人总结，面向考试复习<del>（高星，yyds）</del></p>
 <p>顺序有点乱，如果有时间会再调一下。</p>
 <a id="more"></a>
 
+<h2 id="一、子程序与主程序"><a href="#一、子程序与主程序" class="headerlink" title="一、子程序与主程序"></a>一、子程序与主程序</h2><p>•把功能相对独立的程序段单独编写和调试，作为一个相对独立的模块供程序使用，就形成子程序</p>
+<p>•子程序可以实现源程序的模块化，可简化源程序结构，可以提高编程效率</p>
+<p><strong>参数传递是子程序设计的重点和难点</strong></p>
+<p>子程序的调用和返回是由指令<strong>CALL和RET</strong>(return)来完成的</p>
+<p>返回时，RET直接从当前栈顶取内容作为返回地址。因此要保证RET指令执行前堆栈栈顶的内容刚好是返回的地址。</p>
+<p>例：子程序的常见格式（实现回车换行的子程序）：</p>
+<p><img src="%E5%AD%90%E7%A8%8B%E5%BA%8F%E7%A4%BA%E4%BE%8B.png"></p>
+<p>注意：</p>
+<ol>
+<li>对简化段定义格式，在tiny和small下，过程(PROC)的默认属性为near；对完整段定义格式下，过程的默认属性为near</li>
+<li>进行过程设计时，需要注意寄存器的保护和恢复，即<strong>开始时将要修改的寄存器内容压入栈，结束后再逆序弹出</strong>。</li>
+</ol>
  
       <!-- reward -->
       
@@ -336,7 +350,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：9.3k</span>
+                    <span class="post-count">字数统计：9.6k</span>
                     
             </li>
         </ul>
