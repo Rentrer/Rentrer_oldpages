@@ -338,6 +338,15 @@
       </tags>
   </entry>
   <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
     <title>word2vec</title>
     <url>/2020/11/08/word2vec/</url>
     <content><![CDATA[]]></content>
@@ -347,15 +356,6 @@
       <tags>
         <tag>自然语言</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
   </entry>
   <entry>
     <title>数据结构期中复习</title>
@@ -542,7 +542,24 @@
 <h3 id="（四）字符串输入（0AH号）"><a href="#（四）字符串输入（0AH号）" class="headerlink" title="（四）字符串输入（0AH号）"></a>（四）字符串输入（0AH号）</h3><p>入口参数：<strong>DS:DX</strong>=缓冲区首地址</p>
 <p><strong>关键要定义好缓冲区</strong></p>
 <p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5.png"></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
+<h2 id="五、8086的机器代码格式"><a href="#五、8086的机器代码格式" class="headerlink" title="五、8086的机器代码格式"></a>五、8086的机器代码格式</h2><p><img src="%E6%9C%BA%E5%99%A8%E4%BB%A3%E7%A0%81.png"></p>
+<p>机器码我都不怎么懂，直接搬PPT了= =</p>
+<p>例1： </p>
+<p>MOV AX,BX ;机器代码是 89 D8(16进制)</p>
+<p>第1个字节89是操作码(含<strong>w＝1表示16位操作</strong>)</p>
+<p>第2个字节D8（11 011 000）是 “<strong>mod reg r/m</strong>”</p>
+<p>reg＝011表示目的操作数为BX</p>
+<p>mod＝11时，为<strong>寄存器寻址方式</strong>。</p>
+<p>mod＝11和r/m＝000表示源操作数为AX</p>
+<p>例2：</p>
+<p>MOV AL,[BX+SI+6] ;机器代码是 8A 40（16进制） 06</p>
+<p>前一个字节8A是操作码(含<strong>w＝0表示8位操作</strong>)</p>
+<p>中间一个字节40（01 000 000）(将16进制转为2进制，然后按2 3 3拆开)是 “<strong>mod reg r/m</strong>”字节</p>
+<p>reg＝000表示目的操作数为AL</p>
+<p>mod＝01时，为<strong>带有8位位移量的存储器寻址方式</strong></p>
+<p>mod＝01和r/m＝000表示源操作数为[BX+SI+D8]</p>
+<p>最后一个字节就是8位位移量[D8]=06</p>
+<h2 id="六、常用的ASCII码"><a href="#六、常用的ASCII码" class="headerlink" title="六、常用的ASCII码"></a>六、常用的ASCII码</h2><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
 ]]></content>
