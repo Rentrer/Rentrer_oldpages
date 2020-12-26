@@ -629,7 +629,9 @@
 <h2 id="八、变量的定义"><a href="#八、变量的定义" class="headerlink" title="八、变量的定义"></a>八、变量的定义</h2><h3 id="（一）符号常数"><a href="#（一）符号常数" class="headerlink" title="（一）符号常数"></a>（一）符号常数</h3><p>利用一个标识符表达的一个数值</p>
 <p>例：</p>
 <p><img src="%E7%AC%A6%E5%8F%B7%E5%B8%B8%E6%95%B0.png"></p>
-<p>注：EQU用于数值等价时不能重复定义符号名,<strong>但”=“允许有重复赋值</strong></p>
+<p>注：在5.x版本中，<strong>字符串是用引号括起来的</strong></p>
+<p>例：<code>calldos  equ &quot;int 21h&quot;</code></p>
+<p>EQU用于数值等价时不能重复定义符号名,<strong>但”=“允许有重复赋值</strong></p>
 <p>X=7  X EQU 7 都是正确的</p>
 <p>X=X+5   但 X EQU X+5是错误的</p>
 <h3 id="（二）变量定义伪指令"><a href="#（二）变量定义伪指令" class="headerlink" title="（二）变量定义伪指令"></a>（二）变量定义伪指令</h3><p>变量定义（Define）伪指令为变量申请固定长度的存储空间，并可同时将相应的存储单元初始化</p>
@@ -658,6 +660,43 @@
 <p>3.字变量和字常量的应用（重要）</p>
 <p><img src="%E5%AD%97%E5%8F%98%E9%87%8F%E4%B8%8E%E5%AD%97%E5%B8%B8%E9%87%8F.png"></p>
 <p>即：字变量在程序中当作mem，即取其偏移地址元素的数值。</p>
+<h2 id="九、MOV指令总结"><a href="#九、MOV指令总结" class="headerlink" title="九、MOV指令总结"></a>九、MOV指令总结</h2><h3 id="（一）立即数传送（MOV-reg-mem-imm）"><a href="#（一）立即数传送（MOV-reg-mem-imm）" class="headerlink" title="（一）立即数传送（MOV reg/mem,imm）"></a>（一）立即数传送（MOV reg/mem,imm）</h3><p>例：MOV CX,0FFH (字传送)</p>
+<p><strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
+<p><strong>MOV WORD PTR [SI+2],0BH(字操作)</strong></p>
+<p>即：立即数可以传到<strong>寄存器和存储器</strong>中</p>
+<h3 id="（二）寄存器传送（MOV-reg-mem-seg-reg）"><a href="#（二）寄存器传送（MOV-reg-mem-seg-reg）" class="headerlink" title="（二）寄存器传送（MOV reg/mem/seg,reg）"></a>（二）寄存器传送（MOV reg/mem/seg,reg）</h3><p>例：MOV AX,BX</p>
+<p>​       MOV AH,AL</p>
+<p>​       MOV DS,AX</p>
+<p>​       MOV [BX],AL</p>
+<p>即：寄存器可以传到<strong>寄存器、存储器和段寄存器</strong>中。</p>
+<h3 id="（三）存储器传送（MOV-reg-seg-mem）"><a href="#（三）存储器传送（MOV-reg-seg-mem）" class="headerlink" title="（三）存储器传送（MOV reg/seg,mem）"></a>（三）存储器传送（MOV reg/seg,mem）</h3><p>例：MOV AL,[BX]</p>
+<p>​        MOV DX,[BP]</p>
+<p>​        MOV ES,[SI]</p>
+<p>注：<strong>不存在存储器向存储器的传送</strong>（除串操作）</p>
+<h3 id="（四）段寄存器传送（MOV-reg-mem-seg）"><a href="#（四）段寄存器传送（MOV-reg-mem-seg）" class="headerlink" title="（四）段寄存器传送（MOV reg/mem,seg）"></a>（四）段寄存器传送（MOV reg/mem,seg）</h3><p>例：MOV [SI],DS</p>
+<p>​        MOV AX,ES</p>
+<p>​        MOV DS,AX</p>
+<p>上述两个语句可以实现从<strong>一个段到另一个段的传送（通过寄存器中转）</strong></p>
+<p>总结：</p>
+<p><img src="MOV%E6%80%BB%E7%BB%93.png"></p>
+<h3 id="五-非法传送实例"><a href="#五-非法传送实例" class="headerlink" title="(五)非法传送实例"></a>(五)非法传送实例</h3><h4 id="1-两个操作数的类型不一致"><a href="#1-两个操作数的类型不一致" class="headerlink" title="1.两个操作数的类型不一致"></a>1.两个操作数的类型不一致</h4><p>绝大多数双操作数指令，除非特别说明，目的操作数与源操作数必须类型一致，否则为非法指令</p>
+<p><strong>MOV AL,050AH ；非法指令：050Ah为字，而AL为字节</strong></p>
+<p>对于存储器单元与立即数同时作为操作数的情况，必须<strong>显式指明</strong>；byte ptr指示字节类型，word ptr指示字类型</p>
+<p><strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
+<p><strong>MOV WORD PTR [SI+2],0BH(字操作)</strong></p>
+<h4 id="2-两个操作数不能都是存储器"><a href="#2-两个操作数不能都是存储器" class="headerlink" title="2.两个操作数不能都是存储器"></a>2.两个操作数不能都是存储器</h4><p>存储器之间的传送，可以通过<strong>寄存器中转</strong>实现</p>
+<p>MOV AX,BUFFER1</p>
+<p>MOV BUFFER2,AX</p>
+<h4 id="3-段寄存器的操作有一些限制"><a href="#3-段寄存器的操作有一些限制" class="headerlink" title="3.段寄存器的操作有一些限制"></a>3.段寄存器的操作有一些限制</h4><p>段寄存器属<strong>专用寄存器</strong>，对他们的操作能力有限</p>
+<p><strong>不允许立即数传送给段寄存器</strong></p>
+<p>MOV DS,100H；非法指令：立即数不能传送段寄存器</p>
+<p><strong>不允许直接改变CS值</strong></p>
+<p><strong>MOV CS,[SI] ；不允许使用的指令</strong></p>
+<p>不允许<strong>段寄存器之间的直接数据传送</strong></p>
+<p>MOV DS,ES；非法指令：不允许段寄存器间传送</p>
+<p>​        MOV AX,ES</p>
+<p>​        MOV DS,AX</p>
+<p>上述两个语句可以实现从<strong>一个段到另一个段的传送（通过寄存器中转）</strong></p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
