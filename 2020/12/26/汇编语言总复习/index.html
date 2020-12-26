@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">4.9k</span>
+            <span class="post-count">6.5k</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">18 min</span>
+            <span class="post-count">24 min</span>
         </span>
     </span>
 </div>
@@ -118,6 +118,11 @@
 <p>子程序可以实现源程序的模块化，可简化源程序结构，可以提高编程效率</p>
 <p><strong>参数传递是子程序设计的重点和难点</strong></p>
 <p>子程序的调用和返回是由指令<strong>CALL和RET</strong>(return)来完成的</p>
+<p>•CALL指令分成4种类型（类似JMP）</p>
+<p>CALL label ；段内调用、相对寻址</p>
+<p>CALL r16/m16 ；段内调用、间接寻址</p>
+<p><strong>CALL far ptr label ；段间调用、直接寻址</strong></p>
+<p><strong>CALL far ptr mem ；段间调用、间接寻址</strong></p>
 <p>返回时，RET直接从当前栈顶取内容作为返回地址。因此要保证RET指令执行前堆栈栈顶的内容刚好是返回的地址。</p>
 <p>例：子程序的常见格式（实现回车换行的子程序）：</p>
 <p><img src="%E5%AD%90%E7%A8%8B%E5%BA%8F%E7%A4%BA%E4%BE%8B.png"></p>
@@ -409,6 +414,122 @@
 <h4 id="5-相对基址变址寻址"><a href="#5-相对基址变址寻址" class="headerlink" title="5.相对基址变址寻址"></a>5.相对基址变址寻址</h4><p>有效地址＝BX/BP＋SI/DI＋8/16位位移量</p>
 <p>MOV AX,[BX+SI+06H] ；AX←DS:[BX+SI+06H]</p>
 <h3 id="（四）多种表示"><a href="#（四）多种表示" class="headerlink" title="（四）多种表示"></a>（四）多种表示</h3><p><img src="%E5%A4%9A%E7%A7%8D%E8%A1%A8%E7%A4%BA.png"></p>
+<h2 id="十四、各种指令"><a href="#十四、各种指令" class="headerlink" title="十四、各种指令"></a>十四、各种指令</h2><p>XCHG</p>
+<p>**XCHG reg,reg/mem **</p>
+<p><strong>不能在存储器与存储器之间对换数据</strong></p>
+<p>XLAT 换码指令</p>
+<p><img src="XLAT.png"></p>
+<p>LEA 有效地址传送指令</p>
+<p>将<strong>存储器操作数</strong>的有效地址传送至指定的<strong>16位寄存器</strong>中</p>
+<p>例：</p>
+<p>MOV BX,0400H</p>
+<p>MOV SI,3CH</p>
+<p>LEA BX,[BX+SI+0F62H]</p>
+<p>；BX＝0400H＋003CH＋0F62H＝139EH</p>
+<p>ADD 加法/SUB 减法</p>
+<p>将源与目的操作数相加/减，<strong>结果送到目的操作数</strong></p>
+<p>ADD AL,BL </p>
+<p>（ADD mem,imm/reg）</p>
+<p><strong>ADD WORD PTR [BX+2],0F0F0H</strong></p>
+<p>INC（increment）DEC（decrement）</p>
+<p>注意：INC/DEC指令<strong>不影响进位CF标志</strong>，按定义设置其他状态标志</p>
+<p><strong>主要用于对计数器和地址指针的调整</strong></p>
+<p>求补指令NEG（negative）</p>
+<p>NEG指令对操作数执行求补运算：用零减去操作数，然后结果返回操作数</p>
+<p>求补运算也可以表达成：<strong>将操作数按位取反后加1</strong></p>
+<p>NEG指令对标志的影响与用零作减法的SUB指令一样</p>
+<p><strong>NEG reg/mem</strong></p>
+<p>比较指令CMP（compare）</p>
+<p>CMP指令将目的操作数减去源操作数，按照定义相应设置状态标志</p>
+<p><strong>但结果不回送目的操作数</strong></p>
+<p><img src="cmp.png"></p>
+<p>乘法 MUL/IMUL</p>
+<p>源操作数显式给出，隐含使用另一个操作数AX和DX</p>
+<p>•字节量相乘：<strong>AL与r8/m8相乘</strong>，得到<strong>16位的结果，存入AX</strong></p>
+<p>•字量相乘：AX与r16/m16相乘，得到<strong>32位的结果，其高字存入DX，低字存入AX</strong></p>
+<p>•乘法指令如下影响OF和CF标志：</p>
+<p>•MUL指令——若乘积的高一半（AH或DX）为0，则OF=CF=0；否则OF=CF=1</p>
+<p>•IMUL指令——若乘积的高一半是低一半的符号扩展，则OF=CF=0；否则均为1</p>
+<p>乘法指令对其他状态标志没有定义</p>
+<p>除法 DIV IDIV</p>
+<p>•除法指令的除数显式给出，隐含使用<strong>另一个操作数AX和DX作为被除数</strong></p>
+<p>•字节量除法：<strong>AX除以r8/m8，8位商存入AL，8位余数存入AH</strong></p>
+<p>•字量除法：DX.AX除以r16/m16，16位商存入AX，16位余数存入DX</p>
+<p>•除法指令对标志没有定义</p>
+<p>除法指令会<strong>产生结果溢出</strong></p>
+<p>•当被除数远大于除数时，所得的商就有可能超出它所能表达的范围。如果存放商的寄存器AL/AX不能表达，便产生溢出，8086CPU中就产生编号为0的内部中断——除法错中断</p>
+<p>CBW/CWD</p>
+<p>•<strong>对有符号数除法，可以利用符号扩展指令得到倍长于除数的被除数</strong></p>
+<p>•<strong>对无符号数除法，采用直接使高8位或高16位清0，获得倍长的被除数。这就是零位扩展</strong></p>
+<p>TEST与CMP</p>
+<p>TEST<strong>不影响目的操作数</strong>，只根据运算结果设置标志。</p>
+<p>test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;<br>cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
+<p>NOT 逻辑非（按位取反）</p>
+<p><strong>NOT  reg/mem</strong>    <strong>不影响任何标志。</strong></p>
+<p>SHL/SAL/SHR/SAR</p>
+<p><strong>SHL reg/mem,1/CL逻辑左移，最高位进入CF，最低位补0</strong></p>
+<p><strong>操作数左移一位，相当于乘2（对有符号数同理，只要OF=0，结果就对）。</strong></p>
+<p><strong>③操作数逻辑右移（SHR）一位，相当于无符号数除以2；操作数算术右移（SAR）一位，相当于有符号数除以2。</strong></p>
+<p>循环移位</p>
+<p>RCL/RCR 带着CF位循环左右移 ROL/ROR 不带CF左右移</p>
+<p><strong>RCL是将某数最高位移进入CF，而CF里的内容跑到该数的最低位，形成咬尾蛇循环，移位次数为CL或CX指定的次数</strong></p>
+<p>例：将32位左移一位</p>
+<p><img src="32%E4%BD%8D%E5%B7%A6%E7%A7%BB.png"></p>
+<h2 id="十五、控制转移类指令"><a href="#十五、控制转移类指令" class="headerlink" title="十五、控制转移类指令"></a>十五、控制转移类指令</h2><p><img src="%E6%AE%B5%E5%86%85%E6%AE%B5%E9%97%B4.png"></p>
+<p>段内转移、间接寻址</p>
+<p>JMP R16/M16  ；IP←R16/M16</p>
+<p><strong>JMP WORD PTR [2000H] ；IP←[2000H]</strong> </p>
+<p><img src="%E6%AE%B5%E9%97%B4.png"></p>
+<p>段间转移、直接寻址</p>
+<p>JMP FAR PTR LABEL</p>
+<p> ；IP←LABEL的偏移地址</p>
+<p> ；CS←LABEL的段地址</p>
+<p>段间转移、间接寻址</p>
+<p>JMP FAR PTR MEM</p>
+<p> ；IP←[MEM]，CS←[MEM+2]</p>
+<p><img src="%E5%A4%A7%E5%B0%8F%E5%85%B3%E7%B3%BB.png"></p>
+<h2 id="十六、大小与高低"><a href="#十六、大小与高低" class="headerlink" title="十六、大小与高低"></a>十六、大小与高低</h2><p>•<strong>无符号数</strong>的大小用<strong>高（Above）低</strong>（<strong>Below</strong>）表示</p>
+<p>•利用<strong>CF确定高低、利用ZF标志确定相等</strong>（Equal）</p>
+<p>•两数的高低分成4种关系：</p>
+<p>⑴ 低于（不高于等于）：JB（JNAE）</p>
+<p>⑵ 不低于（高于等于）：JNB（JAE）</p>
+<p>⑶ 低于等于（不高于）：JBE（JNA）</p>
+<p>⑷ 不低于等于（高于）：JNBE（JA ）</p>
+<p><strong>•有符号数</strong>的<strong>大（Greater）小（Less）</strong></p>
+<p>需要组合<strong>OF、SF</strong>标志，并<strong>利用ZF标志确定相等</strong>（Equal）</p>
+<p>•两数的大小分成4种关系：</p>
+<p>⑴ 小于（不大于等于）：JL（JNGE）</p>
+<p>⑵ 不小于（大于等于）：JNL（JGE）</p>
+<p>⑶ 小于等于（不大于）：JLE（JNG）</p>
+<p>⑷ 不小于等于（大于）：JNLE（JG ）</p>
+<p><strong>JCXZ</strong>    <strong>（</strong> <strong>CX=0**</strong>）  串操作是否处理完所有**   </p>
+<p>LOOP label  CX!=0 循环label</p>
+<p>LOOPZ label CX!=0且ZF=1 循环label</p>
+<p>•<strong>循环指令默认利用CX计数器</strong></p>
+<p>•<strong>label操作数采用相对短转移寻址方式</strong></p>
+<p><strong>空操作指令 NOP</strong></p>
+<p>不执行任何操作，但占用一个字节存储单元，空耗一个指令执行周期</p>
+<p>作用：<strong>预留空间 删除指令 软件延时</strong></p>
+<p>•事实上，NOP和XCHG AX,AX的指令代码一样，都是 90H</p>
+<p>ORG参数（使他后面的数据或指令从参数指定的地址开始）</p>
+<p>ORG 100H；从0100H单元开始分配存储器。</p>
+<p> <strong>ORG $+10；$表示地址计数器的当前值，$+10</strong></p>
+<p><strong>表示由当前地址向前跳过10个字节。</strong></p>
+<p>•EVEN ;从偶地址开始</p>
+<p>•ALIGN n ;从n的整数倍地址开始</p>
+<p><img src="%E5%AE%9A%E4%BD%8D%E4%BC%AA%E6%8C%87%E4%BB%A4.png"></p>
+<h2 id="十七、地址操作符和类型操作符"><a href="#十七、地址操作符和类型操作符" class="headerlink" title="十七、地址操作符和类型操作符"></a>十七、地址操作符和类型操作符</h2><h3 id="（一）地址操作符"><a href="#（一）地址操作符" class="headerlink" title="（一）地址操作符"></a>（一）地址操作符</h3><p><img src="%E5%9C%B0%E5%9D%80%E6%93%8D%E4%BD%9C%E7%AC%A6.png"></p>
+<p><code>mov bx,offset array  ;等价于 lea bx,array</code></p>
+<p> <code>mov cl,array+4          ;等效于 mov cl,array[4]</code></p>
+<h3 id="（二）类型操作符"><a href="#（二）类型操作符" class="headerlink" title="（二）类型操作符"></a>（二）类型操作符</h3><p>PTR操作符：使名字或标号具有指定的类型</p>
+<p><code>mov al,byte ptr w_var ;w_var是一个字变量</code></p>
+<p><code>jmp far ptr n_label ;n_label是一个标号</code></p>
+<p>THIS</p>
+<p>•利用THIS说明的操作数具有汇编时的当前逻辑地址，但具有指定的类型</p>
+<p><img src="THIS.png"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">.model small</span><br><span class="line">	   .stack</span><br><span class="line">	   .data</span><br><span class="line">V_byte  equ this byte</span><br><span class="line">V_word  dw 3332h,3735h</span><br><span class="line">Target  dw 5 dup(20h)</span><br><span class="line">Crlf    db 0dh,0ah, ‘<span class="formula">$’</span></span><br><span class="line"><span class="formula">Flag    db 0</span></span><br><span class="line"><span class="formula">N_point dw offset s_label</span></span><br><span class="line"><span class="formula">	   .code</span></span><br><span class="line"><span class="formula">	   .startup</span></span><br><span class="line"><span class="formula">	   mov al,byte ptr v_word</span></span><br><span class="line"><span class="formula">	   dec al</span></span><br><span class="line"><span class="formula">	   mov  v_byte ,al;v_word=3331h	</span></span><br><span class="line"><span class="formula">	   N_label:cmp flag,1 ;flag单元=0</span></span><br><span class="line"><span class="formula">	    jz s_label</span></span><br><span class="line"><span class="formula">	    inc flag  ；flag=1</span></span><br><span class="line"><span class="formula">	    jmp short n_label</span></span><br><span class="line"><span class="formula">S_label: cmp flag,2  ;flag=1</span></span><br><span class="line"><span class="formula">	    jz next</span></span><br><span class="line"><span class="formula">	    inc flag   ;flag=2</span></span><br><span class="line"><span class="formula">    jmp n_point ;段内间接转移，等同于jmp s_label</span></span><br><span class="line"><span class="formula">Next: mov ax,type v_word  ;ax=0002h</span></span><br><span class="line"><span class="formula">	    mov cx,lengthof target;5个数据项，cx=5</span></span><br><span class="line"><span class="formula">	    mov si,offset target</span></span><br><span class="line"><span class="formula">W_again: mov [si],ax</span></span><br><span class="line"><span class="formula">	    inc si</span></span><br><span class="line"><span class="formula">	    inc si</span></span><br><span class="line"><span class="formula">      loop w_again;对target填充5个字：0002h</span></span><br><span class="line"><span class="formula">mov cx,sizeof target;cx=10</span></span><br><span class="line"><span class="formula">	    mov al,’?’</span></span><br><span class="line"><span class="formula">	    mov di,offset target</span></span><br><span class="line"><span class="formula">B_again: mov [di],al</span></span><br><span class="line"><span class="formula">	    inc di</span></span><br><span class="line"><span class="formula">	    loop b_again ;对target填充10个‘？’</span></span><br><span class="line"><span class="formula">	    mov dx,offset v_word</span></span><br><span class="line"><span class="formula">	    mov ah,9</span></span><br><span class="line"><span class="formula">	    int 21h  ;显示结果为1357??????????</span></span><br><span class="line"><span class="formula">	    .exit 0</span></span><br><span class="line"><span class="formula">	    end</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="十八、简化段定义标准格式"><a href="#十八、简化段定义标准格式" class="headerlink" title="十八、简化段定义标准格式"></a>十八、简化段定义标准格式</h2><p><img src="%E7%AE%80%E5%8C%96%E6%AE%B5.png"></p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
@@ -636,7 +757,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：14.1k</span>
+                    <span class="post-count">字数统计：15.8k</span>
                     
             </li>
         </ul>
