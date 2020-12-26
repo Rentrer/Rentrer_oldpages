@@ -338,15 +338,6 @@
       </tags>
   </entry>
   <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>word2vec</title>
     <url>/2020/11/08/word2vec/</url>
     <content><![CDATA[]]></content>
@@ -356,6 +347,15 @@
       <tags>
         <tag>自然语言</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
   </entry>
   <entry>
     <title>数据结构期中复习</title>
@@ -471,7 +471,7 @@
   <entry>
     <title>汇编语言总复习</title>
     <url>/2020/12/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<p>本文将结合老师说的考试范围与PPT，对所涉及的知识点作个人总结，面向考试复习<del>（高星，yyds）</del></p>
+    <content><![CDATA[<p>本文将结合老师说的考试范围与PPT，对所涉及的知识点作个人总结，面向考试复习（<del>高星，yyds</del>）</p>
 <p>顺序有点乱，如果有时间会再调一下。</p>
 <a id="more"></a>
 
@@ -526,7 +526,57 @@
 <p>注：实际输入的字符数多于定义数时，多出的字符丢掉，且响铃</p>
 <h3 id="（二）如何使用缓冲区"><a href="#（二）如何使用缓冲区" class="headerlink" title="（二）如何使用缓冲区"></a>（二）如何使用缓冲区</h3><p>下例实现了字符串的输入</p>
 <p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5.png"></p>
-<h2 id="三、串操作指令"><a href="#三、串操作指令" class="headerlink" title="三、串操作指令"></a>三、串操作指令</h2><h2 id="四、常用DOS命令"><a href="#四、常用DOS命令" class="headerlink" title="四、常用DOS命令"></a>四、常用DOS命令</h2><p>调用DOS功能一般方法如下：</p>
+<h2 id="三、串操作指令"><a href="#三、串操作指令" class="headerlink" title="三、串操作指令"></a>三、串操作指令</h2><p>串操作指令的操作对象是以字（W）为单位的<strong>字串</strong>，或是以字节（B）为单位的<strong>字节串</strong></p>
+<p>串操作指令采用了特殊的寻址方式</p>
+<ol>
+<li>源操作数用寄存器SI间接寻址，默认在数据段DS中，即DS:[DI]</li>
+<li><strong>目的操作数用寄存器DI间接寻址，默认在附加段ES中</strong>，即ES:[SI]</li>
+<li>每执行一次串操作，SI和DI将自动修改</li>
+</ol>
+<p>注：由于要自动修改SI与DI，所以用户需要在进行串操作之前<strong>改变方向标志DF先确定增加或减小的方向</strong></p>
+<p>即：执行<strong>CLD</strong>（DF=0，主存地址增大，<strong>较为常用</strong>）或执行STD（DF=1，主存地址减小）</p>
+<p>串操作经出<strong>配合重复前缀指令</strong>，通过<strong>计数器CX</strong>控制重复执行串操作指令的次数。</p>
+<h3 id="（一）串传送指令"><a href="#（一）串传送指令" class="headerlink" title="（一）串传送指令"></a>（一）串传送指令</h3><p>①串传送 MOVSB/W（move string）</p>
+<p>把字节从主存的源地址传送至目标地址</p>
+<p><strong>MOVSB</strong> 字节串传送：<strong>ES:[DI]←DS:[SI]</strong></p>
+<p>②串存储 STOSB/W（store string）</p>
+<p>把<strong>AL或AX</strong>数据传送至目标地址</p>
+<p><strong>STOSB</strong>  字节串存储：<strong>ES:[DI]←AL</strong>（AL传字节）</p>
+<p><strong>STOSW</strong> 字串存储：    <strong>ES:[DI]←AX</strong>（AX传字）</p>
+<p>③串读取 LODSB/W（load string）</p>
+<p>把指定主存单元的数据传送给<strong>AL或AX</strong></p>
+<p><strong>LODSB</strong>  字节串读取： <strong>AL←DS:[SI]</strong></p>
+<p><strong>LODSW</strong> 字串读取：    <strong>AX←DS:[SI]</strong></p>
+<p>④REP重复前缀指令</p>
+<p><strong>REP</strong> <strong>；每执行一次串指令，CX减1直到CX＝0</strong>，重复执行结束</p>
+<p>即：当数据串没有结束（CX≠0），则继续传送</p>
+<h3 id="（二）串检测指令"><a href="#（二）串检测指令" class="headerlink" title="（二）串检测指令"></a>（二）串检测指令</h3><p>①串比较指令CMPS（compare string）</p>
+<p>将主存中的<strong>源操作数减去至目的操作数</strong>，以便设置标志，进而比较两操作数之间的关系</p>
+<p><strong>CMPSB</strong>  字节串比较：<strong>DS:[SI]－ES:[DI]</strong></p>
+<p>②串扫描SCAS（scan string）</p>
+<p>将<strong>AL/AX减去至目的操作数</strong>，以便设置标志，进而比较AL/AX与操作数之间的关系</p>
+<p><strong>SCASB</strong>  字节串扫描：<strong>AL－ES:[DI]</strong></p>
+<p><strong>SCASW</strong> 字串扫描：   <strong>AX－ES:[DI]</strong></p>
+<p>③REPZ/REPE重复前缀指令</p>
+<p>每执行一次串指令，CX减1并判断ZF是否为0，</p>
+<p>只要CX＝0或ZF＝0，重复执行结束。</p>
+<p>即：当数据串没有结束（CX≠0），<strong>并且串相等（ZF＝1），则继续比较</strong></p>
+<p>④REPNZ/REPNE重复前缀指令</p>
+<p>每执行一次串指令，CX减1并判断ZF是否为0，</p>
+<p>只要CX＝0或ZF＝0，重复执行结束。</p>
+<p>即：当数据串没有结束（CX≠0），<strong>并且串不相等（ZF＝0），则继续比较</strong></p>
+<p>例：</p>
+<p><img src="%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2.png"></p>
+<p>在上例中，指令repz cmpsb结束有两种情况</p>
+<p>第一种：ZF=0，即<strong>出现不相等的字符</strong></p>
+<p>第二种：CX=0，即<strong>比较完了所有字符</strong></p>
+<p>注意，在这种情况下，<strong>如果ZF=0，则说明最后一个字符不相等，ZF=1才能说明两个字符串相同</strong>。</p>
+<p>所以，重复比较结束后，需要通过<strong>jnz</strong>指令 来判断<strong>zf位</strong>，若其=0，则字符串不相等。</p>
+<p>总流程图如下</p>
+<p><img src="%E4%B8%B2%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE.png"></p>
+<p>下例为SCAS在字符串中查找空格字符的用法</p>
+<p><img src="%E6%9F%A5%E6%89%BE%E7%A9%BA%E6%A0%BC.png"></p>
+<h2 id="四、常用DOS命令"><a href="#四、常用DOS命令" class="headerlink" title="四、常用DOS命令"></a>四、常用DOS命令</h2><p>调用DOS功能一般方法如下：</p>
 <p>1、在<strong>AH寄存器</strong>中设置系统功能调用号，说明选择的功能</p>
 <p>2、在指定寄存器中设置入口参数。</p>
 <p>3、用中断调用指令 INT 21H 执行功能调用。</p>
