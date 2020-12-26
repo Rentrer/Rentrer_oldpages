@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.2k</span>
+            <span class="post-count">1.4k</span>
         </span>
     </span>
 
@@ -165,7 +165,23 @@
 <p>注：实际输入的字符数多于定义数时，多出的字符丢掉，且响铃</p>
 <h3 id="（二）如何使用缓冲区"><a href="#（二）如何使用缓冲区" class="headerlink" title="（二）如何使用缓冲区"></a>（二）如何使用缓冲区</h3><p>下例实现了字符串的输入</p>
 <p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5.png"></p>
-<h2 id="三、串操作指令"><a href="#三、串操作指令" class="headerlink" title="三、串操作指令"></a>三、串操作指令</h2><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
+<h2 id="三、串操作指令"><a href="#三、串操作指令" class="headerlink" title="三、串操作指令"></a>三、串操作指令</h2><h2 id="四、常用DOS命令"><a href="#四、常用DOS命令" class="headerlink" title="四、常用DOS命令"></a>四、常用DOS命令</h2><p>调用DOS功能一般方法如下：</p>
+<p>1、在<strong>AH寄存器</strong>中设置系统功能调用号，说明选择的功能</p>
+<p>2、在指定寄存器中设置入口参数。</p>
+<p>3、用中断调用指令 INT 21H 执行功能调用。</p>
+<h3 id="（一）字符输出（02H号）"><a href="#（一）字符输出（02H号）" class="headerlink" title="（一）字符输出（02H号）"></a>（一）字符输出（02H号）</h3><p>入口参数：<strong>DL</strong>=字符的ASCII码</p>
+<p><img src="%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA.png"></p>
+<p>注：该功能可以识别响铃字符（07H），回车（0DH），换行（0AH）。</p>
+<h3 id="（二）字符串输出（09H号）"><a href="#（二）字符串输出（09H号）" class="headerlink" title="（二）字符串输出（09H号）"></a>（二）字符串输出（09H号）</h3><p>入口参数：<strong>DS:DX</strong>=欲显示字符串在主存中的首地址。</p>
+<p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%87%BA.png"></p>
+<p>注：顺序为先回车（0DH），再换行（0AH），且字符串应以’$’(24H)结束。</p>
+<h3 id="（三）字符输入（01H号）"><a href="#（三）字符输入（01H号）" class="headerlink" title="（三）字符输入（01H号）"></a>（三）字符输入（01H号）</h3><p>出口参数：<strong>AL</strong>=字符的ASCII码</p>
+<p><img src="%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5.png"></p>
+<p>调用此功能时，若无键按下，则会一直等待，直到按键后才读取该键值</p>
+<h3 id="（四）字符串输入（0AH号）"><a href="#（四）字符串输入（0AH号）" class="headerlink" title="（四）字符串输入（0AH号）"></a>（四）字符串输入（0AH号）</h3><p>入口参数：<strong>DS:DX</strong>=缓冲区首地址</p>
+<p><strong>关键要定义好缓冲区</strong></p>
+<p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5.png"></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
  
@@ -392,7 +408,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：10.4k</span>
+                    <span class="post-count">字数统计：10.7k</span>
                     
             </li>
         </ul>
