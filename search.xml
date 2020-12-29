@@ -338,15 +338,6 @@
       </tags>
   </entry>
   <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>word2vec</title>
     <url>/2020/11/08/word2vec/</url>
     <content><![CDATA[]]></content>
@@ -466,6 +457,69 @@
       </categories>
       <tags>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>汇编语言总复习(下)</title>
+    <url>/2020/12/29/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8B)/</url>
+    <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
+<p>孩子哭了，汇编一定要好好学啊</p>
+<a id="more"></a>
+
+<h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a>选择题：</h2><p>例一：下列语句没错的是：</p>
+<p>MOV AL，050AH</p>
+<p>MOV [SI],0AH</p>
+<p>MOV DS,100H</p>
+<p>MOV CS,[SI]</p>
+<p>MOV DS,ES</p>
+<p>答：都有错，这题不选（</p>
+<p>第一句中，AL表示字节，而050AH单位为字，目的操作数与源操作数的类型不一，故错。</p>
+<p>第二句中，存储器单元与立即数同时作为操作数，但是没有显式指明类型，故错</p>
+<p>更正：<strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
+<p>第三句中，立即数不能直接送到段寄存器中，故错。</p>
+<p>第四句中，CS是专用寄存器，碰不得</p>
+<p>第五句中，段寄存器之间不能相互传递，故错。</p>
+<h2 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h2><p>例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</p>
+<p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
+<p>​       不同点：AND指令会将逻辑与的结果送给目的操作数，而TEST指令不会。</p>
+<p>举一反三.1：解释TEST和CMP指令的异同</p>
+<p>答：相同点：TEST指令和CMP指令都不会将结果送回给操作数，只修改标志位。</p>
+<p>​        test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
+<p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
+<p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
+<p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
+<p>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</p>
+<p>答：<img src="MOV%E5%9B%BE.png"></p>
+<p><code>MOV AX,0102H</code></p>
+<p><code>MOV DS,AX</code></p>
+<p>解释说明：</p>
+<p>1.立即数到存储器和寄存器<strong>都是单向的</strong>。</p>
+<p>2.<strong>立即数不能直接到段寄存器</strong>，需要通过寄存器中转</p>
+<p>3.寄存器之间可以互相mov</p>
+<p>4.<strong>段寄存器之间不能互相传递</strong></p>
+<p>5.<strong>存储器之间不能相互传递</strong></p>
+<p>举一反三.2：写出交换将BUF1段中的数据和BUF2段中数据的代码</p>
+<p>答：</p>
+<p><code>MOV AX,BUF1</code></p>
+<p><code>MOV DX,BUF2</code></p>
+<p><code>MOV BUF2,AX</code></p>
+<p><code>MOV BUF1,DX</code></p>
+<p>例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>汇编语言</tag>
       </tags>
   </entry>
   <entry>
@@ -668,40 +722,6 @@
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>汇编语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>汇编语言总复习(下)</title>
-    <url>/2020/12/29/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8B)/</url>
-    <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
-<p>孩子哭了，汇编一定要好好学啊</p>
-<a id="more"></a>
-
-<h2 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h2><p>例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</p>
-<p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
-<p>​       不同点：AND指令会将逻辑与的结果送给目的操作数，而TEST指令不会。</p>
-<p>举一反三：解释TEST和CMP指令的异同</p>
-<p>答：相同点：TEST指令和CMP指令都不会将结果送回给操作数，只修改标志位。</p>
-<p>​        test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
-<p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
-<p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
-<p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
-<p>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</p>
-<p>答：<img src="MOV%E5%9B%BE.png"></p>
-<p><code>MOV AX,0102H</code></p>
-<p><code>MOV DS,AX</code></p>
-<p>解释说明：</p>
-<p>1.立即数到存储器和寄存器<strong>都是单向的</strong>。</p>
-<p>2.<strong>立即数不能直接到段寄存器</strong>，需要通过寄存器中转</p>
-<p>3.寄存器之间可以互相mov</p>
-<p>4.<strong>段寄存器之间不能互相传递</strong></p>
-<p>5.<strong>存储器之间不能相互传递</strong></p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
