@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">649</span>
+            <span class="post-count">811</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">2 min</span>
+            <span class="post-count">3 min</span>
         </span>
     </span>
 </div>
@@ -153,6 +153,18 @@
 <p><code>MOV BUF2,AX</code></p>
 <p><code>MOV BUF1,DX</code></p>
 <p>例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</p>
+<p>答：一共有五种</p>
+<p>分别为：</p>
+<p>1.直接寻址 ：MOV AX,[2077H]</p>
+<p>2.寄存器间接寻址 ：MOV AX,[SI]</p>
+<p>3.寄存器相对寻址：MOV AX,[SI+06H]</p>
+<p>4.基址变址寻址方式：MOV AX,[BX+SI]</p>
+<p>5.相对基址变址寻址：MOV AX,[BX+SI+06H]</p>
+<p>解释：<strong>基址是指基址寄存器（BX/BP），变址是指变址寄存器（SI/DI）</strong></p>
+<p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>明天上刑场</p>
+<p>概统还没复习</p>
+<p>高星救我</p>
  
       <!-- reward -->
       
@@ -377,7 +389,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：16.6k</span>
+                    <span class="post-count">字数统计：16.7k</span>
                     
             </li>
         </ul>
