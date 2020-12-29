@@ -338,15 +338,6 @@
       </tags>
   </entry>
   <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数据结构期中复习</title>
     <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
@@ -456,6 +447,15 @@
       <tags>
         <tag>数据结构</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
   </entry>
   <entry>
     <title>汇编语言总复习(上)</title>
@@ -657,99 +657,6 @@
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>汇编语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>汇编语言总复习(下)</title>
-    <url>/2020/12/29/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8B)/</url>
-    <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
-<p>孩子哭了，汇编一定要好好学啊</p>
-<a id="more"></a>
-
-<h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a>选择题：</h2><h3 id="例一：下列语句没错的是："><a href="#例一：下列语句没错的是：" class="headerlink" title="例一：下列语句没错的是："></a>例一：下列语句没错的是：</h3><p>MOV AL，050AH</p>
-<p>MOV [SI],0AH</p>
-<p>MOV DS,100H</p>
-<p>MOV CS,[SI]</p>
-<p>MOV DS,ES</p>
-<p>答：都有错，这题不选（</p>
-<p>第一句中，AL表示字节，而050AH单位为字，目的操作数与源操作数的类型不一，故错。</p>
-<p>第二句中，存储器单元与立即数同时作为操作数，但是没有显式指明类型，故错</p>
-<p>更正：<strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
-<p>第三句中，立即数不能直接送到段寄存器中，故错。</p>
-<p>第四句中，CS是专用寄存器，碰不得</p>
-<p>第五句中，段寄存器之间不能相互传递，故错。</p>
-<h2 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h2><h3 id="例一：解释TEST和AND指令的异同，并说明其使用注意点"><a href="#例一：解释TEST和AND指令的异同，并说明其使用注意点" class="headerlink" title="例一：解释TEST和AND指令的异同，并说明其使用注意点"></a>例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</h3><p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
-<p>​       不同点：AND指令会将逻辑与的结果送给目的操作数，而TEST指令不会。</p>
-<p>举一反三.1：解释TEST和CMP指令的异同</p>
-<p>答：相同点：TEST指令和CMP指令都不会将结果送回给操作数，只修改标志位。</p>
-<p>​        test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
-<p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
-<p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
-<p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
-<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"><a href="#例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码" class="headerlink" title="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"></a>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3><p>答：<img src="MOV%E5%9B%BE.png"></p>
-<p><code>MOV AX,0102H</code></p>
-<p><code>MOV DS,AX</code></p>
-<p>解释说明：</p>
-<p>1.立即数到存储器和寄存器<strong>都是单向的</strong>。</p>
-<p>2.<strong>立即数不能直接到段寄存器</strong>，需要通过寄存器中转</p>
-<p>3.寄存器之间可以互相mov</p>
-<p>4.<strong>段寄存器之间不能互相传递</strong></p>
-<p>5.<strong>存储器之间不能相互传递</strong></p>
-<p>举一反三.2：写出交换将BUF1段中的数据和BUF2段中数据的代码</p>
-<p>答：</p>
-<p><code>MOV AX,BUF1</code></p>
-<p><code>MOV DX,BUF2</code></p>
-<p><code>MOV BUF2,AX</code></p>
-<p><code>MOV BUF1,DX</code></p>
-<h3 id="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"><a href="#例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。" class="headerlink" title="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"></a>例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</h3><p>答：一共有五种</p>
-<p>分别为：</p>
-<p>1.直接寻址 ：MOV AX,[2077H]</p>
-<p>2.寄存器间接寻址 ：MOV AX,[SI]</p>
-<p>3.寄存器相对寻址：MOV AX,[SI+06H]</p>
-<p>4.基址变址寻址方式：MOV AX,[BX+SI]</p>
-<p>5.相对基址变址寻址：MOV AX,[BX+SI+06H]</p>
-<p>解释：<strong>基址是指基址寄存器（BX/BP），变址是指变址寄存器（SI/DI）</strong></p>
-<p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
-<p>例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</p>
-<p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
-<p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。<strong>（默认要补齐5位）</strong>如图</p>
-<p><img src="%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E8%BD%AC%E5%8C%96.png"></p>
-<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><p>例一：编写一个程序，要求能从<strong>键盘接收</strong>一个个位数N，然后<strong>响铃N</strong> 次(响铃的ASCII 码为07)</p>
-<p>分析：采用字符串输入功能接受一个数，传入CX中，再调用输出字符功能，输出直到CX为0</p>
-<p>代码如下：</p>
-<p><code>.model small</code></p>
-<p><code>.stack</code></p>
-<p><code>.data</code></p>
-<p><code>.code</code></p>
-<p><code>.startup</code></p>
-<p><code>mov ah,01h</code></p>
-<p><code>int 21h</code></p>
-<p><code>sub al,30h</code></p>
-<p><code>mov cl,al</code></p>
-<p><code>mov ah,02h</code></p>
-<p><code>mov dl,0ah</code></p>
-<p><code>int 21h</code></p>
-<p><code>again:</code></p>
-<p>​    <code>cmp cl,0</code></p>
-<p>​    <code>jz over</code></p>
-<p>​    <code>mov ah,02h</code></p>
-<p>​    <code>mov dl,07h</code></p>
-<p>​    <code>int 21h</code></p>
-<p>​    <code>mov dl,&#39;1&#39;</code></p>
-<p>​    <code>int 21h</code></p>
-<p>​    <code>dec cl</code></p>
-<p>​    <code>jmp again</code></p>
-<p><code>over: .exit 0</code></p>
-<p>​        <code>end</code></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>明天上刑场</p>
-<p>概统还没复习</p>
-<p>高星救我</p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -997,6 +904,110 @@
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>汇编语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>汇编语言总复习(下)</title>
+    <url>/2020/12/29/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8B)/</url>
+    <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
+<p>孩子哭了，汇编一定要好好学啊</p>
+<a id="more"></a>
+
+<h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a>选择题：</h2><h3 id="例一：下列语句没错的是："><a href="#例一：下列语句没错的是：" class="headerlink" title="例一：下列语句没错的是："></a>例一：下列语句没错的是：</h3><p>MOV AL，050AH</p>
+<p>MOV [SI],0AH</p>
+<p>MOV DS,100H</p>
+<p>MOV CS,[SI]</p>
+<p>MOV DS,ES</p>
+<p>答：都有错，这题不选（</p>
+<p>第一句中，AL表示字节，而050AH单位为字，目的操作数与源操作数的类型不一，故错。</p>
+<p>第二句中，存储器单元与立即数同时作为操作数，但是没有显式指明类型，故错</p>
+<p>更正：<strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
+<p>第三句中，立即数不能直接送到段寄存器中，故错。</p>
+<p>第四句中，CS是专用寄存器，碰不得</p>
+<p>第五句中，段寄存器之间不能相互传递，故错。</p>
+<h3 id="例二：下列语句等值的是："><a href="#例二：下列语句等值的是：" class="headerlink" title="例二：下列语句等值的是："></a>例二：下列语句等值的是：</h3><h2 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h2><h3 id="例一：解释TEST和AND指令的异同，并说明其使用注意点"><a href="#例一：解释TEST和AND指令的异同，并说明其使用注意点" class="headerlink" title="例一：解释TEST和AND指令的异同，并说明其使用注意点"></a>例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</h3><p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
+<p>​       不同点：AND指令会将逻辑与的结果送给目的操作数，而TEST指令不会。</p>
+<p>举一反三.1：解释TEST和CMP指令的异同</p>
+<p>答：相同点：TEST指令和CMP指令都不会将结果送回给操作数，只修改标志位。</p>
+<p>​        test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
+<p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
+<p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
+<p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
+<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"><a href="#例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码" class="headerlink" title="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"></a>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3><p>答：<img src="MOV%E5%9B%BE.png"></p>
+<p><code>MOV AX,0102H</code></p>
+<p><code>MOV DS,AX</code></p>
+<p>解释说明：</p>
+<p>1.立即数到存储器和寄存器<strong>都是单向的</strong>。</p>
+<p>2.<strong>立即数不能直接到段寄存器</strong>，需要通过寄存器中转</p>
+<p>3.寄存器之间可以互相mov</p>
+<p>4.<strong>段寄存器之间不能互相传递</strong></p>
+<p>5.<strong>存储器之间不能相互传递</strong></p>
+<p>举一反三.2：写出交换将BUF1段中的数据和BUF2段中数据的代码</p>
+<p>答：</p>
+<p><code>MOV AX,BUF1</code></p>
+<p><code>MOV DX,BUF2</code></p>
+<p><code>MOV BUF2,AX</code></p>
+<p><code>MOV BUF1,DX</code></p>
+<h3 id="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"><a href="#例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。" class="headerlink" title="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"></a>例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</h3><p>答：一共有五种</p>
+<p>分别为：</p>
+<p>1.直接寻址 ：MOV AX,[2077H]</p>
+<p>2.寄存器间接寻址 ：MOV AX,[SI]</p>
+<p>3.寄存器相对寻址：MOV AX,[SI+06H]</p>
+<p>4.基址变址寻址方式：MOV AX,[BX+SI]</p>
+<p>5.相对基址变址寻址：MOV AX,[BX+SI+06H]</p>
+<p>解释：<strong>基址是指基址寄存器（BX/BP），变址是指变址寄存器（SI/DI）</strong></p>
+<p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
+<h3 id="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？"><a href="#例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？" class="headerlink" title="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？"></a>例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</h3><p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
+<p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。<strong>（默认要补齐5位）</strong>如图</p>
+<p><img src="%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E8%BD%AC%E5%8C%96.png"></p>
+<h3 id="例五：编写定义缓冲区，及实现输入字符串的核心代码"><a href="#例五：编写定义缓冲区，及实现输入字符串的核心代码" class="headerlink" title="例五：编写定义缓冲区，及实现输入字符串的核心代码"></a>例五：编写定义缓冲区，及实现输入字符串的核心代码</h3><p>答：<code>string db &#39;Im a string&#39;,0dh,0ah,&#39;$&#39;</code></p>
+<p><code>buffer  db 81</code></p>
+<pre><code>         `db ?`
+
+         `db 81 dup(0)`</code></pre>
+<p><code>mov dx,seg buffer</code></p>
+<p><code>mov ds,dx</code></p>
+<p><code>mov ah,0ah</code></p>
+<p><code>mov dx,offset buffer</code></p>
+<p><code>int 21h</code></p>
+<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><h3 id="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07"><a href="#例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07" class="headerlink" title="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N 次(响铃的ASCII 码为07)"></a>例一：编写一个程序，要求能从<strong>键盘接收</strong>一个个位数N，然后<strong>响铃N</strong> 次(响铃的ASCII 码为07)</h3><p>分析：采用字符串输入功能接受一个数，传入CX中，再调用输出字符功能，输出直到CX为0</p>
+<p>代码如下：</p>
+<p><code>.model small</code></p>
+<p><code>.stack</code></p>
+<p><code>.data</code></p>
+<p><code>.code</code></p>
+<p><code>.startup</code></p>
+<p><code>mov ah,01h</code></p>
+<p><code>int 21h</code></p>
+<p><code>sub al,30h</code></p>
+<p><code>mov cl,al</code></p>
+<p><code>mov ah,02h</code></p>
+<p><code>mov dl,0ah</code></p>
+<p><code>int 21h</code></p>
+<p><code>again:</code></p>
+<p>​    <code>cmp cl,0</code></p>
+<p>​    <code>jz over</code></p>
+<p>​    <code>mov ah,02h</code></p>
+<p>​    <code>mov dl,07h</code></p>
+<p>​    <code>int 21h</code></p>
+<p>​    <code>mov dl,&#39;1&#39;</code></p>
+<p>​    <code>int 21h</code></p>
+<p>​    <code>dec cl</code></p>
+<p>​    <code>jmp again</code></p>
+<p><code>over: .exit 0</code></p>
+<p>​        <code>end</code></p>
+<h3 id="例二：实现字符串的冒泡排序"><a href="#例二：实现字符串的冒泡排序" class="headerlink" title="例二：实现字符串的冒泡排序"></a>例二：实现字符串的冒泡排序</h3><p>分析：使用两层循环，结合跳转实现</p>
+<p>代码如下：</p>
+<p><img src="%E4%BB%A3%E7%A0%81.png"></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>明天上刑场</p>
+<p>概统还没复习</p>
+<p>高星救我</p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
