@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">944</span>
+            <span class="post-count">1.1k</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">3 min</span>
+            <span class="post-count">4 min</span>
         </span>
     </span>
 </div>
@@ -158,7 +158,10 @@
 <p>5.相对基址变址寻址：MOV AX,[BX+SI+06H]</p>
 <p>解释：<strong>基址是指基址寄存器（BX/BP），变址是指变址寄存器（SI/DI）</strong></p>
 <p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
-<p>例四：</p>
+<p>例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</p>
+<p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
+<p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。<strong>（默认要补齐5位）</strong>如图</p>
+<p><img src="%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E8%BD%AC%E5%8C%96.png"></p>
 <h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><p>例一：编写一个程序，要求能从<strong>键盘接收</strong>一个个位数N，然后<strong>响铃N</strong> 次(响铃的ASCII 码为07)</p>
 <p>分析：采用字符串输入功能接受一个数，传入CX中，再调用输出字符功能，输出直到CX为0</p>
 <p>代码如下：</p>
@@ -413,7 +416,7 @@
                         setInterval("createtime()", 250);
                     </script>
                     <i class="fas fa-chart-area"></i>
-                    <span class="post-count">字数统计：16.9k</span>
+                    <span class="post-count">字数统计：17k</span>
                     
             </li>
         </ul>
