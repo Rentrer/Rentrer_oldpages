@@ -634,6 +634,214 @@
       </tags>
   </entry>
   <entry>
+    <title>汇编语言总复习(上)</title>
+    <url>/2020/12/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8A)/</url>
+    <content><![CDATA[<p>本文将结合老师说的考试范围与PPT，对所涉及的知识点作个人总结，面向考试复习（<del>高星，yyds</del>）</p>
+<p>顺序有点乱，如果有时间会再调一下。</p>
+<a id="more"></a>
+
+<h2 id="一、子程序与主程序"><a href="#一、子程序与主程序" class="headerlink" title="一、子程序与主程序"></a>一、子程序与主程序</h2><h3 id="（一）什么是子程序"><a href="#（一）什么是子程序" class="headerlink" title="（一）什么是子程序"></a>（一）什么是子程序</h3><p>把功能相对独立的程序段单独编写和调试，作为一个相对独立的模块供程序使用，就形成子程序</p>
+<p>子程序可以实现源程序的模块化，可简化源程序结构，可以提高编程效率</p>
+<p><strong>参数传递是子程序设计的重点和难点</strong></p>
+<p>子程序的调用和返回是由指令<strong>CALL和RET</strong>(return)来完成的</p>
+<p>•CALL指令分成4种类型（类似JMP）</p>
+<p>CALL label ；段内调用、相对寻址</p>
+<p>CALL r16/m16 ；段内调用、间接寻址</p>
+<p><strong>CALL far ptr label ；段间调用、直接寻址</strong></p>
+<p><strong>CALL far ptr mem ；段间调用、间接寻址</strong></p>
+<p>返回时，RET直接从当前栈顶取内容作为返回地址。因此要保证RET指令执行前堆栈栈顶的内容刚好是返回的地址。</p>
+<p>例：子程序的常见格式（实现回车换行的子程序）：</p>
+<p><img src="%E5%AD%90%E7%A8%8B%E5%BA%8F%E7%A4%BA%E4%BE%8B.png"></p>
+<p>注意：</p>
+<ol>
+<li>对简化段定义格式，在tiny和small下，过程(PROC)的默认属性为near；对完整段定义格式下，过程的默认属性为near。</li>
+<li>进行过程设计时，需要注意寄存器的保护和恢复，即<strong>开始时将要修改的寄存器内容压入栈，结束后再逆序弹出</strong>。</li>
+</ol>
+<h3 id="（二）如何进行参数传递"><a href="#（二）如何进行参数传递" class="headerlink" title="（二）如何进行参数传递"></a>（二）如何进行参数传递</h3><p>主程序在调用子程序时，通常需要提供一些数据，即<strong>入口参数（输入参数）</strong></p>
+<p>子程序执行结束后要返回主程序数据，即<strong>出口参数（输出参数）</strong></p>
+<p>参数的形式分为两种</p>
+<p>① 数据本身（传值）②数据的地址（传址）</p>
+<p>下面介绍如何传递参数</p>
+<h4 id="1-寄存器传递参数（共享寄存器）"><a href="#1-寄存器传递参数（共享寄存器）" class="headerlink" title="1.寄存器传递参数（共享寄存器）"></a>1.寄存器传递参数（共享寄存器）</h4><p>把参数存于约定的寄存器中，可以传值，也可以传址。</p>
+<p><img src="%E5%AF%84%E5%AD%98%E5%99%A8%E4%BC%A0%E5%8F%82.png"></p>
+<p>上图的子程序将和存在了al中，返回后再将其mov到result中，实现了参数传递。</p>
+<p>注:子程序对带有入口参数的寄存器可以保护，也可以不保护；上图未保护</p>
+<p>​     子程序对带有出口参数的寄存器不能保护和恢复</p>
+<h4 id="2-变量传递参数（共享变量）"><a href="#2-变量传递参数（共享变量）" class="headerlink" title="2.变量传递参数（共享变量）"></a>2.变量传递参数（共享变量）</h4><p>主程序和子程序直接采用同一个变量名共享同一个变量。</p>
+<p>类比于C++中的加引用，<strong>直接改变了变量的值</strong>。</p>
+<p><img src="%E5%8F%98%E9%87%8F%E4%BC%A0%E5%8F%821.png"></p>
+<p><img src="%E5%8F%98%E9%87%8F%E4%BC%A0%E5%8F%822.png"></p>
+<p>上图的子程序直接将al中的值mov到了result，随后返回到主程序。</p>
+<h4 id="3-堆栈传递参数（共享堆栈）"><a href="#3-堆栈传递参数（共享堆栈）" class="headerlink" title="3.堆栈传递参数（共享堆栈）"></a>3.堆栈传递参数（共享堆栈）</h4><p>主程序将子程序的入口参数压入堆栈，子程序从堆栈中取出参数</p>
+<p>子程序将出口参数压入堆栈，主程序弹出堆栈取得它们</p>
+<p>前方高能</p>
+<p><img src="%E5%A0%86%E6%A0%88%E4%BC%A0%E5%8F%821.png"></p>
+<p>入口参数为数组的偏移地址和数组的元素个数，通过压入堆栈进行传递。</p>
+<p><img src="%E5%A0%86%E6%A0%88%E4%BC%A0%E5%8F%822.png"></p>
+<p>程序在保护bp后，将bp置为栈顶，并通过偏移位置来分别寻址获得压入的偏移地址和元素参数。最后按反序弹出栈内值和址。</p>
+<p>上述程序堆栈的使用情况如下图</p>
+<p><img src="%E5%A0%86%E6%A0%88%E6%83%85%E5%86%B5.png"></p>
+<p>由于<strong>主程序压入了2个参数，使用了堆栈区的4字节</strong>，故采用上述办法平衡堆栈。</p>
+<p>注：由于寄存器的保护也存于堆栈中，所以在子程序退出时<strong>要特别注意pop的顺序</strong>。</p>
+<h2 id="二、缓冲区"><a href="#二、缓冲区" class="headerlink" title="二、缓冲区"></a>二、缓冲区</h2><h3 id="（一）如何定义缓冲区"><a href="#（一）如何定义缓冲区" class="headerlink" title="（一）如何定义缓冲区"></a>（一）如何定义缓冲区</h3><p>例</p>
+<p><img src="%E7%BC%93%E5%86%B2%E5%8C%BA%E5%AE%9A%E4%B9%89.png"></p>
+<p>该例表示在内存中申请一个<strong>缓冲区为83个字节，首地址给BUF</strong>。</p>
+<p>缓冲区分为<strong>三个部分</strong></p>
+<p>第一个字节内放的是<strong>事先填入最多欲接收的字符个数</strong>（包括回车字符，可以是1～255），在例中为81，表示申请的存放数据的缓冲区的字节数为81个。</p>
+<p>第二个字节 ‘ ？‘表示的是实际存放的字节个数（不包括回车）</p>
+<p>就是说，你放入2个字节的数据，“？”变成2，放10个字节的数据，变成10）；</p>
+<p>DB表示的是分配一个或多个字节；</p>
+<p><strong>输入的数据（字符串）从第三个字节开始存放</strong>，存放至第82个字节，<strong>第81个字节存放回车符（0DH）,0DH作为输入数据的结束</strong>。</p>
+<p><strong>DUP(0)**表示的是</strong>存放数据的81个字节初始值全为0**，即为：81 0 0 0 0······（第82个字节）0 ODH。</p>
+<p>注：实际输入的字符数多于定义数时，多出的字符丢掉，且响铃</p>
+<h3 id="（二）如何使用缓冲区"><a href="#（二）如何使用缓冲区" class="headerlink" title="（二）如何使用缓冲区"></a>（二）如何使用缓冲区</h3><p>下例实现了字符串的输入</p>
+<p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5.png"></p>
+<h2 id="三、串操作指令"><a href="#三、串操作指令" class="headerlink" title="三、串操作指令"></a>三、串操作指令</h2><p>串操作指令的操作对象是以字（W）为单位的<strong>字串</strong>，或是以字节（B）为单位的<strong>字节串</strong></p>
+<p>串操作指令采用了特殊的寻址方式</p>
+<ol>
+<li>源操作数用寄存器SI间接寻址，默认在数据段DS中，即DS:[DI]</li>
+<li><strong>目的操作数用寄存器DI间接寻址，默认在附加段ES中</strong>，即ES:[SI]</li>
+<li>每执行一次串操作，SI和DI将自动修改</li>
+<li><strong>源数据串可以段跨越，目的串不可。</strong></li>
+</ol>
+<p>注：由于要自动修改SI与DI，所以用户需要在进行串操作之前<strong>改变方向标志DF先确定增加或减小的方向</strong></p>
+<p>即：执行<strong>CLD</strong>（DF=0，主存地址增大，<strong>较为常用</strong>）或执行STD（DF=1，主存地址减小）</p>
+<p>串操作经出<strong>配合重复前缀指令</strong>，通过<strong>计数器CX</strong>控制重复执行串操作指令的次数。</p>
+<h3 id="（一）串传送指令"><a href="#（一）串传送指令" class="headerlink" title="（一）串传送指令"></a>（一）串传送指令</h3><p>①串传送 MOVSB/W（move string）</p>
+<p>把字节从主存的源地址传送至目标地址</p>
+<p><strong>MOVSB</strong> 字节串传送：<strong>ES:[DI]←DS:[SI]</strong></p>
+<p>②串存储 STOSB/W（store string）</p>
+<p>把<strong>AL或AX</strong>数据传送至目标地址</p>
+<p><strong>STOSB</strong>  字节串存储：<strong>ES:[DI]←AL</strong>（AL传字节）</p>
+<p><strong>STOSW</strong> 字串存储：    <strong>ES:[DI]←AX</strong>（AX传字）</p>
+<p>③串读取 LODSB/W（load string）</p>
+<p>把指定主存单元的数据传送给<strong>AL或AX</strong></p>
+<p><strong>LODSB</strong>  字节串读取： <strong>AL←DS:[SI]</strong></p>
+<p><strong>LODSW</strong> 字串读取：    <strong>AX←DS:[SI]</strong></p>
+<p>④REP重复前缀指令</p>
+<p><strong>REP</strong> <strong>；每执行一次串指令，CX减1直到CX＝0</strong>，重复执行结束</p>
+<p>即：当数据串没有结束（CX≠0），则继续传送</p>
+<h3 id="（二）串检测指令"><a href="#（二）串检测指令" class="headerlink" title="（二）串检测指令"></a>（二）串检测指令</h3><p>①串比较指令CMPS（compare string）</p>
+<p>将主存中的<strong>源操作数减去至目的操作数</strong>，以便设置标志，进而比较两操作数之间的关系</p>
+<p><strong>CMPSB</strong>  字节串比较：<strong>DS:[SI]－ES:[DI]</strong></p>
+<p>②串扫描SCAS（scan string）</p>
+<p>将<strong>AL/AX减去至目的操作数</strong>，以便设置标志，进而比较AL/AX与操作数之间的关系</p>
+<p><strong>SCASB</strong>  字节串扫描：<strong>AL－ES:[DI]</strong></p>
+<p><strong>SCASW</strong> 字串扫描：   <strong>AX－ES:[DI]</strong></p>
+<p>③REPZ/REPE重复前缀指令</p>
+<p>每执行一次串指令，CX减1并判断ZF是否为0，</p>
+<p>只要CX＝0或ZF＝0，重复执行结束。</p>
+<p>即：当数据串没有结束（CX≠0），<strong>并且串相等（ZF＝1），则继续比较</strong></p>
+<p>④REPNZ/REPNE重复前缀指令</p>
+<p>每执行一次串指令，CX减1并判断ZF是否为0，</p>
+<p>只要CX＝0或ZF＝0，重复执行结束。</p>
+<p>即：当数据串没有结束（CX≠0），<strong>并且串不相等（ZF＝0），则继续比较</strong></p>
+<p>REPNZ和LOOP的区别：</p>
+<p>REPNZ是先执行一次指令，之后将CX减一，判断CX是否为0。</p>
+<p>而LOOP是先将CX减一，然后判断CX是否为0，不为0则继续执行指令。</p>
+<p>例：</p>
+<p><img src="%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2.png"></p>
+<p>在上例中，指令repz cmpsb结束有两种情况</p>
+<p>第一种：ZF=0，即<strong>出现不相等的字符</strong></p>
+<p>第二种：CX=0，即<strong>比较完了所有字符</strong></p>
+<p>注意，在这种情况下，<strong>如果ZF=0，则说明最后一个字符不相等，ZF=1才能说明两个字符串相同</strong>。</p>
+<p>所以，重复比较结束后，需要通过<strong>jnz</strong>指令 来判断<strong>zf位</strong>，若其=0，则字符串不相等。</p>
+<p>总流程图如下</p>
+<p><img src="%E4%B8%B2%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE.png"></p>
+<p>下例为SCAS在字符串中查找空格字符的用法</p>
+<p><img src="%E6%9F%A5%E6%89%BE%E7%A9%BA%E6%A0%BC.png"></p>
+<h2 id="四、常用DOS命令"><a href="#四、常用DOS命令" class="headerlink" title="四、常用DOS命令"></a>四、常用DOS命令</h2><p>调用DOS功能一般方法如下：</p>
+<p>1、在<strong>AH寄存器</strong>中设置系统功能调用号，说明选择的功能</p>
+<p>2、在指定寄存器中设置入口参数。</p>
+<p>3、用中断调用指令 INT 21H 执行功能调用。</p>
+<h3 id="（一）字符输出（02H号）"><a href="#（一）字符输出（02H号）" class="headerlink" title="（一）字符输出（02H号）"></a>（一）字符输出（02H号）</h3><p>入口参数：<strong>DL</strong>=字符的ASCII码</p>
+<p><img src="%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA.png"></p>
+<p>注：该功能可以识别响铃字符（07H），回车（0DH），换行（0AH）。</p>
+<h3 id="（二）字符串输出（09H号）"><a href="#（二）字符串输出（09H号）" class="headerlink" title="（二）字符串输出（09H号）"></a>（二）字符串输出（09H号）</h3><p>入口参数：<strong>DS:DX</strong>=欲显示字符串在主存中的首地址。</p>
+<p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%87%BA.png"></p>
+<p>注：顺序为先回车（0DH），再换行（0AH），且字符串应以’$’(24H)结束。</p>
+<h3 id="（三）字符输入（01H号）"><a href="#（三）字符输入（01H号）" class="headerlink" title="（三）字符输入（01H号）"></a>（三）字符输入（01H号）</h3><p>出口参数：<strong>AL</strong>=字符的ASCII码</p>
+<p><img src="%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5.png"></p>
+<p>调用此功能时，若无键按下，则会一直等待，直到按键后才读取该键值</p>
+<h3 id="（四）字符串输入（0AH号）"><a href="#（四）字符串输入（0AH号）" class="headerlink" title="（四）字符串输入（0AH号）"></a>（四）字符串输入（0AH号）</h3><p>入口参数：<strong>DS:DX</strong>=缓冲区首地址</p>
+<p><strong>关键要定义好缓冲区</strong></p>
+<p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5.png"></p>
+<h2 id="五、8086的机器代码格式"><a href="#五、8086的机器代码格式" class="headerlink" title="五、8086的机器代码格式"></a>五、8086的机器代码格式</h2><p><img src="%E6%9C%BA%E5%99%A8%E4%BB%A3%E7%A0%81.png"></p>
+<p>机器码我都不怎么懂，直接搬PPT了= =</p>
+<p>例1： </p>
+<p>MOV AX,BX ;机器代码是 89 D8(16进制)</p>
+<p>第1个字节89是操作码(含<strong>w＝1表示16位操作</strong>)</p>
+<p>第2个字节D8（11 011 000）是 “<strong>mod reg r/m</strong>”</p>
+<p>reg＝011表示目的操作数为BX</p>
+<p>mod＝11时，为<strong>寄存器寻址方式</strong>。</p>
+<p>mod＝11和r/m＝000表示源操作数为AX</p>
+<p>例2：</p>
+<p>MOV AL,[BX+SI+6] ;机器代码是 8A 40（16进制） 06</p>
+<p>前一个字节8A是操作码(含<strong>w＝0表示8位操作</strong>)</p>
+<p>中间一个字节40（01 000 000）(将16进制转为2进制，然后按2 3 3拆开)是 “<strong>mod reg r/m</strong>”字节</p>
+<p>reg＝000表示目的操作数为AL</p>
+<p>mod＝01时，为<strong>带有8位位移量的存储器寻址方式</strong></p>
+<p>mod＝01和r/m＝000表示源操作数为[BX+SI+D8]</p>
+<p>最后一个字节就是8位位移量[D8]=06</p>
+<h2 id="六、常用的ASCII码"><a href="#六、常用的ASCII码" class="headerlink" title="六、常用的ASCII码"></a>六、常用的ASCII码</h2><p><strong>回车：0DH    换行：0AH</strong>   响铃：07H</p>
+<p><strong>空格：20H</strong></p>
+<p><strong>数字0<del>9：30H</del>39H</strong></p>
+<p>大写字母A<del>Z：41H</del>5AH</p>
+<p>小写字母a<del>z：61H</del>7AH</p>
+<h2 id="七、BCD码"><a href="#七、BCD码" class="headerlink" title="七、BCD码"></a>七、BCD码</h2><p>Binary Coded Decimal（二进制编码的十进制数），即<strong>一个十进制数位（0-9）在计算机中用4位二进制编码表示</strong>。常用的BCD码是8421BCD码，即用4位二进制编码的低19个编码表示0-9这十个数字，如图。</p>
+<p><img src="BCD%E7%A0%81.png"></p>
+<p>例：0100 1001 0111 1000.0001 0100 1001  十进制真值：4978.149（上图对应）</p>
+<p>00111010B=3AH   F2H=11110010B</p>
+<p>10H=00010000B=16D                        ABH=10101011B=171D</p>
+<p>压缩BCD码：一个字节表达两位BCD码      10000111B（87H)</p>
+<p>非压缩BCD码：<strong>一个字节表达一位BCD码</strong>（<strong>低4位表达数值，高4位常设置为0</strong>）   </p>
+<p>00001000 00000111B（0807H）</p>
+<h2 id="八、变量的定义"><a href="#八、变量的定义" class="headerlink" title="八、变量的定义"></a>八、变量的定义</h2><h3 id="（一）符号常数"><a href="#（一）符号常数" class="headerlink" title="（一）符号常数"></a>（一）符号常数</h3><p>利用一个标识符表达的一个数值</p>
+<p>例：</p>
+<p><img src="%E7%AC%A6%E5%8F%B7%E5%B8%B8%E6%95%B0.png"></p>
+<p>注：在5.x版本中，<strong>字符串是用引号括起来的</strong></p>
+<p>例：<code>calldos  equ &quot;int 21h&quot;</code></p>
+<p>EQU用于数值等价时不能重复定义符号名,<strong>但”=“允许有重复赋值</strong></p>
+<p>X=7  X EQU 7 都是正确的</p>
+<p>X=X+5   但 X EQU X+5是错误的</p>
+<h3 id="（二）变量定义伪指令"><a href="#（二）变量定义伪指令" class="headerlink" title="（二）变量定义伪指令"></a>（二）变量定义伪指令</h3><p>变量定义（Define）伪指令为变量申请固定长度的存储空间，并可同时将相应的存储单元初始化</p>
+<p>其汇编格式为：<code>变量名    伪指令    初值表</code></p>
+<p>变量名：</p>
+<ol>
+<li>变量名为用户自定义标识符，<strong>表示初值表首元素的逻辑地址</strong>；用这个符号表示地址，<strong>常称为符号地址</strong></li>
+<li>变量名可以没有，此时无符号地址。</li>
+</ol>
+<p>初值表：</p>
+<ol>
+<li><p>初值表是用逗号分隔的参数</p>
+</li>
+<li><p>主要由数值常数、表达式或？、DUP组成</p>
+<p>？——表示初值不确定，即未赋初值</p>
+<p>DUP——表示重复初值</p>
+<p><strong>DUP的格式为：重复次数 DUP(重复参数)</strong></p>
+</li>
+</ol>
+<h3 id="（三）定义实例"><a href="#（三）定义实例" class="headerlink" title="（三）定义实例"></a>（三）定义实例</h3><p>1.字节单元定义实例</p>
+<p>DB伪指令用于分配一个或多个字节单元。初值表中每个数据一定是字节量（Byte），存放8位数据。</p>
+<p><img src="%E5%AD%97%E8%8A%82%E5%8D%95%E5%85%83%E5%AE%9A%E4%B9%89.png"></p>
+<p>2.字单元定义实例</p>
+<p>DW伪指令用于分配一个或多个字单元。初值表中每个数据一定是字量（Word），存放16位数据。</p>
+<p><img src="%E5%AD%97%E5%8D%95%E5%85%83.png"></p>
+<p>3.字变量和字常量的应用（重要）</p>
+<p><img src="%E5%AD%97%E5%8F%98%E9%87%8F%E4%B8%8E%E5%AD%97%E5%B8%B8%E9%87%8F.png"></p>
+<p>即：字变量在程序中当作mem，即取其偏移地址元素的数值。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
+<p>后面看到这篇的人一定要好好学汇编啊。</p>
+<p>张海英你没有心（确信）</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>汇编语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>汇编语言总复习(下)</title>
     <url>/2020/12/29/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8B)/</url>
     <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
@@ -1012,214 +1220,6 @@ Crlf    db 0dh,0ah, ‘<span class="formula">$’</span>
 <span class="formula">	    end</span></code></pre>
 
 <h2 id="十八、简化段定义标准格式"><a href="#十八、简化段定义标准格式" class="headerlink" title="十八、简化段定义标准格式"></a>十八、简化段定义标准格式</h2><p><img src="%E7%AE%80%E5%8C%96%E6%AE%B5.png"></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
-<p>后面看到这篇的人一定要好好学汇编啊。</p>
-<p>张海英你没有心（确信）</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>汇编语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>汇编语言总复习(上)</title>
-    <url>/2020/12/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8A)/</url>
-    <content><![CDATA[<p>本文将结合老师说的考试范围与PPT，对所涉及的知识点作个人总结，面向考试复习（<del>高星，yyds</del>）</p>
-<p>顺序有点乱，如果有时间会再调一下。</p>
-<a id="more"></a>
-
-<h2 id="一、子程序与主程序"><a href="#一、子程序与主程序" class="headerlink" title="一、子程序与主程序"></a>一、子程序与主程序</h2><h3 id="（一）什么是子程序"><a href="#（一）什么是子程序" class="headerlink" title="（一）什么是子程序"></a>（一）什么是子程序</h3><p>把功能相对独立的程序段单独编写和调试，作为一个相对独立的模块供程序使用，就形成子程序</p>
-<p>子程序可以实现源程序的模块化，可简化源程序结构，可以提高编程效率</p>
-<p><strong>参数传递是子程序设计的重点和难点</strong></p>
-<p>子程序的调用和返回是由指令<strong>CALL和RET</strong>(return)来完成的</p>
-<p>•CALL指令分成4种类型（类似JMP）</p>
-<p>CALL label ；段内调用、相对寻址</p>
-<p>CALL r16/m16 ；段内调用、间接寻址</p>
-<p><strong>CALL far ptr label ；段间调用、直接寻址</strong></p>
-<p><strong>CALL far ptr mem ；段间调用、间接寻址</strong></p>
-<p>返回时，RET直接从当前栈顶取内容作为返回地址。因此要保证RET指令执行前堆栈栈顶的内容刚好是返回的地址。</p>
-<p>例：子程序的常见格式（实现回车换行的子程序）：</p>
-<p><img src="%E5%AD%90%E7%A8%8B%E5%BA%8F%E7%A4%BA%E4%BE%8B.png"></p>
-<p>注意：</p>
-<ol>
-<li>对简化段定义格式，在tiny和small下，过程(PROC)的默认属性为near；对完整段定义格式下，过程的默认属性为near。</li>
-<li>进行过程设计时，需要注意寄存器的保护和恢复，即<strong>开始时将要修改的寄存器内容压入栈，结束后再逆序弹出</strong>。</li>
-</ol>
-<h3 id="（二）如何进行参数传递"><a href="#（二）如何进行参数传递" class="headerlink" title="（二）如何进行参数传递"></a>（二）如何进行参数传递</h3><p>主程序在调用子程序时，通常需要提供一些数据，即<strong>入口参数（输入参数）</strong></p>
-<p>子程序执行结束后要返回主程序数据，即<strong>出口参数（输出参数）</strong></p>
-<p>参数的形式分为两种</p>
-<p>① 数据本身（传值）②数据的地址（传址）</p>
-<p>下面介绍如何传递参数</p>
-<h4 id="1-寄存器传递参数（共享寄存器）"><a href="#1-寄存器传递参数（共享寄存器）" class="headerlink" title="1.寄存器传递参数（共享寄存器）"></a>1.寄存器传递参数（共享寄存器）</h4><p>把参数存于约定的寄存器中，可以传值，也可以传址。</p>
-<p><img src="%E5%AF%84%E5%AD%98%E5%99%A8%E4%BC%A0%E5%8F%82.png"></p>
-<p>上图的子程序将和存在了al中，返回后再将其mov到result中，实现了参数传递。</p>
-<p>注:子程序对带有入口参数的寄存器可以保护，也可以不保护；上图未保护</p>
-<p>​     子程序对带有出口参数的寄存器不能保护和恢复</p>
-<h4 id="2-变量传递参数（共享变量）"><a href="#2-变量传递参数（共享变量）" class="headerlink" title="2.变量传递参数（共享变量）"></a>2.变量传递参数（共享变量）</h4><p>主程序和子程序直接采用同一个变量名共享同一个变量。</p>
-<p>类比于C++中的加引用，<strong>直接改变了变量的值</strong>。</p>
-<p><img src="%E5%8F%98%E9%87%8F%E4%BC%A0%E5%8F%821.png"></p>
-<p><img src="%E5%8F%98%E9%87%8F%E4%BC%A0%E5%8F%822.png"></p>
-<p>上图的子程序直接将al中的值mov到了result，随后返回到主程序。</p>
-<h4 id="3-堆栈传递参数（共享堆栈）"><a href="#3-堆栈传递参数（共享堆栈）" class="headerlink" title="3.堆栈传递参数（共享堆栈）"></a>3.堆栈传递参数（共享堆栈）</h4><p>主程序将子程序的入口参数压入堆栈，子程序从堆栈中取出参数</p>
-<p>子程序将出口参数压入堆栈，主程序弹出堆栈取得它们</p>
-<p>前方高能</p>
-<p><img src="%E5%A0%86%E6%A0%88%E4%BC%A0%E5%8F%821.png"></p>
-<p>入口参数为数组的偏移地址和数组的元素个数，通过压入堆栈进行传递。</p>
-<p><img src="%E5%A0%86%E6%A0%88%E4%BC%A0%E5%8F%822.png"></p>
-<p>程序在保护bp后，将bp置为栈顶，并通过偏移位置来分别寻址获得压入的偏移地址和元素参数。最后按反序弹出栈内值和址。</p>
-<p>上述程序堆栈的使用情况如下图</p>
-<p><img src="%E5%A0%86%E6%A0%88%E6%83%85%E5%86%B5.png"></p>
-<p>由于<strong>主程序压入了2个参数，使用了堆栈区的4字节</strong>，故采用上述办法平衡堆栈。</p>
-<p>注：由于寄存器的保护也存于堆栈中，所以在子程序退出时<strong>要特别注意pop的顺序</strong>。</p>
-<h2 id="二、缓冲区"><a href="#二、缓冲区" class="headerlink" title="二、缓冲区"></a>二、缓冲区</h2><h3 id="（一）如何定义缓冲区"><a href="#（一）如何定义缓冲区" class="headerlink" title="（一）如何定义缓冲区"></a>（一）如何定义缓冲区</h3><p>例</p>
-<p><img src="%E7%BC%93%E5%86%B2%E5%8C%BA%E5%AE%9A%E4%B9%89.png"></p>
-<p>该例表示在内存中申请一个<strong>缓冲区为83个字节，首地址给BUF</strong>。</p>
-<p>缓冲区分为<strong>三个部分</strong></p>
-<p>第一个字节内放的是<strong>事先填入最多欲接收的字符个数</strong>（包括回车字符，可以是1～255），在例中为81，表示申请的存放数据的缓冲区的字节数为81个。</p>
-<p>第二个字节 ‘ ？‘表示的是实际存放的字节个数（不包括回车）</p>
-<p>就是说，你放入2个字节的数据，“？”变成2，放10个字节的数据，变成10）；</p>
-<p>DB表示的是分配一个或多个字节；</p>
-<p><strong>输入的数据（字符串）从第三个字节开始存放</strong>，存放至第82个字节，<strong>第81个字节存放回车符（0DH）,0DH作为输入数据的结束</strong>。</p>
-<p><strong>DUP(0)**表示的是</strong>存放数据的81个字节初始值全为0**，即为：81 0 0 0 0······（第82个字节）0 ODH。</p>
-<p>注：实际输入的字符数多于定义数时，多出的字符丢掉，且响铃</p>
-<h3 id="（二）如何使用缓冲区"><a href="#（二）如何使用缓冲区" class="headerlink" title="（二）如何使用缓冲区"></a>（二）如何使用缓冲区</h3><p>下例实现了字符串的输入</p>
-<p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5.png"></p>
-<h2 id="三、串操作指令"><a href="#三、串操作指令" class="headerlink" title="三、串操作指令"></a>三、串操作指令</h2><p>串操作指令的操作对象是以字（W）为单位的<strong>字串</strong>，或是以字节（B）为单位的<strong>字节串</strong></p>
-<p>串操作指令采用了特殊的寻址方式</p>
-<ol>
-<li>源操作数用寄存器SI间接寻址，默认在数据段DS中，即DS:[DI]</li>
-<li><strong>目的操作数用寄存器DI间接寻址，默认在附加段ES中</strong>，即ES:[SI]</li>
-<li>每执行一次串操作，SI和DI将自动修改</li>
-<li><strong>源数据串可以段跨越，目的串不可。</strong></li>
-</ol>
-<p>注：由于要自动修改SI与DI，所以用户需要在进行串操作之前<strong>改变方向标志DF先确定增加或减小的方向</strong></p>
-<p>即：执行<strong>CLD</strong>（DF=0，主存地址增大，<strong>较为常用</strong>）或执行STD（DF=1，主存地址减小）</p>
-<p>串操作经出<strong>配合重复前缀指令</strong>，通过<strong>计数器CX</strong>控制重复执行串操作指令的次数。</p>
-<h3 id="（一）串传送指令"><a href="#（一）串传送指令" class="headerlink" title="（一）串传送指令"></a>（一）串传送指令</h3><p>①串传送 MOVSB/W（move string）</p>
-<p>把字节从主存的源地址传送至目标地址</p>
-<p><strong>MOVSB</strong> 字节串传送：<strong>ES:[DI]←DS:[SI]</strong></p>
-<p>②串存储 STOSB/W（store string）</p>
-<p>把<strong>AL或AX</strong>数据传送至目标地址</p>
-<p><strong>STOSB</strong>  字节串存储：<strong>ES:[DI]←AL</strong>（AL传字节）</p>
-<p><strong>STOSW</strong> 字串存储：    <strong>ES:[DI]←AX</strong>（AX传字）</p>
-<p>③串读取 LODSB/W（load string）</p>
-<p>把指定主存单元的数据传送给<strong>AL或AX</strong></p>
-<p><strong>LODSB</strong>  字节串读取： <strong>AL←DS:[SI]</strong></p>
-<p><strong>LODSW</strong> 字串读取：    <strong>AX←DS:[SI]</strong></p>
-<p>④REP重复前缀指令</p>
-<p><strong>REP</strong> <strong>；每执行一次串指令，CX减1直到CX＝0</strong>，重复执行结束</p>
-<p>即：当数据串没有结束（CX≠0），则继续传送</p>
-<h3 id="（二）串检测指令"><a href="#（二）串检测指令" class="headerlink" title="（二）串检测指令"></a>（二）串检测指令</h3><p>①串比较指令CMPS（compare string）</p>
-<p>将主存中的<strong>源操作数减去至目的操作数</strong>，以便设置标志，进而比较两操作数之间的关系</p>
-<p><strong>CMPSB</strong>  字节串比较：<strong>DS:[SI]－ES:[DI]</strong></p>
-<p>②串扫描SCAS（scan string）</p>
-<p>将<strong>AL/AX减去至目的操作数</strong>，以便设置标志，进而比较AL/AX与操作数之间的关系</p>
-<p><strong>SCASB</strong>  字节串扫描：<strong>AL－ES:[DI]</strong></p>
-<p><strong>SCASW</strong> 字串扫描：   <strong>AX－ES:[DI]</strong></p>
-<p>③REPZ/REPE重复前缀指令</p>
-<p>每执行一次串指令，CX减1并判断ZF是否为0，</p>
-<p>只要CX＝0或ZF＝0，重复执行结束。</p>
-<p>即：当数据串没有结束（CX≠0），<strong>并且串相等（ZF＝1），则继续比较</strong></p>
-<p>④REPNZ/REPNE重复前缀指令</p>
-<p>每执行一次串指令，CX减1并判断ZF是否为0，</p>
-<p>只要CX＝0或ZF＝0，重复执行结束。</p>
-<p>即：当数据串没有结束（CX≠0），<strong>并且串不相等（ZF＝0），则继续比较</strong></p>
-<p>REPNZ和LOOP的区别：</p>
-<p>REPNZ是先执行一次指令，之后将CX减一，判断CX是否为0。</p>
-<p>而LOOP是先将CX减一，然后判断CX是否为0，不为0则继续执行指令。</p>
-<p>例：</p>
-<p><img src="%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2.png"></p>
-<p>在上例中，指令repz cmpsb结束有两种情况</p>
-<p>第一种：ZF=0，即<strong>出现不相等的字符</strong></p>
-<p>第二种：CX=0，即<strong>比较完了所有字符</strong></p>
-<p>注意，在这种情况下，<strong>如果ZF=0，则说明最后一个字符不相等，ZF=1才能说明两个字符串相同</strong>。</p>
-<p>所以，重复比较结束后，需要通过<strong>jnz</strong>指令 来判断<strong>zf位</strong>，若其=0，则字符串不相等。</p>
-<p>总流程图如下</p>
-<p><img src="%E4%B8%B2%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE.png"></p>
-<p>下例为SCAS在字符串中查找空格字符的用法</p>
-<p><img src="%E6%9F%A5%E6%89%BE%E7%A9%BA%E6%A0%BC.png"></p>
-<h2 id="四、常用DOS命令"><a href="#四、常用DOS命令" class="headerlink" title="四、常用DOS命令"></a>四、常用DOS命令</h2><p>调用DOS功能一般方法如下：</p>
-<p>1、在<strong>AH寄存器</strong>中设置系统功能调用号，说明选择的功能</p>
-<p>2、在指定寄存器中设置入口参数。</p>
-<p>3、用中断调用指令 INT 21H 执行功能调用。</p>
-<h3 id="（一）字符输出（02H号）"><a href="#（一）字符输出（02H号）" class="headerlink" title="（一）字符输出（02H号）"></a>（一）字符输出（02H号）</h3><p>入口参数：<strong>DL</strong>=字符的ASCII码</p>
-<p><img src="%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA.png"></p>
-<p>注：该功能可以识别响铃字符（07H），回车（0DH），换行（0AH）。</p>
-<h3 id="（二）字符串输出（09H号）"><a href="#（二）字符串输出（09H号）" class="headerlink" title="（二）字符串输出（09H号）"></a>（二）字符串输出（09H号）</h3><p>入口参数：<strong>DS:DX</strong>=欲显示字符串在主存中的首地址。</p>
-<p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%87%BA.png"></p>
-<p>注：顺序为先回车（0DH），再换行（0AH），且字符串应以’$’(24H)结束。</p>
-<h3 id="（三）字符输入（01H号）"><a href="#（三）字符输入（01H号）" class="headerlink" title="（三）字符输入（01H号）"></a>（三）字符输入（01H号）</h3><p>出口参数：<strong>AL</strong>=字符的ASCII码</p>
-<p><img src="%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5.png"></p>
-<p>调用此功能时，若无键按下，则会一直等待，直到按键后才读取该键值</p>
-<h3 id="（四）字符串输入（0AH号）"><a href="#（四）字符串输入（0AH号）" class="headerlink" title="（四）字符串输入（0AH号）"></a>（四）字符串输入（0AH号）</h3><p>入口参数：<strong>DS:DX</strong>=缓冲区首地址</p>
-<p><strong>关键要定义好缓冲区</strong></p>
-<p><img src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5.png"></p>
-<h2 id="五、8086的机器代码格式"><a href="#五、8086的机器代码格式" class="headerlink" title="五、8086的机器代码格式"></a>五、8086的机器代码格式</h2><p><img src="%E6%9C%BA%E5%99%A8%E4%BB%A3%E7%A0%81.png"></p>
-<p>机器码我都不怎么懂，直接搬PPT了= =</p>
-<p>例1： </p>
-<p>MOV AX,BX ;机器代码是 89 D8(16进制)</p>
-<p>第1个字节89是操作码(含<strong>w＝1表示16位操作</strong>)</p>
-<p>第2个字节D8（11 011 000）是 “<strong>mod reg r/m</strong>”</p>
-<p>reg＝011表示目的操作数为BX</p>
-<p>mod＝11时，为<strong>寄存器寻址方式</strong>。</p>
-<p>mod＝11和r/m＝000表示源操作数为AX</p>
-<p>例2：</p>
-<p>MOV AL,[BX+SI+6] ;机器代码是 8A 40（16进制） 06</p>
-<p>前一个字节8A是操作码(含<strong>w＝0表示8位操作</strong>)</p>
-<p>中间一个字节40（01 000 000）(将16进制转为2进制，然后按2 3 3拆开)是 “<strong>mod reg r/m</strong>”字节</p>
-<p>reg＝000表示目的操作数为AL</p>
-<p>mod＝01时，为<strong>带有8位位移量的存储器寻址方式</strong></p>
-<p>mod＝01和r/m＝000表示源操作数为[BX+SI+D8]</p>
-<p>最后一个字节就是8位位移量[D8]=06</p>
-<h2 id="六、常用的ASCII码"><a href="#六、常用的ASCII码" class="headerlink" title="六、常用的ASCII码"></a>六、常用的ASCII码</h2><p><strong>回车：0DH    换行：0AH</strong>   响铃：07H</p>
-<p><strong>空格：20H</strong></p>
-<p><strong>数字0<del>9：30H</del>39H</strong></p>
-<p>大写字母A<del>Z：41H</del>5AH</p>
-<p>小写字母a<del>z：61H</del>7AH</p>
-<h2 id="七、BCD码"><a href="#七、BCD码" class="headerlink" title="七、BCD码"></a>七、BCD码</h2><p>Binary Coded Decimal（二进制编码的十进制数），即<strong>一个十进制数位（0-9）在计算机中用4位二进制编码表示</strong>。常用的BCD码是8421BCD码，即用4位二进制编码的低19个编码表示0-9这十个数字，如图。</p>
-<p><img src="BCD%E7%A0%81.png"></p>
-<p>例：0100 1001 0111 1000.0001 0100 1001  十进制真值：4978.149（上图对应）</p>
-<p>00111010B=3AH   F2H=11110010B</p>
-<p>10H=00010000B=16D                        ABH=10101011B=171D</p>
-<p>压缩BCD码：一个字节表达两位BCD码      10000111B（87H)</p>
-<p>非压缩BCD码：<strong>一个字节表达一位BCD码</strong>（<strong>低4位表达数值，高4位常设置为0</strong>）   </p>
-<p>00001000 00000111B（0807H）</p>
-<h2 id="八、变量的定义"><a href="#八、变量的定义" class="headerlink" title="八、变量的定义"></a>八、变量的定义</h2><h3 id="（一）符号常数"><a href="#（一）符号常数" class="headerlink" title="（一）符号常数"></a>（一）符号常数</h3><p>利用一个标识符表达的一个数值</p>
-<p>例：</p>
-<p><img src="%E7%AC%A6%E5%8F%B7%E5%B8%B8%E6%95%B0.png"></p>
-<p>注：在5.x版本中，<strong>字符串是用引号括起来的</strong></p>
-<p>例：<code>calldos  equ &quot;int 21h&quot;</code></p>
-<p>EQU用于数值等价时不能重复定义符号名,<strong>但”=“允许有重复赋值</strong></p>
-<p>X=7  X EQU 7 都是正确的</p>
-<p>X=X+5   但 X EQU X+5是错误的</p>
-<h3 id="（二）变量定义伪指令"><a href="#（二）变量定义伪指令" class="headerlink" title="（二）变量定义伪指令"></a>（二）变量定义伪指令</h3><p>变量定义（Define）伪指令为变量申请固定长度的存储空间，并可同时将相应的存储单元初始化</p>
-<p>其汇编格式为：<code>变量名    伪指令    初值表</code></p>
-<p>变量名：</p>
-<ol>
-<li>变量名为用户自定义标识符，<strong>表示初值表首元素的逻辑地址</strong>；用这个符号表示地址，<strong>常称为符号地址</strong></li>
-<li>变量名可以没有，此时无符号地址。</li>
-</ol>
-<p>初值表：</p>
-<ol>
-<li><p>初值表是用逗号分隔的参数</p>
-</li>
-<li><p>主要由数值常数、表达式或？、DUP组成</p>
-<p>？——表示初值不确定，即未赋初值</p>
-<p>DUP——表示重复初值</p>
-<p><strong>DUP的格式为：重复次数 DUP(重复参数)</strong></p>
-</li>
-</ol>
-<h3 id="（三）定义实例"><a href="#（三）定义实例" class="headerlink" title="（三）定义实例"></a>（三）定义实例</h3><p>1.字节单元定义实例</p>
-<p>DB伪指令用于分配一个或多个字节单元。初值表中每个数据一定是字节量（Byte），存放8位数据。</p>
-<p><img src="%E5%AD%97%E8%8A%82%E5%8D%95%E5%85%83%E5%AE%9A%E4%B9%89.png"></p>
-<p>2.字单元定义实例</p>
-<p>DW伪指令用于分配一个或多个字单元。初值表中每个数据一定是字量（Word），存放16位数据。</p>
-<p><img src="%E5%AD%97%E5%8D%95%E5%85%83.png"></p>
-<p>3.字变量和字常量的应用（重要）</p>
-<p><img src="%E5%AD%97%E5%8F%98%E9%87%8F%E4%B8%8E%E5%AD%97%E5%B8%B8%E9%87%8F.png"></p>
-<p>即：字变量在程序中当作mem，即取其偏移地址元素的数值。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
