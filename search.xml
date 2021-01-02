@@ -5,7 +5,7 @@
     <url>/2021/01/02/XMLSPY%E8%80%83%E8%AF%95%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<p>今天我们来探索一下XMLSPY，看看这个软件里有多少我们上机考能用到的东西！</p>
 <p>由于<strong>我电脑上是中文版</strong>，所以读者请自行翻译回英文<strong>找相对应的位置</strong></p>
-<h1 id="一、DTD"><a href="#一、DTD" class="headerlink" title="一、DTD"></a>一、DTD</h1><h2 id="（一）如何获取未知信息"><a href="#（一）如何获取未知信息" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>在DTD的编写中，我们要学会通过Grid视图来获取我们所需要的信息。</p>
+<h1 id="DTD"><a href="#DTD" class="headerlink" title="DTD"></a>DTD</h1><h2 id="（一）如何获取未知信息"><a href="#（一）如何获取未知信息" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>在DTD的编写中，我们要学会通过Grid视图来获取我们所需要的信息。</p>
 <p>不过首先我们要先会写一个元素和一个属性来通过有效性验证。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT <span class="meta-keyword">HEROS</span> (<span class="meta-keyword">hero</span>)&gt;</span></span><br><span class="line"><span class="meta">&lt;!ATTLIST A</span></span><br><span class="line"><span class="meta">    <span class="meta-keyword">id</span> <span class="meta-keyword">ID</span> <span class="meta-keyword">#REQUIRED</span></span></span><br><span class="line"><span class="meta">&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -24,10 +24,26 @@
 <p>之后，再根据题目中说的要求，对生成后的.dtd文件进行改动。如本题中要求使用参数实体替换所有的#PCDATA和CDATA，则在dtd中编写如下代码：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">pc</span> <span class="meta-string">&quot;#PCDATA&quot;</span>&gt;</span>   <span class="comment">&lt;!--注意空格和引号--&gt;</span></span><br><span class="line"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">cd</span> <span class="meta-string">&quot;CDATA&quot;</span>&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT <span class="meta-keyword">status</span> (%<span class="meta-keyword">pc</span>;)&gt;</span>   <span class="comment">&lt;!--替换实例 --&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="五、一些小问题"><a href="#五、一些小问题" class="headerlink" title="五、一些小问题"></a>五、一些小问题</h1><h2 id="一-记不住预定义实体怎么办啊"><a href="#一-记不住预定义实体怎么办啊" class="headerlink" title="(一) 记不住预定义实体怎么办啊"></a>(一) 记不住预定义实体怎么办啊</h2><p>在XMLSPY中，当你打开一个.xml文件时，右下角会指出当前.xml文件中所用到的实体即：</p>
+<h1 id="SCHEMA"><a href="#SCHEMA" class="headerlink" title="SCHEMA"></a>SCHEMA</h1><p>众所周知，SCHEMA很难写，所以还是得仔细过亿遍</p>
+<h2 id="（一）如何获取未知信息-1"><a href="#（一）如何获取未知信息-1" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><h2 id="（二）关于XSD的自动生成问题"><a href="#（二）关于XSD的自动生成问题" class="headerlink" title="（二）关于XSD的自动生成问题"></a>（二）关于XSD的自动生成问题</h2><p>我们拿第三次实验的SpyBase2.xml和对应的.xsd来举例子。</p>
+<h3 id="1-如何从xml生成xsd？"><a href="#1-如何从xml生成xsd？" class="headerlink" title="1.如何从xml生成xsd？"></a>1.如何从xml生成xsd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“**产生DTD/模式(E)**”功能，选择W3C模式</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD%E8%BD%AC%E6%8D%A2.png"></p>
+<h3 id="2-有什么注意事项？-1"><a href="#2-有什么注意事项？-1" class="headerlink" title="2.有什么注意事项？"></a>2.有什么注意事项？</h3><p>首先要去掉W3C模式下面第一项的勾，这样可以避免生成的子元素的类型全部为ref（引用），造成错误。</p>
+<p>将枚举字符置为0的原因与DTD中一致。</p>
+<p>转换之后，该xsd的大致框架便已完成，此时再根据题目中的各种约束条件，对生成后的xsd文件进行修改，若熟练的话可以直接在SCHEMA视图下进行修改，这样效率较高。</p>
+<p><strong>记得删掉默认生成的注释</strong></p>
+<p>如果要交xml文件和xsd文件的话，记得将xsd文件约束在xml文件上，并将绝对路径改为相对路径。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;file:///C:/Users/10971/Desktop/1.xsd&quot;</span>&gt;</span></span><br><span class="line">改为</span><br><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;1.xsd&quot;</span>&gt;</span>  <span class="comment">&lt;!--要和xsd文件放在同一目录下--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>关于简单和复杂</p>
+<p>Inclusive和Exclusive</p>
+<p>XMLSPY 正则表达式</p>
+<p>注意转义符号 <strong>. -要用\</strong></p>
+<h1 id="一些小问题"><a href="#一些小问题" class="headerlink" title="一些小问题"></a>一些小问题</h1><h2 id="一-记不住预定义实体怎么办啊"><a href="#一-记不住预定义实体怎么办啊" class="headerlink" title="(一) 记不住预定义实体怎么办啊"></a>(一) 记不住预定义实体怎么办啊</h2><p>在XMLSPY中，当你打开一个.xml文件时，右下角会指出当前.xml文件中所用到的实体即：</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AE%9E%E4%BD%93.png"></p>
-<p>此时，我们只需要在需要将光标放在引入实体的地方，双击右下角你需要引入的实体，即可引入，大功告成！。</p>
-<h1 id="六、结语"><a href="#六、结语" class="headerlink" title="六、结语"></a>六、结语</h1><p>不想复习XML，但是不得不复习</p>
+<p>此时，我们只需要在需要将光标放在引入实体的地方，双击右下角你需要引入的实体，即可引入，大功告成！</p>
+<h2 id="二-记不住正则表达式怎么办啊"><a href="#二-记不住正则表达式怎么办啊" class="headerlink" title="(二) 记不住正则表达式怎么办啊"></a>(二) 记不住正则表达式怎么办啊</h2><p><del>别问，问就是自己提前建一个xml文件，用注释的方式全部打进去，考试的时候再打开就好了</del></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>不想复习XML，但是不得不复习</p>
 <p>宋亮教的真好啊！</p>
 ]]></content>
       <categories>
@@ -212,15 +228,6 @@
       </tags>
   </entry>
   <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>XML开发技术——第五章</title>
     <url>/2020/11/25/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
     <content><![CDATA[<p>经过了上一次的学习，我们学到了用于查询的XPATH，它会在之后的很多地方予以应用。</p>
@@ -382,6 +389,15 @@
       <tags>
         <tag>XML</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
   </entry>
   <entry>
     <title>数据结构期中复习</title>
