@@ -7,7 +7,7 @@
 <p>由于<strong>我电脑上是中文版</strong>，所以读者请自行翻译回英文<strong>找相对应的位置</strong></p>
 <h2 id="一、DTD"><a href="#一、DTD" class="headerlink" title="一、DTD"></a>一、DTD</h2><h2 id="（一）如何获取未知信息"><a href="#（一）如何获取未知信息" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>在DTD的编写中，我们要学会通过Grid视图来获取我们所需要的信息。</p>
 <p>不过首先我们要先会写一个元素和一个属性来通过有效性验证。</p>
-<pre><code class="highlight xml"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<pre><code class="highlight html"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="meta">&lt;!ELEMENT <span class="meta-keyword">HEROS</span> (<span class="meta-keyword">hero</span>)&gt;</span>
 <span class="meta">&lt;!ATTLIST A</span>
 <span class="meta">    <span class="meta-keyword">id</span> <span class="meta-keyword">ID</span> <span class="meta-keyword">#REQUIRED</span></span>
@@ -26,7 +26,7 @@
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD%E6%B3%A8%E6%84%8F.png"></p>
 <p>在将枚举值改为零后，属性的默认类型就从枚举变成了文本类型（CDATA）</p>
 <p>之后，再根据题目中说的要求，对生成后的.dtd文件进行改动。如本题中要求使用参数实体替换所有的#PCDATA和CDATA，则在dtd中编写如下代码：</p>
-<pre><code class="highlight xml"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">pc</span> <span class="meta-string">&quot;#PCDATA&quot;</span>&gt;</span>   <span class="comment">&lt;!--注意空格和引号--&gt;</span>
+<pre><code class="highlight html"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">pc</span> <span class="meta-string">&quot;#PCDATA&quot;</span>&gt;</span>   <span class="comment">&lt;!--注意空格和引号--&gt;</span>
 <span class="meta">&lt;!ENTITY % <span class="meta-keyword">cd</span> <span class="meta-string">&quot;CDATA&quot;</span>&gt;</span>
 <span class="meta">&lt;!ELEMENT <span class="meta-keyword">status</span> (%<span class="meta-keyword">pc</span>;)&gt;</span>   <span class="comment">&lt;!--替换实例 --&gt;</span></code></pre>
 
