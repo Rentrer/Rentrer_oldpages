@@ -7,11 +7,11 @@
 <p>由于<strong>我电脑上是中文版</strong>，所以读者请自行翻译回英文<strong>找相对应的位置</strong></p>
 <h2 id="一、DTD"><a href="#一、DTD" class="headerlink" title="一、DTD"></a>一、DTD</h2><h2 id="（一）如何获取未知信息"><a href="#（一）如何获取未知信息" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>在DTD的编写中，我们要学会通过Grid视图来获取我们所需要的信息。</p>
 <p>不过首先我们要先会写一个元素和一个属性来通过有效性验证。</p>
-<pre><code class="highlight dtd">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;
-&lt;!ELEMENT HEROS (hero)&gt;
-&lt;!ATTLIST A
-    id ID #REQUIRED
-&gt;</code></pre>
+<pre><code class="highlight xml"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="meta">&lt;!ELEMENT <span class="meta-keyword">HEROS</span> (<span class="meta-keyword">hero</span>)&gt;</span>
+<span class="meta">&lt;!ATTLIST A</span>
+<span class="meta">    <span class="meta-keyword">id</span> <span class="meta-keyword">ID</span> <span class="meta-keyword">#REQUIRED</span></span>
+<span class="meta">&gt;</span></code></pre>
 
 <p>之后我们进入Grid视图，并选取HEROS元素（他是DTD应用到XML文档的根元素）</p>
 <p><img src="DTD%E5%85%83%E7%B4%A0.png"></p>
@@ -26,9 +26,9 @@
 <p><img src="DTD%E6%B3%A8%E6%84%8F.png"></p>
 <p>在将枚举值改为零后，属性的默认类型就从枚举变成了文本类型（CDATA）</p>
 <p>之后，再根据题目中说的要求，对生成后的.dtd文件进行改动。如本题中要求使用参数实体替换所有的#PCDATA和CDATA，则在dtd中编写如下代码：</p>
-<pre><code class="highlight dtd">&lt;!ENTITY % pc &quot;#PCDATA&quot;&gt;   &lt;!--注意空格和引号--&gt;
-&lt;!ENTITY % cd &quot;CDATA&quot;&gt;
-&lt;!ELEMENT status (%pc;)&gt;   &lt;!--替换实例 --&gt;</code></pre>
+<pre><code class="highlight xml"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">pc</span> <span class="meta-string">&quot;#PCDATA&quot;</span>&gt;</span>   <span class="comment">&lt;!--注意空格和引号--&gt;</span>
+<span class="meta">&lt;!ENTITY % <span class="meta-keyword">cd</span> <span class="meta-string">&quot;CDATA&quot;</span>&gt;</span>
+<span class="meta">&lt;!ELEMENT <span class="meta-keyword">status</span> (%<span class="meta-keyword">pc</span>;)&gt;</span>   <span class="comment">&lt;!--替换实例 --&gt;</span></code></pre>
 
 
 
@@ -274,7 +274,7 @@
 <li>由XML解析器对这两个文档进行解析，将XML文档转换为所对应的文档树结构，<strong>将xslt(xsl)文档看作是一系列的转换规则</strong>。</li>
 <li><strong>由XSLT引擎调用这些规则</strong>，对文档树进行遍历，分别处理其中指定的数据节点，将其转换为所需的结果集，并序列化为结果文档。</li>
 </ol>
-<h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><pre><code class="highlight html"><span class="meta">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><pre><code class="highlight xml"><span class="meta">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="meta">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;hello.xlst&quot;?&gt;</span>
 <span class="tag">&lt;<span class="name">message</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">message</span>&gt;</span>       <span class="comment">&lt;!--这是hello.xsl文档--&gt;</span>
 
@@ -312,7 +312,7 @@
 </ol>
 <p>模板&lt;xsl:template match=“/”&gt;和&lt;xsl:template match=“message”&gt;都没有具体的名称，因此将其称为<strong>无名模板</strong>。这些模板之所以没有名称，是因为<strong>它们的调用是在遍历文档树的过程中自动进行的</strong>，不需要名称。</p>
 <p>也可以使用name属性为模板指定一个名称，使其成为命名模板 。例</p>
-<pre><code class="highlight html"><span class="tag">&lt;<span class="name">xsl:stylesheet</span> <span class="attr">version</span>=<span class="string">&quot;2.0&quot;</span> <span class="attr">xmlns:xsl</span>=<span class="string">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>&gt;</span>
+<pre><code class="highlight xml"><span class="tag">&lt;<span class="name">xsl:stylesheet</span> <span class="attr">version</span>=<span class="string">&quot;2.0&quot;</span> <span class="attr">xmlns:xsl</span>=<span class="string">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>&gt;</span>
     <span class="tag">&lt;<span class="name">xsl:template</span> <span class="attr">match</span>=<span class="string">&quot;/&quot;</span> <span class="attr">name</span>=<span class="string">&quot;one&quot;</span>&gt;</span>              <span class="comment">&lt;!--命名模板 one--&gt;</span>
         <span class="tag">&lt;<span class="name">xsl:call-template</span> <span class="attr">name</span>=<span class="string">&quot;another&quot;</span>/&gt;</span>
     <span class="tag">&lt;/<span class="name">xsl:template</span>&gt;</span>
@@ -343,9 +343,9 @@
 <p>模板的返回类型属性<strong>as是一个可选的参数</strong>，如果不指定该参数，则模块可以<strong>输出任意的文本内容</strong>。</p>
 <h3 id="5-2-1-XSLT中模板的调用"><a href="#5-2-1-XSLT中模板的调用" class="headerlink" title="5.2.1 XSLT中模板的调用"></a>5.2.1 XSLT中模板的调用</h3><h4 id="1-使用xsl-apply-templates-调用模板"><a href="#1-使用xsl-apply-templates-调用模板" class="headerlink" title="1.使用xsl:apply-templates 调用模板"></a>1.使用xsl:apply-templates 调用模板</h4><p>调用顺序：在<strong>广度优先</strong>、逐层向下的遍历过程中，指定继续遍历<strong>当前节点的所有子节点</strong></p>
 <p>完整语法：</p>
-<pre><code class="highlight css">&lt;xsl:apply-templates select=Expression mode=QName&gt;
+<pre><code class="highlight xml"><span class="tag">&lt;<span class="name">xsl:apply-templates</span> <span class="attr">select</span>=<span class="string">Expression</span> <span class="attr">mode</span>=<span class="string">QName</span>&gt;</span>
         ......
-&lt;/xsl:apply-templates&gt;
+<span class="tag">&lt;/<span class="name">xsl:apply-templates</span>&gt;</span>
 </code></pre>
 
 <p>对于xsl:apply-templates元素，<strong>select和mode属性都是可选的</strong>，即可以直接使用<code>&lt;xsl:apply-templates/&gt;</code></p>
@@ -397,10 +397,10 @@
 
 <p>C11：例中选择出了所有person的子元素Name，并将它们进行排序，随后进行输出。</p>
 <p>关于sort的语法：</p>
-<pre><code class="highlight css">&lt;xsl:sort select=expression 
-          data-type=&#123;&quot;text&quot;|&quot;number&quot;|QName&#125; 
-          order=&#123;&quot;ascending&quot;|&quot;descending&quot;&#125; 
-          case-order=&#123;&quot;upper-first&quot;|&quot;lower-first&quot;&#125;/&gt;</code></pre>
+<pre><code class="highlight xml"><span class="tag">&lt;<span class="name">xsl:sort</span> <span class="attr">select</span>=<span class="string">expression</span> </span>
+<span class="tag">          <span class="attr">data-type</span>=<span class="string">&#123;</span>&quot;<span class="attr">text</span>&quot;|&quot;<span class="attr">number</span>&quot;|<span class="attr">QName</span>&#125; </span>
+<span class="tag">          <span class="attr">order</span>=<span class="string">&#123;</span>&quot;<span class="attr">ascending</span>&quot;|&quot;<span class="attr">descending</span>&quot;&#125; </span>
+<span class="tag">          <span class="attr">case-order</span>=<span class="string">&#123;</span>&quot;<span class="attr">upper-first</span>&quot;|&quot;<span class="attr">lower-first</span>&quot;&#125;/&gt;</span></code></pre>
 
 <h3 id="5-3-3-xsl-if"><a href="#5-3-3-xsl-if" class="headerlink" title="5.3.3 xsl:if"></a>5.3.3 xsl:if</h3><p>Q12：怎么使用if？</p>
 <p>E12：</p>
