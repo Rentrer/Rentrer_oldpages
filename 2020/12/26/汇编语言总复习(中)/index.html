@@ -98,7 +98,7 @@ const getScript = url => new Promise((resolve, reject) => {
 })</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
   isPost: true,
   isHome: false,
-  isHighlightShrink: false,
+  isHighlightShrink: true,
   isToc: true,
   postUpdate: '2020-12-29 16:09:17'
 }</script><noscript><style type="text/css">
@@ -188,7 +188,7 @@ if (asideStatus !== undefined) {
 <p>​        MOV DS,AX</p>
 <p>上述两个语句可以实现从<strong>一个段到另一个段的传送（通过寄存器中转）</strong></p>
 <p>总结：</p>
-<p><img src= "/img/loading.gif" data-lazy-src="MOV%E6%80%BB%E7%BB%93.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="MOV%E6%80%BB%E7%BB%93.png"></p>
 <h3 id="五-非法传送实例"><a href="#五-非法传送实例" class="headerlink" title="(五)非法传送实例"></a>(五)非法传送实例</h3><h4 id="1-两个操作数的类型不一致"><a href="#1-两个操作数的类型不一致" class="headerlink" title="1.两个操作数的类型不一致"></a>1.两个操作数的类型不一致</h4><p>绝大多数双操作数指令，除非特别说明，目的操作数与源操作数必须类型一致，否则为非法指令</p>
 <p><strong>MOV AL,050AH ；非法指令：050Ah为字，而AL为字节</strong></p>
 <p>对于存储器单元与立即数同时作为操作数的情况，必须<strong>显式指明</strong>；byte ptr指示字节类型，word ptr指示字类型</p>
@@ -207,7 +207,7 @@ if (asideStatus !== undefined) {
 <p>​        MOV AX,ES</p>
 <p>​        MOV DS,AX</p>
 <p>上述两个语句可以实现从<strong>一个段到另一个段的传送（通过寄存器中转）</strong></p>
-<h2 id="十、堆栈"><a href="#十、堆栈" class="headerlink" title="十、堆栈"></a>十、堆栈</h2><p><img src= "/img/loading.gif" data-lazy-src="%E5%A0%86%E6%A0%88.png"></p>
+<h2 id="十、堆栈"><a href="#十、堆栈" class="headerlink" title="十、堆栈"></a>十、堆栈</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%A0%86%E6%A0%88.png"></p>
 <p>注意：</p>
 <ol>
 <li><strong>堆栈操作的单位是字</strong>，进栈和出栈只对字量</li>
@@ -217,7 +217,7 @@ if (asideStatus !== undefined) {
 </ol>
 <h2 id="十一、标志寄存器"><a href="#十一、标志寄存器" class="headerlink" title="十一、标志寄存器"></a>十一、标志寄存器</h2><p>标志（Flag）用于反映指令执行结果或控制指令执行形式。</p>
 <p>8086中，各种常用的标志形成<strong>16位标志寄存器FLAGS</strong>（程序状态字PSW寄存器）分成两类：</p>
-<p><img src= "/img/loading.gif" data-lazy-src="%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8.png"></p>
 <p>(1) 状态标志</p>
 <p>状态标志是最基本的标志，用来记录指令执行结果的辅助信息。加、减运算和逻辑运算指令是主要设置他们的指令，有些其他指令的执行也会相应地设置它们。</p>
 <h3 id="①进位标志CF（Carry-Flag）"><a href="#①进位标志CF（Carry-Flag）" class="headerlink" title="①进位标志CF（Carry Flag）"></a><strong>①进位标志CF（Carry Flag）</strong></h3><p>当运算结果的最高有效位<strong>有进位（加法）或借位</strong>（减法）时，进位标志置1，即<strong>CF = 1</strong>；否则CF = 0。</p>
@@ -260,10 +260,10 @@ if (asideStatus !== undefined) {
 <p>   <strong>段基地址 : 段内偏移地址</strong></p>
 <p>段地址说明逻辑段在主存中的起始位置，8086规定段地址必须是模16地址：xxxx0H</p>
 <p>将逻辑地址中的段地址左移四位，加上偏移地址就得到物理地址。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2.png"></p>
 <h2 id="十三、8086的寻址方式"><a href="#十三、8086的寻址方式" class="headerlink" title="十三、8086的寻址方式"></a>十三、8086的寻址方式</h2><h3 id="（一）立即数寻址"><a href="#（一）立即数寻址" class="headerlink" title="（一）立即数寻址"></a>（一）立即数寻址</h3><p>立即数寻址方式常用来给寄存器赋值</p>
 <p>例：MOV AX,0102H ;AX,&lt;-0102H</p>
-<p><img src= "/img/loading.gif" data-lazy-src="%E7%AB%8B%E5%8D%B3%E6%95%B0.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E7%AB%8B%E5%8D%B3%E6%95%B0.png"></p>
 <h3 id="二-寄存器寻址"><a href="#二-寄存器寻址" class="headerlink" title="(二)寄存器寻址"></a>(二)寄存器寻址</h3><p> MOV AX,1234H ；AX←1234H</p>
 <p> MOV BX,AX ；BX←AX</p>
 <h3 id="（三）存储器寻址"><a href="#（三）存储器寻址" class="headerlink" title="（三）存储器寻址"></a>（三）存储器寻址</h3><h4 id="1-直接寻址方式"><a href="#1-直接寻址方式" class="headerlink" title="1.直接寻址方式"></a>1.直接寻址方式</h4><p>默认的段地址在DS段寄存器，可使用段超越前缀改变</p>
@@ -281,12 +281,12 @@ if (asideStatus !== undefined) {
 <p> MOV AX,DS:[BP+DI]    ；AX←DS:[BP+DI]</p>
 <h4 id="5-相对基址变址寻址"><a href="#5-相对基址变址寻址" class="headerlink" title="5.相对基址变址寻址"></a>5.相对基址变址寻址</h4><p>有效地址＝BX/BP＋SI/DI＋8/16位位移量</p>
 <p>MOV AX,[BX+SI+06H] ；AX←DS:[BX+SI+06H]</p>
-<h3 id="（四）多种表示"><a href="#（四）多种表示" class="headerlink" title="（四）多种表示"></a>（四）多种表示</h3><p><img src= "/img/loading.gif" data-lazy-src="%E5%A4%9A%E7%A7%8D%E8%A1%A8%E7%A4%BA.png"></p>
+<h3 id="（四）多种表示"><a href="#（四）多种表示" class="headerlink" title="（四）多种表示"></a>（四）多种表示</h3><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%A4%9A%E7%A7%8D%E8%A1%A8%E7%A4%BA.png"></p>
 <h2 id="十四、各种指令"><a href="#十四、各种指令" class="headerlink" title="十四、各种指令"></a>十四、各种指令</h2><p>XCHG</p>
 <p>**XCHG reg,reg/mem **</p>
 <p><strong>不能在存储器与存储器之间对换数据</strong></p>
 <p>XLAT 换码指令</p>
-<p><img src= "/img/loading.gif" data-lazy-src="XLAT.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XLAT.png"></p>
 <p>LEA 有效地址传送指令</p>
 <p>将<strong>存储器操作数</strong>的有效地址传送至指定的<strong>16位寄存器</strong>中</p>
 <p>例：</p>
@@ -310,7 +310,7 @@ if (asideStatus !== undefined) {
 <p>比较指令CMP（compare）</p>
 <p>CMP指令将目的操作数减去源操作数，按照定义相应设置状态标志</p>
 <p><strong>但结果不回送目的操作数</strong></p>
-<p><img src= "/img/loading.gif" data-lazy-src="cmp.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="cmp.png"></p>
 <p>乘法 MUL/IMUL</p>
 <p>源操作数显式给出，隐含使用另一个操作数AX和DX</p>
 <p>•字节量相乘：<strong>AL与r8/m8相乘</strong>，得到<strong>16位的结果，存入AX</strong></p>
@@ -342,12 +342,12 @@ if (asideStatus !== undefined) {
 <p>RCL/RCR 带着CF位循环左右移 ROL/ROR 不带CF左右移</p>
 <p><strong>RCL是将某数最高位移进入CF，而CF里的内容跑到该数的最低位，形成咬尾蛇循环，移位次数为CL或CX指定的次数</strong></p>
 <p>例：将32位左移一位</p>
-<p><img src= "/img/loading.gif" data-lazy-src="32%E4%BD%8D%E5%B7%A6%E7%A7%BB.png"></p>
-<h2 id="十五、控制转移类指令"><a href="#十五、控制转移类指令" class="headerlink" title="十五、控制转移类指令"></a>十五、控制转移类指令</h2><p><img src= "/img/loading.gif" data-lazy-src="%E6%AE%B5%E5%86%85%E6%AE%B5%E9%97%B4.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="32%E4%BD%8D%E5%B7%A6%E7%A7%BB.png"></p>
+<h2 id="十五、控制转移类指令"><a href="#十五、控制转移类指令" class="headerlink" title="十五、控制转移类指令"></a>十五、控制转移类指令</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%AE%B5%E5%86%85%E6%AE%B5%E9%97%B4.png"></p>
 <p>段内转移、间接寻址</p>
 <p>JMP R16/M16  ；IP←R16/M16</p>
 <p><strong>JMP WORD PTR [2000H] ；IP←[2000H]</strong> </p>
-<p><img src= "/img/loading.gif" data-lazy-src="%E6%AE%B5%E9%97%B4.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%AE%B5%E9%97%B4.png"></p>
 <p>段间转移、直接寻址</p>
 <p>JMP FAR PTR LABEL</p>
 <p> ；IP←LABEL的偏移地址</p>
@@ -355,7 +355,7 @@ if (asideStatus !== undefined) {
 <p>段间转移、间接寻址</p>
 <p>JMP FAR PTR MEM</p>
 <p> ；IP←[MEM]，CS←[MEM+2]</p>
-<p><img src= "/img/loading.gif" data-lazy-src="%E5%A4%A7%E5%B0%8F%E5%85%B3%E7%B3%BB.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%A4%A7%E5%B0%8F%E5%85%B3%E7%B3%BB.png"></p>
 <h2 id="十六、大小与高低"><a href="#十六、大小与高低" class="headerlink" title="十六、大小与高低"></a>十六、大小与高低</h2><p>•<strong>无符号数</strong>的大小用<strong>高（Above）低</strong>（<strong>Below</strong>）表示</p>
 <p>•利用<strong>CF确定高低、利用ZF标志确定相等</strong>（Equal）</p>
 <p>•两数的高低分成4种关系：</p>
@@ -385,8 +385,8 @@ if (asideStatus !== undefined) {
 <p><strong>表示由当前地址向前跳过10个字节。</strong></p>
 <p>•EVEN ;从偶地址开始</p>
 <p>•ALIGN n ;从n的整数倍地址开始</p>
-<p><img src= "/img/loading.gif" data-lazy-src="%E5%AE%9A%E4%BD%8D%E4%BC%AA%E6%8C%87%E4%BB%A4.png"></p>
-<h2 id="十七、地址操作符和类型操作符"><a href="#十七、地址操作符和类型操作符" class="headerlink" title="十七、地址操作符和类型操作符"></a>十七、地址操作符和类型操作符</h2><h3 id="（一）地址操作符"><a href="#（一）地址操作符" class="headerlink" title="（一）地址操作符"></a>（一）地址操作符</h3><p><img src= "/img/loading.gif" data-lazy-src="%E5%9C%B0%E5%9D%80%E6%93%8D%E4%BD%9C%E7%AC%A6.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AE%9A%E4%BD%8D%E4%BC%AA%E6%8C%87%E4%BB%A4.png"></p>
+<h2 id="十七、地址操作符和类型操作符"><a href="#十七、地址操作符和类型操作符" class="headerlink" title="十七、地址操作符和类型操作符"></a>十七、地址操作符和类型操作符</h2><h3 id="（一）地址操作符"><a href="#（一）地址操作符" class="headerlink" title="（一）地址操作符"></a>（一）地址操作符</h3><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9C%B0%E5%9D%80%E6%93%8D%E4%BD%9C%E7%AC%A6.png"></p>
 <p><code>mov bx,offset array  ;等价于 lea bx,array</code></p>
 <p> <code>mov cl,array+4          ;等效于 mov cl,array[4]</code></p>
 <h3 id="（二）类型操作符"><a href="#（二）类型操作符" class="headerlink" title="（二）类型操作符"></a>（二）类型操作符</h3><p>PTR操作符：使名字或标号具有指定的类型</p>
@@ -394,49 +394,10 @@ if (asideStatus !== undefined) {
 <p><code>jmp far ptr n_label ;n_label是一个标号</code></p>
 <p>THIS</p>
 <p>•利用THIS说明的操作数具有汇编时的当前逻辑地址，但具有指定的类型</p>
-<p><img src= "/img/loading.gif" data-lazy-src="THIS.png"></p>
-<pre><code class="highlight latex">.model small
-	   .stack
-	   .data
-V_byte  equ this byte
-V_word  dw 3332h,3735h
-Target  dw 5 dup(20h)
-Crlf    db 0dh,0ah, ‘<span class="formula">$’</span>
-<span class="formula">Flag    db 0</span>
-<span class="formula">N_point dw offset s_label</span>
-<span class="formula">	   .code</span>
-<span class="formula">	   .startup</span>
-<span class="formula">	   mov al,byte ptr v_word</span>
-<span class="formula">	   dec al</span>
-<span class="formula">	   mov  v_byte ,al;v_word=3331h	</span>
-<span class="formula">	   N_label:cmp flag,1 ;flag单元=0</span>
-<span class="formula">	    jz s_label</span>
-<span class="formula">	    inc flag  ；flag=1</span>
-<span class="formula">	    jmp short n_label</span>
-<span class="formula">S_label: cmp flag,2  ;flag=1</span>
-<span class="formula">	    jz next</span>
-<span class="formula">	    inc flag   ;flag=2</span>
-<span class="formula">    jmp n_point ;段内间接转移，等同于jmp s_label</span>
-<span class="formula">Next: mov ax,type v_word  ;ax=0002h</span>
-<span class="formula">	    mov cx,lengthof target;5个数据项，cx=5</span>
-<span class="formula">	    mov si,offset target</span>
-<span class="formula">W_again: mov [si],ax</span>
-<span class="formula">	    inc si</span>
-<span class="formula">	    inc si</span>
-<span class="formula">      loop w_again;对target填充5个字：0002h</span>
-<span class="formula">mov cx,sizeof target;cx=10</span>
-<span class="formula">	    mov al,’?’</span>
-<span class="formula">	    mov di,offset target</span>
-<span class="formula">B_again: mov [di],al</span>
-<span class="formula">	    inc di</span>
-<span class="formula">	    loop b_again ;对target填充10个‘？’</span>
-<span class="formula">	    mov dx,offset v_word</span>
-<span class="formula">	    mov ah,9</span>
-<span class="formula">	    int 21h  ;显示结果为1357??????????</span>
-<span class="formula">	    .exit 0</span>
-<span class="formula">	    end</span></code></pre>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="THIS.png"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">.model small</span><br><span class="line">	   .stack</span><br><span class="line">	   .data</span><br><span class="line">V_byte  equ this byte</span><br><span class="line">V_word  dw 3332h,3735h</span><br><span class="line">Target  dw 5 dup(20h)</span><br><span class="line">Crlf    db 0dh,0ah, ‘<span class="formula">$’</span></span><br><span class="line"><span class="formula">Flag    db 0</span></span><br><span class="line"><span class="formula">N_point dw offset s_label</span></span><br><span class="line"><span class="formula">	   .code</span></span><br><span class="line"><span class="formula">	   .startup</span></span><br><span class="line"><span class="formula">	   mov al,byte ptr v_word</span></span><br><span class="line"><span class="formula">	   dec al</span></span><br><span class="line"><span class="formula">	   mov  v_byte ,al;v_word=3331h	</span></span><br><span class="line"><span class="formula">	   N_label:cmp flag,1 ;flag单元=0</span></span><br><span class="line"><span class="formula">	    jz s_label</span></span><br><span class="line"><span class="formula">	    inc flag  ；flag=1</span></span><br><span class="line"><span class="formula">	    jmp short n_label</span></span><br><span class="line"><span class="formula">S_label: cmp flag,2  ;flag=1</span></span><br><span class="line"><span class="formula">	    jz next</span></span><br><span class="line"><span class="formula">	    inc flag   ;flag=2</span></span><br><span class="line"><span class="formula">    jmp n_point ;段内间接转移，等同于jmp s_label</span></span><br><span class="line"><span class="formula">Next: mov ax,type v_word  ;ax=0002h</span></span><br><span class="line"><span class="formula">	    mov cx,lengthof target;5个数据项，cx=5</span></span><br><span class="line"><span class="formula">	    mov si,offset target</span></span><br><span class="line"><span class="formula">W_again: mov [si],ax</span></span><br><span class="line"><span class="formula">	    inc si</span></span><br><span class="line"><span class="formula">	    inc si</span></span><br><span class="line"><span class="formula">      loop w_again;对target填充5个字：0002h</span></span><br><span class="line"><span class="formula">mov cx,sizeof target;cx=10</span></span><br><span class="line"><span class="formula">	    mov al,’?’</span></span><br><span class="line"><span class="formula">	    mov di,offset target</span></span><br><span class="line"><span class="formula">B_again: mov [di],al</span></span><br><span class="line"><span class="formula">	    inc di</span></span><br><span class="line"><span class="formula">	    loop b_again ;对target填充10个‘？’</span></span><br><span class="line"><span class="formula">	    mov dx,offset v_word</span></span><br><span class="line"><span class="formula">	    mov ah,9</span></span><br><span class="line"><span class="formula">	    int 21h  ;显示结果为1357??????????</span></span><br><span class="line"><span class="formula">	    .exit 0</span></span><br><span class="line"><span class="formula">	    end</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="十八、简化段定义标准格式"><a href="#十八、简化段定义标准格式" class="headerlink" title="十八、简化段定义标准格式"></a>十八、简化段定义标准格式</h2><p><img src= "/img/loading.gif" data-lazy-src="%E7%AE%80%E5%8C%96%E6%AE%B5.png"></p>
+<h2 id="十八、简化段定义标准格式"><a href="#十八、简化段定义标准格式" class="headerlink" title="十八、简化段定义标准格式"></a>十八、简化段定义标准格式</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E7%AE%80%E5%8C%96%E6%AE%B5.png"></p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
