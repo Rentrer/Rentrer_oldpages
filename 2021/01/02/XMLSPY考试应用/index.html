@@ -176,16 +176,16 @@ if (asideStatus !== undefined) {
 <span class="meta">&gt;</span></code></pre>
 
 <p>之后我们进入Grid视图，并选取HEROS元素（他是DTD应用到XML文档的根元素）</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD%E5%85%83%E7%B4%A0.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="DTD%E5%85%83%E7%B4%A0.png"></p>
 <p>我们可以看到，右上角是根元素声明时可以采取的所有类型，下面则是这个根元素的子元素们组成的方式，分别对应*<em>默认值,？,+,**</em>。</p>
 <p>下面我们来看属性</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD%E5%B1%9E%E6%80%A7.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="DTD%E5%B1%9E%E6%80%A7.png"></p>
 <p>同理，将鼠标分别点击Type和Presence（存在方式）的元素中，右上角会出现它的所有可取值，此时可以双击进行更换。这样就避免了不知道取值而不会做题的情况，较为实用。</p>
 <h2 id="（二）关于DTD的自动生成问题"><a href="#（二）关于DTD的自动生成问题" class="headerlink" title="（二）关于DTD的自动生成问题"></a>（二）关于DTD的自动生成问题</h2><p>在实验中，题目是<strong>给我们.xml文件，让我们编写相对应的.dtd文件</strong>。很多同学因为对dtd不太熟悉，想通过生成直接得到答案，但这样生成的dtd往往不是老师想要的答案，那么要怎么尽量修改的像一点呢？我们拿第二次实验的SpyBase2.xml和对应的.dtd来举例子。</p>
 <h3 id="1-如何从xml生成dtd？"><a href="#1-如何从xml生成dtd？" class="headerlink" title="1.如何从xml生成dtd？"></a>1.如何从xml生成dtd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“**产生DTD/模式(E)**”功能</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD%E8%BD%AC%E6%8D%A2.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="DTD%E8%BD%AC%E6%8D%A2.png"></p>
 <h3 id="2-有什么注意事项？"><a href="#2-有什么注意事项？" class="headerlink" title="2.有什么注意事项？"></a>2.有什么注意事项？</h3><p>将枚举改为0的原因是，按默认设置转换出来的dtd，会枚举每一个出现过的数值，而这在考试要求中可能并没有出现，从而使老师得知你是通过转换得来的，下面是一个对比</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD%E6%B3%A8%E6%84%8F.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="DTD%E6%B3%A8%E6%84%8F.png"></p>
 <p>在将枚举值改为零后，属性的默认类型就从枚举变成了文本类型（CDATA）</p>
 <p>之后，再根据题目中说的要求，对生成后的.dtd文件进行改动。如本题中要求使用参数实体替换所有的#PCDATA和CDATA，则在dtd中编写如下代码：</p>
 <pre><code class="highlight html"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">pc</span> <span class="meta-string">&quot;#PCDATA&quot;</span>&gt;</span>   <span class="comment">&lt;!--注意空格和引号--&gt;</span>
@@ -193,7 +193,7 @@ if (asideStatus !== undefined) {
 <span class="meta">&lt;!ELEMENT <span class="meta-keyword">status</span> (%<span class="meta-keyword">pc</span>;)&gt;</span>   <span class="comment">&lt;!--替换实例 --&gt;</span></code></pre>
 
 <h1 id="五、一些小问题"><a href="#五、一些小问题" class="headerlink" title="五、一些小问题"></a>五、一些小问题</h1><h2 id="一-记不住预定义实体怎么办啊"><a href="#一-记不住预定义实体怎么办啊" class="headerlink" title="(一) 记不住预定义实体怎么办啊"></a>(一) 记不住预定义实体怎么办啊</h2><p>在XMLSPY中，当你打开一个.xml文件时，右下角会指出当前.xml文件中所用到的实体即：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AE%9E%E4%BD%93.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="%E5%AE%9E%E4%BD%93.png"></p>
 <p>此时，我们只需要在需要将光标放在引入实体的地方，双击右下角你需要引入的实体，即可引入，大功告成！。</p>
 <h1 id="六、结语"><a href="#六、结语" class="headerlink" title="六、结语"></a>六、结语</h1><p>不想复习XML，但是不得不复习</p>
 <p>宋亮教的真好啊！</p>

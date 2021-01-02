@@ -189,7 +189,7 @@ if (asideStatus !== undefined) {
 <p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
 <p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
 <p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
-<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"><a href="#例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码" class="headerlink" title="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"></a>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3><p>答：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="MOV%E5%9B%BE.png"></p>
+<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"><a href="#例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码" class="headerlink" title="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"></a>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3><p>答：<img src= "/img/loading.gif" data-lazy-src="MOV%E5%9B%BE.png"></p>
 <p><code>MOV AX,0102H</code></p>
 <p><code>MOV DS,AX</code></p>
 <p>解释说明：</p>
@@ -215,7 +215,7 @@ if (asideStatus !== undefined) {
 <p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
 <h3 id="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？"><a href="#例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？" class="headerlink" title="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？"></a>例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</h3><p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
 <p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。<strong>（默认要补齐5位）</strong>如图</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E8%BD%AC%E5%8C%96.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E8%BD%AC%E5%8C%96.png"></p>
 <h3 id="例五：编写定义缓冲区，及实现输入字符串的核心代码"><a href="#例五：编写定义缓冲区，及实现输入字符串的核心代码" class="headerlink" title="例五：编写定义缓冲区，及实现输入字符串的核心代码"></a>例五：编写定义缓冲区，及实现输入字符串的核心代码</h3><p>答：<code>string db &#39;Im a string&#39;,0dh,0ah,&#39;$&#39;</code></p>
 <p><code>buffer  db 81</code></p>
 <pre><code>         `db ?`
@@ -254,7 +254,7 @@ if (asideStatus !== undefined) {
 <p>​        <code>end</code></p>
 <h3 id="例二：实现字符串的冒泡排序"><a href="#例二：实现字符串的冒泡排序" class="headerlink" title="例二：实现字符串的冒泡排序"></a>例二：实现字符串的冒泡排序</h3><p>分析：使用两层循环，结合跳转实现</p>
 <p>代码如下：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E4%BB%A3%E7%A0%81.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="%E4%BB%A3%E7%A0%81.png"></p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>明天上刑场</p>
 <p>概统还没复习</p>
 <p>高星救我</p>
