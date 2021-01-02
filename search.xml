@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>XMLSPY考试应用</title>
+    <url>/2021/01/02/XMLSPY%E8%80%83%E8%AF%95%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<p>今天我们来探索一下XMLSPY，看看这个软件里有多少我们上机考能用到的东西！</p>
+<p>由于<strong>我电脑上是中文版</strong>，所以读者请自行翻译回英文<strong>找相对应的位置</strong></p>
+<h2 id="一、DTD"><a href="#一、DTD" class="headerlink" title="一、DTD"></a>一、DTD</h2><h2 id="（一）如何获取未知信息"><a href="#（一）如何获取未知信息" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>在DTD的编写中，我们要学会通过Grid视图来获取我们所需要的信息。</p>
+<p>不过首先我们要先会写一个元素和一个属性来通过有效性验证。</p>
+<pre><code class="highlight dtd">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;
+&lt;!ELEMENT HEROS (hero)&gt;
+&lt;!ATTLIST A
+    id ID #REQUIRED
+&gt;</code></pre>
+
+<p>之后我们进入Grid视图，并选取HEROS元素（他是DTD应用到XML文档的根元素）</p>
+<p><img src="DTD%E5%85%83%E7%B4%A0.png"></p>
+<p>我们可以看到，右上角是根元素声明时可以采取的所有类型，下面则是这个根元素的子元素们组成的方式，分别对应*<em>默认值,？,+,**</em>。</p>
+<p>下面我们来看属性</p>
+<p><img src="DTD%E5%B1%9E%E6%80%A7.png"></p>
+<p>同理，将鼠标分别点击Type和Presence（存在方式）的元素中，右上角会出现它的所有可取值，此时可以双击进行更换。这样就避免了不知道取值而不会做题的情况，较为实用。</p>
+<h2 id="（二）关于DTD的自动生成问题"><a href="#（二）关于DTD的自动生成问题" class="headerlink" title="（二）关于DTD的自动生成问题"></a>（二）关于DTD的自动生成问题</h2><p>在实验中，题目是<strong>给我们.xml文件，让我们编写相对应的.dtd文件</strong>。很多同学因为对dtd不太熟悉，想通过生成直接得到答案，但这样生成的dtd往往不是老师想要的答案，那么要怎么尽量修改的像一点呢？我们拿第二次实验的SpyBase2.xml和对应的.dtd来举例子。</p>
+<h4 id="1-如何从xml生成dtd？"><a href="#1-如何从xml生成dtd？" class="headerlink" title="1.如何从xml生成dtd？"></a>1.如何从xml生成dtd？</h4><p>我们使用菜单栏“DTD/Schema”目录下的“**产生DTD/模式(E)**”功能</p>
+<p><img src="DTD%E8%BD%AC%E6%8D%A2.png"></p>
+<h4 id="2-有什么注意事项？"><a href="#2-有什么注意事项？" class="headerlink" title="2.有什么注意事项？"></a>2.有什么注意事项？</h4><p>将枚举改为0的原因是，按默认设置转换出来的dtd，会枚举每一个出现过的数值，而这在考试要求中可能并没有出现，从而使老师得知你是通过转换得来的，下面是一个对比</p>
+<p><img src="DTD%E6%B3%A8%E6%84%8F.png"></p>
+<p>在将枚举值改为零后，属性的默认类型就从枚举变成了文本类型（CDATA）</p>
+<p>之后，再根据题目中说的要求，对生成后的.dtd文件进行改动。如本题中要求使用参数实体替换所有的#PCDATA和CDATA，则在dtd中编写如下代码：</p>
+<pre><code class="highlight dtd">&lt;!ENTITY % pc &quot;#PCDATA&quot;&gt;   &lt;!--注意空格和引号--&gt;
+&lt;!ENTITY % cd &quot;CDATA&quot;&gt;
+&lt;!ELEMENT status (%pc;)&gt;   &lt;!--替换实例 --&gt;</code></pre>
+
+
+
+<h2 id="五、一些小问题"><a href="#五、一些小问题" class="headerlink" title="五、一些小问题"></a>五、一些小问题</h2><h3 id="一、记不住预定义实体怎么办啊"><a href="#一、记不住预定义实体怎么办啊" class="headerlink" title="一、记不住预定义实体怎么办啊"></a>一、记不住预定义实体怎么办啊</h3><p>在XMLSPY中，当你打开一个.xml文件时，右下角会指出当前.xml文件中所用到的实体即：</p>
+<p><img src="%E5%AE%9E%E4%BD%93.png"></p>
+<p>此时，我们只需要在需要将光标放在引入实体的地方，双击右下角你需要引入的实体，即可引入，大功告成！。</p>
+<h2 id="六、结语"><a href="#六、结语" class="headerlink" title="六、结语"></a>六、结语</h2><p>不想复习XML，但是不得不复习</p>
+<p>宋亮教的真好啊！</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>XML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>XML开发技术——第一章</title>
     <url>/2020/11/14/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/</url>
     <content><![CDATA[<p>可能你还不了解XML，只是听说课水分高就报了(<del>我也是</del>)，那就跟着我的笔记，来一起了解XML吧！</p>
