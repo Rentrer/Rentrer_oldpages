@@ -426,43 +426,6 @@
       </categories>
   </entry>
   <entry>
-    <title>数据结构期末复习</title>
-    <url>/2021/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<p>面向考试复习数据结构2.0版正式上线了</p>
-<p>本文将整理后三章的相关知识点，并对例题习题进行整合梳理，存在不足，欢迎补充。</p>
-<h1 id="第四章-图"><a href="#第四章-图" class="headerlink" title="第四章 图"></a>第四章 图</h1><h2 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h2><p>图是由一个顶点集V和一个弧集(或边集)构成的数据结构，是一种<strong>非线性</strong>数据结构</p>
-<p>网：带权的图。<strong>在不会引起歧义时，网也直接称为图。</strong></p>
-<p>路径长度：路径上边的数目（两个点之间的距离即路径上<strong>除了起点，包括终点的顶点个数</strong>）</p>
-<p>简单路径：<strong>顶点不重复</strong>出现的路径（<strong>边可以重复</strong>）</p>
-<h3 id="关于图的顶点和边数目"><a href="#关于图的顶点和边数目" class="headerlink" title="关于图的顶点和边数目"></a>关于图的顶点和边数目</h3><p> 我们用 n 表示图中顶点数目；m表示图中边(或者弧)的数目；</p>
-<p>  对于无向图：<code>0≤m≤n(n-1)/2</code>  <strong>m=n(n-1)/2的无向图称为完全图</strong></p>
-<p> 对于有向图：<code>0≤m≤n(n-1)</code>       <strong>m=n(n-1)的有向图称为有向完全图</strong></p>
-<p>n=0: V为空集；<strong>m=0: 或许有1个顶点（平凡图）。</strong></p>
-<p>例一：设某个非连通无向图有28条边，则该图至少有(9)个顶点。</p>
-<p>解：此题的要点是<strong>非连通</strong>的无向图</p>
-<p>由上方公式可得，8*7/2=28，正好为8个顶点的完全图的边数</p>
-<p>但题目中要求是非连通的，所以在边不加的情况下，<strong>至少加一个孤立点，即至少有9个顶点</strong></p>
-<p>举一反三：若某个连通无向图有28条边，则该图至少有(8)个顶点。</p>
-<h3 id="关于图的度数"><a href="#关于图的度数" class="headerlink" title="关于图的度数"></a>关于图的度数</h3><p>什么是邻接点？</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%97%A0%E5%90%91%E9%82%BB%E6%8E%A5%E7%82%B9.png"></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%9C%89%E5%90%91%E9%82%BB%E6%8E%A5%E7%82%B9.png"></p>
-<p>什么是度数？</p>
-<p>1.对于无向图，顶点v的度就是和顶点v相邻接的边的数目，<strong>记为TD(v)</strong></p>
-<p>2.对于有向图，<strong>入度ID(v)**是箭头指向v的弧的个数，</strong>出度OD(v)**是箭头远离v的弧的个数</p>
-<p>​                          顶点v的度<strong>TD(v)=ID(v)+OD(v)</strong></p>
-<p>3.握手定理：<br>$$<br>\begin{equation*}</p>
-<p>2m = \sum_{n=1}^nTD(v_i)</p>
-<p>\end{equation*}<br>$$</p>
-<h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3>]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-        <tag>考试复习整理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构期中复习</title>
     <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
@@ -566,6 +529,54 @@
 <h3 id="5-2二叉树转换成树"><a href="#5-2二叉树转换成树" class="headerlink" title="5.2二叉树转换成树"></a>5.2二叉树转换成树</h3><p>（1）加虚线  若某结点i是其父结点的左子树的根结点，<strong>则将该结点ⅰ的右子结点以及沿右子链不断地搜索所有的右子结点，将所有这些右子结点与i结点的父结点之间加虚线相连</strong></p>
 <p>（2）去连线  去掉二叉树中所有其右子结点之间的连线<br>（3）规整化  将图中各结点按层次排列且将所有的虚线变成实线</p>
 <img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" />]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构期末复习</title>
+    <url>/2021/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>面向考试复习数据结构2.0版正式上线了</p>
+<p>本文将整理后三章的相关知识点，并对例题习题进行整合梳理，存在不足，欢迎补充。</p>
+<h1 id="第四章-图"><a href="#第四章-图" class="headerlink" title="第四章 图"></a>第四章 图</h1><h2 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h2><p>图是由一个顶点集V和一个弧集(或边集)构成的数据结构，是一种<strong>非线性</strong>数据结构</p>
+<p>网：带权的图。<strong>在不会引起歧义时，网也直接称为图。</strong></p>
+<p>路径长度：路径上边的数目（两个点之间的距离即路径上<strong>除了起点，包括终点的顶点个数</strong>）</p>
+<p>简单路径：<strong>顶点不重复</strong>出现的路径（<strong>边可以重复</strong>）</p>
+<h3 id="关于图的顶点和边数目"><a href="#关于图的顶点和边数目" class="headerlink" title="关于图的顶点和边数目"></a>关于图的顶点和边数目</h3><p> 我们用 n 表示图中顶点数目；m表示图中边(或者弧)的数目；</p>
+<p>  对于无向图：<code>0≤m≤n(n-1)/2</code>  <strong>m=n(n-1)/2的无向图称为完全图</strong></p>
+<p> 对于有向图：<code>0≤m≤n(n-1)</code>       <strong>m=n(n-1)的有向图称为有向完全图</strong></p>
+<p>n=0: V为空集；<strong>m=0: 或许有1个顶点（平凡图）。</strong></p>
+<p>例一：设某个非连通无向图有28条边，则该图至少有(9)个顶点。</p>
+<p>解：此题的要点是<strong>非连通</strong>的无向图</p>
+<p>由上方公式可得，8*7/2=28，正好为8个顶点的完全图的边数</p>
+<p>但题目中要求是非连通的，所以在边不加的情况下，<strong>至少加一个孤立点，即至少有9个顶点</strong></p>
+<p>举一反三：若某个连通无向图有28条边，则该图至少有(8)个顶点。</p>
+<h3 id="关于图的度数"><a href="#关于图的度数" class="headerlink" title="关于图的度数"></a>关于图的度数</h3><p>什么是邻接点？</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%97%A0%E5%90%91%E9%82%BB%E6%8E%A5%E7%82%B9.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%9C%89%E5%90%91%E9%82%BB%E6%8E%A5%E7%82%B9.png"></p>
+<p>什么是度数？</p>
+<p>1.对于无向图，顶点v的度就是和顶点v相邻接的边的数目，<strong>记为TD(v)</strong></p>
+<p>2.对于有向图，<strong>入度ID(v)**是箭头指向v的弧的个数，</strong>出度OD(v)**是箭头远离v的弧的个数</p>
+<p>​                          顶点v的度<strong>TD(v)=ID(v)+OD(v)</strong></p>
+<p>3.握手定理：<br>$$<br>\begin{equation*}</p>
+<p>2m = \sum_{n=1}^nTD(v_i)</p>
+<p>\end{equation*}<br>$$</p>
+<h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3><p>两个顶点间连通，等价于两个顶点之间有路径。</p>
+<p>连通图：<strong>无向图</strong>中任意两个顶点都连通（<strong>不存在孤立点</strong>）</p>
+<p>连通分量：无向图中的<strong>极大连通子图</strong></p>
+<p>强连通图/强连通分量：<strong>对于有向图</strong>，概念类似上两个。</p>
+<h3 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h3><p>对于<strong>连通图</strong>G，若其有n个顶点，则<strong>含有G中所有顶点，且边数为n-1</strong>的<strong>连通图</strong>称为G的一棵生成树。</p>
+<p>关键：原图是连通图，生成树有其全部n个顶点，有且仅有n-1条边。</p>
+<div class="note info flat"><p><strong>提示</strong></p>
+    <p>有n个顶点和n-1条边的图不一定是生成树</p>
+</div>
+
+<p>在有n个顶点的图中,<strong>如果边多于n-1条,则一定有环</strong>，<strong>如果边少于n-1条,则是非连通图。</strong></p>
+<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2>]]></content>
       <categories>
         <category>数据结构与算法</category>
       </categories>
