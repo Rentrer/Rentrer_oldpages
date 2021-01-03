@@ -25,17 +25,32 @@
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">pc</span> <span class="meta-string">&quot;#PCDATA&quot;</span>&gt;</span>   <span class="comment">&lt;!--注意空格和引号--&gt;</span></span><br><span class="line"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">cd</span> <span class="meta-string">&quot;CDATA&quot;</span>&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT <span class="meta-keyword">status</span> (%<span class="meta-keyword">pc</span>;)&gt;</span>   <span class="comment">&lt;!--替换实例 --&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="SCHEMA"><a href="#SCHEMA" class="headerlink" title="SCHEMA"></a>SCHEMA</h1><p>众所周知，SCHEMA很难写，所以还是得仔细过亿遍</p>
+<p>我们拿第三次实验的SpyBase2.xml和对应的.xsd来举例子。</p>
 <h2 id="（一）如何获取未知信息-1"><a href="#（一）如何获取未知信息-1" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>同理，我们先生成一个xsd文件，再转到他的SCHEMA视图</p>
-<h2 id="（二）关于XSD的自动生成问题"><a href="#（二）关于XSD的自动生成问题" class="headerlink" title="（二）关于XSD的自动生成问题"></a>（二）关于XSD的自动生成问题</h2><p>我们拿第三次实验的SpyBase2.xml和对应的.xsd来举例子。</p>
-<h3 id="1-如何从xml生成xsd？"><a href="#1-如何从xml生成xsd？" class="headerlink" title="1.如何从xml生成xsd？"></a>1.如何从xml生成xsd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“**产生DTD/模式(E)**”功能，选择W3C模式</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD%E5%85%A5%E5%8F%A3.png"></p>
+<p> 这个界面会列举出你文章中的<strong>全局元素和全局类型</strong>，如果自己编写一些类型，效果如下。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD%E5%85%A5%E5%8F%A32.png"></p>
+<p>我们点击蓝色按钮进入下一步的视图，先点击一个元素试试</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD%E5%85%83%E7%B4%A0.png"></p>
+<p>我们选取了一个具有简单类型的元素，在右侧显示出了他的元素类型、出现次数等内容，因为它属于string类型，所以下方还有进一步限制他的length等属性，直接在下方修改即可影响到XSD内的内容，比较方便。</p>
+<p>下面再点一个属性</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD%E5%B1%9E%E6%80%A7.png"></p>
+<p>内容与元素的基本一致，因为它属于decimal类型，所以下方还有进一步限制他的minInclusive totalDigit等属性，直接在下方修改即可影响到XSD内的内容，比较方便。</p>
+<div class="note info flat"><p><strong>提示</strong></p>
+    <p>minInclusive和maxInclusive是闭区间,min即最小值，max即最大值</p>
+    <p>而minExclusive和maxExclusive是开区间，min即最小值+1，max是最大值-1</p>
+</div>
+
+<h2 id="（二）关于XSD的自动生成问题"><a href="#（二）关于XSD的自动生成问题" class="headerlink" title="（二）关于XSD的自动生成问题"></a>（二）关于XSD的自动生成问题</h2><h3 id="1-如何从xml生成xsd？"><a href="#1-如何从xml生成xsd？" class="headerlink" title="1.如何从xml生成xsd？"></a>1.如何从xml生成xsd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“**产生DTD/模式(E)**”功能，选择W3C模式</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD%E8%BD%AC%E6%8D%A2.png"></p>
 <h3 id="2-有什么注意事项？-1"><a href="#2-有什么注意事项？-1" class="headerlink" title="2.有什么注意事项？"></a>2.有什么注意事项？</h3><p>首先要去掉W3C模式下面第一项的勾，这样可以避免生成的子元素的类型全部为ref（引用），造成错误。</p>
 <p>将枚举字符置为0的原因与DTD中一致。</p>
 <p>转换之后，该xsd的大致框架便已完成，此时再根据题目中的各种约束条件，对生成后的xsd文件进行修改，若熟练的话可以直接在SCHEMA视图下进行修改，这样效率较高。</p>
 <div class="note info flat"><p><strong>提示</strong></p>
-    <p>①题目中可能会要求写自己定义的简单类型或者复杂类型，但自动生成的xsd文件是没有的，所以要特别注意这一点</p>
+    <p>①题目中可能会要求写自己定义的简单类型或者复杂类型，但自动生成的xsd文件是默认生成了无名的类型直接放在了对应的元素下，所以要特别注意这一点</p>
     <p>②自动生成的元素和属性的类型都是XMLSPY近似判断的，所以可能会出现写错的情况，要对着题目检查一遍。</p>
 </div>
+
 
 <div class="note danger flat"><p><strong>重点</strong></p>
    <p>记得删掉默认生成的注释</p>
@@ -48,6 +63,7 @@
 <p>Inclusive和Exclusive</p>
 <p>XMLSPY 正则表达式</p>
 <p>注意转义符号 <strong>. -要用\</strong></p>
+<h1 id="XPATH"><a href="#XPATH" class="headerlink" title="XPATH"></a>XPATH</h1><p>下面的小按钮</p>
 <h1 id="一些小问题"><a href="#一些小问题" class="headerlink" title="一些小问题"></a>一些小问题</h1><h2 id="一-记不住预定义实体怎么办啊"><a href="#一-记不住预定义实体怎么办啊" class="headerlink" title="(一) 记不住预定义实体怎么办啊"></a>(一) 记不住预定义实体怎么办啊</h2><p>在XMLSPY中，当你打开一个.xml文件时，右下角会指出当前.xml文件中所用到的实体即：</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AE%9E%E4%BD%93.png"></p>
 <p>此时，我们只需要在需要将光标放在引入实体的地方，双击右下角你需要引入的实体，即可引入，大功告成！</p>
@@ -407,6 +423,117 @@
       <categories>
         <category>杂谈</category>
       </categories>
+  </entry>
+  <entry>
+    <title>数据结构期中复习</title>
+    <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
+<p>本文只针对作者认为可能考到的知识点进行整理，存在不足，欢迎补充。</p>
+<a id="more"></a>
+
+<h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><h2 id="1-什么是数据结构"><a href="#1-什么是数据结构" class="headerlink" title="1.什么是数据结构"></a>1.什么是数据结构</h2><p>数据结构是相互之间存在一种或多种特定关系的数据元素的集合。</p>
+<p>数据对象：即具有相同性质的数据元素的集合</p>
+<p>例：英文字母数据对象：C={‘A’, ‘B’, ……, ‘Z’, ‘a’, ‘b’, ……, ‘z’}。</p>
+<p>主要包括<strong>逻辑结构、存储结构</strong>和运算集合三部分。</p>
+<p><strong>逻辑结构</strong>有四种：<strong>集合、线性结构、树形结构、图状结构（网状结构）</strong></p>
+<p><strong>存储结构</strong>（也称为物理结构）有两种：<strong>顺序存储结构和链式存储结构</strong></p>
+<p>顺序存储结构，是借助元素在存储器中的相对位置来表示数据之间逻辑关系，要求<strong>所有的元素依次放在一片连续空间中</strong>，通常借助程序设计语言的<strong>数组类型</strong>来描述。<br>链式存储结构<br>链式存储结构无需占用一整块存储空间。但为了表示结点之 间的关系， 需要给每个结点附加指针字段用于存放后继元素的储地址。所以链式结构通常借助程序设计语言<strong>指针类型</strong>来描述。</p>
+<p>抽象数据类型的定义取决于数据类型的逻辑特性，<strong>与其在计算机内部如何表示和实现无关。</strong></p>
+<p>两个重要特征：数据抽象性和数据封装性。</p>
+<h4 id="例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。"><a href="#例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。" class="headerlink" title="例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。"></a>例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。</h4><p>答：例如有一张学生基本信息表，包括学生的学号、姓名、性别、籍贯、专业等。每个学生基本信息记录对应一个数据元素，学生记录按顺序号排列，形成了学生基本信息记录的线性序列。对于整个表来说，只有一个开始结点（它的前面无记录）和一个终端结点（它的后面无记录），其他的结点则各有一个也只有一个直接前趋和直接后继。<strong>学生记录之间的这种关系就确定了学生表的逻辑结构，即线性结构</strong>。<strong>这些学生记录在计算机中的存储表示就是存储结构。</strong>如果用连续的存储单元（如用数组表示）来存放这些记录，则称为顺序存储结构；如果存储单元不连续，而是随机存放各个记录，然后用指针进行链接，则称为链式存储结构。即相同的逻辑结构，可以对应不同的存储结构</p>
+<h2 id="2-什么是算法"><a href="#2-什么是算法" class="headerlink" title="2.什么是算法"></a>2.什么是算法</h2><p>算法，简单来说就是解决问题的方法。它是规则的有限集合，是求解特定问题的过程描述、操作步骤或指令序列。</p>
+<p>它具有5个重要特性：<strong>有穷性、确定性、可行性、输入、输出</strong></p>
+<p><strong>算法时间复杂度的估算方法</strong>：</p>
+<p>从算法中选取一种原操作(<strong>对于所研究的问题来说，该操作是基本操作</strong>)，将该操作重复执行的次数作为算法时间复杂度的衡量准则。</p>
+<p><strong>时间复杂度与原操作的执行次数之和成正比。</strong></p>
+<h1 id="第二章-表结构"><a href="#第二章-表结构" class="headerlink" title="第二章 表结构"></a>第二章 表结构</h1><h2 id="1-顺序表和链表"><a href="#1-顺序表和链表" class="headerlink" title="1.顺序表和链表"></a>1.顺序表和链表</h2><p>线性结构的逻辑结构特征：</p>
+<p>​    (1)存在唯一的第1个数据元素；</p>
+<p>　(2)存在唯一的最后1个数据元素；</p>
+<p>　(3)第 i (&gt;1)个数据元素有唯一的1个前驱；</p>
+<p>　(4)第 j (&lt;n)个数据元素有唯一的1个后继。</p>
+<p><strong>顺序表：顺序存储结构：用位置描述逻辑关系</strong></p>
+<p><strong>链表：链式存储结构：由指针描述逻辑关系</strong></p>
+<p>补：链表的定义：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;Node,*LinkList;</span><br></pre></td></tr></table></figure>
+
+<h4 id="例1：综合比较顺序表和链表"><a href="#例1：综合比较顺序表和链表" class="headerlink" title="例1：综合比较顺序表和链表"></a>例1：综合比较顺序表和链表</h4><p>答：顺序表在内存中是一段连续的存储空间， 通过头指针和偏移地址直接访问数据，访问数据的效率较高，为O（1），但是插入数据和删除数据的效率较低。<br> 链表在内存中是不连续的，通过每一个节点保存指向下一个节点的指针的方式来存储数据，访问数据的效率较低，但同时，插入数据和删除数据的效率较高。</p>
+<h4 id="例2：解释链表的”头指针、头结点和首元素结点“三个概念"><a href="#例2：解释链表的”头指针、头结点和首元素结点“三个概念" class="headerlink" title="例2：解释链表的”头指针、头结点和首元素结点“三个概念"></a>例2：解释链表的”头指针、头结点和首元素结点“三个概念</h4><p>答：头指针：线性链表中第一个结点或头结点的存储地址，它是访问链表的起始点。</p>
+<p>​        头结点：附加在第一个数据元素之前的结点，该结点的数据域一般为“空”、指针域存放第一个数据元素的地址。</p>
+<p>​        首元素节点：链表中第一个存储着数据的节点。</p>
+<h4 id="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"><a href="#例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。" class="headerlink" title="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"></a>例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。</h4><p>答：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">LinkList <span class="title">LinkSearch</span><span class="params">(ListList L,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k0=<span class="number">1</span>;</span><br><span class="line">    LinkList p=<span class="keyword">new</span> LinkList;</span><br><span class="line">    p=L-&gt;next;</span><br><span class="line">    LinkList q=p;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k0&lt;=k)++k0;</span><br><span class="line">        <span class="keyword">else</span> q=q-&gt;next;</span><br><span class="line">        </span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> q;</span><br><span class="line">&#125;<span class="comment">//时间复杂度为O(N)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-栈与队列"><a href="#2-栈与队列" class="headerlink" title="2.栈与队列"></a>2.栈与队列</h2><p>我觉得期中考不了很难，鸽了（）</p>
+<p>想了解的话请移步我朋友的博客：</p>
+<p><a href="https://linyx.tk/2020/10/04/data-structure-study-note-1/">https://linyx.tk/2020/10/04/data-structure-study-note-1/</a></p>
+<p>之后会补充（大概）</p>
+<h2 id="3-递归"><a href="#3-递归" class="headerlink" title="3.递归"></a>3.递归</h2><p>递归的特点：</p>
+<p>（1）出口至少有一个</p>
+<p>（2）在经过有限次的递归调用后，能够导致递归出口的出现（<strong>递归算法必需具有终止递归的条件</strong>）</p>
+<p>例：实现Hanoi塔问题</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hanoi</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">char</span> x,<span class="keyword">char</span> y,<span class="keyword">char</span> z)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">        move(x,<span class="number">1</span>,z);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        hanoi(n<span class="number">-1</span>,x,z,y);</span><br><span class="line">        move(x,n,z);</span><br><span class="line">        hanoi(n<span class="number">-1</span>,y,x,z);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="第三章：树结构"><a href="#第三章：树结构" class="headerlink" title="第三章：树结构"></a>第三章：树结构</h1><h2 id="1-树"><a href="#1-树" class="headerlink" title="1.树"></a>1.树</h2><p>树是有n个结点的有限集合（n&gt;=0)</p>
+<p>树的结点包含一个数据元素以及若干个指针</p>
+<p>结点拥有子树的个数称为<strong>结点的度</strong>。</p>
+<p>度=0的结点叫做<strong>叶结点</strong></p>
+<p>树的度=<strong>max(结点的度)</strong></p>
+<p>结点的层次：第l层结点的孩子定义为l+1层。</p>
+<p><strong>树的高度（深度）=max（结点的层次）</strong></p>
+<h4 id="例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"><a href="#例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。" class="headerlink" title="例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"></a>例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。</h4><p>答：<strong>n0=1+0<em>n1+1</em>n2+2*n3+…+(K-1)*nK</strong></p>
+<h2 id="2-二叉树"><a href="#2-二叉树" class="headerlink" title="2.二叉树"></a>2.二叉树</h2><p>二叉树：每个结点至多只有两棵子树</p>
+<p>即：<strong>结点的度&lt;=2的有序树</strong></p>
+<p>二叉树的定义：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Lchild</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Rchild</span>;</span></span><br><span class="line">&#125;TNode,*Tree;</span><br></pre></td></tr></table></figure>
+
+<p>满二叉树：一棵高度为k且具有2^k-1个结点的二叉树</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9B%BE%E7%89%871.png">（k=4)</p>
+<p><strong>完全二叉树：高度为k，结点个数∈[2^(k-1),2^k-1]，且第k层结点都集中在左侧的二叉树。</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9B%BE%E7%89%872.png"></p>
+<h4 id="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。"><a href="#例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。" class="headerlink" title="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。"></a>例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。</h4><p>证明：</p>
+<p>设二叉树T共有n个结点</p>
+<p>度为0的结点数为n0，度为1的结点数为n1,度为2的结点数为n2，</p>
+<p>T的分支数为m</p>
+<p>（1）由于二叉树中所有结点的度&lt;=2,则：n=n0+n1+n2</p>
+<p>（2）除根节点外，其余节点都有唯一前驱，则: n-1=m</p>
+<p>（3）由于度=i（i=0，1，2）的结点具有i个分支，则：m=0+n1+2n2</p>
+<p>联立上式得：n0=n2+1，证毕。</p>
+<h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span><span class="comment">//递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    preOrder(T-&gt;Lchild);</span><br><span class="line">    preOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span><span class="comment">//非递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; temp;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            temp.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            p=temp.top();</span><br><span class="line">            temp.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9B%BE%E7%89%873.png"></p>
+<h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span><span class="comment">//递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span>;</span><br><span class="line">    InOrder(T-&gt;Lchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    InOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span><span class="comment">//非递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; temp;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            temp.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            p=temp.top();</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            temp.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107151715620.png"></p>
+<h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    PostOrder(T-&gt;Lchild);</span><br><span class="line">    PostOrder(T-&gt;Rchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; tempL，tempR;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            tempL.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            <span class="keyword">while</span>(tempR.top()-&gt;Rchild==p)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;tempR.top()-&gt;data;<span class="comment">//获取R栈顶部指针的数据</span></span><br><span class="line">                tempR.pop();<span class="comment">//弹出</span></span><br><span class="line">            &#125;</span><br><span class="line">            p=tempL.top();</span><br><span class="line">            tempL.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            tempR.push(p);</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107151732351.png"></p>
+<h4 id="例：简述由先序序列和中序序列构造二叉树的基本操作方法"><a href="#例：简述由先序序列和中序序列构造二叉树的基本操作方法" class="headerlink" title="例：简述由先序序列和中序序列构造二叉树的基本操作方法"></a>例：简述由先序序列和中序序列构造二叉树的基本操作方法</h4><p>答：如果前序序列和中序序列都为空，那么构造一棵空树。否则</p>
+<p>1、根据前序可确定根。</p>
+<p>2、根据根和中序，可以确定左子树集合和右子树集合，并得到左子树中序序列和右子树中序序列。</p>
+<p>3、在前序序列中划分出左子树前序序列和右子树前序序列。</p>
+<p>4、根据左子树前序序列和左子树中序序列构造左子树。</p>
+<p>5、根据右子树前序序列和右子树中序序列构造右子树。</p>
+<h2 id="4-哈夫曼树"><a href="#4-哈夫曼树" class="headerlink" title="4.哈夫曼树"></a>4.哈夫曼树</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107154325482.png"></p>
+<h2 id="5-森林与二叉树的转换"><a href="#5-森林与二叉树的转换" class="headerlink" title="5.森林与二叉树的转换"></a>5.森林与二叉树的转换</h2><h3 id="5-1树转换为二叉树"><a href="#5-1树转换为二叉树" class="headerlink" title="5.1树转换为二叉树"></a>5.1树转换为二叉树</h3><p>（1）<strong>加虚线</strong> 在树的每层按从“左至右”的顺序<strong>在兄弟结点之间加虚线相连</strong><br>（2）去连线。<strong>除最左的第一个子结点</strong>外，父结点与所 其它子结点的连线都去掉<br>（3）旋转。将<strong>树顺时针旋转45°</strong>，原有的实线左斜<br>（4）整型。将旋转后树中的所有虛线改为实线，并向右斜。</p>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155306011.png" alt="image-20201107155306011" style="zoom:67%;" />
+
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155341354.png" alt="image-20201107155341354" style="zoom: 67%;" />
+
+<h3 id="5-2二叉树转换成树"><a href="#5-2二叉树转换成树" class="headerlink" title="5.2二叉树转换成树"></a>5.2二叉树转换成树</h3><p>（1）加虚线  若某结点i是其父结点的左子树的根结点，<strong>则将该结点ⅰ的右子结点以及沿右子链不断地搜索所有的右子结点，将所有这些右子结点与i结点的父结点之间加虚线相连</strong></p>
+<p>（2）去连线  去掉二叉树中所有其右子结点之间的连线<br>（3）规整化  将图中各结点按层次排列且将所有的虚线变成实线</p>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" />]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
   </entry>
   <entry>
     <title>汇编语言总复习(上)</title>
@@ -965,117 +1092,6 @@
       </categories>
       <tags>
         <tag>汇编语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构期中复习</title>
-    <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
-<p>本文只针对作者认为可能考到的知识点进行整理，存在不足，欢迎补充。</p>
-<a id="more"></a>
-
-<h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><h2 id="1-什么是数据结构"><a href="#1-什么是数据结构" class="headerlink" title="1.什么是数据结构"></a>1.什么是数据结构</h2><p>数据结构是相互之间存在一种或多种特定关系的数据元素的集合。</p>
-<p>数据对象：即具有相同性质的数据元素的集合</p>
-<p>例：英文字母数据对象：C={‘A’, ‘B’, ……, ‘Z’, ‘a’, ‘b’, ……, ‘z’}。</p>
-<p>主要包括<strong>逻辑结构、存储结构</strong>和运算集合三部分。</p>
-<p><strong>逻辑结构</strong>有四种：<strong>集合、线性结构、树形结构、图状结构（网状结构）</strong></p>
-<p><strong>存储结构</strong>（也称为物理结构）有两种：<strong>顺序存储结构和链式存储结构</strong></p>
-<p>顺序存储结构，是借助元素在存储器中的相对位置来表示数据之间逻辑关系，要求<strong>所有的元素依次放在一片连续空间中</strong>，通常借助程序设计语言的<strong>数组类型</strong>来描述。<br>链式存储结构<br>链式存储结构无需占用一整块存储空间。但为了表示结点之 间的关系， 需要给每个结点附加指针字段用于存放后继元素的储地址。所以链式结构通常借助程序设计语言<strong>指针类型</strong>来描述。</p>
-<p>抽象数据类型的定义取决于数据类型的逻辑特性，<strong>与其在计算机内部如何表示和实现无关。</strong></p>
-<p>两个重要特征：数据抽象性和数据封装性。</p>
-<h4 id="例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。"><a href="#例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。" class="headerlink" title="例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。"></a>例：试举一个数据结构的例子，叙述其逻辑结构和存储结构两方面的含义和相互关系。</h4><p>答：例如有一张学生基本信息表，包括学生的学号、姓名、性别、籍贯、专业等。每个学生基本信息记录对应一个数据元素，学生记录按顺序号排列，形成了学生基本信息记录的线性序列。对于整个表来说，只有一个开始结点（它的前面无记录）和一个终端结点（它的后面无记录），其他的结点则各有一个也只有一个直接前趋和直接后继。<strong>学生记录之间的这种关系就确定了学生表的逻辑结构，即线性结构</strong>。<strong>这些学生记录在计算机中的存储表示就是存储结构。</strong>如果用连续的存储单元（如用数组表示）来存放这些记录，则称为顺序存储结构；如果存储单元不连续，而是随机存放各个记录，然后用指针进行链接，则称为链式存储结构。即相同的逻辑结构，可以对应不同的存储结构</p>
-<h2 id="2-什么是算法"><a href="#2-什么是算法" class="headerlink" title="2.什么是算法"></a>2.什么是算法</h2><p>算法，简单来说就是解决问题的方法。它是规则的有限集合，是求解特定问题的过程描述、操作步骤或指令序列。</p>
-<p>它具有5个重要特性：<strong>有穷性、确定性、可行性、输入、输出</strong></p>
-<p><strong>算法时间复杂度的估算方法</strong>：</p>
-<p>从算法中选取一种原操作(<strong>对于所研究的问题来说，该操作是基本操作</strong>)，将该操作重复执行的次数作为算法时间复杂度的衡量准则。</p>
-<p><strong>时间复杂度与原操作的执行次数之和成正比。</strong></p>
-<h1 id="第二章-表结构"><a href="#第二章-表结构" class="headerlink" title="第二章 表结构"></a>第二章 表结构</h1><h2 id="1-顺序表和链表"><a href="#1-顺序表和链表" class="headerlink" title="1.顺序表和链表"></a>1.顺序表和链表</h2><p>线性结构的逻辑结构特征：</p>
-<p>​    (1)存在唯一的第1个数据元素；</p>
-<p>　(2)存在唯一的最后1个数据元素；</p>
-<p>　(3)第 i (&gt;1)个数据元素有唯一的1个前驱；</p>
-<p>　(4)第 j (&lt;n)个数据元素有唯一的1个后继。</p>
-<p><strong>顺序表：顺序存储结构：用位置描述逻辑关系</strong></p>
-<p><strong>链表：链式存储结构：由指针描述逻辑关系</strong></p>
-<p>补：链表的定义：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;Node,*LinkList;</span><br></pre></td></tr></table></figure>
-
-<h4 id="例1：综合比较顺序表和链表"><a href="#例1：综合比较顺序表和链表" class="headerlink" title="例1：综合比较顺序表和链表"></a>例1：综合比较顺序表和链表</h4><p>答：顺序表在内存中是一段连续的存储空间， 通过头指针和偏移地址直接访问数据，访问数据的效率较高，为O（1），但是插入数据和删除数据的效率较低。<br> 链表在内存中是不连续的，通过每一个节点保存指向下一个节点的指针的方式来存储数据，访问数据的效率较低，但同时，插入数据和删除数据的效率较高。</p>
-<h4 id="例2：解释链表的”头指针、头结点和首元素结点“三个概念"><a href="#例2：解释链表的”头指针、头结点和首元素结点“三个概念" class="headerlink" title="例2：解释链表的”头指针、头结点和首元素结点“三个概念"></a>例2：解释链表的”头指针、头结点和首元素结点“三个概念</h4><p>答：头指针：线性链表中第一个结点或头结点的存储地址，它是访问链表的起始点。</p>
-<p>​        头结点：附加在第一个数据元素之前的结点，该结点的数据域一般为“空”、指针域存放第一个数据元素的地址。</p>
-<p>​        首元素节点：链表中第一个存储着数据的节点。</p>
-<h4 id="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"><a href="#例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。" class="headerlink" title="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"></a>例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。</h4><p>答：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">LinkList <span class="title">LinkSearch</span><span class="params">(ListList L,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k0=<span class="number">1</span>;</span><br><span class="line">    LinkList p=<span class="keyword">new</span> LinkList;</span><br><span class="line">    p=L-&gt;next;</span><br><span class="line">    LinkList q=p;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k0&lt;=k)++k0;</span><br><span class="line">        <span class="keyword">else</span> q=q-&gt;next;</span><br><span class="line">        </span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> q;</span><br><span class="line">&#125;<span class="comment">//时间复杂度为O(N)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-栈与队列"><a href="#2-栈与队列" class="headerlink" title="2.栈与队列"></a>2.栈与队列</h2><p>我觉得期中考不了很难，鸽了（）</p>
-<p>想了解的话请移步我朋友的博客：</p>
-<p><a href="https://linyx.tk/2020/10/04/data-structure-study-note-1/">https://linyx.tk/2020/10/04/data-structure-study-note-1/</a></p>
-<p>之后会补充（大概）</p>
-<h2 id="3-递归"><a href="#3-递归" class="headerlink" title="3.递归"></a>3.递归</h2><p>递归的特点：</p>
-<p>（1）出口至少有一个</p>
-<p>（2）在经过有限次的递归调用后，能够导致递归出口的出现（<strong>递归算法必需具有终止递归的条件</strong>）</p>
-<p>例：实现Hanoi塔问题</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hanoi</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">char</span> x,<span class="keyword">char</span> y,<span class="keyword">char</span> z)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">        move(x,<span class="number">1</span>,z);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        hanoi(n<span class="number">-1</span>,x,z,y);</span><br><span class="line">        move(x,n,z);</span><br><span class="line">        hanoi(n<span class="number">-1</span>,y,x,z);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="第三章：树结构"><a href="#第三章：树结构" class="headerlink" title="第三章：树结构"></a>第三章：树结构</h1><h2 id="1-树"><a href="#1-树" class="headerlink" title="1.树"></a>1.树</h2><p>树是有n个结点的有限集合（n&gt;=0)</p>
-<p>树的结点包含一个数据元素以及若干个指针</p>
-<p>结点拥有子树的个数称为<strong>结点的度</strong>。</p>
-<p>度=0的结点叫做<strong>叶结点</strong></p>
-<p>树的度=<strong>max(结点的度)</strong></p>
-<p>结点的层次：第l层结点的孩子定义为l+1层。</p>
-<p><strong>树的高度（深度）=max（结点的层次）</strong></p>
-<h4 id="例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"><a href="#例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。" class="headerlink" title="例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"></a>例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。</h4><p>答：<strong>n0=1+0<em>n1+1</em>n2+2*n3+…+(K-1)*nK</strong></p>
-<h2 id="2-二叉树"><a href="#2-二叉树" class="headerlink" title="2.二叉树"></a>2.二叉树</h2><p>二叉树：每个结点至多只有两棵子树</p>
-<p>即：<strong>结点的度&lt;=2的有序树</strong></p>
-<p>二叉树的定义：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Lchild</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Rchild</span>;</span></span><br><span class="line">&#125;TNode,*Tree;</span><br></pre></td></tr></table></figure>
-
-<p>满二叉树：一棵高度为k且具有2^k-1个结点的二叉树</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9B%BE%E7%89%871.png">（k=4)</p>
-<p><strong>完全二叉树：高度为k，结点个数∈[2^(k-1),2^k-1]，且第k层结点都集中在左侧的二叉树。</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9B%BE%E7%89%872.png"></p>
-<h4 id="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。"><a href="#例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。" class="headerlink" title="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。"></a>例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。</h4><p>证明：</p>
-<p>设二叉树T共有n个结点</p>
-<p>度为0的结点数为n0，度为1的结点数为n1,度为2的结点数为n2，</p>
-<p>T的分支数为m</p>
-<p>（1）由于二叉树中所有结点的度&lt;=2,则：n=n0+n1+n2</p>
-<p>（2）除根节点外，其余节点都有唯一前驱，则: n-1=m</p>
-<p>（3）由于度=i（i=0，1，2）的结点具有i个分支，则：m=0+n1+2n2</p>
-<p>联立上式得：n0=n2+1，证毕。</p>
-<h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span><span class="comment">//递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    preOrder(T-&gt;Lchild);</span><br><span class="line">    preOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span><span class="comment">//非递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; temp;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            temp.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            p=temp.top();</span><br><span class="line">            temp.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9B%BE%E7%89%873.png"></p>
-<h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span><span class="comment">//递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span>;</span><br><span class="line">    InOrder(T-&gt;Lchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    InOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span><span class="comment">//非递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; temp;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            temp.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            p=temp.top();</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            temp.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107151715620.png"></p>
-<h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    PostOrder(T-&gt;Lchild);</span><br><span class="line">    PostOrder(T-&gt;Rchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; tempL，tempR;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            tempL.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            <span class="keyword">while</span>(tempR.top()-&gt;Rchild==p)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;tempR.top()-&gt;data;<span class="comment">//获取R栈顶部指针的数据</span></span><br><span class="line">                tempR.pop();<span class="comment">//弹出</span></span><br><span class="line">            &#125;</span><br><span class="line">            p=tempL.top();</span><br><span class="line">            tempL.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            tempR.push(p);</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107151732351.png"></p>
-<h4 id="例：简述由先序序列和中序序列构造二叉树的基本操作方法"><a href="#例：简述由先序序列和中序序列构造二叉树的基本操作方法" class="headerlink" title="例：简述由先序序列和中序序列构造二叉树的基本操作方法"></a>例：简述由先序序列和中序序列构造二叉树的基本操作方法</h4><p>答：如果前序序列和中序序列都为空，那么构造一棵空树。否则</p>
-<p>1、根据前序可确定根。</p>
-<p>2、根据根和中序，可以确定左子树集合和右子树集合，并得到左子树中序序列和右子树中序序列。</p>
-<p>3、在前序序列中划分出左子树前序序列和右子树前序序列。</p>
-<p>4、根据左子树前序序列和左子树中序序列构造左子树。</p>
-<p>5、根据右子树前序序列和右子树中序序列构造右子树。</p>
-<h2 id="4-哈夫曼树"><a href="#4-哈夫曼树" class="headerlink" title="4.哈夫曼树"></a>4.哈夫曼树</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107154325482.png"></p>
-<h2 id="5-森林与二叉树的转换"><a href="#5-森林与二叉树的转换" class="headerlink" title="5.森林与二叉树的转换"></a>5.森林与二叉树的转换</h2><h3 id="5-1树转换为二叉树"><a href="#5-1树转换为二叉树" class="headerlink" title="5.1树转换为二叉树"></a>5.1树转换为二叉树</h3><p>（1）<strong>加虚线</strong> 在树的每层按从“左至右”的顺序<strong>在兄弟结点之间加虚线相连</strong><br>（2）去连线。<strong>除最左的第一个子结点</strong>外，父结点与所 其它子结点的连线都去掉<br>（3）旋转。将<strong>树顺时针旋转45°</strong>，原有的实线左斜<br>（4）整型。将旋转后树中的所有虛线改为实线，并向右斜。</p>
-<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155306011.png" alt="image-20201107155306011" style="zoom:67%;" />
-
-<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155341354.png" alt="image-20201107155341354" style="zoom: 67%;" />
-
-<h3 id="5-2二叉树转换成树"><a href="#5-2二叉树转换成树" class="headerlink" title="5.2二叉树转换成树"></a>5.2二叉树转换成树</h3><p>（1）加虚线  若某结点i是其父结点的左子树的根结点，<strong>则将该结点ⅰ的右子结点以及沿右子链不断地搜索所有的右子结点，将所有这些右子结点与i结点的父结点之间加虚线相连</strong></p>
-<p>（2）去连线  去掉二叉树中所有其右子结点之间的连线<br>（3）规整化  将图中各结点按层次排列且将所有的虚线变成实线</p>
-<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" />]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
       </tags>
   </entry>
 </search>
