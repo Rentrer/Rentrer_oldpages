@@ -417,6 +417,15 @@
       </tags>
   </entry>
   <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数据结构期中复习</title>
     <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
@@ -529,15 +538,6 @@
       </tags>
   </entry>
   <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数据结构期末复习</title>
     <url>/2021/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>面向考试复习数据结构2.0版正式上线了</p>
@@ -591,11 +591,11 @@
 <p>有向图：顶点的<strong>出度</strong>=邻接点链表中结点的数目</p>
 <h4 id="时间复杂度和空间复杂度-1"><a href="#时间复杂度和空间复杂度-1" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接表存储图，占用的<strong>存储空间大小与顶点数和边数都有关</strong>。</p>
 <p>时间复杂度为O(n²)</p>
-<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h4 id="深度优先搜索遍历"><a href="#深度优先搜索遍历" class="headerlink" title="深度优先搜索遍历"></a>深度优先搜索遍历</h4><p>基本思想：</p>
+<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h4 id="深度优先搜索遍历-更适用于找一条路径"><a href="#深度优先搜索遍历-更适用于找一条路径" class="headerlink" title="深度优先搜索遍历(更适用于找一条路径)"></a>深度优先搜索遍历(<strong>更适用于找一条路径</strong>)</h4><p>基本思想：</p>
 <p>①从图中某个顶点v出发，访问该顶点</p>
 <p>②查找顶点v的第一个未被访问的邻接点v1，访问该顶点。</p>
 <p>③重复第二步操作，直到图中没有未被访问的顶点为止。</p>
-<h4 id="广度优先搜索遍历"><a href="#广度优先搜索遍历" class="headerlink" title="广度优先搜索遍历"></a>广度优先搜索遍历</h4><p>基本思想：</p>
+<h4 id="广度优先搜索遍历-更适用于找最优路径"><a href="#广度优先搜索遍历-更适用于找最优路径" class="headerlink" title="广度优先搜索遍历(更适用于找最优路径)"></a>广度优先搜索遍历(<strong>更适用于找最优路径</strong>)</h4><p>基本思想：</p>
 <p>（1）从连通图中某个顶点v出发，访问该顶点，并置visited[v]的值为true，然后将v进队。</p>
 <p>（2）只要队列不空，则重复下述处理：</p>
 <p>​         ①队头顶点u出队</p>
@@ -614,6 +614,13 @@
 <p>②然后从权值最小的边开始，若它的添加不使S中产生回路，则在S上加上这条边</p>
 <p>③如此重复，直至加上n-1条边为止。</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%AF%94%E8%BE%83.png"></p>
+<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>拓扑排序的一般操作方法：</p>
+<p>(1)从有向图中选取一个入度为0的顶点，输出它;</p>
+<p>(2)从有向图中删去该顶点以及所有以它为尾的弧;</p>
+<p>重复上述两步，直至图空或者找不到入度为0的顶点为止。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png"></p>
+<p>时间复杂度为O(n+m)</p>
+<h2 id="关键路径-从源点到汇点的最长路径"><a href="#关键路径-从源点到汇点的最长路径" class="headerlink" title="关键路径(从源点到汇点的最长路径)"></a>关键路径(<strong>从源点到汇点的最长路径</strong>)</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84.png"></p>
 ]]></content>
       <categories>
         <category>数据结构与算法</category>
