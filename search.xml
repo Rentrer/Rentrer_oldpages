@@ -59,7 +59,6 @@
 <p>如果要交xml文件和xsd文件的话，记得将xsd文件约束在xml文件上，并将绝对路径改为相对路径。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;file:///C:/Users/10971/Desktop/1.xsd&quot;</span>&gt;</span></span><br><span class="line">改为</span><br><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;1.xsd&quot;</span>&gt;</span>  <span class="comment">&lt;!--要和xsd文件放在同一目录下--&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>关于简单和复杂</p>
 <h1 id="XPATH"><a href="#XPATH" class="headerlink" title="XPATH"></a>XPATH</h1><h2 id="一-XPATH函数"><a href="#一-XPATH函数" class="headerlink" title="(一) XPATH函数"></a>(一) XPATH函数</h2><p>在考察XPATH时，试题更多的是考察你对XPATH表达式的理解（比如如何利用子孙关系挑选出那个元素），对XPATH函数的考察其实较少，我们只需要记住常用的几个即可。</p>
 <p>我们可以曲线救国，从XQUERY中得到XPATH函数及其用法（好不容易找到的）</p>
 <p>首先随便打开一个xquery文件</p>
@@ -269,15 +268,6 @@
       </tags>
   </entry>
   <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>XML开发技术——第五章</title>
     <url>/2020/11/25/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
     <content><![CDATA[<p>经过了上一次的学习，我们学到了用于查询的XPATH，它会在之后的很多地方予以应用。</p>
@@ -439,6 +429,15 @@
       <tags>
         <tag>课内学习笔记</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
   </entry>
   <entry>
     <title>数据结构期中复习</title>
