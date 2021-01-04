@@ -60,14 +60,29 @@
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;file:///C:/Users/10971/Desktop/1.xsd&quot;</span>&gt;</span></span><br><span class="line">改为</span><br><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;1.xsd&quot;</span>&gt;</span>  <span class="comment">&lt;!--要和xsd文件放在同一目录下--&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>关于简单和复杂</p>
-<p>Inclusive和Exclusive</p>
-<p>XMLSPY 正则表达式</p>
-<p>注意转义符号 <strong>. -要用\</strong></p>
-<h1 id="XPATH"><a href="#XPATH" class="headerlink" title="XPATH"></a>XPATH</h1><p>下面的小按钮</p>
+<h1 id="XPATH"><a href="#XPATH" class="headerlink" title="XPATH"></a>XPATH</h1><h2 id="一-XPATH函数"><a href="#一-XPATH函数" class="headerlink" title="(一) XPATH函数"></a>(一) XPATH函数</h2><p>在考察XPATH时，试题更多的是考察你对XPATH表达式的理解（比如如何利用子孙关系挑选出那个元素），对XPATH函数的考察其实较少，我们只需要记住常用的几个即可。</p>
+<p>我们可以曲线救国，从XQUERY中得到XPATH函数及其用法（好不容易找到的）</p>
+<p>首先随便打开一个xquery文件</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XPATH%E5%87%BD%E6%95%B0.png"></p>
+<p>我们惊喜的发现，这些函数中的很大一部分与XPATH函数重合了。与之前一样，在你需要的地方双击即可写出这个函数，同时还有奇效</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%87%BD%E6%95%B0%E6%8F%90%E7%A4%BA.png"></p>
+<p>可以看到，XMLSPY提示了这个函数的参数，再加上英文名我们便可知道这个函数的用法，这样就不至于不知道到底能用哪个函数了。</p>
+<p>当然你不喜欢这样的话，<strong>请参考后文：记不住正则表达式怎么办</strong></p>
+<h1 id="XSLT"><a href="#XSLT" class="headerlink" title="XSLT"></a>XSLT</h1><p>没有技巧，自生自灭</p>
+<h1 id="XQUERY"><a href="#XQUERY" class="headerlink" title="XQUERY"></a>XQUERY</h1><h2 id="一-如何自动缩进"><a href="#一-如何自动缩进" class="headerlink" title="(一) 如何自动缩进"></a>(一) 如何自动缩进</h2><p>在编写好.xq文件，应用在xml文件后，生成的.xml文件是默认不会缩进的，这让我们看着很头疼，无法及时分辨出XQUERY是否查询正确。</p>
+<p>懂一点的朋友可能知道，在Edit栏下有一个调整排版的按钮（Pretty Print）点一下之后就可以正常显示嵌套了。</p>
+<p>但是我们想像XSLT那样，默认让其具有缩进（indent=”yes”), Xquery显然也考虑到了这一点。</p>
+<p>我们点开XSL/XQuery一栏，点击最下面的设置</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XQ%E7%BC%A9%E8%BF%9B.png"></p>
+<p>勾选缩进输出后，每次查询生成的XML文件就可以默认缩进辣！强迫症狂喜</p>
 <h1 id="一些小问题"><a href="#一些小问题" class="headerlink" title="一些小问题"></a>一些小问题</h1><h2 id="一-记不住预定义实体怎么办啊"><a href="#一-记不住预定义实体怎么办啊" class="headerlink" title="(一) 记不住预定义实体怎么办啊"></a>(一) 记不住预定义实体怎么办啊</h2><p>在XMLSPY中，当你打开一个.xml文件时，右下角会指出当前.xml文件中所用到的实体即：</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AE%9E%E4%BD%93.png"></p>
 <p>此时，我们只需要在需要将光标放在引入实体的地方，双击右下角你需要引入的实体，即可引入，大功告成！</p>
 <h2 id="二-记不住正则表达式怎么办啊"><a href="#二-记不住正则表达式怎么办啊" class="headerlink" title="(二) 记不住正则表达式怎么办啊"></a>(二) 记不住正则表达式怎么办啊</h2><p><del>别问，问就是自己提前建一个xml文件，用注释的方式全部打进去，考试的时候再打开就好了</del></p>
+<div class="note danger flat"><p><strong>注意</strong></p>
+   <p>在正则表达式中，比如* . - 这些字符需要进行转义，即在他们前面加上\</p>
+</div>
+
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>不想复习XML，但是不得不复习</p>
 <p>宋亮教的真好啊！</p>
 ]]></content>
@@ -254,6 +269,15 @@
       </tags>
   </entry>
   <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
     <title>XML开发技术——第五章</title>
     <url>/2020/11/25/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
     <content><![CDATA[<p>经过了上一次的学习，我们学到了用于查询的XPATH，它会在之后的很多地方予以应用。</p>
@@ -415,15 +439,6 @@
       <tags>
         <tag>课内学习笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
   </entry>
   <entry>
     <title>数据结构期中复习</title>
