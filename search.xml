@@ -1,96 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>XMLSPY考试应用</title>
-    <url>/2021/01/02/XMLSPY%E8%80%83%E8%AF%95%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<p>今天我们来探索一下XMLSPY，看看这个软件里有多少我们上机考能用到的东西！</p>
-<p>由于<strong>我电脑上是中文版</strong>，所以读者请自行翻译回英文<strong>找相对应的位置</strong></p>
-<h1 id="DTD"><a href="#DTD" class="headerlink" title="DTD"></a>DTD</h1><h2 id="（一）如何获取未知信息"><a href="#（一）如何获取未知信息" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>在DTD的编写中，我们要学会通过Grid视图来获取我们所需要的信息。</p>
-<p>不过首先我们要先会写一个元素和一个属性来通过有效性验证。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT <span class="meta-keyword">HEROS</span> (<span class="meta-keyword">hero</span>)&gt;</span></span><br><span class="line"><span class="meta">&lt;!ATTLIST A</span></span><br><span class="line"><span class="meta">    <span class="meta-keyword">id</span> <span class="meta-keyword">ID</span> <span class="meta-keyword">#REQUIRED</span></span></span><br><span class="line"><span class="meta">&gt;</span></span><br></pre></td></tr></table></figure>
-<p>之后我们进入Grid视图，并选取HEROS元素（他是DTD应用到XML文档的根元素）</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD元素.png" alt=""></p>
-<p>我们可以看到，右上角是根元素声明时可以采取的所有类型，下面则是这个根元素的子元素们组成的方式，分别对应<strong>默认值,？,+,*</strong>。</p>
-<p>下面我们来看属性</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD属性.png" alt=""></p>
-<p>同理，将鼠标分别点击Type和Presence（存在方式）的元素中，右上角会出现它的所有可取值，此时可以双击进行更换。这样就避免了不知道取值而不会做题的情况，较为实用。</p>
-<h2 id="（二）关于DTD的自动生成问题"><a href="#（二）关于DTD的自动生成问题" class="headerlink" title="（二）关于DTD的自动生成问题"></a>（二）关于DTD的自动生成问题</h2><p>在实验中，题目是<strong>给我们.xml文件，让我们编写相对应的.dtd文件</strong>。很多同学因为对dtd不太熟悉，想通过生成直接得到答案，但这样生成的dtd往往不是老师想要的答案，那么要怎么尽量修改的像一点呢？我们拿第二次实验的SpyBase2.xml和对应的.dtd来举例子。</p>
-<h3 id="1-如何从xml生成dtd？"><a href="#1-如何从xml生成dtd？" class="headerlink" title="1.如何从xml生成dtd？"></a>1.如何从xml生成dtd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“<strong>产生DTD/模式(E)</strong>”功能</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD转换.png" alt=""></p>
-<h3 id="2-有什么注意事项？"><a href="#2-有什么注意事项？" class="headerlink" title="2.有什么注意事项？"></a>2.有什么注意事项？</h3><p>将枚举改为0的原因是，按默认设置转换出来的dtd，会枚举每一个出现过的数值，而这在考试要求中可能并没有出现，从而使老师得知你是通过转换得来的，下面是一个对比</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD注意.png" alt=""></p>
-<p>在将枚举值改为零后，属性的默认类型就从枚举变成了文本类型（CDATA）</p>
-<p>之后，再根据题目中说的要求，对生成后的.dtd文件进行改动。如本题中要求使用参数实体替换所有的#PCDATA和CDATA，则在dtd中编写如下代码：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">pc</span> <span class="meta-string">&quot;#PCDATA&quot;</span>&gt;</span>   <span class="comment">&lt;!--注意空格和引号--&gt;</span></span><br><span class="line"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">cd</span> <span class="meta-string">&quot;CDATA&quot;</span>&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT <span class="meta-keyword">status</span> (%<span class="meta-keyword">pc</span>;)&gt;</span>   <span class="comment">&lt;!--替换实例 --&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="SCHEMA"><a href="#SCHEMA" class="headerlink" title="SCHEMA"></a>SCHEMA</h1><p>众所周知，SCHEMA很难写，所以还是得仔细过亿遍</p>
-<p>我们拿第三次实验的SpyBase2.xml和对应的.xsd来举例子。</p>
-<h2 id="（一）如何获取未知信息-1"><a href="#（一）如何获取未知信息-1" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>同理，我们先生成一个xsd文件，再转到他的SCHEMA视图</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD入口.png" alt=""></p>
-<p> 这个界面会列举出你文章中的<strong>全局元素和全局类型</strong>，如果自己编写一些类型，效果如下。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD入口2.png" alt=""></p>
-<p>我们点击蓝色按钮进入下一步的视图，先点击一个元素试试</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD元素.png" alt=""></p>
-<p>我们选取了一个具有简单类型的元素，在右侧显示出了他的元素类型、出现次数等内容，因为它属于string类型，所以下方还有进一步限制他的length等属性，直接在下方修改即可影响到XSD内的内容，比较方便。</p>
-<p>下面再点一个属性</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD属性.png" alt=""></p>
-<p>内容与元素的基本一致，因为它属于decimal类型，所以下方还有进一步限制他的minInclusive totalDigit等属性，直接在下方修改即可影响到XSD内的内容，比较方便。</p>
-<div class="note info flat"><p><strong>提示</strong></p>
-    <p>minInclusive和maxInclusive是闭区间,min即最小值，max即最大值</p>
-    <p>而minExclusive和maxExclusive是开区间，min即最小值+1，max是最大值-1</p>
-</div>
-
-<h2 id="（二）关于XSD的自动生成问题"><a href="#（二）关于XSD的自动生成问题" class="headerlink" title="（二）关于XSD的自动生成问题"></a>（二）关于XSD的自动生成问题</h2><h3 id="1-如何从xml生成xsd？"><a href="#1-如何从xml生成xsd？" class="headerlink" title="1.如何从xml生成xsd？"></a>1.如何从xml生成xsd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“<strong>产生DTD/模式(E)</strong>”功能，选择W3C模式</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD转换.png" alt=""></p>
-<h3 id="2-有什么注意事项？-1"><a href="#2-有什么注意事项？-1" class="headerlink" title="2.有什么注意事项？"></a>2.有什么注意事项？</h3><p>首先要去掉W3C模式下面第一项的勾，这样可以避免生成的子元素的类型全部为ref（引用），造成错误。</p>
-<p>将枚举字符置为0的原因与DTD中一致。</p>
-<p>转换之后，该xsd的大致框架便已完成，此时再根据题目中的各种约束条件，对生成后的xsd文件进行修改，若熟练的话可以直接在SCHEMA视图下进行修改，这样效率较高。</p>
-<div class="note info flat"><p><strong>提示</strong></p>
-    <p>①题目中可能会要求写自己定义的简单类型或者复杂类型，但自动生成的xsd文件是默认生成了无名的类型直接放在了对应的元素下，所以要特别注意这一点</p>
-    <p>②自动生成的元素和属性的类型都是XMLSPY近似判断的，所以可能会出现写错的情况，要对着题目检查一遍。</p>
-</div>
-
-
-<div class="note danger flat"><p><strong>重点</strong></p>
-   <p>记得删掉默认生成的注释</p>
-</div>
-
-<p>如果要交xml文件和xsd文件的话，记得将xsd文件约束在xml文件上，并将绝对路径改为相对路径。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;file:///C:/Users/10971/Desktop/1.xsd&quot;</span>&gt;</span></span><br><span class="line">改为</span><br><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;1.xsd&quot;</span>&gt;</span>  <span class="comment">&lt;!--要和xsd文件放在同一目录下--&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="XPATH"><a href="#XPATH" class="headerlink" title="XPATH"></a>XPATH</h1><h2 id="一-XPATH函数"><a href="#一-XPATH函数" class="headerlink" title="(一) XPATH函数"></a>(一) XPATH函数</h2><p>在考察XPATH时，试题更多的是考察你对XPATH表达式的理解（比如如何利用子孙关系挑选出那个元素），对XPATH函数的考察其实较少，我们只需要记住常用的几个即可。</p>
-<p>我们可以曲线救国，从XQUERY中得到XPATH函数及其用法（好不容易找到的）</p>
-<p>首先随便打开一个xquery文件</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XPATH函数.png" alt=""></p>
-<p>我们惊喜的发现，这些函数中的很大一部分与XPATH函数重合了。与之前一样，在你需要的地方双击即可写出这个函数，同时还有奇效</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="函数提示.png" alt=""></p>
-<p>可以看到，XMLSPY提示了这个函数的参数，再加上英文名我们便可知道这个函数的用法，这样就不至于不知道到底能用哪个函数了。</p>
-<p>当然你不喜欢这样的话，<strong>请参考后文：记不住正则表达式怎么办</strong></p>
-<h1 id="XSLT"><a href="#XSLT" class="headerlink" title="XSLT"></a>XSLT</h1><p>没有技巧，自生自灭</p>
-<h1 id="XQUERY"><a href="#XQUERY" class="headerlink" title="XQUERY"></a>XQUERY</h1><h2 id="一-如何自动缩进"><a href="#一-如何自动缩进" class="headerlink" title="(一) 如何自动缩进"></a>(一) 如何自动缩进</h2><p>在编写好.xq文件，应用在xml文件后，生成的.xml文件是默认不会缩进的，这让我们看着很头疼，无法及时分辨出XQUERY是否查询正确。</p>
-<p>懂一点的朋友可能知道，在Edit栏下有一个调整排版的按钮（Pretty Print）点一下之后就可以正常显示嵌套了。</p>
-<p>但是我们想像XSLT那样，默认让其具有缩进（indent=”yes”), Xquery显然也考虑到了这一点。</p>
-<p>我们点开XSL/XQuery一栏，点击最下面的设置</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XQ缩进.png" alt=""></p>
-<p>勾选缩进输出后，每次查询生成的XML文件就可以默认缩进辣！强迫症狂喜</p>
-<h1 id="一些小问题"><a href="#一些小问题" class="headerlink" title="一些小问题"></a>一些小问题</h1><h2 id="一-记不住预定义实体怎么办啊"><a href="#一-记不住预定义实体怎么办啊" class="headerlink" title="(一) 记不住预定义实体怎么办啊"></a>(一) 记不住预定义实体怎么办啊</h2><p>在XMLSPY中，当你打开一个.xml文件时，右下角会指出当前.xml文件中所用到的实体即：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="实体.png" alt=""></p>
-<p>此时，我们只需要在需要将光标放在引入实体的地方，双击右下角你需要引入的实体，即可引入，大功告成！</p>
-<h2 id="二-记不住正则表达式怎么办啊"><a href="#二-记不住正则表达式怎么办啊" class="headerlink" title="(二) 记不住正则表达式怎么办啊"></a>(二) 记不住正则表达式怎么办啊</h2><p><del>别问，问就是自己提前建一个xml文件，用注释的方式全部打进去，考试的时候再打开就好了</del></p>
-<div class="note danger flat"><p><strong>注意</strong></p>
-   <p>在正则表达式中，比如* . - 这些字符需要进行转义，即在他们前面加上\</p>
-</div>
-
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>不想复习XML，但是不得不复习</p>
-<p>宋亮教的真好啊！</p>
-]]></content>
-      <categories>
-        <category>XML开发技术</category>
-      </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-        <tag>考试复习整理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>XML开发技术——第一章</title>
     <url>/2020/11/14/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/</url>
     <content><![CDATA[<p>可能你还不了解XML，只是听说课水分高就报了(<del>我也是</del>)，那就跟着我的笔记，来一起了解XML吧！</p>
@@ -248,6 +158,96 @@
       </tags>
   </entry>
   <entry>
+    <title>XMLSPY考试应用</title>
+    <url>/2021/01/02/XMLSPY%E8%80%83%E8%AF%95%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<p>今天我们来探索一下XMLSPY，看看这个软件里有多少我们上机考能用到的东西！</p>
+<p>由于<strong>我电脑上是中文版</strong>，所以读者请自行翻译回英文<strong>找相对应的位置</strong></p>
+<h1 id="DTD"><a href="#DTD" class="headerlink" title="DTD"></a>DTD</h1><h2 id="（一）如何获取未知信息"><a href="#（一）如何获取未知信息" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>在DTD的编写中，我们要学会通过Grid视图来获取我们所需要的信息。</p>
+<p>不过首先我们要先会写一个元素和一个属性来通过有效性验证。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT <span class="meta-keyword">HEROS</span> (<span class="meta-keyword">hero</span>)&gt;</span></span><br><span class="line"><span class="meta">&lt;!ATTLIST A</span></span><br><span class="line"><span class="meta">    <span class="meta-keyword">id</span> <span class="meta-keyword">ID</span> <span class="meta-keyword">#REQUIRED</span></span></span><br><span class="line"><span class="meta">&gt;</span></span><br></pre></td></tr></table></figure>
+<p>之后我们进入Grid视图，并选取HEROS元素（他是DTD应用到XML文档的根元素）</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD元素.png" alt=""></p>
+<p>我们可以看到，右上角是根元素声明时可以采取的所有类型，下面则是这个根元素的子元素们组成的方式，分别对应<strong>默认值,？,+,*</strong>。</p>
+<p>下面我们来看属性</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD属性.png" alt=""></p>
+<p>同理，将鼠标分别点击Type和Presence（存在方式）的元素中，右上角会出现它的所有可取值，此时可以双击进行更换。这样就避免了不知道取值而不会做题的情况，较为实用。</p>
+<h2 id="（二）关于DTD的自动生成问题"><a href="#（二）关于DTD的自动生成问题" class="headerlink" title="（二）关于DTD的自动生成问题"></a>（二）关于DTD的自动生成问题</h2><p>在实验中，题目是<strong>给我们.xml文件，让我们编写相对应的.dtd文件</strong>。很多同学因为对dtd不太熟悉，想通过生成直接得到答案，但这样生成的dtd往往不是老师想要的答案，那么要怎么尽量修改的像一点呢？我们拿第二次实验的SpyBase2.xml和对应的.dtd来举例子。</p>
+<h3 id="1-如何从xml生成dtd？"><a href="#1-如何从xml生成dtd？" class="headerlink" title="1.如何从xml生成dtd？"></a>1.如何从xml生成dtd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“<strong>产生DTD/模式(E)</strong>”功能</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD转换.png" alt=""></p>
+<h3 id="2-有什么注意事项？"><a href="#2-有什么注意事项？" class="headerlink" title="2.有什么注意事项？"></a>2.有什么注意事项？</h3><p>将枚举改为0的原因是，按默认设置转换出来的dtd，会枚举每一个出现过的数值，而这在考试要求中可能并没有出现，从而使老师得知你是通过转换得来的，下面是一个对比</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD注意.png" alt=""></p>
+<p>在将枚举值改为零后，属性的默认类型就从枚举变成了文本类型（CDATA）</p>
+<p>之后，再根据题目中说的要求，对生成后的.dtd文件进行改动。如本题中要求使用参数实体替换所有的#PCDATA和CDATA，则在dtd中编写如下代码：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">pc</span> <span class="meta-string">&quot;#PCDATA&quot;</span>&gt;</span>   <span class="comment">&lt;!--注意空格和引号--&gt;</span></span><br><span class="line"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">cd</span> <span class="meta-string">&quot;CDATA&quot;</span>&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT <span class="meta-keyword">status</span> (%<span class="meta-keyword">pc</span>;)&gt;</span>   <span class="comment">&lt;!--替换实例 --&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="SCHEMA"><a href="#SCHEMA" class="headerlink" title="SCHEMA"></a>SCHEMA</h1><p>众所周知，SCHEMA很难写，所以还是得仔细过亿遍</p>
+<p>我们拿第三次实验的SpyBase2.xml和对应的.xsd来举例子。</p>
+<h2 id="（一）如何获取未知信息-1"><a href="#（一）如何获取未知信息-1" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>同理，我们先生成一个xsd文件，再转到他的SCHEMA视图</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD入口.png" alt=""></p>
+<p> 这个界面会列举出你文章中的<strong>全局元素和全局类型</strong>，如果自己编写一些类型，效果如下。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD入口2.png" alt=""></p>
+<p>我们点击蓝色按钮进入下一步的视图，先点击一个元素试试</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD元素.png" alt=""></p>
+<p>我们选取了一个具有简单类型的元素，在右侧显示出了他的元素类型、出现次数等内容，因为它属于string类型，所以下方还有进一步限制他的length等属性，直接在下方修改即可影响到XSD内的内容，比较方便。</p>
+<p>下面再点一个属性</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD属性.png" alt=""></p>
+<p>内容与元素的基本一致，因为它属于decimal类型，所以下方还有进一步限制他的minInclusive totalDigit等属性，直接在下方修改即可影响到XSD内的内容，比较方便。</p>
+<div class="note info flat"><p><strong>提示</strong></p>
+    <p>minInclusive和maxInclusive是闭区间,min即最小值，max即最大值</p>
+    <p>而minExclusive和maxExclusive是开区间，min即最小值+1，max是最大值-1</p>
+</div>
+
+<h2 id="（二）关于XSD的自动生成问题"><a href="#（二）关于XSD的自动生成问题" class="headerlink" title="（二）关于XSD的自动生成问题"></a>（二）关于XSD的自动生成问题</h2><h3 id="1-如何从xml生成xsd？"><a href="#1-如何从xml生成xsd？" class="headerlink" title="1.如何从xml生成xsd？"></a>1.如何从xml生成xsd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“<strong>产生DTD/模式(E)</strong>”功能，选择W3C模式</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD转换.png" alt=""></p>
+<h3 id="2-有什么注意事项？-1"><a href="#2-有什么注意事项？-1" class="headerlink" title="2.有什么注意事项？"></a>2.有什么注意事项？</h3><p>首先要去掉W3C模式下面第一项的勾，这样可以避免生成的子元素的类型全部为ref（引用），造成错误。</p>
+<p>将枚举字符置为0的原因与DTD中一致。</p>
+<p>转换之后，该xsd的大致框架便已完成，此时再根据题目中的各种约束条件，对生成后的xsd文件进行修改，若熟练的话可以直接在SCHEMA视图下进行修改，这样效率较高。</p>
+<div class="note info flat"><p><strong>提示</strong></p>
+    <p>①题目中可能会要求写自己定义的简单类型或者复杂类型，但自动生成的xsd文件是默认生成了无名的类型直接放在了对应的元素下，所以要特别注意这一点</p>
+    <p>②自动生成的元素和属性的类型都是XMLSPY近似判断的，所以可能会出现写错的情况，要对着题目检查一遍。</p>
+</div>
+
+
+<div class="note danger flat"><p><strong>重点</strong></p>
+   <p>记得删掉默认生成的注释</p>
+</div>
+
+<p>如果要交xml文件和xsd文件的话，记得将xsd文件约束在xml文件上，并将绝对路径改为相对路径。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;file:///C:/Users/10971/Desktop/1.xsd&quot;</span>&gt;</span></span><br><span class="line">改为</span><br><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;1.xsd&quot;</span>&gt;</span>  <span class="comment">&lt;!--要和xsd文件放在同一目录下--&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="XPATH"><a href="#XPATH" class="headerlink" title="XPATH"></a>XPATH</h1><h2 id="一-XPATH函数"><a href="#一-XPATH函数" class="headerlink" title="(一) XPATH函数"></a>(一) XPATH函数</h2><p>在考察XPATH时，试题更多的是考察你对XPATH表达式的理解（比如如何利用子孙关系挑选出那个元素），对XPATH函数的考察其实较少，我们只需要记住常用的几个即可。</p>
+<p>我们可以曲线救国，从XQUERY中得到XPATH函数及其用法（好不容易找到的）</p>
+<p>首先随便打开一个xquery文件</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XPATH函数.png" alt=""></p>
+<p>我们惊喜的发现，这些函数中的很大一部分与XPATH函数重合了。与之前一样，在你需要的地方双击即可写出这个函数，同时还有奇效</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="函数提示.png" alt=""></p>
+<p>可以看到，XMLSPY提示了这个函数的参数，再加上英文名我们便可知道这个函数的用法，这样就不至于不知道到底能用哪个函数了。</p>
+<p>当然你不喜欢这样的话，<strong>请参考后文：记不住正则表达式怎么办</strong></p>
+<h1 id="XSLT"><a href="#XSLT" class="headerlink" title="XSLT"></a>XSLT</h1><p>没有技巧，自生自灭</p>
+<h1 id="XQUERY"><a href="#XQUERY" class="headerlink" title="XQUERY"></a>XQUERY</h1><h2 id="一-如何自动缩进"><a href="#一-如何自动缩进" class="headerlink" title="(一) 如何自动缩进"></a>(一) 如何自动缩进</h2><p>在编写好.xq文件，应用在xml文件后，生成的.xml文件是默认不会缩进的，这让我们看着很头疼，无法及时分辨出XQUERY是否查询正确。</p>
+<p>懂一点的朋友可能知道，在Edit栏下有一个调整排版的按钮（Pretty Print）点一下之后就可以正常显示嵌套了。</p>
+<p>但是我们想像XSLT那样，默认让其具有缩进（indent=”yes”), Xquery显然也考虑到了这一点。</p>
+<p>我们点开XSL/XQuery一栏，点击最下面的设置</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XQ缩进.png" alt=""></p>
+<p>勾选缩进输出后，每次查询生成的XML文件就可以默认缩进辣！强迫症狂喜</p>
+<h1 id="一些小问题"><a href="#一些小问题" class="headerlink" title="一些小问题"></a>一些小问题</h1><h2 id="一-记不住预定义实体怎么办啊"><a href="#一-记不住预定义实体怎么办啊" class="headerlink" title="(一) 记不住预定义实体怎么办啊"></a>(一) 记不住预定义实体怎么办啊</h2><p>在XMLSPY中，当你打开一个.xml文件时，右下角会指出当前.xml文件中所用到的实体即：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="实体.png" alt=""></p>
+<p>此时，我们只需要在需要将光标放在引入实体的地方，双击右下角你需要引入的实体，即可引入，大功告成！</p>
+<h2 id="二-记不住正则表达式怎么办啊"><a href="#二-记不住正则表达式怎么办啊" class="headerlink" title="(二) 记不住正则表达式怎么办啊"></a>(二) 记不住正则表达式怎么办啊</h2><p><del>别问，问就是自己提前建一个xml文件，用注释的方式全部打进去，考试的时候再打开就好了</del></p>
+<div class="note danger flat"><p><strong>注意</strong></p>
+   <p>在正则表达式中，比如* . - 这些字符需要进行转义，即在他们前面加上\</p>
+</div>
+
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>不想复习XML，但是不得不复习</p>
+<p>宋亮教的真好啊！</p>
+]]></content>
+      <categories>
+        <category>XML开发技术</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>XML开发技术——第五章</title>
     <url>/2020/11/25/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
     <content><![CDATA[<p>经过了上一次的学习，我们学到了用于查询的XPATH，它会在之后的很多地方予以应用。</p>
@@ -401,63 +401,6 @@
       <tags>
         <tag>课内学习笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>博客目录</title>
-    <url>/2021/01/01/%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<div class="note success no-icon flat">
-                            <p>
-                                <strong>数据结构复习⭐</strong>
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="/2021/01/10/数据结构期中复习/">数据结构期中复习</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2021/01/03/数据结构期末复习/">数据结构期末复习</a>
-                                        </td>
-                                                                        </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-<div class="note success no-icon flat">
-                            <p>
-                                <strong>汇编语言复习⭐</strong>
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="/2020/12/26/汇编语言总复习(上)/">汇编语言总复习(上)</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2020/12/26/汇编语言总复习(中)/">汇编语言总复习(中)</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2020/12/29/汇编语言总复习(下)/">汇编语言总复习(下)</a>
-                                        </td>
-                                         </tr>
-                            </tbody>
-                        </table>
-                    </div>                               
-
-]]></content>
   </entry>
   <entry>
     <title>序</title>
@@ -871,6 +814,110 @@
       </tags>
   </entry>
   <entry>
+    <title>汇编语言总复习(下)</title>
+    <url>/2020/12/29/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8B)/</url>
+    <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
+<p>孩子哭了，汇编一定要好好学啊</p>
+<a id="more"></a>
+<h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a>选择题：</h2><h3 id="例一：下列语句没错的是："><a href="#例一：下列语句没错的是：" class="headerlink" title="例一：下列语句没错的是："></a>例一：下列语句没错的是：</h3><p>MOV AL，050AH</p>
+<p>MOV [SI],0AH</p>
+<p>MOV DS,100H</p>
+<p>MOV CS,[SI]</p>
+<p>MOV DS,ES</p>
+<p>答：都有错，这题不选（</p>
+<p>第一句中，AL表示字节，而050AH单位为字，目的操作数与源操作数的类型不一，故错。</p>
+<p>第二句中，存储器单元与立即数同时作为操作数，但是没有显式指明类型，故错</p>
+<p>更正：<strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
+<p>第三句中，立即数不能直接送到段寄存器中，故错。</p>
+<p>第四句中，CS是专用寄存器，碰不得</p>
+<p>第五句中，段寄存器之间不能相互传递，故错。</p>
+<h3 id="例二：下列语句等值的是："><a href="#例二：下列语句等值的是：" class="headerlink" title="例二：下列语句等值的是："></a>例二：下列语句等值的是：</h3><h2 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h2><h3 id="例一：解释TEST和AND指令的异同，并说明其使用注意点"><a href="#例一：解释TEST和AND指令的异同，并说明其使用注意点" class="headerlink" title="例一：解释TEST和AND指令的异同，并说明其使用注意点"></a>例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</h3><p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
+<p>​       不同点：AND指令会将逻辑与的结果送给目的操作数，而TEST指令不会。</p>
+<p>举一反三.1：解释TEST和CMP指令的异同</p>
+<p>答：相同点：TEST指令和CMP指令都不会将结果送回给操作数，只修改标志位。</p>
+<p>​        test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
+<p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
+<p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
+<p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
+<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"><a href="#例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码" class="headerlink" title="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"></a>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3><p>答：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="MOV图.png" alt=""></p>
+<p><code>MOV AX,0102H</code></p>
+<p><code>MOV DS,AX</code></p>
+<p>解释说明：</p>
+<p>1.立即数到存储器和寄存器<strong>都是单向的</strong>。</p>
+<p>2.<strong>立即数不能直接到段寄存器</strong>，需要通过寄存器中转</p>
+<p>3.寄存器之间可以互相mov</p>
+<p>4.<strong>段寄存器之间不能互相传递</strong></p>
+<p>5.<strong>存储器之间不能相互传递</strong></p>
+<p>举一反三.2：写出交换将BUF1段中的数据和BUF2段中数据的代码</p>
+<p>答：</p>
+<p><code>MOV AX,BUF1</code></p>
+<p><code>MOV DX,BUF2</code></p>
+<p><code>MOV BUF2,AX</code></p>
+<p><code>MOV BUF1,DX</code></p>
+<h3 id="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"><a href="#例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。" class="headerlink" title="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"></a>例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</h3><p>答：一共有五种</p>
+<p>分别为：</p>
+<p>1.直接寻址 ：MOV AX,[2077H]</p>
+<p>2.寄存器间接寻址 ：MOV AX,[SI]</p>
+<p>3.寄存器相对寻址：MOV AX,[SI+06H]</p>
+<p>4.基址变址寻址方式：MOV AX,[BX+SI]</p>
+<p>5.相对基址变址寻址：MOV AX,[BX+SI+06H]</p>
+<p>解释：<strong>基址是指基址寄存器（BX/BP），变址是指变址寄存器（SI/DI）</strong></p>
+<p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
+<h3 id="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？"><a href="#例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？" class="headerlink" title="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？"></a>例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</h3><p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
+<p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。<strong>（默认要补齐5位）</strong>如图</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="逻辑地址转化.png" alt=""></p>
+<h3 id="例五：编写定义缓冲区，及实现输入字符串的核心代码"><a href="#例五：编写定义缓冲区，及实现输入字符串的核心代码" class="headerlink" title="例五：编写定义缓冲区，及实现输入字符串的核心代码"></a>例五：编写定义缓冲区，及实现输入字符串的核心代码</h3><p>答：<code>string db &#39;Im a string&#39;,0dh,0ah,&#39;$&#39;</code></p>
+<p><code>buffer  db 81</code></p>
+<pre><code>         `db ?`
+
+         `db 81 dup(0)`
+</code></pre><p><code>mov dx,seg buffer</code></p>
+<p><code>mov ds,dx</code></p>
+<p><code>mov ah,0ah</code></p>
+<p><code>mov dx,offset buffer</code></p>
+<p><code>int 21h</code></p>
+<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><h3 id="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07"><a href="#例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07" class="headerlink" title="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N 次(响铃的ASCII 码为07)"></a>例一：编写一个程序，要求能从<strong>键盘接收</strong>一个个位数N，然后<strong>响铃N</strong> 次(响铃的ASCII 码为07)</h3><p>分析：采用字符串输入功能接受一个数，传入CX中，再调用输出字符功能，输出直到CX为0</p>
+<p>代码如下：</p>
+<p><code>.model small</code></p>
+<p><code>.stack</code></p>
+<p><code>.data</code></p>
+<p><code>.code</code></p>
+<p><code>.startup</code></p>
+<p><code>mov ah,01h</code></p>
+<p><code>int 21h</code></p>
+<p><code>sub al,30h</code></p>
+<p><code>mov cl,al</code></p>
+<p><code>mov ah,02h</code></p>
+<p><code>mov dl,0ah</code></p>
+<p><code>int 21h</code></p>
+<p><code>again:</code></p>
+<p>​    <code>cmp cl,0</code></p>
+<p>​    <code>jz over</code></p>
+<p>​    <code>mov ah,02h</code></p>
+<p>​    <code>mov dl,07h</code></p>
+<p>​    <code>int 21h</code></p>
+<p>​    <code>mov dl,&#39;1&#39;</code></p>
+<p>​    <code>int 21h</code></p>
+<p>​    <code>dec cl</code></p>
+<p>​    <code>jmp again</code></p>
+<p><code>over: .exit 0</code></p>
+<p>​        <code>end</code></p>
+<h3 id="例二：实现字符串的冒泡排序"><a href="#例二：实现字符串的冒泡排序" class="headerlink" title="例二：实现字符串的冒泡排序"></a>例二：实现字符串的冒泡排序</h3><p>分析：使用两层循环，结合跳转实现</p>
+<p>代码如下：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="代码.png" alt=""></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>明天上刑场</p>
+<p>概统还没复习</p>
+<p>高星救我</p>
+]]></content>
+      <categories>
+        <category>汇编语言</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>汇编语言总复习(中)</title>
     <url>/2020/12/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%AD)/</url>
     <content><![CDATA[<p>本文将结合老师说的考试范围与PPT，对所涉及的知识点作个人总结，面向考试复习（<del>高星，yyds</del>）</p>
@@ -1107,110 +1154,6 @@
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
-]]></content>
-      <categories>
-        <category>汇编语言</category>
-      </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-        <tag>考试复习整理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>汇编语言总复习(下)</title>
-    <url>/2020/12/29/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8B)/</url>
-    <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
-<p>孩子哭了，汇编一定要好好学啊</p>
-<a id="more"></a>
-<h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a>选择题：</h2><h3 id="例一：下列语句没错的是："><a href="#例一：下列语句没错的是：" class="headerlink" title="例一：下列语句没错的是："></a>例一：下列语句没错的是：</h3><p>MOV AL，050AH</p>
-<p>MOV [SI],0AH</p>
-<p>MOV DS,100H</p>
-<p>MOV CS,[SI]</p>
-<p>MOV DS,ES</p>
-<p>答：都有错，这题不选（</p>
-<p>第一句中，AL表示字节，而050AH单位为字，目的操作数与源操作数的类型不一，故错。</p>
-<p>第二句中，存储器单元与立即数同时作为操作数，但是没有显式指明类型，故错</p>
-<p>更正：<strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
-<p>第三句中，立即数不能直接送到段寄存器中，故错。</p>
-<p>第四句中，CS是专用寄存器，碰不得</p>
-<p>第五句中，段寄存器之间不能相互传递，故错。</p>
-<h3 id="例二：下列语句等值的是："><a href="#例二：下列语句等值的是：" class="headerlink" title="例二：下列语句等值的是："></a>例二：下列语句等值的是：</h3><h2 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h2><h3 id="例一：解释TEST和AND指令的异同，并说明其使用注意点"><a href="#例一：解释TEST和AND指令的异同，并说明其使用注意点" class="headerlink" title="例一：解释TEST和AND指令的异同，并说明其使用注意点"></a>例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</h3><p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
-<p>​       不同点：AND指令会将逻辑与的结果送给目的操作数，而TEST指令不会。</p>
-<p>举一反三.1：解释TEST和CMP指令的异同</p>
-<p>答：相同点：TEST指令和CMP指令都不会将结果送回给操作数，只修改标志位。</p>
-<p>​        test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
-<p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
-<p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
-<p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
-<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"><a href="#例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码" class="headerlink" title="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"></a>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3><p>答：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="MOV图.png" alt=""></p>
-<p><code>MOV AX,0102H</code></p>
-<p><code>MOV DS,AX</code></p>
-<p>解释说明：</p>
-<p>1.立即数到存储器和寄存器<strong>都是单向的</strong>。</p>
-<p>2.<strong>立即数不能直接到段寄存器</strong>，需要通过寄存器中转</p>
-<p>3.寄存器之间可以互相mov</p>
-<p>4.<strong>段寄存器之间不能互相传递</strong></p>
-<p>5.<strong>存储器之间不能相互传递</strong></p>
-<p>举一反三.2：写出交换将BUF1段中的数据和BUF2段中数据的代码</p>
-<p>答：</p>
-<p><code>MOV AX,BUF1</code></p>
-<p><code>MOV DX,BUF2</code></p>
-<p><code>MOV BUF2,AX</code></p>
-<p><code>MOV BUF1,DX</code></p>
-<h3 id="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"><a href="#例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。" class="headerlink" title="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"></a>例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</h3><p>答：一共有五种</p>
-<p>分别为：</p>
-<p>1.直接寻址 ：MOV AX,[2077H]</p>
-<p>2.寄存器间接寻址 ：MOV AX,[SI]</p>
-<p>3.寄存器相对寻址：MOV AX,[SI+06H]</p>
-<p>4.基址变址寻址方式：MOV AX,[BX+SI]</p>
-<p>5.相对基址变址寻址：MOV AX,[BX+SI+06H]</p>
-<p>解释：<strong>基址是指基址寄存器（BX/BP），变址是指变址寄存器（SI/DI）</strong></p>
-<p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
-<h3 id="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？"><a href="#例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？" class="headerlink" title="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？"></a>例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</h3><p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
-<p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。<strong>（默认要补齐5位）</strong>如图</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="逻辑地址转化.png" alt=""></p>
-<h3 id="例五：编写定义缓冲区，及实现输入字符串的核心代码"><a href="#例五：编写定义缓冲区，及实现输入字符串的核心代码" class="headerlink" title="例五：编写定义缓冲区，及实现输入字符串的核心代码"></a>例五：编写定义缓冲区，及实现输入字符串的核心代码</h3><p>答：<code>string db &#39;Im a string&#39;,0dh,0ah,&#39;$&#39;</code></p>
-<p><code>buffer  db 81</code></p>
-<pre><code>         `db ?`
-
-         `db 81 dup(0)`
-</code></pre><p><code>mov dx,seg buffer</code></p>
-<p><code>mov ds,dx</code></p>
-<p><code>mov ah,0ah</code></p>
-<p><code>mov dx,offset buffer</code></p>
-<p><code>int 21h</code></p>
-<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><h3 id="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07"><a href="#例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07" class="headerlink" title="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N 次(响铃的ASCII 码为07)"></a>例一：编写一个程序，要求能从<strong>键盘接收</strong>一个个位数N，然后<strong>响铃N</strong> 次(响铃的ASCII 码为07)</h3><p>分析：采用字符串输入功能接受一个数，传入CX中，再调用输出字符功能，输出直到CX为0</p>
-<p>代码如下：</p>
-<p><code>.model small</code></p>
-<p><code>.stack</code></p>
-<p><code>.data</code></p>
-<p><code>.code</code></p>
-<p><code>.startup</code></p>
-<p><code>mov ah,01h</code></p>
-<p><code>int 21h</code></p>
-<p><code>sub al,30h</code></p>
-<p><code>mov cl,al</code></p>
-<p><code>mov ah,02h</code></p>
-<p><code>mov dl,0ah</code></p>
-<p><code>int 21h</code></p>
-<p><code>again:</code></p>
-<p>​    <code>cmp cl,0</code></p>
-<p>​    <code>jz over</code></p>
-<p>​    <code>mov ah,02h</code></p>
-<p>​    <code>mov dl,07h</code></p>
-<p>​    <code>int 21h</code></p>
-<p>​    <code>mov dl,&#39;1&#39;</code></p>
-<p>​    <code>int 21h</code></p>
-<p>​    <code>dec cl</code></p>
-<p>​    <code>jmp again</code></p>
-<p><code>over: .exit 0</code></p>
-<p>​        <code>end</code></p>
-<h3 id="例二：实现字符串的冒泡排序"><a href="#例二：实现字符串的冒泡排序" class="headerlink" title="例二：实现字符串的冒泡排序"></a>例二：实现字符串的冒泡排序</h3><p>分析：使用两层循环，结合跳转实现</p>
-<p>代码如下：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="代码.png" alt=""></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>明天上刑场</p>
-<p>概统还没复习</p>
-<p>高星救我</p>
 ]]></content>
       <categories>
         <category>汇编语言</category>
