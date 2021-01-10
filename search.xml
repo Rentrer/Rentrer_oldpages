@@ -8,41 +8,39 @@
 <h1 id="DTD"><a href="#DTD" class="headerlink" title="DTD"></a>DTD</h1><h2 id="（一）如何获取未知信息"><a href="#（一）如何获取未知信息" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>在DTD的编写中，我们要学会通过Grid视图来获取我们所需要的信息。</p>
 <p>不过首先我们要先会写一个元素和一个属性来通过有效性验证。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT <span class="meta-keyword">HEROS</span> (<span class="meta-keyword">hero</span>)&gt;</span></span><br><span class="line"><span class="meta">&lt;!ATTLIST A</span></span><br><span class="line"><span class="meta">    <span class="meta-keyword">id</span> <span class="meta-keyword">ID</span> <span class="meta-keyword">#REQUIRED</span></span></span><br><span class="line"><span class="meta">&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>之后我们进入Grid视图，并选取HEROS元素（他是DTD应用到XML文档的根元素）</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD%E5%85%83%E7%B4%A0.png"></p>
-<p>我们可以看到，右上角是根元素声明时可以采取的所有类型，下面则是这个根元素的子元素们组成的方式，分别对应*<em>默认值,？,+,**</em>。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD元素.png" alt=""></p>
+<p>我们可以看到，右上角是根元素声明时可以采取的所有类型，下面则是这个根元素的子元素们组成的方式，分别对应<strong>默认值,？,+,*</strong>。</p>
 <p>下面我们来看属性</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD%E5%B1%9E%E6%80%A7.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD属性.png" alt=""></p>
 <p>同理，将鼠标分别点击Type和Presence（存在方式）的元素中，右上角会出现它的所有可取值，此时可以双击进行更换。这样就避免了不知道取值而不会做题的情况，较为实用。</p>
 <h2 id="（二）关于DTD的自动生成问题"><a href="#（二）关于DTD的自动生成问题" class="headerlink" title="（二）关于DTD的自动生成问题"></a>（二）关于DTD的自动生成问题</h2><p>在实验中，题目是<strong>给我们.xml文件，让我们编写相对应的.dtd文件</strong>。很多同学因为对dtd不太熟悉，想通过生成直接得到答案，但这样生成的dtd往往不是老师想要的答案，那么要怎么尽量修改的像一点呢？我们拿第二次实验的SpyBase2.xml和对应的.dtd来举例子。</p>
-<h3 id="1-如何从xml生成dtd？"><a href="#1-如何从xml生成dtd？" class="headerlink" title="1.如何从xml生成dtd？"></a>1.如何从xml生成dtd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“**产生DTD/模式(E)**”功能</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD%E8%BD%AC%E6%8D%A2.png"></p>
+<h3 id="1-如何从xml生成dtd？"><a href="#1-如何从xml生成dtd？" class="headerlink" title="1.如何从xml生成dtd？"></a>1.如何从xml生成dtd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“<strong>产生DTD/模式(E)</strong>”功能</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD转换.png" alt=""></p>
 <h3 id="2-有什么注意事项？"><a href="#2-有什么注意事项？" class="headerlink" title="2.有什么注意事项？"></a>2.有什么注意事项？</h3><p>将枚举改为0的原因是，按默认设置转换出来的dtd，会枚举每一个出现过的数值，而这在考试要求中可能并没有出现，从而使老师得知你是通过转换得来的，下面是一个对比</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD%E6%B3%A8%E6%84%8F.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="DTD注意.png" alt=""></p>
 <p>在将枚举值改为零后，属性的默认类型就从枚举变成了文本类型（CDATA）</p>
 <p>之后，再根据题目中说的要求，对生成后的.dtd文件进行改动。如本题中要求使用参数实体替换所有的#PCDATA和CDATA，则在dtd中编写如下代码：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">pc</span> <span class="meta-string">&quot;#PCDATA&quot;</span>&gt;</span>   <span class="comment">&lt;!--注意空格和引号--&gt;</span></span><br><span class="line"><span class="meta">&lt;!ENTITY % <span class="meta-keyword">cd</span> <span class="meta-string">&quot;CDATA&quot;</span>&gt;</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT <span class="meta-keyword">status</span> (%<span class="meta-keyword">pc</span>;)&gt;</span>   <span class="comment">&lt;!--替换实例 --&gt;</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="SCHEMA"><a href="#SCHEMA" class="headerlink" title="SCHEMA"></a>SCHEMA</h1><p>众所周知，SCHEMA很难写，所以还是得仔细过亿遍</p>
 <p>我们拿第三次实验的SpyBase2.xml和对应的.xsd来举例子。</p>
 <h2 id="（一）如何获取未知信息-1"><a href="#（一）如何获取未知信息-1" class="headerlink" title="（一）如何获取未知信息"></a>（一）如何获取未知信息</h2><p>同理，我们先生成一个xsd文件，再转到他的SCHEMA视图</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD%E5%85%A5%E5%8F%A3.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD入口.png" alt=""></p>
 <p> 这个界面会列举出你文章中的<strong>全局元素和全局类型</strong>，如果自己编写一些类型，效果如下。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD%E5%85%A5%E5%8F%A32.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD入口2.png" alt=""></p>
 <p>我们点击蓝色按钮进入下一步的视图，先点击一个元素试试</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD%E5%85%83%E7%B4%A0.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD元素.png" alt=""></p>
 <p>我们选取了一个具有简单类型的元素，在右侧显示出了他的元素类型、出现次数等内容，因为它属于string类型，所以下方还有进一步限制他的length等属性，直接在下方修改即可影响到XSD内的内容，比较方便。</p>
 <p>下面再点一个属性</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD%E5%B1%9E%E6%80%A7.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD属性.png" alt=""></p>
 <p>内容与元素的基本一致，因为它属于decimal类型，所以下方还有进一步限制他的minInclusive totalDigit等属性，直接在下方修改即可影响到XSD内的内容，比较方便。</p>
 <div class="note info flat"><p><strong>提示</strong></p>
     <p>minInclusive和maxInclusive是闭区间,min即最小值，max即最大值</p>
     <p>而minExclusive和maxExclusive是开区间，min即最小值+1，max是最大值-1</p>
 </div>
 
-<h2 id="（二）关于XSD的自动生成问题"><a href="#（二）关于XSD的自动生成问题" class="headerlink" title="（二）关于XSD的自动生成问题"></a>（二）关于XSD的自动生成问题</h2><h3 id="1-如何从xml生成xsd？"><a href="#1-如何从xml生成xsd？" class="headerlink" title="1.如何从xml生成xsd？"></a>1.如何从xml生成xsd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“**产生DTD/模式(E)**”功能，选择W3C模式</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD%E8%BD%AC%E6%8D%A2.png"></p>
+<h2 id="（二）关于XSD的自动生成问题"><a href="#（二）关于XSD的自动生成问题" class="headerlink" title="（二）关于XSD的自动生成问题"></a>（二）关于XSD的自动生成问题</h2><h3 id="1-如何从xml生成xsd？"><a href="#1-如何从xml生成xsd？" class="headerlink" title="1.如何从xml生成xsd？"></a>1.如何从xml生成xsd？</h3><p>我们使用菜单栏“DTD/Schema”目录下的“<strong>产生DTD/模式(E)</strong>”功能，选择W3C模式</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XSD转换.png" alt=""></p>
 <h3 id="2-有什么注意事项？-1"><a href="#2-有什么注意事项？-1" class="headerlink" title="2.有什么注意事项？"></a>2.有什么注意事项？</h3><p>首先要去掉W3C模式下面第一项的勾，这样可以避免生成的子元素的类型全部为ref（引用），造成错误。</p>
 <p>将枚举字符置为0的原因与DTD中一致。</p>
 <p>转换之后，该xsd的大致框架便已完成，此时再根据题目中的各种约束条件，对生成后的xsd文件进行修改，若熟练的话可以直接在SCHEMA视图下进行修改，这样效率较高。</p>
@@ -58,13 +56,12 @@
 
 <p>如果要交xml文件和xsd文件的话，记得将xsd文件约束在xml文件上，并将绝对路径改为相对路径。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;file:///C:/Users/10971/Desktop/1.xsd&quot;</span>&gt;</span></span><br><span class="line">改为</span><br><span class="line"><span class="tag">&lt;<span class="name">spyTable</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">&quot;1.xsd&quot;</span>&gt;</span>  <span class="comment">&lt;!--要和xsd文件放在同一目录下--&gt;</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="XPATH"><a href="#XPATH" class="headerlink" title="XPATH"></a>XPATH</h1><h2 id="一-XPATH函数"><a href="#一-XPATH函数" class="headerlink" title="(一) XPATH函数"></a>(一) XPATH函数</h2><p>在考察XPATH时，试题更多的是考察你对XPATH表达式的理解（比如如何利用子孙关系挑选出那个元素），对XPATH函数的考察其实较少，我们只需要记住常用的几个即可。</p>
 <p>我们可以曲线救国，从XQUERY中得到XPATH函数及其用法（好不容易找到的）</p>
 <p>首先随便打开一个xquery文件</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XPATH%E5%87%BD%E6%95%B0.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XPATH函数.png" alt=""></p>
 <p>我们惊喜的发现，这些函数中的很大一部分与XPATH函数重合了。与之前一样，在你需要的地方双击即可写出这个函数，同时还有奇效</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%87%BD%E6%95%B0%E6%8F%90%E7%A4%BA.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="函数提示.png" alt=""></p>
 <p>可以看到，XMLSPY提示了这个函数的参数，再加上英文名我们便可知道这个函数的用法，这样就不至于不知道到底能用哪个函数了。</p>
 <p>当然你不喜欢这样的话，<strong>请参考后文：记不住正则表达式怎么办</strong></p>
 <h1 id="XSLT"><a href="#XSLT" class="headerlink" title="XSLT"></a>XSLT</h1><p>没有技巧，自生自灭</p>
@@ -72,10 +69,10 @@
 <p>懂一点的朋友可能知道，在Edit栏下有一个调整排版的按钮（Pretty Print）点一下之后就可以正常显示嵌套了。</p>
 <p>但是我们想像XSLT那样，默认让其具有缩进（indent=”yes”), Xquery显然也考虑到了这一点。</p>
 <p>我们点开XSL/XQuery一栏，点击最下面的设置</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XQ%E7%BC%A9%E8%BF%9B.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XQ缩进.png" alt=""></p>
 <p>勾选缩进输出后，每次查询生成的XML文件就可以默认缩进辣！强迫症狂喜</p>
 <h1 id="一些小问题"><a href="#一些小问题" class="headerlink" title="一些小问题"></a>一些小问题</h1><h2 id="一-记不住预定义实体怎么办啊"><a href="#一-记不住预定义实体怎么办啊" class="headerlink" title="(一) 记不住预定义实体怎么办啊"></a>(一) 记不住预定义实体怎么办啊</h2><p>在XMLSPY中，当你打开一个.xml文件时，右下角会指出当前.xml文件中所用到的实体即：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AE%9E%E4%BD%93.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="实体.png" alt=""></p>
 <p>此时，我们只需要在需要将光标放在引入实体的地方，双击右下角你需要引入的实体，即可引入，大功告成！</p>
 <h2 id="二-记不住正则表达式怎么办啊"><a href="#二-记不住正则表达式怎么办啊" class="headerlink" title="(二) 记不住正则表达式怎么办啊"></a>(二) 记不住正则表达式怎么办啊</h2><p><del>别问，问就是自己提前建一个xml文件，用注释的方式全部打进去，考试的时候再打开就好了</del></p>
 <div class="note danger flat"><p><strong>注意</strong></p>
@@ -100,7 +97,6 @@
 <p>本系列笔记适合读过课本后过来进行总结，所以还是要先预习啊(<del>双关</del>)</p>
 <p><code>注：这系列的笔记将多采用Q E C形式，即 Question Evidence Conclusion 的形式</code> </p>
 <a id="more"></a>
-
 <h1 id="XML基础知识"><a href="#XML基础知识" class="headerlink" title="XML基础知识"></a>XML基础知识</h1><h2 id="1-1-XML及其相关技术概述"><a href="#1-1-XML及其相关技术概述" class="headerlink" title="1.1 XML及其相关技术概述"></a>1.1 XML及其相关技术概述</h2><p>Q1：什么是XML？</p>
 <p>C1：XML(eXtensible Markup Language)，即<strong>可扩展性标记语言</strong>，是标记语言中的一种。</p>
 <p>Q2：什么是标记？</p>
@@ -120,8 +116,8 @@
 <li><strong>自描述性</strong>：XML文档通常包含一个文档类型声明，<strong>不仅人能读懂，计算机也能处理</strong>，XML表示数据的方式真正做到了独立于应用系统，并且数据能够重用。</li>
 </ol>
 <p>示例文档</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E7%A4%BA%E4%BE%8B.png"></p>
-<ol start="4">
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="示例.png" alt=""></p>
+<ol>
 <li><strong>简洁性</strong>：XML比完整的SGML简单得多，<strong>易学、易用并且以实现</strong>。</li>
 </ol>
 <p>XML文档包含三个不同的组成部分：</p>
@@ -130,16 +126,14 @@
 </li>
 <li><p>结构：文档类型及其元素的组织形式，文档包括何种类型的元素，以及他们的排列次序（<strong>对应DTD/SCHEMA</strong>)</p>
 </li>
-<li><p>表现形式：在一张纸上、浏览器屏幕上向读者描述数据的方法，还有对每种元素类型使用何种字体等。(<strong>对应XSL/CSS</strong>)</p>
-</li>
+<li>表现形式：在一张纸上、浏览器屏幕上向读者描述数据的方法，还有对每种元素类型使用何种字体等。(<strong>对应XSL/CSS</strong>)</li>
 </ol>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="组成部分.png" alt=""></p>
 <h3 id="1-1-3-XML的实际应用"><a href="#1-1-3-XML的实际应用" class="headerlink" title="1.1.3 XML的实际应用"></a>1.1.3 XML的实际应用</h3><p>XML 成为一种<strong>与平台无关</strong>的、<strong>数据表示</strong>和<strong>数据交换</strong>的载体。</p>
 <h2 id="1-2-XML规范及XML文档分类"><a href="#1-2-XML规范及XML文档分类" class="headerlink" title="1.2 XML规范及XML文档分类"></a>1.2 XML规范及XML文档分类</h2><p>XML文档实际上是一个文本文件，但并不是任何文本文件都是正确的XML文档，W3C的XML1.0规范对XML文档的语法格式进行了严格的定义。</p>
 <h3 id="1-2-1-XML文档中的XML声明"><a href="#1-2-1-XML文档中的XML声明" class="headerlink" title="1.2.1 XML文档中的XML声明"></a>1.2.1 XML文档中的XML声明</h3><p>Q5：声明有哪些特点和注意事项？</p>
 <p>E5：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>C5：</p>
 <p>XML声明部分<strong>本身是可选的</strong>（可以没有声明）。但如果包含声明部分，必须是整个XML文档的第一行内容（<strong>第一行不能为注释或空行</strong>）。&lt;?xml要顶格，且中间无空格。</p>
 <p>完整的 XML 声明包括三个部分：</p>
@@ -147,17 +141,16 @@
 <p>(2) 编码声明 (<strong>encoding</strong>)该属性的取值用于指明当前XML文档中所使用的符号的编码方式。一般采用”UTF-8”,这个属性是<strong>可选</strong>的（默认为UTF-8)。</p>
 <p>注：<strong>这个编码方式与XML在文档在系统中保存时使用的编码方式没有直接关系</strong>。</p>
 <p>(3) 文档独立性声明 (<strong>standalone</strong>)该属性的取值表明当前XML文件是否独立使用、还是与其他标记文件配套使用。若为“yes”,则解析当前XML文档时无需其他的外部标记声明文件。若为”no“，则可能需要使用外部的标记声明文件。这个属性是<strong>可选</strong>的。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E7%8B%AC%E7%AB%8B%E6%80%A7.png"></p>
-<p>示例中，no的原因是因为该文档引用了外部1.ent中定义的实体：*&amp;nbsp*</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="独立性.png" alt=""></p>
+<p>示例中，no的原因是因为该文档引用了外部1.ent中定义的实体：<em>&amp;nbsp</em></p>
 <p>而<strong>如果存在外部标记声明</strong>，且没有standalone声明，则解析器将认为<strong>standalone的值为no</strong></p>
 <p>如果有encoding 属性和standalone属性，那么<strong>encoding属性必须放standalone属性前面</strong>。</p>
 <h3 id="1-2-2-处理指令和注释"><a href="#1-2-2-处理指令和注释" class="headerlink" title="1.2.2 处理指令和注释"></a>1.2.2 处理指令和注释</h3><p>Q6：什么是处理指令？</p>
 <p>E6：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml-stylesheet href=&quot;style.xsl&quot; type=&quot;text/xsl&quot;?&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>C6：处理指令是表示将XML文档用于特殊的应用程序时表示需要执行的特定操作，而XML解析器不会执行特定的操作。</p>
 <p>语法格式：<code>&lt;? target-name data ?&gt;</code></p>
-<p>其中，**<?和?>表示处理指令的开始与结束<strong>；target-name表示该处理指令的</strong>名称<strong>，data部分描述该指令的</strong>具体内容**。E6的含义为：当XSL的执行引擎碰到这个处理指令时，将会根据href的取值获得指定的xsl文件，并对输入的xml文档进行相应的转换。</p>
+<p>其中，<strong>&lt;?和?&gt;表示处理指令的开始与结束</strong>；target-name表示该处理指令的<strong>名称</strong>，data部分描述该指令的<strong>具体内容</strong>。E6的含义为：当XSL的执行引擎碰到这个处理指令时，将会根据href的取值获得指定的xsl文件，并对输入的xml文档进行相应的转换。</p>
 <p>Q7：注释的注意事项是什么？</p>
 <p>C7：语法格式 <code>&lt;!--......--&gt;</code>,与HTML一致。</p>
 <p>​        在注释的内容中，<strong>不应该出现两个连续的横线</strong>。</p>
@@ -165,15 +158,12 @@
 <h3 id="1-2-3-XML文档中的元素和属性"><a href="#1-2-3-XML文档中的元素和属性" class="headerlink" title="1.2.3 XML文档中的元素和属性"></a>1.2.3 XML文档中的元素和属性</h3><p>Q8：什么是元素？</p>
 <p>E8：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">element_name</span> <span class="attr">att1</span>=<span class="string">&quot;val1&quot;</span> <span class="attr">att2</span>=<span class="string">&quot;val2&quot;</span>&gt;</span></span><br><span class="line">    ...content...</span><br><span class="line"><span class="tag">&lt;/<span class="name">element_name</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>C8：元素是最基本的组成单元，在元素的开始标记中还可以包含相关的属性。元素中可以包含文本、子元素、或者两者的组合。可以存在空元素，即<strong>不包含任何内容</strong>的元素，但它<strong>可以包含属性</strong>：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span>&gt;</span><span class="tag">&lt;/<span class="name">details</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">details</span>/&gt;</span><span class="comment">&lt;!--上述两种空元素是等价的--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">details</span> <span class="attr">about</span>=<span class="string">&quot;Location&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">details</span>&gt;</span><span class="comment">&lt;!--空元素可以包含属性--&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>一个元素可以包含任意多个子元素，<strong>可以包含多个同名的子元素</strong>；子元素的<strong>顺序非常重要</strong>。</p>
 <p>Q9：什么是属性？</p>
 <p>E9：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">author</span> <span class="attr">firstname</span>=<span class="string">&quot;Tom&quot;</span> <span class="attr">lastname</span>=<span class="string">&quot;hanks&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>C9：<strong>属性不能独立于元素而存在</strong>，通常以名-值对的形式出现，用于描述当前元素的某个方面的特征。</p>
 <p>​        <strong>属性的取值必须加上引号（单引号或者双引号）</strong></p>
 <p>元素在其开始标记中可以包含任意多个属性，但<strong>不能包含同名的属性</strong>。</p>
@@ -181,11 +171,10 @@
 <p>Q10：如何命名元素和属性？</p>
 <p>E10：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">example-one</span>/&gt;</span> <span class="tag">&lt;<span class="name">_example2</span>/&gt;</span> <span class="tag">&lt;<span class="name">:Example.Three</span>/&gt;</span> <span class="comment">&lt;!--这些标记名称都是正确的--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bad*character</span>/&gt;</span> <span class="tag">&lt;<span class="name">illegal</span> <span class="attr">space</span>/&gt;</span> <span class="tag">&lt;<span class="name">12number-start</span>/&gt;</span><span class="comment">&lt;!--这些都是错误的--&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>C10：</p>
 <ol>
 <li>名称的开头必须以<strong>字母、下划线或者冒号</strong>开头。</li>
-<li>除开头之外的其他部分可以是字母、数字、<strong>横线(-)**、下划线、</strong>点号(.)、冒号**的任意组合。</li>
+<li>除开头之外的其他部分可以是字母、数字、<strong>横线(-)</strong>、下划线、<strong>点号(.)、冒号</strong>的任意组合。</li>
 <li><strong>元素名称分大小写</strong>。</li>
 <li>元素和属性的名称长度没有限制。</li>
 <li>可以使用非英文的元素名。</li>
@@ -198,20 +187,17 @@
 </ol>
 <h3 id="1-2-4-XML文档中的文本内容和CDATA段"><a href="#1-2-4-XML文档中的文本内容和CDATA段" class="headerlink" title="1.2.4 XML文档中的文本内容和CDATA段"></a>1.2.4 XML文档中的文本内容和CDATA段</h3><p>在文本内容中，一些符号会产生歧义，使得解析器不能正确辨识。比如</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;lessthan&gt;one&lt;two&lt;/lessthan&gt; &lt;!--文本中的小于号产生了歧义--&gt;</span><br></pre></td></tr></table></figure>
-
 <p>XML 1.0 规范中定义了五种预定义实体：而<strong>除此以外的的其他实体，必须在使用前进行声明</strong>。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%9E%E4%BD%93.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="预定义实体.png" alt=""></p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">lessthan</span>&gt;</span>one <span class="symbol">&amp;it;</span>two<span class="tag">&lt;/<span class="name">lessthan</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>注：预定义实体<strong>以&amp;表示实体的开始</strong>，<strong>最后有一个分号</strong>表示实体的结束，容易遗漏，特别注意 </p>
 <p>Q12：什么是CDATA段？</p>
 <p>E12：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">customer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>&lt;![CDATA[YOU &amp; ME,&lt;Tom&gt;&amp;&lt;Jerry&gt;]]&gt;<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">customer</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>C12: 假设XML文档的某块文本内容中<strong>包含大量的特殊字符</strong>，那么可以将整个文本块的内容放入到一个CDATA段中</p>
 <p>即：<code>&lt;![CDATA[]]&gt;</code></p>
 <p>使用 CDATA 段，可以告诉<strong>解析器不要试图从该文本块中查找 XML 标记</strong>，<strong>它仅仅就是文本内容</strong>，从而避免了歧义的产生，因此<strong>可以使用非法字符</strong>。</p>
-<p>同理，CDATA段的文本内容中<strong>不能直接出现]]&gt;**，并且CDATA段</strong>不应该嵌套使用**。（与注释类似）</p>
+<p>同理，CDATA段的文本内容中<strong>不能直接出现]]&gt;</strong>，并且CDATA段<strong>不应该嵌套使用</strong>。（与注释类似）</p>
 <p>Q13：什么是空白字符？</p>
 <p>C13：XML文档中的空白字符包括空格、回车、换行、制表等四种符号。</p>
 <p>注：在<strong>缺省</strong>的情况下，对于连续出现的空白字符，解析器会将其<strong>缩减为一个空格字符</strong>。如果准备<strong>显示标记包含的全部空格</strong>，在编辑xml文件时将输入法换成<strong>“中文”输入法</strong>，并选择“<strong>全角状态”来编辑空格字符</strong>。</p>
@@ -223,17 +209,14 @@
 <li>标记必须正确的嵌套。</li>
 </ol>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">book</span>&gt;</span><span class="tag">&lt;<span class="name">author</span>&gt;</span>tom hanks<span class="tag">&lt;/<span class="name">book</span>&gt;</span><span class="tag">&lt;/<span class="name">author</span>&gt;</span> <span class="comment">&lt;!--这是错误的--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
+<ol>
 <li>属性值必须使用引号括起来：</li>
 </ol>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span> <span class="attr">about</span>=<span class="string">Location/</span>&gt;</span> <span class="comment">&lt;!--不加引号是错误的，可加单引号或双引号--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ol start="5">
+<ol>
 <li>有且只有一个根元素。</li>
 </ol>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">author</span>&gt;</span>tom hanks<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">author</span>&gt;</span>mike jimmy<span class="tag">&lt;/<span class="name">author</span>&gt;</span><span class="comment">&lt;!--这段内容称为XML片段--&gt;</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="1-2-6-XML文档的分类"><a href="#1-2-6-XML文档的分类" class="headerlink" title="1.2.6 XML文档的分类"></a>1.2.6 XML文档的分类</h3><p>XML 既可以是<strong>面向数据</strong>（Data Centric）的，又可以是<strong>面向文档</strong>（Document Centric）的。</p>
 <p>面向数据的文档主要利用 XML 来传送应用数据，这些文档包括销售订单（参见 data-centric.xml）、病人记录和科学数据等。</p>
 <p>面向数据的 XML 文档的物理结构，如元素的顺序、或者数据被存储为属性还是子元素，通常不是很重要。它们的特征是高度有序的结构，并且同时带有那些数据结构的多个项目，类似于关系数据库系统中的多条记录。 </p>
@@ -244,20 +227,17 @@
 <h3 id="1-3-2-XML中命名空间的声明和使用"><a href="#1-3-2-XML中命名空间的声明和使用" class="headerlink" title="1.3.2 XML中命名空间的声明和使用"></a>1.3.2 XML中命名空间的声明和使用</h3><p>Q16：如何声明命名空间？</p>
 <p>E16：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">myns:element</span> <span class="attr">xmlns:myns</span>=<span class="string">&quot;http://www.myns.com&quot;</span>&gt;</span></span><br><span class="line">    .....</span><br><span class="line"><span class="tag">&lt;/<span class="name">myns:element</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>C16：声明XML命名空间的语法为：<strong>xmlns:prefix-name=”URI”**。其中，</strong>xmlns是XML的保留属性，用来声明命名空间<strong>。命名空间的前缀名称是以字母或下划线（_）开头的、</strong>不包含空白字符和冒号（:）<strong>的字符串，通常规定</strong>不应该使用 XML 中的保留字**，比如 xml、xsl 等等。</p>
-<p>对于例子，myns:element表示element元素属于myns这个命名空间，而myns只是命名空间的简称，后面的语句才是命名空间的声明，表示myns命名空间的全程为字符串”<a href="http://www.myns.com&quot;./">http://www.myns.com&quot;。</a></p>
+<p>C16：声明XML命名空间的语法为：<strong>xmlns:prefix-name=”URI”</strong>。其中，<strong>xmlns是XML的保留属性，用来声明命名空间</strong>。命名空间的前缀名称是以字母或下划线（_）开头的、<strong>不包含空白字符和冒号（:）</strong>的字符串，通常规定<strong>不应该使用 XML 中的保留字</strong>，比如 xml、xsl 等等。</p>
+<p>对于例子，myns:element表示element元素属于myns这个命名空间，而myns只是命名空间的简称，后面的语句才是命名空间的声明，表示myns命名空间的全程为字符串”<a href="http://www.myns.com&quot;。">http://www.myns.com&quot;。</a></p>
 <p>Q17：为什么不建议用简短的字符串作为命名空间的全称？</p>
 <p>C17：为了减少不同命名空间标识符冲突的可能性。</p>
 <p>Q18：怎样使用缺省命名空间？</p>
 <p>E18：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">company</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.myns.com&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">company-info</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>SoftwareBG<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">fdate</span>&gt;</span>2007-03-17<span class="tag">&lt;/<span class="name">fdate</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">ns1:division</span> <span class="attr">xmlns:ns1</span>=<span class="string">&quot;http://www.myns.com/division&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">ns1:name</span>&gt;</span>Development<span class="tag">&lt;/<span class="name">ns1:name</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">ns1:employees</span>&gt;</span>100<span class="tag">&lt;/<span class="name">ns1:employees</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">ns1:division</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">company-info</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">company</span>&gt;</span> </span><br></pre></td></tr></table></figure>
-
 <p>C18：由例子：根元素company的<strong>开始标记中声明了一个无前缀名的命名空间，它的作用范围为整个XML文档</strong>。因此在该文档中，<strong>任何没有显示地指定命名空间的元素和属性</strong>（即除了disivion命名空间下的其他），都属于这个缺省的无名命名空间。</p>
 <p>教学要求：能较系统地了解XML及其相关技术概述，XML在各个领域方面的应用，XML规范及XML文档分类，命名空间，XML数据模型规范等；</p>
 <h2 id="1-4-XML文档的数据模型规范"><a href="#1-4-XML文档的数据模型规范" class="headerlink" title="1.4 XML文档的数据模型规范"></a>1.4 XML文档的数据模型规范</h2><p>以下片段都将转化为<code>&lt;a b=&#39;upcase&#39;&gt; Hello! &lt;/a&gt;</code></p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">b</span>=<span class="string">&#x27;upcase&#x27;</span>&gt;</span> <span class="tag">&lt;<span class="name">[CDATA[Hello!]]</span>&gt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">b</span>=<span class="string">&#x27;upcase&#x27;</span>&gt;</span> Hello&amp;#33 <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>XML第一章的内容都属于基础，比较简单，多考于选择题，因此需要广覆盖知识点，不要在这里失分。</p>
 ]]></content>
       <categories>
@@ -268,21 +248,11 @@
       </tags>
   </entry>
   <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>XML开发技术——第五章</title>
     <url>/2020/11/25/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
     <content><![CDATA[<p>经过了上一次的学习，我们学到了用于查询的XPATH，它会在之后的很多地方予以应用。</p>
 <p>比如今天我们要讲的XSLT</p>
 <a id="more"></a>
-
 <h1 id="第五章-XSLT"><a href="#第五章-XSLT" class="headerlink" title="第五章 XSLT"></a>第五章 XSLT</h1><p>本章内容的学习目的：</p>
 <ol>
 <li>理解和掌握XML文档的转换过程。</li>
@@ -303,7 +273,7 @@
 </ol>
 <p><code>&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</code></p>
 <h3 id="5-1-1-XSLT的工作原理"><a href="#5-1-1-XSLT的工作原理" class="headerlink" title="5.1.1 XSLT的工作原理"></a>5.1.1 XSLT的工作原理</h3><p>Q3：XSLT是怎样工作的？</p>
-<p>E3：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png"></p>
+<p>E3：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="工作原理.png" alt=""></p>
 <p>C3：</p>
 <ol>
 <li>在进行XSLT的转换任务时，需要<strong>两个输入文档</strong>，一个是包含源数据的<strong>XML文档</strong>，一个是包含转换任务规则的<strong>XSLT文档</strong>。</li>
@@ -311,11 +281,8 @@
 <li><strong>由XSLT引擎调用这些规则</strong>，对文档树进行遍历，分别处理其中指定的数据节点，将其转换为所需的结果集，并序列化为结果文档。</li>
 </ol>
 <h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;hello.xlst&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">message</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">message</span>&gt;</span>       <span class="comment">&lt;!--这是hello.xsl文档--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xsl:stylesheet</span> <span class="attr">version</span>=<span class="string">&quot;2.0&quot;</span> <span class="attr">xmlns:xsl</span>=<span class="string">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- transform the input root (/) --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsl:template</span> <span class="attr">match</span>=<span class="string">&quot;/&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line">        		<span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">            		<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">	        			<span class="tag">&lt;<span class="name">xsl:value-of</span> <span class="attr">select</span>=<span class="string">&quot;message&quot;</span>/&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line">      			<span class="tag">&lt;/<span class="name">body</span>&gt;</span>    		</span><br><span class="line">			<span class="tag">&lt;/<span class="name">html</span>&gt;</span>       </span><br><span class="line">		<span class="tag">&lt;/<span class="name">xsl:template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xsl:stylesheet</span>&gt;</span>              <span class="comment">&lt;!--这是hello.xslt文档--&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="5-2-XSLT中模板的创建以及内置模板的使用"><a href="#5-2-XSLT中模板的创建以及内置模板的使用" class="headerlink" title="5.2 XSLT中模板的创建以及内置模板的使用"></a>5.2 XSLT中模板的创建以及内置模板的使用</h2><h3 id="5-2-1-XSLT中模板的声明"><a href="#5-2-1-XSLT中模板的声明" class="headerlink" title="5.2.1 XSLT中模板的声明"></a>5.2.1 XSLT中模板的声明</h3><p>Q4：怎么声明模板？</p>
-<p>E4：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%A8%A1%E6%9D%BF%E5%A3%B0%E6%98%8E.png"></p>
+<p>E4：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="模板声明.png" alt=""></p>
 <p>C4：模板标记之间的内容相当于一个<strong>函数的函数体</strong>，表示在调用该模板时应该执行的具体操作。而元素开始标记中的属性match、name、mode和priority则用于描述该模板的相关信息。</p>
 <p>Q5：模板有哪些属性？</p>
 <p>C5：</p>
@@ -327,71 +294,68 @@
 <p>i. 对于模板 xsl:template match=”/“，XSLT 处理器在碰到 XML 文档的文档节点时自动调用该模板，就好像作为<strong>程序执行的入口</strong>。</p>
 <p>ii. 对于其他的模板match=other-pattern，将在模板xsl:template match=”/“的转换规则（函数体）中通过指出匹配路径的方式（使用xsl:apply-templates）进行隐式地或者显式地调用。</p>
 <p>●<strong>根据模板名称属性</strong>，使用 xsl:call-template name=template-name  进行调用。 </p>
-<ol start="2">
+<ol>
 <li>名称属性 name</li>
 </ol>
-<p>模板&lt;xsl:template match=“/”&gt;和&lt;xsl:template match=“message”&gt;都没有具体的名称，因此将其称为<strong>无名模板</strong>。这些模板之所以没有名称，是因为<strong>它们的调用是在遍历文档树的过程中自动进行的</strong>，不需要名称。</p>
+<p>模板<xsl:template match=“/”>和<xsl:template match=“message”>都没有具体的名称，因此将其称为<strong>无名模板</strong>。这些模板之所以没有名称，是因为<strong>它们的调用是在遍历文档树的过程中自动进行的</strong>，不需要名称。</p>
 <p>也可以使用name属性为模板指定一个名称，使其成为命名模板 。例</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:stylesheet</span> <span class="attr">version</span>=<span class="string">&quot;2.0&quot;</span> <span class="attr">xmlns:xsl</span>=<span class="string">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">xsl:template</span> <span class="attr">match</span>=<span class="string">&quot;/&quot;</span> <span class="attr">name</span>=<span class="string">&quot;one&quot;</span>&gt;</span>              <span class="comment">&lt;!--命名模板 one--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsl:call-template</span> <span class="attr">name</span>=<span class="string">&quot;another&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">xsl:template</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">xsl:template</span> <span class="attr">name</span>=<span class="string">&quot;another&quot;</span>&gt;</span>                    <span class="comment">&lt;!--命名模板 another--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">output</span>&gt;</span>Simple output<span class="tag">&lt;/<span class="name">output</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">xsl:template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xsl:stylesheet</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>XSLT 处理器将调用命名模板 one（实际上名称 one 没有作用，因为是自动调用的），然后<strong>在模板 one 中使用 xsl:call-template 直接调用名为 another 的模板</strong>，在模板 another 执行结束之后，继续执行模板 one 的后续指令，<strong>这个过程非常类似于函数的调用</strong>。 </p>
-<ol start="3">
+<ol>
 <li>模式属性 mode</li>
 </ol>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="mode.png"></p>
-<ol start="4">
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="mode.png" alt=""></p>
+<ol>
 <li>优先级属性 priority</li>
 </ol>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E4%BC%98%E5%85%88%E7%BA%A7.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="优先级.png" alt=""></p>
 <p>注意：XSLT中<strong>允许存在同名的模板</strong>；</p>
 <p>当没有priority属性时，将执行<strong>后声明的模板</strong>；</p>
 <p>有priority属性时，将使用 <strong>priority取值较大</strong>的模板。 </p>
-<ol start="5">
+<ol>
 <li>返回类型属性 as</li>
 </ol>
 <p>模板返回类型属性as的取值，表示<strong>该模板应该返回的数据类型</strong>。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="as.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="as.png" alt=""></p>
 <p>注：该返回的XML元素<strong>包含了子元素和文本内容</strong>。</p>
 <p>模板的返回类型属性<strong>as是一个可选的参数</strong>，如果不指定该参数，则模块可以<strong>输出任意的文本内容</strong>。</p>
 <h3 id="5-2-1-XSLT中模板的调用"><a href="#5-2-1-XSLT中模板的调用" class="headerlink" title="5.2.1 XSLT中模板的调用"></a>5.2.1 XSLT中模板的调用</h3><h4 id="1-使用xsl-apply-templates-调用模板"><a href="#1-使用xsl-apply-templates-调用模板" class="headerlink" title="1.使用xsl:apply-templates 调用模板"></a>1.使用xsl:apply-templates 调用模板</h4><p>调用顺序：在<strong>广度优先</strong>、逐层向下的遍历过程中，指定继续遍历<strong>当前节点的所有子节点</strong></p>
 <p>完整语法：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:apply-templates</span> <span class="attr">select</span>=<span class="string">Expression</span> <span class="attr">mode</span>=<span class="string">QName</span>&gt;</span></span><br><span class="line">        ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">xsl:apply-templates</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>对于xsl:apply-templates元素，<strong>select和mode属性都是可选的</strong>，即可以直接使用<code>&lt;xsl:apply-templates/&gt;</code></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%A8%A1%E6%9D%BF1.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="模板1.png" alt=""></p>
 <p>对于上例，XSLT自动调用模板1，开始对整个XML文档树的遍历，即依次调用“处理指令”、“message元素”所对应的模板。所以模板1中使用了<code>&lt;xsl:apply-templates/&gt;</code>，表示<strong>调用当前节点的所有子节点所对应的模板</strong>。若模板1中无<code>&lt;xsl:apply-templates/&gt;</code>，<strong>遍历过程将中断</strong>，不会处理除文档节点”/“之外的任何节点。</p>
 <p>下面介绍该元素的两个属性</p>
 <ol>
 <li>select(<strong>取值为一个XPath表达式</strong>）允许指定<strong>仅遍历当前节点的哪些子节点</strong>（以调用相应的模板）</li>
 </ol>
 <p>例：<code>&lt;xsl:apply-templates select=&quot;message&quot;/&gt;</code>仅调用“message元素”所对应的模板</p>
-<ol start="2">
+<ol>
 <li>mode属性指定需要在match属性取值相同的模板中，选择哪一个进行调用。</li>
 </ol>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="mode2.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="mode2.png" alt=""></p>
 <h4 id="2-使用xsl-call-template-调用模板"><a href="#2-使用xsl-call-template-调用模板" class="headerlink" title="2.使用xsl:call-template 调用模板"></a>2.使用xsl:call-template 调用模板</h4><p>在xsl:template元素开始标记和结束标记之间，使用 xsl:param元素为所在的模板声明参数，其as属性可以指定参数的数据类型。 例</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%8F%82%E6%95%B0.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="参数.png" alt=""></p>
 <p>注：用于为模板声明参数的<strong>xsl:param元素必须出现在模板正文的前面</strong></p>
-<p>​        在模板正文中，使用**$+’模板参数名’**来引用模板参数，以避免将其作为字符串进行处理。</p>
+<p>​        在模板正文中，使用<strong>$+’模板参数名’</strong>来引用模板参数，以避免将其作为字符串进行处理。</p>
 <h3 id="5-2-2-XSLT中的内置模板"><a href="#5-2-2-XSLT中的内置模板" class="headerlink" title="5.2.2 XSLT中的内置模板"></a>5.2.2 XSLT中的内置模板</h3><p>Q6：怎样分析内置模板？</p>
-<p>E6：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%86%85%E7%BD%AE%E6%A8%A1%E6%9D%BF.png"></p>
+<p>E6：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="内置模板.png" alt=""></p>
 <p>C6：模板1’的<code>match=“*|/”</code>是用于处理文档节点和所有元素节点（使用了通配符*），该模板的任务是调用所有子节点的处理模板。</p>
-<p>​        模板2‘的<code>match=“text()|@*”,</code>表示它用于处理文本节点和所有属性节点（使用了通配符@*），由于文本节点和属性节点不可能再包含子节点，所以这个模板的任务是直接打印出当前节点（文本节点和属性节点）的内容(<strong>&lt;xsl:value-of select=”.”/&gt;</strong>)</p>
+<p>​        模板2‘的<code>match=“text()|@*”,</code>表示它用于处理文本节点和所有属性节点（使用了通配符@<em>），由于文本节点和属性节点不可能再包含子节点，所以这个模板的任务是直接打印出当前节点（文本节点和属性节点）的内容(<em>*<xsl:value-of select="."/></em></em>)</p>
 <p>Q7：内置模板有什么作用？</p>
 <p>C7：内置模板中仅对<strong>文本节点和属性节点</strong>进行了处理，即输出了其文本内容。其作用在于：让我们<strong>集中精力编写相关节点的处理模板，而无需过多地操心整个遍历过程中模板的逐层调用</strong>。只有在用户没有自定义处理某个节点的模块规则时，才会调用内置模块中的规则；否则，<strong>用户自定义的模块规则将覆盖内置模块中的规则</strong>。</p>
 <p>Q8：内置模板存在什么问题？</p>
 <p>E8：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E9%94%99%E8%AF%AFXML.png"></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%A8%A1%E6%9D%BF%E9%94%99%E8%AF%AF.png"></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E9%94%99%E8%AF%AF%E8%A7%A3%E7%AD%94.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="错误XML.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="模板错误.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="错误解答.png" alt=""></p>
 <p>C8：在Company模板中，<code>&lt;xsl:apply-templates/&gt;</code>将调用其子节点(Name和Person)的处理模板。但这时<strong>不存在match=“Name”的模板</strong>（修改错误时则只需要加上空模板Name即可），于是调用默认模板（先1后2），<strong>输出了文本节点的内容</strong>，导致文本节点的内容输出了两次，而Person的子元素Name没有出现两次。</p>
 <h2 id="5-3-XSLT模板中各种转换功能的实现"><a href="#5-3-XSLT模板中各种转换功能的实现" class="headerlink" title="5.3 XSLT模板中各种转换功能的实现"></a>5.3 XSLT模板中各种转换功能的实现</h2><h3 id="5-3-1-value-of-text"><a href="#5-3-1-value-of-text" class="headerlink" title="5.3.1 value-of   text"></a>5.3.1 value-of   text</h3><p>Q9：如何使用value-of？</p>
 <p>E9：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">subject</span>&gt;</span>I<span class="tag">&lt;/<span class="name">subject</span>&gt;</span><span class="tag">&lt;<span class="name">predicate</span>&gt;</span>Love<span class="tag">&lt;/<span class="name">predicate</span>&gt;</span><span class="tag">&lt;<span class="name">object</span>&gt;</span>You<span class="tag">&lt;/<span class="name">object</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">message</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">xsl:value-of</span> <span class="attr">select</span>=<span class="string">&quot;.&quot;</span>/&gt;</span>   <span class="comment">&lt;!--会输出ILoveYou--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>C9：对于文本节点和属性节点，xsl:value-of select=“.” 当然提取的是文本节点的内容和属性节点的取值；对元素节点使用 &lt;xsl:value-of select=“.”/&gt;，那么将得到元素节点的 String-Value,如上例。</p>
+<p>C9：对于文本节点和属性节点，xsl:value-of select=“.” 当然提取的是文本节点的内容和属性节点的取值；对元素节点使用 <xsl:value-of select=“.”/>，那么将得到元素节点的 String-Value,如上例。</p>
 <p>Q10：如何输出空格？</p>
-<p>E10：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="text%E7%A9%BA%E7%99%BD%E5%AD%97%E7%AC%A6.png"></p>
+<p>E10：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="text空白字符.png" alt=""></p>
 <p>C10：此时应该使用<code>&lt;xsl:text&gt;&lt;xsl:text/&gt;</code>。xsl:text元素开始标记和结束标记<strong>之间的内容会原封不动的输出到结果中</strong>，但是其中不能包含其他XML的标记。</p>
 <h3 id="5-3-2-xsl-for-each-xsl-sort"><a href="#5-3-2-xsl-for-each-xsl-sort" class="headerlink" title="5.3.2 xsl:for-each xsl:sort"></a>5.3.2 xsl:for-each xsl:sort</h3><p>Q11：怎么使用<strong>for-each与sort</strong>？</p>
 <p>E11：</p>
@@ -404,7 +368,6 @@
 <p>C11：例中选择出了所有person的子元素Name，并将它们进行排序，随后进行输出。</p>
 <p>关于sort的语法：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:sort</span> <span class="attr">select</span>=<span class="string">expression</span> </span></span><br><span class="line"><span class="tag">          <span class="attr">data-type</span>=<span class="string">&#123;</span>&quot;<span class="attr">text</span>&quot;|&quot;<span class="attr">number</span>&quot;|<span class="attr">QName</span>&#125; </span></span><br><span class="line"><span class="tag">          <span class="attr">order</span>=<span class="string">&#123;</span>&quot;<span class="attr">ascending</span>&quot;|&quot;<span class="attr">descending</span>&quot;&#125; </span></span><br><span class="line"><span class="tag">          <span class="attr">case-order</span>=<span class="string">&#123;</span>&quot;<span class="attr">upper-first</span>&quot;|&quot;<span class="attr">lower-first</span>&quot;&#125;/&gt;</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="5-3-3-xsl-if"><a href="#5-3-3-xsl-if" class="headerlink" title="5.3.3 xsl:if"></a>5.3.3 xsl:if</h3><p>Q12：怎么使用if？</p>
 <p>E12：</p>
 <table><tr>
@@ -414,21 +377,21 @@
 </table>
 
 <p>C12：if通常与for-each搭配，根据条件输出所需要的文本或节点。</p>
-<h3 id="5-3-4-xsl-choose-xsl-when-xsl-otherwise"><a href="#5-3-4-xsl-choose-xsl-when-xsl-otherwise" class="headerlink" title="5.3.4 xsl:choose xsl:when xsl:otherwise"></a>5.3.4 xsl:choose xsl:when xsl:otherwise</h3><p>E13：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="switch.png"></p>
+<h3 id="5-3-4-xsl-choose-xsl-when-xsl-otherwise"><a href="#5-3-4-xsl-choose-xsl-when-xsl-otherwise" class="headerlink" title="5.3.4 xsl:choose xsl:when xsl:otherwise"></a>5.3.4 xsl:choose xsl:when xsl:otherwise</h3><p>E13：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="switch.png" alt=""></p>
 <h3 id="5-3-5-在输出中创建XML节点"><a href="#5-3-5-在输出中创建XML节点" class="headerlink" title="5.3.5 在输出中创建XML节点"></a>5.3.5 在输出中创建XML节点</h3><p>Q13：如何使用<strong>copy和copy-of</strong>？</p>
-<p>E13：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%88%9B%E5%BB%BA%E5%85%83%E7%B4%A0.png"></p>
+<p>E13：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="创建元素.png" alt=""></p>
 <p>C13：在上例中，递归的使用了xsl:copy，用于复制每一个节点到结果树中。而xsl:copy-of直接在文档入口处复制了根元素和下面的整棵树（包括属性和子元素）到结果树中，二者存在以下差异：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="copy.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="copy.png" alt=""></p>
 <p>缺点：xsl:copy 和 xsl:copy-of 可以将当前节点从源复制到输出，但是<strong>不能根据需要生成任意的 XML 节点</strong>。</p>
 <p>Q14：如何使用<strong>element</strong>？</p>
-<p>E14：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="element.png"></p>
+<p>E14：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="element.png" alt=""></p>
 <p>C14：上例通过xsl:element,将源文档中的message元素<strong>改名</strong>为了new-message</p>
 <p>Q15：如何使用<strong>attribute</strong>？</p>
-<p>E15：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="att.png"></p>
+<p>E15：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="att.png" alt=""></p>
 <p>C15：上例先通过copy复制了一个空的message元素，随后为其添加了属性content，并将原来message的文本内容赋给了content。</p>
 <p>Q16：如何使用attribute-set？</p>
-<p>E16：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="set.png"></p>
-<h3 id="5-3-6-如何控制输出格式？"><a href="#5-3-6-如何控制输出格式？" class="headerlink" title="5.3.6 如何控制输出格式？"></a>5.3.6 如何控制输出格式？</h3><p>E17：<code>&lt;xsl:output method=&quot;xml&quot; version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; indent=&quot;yes&quot;/&gt;     </code></p>
+<p>E16：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="set.png" alt=""></p>
+<h3 id="5-3-6-如何控制输出格式？"><a href="#5-3-6-如何控制输出格式？" class="headerlink" title="5.3.6 如何控制输出格式？"></a>5.3.6 如何控制输出格式？</h3><p>E17：<code>&lt;xsl:output method=&quot;xml&quot; version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; indent=&quot;yes&quot;/&gt;</code></p>
 <p>C17：这表示输出为XML格式，版本为XML1.0，编码方式为UTF-8<strong>并且进行缩进</strong>，<strong>如果不进行缩进，输出的会写在同一行</strong>，难以体现出层次关系。</p>
 <h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>通过本次学习，我们学习到了XSLT的基本语法和其转换方式，在考试中<strong>XSLT常考于大题中</strong>，即给出原来的XML和XSLT让你<strong>写出转换后的XML文档</strong>。需要仔细学习规则，不然会失分很多。</p>
 ]]></content>
@@ -440,12 +403,20 @@
       </tags>
   </entry>
   <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数据结构期中复习</title>
     <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
 <p>本文只针对作者认为可能考到的知识点进行整理，存在不足，欢迎补充。</p>
 <a id="more"></a>
-
 <h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><h2 id="1-什么是数据结构"><a href="#1-什么是数据结构" class="headerlink" title="1.什么是数据结构"></a>1.什么是数据结构</h2><p>数据结构是相互之间存在一种或多种特定关系的数据元素的集合。</p>
 <p>数据对象：即具有相同性质的数据元素的集合</p>
 <p>例：英文字母数据对象：C={‘A’, ‘B’, ……, ‘Z’, ‘a’, ‘b’, ……, ‘z’}。</p>
@@ -470,14 +441,12 @@
 <p><strong>链表：链式存储结构：由指针描述逻辑关系</strong></p>
 <p>补：链表的定义：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;Node,*LinkList;</span><br></pre></td></tr></table></figure>
-
 <h4 id="例1：综合比较顺序表和链表"><a href="#例1：综合比较顺序表和链表" class="headerlink" title="例1：综合比较顺序表和链表"></a>例1：综合比较顺序表和链表</h4><p>答：顺序表在内存中是一段连续的存储空间， 通过头指针和偏移地址直接访问数据，访问数据的效率较高，为O（1），但是插入数据和删除数据的效率较低。<br> 链表在内存中是不连续的，通过每一个节点保存指向下一个节点的指针的方式来存储数据，访问数据的效率较低，但同时，插入数据和删除数据的效率较高。</p>
 <h4 id="例2：解释链表的”头指针、头结点和首元素结点“三个概念"><a href="#例2：解释链表的”头指针、头结点和首元素结点“三个概念" class="headerlink" title="例2：解释链表的”头指针、头结点和首元素结点“三个概念"></a>例2：解释链表的”头指针、头结点和首元素结点“三个概念</h4><p>答：头指针：线性链表中第一个结点或头结点的存储地址，它是访问链表的起始点。</p>
 <p>​        头结点：附加在第一个数据元素之前的结点，该结点的数据域一般为“空”、指针域存放第一个数据元素的地址。</p>
 <p>​        首元素节点：链表中第一个存储着数据的节点。</p>
 <h4 id="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"><a href="#例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。" class="headerlink" title="例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。"></a>例3：给定链表的头指针L和一个正整数k。试设计一个尽可能高效的算法，用于查找链表L中倒数第k个位置上的结点。</h4><p>答：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">LinkList <span class="title">LinkSearch</span><span class="params">(ListList L,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k0=<span class="number">1</span>;</span><br><span class="line">    LinkList p=<span class="keyword">new</span> LinkList;</span><br><span class="line">    p=L-&gt;next;</span><br><span class="line">    LinkList q=p;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k0&lt;=k)++k0;</span><br><span class="line">        <span class="keyword">else</span> q=q-&gt;next;</span><br><span class="line">        </span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> q;</span><br><span class="line">&#125;<span class="comment">//时间复杂度为O(N)</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="2-栈与队列"><a href="#2-栈与队列" class="headerlink" title="2.栈与队列"></a>2.栈与队列</h2><p>我觉得期中考不了很难，鸽了（）</p>
 <p>想了解的话请移步我朋友的博客：</p>
 <p><a href="https://linyx.tk/2020/10/04/data-structure-study-note-1/">https://linyx.tk/2020/10/04/data-structure-study-note-1/</a></p>
@@ -487,7 +456,6 @@
 <p>（2）在经过有限次的递归调用后，能够导致递归出口的出现（<strong>递归算法必需具有终止递归的条件</strong>）</p>
 <p>例：实现Hanoi塔问题</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hanoi</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">char</span> x,<span class="keyword">char</span> y,<span class="keyword">char</span> z)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">        move(x,<span class="number">1</span>,z);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        hanoi(n<span class="number">-1</span>,x,z,y);</span><br><span class="line">        move(x,n,z);</span><br><span class="line">        hanoi(n<span class="number">-1</span>,y,x,z);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h1 id="第三章：树结构"><a href="#第三章：树结构" class="headerlink" title="第三章：树结构"></a>第三章：树结构</h1><h2 id="1-树"><a href="#1-树" class="headerlink" title="1.树"></a>1.树</h2><p>树是有n个结点的有限集合（n&gt;=0)</p>
 <p>树的结点包含一个数据元素以及若干个指针</p>
 <p>结点拥有子树的个数称为<strong>结点的度</strong>。</p>
@@ -495,16 +463,15 @@
 <p>树的度=<strong>max(结点的度)</strong></p>
 <p>结点的层次：第l层结点的孩子定义为l+1层。</p>
 <p><strong>树的高度（深度）=max（结点的层次）</strong></p>
-<h4 id="例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"><a href="#例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。" class="headerlink" title="例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"></a>例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。</h4><p>答：<strong>n0=1+0<em>n1+1</em>n2+2*n3+…+(K-1)*nK</strong></p>
+<h4 id="例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"><a href="#例：-已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。" class="headerlink" title="例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。"></a>例： 已知一棵度为k的树中，有n1个度为1的结点，n2个度为2的结点，…，nk个度为k的结点。试计算该树的叶子结点数。</h4><p>答：<strong>n0=1+0<em>n1+1</em>n2+2<em>n3+…+(K-1)</em>nK</strong></p>
 <h2 id="2-二叉树"><a href="#2-二叉树" class="headerlink" title="2.二叉树"></a>2.二叉树</h2><p>二叉树：每个结点至多只有两棵子树</p>
 <p>即：<strong>结点的度&lt;=2的有序树</strong></p>
 <p>二叉树的定义：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Type data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Lchild</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">Rchild</span>;</span></span><br><span class="line">&#125;TNode,*Tree;</span><br></pre></td></tr></table></figure>
-
 <p>满二叉树：一棵高度为k且具有2^k-1个结点的二叉树</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9B%BE%E7%89%871.png">（k=4)</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="图片1.png" alt="">（k=4)</p>
 <p><strong>完全二叉树：高度为k，结点个数∈[2^(k-1),2^k-1]，且第k层结点都集中在左侧的二叉树。</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9B%BE%E7%89%872.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="图片2.png" alt=""></p>
 <h4 id="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。"><a href="#例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0-n2-1。" class="headerlink" title="例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。"></a>例：如果二叉树T的叶子结点数为n0，度为2的结点数为n2，则n0=n2+1。</h4><p>证明：</p>
 <p>设二叉树T共有n个结点</p>
 <p>度为0的结点数为n0，度为1的结点数为n1,度为2的结点数为n2，</p>
@@ -514,35 +481,28 @@
 <p>（3）由于度=i（i=0，1，2）的结点具有i个分支，则：m=0+n1+2n2</p>
 <p>联立上式得：n0=n2+1，证毕。</p>
 <h2 id="3-二叉树的遍历"><a href="#3-二叉树的遍历" class="headerlink" title="3.二叉树的遍历"></a>3.二叉树的遍历</h2><h3 id="3-1-先序遍历"><a href="#3-1-先序遍历" class="headerlink" title="3.1 先序遍历"></a>3.1 先序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span><span class="comment">//递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    preOrder(T-&gt;Lchild);</span><br><span class="line">    preOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Tree T)</span><span class="comment">//非递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; temp;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            temp.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            p=temp.top();</span><br><span class="line">            temp.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9B%BE%E7%89%873.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="图片3.png" alt=""></p>
 <h3 id="3-2-中序遍历"><a href="#3-2-中序遍历" class="headerlink" title="3.2 中序遍历"></a>3.2 中序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span><span class="comment">//递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span>;</span><br><span class="line">    InOrder(T-&gt;Lchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">    InOrder(T-&gt;Rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(Tree T)</span><span class="comment">//非递归写法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; temp;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            temp.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            p=temp.top();</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            temp.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107151715620.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107151715620.png" alt=""></p>
 <h3 id="3-3-后序遍历"><a href="#3-3-后序遍历" class="headerlink" title="3.3 后序遍历"></a>3.3 后序遍历</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T) <span class="keyword">return</span> ;</span><br><span class="line">    PostOrder(T-&gt;Lchild);</span><br><span class="line">    PostOrder(T-&gt;Rchild);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;T-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(Tree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;Tree&gt; tempL，tempR;</span><br><span class="line">    Tree p=T-&gt;Lchild;</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;Lchild)</span><br><span class="line">        &#123;</span><br><span class="line">            tempL.push(p);</span><br><span class="line">            p=p-&gt;Lchild;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;p-&gt;data;</span><br><span class="line">            <span class="keyword">while</span>(tempR.top()-&gt;Rchild==p)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;tempR.top()-&gt;data;<span class="comment">//获取R栈顶部指针的数据</span></span><br><span class="line">                tempR.pop();<span class="comment">//弹出</span></span><br><span class="line">            &#125;</span><br><span class="line">            p=tempL.top();</span><br><span class="line">            tempL.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;Rchild)</span><br><span class="line">        &#123;</span><br><span class="line">            tempR.push(p);</span><br><span class="line">            p=p-&gt;Rchild;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107151732351.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107151732351.png" alt=""></p>
 <h4 id="例：简述由先序序列和中序序列构造二叉树的基本操作方法"><a href="#例：简述由先序序列和中序序列构造二叉树的基本操作方法" class="headerlink" title="例：简述由先序序列和中序序列构造二叉树的基本操作方法"></a>例：简述由先序序列和中序序列构造二叉树的基本操作方法</h4><p>答：如果前序序列和中序序列都为空，那么构造一棵空树。否则</p>
 <p>1、根据前序可确定根。</p>
 <p>2、根据根和中序，可以确定左子树集合和右子树集合，并得到左子树中序序列和右子树中序序列。</p>
 <p>3、在前序序列中划分出左子树前序序列和右子树前序序列。</p>
 <p>4、根据左子树前序序列和左子树中序序列构造左子树。</p>
 <p>5、根据右子树前序序列和右子树中序序列构造右子树。</p>
-<h2 id="4-哈夫曼树"><a href="#4-哈夫曼树" class="headerlink" title="4.哈夫曼树"></a>4.哈夫曼树</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107154325482.png"></p>
+<h2 id="4-哈夫曼树"><a href="#4-哈夫曼树" class="headerlink" title="4.哈夫曼树"></a>4.哈夫曼树</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107154325482.png" alt=""></p>
 <h2 id="5-森林与二叉树的转换"><a href="#5-森林与二叉树的转换" class="headerlink" title="5.森林与二叉树的转换"></a>5.森林与二叉树的转换</h2><h3 id="5-1树转换为二叉树"><a href="#5-1树转换为二叉树" class="headerlink" title="5.1树转换为二叉树"></a>5.1树转换为二叉树</h3><p>（1）<strong>加虚线</strong> 在树的每层按从“左至右”的顺序<strong>在兄弟结点之间加虚线相连</strong><br>（2）去连线。<strong>除最左的第一个子结点</strong>外，父结点与所 其它子结点的连线都去掉<br>（3）旋转。将<strong>树顺时针旋转45°</strong>，原有的实线左斜<br>（4）整型。将旋转后树中的所有虛线改为实线，并向右斜。</p>
-<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155306011.png" alt="image-20201107155306011" style="zoom:67%;" />
-
-<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155341354.png" alt="image-20201107155341354" style="zoom: 67%;" />
-
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155306011.png" alt="image-20201107155306011" style="zoom:67%;" /></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155341354.png" alt="image-20201107155341354" style="zoom: 67%;" /></p>
 <h3 id="5-2二叉树转换成树"><a href="#5-2二叉树转换成树" class="headerlink" title="5.2二叉树转换成树"></a>5.2二叉树转换成树</h3><p>（1）加虚线  若某结点i是其父结点的左子树的根结点，<strong>则将该结点ⅰ的右子结点以及沿右子链不断地搜索所有的右子结点，将所有这些右子结点与i结点的父结点之间加虚线相连</strong></p>
 <p>（2）去连线  去掉二叉树中所有其右子结点之间的连线<br>（3）规整化  将图中各结点按层次排列且将所有的虚线变成实线</p>
-<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" />]]></content>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" /></p>
+]]></content>
       <categories>
         <category>数据结构与算法</category>
       </categories>
@@ -570,16 +530,19 @@
 <p>但题目中要求是非连通的，所以在边不加的情况下，<strong>至少加一个孤立点，即至少有9个顶点</strong></p>
 <p>举一反三：若某个连通无向图有28条边，则该图至少有(8)个顶点。</p>
 <h3 id="关于图的度数"><a href="#关于图的度数" class="headerlink" title="关于图的度数"></a>关于图的度数</h3><p>什么是邻接点？</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%97%A0%E5%90%91%E9%82%BB%E6%8E%A5%E7%82%B9.png"></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%9C%89%E5%90%91%E9%82%BB%E6%8E%A5%E7%82%B9.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="无向邻接点.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="有向邻接点.png" alt=""></p>
 <p>什么是度数？</p>
 <p>1.对于无向图，顶点v的度就是和顶点v相邻接的边的数目，<strong>记为TD(v)</strong></p>
-<p>2.对于有向图，**入度ID(v)**是箭头指向v的弧的个数， **出度OD(v)**是箭头远离v的弧的个数</p>
+<p>2.对于有向图，<strong>入度ID(v)</strong>是箭头指向v的弧的个数， <strong>出度OD(v)</strong>是箭头远离v的弧的个数</p>
 <p>​                          顶点v的度<strong>TD(v)=ID(v)+OD(v)</strong></p>
-<p>3.握手定理：<br>$$<br>\begin{equation*}</p>
-<p>2m = \sum_{n=1}^nTD(v_i)</p>
-<p>\end{equation*}<br>$$</p>
-<h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3><p>两个顶点间连通，等价于两个顶点之间有路径。</p>
+<p>3.握手定理：</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+
+2m = \sum_{n=1}^nTD(v_i)
+
+\end{equation*}</script><h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3><p>两个顶点间连通，等价于两个顶点之间有路径。</p>
 <p>连通图：<strong>无向图</strong>中任意两个顶点都连通（<strong>不存在孤立点</strong>）</p>
 <p>连通分量：无向图中的<strong>极大连通子图</strong></p>
 <p>强连通图/强连通分量：<strong>对于有向图</strong>，概念类似上两个。</p>
@@ -600,7 +563,6 @@
 <p>图中<strong>每一个顶点建立一条链，该链由它的所有邻接点构成</strong>（横着的链）</p>
 <p>代码定义</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Anode</span></span></span><br><span class="line"><span class="class">&#123;</span>	<span class="keyword">int</span> Vi; <span class="comment">//邻接点在顺序表中的位置</span></span><br><span class="line">	<span class="keyword">int</span> Wi; <span class="comment">//权值(用于网。图可省略)</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Anode</span> *<span class="title">next</span>;</span> <span class="comment">//指向下一个邻接点</span></span><br><span class="line">&#125; ALink; <span class="comment">//邻接点存储结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Vnode</span></span></span><br><span class="line"><span class="class">&#123;</span>	Type data;</span><br><span class="line">	ALink *Vh; <span class="comment">//邻接点链表头指针</span></span><br><span class="line">&#125; Vnode; <span class="comment">//链表头指针结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span>	Vnode V [N];  <span class="comment">//链表头顺序表</span></span><br><span class="line">	<span class="keyword">int</span> n,m;  <span class="comment">//实际顶点数，边或弧数</span></span><br><span class="line">	<span class="keyword">int</span> visited[N];  <span class="comment">//访问标识</span></span><br><span class="line">&#125; AList; <span class="comment">//图的邻接表存储结构</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h4 id="从邻接表判断度数"><a href="#从邻接表判断度数" class="headerlink" title="从邻接表判断度数"></a>从邻接表判断度数</h4><p>无向图：顶点的度=邻接点链表中结点的数目</p>
 <p>有向图：顶点的<strong>出度</strong>=邻接点链表中结点的数目</p>
 <h4 id="时间复杂度和空间复杂度-1"><a href="#时间复杂度和空间复杂度-1" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接表存储图，占用的<strong>存储空间大小与顶点数和边数都有关</strong>。</p>
@@ -616,7 +578,6 @@
 <p>​         ②依次检查u的所有邻接点w，如果visited[w]的值为false，则访问w，并置visited[w]的值为true，然后将w进队。</p>
 <p>代码</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(AList G, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;	G.visited[N]=&#123;<span class="number">0</span>&#125;;	<span class="comment">//访问标识初始化</span></span><br><span class="line">	Visit(k);	<span class="comment">//访问顶点k（或者写cout&lt;&lt;k&lt;&lt;endl;也可以）</span></span><br><span class="line">	G.visited[k<span class="number">-1</span>]=<span class="number">1</span>;	<span class="comment">//顶点k已访问</span></span><br><span class="line">	f=<span class="number">0</span>,r=<span class="number">0</span>,Q[N]=&#123;<span class="number">0</span>&#125;; <span class="comment">//队列Q[]初始化</span></span><br><span class="line">	Q[r++]=k<span class="number">-1</span>;  <span class="comment">//入队, r:队尾指针</span></span><br><span class="line">	<span class="keyword">while</span>(r&gt;=f)	<span class="comment">//当队列非空时</span></span><br><span class="line">	&#123;	i=Q[f++];  <span class="comment">//出队, f:队首指针</span></span><br><span class="line">        p=G.V[i].Vh;<span class="comment">//p是V[i]的链表头指针</span></span><br><span class="line">		<span class="keyword">while</span>(p)<span class="comment">//顺序访问链表的各个结点</span></span><br><span class="line">		&#123;	</span><br><span class="line">            j=p-&gt;Vi; <span class="comment">// j是邻接点在顺序表中的位置</span></span><br><span class="line">			<span class="keyword">if</span>(!G.visited[j])</span><br><span class="line">			&#123;	Visit(j+<span class="number">1</span>); <span class="comment">//访问顶点j+1</span></span><br><span class="line">				visited[j]=<span class="number">1</span>;</span><br><span class="line">				Q[r++]=j; <span class="comment">//入队</span></span><br><span class="line">			&#125;</span><br><span class="line">          	p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">//算法结束</span></span><br></pre></td></tr></table></figure>
-
 <p>以邻接表作存储结构时，深搜和广搜的时间复杂度都为O(n+e)</p>
 <h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>定义：无向图G的所有生成树中各边权值之和最小的一颗生成树。</p>
 <p>Prim算法：加点法</p>
@@ -627,17 +588,121 @@
 <p>①先构造一个只含n个顶点的子图S</p>
 <p>②然后从权值最小的边开始，若它的添加不使S中产生回路，则在S上加上这条边</p>
 <p>③如此重复，直至加上n-1条边为止。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%AF%94%E8%BE%83.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="最小生成树比较.png" alt=""></p>
 <h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>拓扑排序的一般操作方法：</p>
 <p>(1)从有向图中选取一个入度为0的顶点，输出它;</p>
 <p>(2)从有向图中删去该顶点以及所有以它为尾的弧;</p>
 <p>重复上述两步，直至图空或者找不到入度为0的顶点为止。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="拓扑排序.png" alt=""></p>
 <p>时间复杂度为O(n+m)</p>
-<h2 id="关键路径-从源点到汇点的最长路径"><a href="#关键路径-从源点到汇点的最长路径" class="headerlink" title="关键路径(从源点到汇点的最长路径)"></a>关键路径(<strong>从源点到汇点的最长路径</strong>)</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84.png"></p>
-]]></content>
+<h2 id="关键路径-从源点到汇点的最长路径"><a href="#关键路径-从源点到汇点的最长路径" class="headerlink" title="关键路径(从源点到汇点的最长路径)"></a>关键路径(<strong>从源点到汇点的最长路径</strong>)</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="关键路径.png" alt=""></p>
+<h1 id="第五章-查找"><a href="#第五章-查找" class="headerlink" title="第五章 查找"></a>第五章 查找</h1>]]></content>
       <categories>
         <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>汇编语言总复习(下)</title>
+    <url>/2020/12/29/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8B)/</url>
+    <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
+<p>孩子哭了，汇编一定要好好学啊</p>
+<a id="more"></a>
+<h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a>选择题：</h2><h3 id="例一：下列语句没错的是："><a href="#例一：下列语句没错的是：" class="headerlink" title="例一：下列语句没错的是："></a>例一：下列语句没错的是：</h3><p>MOV AL，050AH</p>
+<p>MOV [SI],0AH</p>
+<p>MOV DS,100H</p>
+<p>MOV CS,[SI]</p>
+<p>MOV DS,ES</p>
+<p>答：都有错，这题不选（</p>
+<p>第一句中，AL表示字节，而050AH单位为字，目的操作数与源操作数的类型不一，故错。</p>
+<p>第二句中，存储器单元与立即数同时作为操作数，但是没有显式指明类型，故错</p>
+<p>更正：<strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
+<p>第三句中，立即数不能直接送到段寄存器中，故错。</p>
+<p>第四句中，CS是专用寄存器，碰不得</p>
+<p>第五句中，段寄存器之间不能相互传递，故错。</p>
+<h3 id="例二：下列语句等值的是："><a href="#例二：下列语句等值的是：" class="headerlink" title="例二：下列语句等值的是："></a>例二：下列语句等值的是：</h3><h2 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h2><h3 id="例一：解释TEST和AND指令的异同，并说明其使用注意点"><a href="#例一：解释TEST和AND指令的异同，并说明其使用注意点" class="headerlink" title="例一：解释TEST和AND指令的异同，并说明其使用注意点"></a>例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</h3><p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
+<p>​       不同点：AND指令会将逻辑与的结果送给目的操作数，而TEST指令不会。</p>
+<p>举一反三.1：解释TEST和CMP指令的异同</p>
+<p>答：相同点：TEST指令和CMP指令都不会将结果送回给操作数，只修改标志位。</p>
+<p>​        test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
+<p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
+<p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
+<p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
+<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"><a href="#例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码" class="headerlink" title="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"></a>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3><p>答：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="MOV图.png" alt=""></p>
+<p><code>MOV AX,0102H</code></p>
+<p><code>MOV DS,AX</code></p>
+<p>解释说明：</p>
+<p>1.立即数到存储器和寄存器<strong>都是单向的</strong>。</p>
+<p>2.<strong>立即数不能直接到段寄存器</strong>，需要通过寄存器中转</p>
+<p>3.寄存器之间可以互相mov</p>
+<p>4.<strong>段寄存器之间不能互相传递</strong></p>
+<p>5.<strong>存储器之间不能相互传递</strong></p>
+<p>举一反三.2：写出交换将BUF1段中的数据和BUF2段中数据的代码</p>
+<p>答：</p>
+<p><code>MOV AX,BUF1</code></p>
+<p><code>MOV DX,BUF2</code></p>
+<p><code>MOV BUF2,AX</code></p>
+<p><code>MOV BUF1,DX</code></p>
+<h3 id="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"><a href="#例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。" class="headerlink" title="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"></a>例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</h3><p>答：一共有五种</p>
+<p>分别为：</p>
+<p>1.直接寻址 ：MOV AX,[2077H]</p>
+<p>2.寄存器间接寻址 ：MOV AX,[SI]</p>
+<p>3.寄存器相对寻址：MOV AX,[SI+06H]</p>
+<p>4.基址变址寻址方式：MOV AX,[BX+SI]</p>
+<p>5.相对基址变址寻址：MOV AX,[BX+SI+06H]</p>
+<p>解释：<strong>基址是指基址寄存器（BX/BP），变址是指变址寄存器（SI/DI）</strong></p>
+<p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
+<h3 id="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？"><a href="#例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？" class="headerlink" title="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？"></a>例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</h3><p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
+<p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。<strong>（默认要补齐5位）</strong>如图</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="逻辑地址转化.png" alt=""></p>
+<h3 id="例五：编写定义缓冲区，及实现输入字符串的核心代码"><a href="#例五：编写定义缓冲区，及实现输入字符串的核心代码" class="headerlink" title="例五：编写定义缓冲区，及实现输入字符串的核心代码"></a>例五：编写定义缓冲区，及实现输入字符串的核心代码</h3><p>答：<code>string db &#39;Im a string&#39;,0dh,0ah,&#39;$&#39;</code></p>
+<p><code>buffer  db 81</code></p>
+<pre><code>         `db ?`
+
+         `db 81 dup(0)`
+</code></pre><p><code>mov dx,seg buffer</code></p>
+<p><code>mov ds,dx</code></p>
+<p><code>mov ah,0ah</code></p>
+<p><code>mov dx,offset buffer</code></p>
+<p><code>int 21h</code></p>
+<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><h3 id="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07"><a href="#例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07" class="headerlink" title="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N 次(响铃的ASCII 码为07)"></a>例一：编写一个程序，要求能从<strong>键盘接收</strong>一个个位数N，然后<strong>响铃N</strong> 次(响铃的ASCII 码为07)</h3><p>分析：采用字符串输入功能接受一个数，传入CX中，再调用输出字符功能，输出直到CX为0</p>
+<p>代码如下：</p>
+<p><code>.model small</code></p>
+<p><code>.stack</code></p>
+<p><code>.data</code></p>
+<p><code>.code</code></p>
+<p><code>.startup</code></p>
+<p><code>mov ah,01h</code></p>
+<p><code>int 21h</code></p>
+<p><code>sub al,30h</code></p>
+<p><code>mov cl,al</code></p>
+<p><code>mov ah,02h</code></p>
+<p><code>mov dl,0ah</code></p>
+<p><code>int 21h</code></p>
+<p><code>again:</code></p>
+<p>​    <code>cmp cl,0</code></p>
+<p>​    <code>jz over</code></p>
+<p>​    <code>mov ah,02h</code></p>
+<p>​    <code>mov dl,07h</code></p>
+<p>​    <code>int 21h</code></p>
+<p>​    <code>mov dl,&#39;1&#39;</code></p>
+<p>​    <code>int 21h</code></p>
+<p>​    <code>dec cl</code></p>
+<p>​    <code>jmp again</code></p>
+<p><code>over: .exit 0</code></p>
+<p>​        <code>end</code></p>
+<h3 id="例二：实现字符串的冒泡排序"><a href="#例二：实现字符串的冒泡排序" class="headerlink" title="例二：实现字符串的冒泡排序"></a>例二：实现字符串的冒泡排序</h3><p>分析：使用两层循环，结合跳转实现</p>
+<p>代码如下：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="代码.png" alt=""></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>明天上刑场</p>
+<p>概统还没复习</p>
+<p>高星救我</p>
+]]></content>
+      <categories>
+        <category>汇编语言</category>
       </categories>
       <tags>
         <tag>课内学习笔记</tag>
@@ -650,7 +715,6 @@
     <content><![CDATA[<p>本文将结合老师说的考试范围与PPT，对所涉及的知识点作个人总结，面向考试复习（<del>高星，yyds</del>）</p>
 <p>顺序有点乱，如果有时间会再调一下。</p>
 <a id="more"></a>
-
 <h2 id="一、子程序与主程序"><a href="#一、子程序与主程序" class="headerlink" title="一、子程序与主程序"></a>一、子程序与主程序</h2><h3 id="（一）什么是子程序"><a href="#（一）什么是子程序" class="headerlink" title="（一）什么是子程序"></a>（一）什么是子程序</h3><p>把功能相对独立的程序段单独编写和调试，作为一个相对独立的模块供程序使用，就形成子程序</p>
 <p>子程序可以实现源程序的模块化，可简化源程序结构，可以提高编程效率</p>
 <p><strong>参数传递是子程序设计的重点和难点</strong></p>
@@ -662,7 +726,7 @@
 <p><strong>CALL far ptr mem ；段间调用、间接寻址</strong></p>
 <p>返回时，RET直接从当前栈顶取内容作为返回地址。因此要保证RET指令执行前堆栈栈顶的内容刚好是返回的地址。</p>
 <p>例：子程序的常见格式（实现回车换行的子程序）：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AD%90%E7%A8%8B%E5%BA%8F%E7%A4%BA%E4%BE%8B.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="子程序示例.png" alt=""></p>
 <p>注意：</p>
 <ol>
 <li>对简化段定义格式，在tiny和small下，过程(PROC)的默认属性为near；对完整段定义格式下，过程的默认属性为near。</li>
@@ -674,28 +738,28 @@
 <p>① 数据本身（传值）②数据的地址（传址）</p>
 <p>下面介绍如何传递参数</p>
 <h4 id="1-寄存器传递参数（共享寄存器）"><a href="#1-寄存器传递参数（共享寄存器）" class="headerlink" title="1.寄存器传递参数（共享寄存器）"></a>1.寄存器传递参数（共享寄存器）</h4><p>把参数存于约定的寄存器中，可以传值，也可以传址。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AF%84%E5%AD%98%E5%99%A8%E4%BC%A0%E5%8F%82.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="寄存器传参.png" alt=""></p>
 <p>上图的子程序将和存在了al中，返回后再将其mov到result中，实现了参数传递。</p>
 <p>注:子程序对带有入口参数的寄存器可以保护，也可以不保护；上图未保护</p>
 <p>​     子程序对带有出口参数的寄存器不能保护和恢复</p>
 <h4 id="2-变量传递参数（共享变量）"><a href="#2-变量传递参数（共享变量）" class="headerlink" title="2.变量传递参数（共享变量）"></a>2.变量传递参数（共享变量）</h4><p>主程序和子程序直接采用同一个变量名共享同一个变量。</p>
 <p>类比于C++中的加引用，<strong>直接改变了变量的值</strong>。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%8F%98%E9%87%8F%E4%BC%A0%E5%8F%821.png"></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%8F%98%E9%87%8F%E4%BC%A0%E5%8F%822.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="变量传参1.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="变量传参2.png" alt=""></p>
 <p>上图的子程序直接将al中的值mov到了result，随后返回到主程序。</p>
 <h4 id="3-堆栈传递参数（共享堆栈）"><a href="#3-堆栈传递参数（共享堆栈）" class="headerlink" title="3.堆栈传递参数（共享堆栈）"></a>3.堆栈传递参数（共享堆栈）</h4><p>主程序将子程序的入口参数压入堆栈，子程序从堆栈中取出参数</p>
 <p>子程序将出口参数压入堆栈，主程序弹出堆栈取得它们</p>
 <p>前方高能</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%A0%86%E6%A0%88%E4%BC%A0%E5%8F%821.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="堆栈传参1.png" alt=""></p>
 <p>入口参数为数组的偏移地址和数组的元素个数，通过压入堆栈进行传递。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%A0%86%E6%A0%88%E4%BC%A0%E5%8F%822.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="堆栈传参2.png" alt=""></p>
 <p>程序在保护bp后，将bp置为栈顶，并通过偏移位置来分别寻址获得压入的偏移地址和元素参数。最后按反序弹出栈内值和址。</p>
 <p>上述程序堆栈的使用情况如下图</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%A0%86%E6%A0%88%E6%83%85%E5%86%B5.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="堆栈情况.png" alt=""></p>
 <p>由于<strong>主程序压入了2个参数，使用了堆栈区的4字节</strong>，故采用上述办法平衡堆栈。</p>
 <p>注：由于寄存器的保护也存于堆栈中，所以在子程序退出时<strong>要特别注意pop的顺序</strong>。</p>
 <h2 id="二、缓冲区"><a href="#二、缓冲区" class="headerlink" title="二、缓冲区"></a>二、缓冲区</h2><h3 id="（一）如何定义缓冲区"><a href="#（一）如何定义缓冲区" class="headerlink" title="（一）如何定义缓冲区"></a>（一）如何定义缓冲区</h3><p>例</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E7%BC%93%E5%86%B2%E5%8C%BA%E5%AE%9A%E4%B9%89.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="缓冲区定义.png" alt=""></p>
 <p>该例表示在内存中申请一个<strong>缓冲区为83个字节，首地址给BUF</strong>。</p>
 <p>缓冲区分为<strong>三个部分</strong></p>
 <p>第一个字节内放的是<strong>事先填入最多欲接收的字符个数</strong>（包括回车字符，可以是1～255），在例中为81，表示申请的存放数据的缓冲区的字节数为81个。</p>
@@ -703,10 +767,10 @@
 <p>就是说，你放入2个字节的数据，“？”变成2，放10个字节的数据，变成10）；</p>
 <p>DB表示的是分配一个或多个字节；</p>
 <p><strong>输入的数据（字符串）从第三个字节开始存放</strong>，存放至第82个字节，<strong>第81个字节存放回车符（0DH）,0DH作为输入数据的结束</strong>。</p>
-<p><strong>DUP(0)**表示的是</strong>存放数据的81个字节初始值全为0**，即为：81 0 0 0 0······（第82个字节）0 ODH。</p>
+<p><strong>DUP(0)</strong>表示的是<strong>存放数据的81个字节初始值全为0</strong>，即为：81 0 0 0 0······（第82个字节）0 ODH。</p>
 <p>注：实际输入的字符数多于定义数时，多出的字符丢掉，且响铃</p>
 <h3 id="（二）如何使用缓冲区"><a href="#（二）如何使用缓冲区" class="headerlink" title="（二）如何使用缓冲区"></a>（二）如何使用缓冲区</h3><p>下例实现了字符串的输入</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符串输入.png" alt=""></p>
 <h2 id="三、串操作指令"><a href="#三、串操作指令" class="headerlink" title="三、串操作指令"></a>三、串操作指令</h2><p>串操作指令的操作对象是以字（W）为单位的<strong>字串</strong>，或是以字节（B）为单位的<strong>字节串</strong></p>
 <p>串操作指令采用了特殊的寻址方式</p>
 <ol>
@@ -751,33 +815,33 @@
 <p>REPNZ是先执行一次指令，之后将CX减一，判断CX是否为0。</p>
 <p>而LOOP是先将CX减一，然后判断CX是否为0，不为0则继续执行指令。</p>
 <p>例：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="比较字符串.png" alt=""></p>
 <p>在上例中，指令repz cmpsb结束有两种情况</p>
 <p>第一种：ZF=0，即<strong>出现不相等的字符</strong></p>
 <p>第二种：CX=0，即<strong>比较完了所有字符</strong></p>
 <p>注意，在这种情况下，<strong>如果ZF=0，则说明最后一个字符不相等，ZF=1才能说明两个字符串相同</strong>。</p>
 <p>所以，重复比较结束后，需要通过<strong>jnz</strong>指令 来判断<strong>zf位</strong>，若其=0，则字符串不相等。</p>
 <p>总流程图如下</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E4%B8%B2%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="串操作流程图.png" alt=""></p>
 <p>下例为SCAS在字符串中查找空格字符的用法</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%9F%A5%E6%89%BE%E7%A9%BA%E6%A0%BC.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="查找空格.png" alt=""></p>
 <h2 id="四、常用DOS命令"><a href="#四、常用DOS命令" class="headerlink" title="四、常用DOS命令"></a>四、常用DOS命令</h2><p>调用DOS功能一般方法如下：</p>
 <p>1、在<strong>AH寄存器</strong>中设置系统功能调用号，说明选择的功能</p>
 <p>2、在指定寄存器中设置入口参数。</p>
 <p>3、用中断调用指令 INT 21H 执行功能调用。</p>
 <h3 id="（一）字符输出（02H号）"><a href="#（一）字符输出（02H号）" class="headerlink" title="（一）字符输出（02H号）"></a>（一）字符输出（02H号）</h3><p>入口参数：<strong>DL</strong>=字符的ASCII码</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符输出.png" alt=""></p>
 <p>注：该功能可以识别响铃字符（07H），回车（0DH），换行（0AH）。</p>
 <h3 id="（二）字符串输出（09H号）"><a href="#（二）字符串输出（09H号）" class="headerlink" title="（二）字符串输出（09H号）"></a>（二）字符串输出（09H号）</h3><p>入口参数：<strong>DS:DX</strong>=欲显示字符串在主存中的首地址。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%87%BA.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符串输出.png" alt=""></p>
 <p>注：顺序为先回车（0DH），再换行（0AH），且字符串应以’$’(24H)结束。</p>
 <h3 id="（三）字符输入（01H号）"><a href="#（三）字符输入（01H号）" class="headerlink" title="（三）字符输入（01H号）"></a>（三）字符输入（01H号）</h3><p>出口参数：<strong>AL</strong>=字符的ASCII码</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符输入.png" alt=""></p>
 <p>调用此功能时，若无键按下，则会一直等待，直到按键后才读取该键值</p>
 <h3 id="（四）字符串输入（0AH号）"><a href="#（四）字符串输入（0AH号）" class="headerlink" title="（四）字符串输入（0AH号）"></a>（四）字符串输入（0AH号）</h3><p>入口参数：<strong>DS:DX</strong>=缓冲区首地址</p>
 <p><strong>关键要定义好缓冲区</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5.png"></p>
-<h2 id="五、8086的机器代码格式"><a href="#五、8086的机器代码格式" class="headerlink" title="五、8086的机器代码格式"></a>五、8086的机器代码格式</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%9C%BA%E5%99%A8%E4%BB%A3%E7%A0%81.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符串输入.png" alt=""></p>
+<h2 id="五、8086的机器代码格式"><a href="#五、8086的机器代码格式" class="headerlink" title="五、8086的机器代码格式"></a>五、8086的机器代码格式</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="机器代码.png" alt=""></p>
 <p>机器码我都不怎么懂，直接搬PPT了= =</p>
 <p>例1： </p>
 <p>MOV AX,BX ;机器代码是 89 D8(16进制)</p>
@@ -796,11 +860,11 @@
 <p>最后一个字节就是8位位移量[D8]=06</p>
 <h2 id="六、常用的ASCII码"><a href="#六、常用的ASCII码" class="headerlink" title="六、常用的ASCII码"></a>六、常用的ASCII码</h2><p><strong>回车：0DH    换行：0AH</strong>   响铃：07H</p>
 <p><strong>空格：20H</strong></p>
-<p><strong>数字0<del>9：30H</del>39H</strong></p>
-<p>大写字母A<del>Z：41H</del>5AH</p>
-<p>小写字母a<del>z：61H</del>7AH</p>
+<p><strong>数字0~9：30H~39H</strong></p>
+<p>大写字母A~Z：41H~5AH</p>
+<p>小写字母a~z：61H~7AH</p>
 <h2 id="七、BCD码"><a href="#七、BCD码" class="headerlink" title="七、BCD码"></a>七、BCD码</h2><p>Binary Coded Decimal（二进制编码的十进制数），即<strong>一个十进制数位（0-9）在计算机中用4位二进制编码表示</strong>。常用的BCD码是8421BCD码，即用4位二进制编码的低19个编码表示0-9这十个数字，如图。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="BCD%E7%A0%81.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="BCD码.png" alt=""></p>
 <p>例：0100 1001 0111 1000.0001 0100 1001  十进制真值：4978.149（上图对应）</p>
 <p>00111010B=3AH   F2H=11110010B</p>
 <p>10H=00010000B=16D                        ABH=10101011B=171D</p>
@@ -809,7 +873,7 @@
 <p>00001000 00000111B（0807H）</p>
 <h2 id="八、变量的定义"><a href="#八、变量的定义" class="headerlink" title="八、变量的定义"></a>八、变量的定义</h2><h3 id="（一）符号常数"><a href="#（一）符号常数" class="headerlink" title="（一）符号常数"></a>（一）符号常数</h3><p>利用一个标识符表达的一个数值</p>
 <p>例：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E7%AC%A6%E5%8F%B7%E5%B8%B8%E6%95%B0.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="符号常数.png" alt=""></p>
 <p>注：在5.x版本中，<strong>字符串是用引号括起来的</strong></p>
 <p>例：<code>calldos  equ &quot;int 21h&quot;</code></p>
 <p>EQU用于数值等价时不能重复定义符号名,<strong>但”=“允许有重复赋值</strong></p>
@@ -834,12 +898,12 @@
 </ol>
 <h3 id="（三）定义实例"><a href="#（三）定义实例" class="headerlink" title="（三）定义实例"></a>（三）定义实例</h3><p>1.字节单元定义实例</p>
 <p>DB伪指令用于分配一个或多个字节单元。初值表中每个数据一定是字节量（Byte），存放8位数据。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AD%97%E8%8A%82%E5%8D%95%E5%85%83%E5%AE%9A%E4%B9%89.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字节单元定义.png" alt=""></p>
 <p>2.字单元定义实例</p>
 <p>DW伪指令用于分配一个或多个字单元。初值表中每个数据一定是字量（Word），存放16位数据。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AD%97%E5%8D%95%E5%85%83.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字单元.png" alt=""></p>
 <p>3.字变量和字常量的应用（重要）</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AD%97%E5%8F%98%E9%87%8F%E4%B8%8E%E5%AD%97%E5%B8%B8%E9%87%8F.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字变量与字常量.png" alt=""></p>
 <p>即：字变量在程序中当作mem，即取其偏移地址元素的数值。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
@@ -860,7 +924,6 @@
 <p>为了网页加载快一点将文章分开发了</p>
 <p>实在是太多了</p>
 <a id="more"></a>
-
 <h2 id="九、MOV指令总结"><a href="#九、MOV指令总结" class="headerlink" title="九、MOV指令总结"></a>九、MOV指令总结</h2><h3 id="（一）立即数传送（MOV-reg-mem-imm）"><a href="#（一）立即数传送（MOV-reg-mem-imm）" class="headerlink" title="（一）立即数传送（MOV reg/mem,imm）"></a>（一）立即数传送（MOV reg/mem,imm）</h3><p>例：MOV CX,0FFH (字传送)</p>
 <p><strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
 <p><strong>MOV WORD PTR [SI+2],0BH(字操作)</strong></p>
@@ -879,7 +942,7 @@
 <p>​        MOV DS,AX</p>
 <p>上述两个语句可以实现从<strong>一个段到另一个段的传送（通过寄存器中转）</strong></p>
 <p>总结：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="MOV%E6%80%BB%E7%BB%93.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="MOV总结.png" alt=""></p>
 <h3 id="五-非法传送实例"><a href="#五-非法传送实例" class="headerlink" title="(五)非法传送实例"></a>(五)非法传送实例</h3><h4 id="1-两个操作数的类型不一致"><a href="#1-两个操作数的类型不一致" class="headerlink" title="1.两个操作数的类型不一致"></a>1.两个操作数的类型不一致</h4><p>绝大多数双操作数指令，除非特别说明，目的操作数与源操作数必须类型一致，否则为非法指令</p>
 <p><strong>MOV AL,050AH ；非法指令：050Ah为字，而AL为字节</strong></p>
 <p>对于存储器单元与立即数同时作为操作数的情况，必须<strong>显式指明</strong>；byte ptr指示字节类型，word ptr指示字类型</p>
@@ -898,7 +961,7 @@
 <p>​        MOV AX,ES</p>
 <p>​        MOV DS,AX</p>
 <p>上述两个语句可以实现从<strong>一个段到另一个段的传送（通过寄存器中转）</strong></p>
-<h2 id="十、堆栈"><a href="#十、堆栈" class="headerlink" title="十、堆栈"></a>十、堆栈</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%A0%86%E6%A0%88.png"></p>
+<h2 id="十、堆栈"><a href="#十、堆栈" class="headerlink" title="十、堆栈"></a>十、堆栈</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="堆栈.png" alt=""></p>
 <p>注意：</p>
 <ol>
 <li><strong>堆栈操作的单位是字</strong>，进栈和出栈只对字量</li>
@@ -908,7 +971,7 @@
 </ol>
 <h2 id="十一、标志寄存器"><a href="#十一、标志寄存器" class="headerlink" title="十一、标志寄存器"></a>十一、标志寄存器</h2><p>标志（Flag）用于反映指令执行结果或控制指令执行形式。</p>
 <p>8086中，各种常用的标志形成<strong>16位标志寄存器FLAGS</strong>（程序状态字PSW寄存器）分成两类：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="标志寄存器.png" alt=""></p>
 <p>(1) 状态标志</p>
 <p>状态标志是最基本的标志，用来记录指令执行结果的辅助信息。加、减运算和逻辑运算指令是主要设置他们的指令，有些其他指令的执行也会相应地设置它们。</p>
 <h3 id="①进位标志CF（Carry-Flag）"><a href="#①进位标志CF（Carry-Flag）" class="headerlink" title="①进位标志CF（Carry Flag）"></a><strong>①进位标志CF（Carry Flag）</strong></h3><p>当运算结果的最高有效位<strong>有进位（加法）或借位</strong>（减法）时，进位标志置1，即<strong>CF = 1</strong>；否则CF = 0。</p>
@@ -951,10 +1014,10 @@
 <p>   <strong>段基地址 : 段内偏移地址</strong></p>
 <p>段地址说明逻辑段在主存中的起始位置，8086规定段地址必须是模16地址：xxxx0H</p>
 <p>将逻辑地址中的段地址左移四位，加上偏移地址就得到物理地址。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="地址转换.png" alt=""></p>
 <h2 id="十三、8086的寻址方式"><a href="#十三、8086的寻址方式" class="headerlink" title="十三、8086的寻址方式"></a>十三、8086的寻址方式</h2><h3 id="（一）立即数寻址"><a href="#（一）立即数寻址" class="headerlink" title="（一）立即数寻址"></a>（一）立即数寻址</h3><p>立即数寻址方式常用来给寄存器赋值</p>
 <p>例：MOV AX,0102H ;AX,&lt;-0102H</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E7%AB%8B%E5%8D%B3%E6%95%B0.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="立即数.png" alt=""></p>
 <h3 id="二-寄存器寻址"><a href="#二-寄存器寻址" class="headerlink" title="(二)寄存器寻址"></a>(二)寄存器寻址</h3><p> MOV AX,1234H ；AX←1234H</p>
 <p> MOV BX,AX ；BX←AX</p>
 <h3 id="（三）存储器寻址"><a href="#（三）存储器寻址" class="headerlink" title="（三）存储器寻址"></a>（三）存储器寻址</h3><h4 id="1-直接寻址方式"><a href="#1-直接寻址方式" class="headerlink" title="1.直接寻址方式"></a>1.直接寻址方式</h4><p>默认的段地址在DS段寄存器，可使用段超越前缀改变</p>
@@ -972,12 +1035,12 @@
 <p> MOV AX,DS:[BP+DI]    ；AX←DS:[BP+DI]</p>
 <h4 id="5-相对基址变址寻址"><a href="#5-相对基址变址寻址" class="headerlink" title="5.相对基址变址寻址"></a>5.相对基址变址寻址</h4><p>有效地址＝BX/BP＋SI/DI＋8/16位位移量</p>
 <p>MOV AX,[BX+SI+06H] ；AX←DS:[BX+SI+06H]</p>
-<h3 id="（四）多种表示"><a href="#（四）多种表示" class="headerlink" title="（四）多种表示"></a>（四）多种表示</h3><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%A4%9A%E7%A7%8D%E8%A1%A8%E7%A4%BA.png"></p>
+<h3 id="（四）多种表示"><a href="#（四）多种表示" class="headerlink" title="（四）多种表示"></a>（四）多种表示</h3><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="多种表示.png" alt=""></p>
 <h2 id="十四、各种指令"><a href="#十四、各种指令" class="headerlink" title="十四、各种指令"></a>十四、各种指令</h2><p>XCHG</p>
-<p>**XCHG reg,reg/mem **</p>
+<p><strong>XCHG reg,reg/mem </strong></p>
 <p><strong>不能在存储器与存储器之间对换数据</strong></p>
 <p>XLAT 换码指令</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XLAT.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="XLAT.png" alt=""></p>
 <p>LEA 有效地址传送指令</p>
 <p>将<strong>存储器操作数</strong>的有效地址传送至指定的<strong>16位寄存器</strong>中</p>
 <p>例：</p>
@@ -1001,7 +1064,7 @@
 <p>比较指令CMP（compare）</p>
 <p>CMP指令将目的操作数减去源操作数，按照定义相应设置状态标志</p>
 <p><strong>但结果不回送目的操作数</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="cmp.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="cmp.png" alt=""></p>
 <p>乘法 MUL/IMUL</p>
 <p>源操作数显式给出，隐含使用另一个操作数AX和DX</p>
 <p>•字节量相乘：<strong>AL与r8/m8相乘</strong>，得到<strong>16位的结果，存入AX</strong></p>
@@ -1033,12 +1096,12 @@
 <p>RCL/RCR 带着CF位循环左右移 ROL/ROR 不带CF左右移</p>
 <p><strong>RCL是将某数最高位移进入CF，而CF里的内容跑到该数的最低位，形成咬尾蛇循环，移位次数为CL或CX指定的次数</strong></p>
 <p>例：将32位左移一位</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="32%E4%BD%8D%E5%B7%A6%E7%A7%BB.png"></p>
-<h2 id="十五、控制转移类指令"><a href="#十五、控制转移类指令" class="headerlink" title="十五、控制转移类指令"></a>十五、控制转移类指令</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%AE%B5%E5%86%85%E6%AE%B5%E9%97%B4.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="32位左移.png" alt=""></p>
+<h2 id="十五、控制转移类指令"><a href="#十五、控制转移类指令" class="headerlink" title="十五、控制转移类指令"></a>十五、控制转移类指令</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="段内段间.png" alt=""></p>
 <p>段内转移、间接寻址</p>
 <p>JMP R16/M16  ；IP←R16/M16</p>
 <p><strong>JMP WORD PTR [2000H] ；IP←[2000H]</strong> </p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%AE%B5%E9%97%B4.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="段间.png" alt=""></p>
 <p>段间转移、直接寻址</p>
 <p>JMP FAR PTR LABEL</p>
 <p> ；IP←LABEL的偏移地址</p>
@@ -1046,7 +1109,7 @@
 <p>段间转移、间接寻址</p>
 <p>JMP FAR PTR MEM</p>
 <p> ；IP←[MEM]，CS←[MEM+2]</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%A4%A7%E5%B0%8F%E5%85%B3%E7%B3%BB.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="大小关系.png" alt=""></p>
 <h2 id="十六、大小与高低"><a href="#十六、大小与高低" class="headerlink" title="十六、大小与高低"></a>十六、大小与高低</h2><p>•<strong>无符号数</strong>的大小用<strong>高（Above）低</strong>（<strong>Below</strong>）表示</p>
 <p>•利用<strong>CF确定高低、利用ZF标志确定相等</strong>（Equal）</p>
 <p>•两数的高低分成4种关系：</p>
@@ -1076,8 +1139,8 @@
 <p><strong>表示由当前地址向前跳过10个字节。</strong></p>
 <p>•EVEN ;从偶地址开始</p>
 <p>•ALIGN n ;从n的整数倍地址开始</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%AE%9A%E4%BD%8D%E4%BC%AA%E6%8C%87%E4%BB%A4.png"></p>
-<h2 id="十七、地址操作符和类型操作符"><a href="#十七、地址操作符和类型操作符" class="headerlink" title="十七、地址操作符和类型操作符"></a>十七、地址操作符和类型操作符</h2><h3 id="（一）地址操作符"><a href="#（一）地址操作符" class="headerlink" title="（一）地址操作符"></a>（一）地址操作符</h3><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%9C%B0%E5%9D%80%E6%93%8D%E4%BD%9C%E7%AC%A6.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="定位伪指令.png" alt=""></p>
+<h2 id="十七、地址操作符和类型操作符"><a href="#十七、地址操作符和类型操作符" class="headerlink" title="十七、地址操作符和类型操作符"></a>十七、地址操作符和类型操作符</h2><h3 id="（一）地址操作符"><a href="#（一）地址操作符" class="headerlink" title="（一）地址操作符"></a>（一）地址操作符</h3><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="地址操作符.png" alt=""></p>
 <p><code>mov bx,offset array  ;等价于 lea bx,array</code></p>
 <p> <code>mov cl,array+4          ;等效于 mov cl,array[4]</code></p>
 <h3 id="（二）类型操作符"><a href="#（二）类型操作符" class="headerlink" title="（二）类型操作符"></a>（二）类型操作符</h3><p>PTR操作符：使名字或标号具有指定的类型</p>
@@ -1085,118 +1148,12 @@
 <p><code>jmp far ptr n_label ;n_label是一个标号</code></p>
 <p>THIS</p>
 <p>•利用THIS说明的操作数具有汇编时的当前逻辑地址，但具有指定的类型</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="THIS.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="THIS.png" alt=""></p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">.model small</span><br><span class="line">	   .stack</span><br><span class="line">	   .data</span><br><span class="line">V_byte  equ this byte</span><br><span class="line">V_word  dw 3332h,3735h</span><br><span class="line">Target  dw 5 dup(20h)</span><br><span class="line">Crlf    db 0dh,0ah, ‘<span class="formula">$’</span></span><br><span class="line"><span class="formula">Flag    db 0</span></span><br><span class="line"><span class="formula">N_point dw offset s_label</span></span><br><span class="line"><span class="formula">	   .code</span></span><br><span class="line"><span class="formula">	   .startup</span></span><br><span class="line"><span class="formula">	   mov al,byte ptr v_word</span></span><br><span class="line"><span class="formula">	   dec al</span></span><br><span class="line"><span class="formula">	   mov  v_byte ,al;v_word=3331h	</span></span><br><span class="line"><span class="formula">	   N_label:cmp flag,1 ;flag单元=0</span></span><br><span class="line"><span class="formula">	    jz s_label</span></span><br><span class="line"><span class="formula">	    inc flag  ；flag=1</span></span><br><span class="line"><span class="formula">	    jmp short n_label</span></span><br><span class="line"><span class="formula">S_label: cmp flag,2  ;flag=1</span></span><br><span class="line"><span class="formula">	    jz next</span></span><br><span class="line"><span class="formula">	    inc flag   ;flag=2</span></span><br><span class="line"><span class="formula">    jmp n_point ;段内间接转移，等同于jmp s_label</span></span><br><span class="line"><span class="formula">Next: mov ax,type v_word  ;ax=0002h</span></span><br><span class="line"><span class="formula">	    mov cx,lengthof target;5个数据项，cx=5</span></span><br><span class="line"><span class="formula">	    mov si,offset target</span></span><br><span class="line"><span class="formula">W_again: mov [si],ax</span></span><br><span class="line"><span class="formula">	    inc si</span></span><br><span class="line"><span class="formula">	    inc si</span></span><br><span class="line"><span class="formula">      loop w_again;对target填充5个字：0002h</span></span><br><span class="line"><span class="formula">mov cx,sizeof target;cx=10</span></span><br><span class="line"><span class="formula">	    mov al,’?’</span></span><br><span class="line"><span class="formula">	    mov di,offset target</span></span><br><span class="line"><span class="formula">B_again: mov [di],al</span></span><br><span class="line"><span class="formula">	    inc di</span></span><br><span class="line"><span class="formula">	    loop b_again ;对target填充10个‘？’</span></span><br><span class="line"><span class="formula">	    mov dx,offset v_word</span></span><br><span class="line"><span class="formula">	    mov ah,9</span></span><br><span class="line"><span class="formula">	    int 21h  ;显示结果为1357??????????</span></span><br><span class="line"><span class="formula">	    .exit 0</span></span><br><span class="line"><span class="formula">	    end</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="十八、简化段定义标准格式"><a href="#十八、简化段定义标准格式" class="headerlink" title="十八、简化段定义标准格式"></a>十八、简化段定义标准格式</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E7%AE%80%E5%8C%96%E6%AE%B5.png"></p>
+<h2 id="十八、简化段定义标准格式"><a href="#十八、简化段定义标准格式" class="headerlink" title="十八、简化段定义标准格式"></a>十八、简化段定义标准格式</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="简化段.png" alt=""></p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
-]]></content>
-      <categories>
-        <category>汇编语言</category>
-      </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-        <tag>考试复习整理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>汇编语言总复习(下)</title>
-    <url>/2020/12/29/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8B)/</url>
-    <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
-<p>孩子哭了，汇编一定要好好学啊</p>
-<a id="more"></a>
-
-<h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a>选择题：</h2><h3 id="例一：下列语句没错的是："><a href="#例一：下列语句没错的是：" class="headerlink" title="例一：下列语句没错的是："></a>例一：下列语句没错的是：</h3><p>MOV AL，050AH</p>
-<p>MOV [SI],0AH</p>
-<p>MOV DS,100H</p>
-<p>MOV CS,[SI]</p>
-<p>MOV DS,ES</p>
-<p>答：都有错，这题不选（</p>
-<p>第一句中，AL表示字节，而050AH单位为字，目的操作数与源操作数的类型不一，故错。</p>
-<p>第二句中，存储器单元与立即数同时作为操作数，但是没有显式指明类型，故错</p>
-<p>更正：<strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
-<p>第三句中，立即数不能直接送到段寄存器中，故错。</p>
-<p>第四句中，CS是专用寄存器，碰不得</p>
-<p>第五句中，段寄存器之间不能相互传递，故错。</p>
-<h3 id="例二：下列语句等值的是："><a href="#例二：下列语句等值的是：" class="headerlink" title="例二：下列语句等值的是："></a>例二：下列语句等值的是：</h3><h2 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h2><h3 id="例一：解释TEST和AND指令的异同，并说明其使用注意点"><a href="#例一：解释TEST和AND指令的异同，并说明其使用注意点" class="headerlink" title="例一：解释TEST和AND指令的异同，并说明其使用注意点"></a>例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</h3><p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
-<p>​       不同点：AND指令会将逻辑与的结果送给目的操作数，而TEST指令不会。</p>
-<p>举一反三.1：解释TEST和CMP指令的异同</p>
-<p>答：相同点：TEST指令和CMP指令都不会将结果送回给操作数，只修改标志位。</p>
-<p>​        test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
-<p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
-<p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
-<p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
-<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"><a href="#例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码" class="headerlink" title="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"></a>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3><p>答：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="MOV%E5%9B%BE.png"></p>
-<p><code>MOV AX,0102H</code></p>
-<p><code>MOV DS,AX</code></p>
-<p>解释说明：</p>
-<p>1.立即数到存储器和寄存器<strong>都是单向的</strong>。</p>
-<p>2.<strong>立即数不能直接到段寄存器</strong>，需要通过寄存器中转</p>
-<p>3.寄存器之间可以互相mov</p>
-<p>4.<strong>段寄存器之间不能互相传递</strong></p>
-<p>5.<strong>存储器之间不能相互传递</strong></p>
-<p>举一反三.2：写出交换将BUF1段中的数据和BUF2段中数据的代码</p>
-<p>答：</p>
-<p><code>MOV AX,BUF1</code></p>
-<p><code>MOV DX,BUF2</code></p>
-<p><code>MOV BUF2,AX</code></p>
-<p><code>MOV BUF1,DX</code></p>
-<h3 id="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"><a href="#例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。" class="headerlink" title="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"></a>例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</h3><p>答：一共有五种</p>
-<p>分别为：</p>
-<p>1.直接寻址 ：MOV AX,[2077H]</p>
-<p>2.寄存器间接寻址 ：MOV AX,[SI]</p>
-<p>3.寄存器相对寻址：MOV AX,[SI+06H]</p>
-<p>4.基址变址寻址方式：MOV AX,[BX+SI]</p>
-<p>5.相对基址变址寻址：MOV AX,[BX+SI+06H]</p>
-<p>解释：<strong>基址是指基址寄存器（BX/BP），变址是指变址寄存器（SI/DI）</strong></p>
-<p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
-<h3 id="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？"><a href="#例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？" class="headerlink" title="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？"></a>例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</h3><p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
-<p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。<strong>（默认要补齐5位）</strong>如图</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E8%BD%AC%E5%8C%96.png"></p>
-<h3 id="例五：编写定义缓冲区，及实现输入字符串的核心代码"><a href="#例五：编写定义缓冲区，及实现输入字符串的核心代码" class="headerlink" title="例五：编写定义缓冲区，及实现输入字符串的核心代码"></a>例五：编写定义缓冲区，及实现输入字符串的核心代码</h3><p>答：<code>string db &#39;Im a string&#39;,0dh,0ah,&#39;$&#39;</code></p>
-<p><code>buffer  db 81</code></p>
-<pre><code>         `db ?`
-
-         `db 81 dup(0)`</code></pre>
-<p><code>mov dx,seg buffer</code></p>
-<p><code>mov ds,dx</code></p>
-<p><code>mov ah,0ah</code></p>
-<p><code>mov dx,offset buffer</code></p>
-<p><code>int 21h</code></p>
-<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><h3 id="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07"><a href="#例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07" class="headerlink" title="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N 次(响铃的ASCII 码为07)"></a>例一：编写一个程序，要求能从<strong>键盘接收</strong>一个个位数N，然后<strong>响铃N</strong> 次(响铃的ASCII 码为07)</h3><p>分析：采用字符串输入功能接受一个数，传入CX中，再调用输出字符功能，输出直到CX为0</p>
-<p>代码如下：</p>
-<p><code>.model small</code></p>
-<p><code>.stack</code></p>
-<p><code>.data</code></p>
-<p><code>.code</code></p>
-<p><code>.startup</code></p>
-<p><code>mov ah,01h</code></p>
-<p><code>int 21h</code></p>
-<p><code>sub al,30h</code></p>
-<p><code>mov cl,al</code></p>
-<p><code>mov ah,02h</code></p>
-<p><code>mov dl,0ah</code></p>
-<p><code>int 21h</code></p>
-<p><code>again:</code></p>
-<p>​    <code>cmp cl,0</code></p>
-<p>​    <code>jz over</code></p>
-<p>​    <code>mov ah,02h</code></p>
-<p>​    <code>mov dl,07h</code></p>
-<p>​    <code>int 21h</code></p>
-<p>​    <code>mov dl,&#39;1&#39;</code></p>
-<p>​    <code>int 21h</code></p>
-<p>​    <code>dec cl</code></p>
-<p>​    <code>jmp again</code></p>
-<p><code>over: .exit 0</code></p>
-<p>​        <code>end</code></p>
-<h3 id="例二：实现字符串的冒泡排序"><a href="#例二：实现字符串的冒泡排序" class="headerlink" title="例二：实现字符串的冒泡排序"></a>例二：实现字符串的冒泡排序</h3><p>分析：使用两层循环，结合跳转实现</p>
-<p>代码如下：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E4%BB%A3%E7%A0%81.png"></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>明天上刑场</p>
-<p>概统还没复习</p>
-<p>高星救我</p>
 ]]></content>
       <categories>
         <category>汇编语言</category>
