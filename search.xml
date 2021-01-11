@@ -91,6 +91,161 @@
       </tags>
   </entry>
   <entry>
+    <title>XML开发技术——第五章</title>
+    <url>/2020/11/25/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
+    <content><![CDATA[<p>经过了上一次的学习，我们学到了用于查询的XPATH，它会在之后的很多地方予以应用。</p>
+<p>比如今天我们要讲的XSLT</p>
+<a id="more"></a>
+<h1 id="第五章-XSLT"><a href="#第五章-XSLT" class="headerlink" title="第五章 XSLT"></a>第五章 XSLT</h1><p>本章内容的学习目的：</p>
+<ol>
+<li>理解和掌握XML文档的转换过程。</li>
+<li>学习如何使用XSLT中的模板实现XML文档的转换。</li>
+<li>学习如何使用XSLT中的排序、循环、条件分支语句实现各种处理。</li>
+<li>创建使用参数和变量的XSLT文档。</li>
+</ol>
+<h2 id="5-1-XSLT"><a href="#5-1-XSLT" class="headerlink" title="5.1 XSLT"></a>5.1 XSLT</h2><p>Q1：什么是XSLT？</p>
+<p>C1：XSLT(e<strong>X</strong>tensible <strong>S</strong>tylesheet <strong>L</strong>anguage <strong>Transformations</strong>)，其中的T表示“转换”，它是一种专门用于对XML树型数据进行<strong>结构重组转换</strong>的有力工具，可以根据指定的<strong>转换规则</strong>（在XSLT中称之为模板）将一个XML文档树或者其中的部分内容转换为另一种文档树形式。</p>
+<p>XSLT不仅局限于结构上的重组，它可以<strong>将XML文档转换为任何形式</strong>，包括XML、HTML和普通文本。</p>
+<p>XSL是它的前身,本来包含了XML数据表达和数据转换。数据转换部分从中独立出来成为XSLT。剩下的数据表达部分成为XSL-FO</p>
+<p>Q2：XSLT有什么注意事项？</p>
+<p>C2：</p>
+<ol>
+<li>XSLT语言是一种声明性的语言，即XSLT程序本身<strong>只是包含了一些转换规则的XML文档。</strong></li>
+<li>XSLT处理程序（或称之为执行引擎）将首先确定 XSLT规则，然后根据规则的<strong>匹配条件</strong>（<strong>通过XPath 表达式</strong>指定）、以及优先顺序完成相应的转换操作。</li>
+<li><strong>XSLT本身也是一个XML文档</strong>，所以它必须严格遵守XML规范。其根元素的命名空间为<code>http://www.w3.org/1999/XSL/Transform</code> 即：</li>
+</ol>
+<p><code>&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</code></p>
+<h3 id="5-1-1-XSLT的工作原理"><a href="#5-1-1-XSLT的工作原理" class="headerlink" title="5.1.1 XSLT的工作原理"></a>5.1.1 XSLT的工作原理</h3><p>Q3：XSLT是怎样工作的？</p>
+<p>E3：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="工作原理.png" alt=""></p>
+<p>C3：</p>
+<ol>
+<li>在进行XSLT的转换任务时，需要<strong>两个输入文档</strong>，一个是包含源数据的<strong>XML文档</strong>，一个是包含转换任务规则的<strong>XSLT文档</strong>。</li>
+<li>由XML解析器对这两个文档进行解析，将XML文档转换为所对应的文档树结构，<strong>将xslt(xsl)文档看作是一系列的转换规则</strong>。</li>
+<li><strong>由XSLT引擎调用这些规则</strong>，对文档树进行遍历，分别处理其中指定的数据节点，将其转换为所需的结果集，并序列化为结果文档。</li>
+</ol>
+<h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;hello.xlst&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">message</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">message</span>&gt;</span>       <span class="comment">&lt;!--这是hello.xsl文档--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xsl:stylesheet</span> <span class="attr">version</span>=<span class="string">&quot;2.0&quot;</span> <span class="attr">xmlns:xsl</span>=<span class="string">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- transform the input root (/) --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsl:template</span> <span class="attr">match</span>=<span class="string">&quot;/&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line">        		<span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">            		<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">	        			<span class="tag">&lt;<span class="name">xsl:value-of</span> <span class="attr">select</span>=<span class="string">&quot;message&quot;</span>/&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line">      			<span class="tag">&lt;/<span class="name">body</span>&gt;</span>    		</span><br><span class="line">			<span class="tag">&lt;/<span class="name">html</span>&gt;</span>       </span><br><span class="line">		<span class="tag">&lt;/<span class="name">xsl:template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xsl:stylesheet</span>&gt;</span>              <span class="comment">&lt;!--这是hello.xslt文档--&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-2-XSLT中模板的创建以及内置模板的使用"><a href="#5-2-XSLT中模板的创建以及内置模板的使用" class="headerlink" title="5.2 XSLT中模板的创建以及内置模板的使用"></a>5.2 XSLT中模板的创建以及内置模板的使用</h2><h3 id="5-2-1-XSLT中模板的声明"><a href="#5-2-1-XSLT中模板的声明" class="headerlink" title="5.2.1 XSLT中模板的声明"></a>5.2.1 XSLT中模板的声明</h3><p>Q4：怎么声明模板？</p>
+<p>E4：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="模板声明.png" alt=""></p>
+<p>C4：模板标记之间的内容相当于一个<strong>函数的函数体</strong>，表示在调用该模板时应该执行的具体操作。而元素开始标记中的属性match、name、mode和priority则用于描述该模板的相关信息。</p>
+<p>Q5：模板有哪些属性？</p>
+<p>C5：</p>
+<ol>
+<li>匹配路径属性 match</li>
+</ol>
+<p>在XSLT中，模板的调用分为两种方式：</p>
+<p><strong>●根据模板的匹配路径</strong>（在遍历的过程中）调用，具体又有两种情况：</p>
+<p>i. 对于模板 xsl:template match=”/“，XSLT 处理器在碰到 XML 文档的文档节点时自动调用该模板，就好像作为<strong>程序执行的入口</strong>。</p>
+<p>ii. 对于其他的模板match=other-pattern，将在模板xsl:template match=”/“的转换规则（函数体）中通过指出匹配路径的方式（使用xsl:apply-templates）进行隐式地或者显式地调用。</p>
+<p>●<strong>根据模板名称属性</strong>，使用 xsl:call-template name=template-name  进行调用。 </p>
+<ol>
+<li>名称属性 name</li>
+</ol>
+<p>模板<xsl:template match=“/”>和<xsl:template match=“message”>都没有具体的名称，因此将其称为<strong>无名模板</strong>。这些模板之所以没有名称，是因为<strong>它们的调用是在遍历文档树的过程中自动进行的</strong>，不需要名称。</p>
+<p>也可以使用name属性为模板指定一个名称，使其成为命名模板 。例</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:stylesheet</span> <span class="attr">version</span>=<span class="string">&quot;2.0&quot;</span> <span class="attr">xmlns:xsl</span>=<span class="string">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">xsl:template</span> <span class="attr">match</span>=<span class="string">&quot;/&quot;</span> <span class="attr">name</span>=<span class="string">&quot;one&quot;</span>&gt;</span>              <span class="comment">&lt;!--命名模板 one--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsl:call-template</span> <span class="attr">name</span>=<span class="string">&quot;another&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">xsl:template</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">xsl:template</span> <span class="attr">name</span>=<span class="string">&quot;another&quot;</span>&gt;</span>                    <span class="comment">&lt;!--命名模板 another--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">output</span>&gt;</span>Simple output<span class="tag">&lt;/<span class="name">output</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">xsl:template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xsl:stylesheet</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>XSLT 处理器将调用命名模板 one（实际上名称 one 没有作用，因为是自动调用的），然后<strong>在模板 one 中使用 xsl:call-template 直接调用名为 another 的模板</strong>，在模板 another 执行结束之后，继续执行模板 one 的后续指令，<strong>这个过程非常类似于函数的调用</strong>。 </p>
+<ol>
+<li>模式属性 mode</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="mode.png" alt=""></p>
+<ol>
+<li>优先级属性 priority</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="优先级.png" alt=""></p>
+<p>注意：XSLT中<strong>允许存在同名的模板</strong>；</p>
+<p>当没有priority属性时，将执行<strong>后声明的模板</strong>；</p>
+<p>有priority属性时，将使用 <strong>priority取值较大</strong>的模板。 </p>
+<ol>
+<li>返回类型属性 as</li>
+</ol>
+<p>模板返回类型属性as的取值，表示<strong>该模板应该返回的数据类型</strong>。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="as.png" alt=""></p>
+<p>注：该返回的XML元素<strong>包含了子元素和文本内容</strong>。</p>
+<p>模板的返回类型属性<strong>as是一个可选的参数</strong>，如果不指定该参数，则模块可以<strong>输出任意的文本内容</strong>。</p>
+<h3 id="5-2-1-XSLT中模板的调用"><a href="#5-2-1-XSLT中模板的调用" class="headerlink" title="5.2.1 XSLT中模板的调用"></a>5.2.1 XSLT中模板的调用</h3><h4 id="1-使用xsl-apply-templates-调用模板"><a href="#1-使用xsl-apply-templates-调用模板" class="headerlink" title="1.使用xsl:apply-templates 调用模板"></a>1.使用xsl:apply-templates 调用模板</h4><p>调用顺序：在<strong>广度优先</strong>、逐层向下的遍历过程中，指定继续遍历<strong>当前节点的所有子节点</strong></p>
+<p>完整语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:apply-templates</span> <span class="attr">select</span>=<span class="string">Expression</span> <span class="attr">mode</span>=<span class="string">QName</span>&gt;</span></span><br><span class="line">        ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">xsl:apply-templates</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>对于xsl:apply-templates元素，<strong>select和mode属性都是可选的</strong>，即可以直接使用<code>&lt;xsl:apply-templates/&gt;</code></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="模板1.png" alt=""></p>
+<p>对于上例，XSLT自动调用模板1，开始对整个XML文档树的遍历，即依次调用“处理指令”、“message元素”所对应的模板。所以模板1中使用了<code>&lt;xsl:apply-templates/&gt;</code>，表示<strong>调用当前节点的所有子节点所对应的模板</strong>。若模板1中无<code>&lt;xsl:apply-templates/&gt;</code>，<strong>遍历过程将中断</strong>，不会处理除文档节点”/“之外的任何节点。</p>
+<p>下面介绍该元素的两个属性</p>
+<ol>
+<li>select(<strong>取值为一个XPath表达式</strong>）允许指定<strong>仅遍历当前节点的哪些子节点</strong>（以调用相应的模板）</li>
+</ol>
+<p>例：<code>&lt;xsl:apply-templates select=&quot;message&quot;/&gt;</code>仅调用“message元素”所对应的模板</p>
+<ol>
+<li>mode属性指定需要在match属性取值相同的模板中，选择哪一个进行调用。</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="mode2.png" alt=""></p>
+<h4 id="2-使用xsl-call-template-调用模板"><a href="#2-使用xsl-call-template-调用模板" class="headerlink" title="2.使用xsl:call-template 调用模板"></a>2.使用xsl:call-template 调用模板</h4><p>在xsl:template元素开始标记和结束标记之间，使用 xsl:param元素为所在的模板声明参数，其as属性可以指定参数的数据类型。 例</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="参数.png" alt=""></p>
+<p>注：用于为模板声明参数的<strong>xsl:param元素必须出现在模板正文的前面</strong></p>
+<p>​        在模板正文中，使用<strong>$+’模板参数名’</strong>来引用模板参数，以避免将其作为字符串进行处理。</p>
+<h3 id="5-2-2-XSLT中的内置模板"><a href="#5-2-2-XSLT中的内置模板" class="headerlink" title="5.2.2 XSLT中的内置模板"></a>5.2.2 XSLT中的内置模板</h3><p>Q6：怎样分析内置模板？</p>
+<p>E6：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="内置模板.png" alt=""></p>
+<p>C6：模板1’的<code>match=“*|/”</code>是用于处理文档节点和所有元素节点（使用了通配符*），该模板的任务是调用所有子节点的处理模板。</p>
+<p>​        模板2‘的<code>match=“text()|@*”,</code>表示它用于处理文本节点和所有属性节点（使用了通配符@<em>），由于文本节点和属性节点不可能再包含子节点，所以这个模板的任务是直接打印出当前节点（文本节点和属性节点）的内容(<em>*<xsl:value-of select="."/></em></em>)</p>
+<p>Q7：内置模板有什么作用？</p>
+<p>C7：内置模板中仅对<strong>文本节点和属性节点</strong>进行了处理，即输出了其文本内容。其作用在于：让我们<strong>集中精力编写相关节点的处理模板，而无需过多地操心整个遍历过程中模板的逐层调用</strong>。只有在用户没有自定义处理某个节点的模块规则时，才会调用内置模块中的规则；否则，<strong>用户自定义的模块规则将覆盖内置模块中的规则</strong>。</p>
+<p>Q8：内置模板存在什么问题？</p>
+<p>E8：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="错误XML.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="模板错误.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="错误解答.png" alt=""></p>
+<p>C8：在Company模板中，<code>&lt;xsl:apply-templates/&gt;</code>将调用其子节点(Name和Person)的处理模板。但这时<strong>不存在match=“Name”的模板</strong>（修改错误时则只需要加上空模板Name即可），于是调用默认模板（先1后2），<strong>输出了文本节点的内容</strong>，导致文本节点的内容输出了两次，而Person的子元素Name没有出现两次。</p>
+<h2 id="5-3-XSLT模板中各种转换功能的实现"><a href="#5-3-XSLT模板中各种转换功能的实现" class="headerlink" title="5.3 XSLT模板中各种转换功能的实现"></a>5.3 XSLT模板中各种转换功能的实现</h2><h3 id="5-3-1-value-of-text"><a href="#5-3-1-value-of-text" class="headerlink" title="5.3.1 value-of   text"></a>5.3.1 value-of   text</h3><p>Q9：如何使用value-of？</p>
+<p>E9：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">subject</span>&gt;</span>I<span class="tag">&lt;/<span class="name">subject</span>&gt;</span><span class="tag">&lt;<span class="name">predicate</span>&gt;</span>Love<span class="tag">&lt;/<span class="name">predicate</span>&gt;</span><span class="tag">&lt;<span class="name">object</span>&gt;</span>You<span class="tag">&lt;/<span class="name">object</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">message</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">xsl:value-of</span> <span class="attr">select</span>=<span class="string">&quot;.&quot;</span>/&gt;</span>   <span class="comment">&lt;!--会输出ILoveYou--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>C9：对于文本节点和属性节点，xsl:value-of select=“.” 当然提取的是文本节点的内容和属性节点的取值；对元素节点使用 <xsl:value-of select=“.”/>，那么将得到元素节点的 String-Value,如上例。</p>
+<p>Q10：如何输出空格？</p>
+<p>E10：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="text空白字符.png" alt=""></p>
+<p>C10：此时应该使用<code>&lt;xsl:text&gt;&lt;xsl:text/&gt;</code>。xsl:text元素开始标记和结束标记<strong>之间的内容会原封不动的输出到结果中</strong>，但是其中不能包含其他XML的标记。</p>
+<h3 id="5-3-2-xsl-for-each-xsl-sort"><a href="#5-3-2-xsl-for-each-xsl-sort" class="headerlink" title="5.3.2 xsl:for-each xsl:sort"></a>5.3.2 xsl:for-each xsl:sort</h3><p>Q11：怎么使用<strong>for-each与sort</strong>？</p>
+<p>E11：</p>
+<table><tr>
+<td><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="E:\myblog\Procrastination\source\_posts\XML开发技术——第五章\for-each.jpg" border=0></td>
+<td><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="E:\myblog\Procrastination\source\_posts\XML开发技术——第五章\结果.jpg" border=0></td>
+</tr>
+</table>
+
+<p>C11：例中选择出了所有person的子元素Name，并将它们进行排序，随后进行输出。</p>
+<p>关于sort的语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:sort</span> <span class="attr">select</span>=<span class="string">expression</span> </span></span><br><span class="line"><span class="tag">          <span class="attr">data-type</span>=<span class="string">&#123;</span>&quot;<span class="attr">text</span>&quot;|&quot;<span class="attr">number</span>&quot;|<span class="attr">QName</span>&#125; </span></span><br><span class="line"><span class="tag">          <span class="attr">order</span>=<span class="string">&#123;</span>&quot;<span class="attr">ascending</span>&quot;|&quot;<span class="attr">descending</span>&quot;&#125; </span></span><br><span class="line"><span class="tag">          <span class="attr">case-order</span>=<span class="string">&#123;</span>&quot;<span class="attr">upper-first</span>&quot;|&quot;<span class="attr">lower-first</span>&quot;&#125;/&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-3-3-xsl-if"><a href="#5-3-3-xsl-if" class="headerlink" title="5.3.3 xsl:if"></a>5.3.3 xsl:if</h3><p>Q12：怎么使用if？</p>
+<p>E12：</p>
+<table><tr>
+<td><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="if.jpg" border=0></td>
+<td><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="if2.jpg" border=0></td>
+</tr>
+</table>
+
+<p>C12：if通常与for-each搭配，根据条件输出所需要的文本或节点。</p>
+<h3 id="5-3-4-xsl-choose-xsl-when-xsl-otherwise"><a href="#5-3-4-xsl-choose-xsl-when-xsl-otherwise" class="headerlink" title="5.3.4 xsl:choose xsl:when xsl:otherwise"></a>5.3.4 xsl:choose xsl:when xsl:otherwise</h3><p>E13：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="switch.png" alt=""></p>
+<h3 id="5-3-5-在输出中创建XML节点"><a href="#5-3-5-在输出中创建XML节点" class="headerlink" title="5.3.5 在输出中创建XML节点"></a>5.3.5 在输出中创建XML节点</h3><p>Q13：如何使用<strong>copy和copy-of</strong>？</p>
+<p>E13：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="创建元素.png" alt=""></p>
+<p>C13：在上例中，递归的使用了xsl:copy，用于复制每一个节点到结果树中。而xsl:copy-of直接在文档入口处复制了根元素和下面的整棵树（包括属性和子元素）到结果树中，二者存在以下差异：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="copy.png" alt=""></p>
+<p>缺点：xsl:copy 和 xsl:copy-of 可以将当前节点从源复制到输出，但是<strong>不能根据需要生成任意的 XML 节点</strong>。</p>
+<p>Q14：如何使用<strong>element</strong>？</p>
+<p>E14：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="element.png" alt=""></p>
+<p>C14：上例通过xsl:element,将源文档中的message元素<strong>改名</strong>为了new-message</p>
+<p>Q15：如何使用<strong>attribute</strong>？</p>
+<p>E15：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="att.png" alt=""></p>
+<p>C15：上例先通过copy复制了一个空的message元素，随后为其添加了属性content，并将原来message的文本内容赋给了content。</p>
+<p>Q16：如何使用attribute-set？</p>
+<p>E16：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="set.png" alt=""></p>
+<h3 id="5-3-6-如何控制输出格式？"><a href="#5-3-6-如何控制输出格式？" class="headerlink" title="5.3.6 如何控制输出格式？"></a>5.3.6 如何控制输出格式？</h3><p>E17：<code>&lt;xsl:output method=&quot;xml&quot; version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; indent=&quot;yes&quot;/&gt;</code></p>
+<p>C17：这表示输出为XML格式，版本为XML1.0，编码方式为UTF-8<strong>并且进行缩进</strong>，<strong>如果不进行缩进，输出的会写在同一行</strong>，难以体现出层次关系。</p>
+<h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>通过本次学习，我们学习到了XSLT的基本语法和其转换方式，在考试中<strong>XSLT常考于大题中</strong>，即给出原来的XML和XSLT让你<strong>写出转换后的XML文档</strong>。需要仔细学习规则，不然会失分很多。</p>
+]]></content>
+      <categories>
+        <category>XML开发技术</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>XML开发技术——第一章</title>
     <url>/2020/11/14/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/</url>
     <content><![CDATA[<p>可能你还不了解XML，只是听说课水分高就报了(<del>我也是</del>)，那就跟着我的笔记，来一起了解XML吧！</p>
@@ -248,159 +403,86 @@
       </tags>
   </entry>
   <entry>
-    <title>XML开发技术——第五章</title>
-    <url>/2020/11/25/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
-    <content><![CDATA[<p>经过了上一次的学习，我们学到了用于查询的XPATH，它会在之后的很多地方予以应用。</p>
-<p>比如今天我们要讲的XSLT</p>
-<a id="more"></a>
-<h1 id="第五章-XSLT"><a href="#第五章-XSLT" class="headerlink" title="第五章 XSLT"></a>第五章 XSLT</h1><p>本章内容的学习目的：</p>
-<ol>
-<li>理解和掌握XML文档的转换过程。</li>
-<li>学习如何使用XSLT中的模板实现XML文档的转换。</li>
-<li>学习如何使用XSLT中的排序、循环、条件分支语句实现各种处理。</li>
-<li>创建使用参数和变量的XSLT文档。</li>
-</ol>
-<h2 id="5-1-XSLT"><a href="#5-1-XSLT" class="headerlink" title="5.1 XSLT"></a>5.1 XSLT</h2><p>Q1：什么是XSLT？</p>
-<p>C1：XSLT(e<strong>X</strong>tensible <strong>S</strong>tylesheet <strong>L</strong>anguage <strong>Transformations</strong>)，其中的T表示“转换”，它是一种专门用于对XML树型数据进行<strong>结构重组转换</strong>的有力工具，可以根据指定的<strong>转换规则</strong>（在XSLT中称之为模板）将一个XML文档树或者其中的部分内容转换为另一种文档树形式。</p>
-<p>XSLT不仅局限于结构上的重组，它可以<strong>将XML文档转换为任何形式</strong>，包括XML、HTML和普通文本。</p>
-<p>XSL是它的前身,本来包含了XML数据表达和数据转换。数据转换部分从中独立出来成为XSLT。剩下的数据表达部分成为XSL-FO</p>
-<p>Q2：XSLT有什么注意事项？</p>
-<p>C2：</p>
-<ol>
-<li>XSLT语言是一种声明性的语言，即XSLT程序本身<strong>只是包含了一些转换规则的XML文档。</strong></li>
-<li>XSLT处理程序（或称之为执行引擎）将首先确定 XSLT规则，然后根据规则的<strong>匹配条件</strong>（<strong>通过XPath 表达式</strong>指定）、以及优先顺序完成相应的转换操作。</li>
-<li><strong>XSLT本身也是一个XML文档</strong>，所以它必须严格遵守XML规范。其根元素的命名空间为<code>http://www.w3.org/1999/XSL/Transform</code> 即：</li>
-</ol>
-<p><code>&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</code></p>
-<h3 id="5-1-1-XSLT的工作原理"><a href="#5-1-1-XSLT的工作原理" class="headerlink" title="5.1.1 XSLT的工作原理"></a>5.1.1 XSLT的工作原理</h3><p>Q3：XSLT是怎样工作的？</p>
-<p>E3：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="工作原理.png" alt=""></p>
-<p>C3：</p>
-<ol>
-<li>在进行XSLT的转换任务时，需要<strong>两个输入文档</strong>，一个是包含源数据的<strong>XML文档</strong>，一个是包含转换任务规则的<strong>XSLT文档</strong>。</li>
-<li>由XML解析器对这两个文档进行解析，将XML文档转换为所对应的文档树结构，<strong>将xslt(xsl)文档看作是一系列的转换规则</strong>。</li>
-<li><strong>由XSLT引擎调用这些规则</strong>，对文档树进行遍历，分别处理其中指定的数据节点，将其转换为所需的结果集，并序列化为结果文档。</li>
-</ol>
-<h3 id="5-1-2-XSLT的一个简单示例"><a href="#5-1-2-XSLT的一个简单示例" class="headerlink" title="5.1.2 XSLT的一个简单示例"></a>5.1.2 XSLT的一个简单示例</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;hello.xlst&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">message</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">message</span>&gt;</span>       <span class="comment">&lt;!--这是hello.xsl文档--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xsl:stylesheet</span> <span class="attr">version</span>=<span class="string">&quot;2.0&quot;</span> <span class="attr">xmlns:xsl</span>=<span class="string">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- transform the input root (/) --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsl:template</span> <span class="attr">match</span>=<span class="string">&quot;/&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line">        		<span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">            		<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">	        			<span class="tag">&lt;<span class="name">xsl:value-of</span> <span class="attr">select</span>=<span class="string">&quot;message&quot;</span>/&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line">      			<span class="tag">&lt;/<span class="name">body</span>&gt;</span>    		</span><br><span class="line">			<span class="tag">&lt;/<span class="name">html</span>&gt;</span>       </span><br><span class="line">		<span class="tag">&lt;/<span class="name">xsl:template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xsl:stylesheet</span>&gt;</span>              <span class="comment">&lt;!--这是hello.xslt文档--&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-2-XSLT中模板的创建以及内置模板的使用"><a href="#5-2-XSLT中模板的创建以及内置模板的使用" class="headerlink" title="5.2 XSLT中模板的创建以及内置模板的使用"></a>5.2 XSLT中模板的创建以及内置模板的使用</h2><h3 id="5-2-1-XSLT中模板的声明"><a href="#5-2-1-XSLT中模板的声明" class="headerlink" title="5.2.1 XSLT中模板的声明"></a>5.2.1 XSLT中模板的声明</h3><p>Q4：怎么声明模板？</p>
-<p>E4：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="模板声明.png" alt=""></p>
-<p>C4：模板标记之间的内容相当于一个<strong>函数的函数体</strong>，表示在调用该模板时应该执行的具体操作。而元素开始标记中的属性match、name、mode和priority则用于描述该模板的相关信息。</p>
-<p>Q5：模板有哪些属性？</p>
-<p>C5：</p>
-<ol>
-<li>匹配路径属性 match</li>
-</ol>
-<p>在XSLT中，模板的调用分为两种方式：</p>
-<p><strong>●根据模板的匹配路径</strong>（在遍历的过程中）调用，具体又有两种情况：</p>
-<p>i. 对于模板 xsl:template match=”/“，XSLT 处理器在碰到 XML 文档的文档节点时自动调用该模板，就好像作为<strong>程序执行的入口</strong>。</p>
-<p>ii. 对于其他的模板match=other-pattern，将在模板xsl:template match=”/“的转换规则（函数体）中通过指出匹配路径的方式（使用xsl:apply-templates）进行隐式地或者显式地调用。</p>
-<p>●<strong>根据模板名称属性</strong>，使用 xsl:call-template name=template-name  进行调用。 </p>
-<ol>
-<li>名称属性 name</li>
-</ol>
-<p>模板<xsl:template match=“/”>和<xsl:template match=“message”>都没有具体的名称，因此将其称为<strong>无名模板</strong>。这些模板之所以没有名称，是因为<strong>它们的调用是在遍历文档树的过程中自动进行的</strong>，不需要名称。</p>
-<p>也可以使用name属性为模板指定一个名称，使其成为命名模板 。例</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:stylesheet</span> <span class="attr">version</span>=<span class="string">&quot;2.0&quot;</span> <span class="attr">xmlns:xsl</span>=<span class="string">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">xsl:template</span> <span class="attr">match</span>=<span class="string">&quot;/&quot;</span> <span class="attr">name</span>=<span class="string">&quot;one&quot;</span>&gt;</span>              <span class="comment">&lt;!--命名模板 one--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsl:call-template</span> <span class="attr">name</span>=<span class="string">&quot;another&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">xsl:template</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">xsl:template</span> <span class="attr">name</span>=<span class="string">&quot;another&quot;</span>&gt;</span>                    <span class="comment">&lt;!--命名模板 another--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">output</span>&gt;</span>Simple output<span class="tag">&lt;/<span class="name">output</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">xsl:template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xsl:stylesheet</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>XSLT 处理器将调用命名模板 one（实际上名称 one 没有作用，因为是自动调用的），然后<strong>在模板 one 中使用 xsl:call-template 直接调用名为 another 的模板</strong>，在模板 another 执行结束之后，继续执行模板 one 的后续指令，<strong>这个过程非常类似于函数的调用</strong>。 </p>
-<ol>
-<li>模式属性 mode</li>
-</ol>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="mode.png" alt=""></p>
-<ol>
-<li>优先级属性 priority</li>
-</ol>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="优先级.png" alt=""></p>
-<p>注意：XSLT中<strong>允许存在同名的模板</strong>；</p>
-<p>当没有priority属性时，将执行<strong>后声明的模板</strong>；</p>
-<p>有priority属性时，将使用 <strong>priority取值较大</strong>的模板。 </p>
-<ol>
-<li>返回类型属性 as</li>
-</ol>
-<p>模板返回类型属性as的取值，表示<strong>该模板应该返回的数据类型</strong>。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="as.png" alt=""></p>
-<p>注：该返回的XML元素<strong>包含了子元素和文本内容</strong>。</p>
-<p>模板的返回类型属性<strong>as是一个可选的参数</strong>，如果不指定该参数，则模块可以<strong>输出任意的文本内容</strong>。</p>
-<h3 id="5-2-1-XSLT中模板的调用"><a href="#5-2-1-XSLT中模板的调用" class="headerlink" title="5.2.1 XSLT中模板的调用"></a>5.2.1 XSLT中模板的调用</h3><h4 id="1-使用xsl-apply-templates-调用模板"><a href="#1-使用xsl-apply-templates-调用模板" class="headerlink" title="1.使用xsl:apply-templates 调用模板"></a>1.使用xsl:apply-templates 调用模板</h4><p>调用顺序：在<strong>广度优先</strong>、逐层向下的遍历过程中，指定继续遍历<strong>当前节点的所有子节点</strong></p>
-<p>完整语法：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:apply-templates</span> <span class="attr">select</span>=<span class="string">Expression</span> <span class="attr">mode</span>=<span class="string">QName</span>&gt;</span></span><br><span class="line">        ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">xsl:apply-templates</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>对于xsl:apply-templates元素，<strong>select和mode属性都是可选的</strong>，即可以直接使用<code>&lt;xsl:apply-templates/&gt;</code></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="模板1.png" alt=""></p>
-<p>对于上例，XSLT自动调用模板1，开始对整个XML文档树的遍历，即依次调用“处理指令”、“message元素”所对应的模板。所以模板1中使用了<code>&lt;xsl:apply-templates/&gt;</code>，表示<strong>调用当前节点的所有子节点所对应的模板</strong>。若模板1中无<code>&lt;xsl:apply-templates/&gt;</code>，<strong>遍历过程将中断</strong>，不会处理除文档节点”/“之外的任何节点。</p>
-<p>下面介绍该元素的两个属性</p>
-<ol>
-<li>select(<strong>取值为一个XPath表达式</strong>）允许指定<strong>仅遍历当前节点的哪些子节点</strong>（以调用相应的模板）</li>
-</ol>
-<p>例：<code>&lt;xsl:apply-templates select=&quot;message&quot;/&gt;</code>仅调用“message元素”所对应的模板</p>
-<ol>
-<li>mode属性指定需要在match属性取值相同的模板中，选择哪一个进行调用。</li>
-</ol>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="mode2.png" alt=""></p>
-<h4 id="2-使用xsl-call-template-调用模板"><a href="#2-使用xsl-call-template-调用模板" class="headerlink" title="2.使用xsl:call-template 调用模板"></a>2.使用xsl:call-template 调用模板</h4><p>在xsl:template元素开始标记和结束标记之间，使用 xsl:param元素为所在的模板声明参数，其as属性可以指定参数的数据类型。 例</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="参数.png" alt=""></p>
-<p>注：用于为模板声明参数的<strong>xsl:param元素必须出现在模板正文的前面</strong></p>
-<p>​        在模板正文中，使用<strong>$+’模板参数名’</strong>来引用模板参数，以避免将其作为字符串进行处理。</p>
-<h3 id="5-2-2-XSLT中的内置模板"><a href="#5-2-2-XSLT中的内置模板" class="headerlink" title="5.2.2 XSLT中的内置模板"></a>5.2.2 XSLT中的内置模板</h3><p>Q6：怎样分析内置模板？</p>
-<p>E6：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="内置模板.png" alt=""></p>
-<p>C6：模板1’的<code>match=“*|/”</code>是用于处理文档节点和所有元素节点（使用了通配符*），该模板的任务是调用所有子节点的处理模板。</p>
-<p>​        模板2‘的<code>match=“text()|@*”,</code>表示它用于处理文本节点和所有属性节点（使用了通配符@<em>），由于文本节点和属性节点不可能再包含子节点，所以这个模板的任务是直接打印出当前节点（文本节点和属性节点）的内容(<em>*<xsl:value-of select="."/></em></em>)</p>
-<p>Q7：内置模板有什么作用？</p>
-<p>C7：内置模板中仅对<strong>文本节点和属性节点</strong>进行了处理，即输出了其文本内容。其作用在于：让我们<strong>集中精力编写相关节点的处理模板，而无需过多地操心整个遍历过程中模板的逐层调用</strong>。只有在用户没有自定义处理某个节点的模块规则时，才会调用内置模块中的规则；否则，<strong>用户自定义的模块规则将覆盖内置模块中的规则</strong>。</p>
-<p>Q8：内置模板存在什么问题？</p>
-<p>E8：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="错误XML.png" alt=""></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="模板错误.png" alt=""></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="错误解答.png" alt=""></p>
-<p>C8：在Company模板中，<code>&lt;xsl:apply-templates/&gt;</code>将调用其子节点(Name和Person)的处理模板。但这时<strong>不存在match=“Name”的模板</strong>（修改错误时则只需要加上空模板Name即可），于是调用默认模板（先1后2），<strong>输出了文本节点的内容</strong>，导致文本节点的内容输出了两次，而Person的子元素Name没有出现两次。</p>
-<h2 id="5-3-XSLT模板中各种转换功能的实现"><a href="#5-3-XSLT模板中各种转换功能的实现" class="headerlink" title="5.3 XSLT模板中各种转换功能的实现"></a>5.3 XSLT模板中各种转换功能的实现</h2><h3 id="5-3-1-value-of-text"><a href="#5-3-1-value-of-text" class="headerlink" title="5.3.1 value-of   text"></a>5.3.1 value-of   text</h3><p>Q9：如何使用value-of？</p>
-<p>E9：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">subject</span>&gt;</span>I<span class="tag">&lt;/<span class="name">subject</span>&gt;</span><span class="tag">&lt;<span class="name">predicate</span>&gt;</span>Love<span class="tag">&lt;/<span class="name">predicate</span>&gt;</span><span class="tag">&lt;<span class="name">object</span>&gt;</span>You<span class="tag">&lt;/<span class="name">object</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">message</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">xsl:value-of</span> <span class="attr">select</span>=<span class="string">&quot;.&quot;</span>/&gt;</span>   <span class="comment">&lt;!--会输出ILoveYou--&gt;</span></span><br></pre></td></tr></table></figure>
-<p>C9：对于文本节点和属性节点，xsl:value-of select=“.” 当然提取的是文本节点的内容和属性节点的取值；对元素节点使用 <xsl:value-of select=“.”/>，那么将得到元素节点的 String-Value,如上例。</p>
-<p>Q10：如何输出空格？</p>
-<p>E10：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="text空白字符.png" alt=""></p>
-<p>C10：此时应该使用<code>&lt;xsl:text&gt;&lt;xsl:text/&gt;</code>。xsl:text元素开始标记和结束标记<strong>之间的内容会原封不动的输出到结果中</strong>，但是其中不能包含其他XML的标记。</p>
-<h3 id="5-3-2-xsl-for-each-xsl-sort"><a href="#5-3-2-xsl-for-each-xsl-sort" class="headerlink" title="5.3.2 xsl:for-each xsl:sort"></a>5.3.2 xsl:for-each xsl:sort</h3><p>Q11：怎么使用<strong>for-each与sort</strong>？</p>
-<p>E11：</p>
-<table><tr>
-<td><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="E:\myblog\Procrastination\source\_posts\XML开发技术——第五章\for-each.jpg" border=0></td>
-<td><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="E:\myblog\Procrastination\source\_posts\XML开发技术——第五章\结果.jpg" border=0></td>
-</tr>
-</table>
+    <title>假期每日总结</title>
+    <url>/2021/01/11/%E5%81%87%E6%9C%9F%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="2020-01-11"><a href="#2020-01-11" class="headerlink" title="2020-01-11"></a>2020-01-11</h2><div class="note success no-icon flat">
+                            <p>
+                                <strong>编程⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        在VSCODE上配置了java运行环境
+                                    </td>
+                                    <td>
+                                        参考网址：<a href="https://www.cnblogs.com/bpf-1024/p/13375253.html">vscode 配置 Java 环境</a>
+                                    </td>
+                                                                    </tr>
+                        </tbody>
+                    </table>
+                </div>      
 
-<p>C11：例中选择出了所有person的子元素Name，并将它们进行排序，随后进行输出。</p>
-<p>关于sort的语法：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xsl:sort</span> <span class="attr">select</span>=<span class="string">expression</span> </span></span><br><span class="line"><span class="tag">          <span class="attr">data-type</span>=<span class="string">&#123;</span>&quot;<span class="attr">text</span>&quot;|&quot;<span class="attr">number</span>&quot;|<span class="attr">QName</span>&#125; </span></span><br><span class="line"><span class="tag">          <span class="attr">order</span>=<span class="string">&#123;</span>&quot;<span class="attr">ascending</span>&quot;|&quot;<span class="attr">descending</span>&quot;&#125; </span></span><br><span class="line"><span class="tag">          <span class="attr">case-order</span>=<span class="string">&#123;</span>&quot;<span class="attr">upper-first</span>&quot;|&quot;<span class="attr">lower-first</span>&quot;&#125;/&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-3-3-xsl-if"><a href="#5-3-3-xsl-if" class="headerlink" title="5.3.3 xsl:if"></a>5.3.3 xsl:if</h3><p>Q12：怎么使用if？</p>
-<p>E12：</p>
-<table><tr>
-<td><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="if.jpg" border=0></td>
-<td><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="if2.jpg" border=0></td>
-</tr>
-</table>
+<div class="note info no-icon flat">
+                            <p>
+                                <strong>读书⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>书名</th>
+                                        <th>进度</th>
+                                    </tr>
+                                    </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="https://book.douban.com/subject/10785583/">思考快与慢</a>
+                                    </td>
+                                 </tr>
+                                    <tr>
+                                    <td>
+                                        <a href="https://book.douban.com/subject/1003986/">病隙碎笔</a>
+                                    </td>
+                                                                    </tr>
+                                 </tr>
+                    </tbody>
+                </table>
+            </div>
+<div class="note primary no-icon flat">
+                            <p>
+                                <strong>每日所得⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        如何在HTML中构造表格
+                                    </td>
+                                    <td>
+                                        参考网址：<a href="http://c.biancheng.net/view/7540.html">HTMLtable标签（表格）</a>
+                                    </td>
+                                                                    </tr>
+                        </tbody>
+                    </table>
+                </div>      
 
-<p>C12：if通常与for-each搭配，根据条件输出所需要的文本或节点。</p>
-<h3 id="5-3-4-xsl-choose-xsl-when-xsl-otherwise"><a href="#5-3-4-xsl-choose-xsl-when-xsl-otherwise" class="headerlink" title="5.3.4 xsl:choose xsl:when xsl:otherwise"></a>5.3.4 xsl:choose xsl:when xsl:otherwise</h3><p>E13：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="switch.png" alt=""></p>
-<h3 id="5-3-5-在输出中创建XML节点"><a href="#5-3-5-在输出中创建XML节点" class="headerlink" title="5.3.5 在输出中创建XML节点"></a>5.3.5 在输出中创建XML节点</h3><p>Q13：如何使用<strong>copy和copy-of</strong>？</p>
-<p>E13：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="创建元素.png" alt=""></p>
-<p>C13：在上例中，递归的使用了xsl:copy，用于复制每一个节点到结果树中。而xsl:copy-of直接在文档入口处复制了根元素和下面的整棵树（包括属性和子元素）到结果树中，二者存在以下差异：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="copy.png" alt=""></p>
-<p>缺点：xsl:copy 和 xsl:copy-of 可以将当前节点从源复制到输出，但是<strong>不能根据需要生成任意的 XML 节点</strong>。</p>
-<p>Q14：如何使用<strong>element</strong>？</p>
-<p>E14：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="element.png" alt=""></p>
-<p>C14：上例通过xsl:element,将源文档中的message元素<strong>改名</strong>为了new-message</p>
-<p>Q15：如何使用<strong>attribute</strong>？</p>
-<p>E15：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="att.png" alt=""></p>
-<p>C15：上例先通过copy复制了一个空的message元素，随后为其添加了属性content，并将原来message的文本内容赋给了content。</p>
-<p>Q16：如何使用attribute-set？</p>
-<p>E16：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="set.png" alt=""></p>
-<h3 id="5-3-6-如何控制输出格式？"><a href="#5-3-6-如何控制输出格式？" class="headerlink" title="5.3.6 如何控制输出格式？"></a>5.3.6 如何控制输出格式？</h3><p>E17：<code>&lt;xsl:output method=&quot;xml&quot; version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; indent=&quot;yes&quot;/&gt;</code></p>
-<p>C17：这表示输出为XML格式，版本为XML1.0，编码方式为UTF-8<strong>并且进行缩进</strong>，<strong>如果不进行缩进，输出的会写在同一行</strong>，难以体现出层次关系。</p>
-<h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>通过本次学习，我们学习到了XSLT的基本语法和其转换方式，在考试中<strong>XSLT常考于大题中</strong>，即给出原来的XML和XSLT让你<strong>写出转换后的XML文档</strong>。需要仔细学习规则，不然会失分很多。</p>
+<p>​                                   </p>
+<p>​                            </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
 ]]></content>
       <categories>
-        <category>XML开发技术</category>
+        <category>杂谈</category>
       </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-      </tags>
   </entry>
   <entry>
     <title>博客目录</title>
@@ -484,15 +566,6 @@
                             </tbody>
                         </table>
                     </div>      ]]></content>
-  </entry>
-  <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
   </entry>
   <entry>
     <title>数据结构期中复习</title>
@@ -682,110 +755,6 @@
 <h1 id="第五章-查找"><a href="#第五章-查找" class="headerlink" title="第五章 查找"></a>第五章 查找</h1>]]></content>
       <categories>
         <category>数据结构与算法</category>
-      </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-        <tag>考试复习整理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>汇编语言总复习(下)</title>
-    <url>/2020/12/29/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8B)/</url>
-    <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
-<p>孩子哭了，汇编一定要好好学啊</p>
-<a id="more"></a>
-<h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a>选择题：</h2><h3 id="例一：下列语句没错的是："><a href="#例一：下列语句没错的是：" class="headerlink" title="例一：下列语句没错的是："></a>例一：下列语句没错的是：</h3><p>MOV AL，050AH</p>
-<p>MOV [SI],0AH</p>
-<p>MOV DS,100H</p>
-<p>MOV CS,[SI]</p>
-<p>MOV DS,ES</p>
-<p>答：都有错，这题不选（</p>
-<p>第一句中，AL表示字节，而050AH单位为字，目的操作数与源操作数的类型不一，故错。</p>
-<p>第二句中，存储器单元与立即数同时作为操作数，但是没有显式指明类型，故错</p>
-<p>更正：<strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
-<p>第三句中，立即数不能直接送到段寄存器中，故错。</p>
-<p>第四句中，CS是专用寄存器，碰不得</p>
-<p>第五句中，段寄存器之间不能相互传递，故错。</p>
-<h3 id="例二：下列语句等值的是："><a href="#例二：下列语句等值的是：" class="headerlink" title="例二：下列语句等值的是："></a>例二：下列语句等值的是：</h3><h2 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h2><h3 id="例一：解释TEST和AND指令的异同，并说明其使用注意点"><a href="#例一：解释TEST和AND指令的异同，并说明其使用注意点" class="headerlink" title="例一：解释TEST和AND指令的异同，并说明其使用注意点"></a>例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</h3><p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
-<p>​       不同点：AND指令会将逻辑与的结果送给目的操作数，而TEST指令不会。</p>
-<p>举一反三.1：解释TEST和CMP指令的异同</p>
-<p>答：相同点：TEST指令和CMP指令都不会将结果送回给操作数，只修改标志位。</p>
-<p>​        test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
-<p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
-<p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
-<p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
-<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"><a href="#例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码" class="headerlink" title="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"></a>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3><p>答：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="MOV图.png" alt=""></p>
-<p><code>MOV AX,0102H</code></p>
-<p><code>MOV DS,AX</code></p>
-<p>解释说明：</p>
-<p>1.立即数到存储器和寄存器<strong>都是单向的</strong>。</p>
-<p>2.<strong>立即数不能直接到段寄存器</strong>，需要通过寄存器中转</p>
-<p>3.寄存器之间可以互相mov</p>
-<p>4.<strong>段寄存器之间不能互相传递</strong></p>
-<p>5.<strong>存储器之间不能相互传递</strong></p>
-<p>举一反三.2：写出交换将BUF1段中的数据和BUF2段中数据的代码</p>
-<p>答：</p>
-<p><code>MOV AX,BUF1</code></p>
-<p><code>MOV DX,BUF2</code></p>
-<p><code>MOV BUF2,AX</code></p>
-<p><code>MOV BUF1,DX</code></p>
-<h3 id="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"><a href="#例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。" class="headerlink" title="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"></a>例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</h3><p>答：一共有五种</p>
-<p>分别为：</p>
-<p>1.直接寻址 ：MOV AX,[2077H]</p>
-<p>2.寄存器间接寻址 ：MOV AX,[SI]</p>
-<p>3.寄存器相对寻址：MOV AX,[SI+06H]</p>
-<p>4.基址变址寻址方式：MOV AX,[BX+SI]</p>
-<p>5.相对基址变址寻址：MOV AX,[BX+SI+06H]</p>
-<p>解释：<strong>基址是指基址寄存器（BX/BP），变址是指变址寄存器（SI/DI）</strong></p>
-<p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
-<h3 id="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？"><a href="#例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？" class="headerlink" title="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？"></a>例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</h3><p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
-<p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。<strong>（默认要补齐5位）</strong>如图</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="逻辑地址转化.png" alt=""></p>
-<h3 id="例五：编写定义缓冲区，及实现输入字符串的核心代码"><a href="#例五：编写定义缓冲区，及实现输入字符串的核心代码" class="headerlink" title="例五：编写定义缓冲区，及实现输入字符串的核心代码"></a>例五：编写定义缓冲区，及实现输入字符串的核心代码</h3><p>答：<code>string db &#39;Im a string&#39;,0dh,0ah,&#39;$&#39;</code></p>
-<p><code>buffer  db 81</code></p>
-<pre><code>         `db ?`
-
-         `db 81 dup(0)`
-</code></pre><p><code>mov dx,seg buffer</code></p>
-<p><code>mov ds,dx</code></p>
-<p><code>mov ah,0ah</code></p>
-<p><code>mov dx,offset buffer</code></p>
-<p><code>int 21h</code></p>
-<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><h3 id="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07"><a href="#例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07" class="headerlink" title="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N 次(响铃的ASCII 码为07)"></a>例一：编写一个程序，要求能从<strong>键盘接收</strong>一个个位数N，然后<strong>响铃N</strong> 次(响铃的ASCII 码为07)</h3><p>分析：采用字符串输入功能接受一个数，传入CX中，再调用输出字符功能，输出直到CX为0</p>
-<p>代码如下：</p>
-<p><code>.model small</code></p>
-<p><code>.stack</code></p>
-<p><code>.data</code></p>
-<p><code>.code</code></p>
-<p><code>.startup</code></p>
-<p><code>mov ah,01h</code></p>
-<p><code>int 21h</code></p>
-<p><code>sub al,30h</code></p>
-<p><code>mov cl,al</code></p>
-<p><code>mov ah,02h</code></p>
-<p><code>mov dl,0ah</code></p>
-<p><code>int 21h</code></p>
-<p><code>again:</code></p>
-<p>​    <code>cmp cl,0</code></p>
-<p>​    <code>jz over</code></p>
-<p>​    <code>mov ah,02h</code></p>
-<p>​    <code>mov dl,07h</code></p>
-<p>​    <code>int 21h</code></p>
-<p>​    <code>mov dl,&#39;1&#39;</code></p>
-<p>​    <code>int 21h</code></p>
-<p>​    <code>dec cl</code></p>
-<p>​    <code>jmp again</code></p>
-<p><code>over: .exit 0</code></p>
-<p>​        <code>end</code></p>
-<h3 id="例二：实现字符串的冒泡排序"><a href="#例二：实现字符串的冒泡排序" class="headerlink" title="例二：实现字符串的冒泡排序"></a>例二：实现字符串的冒泡排序</h3><p>分析：使用两层循环，结合跳转实现</p>
-<p>代码如下：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="代码.png" alt=""></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>明天上刑场</p>
-<p>概统还没复习</p>
-<p>高星救我</p>
-]]></content>
-      <categories>
-        <category>汇编语言</category>
       </categories>
       <tags>
         <tag>课内学习笔记</tag>
@@ -991,6 +960,110 @@
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
+]]></content>
+      <categories>
+        <category>汇编语言</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>汇编语言总复习(下)</title>
+    <url>/2020/12/29/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8B)/</url>
+    <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
+<p>孩子哭了，汇编一定要好好学啊</p>
+<a id="more"></a>
+<h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a>选择题：</h2><h3 id="例一：下列语句没错的是："><a href="#例一：下列语句没错的是：" class="headerlink" title="例一：下列语句没错的是："></a>例一：下列语句没错的是：</h3><p>MOV AL，050AH</p>
+<p>MOV [SI],0AH</p>
+<p>MOV DS,100H</p>
+<p>MOV CS,[SI]</p>
+<p>MOV DS,ES</p>
+<p>答：都有错，这题不选（</p>
+<p>第一句中，AL表示字节，而050AH单位为字，目的操作数与源操作数的类型不一，故错。</p>
+<p>第二句中，存储器单元与立即数同时作为操作数，但是没有显式指明类型，故错</p>
+<p>更正：<strong>MOV BYTE PTR [SI],0AH (字节操作)</strong></p>
+<p>第三句中，立即数不能直接送到段寄存器中，故错。</p>
+<p>第四句中，CS是专用寄存器，碰不得</p>
+<p>第五句中，段寄存器之间不能相互传递，故错。</p>
+<h3 id="例二：下列语句等值的是："><a href="#例二：下列语句等值的是：" class="headerlink" title="例二：下列语句等值的是："></a>例二：下列语句等值的是：</h3><h2 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h2><h3 id="例一：解释TEST和AND指令的异同，并说明其使用注意点"><a href="#例一：解释TEST和AND指令的异同，并说明其使用注意点" class="headerlink" title="例一：解释TEST和AND指令的异同，并说明其使用注意点"></a>例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</h3><p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
+<p>​       不同点：AND指令会将逻辑与的结果送给目的操作数，而TEST指令不会。</p>
+<p>举一反三.1：解释TEST和CMP指令的异同</p>
+<p>答：相同点：TEST指令和CMP指令都不会将结果送回给操作数，只修改标志位。</p>
+<p>​        test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
+<p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
+<p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
+<p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
+<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"><a href="#例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码" class="headerlink" title="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"></a>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3><p>答：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="MOV图.png" alt=""></p>
+<p><code>MOV AX,0102H</code></p>
+<p><code>MOV DS,AX</code></p>
+<p>解释说明：</p>
+<p>1.立即数到存储器和寄存器<strong>都是单向的</strong>。</p>
+<p>2.<strong>立即数不能直接到段寄存器</strong>，需要通过寄存器中转</p>
+<p>3.寄存器之间可以互相mov</p>
+<p>4.<strong>段寄存器之间不能互相传递</strong></p>
+<p>5.<strong>存储器之间不能相互传递</strong></p>
+<p>举一反三.2：写出交换将BUF1段中的数据和BUF2段中数据的代码</p>
+<p>答：</p>
+<p><code>MOV AX,BUF1</code></p>
+<p><code>MOV DX,BUF2</code></p>
+<p><code>MOV BUF2,AX</code></p>
+<p><code>MOV BUF1,DX</code></p>
+<h3 id="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"><a href="#例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。" class="headerlink" title="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"></a>例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</h3><p>答：一共有五种</p>
+<p>分别为：</p>
+<p>1.直接寻址 ：MOV AX,[2077H]</p>
+<p>2.寄存器间接寻址 ：MOV AX,[SI]</p>
+<p>3.寄存器相对寻址：MOV AX,[SI+06H]</p>
+<p>4.基址变址寻址方式：MOV AX,[BX+SI]</p>
+<p>5.相对基址变址寻址：MOV AX,[BX+SI+06H]</p>
+<p>解释：<strong>基址是指基址寄存器（BX/BP），变址是指变址寄存器（SI/DI）</strong></p>
+<p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
+<h3 id="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？"><a href="#例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？" class="headerlink" title="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？"></a>例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</h3><p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
+<p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。<strong>（默认要补齐5位）</strong>如图</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="逻辑地址转化.png" alt=""></p>
+<h3 id="例五：编写定义缓冲区，及实现输入字符串的核心代码"><a href="#例五：编写定义缓冲区，及实现输入字符串的核心代码" class="headerlink" title="例五：编写定义缓冲区，及实现输入字符串的核心代码"></a>例五：编写定义缓冲区，及实现输入字符串的核心代码</h3><p>答：<code>string db &#39;Im a string&#39;,0dh,0ah,&#39;$&#39;</code></p>
+<p><code>buffer  db 81</code></p>
+<pre><code>         `db ?`
+
+         `db 81 dup(0)`
+</code></pre><p><code>mov dx,seg buffer</code></p>
+<p><code>mov ds,dx</code></p>
+<p><code>mov ah,0ah</code></p>
+<p><code>mov dx,offset buffer</code></p>
+<p><code>int 21h</code></p>
+<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><h3 id="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07"><a href="#例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07" class="headerlink" title="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N 次(响铃的ASCII 码为07)"></a>例一：编写一个程序，要求能从<strong>键盘接收</strong>一个个位数N，然后<strong>响铃N</strong> 次(响铃的ASCII 码为07)</h3><p>分析：采用字符串输入功能接受一个数，传入CX中，再调用输出字符功能，输出直到CX为0</p>
+<p>代码如下：</p>
+<p><code>.model small</code></p>
+<p><code>.stack</code></p>
+<p><code>.data</code></p>
+<p><code>.code</code></p>
+<p><code>.startup</code></p>
+<p><code>mov ah,01h</code></p>
+<p><code>int 21h</code></p>
+<p><code>sub al,30h</code></p>
+<p><code>mov cl,al</code></p>
+<p><code>mov ah,02h</code></p>
+<p><code>mov dl,0ah</code></p>
+<p><code>int 21h</code></p>
+<p><code>again:</code></p>
+<p>​    <code>cmp cl,0</code></p>
+<p>​    <code>jz over</code></p>
+<p>​    <code>mov ah,02h</code></p>
+<p>​    <code>mov dl,07h</code></p>
+<p>​    <code>int 21h</code></p>
+<p>​    <code>mov dl,&#39;1&#39;</code></p>
+<p>​    <code>int 21h</code></p>
+<p>​    <code>dec cl</code></p>
+<p>​    <code>jmp again</code></p>
+<p><code>over: .exit 0</code></p>
+<p>​        <code>end</code></p>
+<h3 id="例二：实现字符串的冒泡排序"><a href="#例二：实现字符串的冒泡排序" class="headerlink" title="例二：实现字符串的冒泡排序"></a>例二：实现字符串的冒泡排序</h3><p>分析：使用两层循环，结合跳转实现</p>
+<p>代码如下：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="代码.png" alt=""></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>明天上刑场</p>
+<p>概统还没复习</p>
+<p>高星救我</p>
 ]]></content>
       <categories>
         <category>汇编语言</category>
