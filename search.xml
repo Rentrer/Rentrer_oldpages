@@ -874,6 +874,101 @@
       </categories>
   </entry>
   <entry>
+    <title>数据结构期末复习</title>
+    <url>/2021/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>面向考试复习数据结构2.0版正式上线了</p>
+<p>本文将整理后三章的相关知识点，并对例题习题进行整合梳理，存在不足，欢迎补充。</p>
+<h1 id="第四章-图"><a href="#第四章-图" class="headerlink" title="第四章 图"></a>第四章 图</h1><h2 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h2><p>图是由一个顶点集V和一个弧集(或边集)构成的数据结构，是一种<strong>非线性</strong>数据结构</p>
+<p>网：带权的图。<strong>在不会引起歧义时，网也直接称为图。</strong></p>
+<p>路径长度：路径上边的数目（两个点之间的距离即路径上<strong>除了起点，包括终点的顶点个数</strong>）</p>
+<p>简单路径：<strong>顶点不重复</strong>出现的路径（<strong>边可以重复</strong>）</p>
+<h3 id="关于图的顶点和边数目"><a href="#关于图的顶点和边数目" class="headerlink" title="关于图的顶点和边数目"></a>关于图的顶点和边数目</h3><p> 我们用 n 表示图中顶点数目；m表示图中边(或者弧)的数目；</p>
+<p>  对于无向图：<code>0≤m≤n(n-1)/2</code>  <strong>m=n(n-1)/2的无向图称为完全图</strong></p>
+<p> 对于有向图：<code>0≤m≤n(n-1)</code>       <strong>m=n(n-1)的有向图称为有向完全图</strong></p>
+<p>n=0: V为空集；<strong>m=0: 或许有1个顶点（平凡图）。</strong></p>
+<p>例一：设某个非连通无向图有28条边，则该图至少有(9)个顶点。</p>
+<p>解：此题的要点是<strong>非连通</strong>的无向图</p>
+<p>由上方公式可得，8*7/2=28，正好为8个顶点的完全图的边数</p>
+<p>但题目中要求是非连通的，所以在边不加的情况下，<strong>至少加一个孤立点，即至少有9个顶点</strong></p>
+<p>举一反三：若某个连通无向图有28条边，则该图至少有(8)个顶点。</p>
+<h3 id="关于图的度数"><a href="#关于图的度数" class="headerlink" title="关于图的度数"></a>关于图的度数</h3><p>什么是邻接点？</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="无向邻接点.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="有向邻接点.png" alt=""></p>
+<p>什么是度数？</p>
+<p>1.对于无向图，顶点v的度就是和顶点v相邻接的边的数目，<strong>记为TD(v)</strong></p>
+<p>2.对于有向图，<strong>入度ID(v)</strong>是箭头指向v的弧的个数， <strong>出度OD(v)</strong>是箭头远离v的弧的个数</p>
+<p>​                          顶点v的度<strong>TD(v)=ID(v)+OD(v)</strong></p>
+<p>3.握手定理：</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+
+2m = \sum_{n=1}^nTD(v_i)
+
+\end{equation*}</script><h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3><p>两个顶点间连通，等价于两个顶点之间有路径。</p>
+<p>连通图：<strong>无向图</strong>中任意两个顶点都连通（<strong>不存在孤立点</strong>）</p>
+<p>连通分量：无向图中的<strong>极大连通子图</strong></p>
+<p>强连通图/强连通分量：<strong>对于有向图</strong>，概念类似上两个。</p>
+<h3 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h3><p>对于<strong>连通图</strong>G，若其有n个顶点，则<strong>含有G中所有顶点，且边数为n-1</strong>的<strong>连通图</strong>称为G的一棵生成树。</p>
+<p>关键：原图是连通图，生成树有其全部n个顶点，有且仅有n-1条边。</p>
+<div class="note info flat"><p><strong>提示</strong></p>
+    <p>有n个顶点和n-1条边的图不一定是生成树</p>
+</div>
+
+<p>在有n个顶点的图中,<strong>如果边多于n-1条,则一定有环</strong>，<strong>如果边少于n-1条,则是非连通图。</strong></p>
+<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><h3 id="图的邻接矩阵"><a href="#图的邻接矩阵" class="headerlink" title="图的邻接矩阵"></a>图的邻接矩阵</h3><h4 id="从邻接矩阵判断度数"><a href="#从邻接矩阵判断度数" class="headerlink" title="从邻接矩阵判断度数"></a>从邻接矩阵判断度数</h4><p>对于无向图，顶点Vi的度为邻接矩阵中第i行（或第i列）<strong>元素个数之和</strong>（防止带权干扰）。</p>
+<p>对于有向图，第i<strong>行</strong>的元素个数之和为Vi的<strong>出度</strong>（从Vi到其他顶点）</p>
+<p>​                       第i<strong>列</strong>的元素个数之和为Vi的<strong>入度</strong>（从其他顶点到Vi）</p>
+<h4 id="时间复杂度和空间复杂度"><a href="#时间复杂度和空间复杂度" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接矩阵存储图，占用的<strong>存储空间大小与顶点数有关，与边数无关</strong>。</p>
+<p>时间复杂度为O(n²)</p>
+<h3 id="图的邻接表"><a href="#图的邻接表" class="headerlink" title="图的邻接表"></a>图的邻接表</h3><p>概念定义：</p>
+<p>邻接表是<strong>图的一种链式存储结构</strong>，图中的<strong>每一个顶点对应一个结点</strong>，并由所有顶点结点构成一个顺序表结构（竖着的链）</p>
+<p>图中<strong>每一个顶点建立一条链，该链由它的所有邻接点构成</strong>（横着的链）</p>
+<p>代码定义</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Anode</span></span></span><br><span class="line"><span class="class">&#123;</span>	<span class="keyword">int</span> Vi; <span class="comment">//邻接点在顺序表中的位置</span></span><br><span class="line">	<span class="keyword">int</span> Wi; <span class="comment">//权值(用于网。图可省略)</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Anode</span> *<span class="title">next</span>;</span> <span class="comment">//指向下一个邻接点</span></span><br><span class="line">&#125; ALink; <span class="comment">//邻接点存储结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Vnode</span></span></span><br><span class="line"><span class="class">&#123;</span>	Type data;</span><br><span class="line">	ALink *Vh; <span class="comment">//邻接点链表头指针</span></span><br><span class="line">&#125; Vnode; <span class="comment">//链表头指针结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span>	Vnode V [N];  <span class="comment">//链表头顺序表</span></span><br><span class="line">	<span class="keyword">int</span> n,m;  <span class="comment">//实际顶点数，边或弧数</span></span><br><span class="line">	<span class="keyword">int</span> visited[N];  <span class="comment">//访问标识</span></span><br><span class="line">&#125; AList; <span class="comment">//图的邻接表存储结构</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="从邻接表判断度数"><a href="#从邻接表判断度数" class="headerlink" title="从邻接表判断度数"></a>从邻接表判断度数</h4><p>无向图：顶点的度=邻接点链表中结点的数目</p>
+<p>有向图：顶点的<strong>出度</strong>=邻接点链表中结点的数目</p>
+<h4 id="时间复杂度和空间复杂度-1"><a href="#时间复杂度和空间复杂度-1" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接表存储图，占用的<strong>存储空间大小与顶点数和边数都有关</strong>。</p>
+<p>时间复杂度为O(n²)</p>
+<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h4 id="深度优先搜索遍历-更适用于找一条路径"><a href="#深度优先搜索遍历-更适用于找一条路径" class="headerlink" title="深度优先搜索遍历(更适用于找一条路径)"></a>深度优先搜索遍历(<strong>更适用于找一条路径</strong>)</h4><p>基本思想：</p>
+<p>①从图中某个顶点v出发，访问该顶点</p>
+<p>②查找顶点v的第一个未被访问的邻接点v1，访问该顶点。</p>
+<p>③重复第二步操作，直到图中没有未被访问的顶点为止。</p>
+<h4 id="广度优先搜索遍历-更适用于找最优路径"><a href="#广度优先搜索遍历-更适用于找最优路径" class="headerlink" title="广度优先搜索遍历(更适用于找最优路径)"></a>广度优先搜索遍历(<strong>更适用于找最优路径</strong>)</h4><p>基本思想：</p>
+<p>（1）从连通图中某个顶点v出发，访问该顶点，并置visited[v]的值为true，然后将v进队。</p>
+<p>（2）只要队列不空，则重复下述处理：</p>
+<p>​         ①队头顶点u出队</p>
+<p>​         ②依次检查u的所有邻接点w，如果visited[w]的值为false，则访问w，并置visited[w]的值为true，然后将w进队。</p>
+<p>代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(AList G, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;	G.visited[N]=&#123;<span class="number">0</span>&#125;;	<span class="comment">//访问标识初始化</span></span><br><span class="line">	Visit(k);	<span class="comment">//访问顶点k（或者写cout&lt;&lt;k&lt;&lt;endl;也可以）</span></span><br><span class="line">	G.visited[k<span class="number">-1</span>]=<span class="number">1</span>;	<span class="comment">//顶点k已访问</span></span><br><span class="line">	f=<span class="number">0</span>,r=<span class="number">0</span>,Q[N]=&#123;<span class="number">0</span>&#125;; <span class="comment">//队列Q[]初始化</span></span><br><span class="line">	Q[r++]=k<span class="number">-1</span>;  <span class="comment">//入队, r:队尾指针</span></span><br><span class="line">	<span class="keyword">while</span>(r&gt;=f)	<span class="comment">//当队列非空时</span></span><br><span class="line">	&#123;	i=Q[f++];  <span class="comment">//出队, f:队首指针</span></span><br><span class="line">        p=G.V[i].Vh;<span class="comment">//p是V[i]的链表头指针</span></span><br><span class="line">		<span class="keyword">while</span>(p)<span class="comment">//顺序访问链表的各个结点</span></span><br><span class="line">		&#123;	</span><br><span class="line">            j=p-&gt;Vi; <span class="comment">// j是邻接点在顺序表中的位置</span></span><br><span class="line">			<span class="keyword">if</span>(!G.visited[j])</span><br><span class="line">			&#123;	Visit(j+<span class="number">1</span>); <span class="comment">//访问顶点j+1</span></span><br><span class="line">				visited[j]=<span class="number">1</span>;</span><br><span class="line">				Q[r++]=j; <span class="comment">//入队</span></span><br><span class="line">			&#125;</span><br><span class="line">          	p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">//算法结束</span></span><br></pre></td></tr></table></figure>
+<p>以邻接表作存储结构时，深搜和广搜的时间复杂度都为O(n+e)</p>
+<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>定义：无向图G的所有生成树中各边权值之和最小的一颗生成树。</p>
+<p>Prim算法：加点法</p>
+<p>任取一个顶点v作为生成树的根，然后往生成树上添加新顶点u，顶点u满足其与生成树上某个顶点连通，并且在所有与生成树连通的边中权值最小，不断往生成树上添加顶点至生成树包含所有顶点为止。</p>
+<p>K算法：加边法</p>
+<p>为使生成树上边的权值之和达到最小，应使生成树中每一条边的权值尽可能地小(都能最小则最佳)。</p>
+<p>例：请描述出用K算法得到最小生成树的步骤</p>
+<p>①先构造一个只含n个顶点的子图S</p>
+<p>②然后从权值最小的边开始，若它的添加不使S中产生回路，则在S上加上这条边</p>
+<p>③如此重复，直至加上n-1条边为止。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="最小生成树比较.png" alt=""></p>
+<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>拓扑排序的一般操作方法：</p>
+<p>(1)从有向图中选取一个入度为0的顶点，输出它;</p>
+<p>(2)从有向图中删去该顶点以及所有以它为尾的弧;</p>
+<p>重复上述两步，直至图空或者找不到入度为0的顶点为止。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="拓扑排序.png" alt=""></p>
+<p>时间复杂度为O(n+m)</p>
+<h2 id="关键路径-从源点到汇点的最长路径"><a href="#关键路径-从源点到汇点的最长路径" class="headerlink" title="关键路径(从源点到汇点的最长路径)"></a>关键路径(<strong>从源点到汇点的最长路径</strong>)</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="关键路径.png" alt=""></p>
+<h1 id="第六章-排序"><a href="#第六章-排序" class="headerlink" title="第六章 排序"></a>第六章 排序</h1><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="排序.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构期中复习</title>
     <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
@@ -964,101 +1059,6 @@
 <h3 id="5-2二叉树转换成树"><a href="#5-2二叉树转换成树" class="headerlink" title="5.2二叉树转换成树"></a>5.2二叉树转换成树</h3><p>（1）加虚线  若某结点i是其父结点的左子树的根结点，<strong>则将该结点ⅰ的右子结点以及沿右子链不断地搜索所有的右子结点，将所有这些右子结点与i结点的父结点之间加虚线相连</strong></p>
 <p>（2）去连线  去掉二叉树中所有其右子结点之间的连线<br>（3）规整化  将图中各结点按层次排列且将所有的虚线变成实线</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="E:/myblog/Procrastination/source/_posts/image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" /></p>
-]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-        <tag>考试复习整理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构期末复习</title>
-    <url>/2021/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<p>面向考试复习数据结构2.0版正式上线了</p>
-<p>本文将整理后三章的相关知识点，并对例题习题进行整合梳理，存在不足，欢迎补充。</p>
-<h1 id="第四章-图"><a href="#第四章-图" class="headerlink" title="第四章 图"></a>第四章 图</h1><h2 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h2><p>图是由一个顶点集V和一个弧集(或边集)构成的数据结构，是一种<strong>非线性</strong>数据结构</p>
-<p>网：带权的图。<strong>在不会引起歧义时，网也直接称为图。</strong></p>
-<p>路径长度：路径上边的数目（两个点之间的距离即路径上<strong>除了起点，包括终点的顶点个数</strong>）</p>
-<p>简单路径：<strong>顶点不重复</strong>出现的路径（<strong>边可以重复</strong>）</p>
-<h3 id="关于图的顶点和边数目"><a href="#关于图的顶点和边数目" class="headerlink" title="关于图的顶点和边数目"></a>关于图的顶点和边数目</h3><p> 我们用 n 表示图中顶点数目；m表示图中边(或者弧)的数目；</p>
-<p>  对于无向图：<code>0≤m≤n(n-1)/2</code>  <strong>m=n(n-1)/2的无向图称为完全图</strong></p>
-<p> 对于有向图：<code>0≤m≤n(n-1)</code>       <strong>m=n(n-1)的有向图称为有向完全图</strong></p>
-<p>n=0: V为空集；<strong>m=0: 或许有1个顶点（平凡图）。</strong></p>
-<p>例一：设某个非连通无向图有28条边，则该图至少有(9)个顶点。</p>
-<p>解：此题的要点是<strong>非连通</strong>的无向图</p>
-<p>由上方公式可得，8*7/2=28，正好为8个顶点的完全图的边数</p>
-<p>但题目中要求是非连通的，所以在边不加的情况下，<strong>至少加一个孤立点，即至少有9个顶点</strong></p>
-<p>举一反三：若某个连通无向图有28条边，则该图至少有(8)个顶点。</p>
-<h3 id="关于图的度数"><a href="#关于图的度数" class="headerlink" title="关于图的度数"></a>关于图的度数</h3><p>什么是邻接点？</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="无向邻接点.png" alt=""></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="有向邻接点.png" alt=""></p>
-<p>什么是度数？</p>
-<p>1.对于无向图，顶点v的度就是和顶点v相邻接的边的数目，<strong>记为TD(v)</strong></p>
-<p>2.对于有向图，<strong>入度ID(v)</strong>是箭头指向v的弧的个数， <strong>出度OD(v)</strong>是箭头远离v的弧的个数</p>
-<p>​                          顶点v的度<strong>TD(v)=ID(v)+OD(v)</strong></p>
-<p>3.握手定理：</p>
-<script type="math/tex; mode=display">
-\begin{equation*}
-
-2m = \sum_{n=1}^nTD(v_i)
-
-\end{equation*}</script><h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3><p>两个顶点间连通，等价于两个顶点之间有路径。</p>
-<p>连通图：<strong>无向图</strong>中任意两个顶点都连通（<strong>不存在孤立点</strong>）</p>
-<p>连通分量：无向图中的<strong>极大连通子图</strong></p>
-<p>强连通图/强连通分量：<strong>对于有向图</strong>，概念类似上两个。</p>
-<h3 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h3><p>对于<strong>连通图</strong>G，若其有n个顶点，则<strong>含有G中所有顶点，且边数为n-1</strong>的<strong>连通图</strong>称为G的一棵生成树。</p>
-<p>关键：原图是连通图，生成树有其全部n个顶点，有且仅有n-1条边。</p>
-<div class="note info flat"><p><strong>提示</strong></p>
-    <p>有n个顶点和n-1条边的图不一定是生成树</p>
-</div>
-
-<p>在有n个顶点的图中,<strong>如果边多于n-1条,则一定有环</strong>，<strong>如果边少于n-1条,则是非连通图。</strong></p>
-<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><h3 id="图的邻接矩阵"><a href="#图的邻接矩阵" class="headerlink" title="图的邻接矩阵"></a>图的邻接矩阵</h3><h4 id="从邻接矩阵判断度数"><a href="#从邻接矩阵判断度数" class="headerlink" title="从邻接矩阵判断度数"></a>从邻接矩阵判断度数</h4><p>对于无向图，顶点Vi的度为邻接矩阵中第i行（或第i列）<strong>元素个数之和</strong>（防止带权干扰）。</p>
-<p>对于有向图，第i<strong>行</strong>的元素个数之和为Vi的<strong>出度</strong>（从Vi到其他顶点）</p>
-<p>​                       第i<strong>列</strong>的元素个数之和为Vi的<strong>入度</strong>（从其他顶点到Vi）</p>
-<h4 id="时间复杂度和空间复杂度"><a href="#时间复杂度和空间复杂度" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接矩阵存储图，占用的<strong>存储空间大小与顶点数有关，与边数无关</strong>。</p>
-<p>时间复杂度为O(n²)</p>
-<h3 id="图的邻接表"><a href="#图的邻接表" class="headerlink" title="图的邻接表"></a>图的邻接表</h3><p>概念定义：</p>
-<p>邻接表是<strong>图的一种链式存储结构</strong>，图中的<strong>每一个顶点对应一个结点</strong>，并由所有顶点结点构成一个顺序表结构（竖着的链）</p>
-<p>图中<strong>每一个顶点建立一条链，该链由它的所有邻接点构成</strong>（横着的链）</p>
-<p>代码定义</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Anode</span></span></span><br><span class="line"><span class="class">&#123;</span>	<span class="keyword">int</span> Vi; <span class="comment">//邻接点在顺序表中的位置</span></span><br><span class="line">	<span class="keyword">int</span> Wi; <span class="comment">//权值(用于网。图可省略)</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Anode</span> *<span class="title">next</span>;</span> <span class="comment">//指向下一个邻接点</span></span><br><span class="line">&#125; ALink; <span class="comment">//邻接点存储结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Vnode</span></span></span><br><span class="line"><span class="class">&#123;</span>	Type data;</span><br><span class="line">	ALink *Vh; <span class="comment">//邻接点链表头指针</span></span><br><span class="line">&#125; Vnode; <span class="comment">//链表头指针结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span>	Vnode V [N];  <span class="comment">//链表头顺序表</span></span><br><span class="line">	<span class="keyword">int</span> n,m;  <span class="comment">//实际顶点数，边或弧数</span></span><br><span class="line">	<span class="keyword">int</span> visited[N];  <span class="comment">//访问标识</span></span><br><span class="line">&#125; AList; <span class="comment">//图的邻接表存储结构</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="从邻接表判断度数"><a href="#从邻接表判断度数" class="headerlink" title="从邻接表判断度数"></a>从邻接表判断度数</h4><p>无向图：顶点的度=邻接点链表中结点的数目</p>
-<p>有向图：顶点的<strong>出度</strong>=邻接点链表中结点的数目</p>
-<h4 id="时间复杂度和空间复杂度-1"><a href="#时间复杂度和空间复杂度-1" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接表存储图，占用的<strong>存储空间大小与顶点数和边数都有关</strong>。</p>
-<p>时间复杂度为O(n²)</p>
-<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h4 id="深度优先搜索遍历-更适用于找一条路径"><a href="#深度优先搜索遍历-更适用于找一条路径" class="headerlink" title="深度优先搜索遍历(更适用于找一条路径)"></a>深度优先搜索遍历(<strong>更适用于找一条路径</strong>)</h4><p>基本思想：</p>
-<p>①从图中某个顶点v出发，访问该顶点</p>
-<p>②查找顶点v的第一个未被访问的邻接点v1，访问该顶点。</p>
-<p>③重复第二步操作，直到图中没有未被访问的顶点为止。</p>
-<h4 id="广度优先搜索遍历-更适用于找最优路径"><a href="#广度优先搜索遍历-更适用于找最优路径" class="headerlink" title="广度优先搜索遍历(更适用于找最优路径)"></a>广度优先搜索遍历(<strong>更适用于找最优路径</strong>)</h4><p>基本思想：</p>
-<p>（1）从连通图中某个顶点v出发，访问该顶点，并置visited[v]的值为true，然后将v进队。</p>
-<p>（2）只要队列不空，则重复下述处理：</p>
-<p>​         ①队头顶点u出队</p>
-<p>​         ②依次检查u的所有邻接点w，如果visited[w]的值为false，则访问w，并置visited[w]的值为true，然后将w进队。</p>
-<p>代码</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(AList G, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;	G.visited[N]=&#123;<span class="number">0</span>&#125;;	<span class="comment">//访问标识初始化</span></span><br><span class="line">	Visit(k);	<span class="comment">//访问顶点k（或者写cout&lt;&lt;k&lt;&lt;endl;也可以）</span></span><br><span class="line">	G.visited[k<span class="number">-1</span>]=<span class="number">1</span>;	<span class="comment">//顶点k已访问</span></span><br><span class="line">	f=<span class="number">0</span>,r=<span class="number">0</span>,Q[N]=&#123;<span class="number">0</span>&#125;; <span class="comment">//队列Q[]初始化</span></span><br><span class="line">	Q[r++]=k<span class="number">-1</span>;  <span class="comment">//入队, r:队尾指针</span></span><br><span class="line">	<span class="keyword">while</span>(r&gt;=f)	<span class="comment">//当队列非空时</span></span><br><span class="line">	&#123;	i=Q[f++];  <span class="comment">//出队, f:队首指针</span></span><br><span class="line">        p=G.V[i].Vh;<span class="comment">//p是V[i]的链表头指针</span></span><br><span class="line">		<span class="keyword">while</span>(p)<span class="comment">//顺序访问链表的各个结点</span></span><br><span class="line">		&#123;	</span><br><span class="line">            j=p-&gt;Vi; <span class="comment">// j是邻接点在顺序表中的位置</span></span><br><span class="line">			<span class="keyword">if</span>(!G.visited[j])</span><br><span class="line">			&#123;	Visit(j+<span class="number">1</span>); <span class="comment">//访问顶点j+1</span></span><br><span class="line">				visited[j]=<span class="number">1</span>;</span><br><span class="line">				Q[r++]=j; <span class="comment">//入队</span></span><br><span class="line">			&#125;</span><br><span class="line">          	p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">//算法结束</span></span><br></pre></td></tr></table></figure>
-<p>以邻接表作存储结构时，深搜和广搜的时间复杂度都为O(n+e)</p>
-<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>定义：无向图G的所有生成树中各边权值之和最小的一颗生成树。</p>
-<p>Prim算法：加点法</p>
-<p>任取一个顶点v作为生成树的根，然后往生成树上添加新顶点u，顶点u满足其与生成树上某个顶点连通，并且在所有与生成树连通的边中权值最小，不断往生成树上添加顶点至生成树包含所有顶点为止。</p>
-<p>K算法：加边法</p>
-<p>为使生成树上边的权值之和达到最小，应使生成树中每一条边的权值尽可能地小(都能最小则最佳)。</p>
-<p>例：请描述出用K算法得到最小生成树的步骤</p>
-<p>①先构造一个只含n个顶点的子图S</p>
-<p>②然后从权值最小的边开始，若它的添加不使S中产生回路，则在S上加上这条边</p>
-<p>③如此重复，直至加上n-1条边为止。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="最小生成树比较.png" alt=""></p>
-<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>拓扑排序的一般操作方法：</p>
-<p>(1)从有向图中选取一个入度为0的顶点，输出它;</p>
-<p>(2)从有向图中删去该顶点以及所有以它为尾的弧;</p>
-<p>重复上述两步，直至图空或者找不到入度为0的顶点为止。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="拓扑排序.png" alt=""></p>
-<p>时间复杂度为O(n+m)</p>
-<h2 id="关键路径-从源点到汇点的最长路径"><a href="#关键路径-从源点到汇点的最长路径" class="headerlink" title="关键路径(从源点到汇点的最长路径)"></a>关键路径(<strong>从源点到汇点的最长路径</strong>)</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="关键路径.png" alt=""></p>
-<h1 id="第六章-排序"><a href="#第六章-排序" class="headerlink" title="第六章 排序"></a>第六章 排序</h1><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="排序.png" alt=""></p>
 ]]></content>
       <categories>
         <category>数据结构与算法</category>
@@ -1381,6 +1381,39 @@
       </tags>
   </entry>
   <entry>
+    <title>紫罗兰永恒花园观后感</title>
+    <url>/2021/01/12/%E7%B4%AB%E7%BD%97%E5%85%B0%E6%B0%B8%E6%81%92%E8%8A%B1%E5%9B%AD%E8%A7%82%E5%90%8E%E6%84%9F/</url>
+    <content><![CDATA[<p>一直被人安利的京紫，终于在今天追完了，现在内心还是有点不能平静。</p>
+<p>上一个正正经经追的番还是《魔卡少女樱》，那是对童年的追忆和怀念。</p>
+<p>这部番，值得我写一篇文来纪念其上映三周年：2018.1.11~2020.1.12</p>
+<h2 id="矛盾"><a href="#矛盾" class="headerlink" title="矛盾"></a>矛盾</h2><p>以前的我，最不能理解的就是<strong>自我矛盾</strong>，正如前几集艾丽卡认为Violet不能胜任人偶的工作，却仍然力保她留在公司时，Violet发出的疑问，以前的我也常常有这种想法，觉得人总是心口不一，遇到矛盾的事就嗤之以鼻。</p>
+<p>但这部番从各种矛盾入手，对Violet进行了全面的人格塑造：14岁的少女与杀人机器、断送他人的性命与撰写替人结缘的书信，冷冰冰的人偶与不需要指令的”人“。一个个矛盾交织在一起，对每个关键点都有合适的flashback，将故事连贯起来，是我最喜欢的一个方面。</p>
+<h2 id="战争"><a href="#战争" class="headerlink" title="战争"></a>战争</h2><p>看到B站评论中有一句：”本来就是写战争的还硬洗，既然知道战争的残酷与无情，当初还发动战争，有点既当了**还想立牌坊的感觉”。诚然，战争是本番的一条主线，也正是战争将violet变成了这副模样。每集中都或多或少带有战争的元素：Violet失去了少佐后救赎了自己；未能保护好边线的士兵从自我沉沦中重生；待不到男友返乡的歌剧演员以一首情书彻底解冻时间线，每一个故事都反映出了战争的残忍，但只有战争才能避免更多的悲伤分别发生，EX集中那个归乡士兵的特写，人们在火车站的寻人启事墙上自发点起了蜡烛为他们祈福的举动，既让Violet得到感染，更让我体会到了离别后的振作之情。</p>
+<h2 id="信"><a href="#信" class="headerlink" title="信"></a>信</h2><p>信，则是全番中的另一个主线，从想要理解<strong>”我爱你“</strong>的含义而称为人偶，通过一系列的工作经历，violet不断懂得了那些她当兵时未曾体会到的情感，她懂得了如何去感受人的想法，做到”共情“，从一封封信的写作中，Violet也从之前那个只会写报告书的军人，变成了一个，她写给少佐的信躺在了丛中，也躺在了我心里。</p>
+<p>我也一直有写信的习惯，那些文字，通过纸笔变成了一个个心意，那是语言所无法表达的独特，只能通过”见信如面“和”XXX亲启“来传递的唯一，是不可替代的。</p>
+<p>看别人玩你画我猜的时候，有人在题目是这个番时只画了一封信，当时的我还不明白为什么，但现在我觉得，那封信就能代表一切，它是本番的<strong>灵魂所在</strong>。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>你们可能觉得我前面没有说这部番的画功怎么样，这么给你说，刚才举报了一个”因为画质高看得眼睛酸所以差评”的一星评论，懂了吧（</p>
+<p>漫画里最后Violet和少佐重逢了，算是一个HE，但我更喜欢动漫中的结局，少女带着全新的希望奔赴未来</p>
+<p>没有放图的原因是，看的很认真没有截图，而且每一帧都值得我去收藏，我就只存了几个自己喜欢的画面。</p>
+<div class="note primary no-icon flat">
+    <p>
+        希望大家多多给我推荐类似这种的优质番，俺在线拜谢你们（
+    </p>
+    <p>也希望我明白”爱“的意义的那天早日到来</p>
+</div>
+
+
+
+<p>最后，对于熬夜，薇酱这句话我觉得很有道理。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="熬夜.png" alt=""></p>
+<p>大家还是少熬夜，养生作息早睡早起它不香🐎？</p>
+<p>ps：有一说一日本人直接拿英文来起名字还挺好听的（Violet Evergarden)。感觉翻译成中文总差点感觉，就用英文打了。</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
     <title>汇编语言总复习(中)</title>
     <url>/2020/12/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%AD)/</url>
     <content><![CDATA[<p>本文将结合老师说的考试范围与PPT，对所涉及的知识点作个人总结，面向考试复习（<del>高星，yyds</del>）</p>
@@ -1625,38 +1658,5 @@
         <tag>课内学习笔记</tag>
         <tag>考试复习整理</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>紫罗兰永恒花园观后感</title>
-    <url>/2021/01/12/%E7%B4%AB%E7%BD%97%E5%85%B0%E6%B0%B8%E6%81%92%E8%8A%B1%E5%9B%AD%E8%A7%82%E5%90%8E%E6%84%9F/</url>
-    <content><![CDATA[<p>一直被人安利的京紫，终于在今天追完了，现在内心还是有点不能平静。</p>
-<p>上一个正正经经追的番还是《魔卡少女樱》，那是对童年的追忆和怀念。</p>
-<p>这部番，值得我写一篇文来纪念其上映三周年：2018.1.11~2020.1.12</p>
-<h2 id="矛盾"><a href="#矛盾" class="headerlink" title="矛盾"></a>矛盾</h2><p>以前的我，最不能理解的就是<strong>自我矛盾</strong>，正如前几集艾丽卡认为Violet不能胜任人偶的工作，却仍然力保她留在公司时，Violet发出的疑问，以前的我也常常有这种想法，觉得人总是心口不一，遇到矛盾的事就嗤之以鼻。</p>
-<p>但这部番从各种矛盾入手，对Violet进行了全面的人格塑造：14岁的少女与杀人机器、断送他人的性命与撰写替人结缘的书信，冷冰冰的人偶与不需要指令的”人“。一个个矛盾交织在一起，对每个关键点都有合适的flashback，将故事连贯起来，是我最喜欢的一个方面。</p>
-<h2 id="战争"><a href="#战争" class="headerlink" title="战争"></a>战争</h2><p>看到B站评论中有一句：”本来就是写战争的还硬洗，既然知道战争的残酷与无情，当初还发动战争，有点既当了**还想立牌坊的感觉”。诚然，战争是本番的一条主线，也正是战争将violet变成了这副模样。每集中都或多或少带有战争的元素：Violet失去了少佐后救赎了自己；未能保护好边线的士兵从自我沉沦中重生；待不到男友返乡的歌剧演员以一首情书彻底解冻时间线，每一个故事都反映出了战争的残忍，但只有战争才能避免更多的悲伤分别发生，EX集中那个归乡士兵的特写，人们在火车站的寻人启事墙上自发点起了蜡烛为他们祈福的举动，既让Violet得到感染，更让我体会到了离别后的振作之情。</p>
-<h2 id="信"><a href="#信" class="headerlink" title="信"></a>信</h2><p>信，则是全番中的另一个主线，从想要理解<strong>”我爱你“</strong>的含义而称为人偶，通过一系列的工作经历，violet不断懂得了那些她当兵时未曾体会到的情感，她懂得了如何去感受人的想法，做到”共情“，从一封封信的写作中，Violet也从之前那个只会写报告书的军人，变成了一个，她写给少佐的信躺在了丛中，也躺在了我心里。</p>
-<p>我也一直有写信的习惯，那些文字，通过纸笔变成了一个个心意，那是语言所无法表达的独特，只能通过”见信如面“和”XXX亲启“来传递的唯一，是不可替代的。</p>
-<p>看别人玩你画我猜的时候，有人在题目是这个番时只画了一封信，当时的我还不明白为什么，但现在我觉得，那封信就能代表一切，它是本番的<strong>灵魂所在</strong>。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>你们可能觉得我前面没有说这部番的画功怎么样，这么给你说，刚才举报了一个”因为画质高看得眼睛酸所以差评”的一星评论，懂了吧（</p>
-<p>漫画里最后Violet和少佐重逢了，算是一个HE，但我更喜欢动漫中的结局，少女带着全新的希望奔赴未来</p>
-<p>没有放图的原因是，看的很认真没有截图，而且每一帧都值得我去收藏，我就只存了几个自己喜欢的画面。</p>
-<div class="note primary no-icon flat">
-    <p>
-        希望大家多多给我推荐类似这种的优质番，俺在线拜谢你们（
-    </p>
-    <p>也希望我明白”爱“的意义的那天早日到来</p>
-</div>
-
-
-
-<p>最后，对于熬夜，薇酱这句话我觉得很有道理。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="熬夜.png" alt=""></p>
-<p>大家还是少熬夜，养生作息早睡早起它不香🐎？</p>
-<p>ps：有一说一日本人直接拿英文来起名字还挺好听的（Violet Evergarden)。感觉翻译成中文总差点感觉，就用英文打了。</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
   </entry>
 </search>
