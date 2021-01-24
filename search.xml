@@ -403,15 +403,6 @@
       </tags>
   </entry>
   <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>博客目录</title>
     <url>/2020/09/28/%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95/</url>
     <content><![CDATA[<div class="note success no-icon flat">
@@ -520,99 +511,13 @@
                     </div>]]></content>
   </entry>
   <entry>
-    <title>数据结构期末复习</title>
-    <url>/2021/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<p>面向考试复习数据结构2.0版正式上线了</p>
-<p>本文将整理后三章的相关知识点，并对例题习题进行整合梳理，存在不足，欢迎补充。</p>
-<h1 id="第四章-图"><a href="#第四章-图" class="headerlink" title="第四章 图"></a>第四章 图</h1><h2 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h2><p>图是由一个顶点集V和一个弧集(或边集)构成的数据结构，是一种<strong>非线性</strong>数据结构</p>
-<p>网：带权的图。<strong>在不会引起歧义时，网也直接称为图。</strong></p>
-<p>路径长度：路径上边的数目（两个点之间的距离即路径上<strong>除了起点，包括终点的顶点个数</strong>）</p>
-<p>简单路径：<strong>顶点不重复</strong>出现的路径（<strong>边可以重复</strong>）</p>
-<h3 id="关于图的顶点和边数目"><a href="#关于图的顶点和边数目" class="headerlink" title="关于图的顶点和边数目"></a>关于图的顶点和边数目</h3><p> 我们用 n 表示图中顶点数目；m表示图中边(或者弧)的数目；</p>
-<p>  对于无向图：<code>0≤m≤n(n-1)/2</code>  <strong>m=n(n-1)/2的无向图称为完全图</strong></p>
-<p> 对于有向图：<code>0≤m≤n(n-1)</code>       <strong>m=n(n-1)的有向图称为有向完全图</strong></p>
-<p>n=0: V为空集；<strong>m=0: 或许有1个顶点（平凡图）。</strong></p>
-<p>例一：设某个非连通无向图有28条边，则该图至少有(9)个顶点。</p>
-<p>解：此题的要点是<strong>非连通</strong>的无向图</p>
-<p>由上方公式可得，8*7/2=28，正好为8个顶点的完全图的边数</p>
-<p>但题目中要求是非连通的，所以在边不加的情况下，<strong>至少加一个孤立点，即至少有9个顶点</strong></p>
-<p>举一反三：若某个连通无向图有28条边，则该图至少有(8)个顶点。</p>
-<h3 id="关于图的度数"><a href="#关于图的度数" class="headerlink" title="关于图的度数"></a>关于图的度数</h3><p>什么是邻接点？</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="无向邻接点.png" alt=""></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="有向邻接点.png" alt=""></p>
-<p>什么是度数？</p>
-<p>1.对于无向图，顶点v的度就是和顶点v相邻接的边的数目，<strong>记为TD(v)</strong></p>
-<p>2.对于有向图，<strong>入度ID(v)</strong>是箭头指向v的弧的个数， <strong>出度OD(v)</strong>是箭头远离v的弧的个数</p>
-<p>​                          顶点v的度<strong>TD(v)=ID(v)+OD(v)</strong></p>
-<p>3.握手定理：</p>
-<script type="math/tex; mode=display">
-\begin{equation*}
-
-2m = \sum_{n=1}^nTD(v_i)
-
-\end{equation*}</script><h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3><p>两个顶点间连通，等价于两个顶点之间有路径。</p>
-<p>连通图：<strong>无向图</strong>中任意两个顶点都连通（<strong>不存在孤立点</strong>）</p>
-<p>连通分量：无向图中的<strong>极大连通子图</strong></p>
-<p>强连通图/强连通分量：<strong>对于有向图</strong>，概念类似上两个。</p>
-<h3 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h3><p>对于<strong>连通图</strong>G，若其有n个顶点，则<strong>含有G中所有顶点，且边数为n-1</strong>的<strong>连通图</strong>称为G的一棵生成树。</p>
-<p>关键：原图是连通图，生成树有其全部n个顶点，有且仅有n-1条边。</p>
-<div class="note info flat"><p><strong>提示</strong></p>
-    <p>有n个顶点和n-1条边的图不一定是生成树</p>
-</div>
-
-<p>在有n个顶点的图中,<strong>如果边多于n-1条,则一定有环</strong>，<strong>如果边少于n-1条,则是非连通图。</strong></p>
-<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><h3 id="图的邻接矩阵"><a href="#图的邻接矩阵" class="headerlink" title="图的邻接矩阵"></a>图的邻接矩阵</h3><h4 id="从邻接矩阵判断度数"><a href="#从邻接矩阵判断度数" class="headerlink" title="从邻接矩阵判断度数"></a>从邻接矩阵判断度数</h4><p>对于无向图，顶点Vi的度为邻接矩阵中第i行（或第i列）<strong>元素个数之和</strong>（防止带权干扰）。</p>
-<p>对于有向图，第i<strong>行</strong>的元素个数之和为Vi的<strong>出度</strong>（从Vi到其他顶点）</p>
-<p>​                       第i<strong>列</strong>的元素个数之和为Vi的<strong>入度</strong>（从其他顶点到Vi）</p>
-<h4 id="时间复杂度和空间复杂度"><a href="#时间复杂度和空间复杂度" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接矩阵存储图，占用的<strong>存储空间大小与顶点数有关，与边数无关</strong>。</p>
-<p>时间复杂度为O(n²)</p>
-<h3 id="图的邻接表"><a href="#图的邻接表" class="headerlink" title="图的邻接表"></a>图的邻接表</h3><p>概念定义：</p>
-<p>邻接表是<strong>图的一种链式存储结构</strong>，图中的<strong>每一个顶点对应一个结点</strong>，并由所有顶点结点构成一个顺序表结构（竖着的链）</p>
-<p>图中<strong>每一个顶点建立一条链，该链由它的所有邻接点构成</strong>（横着的链）</p>
-<p>代码定义</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Anode</span></span></span><br><span class="line"><span class="class">&#123;</span>	<span class="keyword">int</span> Vi; <span class="comment">//邻接点在顺序表中的位置</span></span><br><span class="line">	<span class="keyword">int</span> Wi; <span class="comment">//权值(用于网。图可省略)</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Anode</span> *<span class="title">next</span>;</span> <span class="comment">//指向下一个邻接点</span></span><br><span class="line">&#125; ALink; <span class="comment">//邻接点存储结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Vnode</span></span></span><br><span class="line"><span class="class">&#123;</span>	Type data;</span><br><span class="line">	ALink *Vh; <span class="comment">//邻接点链表头指针</span></span><br><span class="line">&#125; Vnode; <span class="comment">//链表头指针结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span>	Vnode V [N];  <span class="comment">//链表头顺序表</span></span><br><span class="line">	<span class="keyword">int</span> n,m;  <span class="comment">//实际顶点数，边或弧数</span></span><br><span class="line">	<span class="keyword">int</span> visited[N];  <span class="comment">//访问标识</span></span><br><span class="line">&#125; AList; <span class="comment">//图的邻接表存储结构</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="从邻接表判断度数"><a href="#从邻接表判断度数" class="headerlink" title="从邻接表判断度数"></a>从邻接表判断度数</h4><p>无向图：顶点的度=邻接点链表中结点的数目</p>
-<p>有向图：顶点的<strong>出度</strong>=邻接点链表中结点的数目</p>
-<h4 id="时间复杂度和空间复杂度-1"><a href="#时间复杂度和空间复杂度-1" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接表存储图，占用的<strong>存储空间大小与顶点数和边数都有关</strong>。</p>
-<p>时间复杂度为O(n²)</p>
-<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h4 id="深度优先搜索遍历-更适用于找一条路径"><a href="#深度优先搜索遍历-更适用于找一条路径" class="headerlink" title="深度优先搜索遍历(更适用于找一条路径)"></a>深度优先搜索遍历(<strong>更适用于找一条路径</strong>)</h4><p>基本思想：</p>
-<p>①从图中某个顶点v出发，访问该顶点</p>
-<p>②查找顶点v的第一个未被访问的邻接点v1，访问该顶点。</p>
-<p>③重复第二步操作，直到图中没有未被访问的顶点为止。</p>
-<h4 id="广度优先搜索遍历-更适用于找最优路径"><a href="#广度优先搜索遍历-更适用于找最优路径" class="headerlink" title="广度优先搜索遍历(更适用于找最优路径)"></a>广度优先搜索遍历(<strong>更适用于找最优路径</strong>)</h4><p>基本思想：</p>
-<p>（1）从连通图中某个顶点v出发，访问该顶点，并置visited[v]的值为true，然后将v进队。</p>
-<p>（2）只要队列不空，则重复下述处理：</p>
-<p>​         ①队头顶点u出队</p>
-<p>​         ②依次检查u的所有邻接点w，如果visited[w]的值为false，则访问w，并置visited[w]的值为true，然后将w进队。</p>
-<p>代码</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(AList G, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;	G.visited[N]=&#123;<span class="number">0</span>&#125;;	<span class="comment">//访问标识初始化</span></span><br><span class="line">	Visit(k);	<span class="comment">//访问顶点k（或者写cout&lt;&lt;k&lt;&lt;endl;也可以）</span></span><br><span class="line">	G.visited[k<span class="number">-1</span>]=<span class="number">1</span>;	<span class="comment">//顶点k已访问</span></span><br><span class="line">	f=<span class="number">0</span>,r=<span class="number">0</span>,Q[N]=&#123;<span class="number">0</span>&#125;; <span class="comment">//队列Q[]初始化</span></span><br><span class="line">	Q[r++]=k<span class="number">-1</span>;  <span class="comment">//入队, r:队尾指针</span></span><br><span class="line">	<span class="keyword">while</span>(r&gt;=f)	<span class="comment">//当队列非空时</span></span><br><span class="line">	&#123;	i=Q[f++];  <span class="comment">//出队, f:队首指针</span></span><br><span class="line">        p=G.V[i].Vh;<span class="comment">//p是V[i]的链表头指针</span></span><br><span class="line">		<span class="keyword">while</span>(p)<span class="comment">//顺序访问链表的各个结点</span></span><br><span class="line">		&#123;	</span><br><span class="line">            j=p-&gt;Vi; <span class="comment">// j是邻接点在顺序表中的位置</span></span><br><span class="line">			<span class="keyword">if</span>(!G.visited[j])</span><br><span class="line">			&#123;	Visit(j+<span class="number">1</span>); <span class="comment">//访问顶点j+1</span></span><br><span class="line">				visited[j]=<span class="number">1</span>;</span><br><span class="line">				Q[r++]=j; <span class="comment">//入队</span></span><br><span class="line">			&#125;</span><br><span class="line">          	p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">//算法结束</span></span><br></pre></td></tr></table></figure>
-<p>以邻接表作存储结构时，深搜和广搜的时间复杂度都为O(n+e)</p>
-<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>定义：无向图G的所有生成树中各边权值之和最小的一颗生成树。</p>
-<p>Prim算法：加点法</p>
-<p>任取一个顶点v作为生成树的根，然后往生成树上添加新顶点u，顶点u满足其与生成树上某个顶点连通，并且在所有与生成树连通的边中权值最小，不断往生成树上添加顶点至生成树包含所有顶点为止。</p>
-<p>K算法：加边法</p>
-<p>为使生成树上边的权值之和达到最小，应使生成树中每一条边的权值尽可能地小(都能最小则最佳)。</p>
-<p>例：请描述出用K算法得到最小生成树的步骤</p>
-<p>①先构造一个只含n个顶点的子图S</p>
-<p>②然后从权值最小的边开始，若它的添加不使S中产生回路，则在S上加上这条边</p>
-<p>③如此重复，直至加上n-1条边为止。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="最小生成树比较.png" alt=""></p>
-<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>拓扑排序的一般操作方法：</p>
-<p>(1)从有向图中选取一个入度为0的顶点，输出它;</p>
-<p>(2)从有向图中删去该顶点以及所有以它为尾的弧;</p>
-<p>重复上述两步，直至图空或者找不到入度为0的顶点为止。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="拓扑排序.png" alt=""></p>
-<p>时间复杂度为O(n+m)</p>
-<h2 id="关键路径-从源点到汇点的最长路径"><a href="#关键路径-从源点到汇点的最长路径" class="headerlink" title="关键路径(从源点到汇点的最长路径)"></a>关键路径(<strong>从源点到汇点的最长路径</strong>)</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="关键路径.png" alt=""></p>
-<h1 id="第六章-排序"><a href="#第六章-排序" class="headerlink" title="第六章 排序"></a>第六章 排序</h1><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="排序.png" alt=""></p>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
 ]]></content>
       <categories>
-        <category>数据结构与算法</category>
+        <category>杂谈</category>
       </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-        <tag>考试复习整理</tag>
-      </tags>
   </entry>
   <entry>
     <title>数据结构期中复习</title>
@@ -715,212 +620,132 @@
       </tags>
   </entry>
   <entry>
-    <title>汇编语言总复习(上)</title>
-    <url>/2020/12/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8A)/</url>
-    <content><![CDATA[<p>本文将结合老师说的考试范围与PPT，对所涉及的知识点作个人总结，面向考试复习（<del>高星，yyds</del>）</p>
-<p>顺序有点乱，如果有时间会再调一下。</p>
-<a id="more"></a>
-<h2 id="一、子程序与主程序"><a href="#一、子程序与主程序" class="headerlink" title="一、子程序与主程序"></a>一、子程序与主程序</h2><h3 id="（一）什么是子程序"><a href="#（一）什么是子程序" class="headerlink" title="（一）什么是子程序"></a>（一）什么是子程序</h3><p>把功能相对独立的程序段单独编写和调试，作为一个相对独立的模块供程序使用，就形成子程序</p>
-<p>子程序可以实现源程序的模块化，可简化源程序结构，可以提高编程效率</p>
-<p><strong>参数传递是子程序设计的重点和难点</strong></p>
-<p>子程序的调用和返回是由指令<strong>CALL和RET</strong>(return)来完成的</p>
-<p>•CALL指令分成4种类型（类似JMP）</p>
-<p>CALL label ；段内调用、相对寻址</p>
-<p>CALL r16/m16 ；段内调用、间接寻址</p>
-<p><strong>CALL far ptr label ；段间调用、直接寻址</strong></p>
-<p><strong>CALL far ptr mem ；段间调用、间接寻址</strong></p>
-<p>返回时，RET直接从当前栈顶取内容作为返回地址。因此要保证RET指令执行前堆栈栈顶的内容刚好是返回的地址。</p>
-<p>例：子程序的常见格式（实现回车换行的子程序）：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="子程序示例.png" alt=""></p>
-<p>注意：</p>
-<ol>
-<li>对简化段定义格式，在tiny和small下，过程(PROC)的默认属性为near；对完整段定义格式下，过程的默认属性为near。</li>
-<li>进行过程设计时，需要注意寄存器的保护和恢复，即<strong>开始时将要修改的寄存器内容压入栈，结束后再逆序弹出</strong>。</li>
-</ol>
-<h3 id="（二）如何进行参数传递"><a href="#（二）如何进行参数传递" class="headerlink" title="（二）如何进行参数传递"></a>（二）如何进行参数传递</h3><p>主程序在调用子程序时，通常需要提供一些数据，即<strong>入口参数（输入参数）</strong></p>
-<p>子程序执行结束后要返回主程序数据，即<strong>出口参数（输出参数）</strong></p>
-<p>参数的形式分为两种</p>
-<p>① 数据本身（传值）②数据的地址（传址）</p>
-<p>下面介绍如何传递参数</p>
-<h4 id="1-寄存器传递参数（共享寄存器）"><a href="#1-寄存器传递参数（共享寄存器）" class="headerlink" title="1.寄存器传递参数（共享寄存器）"></a>1.寄存器传递参数（共享寄存器）</h4><p>把参数存于约定的寄存器中，可以传值，也可以传址。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="寄存器传参.png" alt=""></p>
-<p>上图的子程序将和存在了al中，返回后再将其mov到result中，实现了参数传递。</p>
-<p>注:子程序对带有入口参数的寄存器可以保护，也可以不保护；上图未保护</p>
-<p>​     子程序对带有出口参数的寄存器不能保护和恢复</p>
-<h4 id="2-变量传递参数（共享变量）"><a href="#2-变量传递参数（共享变量）" class="headerlink" title="2.变量传递参数（共享变量）"></a>2.变量传递参数（共享变量）</h4><p>主程序和子程序直接采用同一个变量名共享同一个变量。</p>
-<p>类比于C++中的加引用，<strong>直接改变了变量的值</strong>。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="变量传参1.png" alt=""></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="变量传参2.png" alt=""></p>
-<p>上图的子程序直接将al中的值mov到了result，随后返回到主程序。</p>
-<h4 id="3-堆栈传递参数（共享堆栈）"><a href="#3-堆栈传递参数（共享堆栈）" class="headerlink" title="3.堆栈传递参数（共享堆栈）"></a>3.堆栈传递参数（共享堆栈）</h4><p>主程序将子程序的入口参数压入堆栈，子程序从堆栈中取出参数</p>
-<p>子程序将出口参数压入堆栈，主程序弹出堆栈取得它们</p>
-<p>前方高能</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="堆栈传参1.png" alt=""></p>
-<p>入口参数为数组的偏移地址和数组的元素个数，通过压入堆栈进行传递。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="堆栈传参2.png" alt=""></p>
-<p>程序在保护bp后，将bp置为栈顶，并通过偏移位置来分别寻址获得压入的偏移地址和元素参数。最后按反序弹出栈内值和址。</p>
-<p>上述程序堆栈的使用情况如下图</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="堆栈情况.png" alt=""></p>
-<p>由于<strong>主程序压入了2个参数，使用了堆栈区的4字节</strong>，故采用上述办法平衡堆栈。</p>
-<p>注：由于寄存器的保护也存于堆栈中，所以在子程序退出时<strong>要特别注意pop的顺序</strong>。</p>
-<h2 id="二、缓冲区"><a href="#二、缓冲区" class="headerlink" title="二、缓冲区"></a>二、缓冲区</h2><h3 id="（一）如何定义缓冲区"><a href="#（一）如何定义缓冲区" class="headerlink" title="（一）如何定义缓冲区"></a>（一）如何定义缓冲区</h3><p>例</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="缓冲区定义.png" alt=""></p>
-<p>该例表示在内存中申请一个<strong>缓冲区为83个字节，首地址给BUF</strong>。</p>
-<p>缓冲区分为<strong>三个部分</strong></p>
-<p>第一个字节内放的是<strong>事先填入最多欲接收的字符个数</strong>（包括回车字符，可以是1～255），在例中为81，表示申请的存放数据的缓冲区的字节数为81个。</p>
-<p>第二个字节 ‘ ？‘表示的是实际存放的字节个数（不包括回车）</p>
-<p>就是说，你放入2个字节的数据，“？”变成2，放10个字节的数据，变成10）；</p>
-<p>DB表示的是分配一个或多个字节；</p>
-<p><strong>输入的数据（字符串）从第三个字节开始存放</strong>，存放至第82个字节，<strong>第81个字节存放回车符（0DH）,0DH作为输入数据的结束</strong>。</p>
-<p><strong>DUP(0)</strong>表示的是<strong>存放数据的81个字节初始值全为0</strong>，即为：81 0 0 0 0······（第82个字节）0 ODH。</p>
-<p>注：实际输入的字符数多于定义数时，多出的字符丢掉，且响铃</p>
-<h3 id="（二）如何使用缓冲区"><a href="#（二）如何使用缓冲区" class="headerlink" title="（二）如何使用缓冲区"></a>（二）如何使用缓冲区</h3><p>下例实现了字符串的输入</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符串输入.png" alt=""></p>
-<h2 id="三、串操作指令"><a href="#三、串操作指令" class="headerlink" title="三、串操作指令"></a>三、串操作指令</h2><p>串操作指令的操作对象是以字（W）为单位的<strong>字串</strong>，或是以字节（B）为单位的<strong>字节串</strong></p>
-<p>串操作指令采用了特殊的寻址方式</p>
-<ol>
-<li>源操作数用寄存器SI间接寻址，默认在数据段DS中，即DS:[DI]</li>
-<li><strong>目的操作数用寄存器DI间接寻址，默认在附加段ES中</strong>，即ES:[SI]</li>
-<li>每执行一次串操作，SI和DI将自动修改</li>
-<li><strong>源数据串可以段跨越，目的串不可。</strong></li>
-</ol>
-<p>注：由于要自动修改SI与DI，所以用户需要在进行串操作之前<strong>改变方向标志DF先确定增加或减小的方向</strong></p>
-<p>即：执行<strong>CLD</strong>（DF=0，主存地址增大，<strong>较为常用</strong>）或执行STD（DF=1，主存地址减小）</p>
-<p>串操作经出<strong>配合重复前缀指令</strong>，通过<strong>计数器CX</strong>控制重复执行串操作指令的次数。</p>
-<h3 id="（一）串传送指令"><a href="#（一）串传送指令" class="headerlink" title="（一）串传送指令"></a>（一）串传送指令</h3><p>①串传送 MOVSB/W（move string）</p>
-<p>把字节从主存的源地址传送至目标地址</p>
-<p><strong>MOVSB</strong> 字节串传送：<strong>ES:[DI]←DS:[SI]</strong></p>
-<p>②串存储 STOSB/W（store string）</p>
-<p>把<strong>AL或AX</strong>数据传送至目标地址</p>
-<p><strong>STOSB</strong>  字节串存储：<strong>ES:[DI]←AL</strong>（AL传字节）</p>
-<p><strong>STOSW</strong> 字串存储：    <strong>ES:[DI]←AX</strong>（AX传字）</p>
-<p>③串读取 LODSB/W（load string）</p>
-<p>把指定主存单元的数据传送给<strong>AL或AX</strong></p>
-<p><strong>LODSB</strong>  字节串读取： <strong>AL←DS:[SI]</strong></p>
-<p><strong>LODSW</strong> 字串读取：    <strong>AX←DS:[SI]</strong></p>
-<p>④REP重复前缀指令</p>
-<p><strong>REP</strong> <strong>；每执行一次串指令，CX减1直到CX＝0</strong>，重复执行结束</p>
-<p>即：当数据串没有结束（CX≠0），则继续传送</p>
-<h3 id="（二）串检测指令"><a href="#（二）串检测指令" class="headerlink" title="（二）串检测指令"></a>（二）串检测指令</h3><p>①串比较指令CMPS（compare string）</p>
-<p>将主存中的<strong>源操作数减去至目的操作数</strong>，以便设置标志，进而比较两操作数之间的关系</p>
-<p><strong>CMPSB</strong>  字节串比较：<strong>DS:[SI]－ES:[DI]</strong></p>
-<p>②串扫描SCAS（scan string）</p>
-<p>将<strong>AL/AX减去至目的操作数</strong>，以便设置标志，进而比较AL/AX与操作数之间的关系</p>
-<p><strong>SCASB</strong>  字节串扫描：<strong>AL－ES:[DI]</strong></p>
-<p><strong>SCASW</strong> 字串扫描：   <strong>AX－ES:[DI]</strong></p>
-<p>③REPZ/REPE重复前缀指令</p>
-<p>每执行一次串指令，CX减1并判断ZF是否为0，</p>
-<p>只要CX＝0或ZF＝0，重复执行结束。</p>
-<p>即：当数据串没有结束（CX≠0），<strong>并且串相等（ZF＝1），则继续比较</strong></p>
-<p>④REPNZ/REPNE重复前缀指令</p>
-<p>每执行一次串指令，CX减1并判断ZF是否为0，</p>
-<p>只要CX＝0或ZF＝0，重复执行结束。</p>
-<p>即：当数据串没有结束（CX≠0），<strong>并且串不相等（ZF＝0），则继续比较</strong></p>
-<p>REPNZ和LOOP的区别：</p>
-<p>REPNZ是先执行一次指令，之后将CX减一，判断CX是否为0。</p>
-<p>而LOOP是先将CX减一，然后判断CX是否为0，不为0则继续执行指令。</p>
-<p>例：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="比较字符串.png" alt=""></p>
-<p>在上例中，指令repz cmpsb结束有两种情况</p>
-<p>第一种：ZF=0，即<strong>出现不相等的字符</strong></p>
-<p>第二种：CX=0，即<strong>比较完了所有字符</strong></p>
-<p>注意，在这种情况下，<strong>如果ZF=0，则说明最后一个字符不相等，ZF=1才能说明两个字符串相同</strong>。</p>
-<p>所以，重复比较结束后，需要通过<strong>jnz</strong>指令 来判断<strong>zf位</strong>，若其=0，则字符串不相等。</p>
-<p>总流程图如下</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="串操作流程图.png" alt=""></p>
-<p>下例为SCAS在字符串中查找空格字符的用法</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="查找空格.png" alt=""></p>
-<h2 id="四、常用DOS命令"><a href="#四、常用DOS命令" class="headerlink" title="四、常用DOS命令"></a>四、常用DOS命令</h2><p>调用DOS功能一般方法如下：</p>
-<p>1、在<strong>AH寄存器</strong>中设置系统功能调用号，说明选择的功能</p>
-<p>2、在指定寄存器中设置入口参数。</p>
-<p>3、用中断调用指令 INT 21H 执行功能调用。</p>
-<h3 id="（一）字符输出（02H号）"><a href="#（一）字符输出（02H号）" class="headerlink" title="（一）字符输出（02H号）"></a>（一）字符输出（02H号）</h3><p>入口参数：<strong>DL</strong>=字符的ASCII码</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符输出.png" alt=""></p>
-<p>注：该功能可以识别响铃字符（07H），回车（0DH），换行（0AH）。</p>
-<h3 id="（二）字符串输出（09H号）"><a href="#（二）字符串输出（09H号）" class="headerlink" title="（二）字符串输出（09H号）"></a>（二）字符串输出（09H号）</h3><p>入口参数：<strong>DS:DX</strong>=欲显示字符串在主存中的首地址。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符串输出.png" alt=""></p>
-<p>注：顺序为先回车（0DH），再换行（0AH），且字符串应以’$’(24H)结束。</p>
-<h3 id="（三）字符输入（01H号）"><a href="#（三）字符输入（01H号）" class="headerlink" title="（三）字符输入（01H号）"></a>（三）字符输入（01H号）</h3><p>出口参数：<strong>AL</strong>=字符的ASCII码</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符输入.png" alt=""></p>
-<p>调用此功能时，若无键按下，则会一直等待，直到按键后才读取该键值</p>
-<h3 id="（四）字符串输入（0AH号）"><a href="#（四）字符串输入（0AH号）" class="headerlink" title="（四）字符串输入（0AH号）"></a>（四）字符串输入（0AH号）</h3><p>入口参数：<strong>DS:DX</strong>=缓冲区首地址</p>
-<p><strong>关键要定义好缓冲区</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符串输入.png" alt=""></p>
-<h2 id="五、8086的机器代码格式"><a href="#五、8086的机器代码格式" class="headerlink" title="五、8086的机器代码格式"></a>五、8086的机器代码格式</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="机器代码.png" alt=""></p>
-<p>机器码我都不怎么懂，直接搬PPT了= =</p>
-<p>例1： </p>
-<p>MOV AX,BX ;机器代码是 89 D8(16进制)</p>
-<p>第1个字节89是操作码(含<strong>w＝1表示16位操作</strong>)</p>
-<p>第2个字节D8（11 011 000）是 “<strong>mod reg r/m</strong>”</p>
-<p>reg＝011表示目的操作数为BX</p>
-<p>mod＝11时，为<strong>寄存器寻址方式</strong>。</p>
-<p>mod＝11和r/m＝000表示源操作数为AX</p>
-<p>例2：</p>
-<p>MOV AL,[BX+SI+6] ;机器代码是 8A 40（16进制） 06</p>
-<p>前一个字节8A是操作码(含<strong>w＝0表示8位操作</strong>)</p>
-<p>中间一个字节40（01 000 000）(将16进制转为2进制，然后按2 3 3拆开)是 “<strong>mod reg r/m</strong>”字节</p>
-<p>reg＝000表示目的操作数为AL</p>
-<p>mod＝01时，为<strong>带有8位位移量的存储器寻址方式</strong></p>
-<p>mod＝01和r/m＝000表示源操作数为[BX+SI+D8]</p>
-<p>最后一个字节就是8位位移量[D8]=06</p>
-<h2 id="六、常用的ASCII码"><a href="#六、常用的ASCII码" class="headerlink" title="六、常用的ASCII码"></a>六、常用的ASCII码</h2><p><strong>回车：0DH    换行：0AH</strong>   响铃：07H</p>
-<p><strong>空格：20H</strong></p>
-<p><strong>数字0~9：30H~39H</strong></p>
-<p>大写字母A~Z：41H~5AH</p>
-<p>小写字母a~z：61H~7AH</p>
-<h2 id="七、BCD码"><a href="#七、BCD码" class="headerlink" title="七、BCD码"></a>七、BCD码</h2><p>Binary Coded Decimal（二进制编码的十进制数），即<strong>一个十进制数位（0-9）在计算机中用4位二进制编码表示</strong>。常用的BCD码是8421BCD码，即用4位二进制编码的低19个编码表示0-9这十个数字，如图。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="BCD码.png" alt=""></p>
-<p>例：0100 1001 0111 1000.0001 0100 1001  十进制真值：4978.149（上图对应）</p>
-<p>00111010B=3AH   F2H=11110010B</p>
-<p>10H=00010000B=16D                        ABH=10101011B=171D</p>
-<p>压缩BCD码：一个字节表达两位BCD码      10000111B（87H)</p>
-<p>非压缩BCD码：<strong>一个字节表达一位BCD码</strong>（<strong>低4位表达数值，高4位常设置为0</strong>）   </p>
-<p>00001000 00000111B（0807H）</p>
-<h2 id="八、变量的定义"><a href="#八、变量的定义" class="headerlink" title="八、变量的定义"></a>八、变量的定义</h2><h3 id="（一）符号常数"><a href="#（一）符号常数" class="headerlink" title="（一）符号常数"></a>（一）符号常数</h3><p>利用一个标识符表达的一个数值</p>
-<p>例：</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="符号常数.png" alt=""></p>
-<p>注：在5.x版本中，<strong>字符串是用引号括起来的</strong></p>
-<p>例：<code>calldos  equ &quot;int 21h&quot;</code></p>
-<p>EQU用于数值等价时不能重复定义符号名,<strong>但”=“允许有重复赋值</strong></p>
-<p>X=7  X EQU 7 都是正确的</p>
-<p>X=X+5   但 X EQU X+5是错误的</p>
-<h3 id="（二）变量定义伪指令"><a href="#（二）变量定义伪指令" class="headerlink" title="（二）变量定义伪指令"></a>（二）变量定义伪指令</h3><p>变量定义（Define）伪指令为变量申请固定长度的存储空间，并可同时将相应的存储单元初始化</p>
-<p>其汇编格式为：<code>变量名    伪指令    初值表</code></p>
-<p>变量名：</p>
-<ol>
-<li>变量名为用户自定义标识符，<strong>表示初值表首元素的逻辑地址</strong>；用这个符号表示地址，<strong>常称为符号地址</strong></li>
-<li>变量名可以没有，此时无符号地址。</li>
-</ol>
-<p>初值表：</p>
-<ol>
-<li><p>初值表是用逗号分隔的参数</p>
-</li>
-<li><p>主要由数值常数、表达式或？、DUP组成</p>
-<p>？——表示初值不确定，即未赋初值</p>
-<p>DUP——表示重复初值</p>
-<p><strong>DUP的格式为：重复次数 DUP(重复参数)</strong></p>
-</li>
-</ol>
-<h3 id="（三）定义实例"><a href="#（三）定义实例" class="headerlink" title="（三）定义实例"></a>（三）定义实例</h3><p>1.字节单元定义实例</p>
-<p>DB伪指令用于分配一个或多个字节单元。初值表中每个数据一定是字节量（Byte），存放8位数据。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字节单元定义.png" alt=""></p>
-<p>2.字单元定义实例</p>
-<p>DW伪指令用于分配一个或多个字单元。初值表中每个数据一定是字量（Word），存放16位数据。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字单元.png" alt=""></p>
-<p>3.字变量和字常量的应用（重要）</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字变量与字常量.png" alt=""></p>
-<p>即：字变量在程序中当作mem，即取其偏移地址元素的数值。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
-<p>后面看到这篇的人一定要好好学汇编啊。</p>
-<p>张海英你没有心（确信）</p>
+    <title>数据结构期末复习</title>
+    <url>/2021/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>面向考试复习数据结构2.0版正式上线了</p>
+<p>本文将整理后三章的相关知识点，并对例题习题进行整合梳理，存在不足，欢迎补充。</p>
+<h1 id="第四章-图"><a href="#第四章-图" class="headerlink" title="第四章 图"></a>第四章 图</h1><h2 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h2><p>图是由一个顶点集V和一个弧集(或边集)构成的数据结构，是一种<strong>非线性</strong>数据结构</p>
+<p>网：带权的图。<strong>在不会引起歧义时，网也直接称为图。</strong></p>
+<p>路径长度：路径上边的数目（两个点之间的距离即路径上<strong>除了起点，包括终点的顶点个数</strong>）</p>
+<p>简单路径：<strong>顶点不重复</strong>出现的路径（<strong>边可以重复</strong>）</p>
+<h3 id="关于图的顶点和边数目"><a href="#关于图的顶点和边数目" class="headerlink" title="关于图的顶点和边数目"></a>关于图的顶点和边数目</h3><p> 我们用 n 表示图中顶点数目；m表示图中边(或者弧)的数目；</p>
+<p>  对于无向图：<code>0≤m≤n(n-1)/2</code>  <strong>m=n(n-1)/2的无向图称为完全图</strong></p>
+<p> 对于有向图：<code>0≤m≤n(n-1)</code>       <strong>m=n(n-1)的有向图称为有向完全图</strong></p>
+<p>n=0: V为空集；<strong>m=0: 或许有1个顶点（平凡图）。</strong></p>
+<p>例一：设某个非连通无向图有28条边，则该图至少有(9)个顶点。</p>
+<p>解：此题的要点是<strong>非连通</strong>的无向图</p>
+<p>由上方公式可得，8*7/2=28，正好为8个顶点的完全图的边数</p>
+<p>但题目中要求是非连通的，所以在边不加的情况下，<strong>至少加一个孤立点，即至少有9个顶点</strong></p>
+<p>举一反三：若某个连通无向图有28条边，则该图至少有(8)个顶点。</p>
+<h3 id="关于图的度数"><a href="#关于图的度数" class="headerlink" title="关于图的度数"></a>关于图的度数</h3><p>什么是邻接点？</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="无向邻接点.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="有向邻接点.png" alt=""></p>
+<p>什么是度数？</p>
+<p>1.对于无向图，顶点v的度就是和顶点v相邻接的边的数目，<strong>记为TD(v)</strong></p>
+<p>2.对于有向图，<strong>入度ID(v)</strong>是箭头指向v的弧的个数， <strong>出度OD(v)</strong>是箭头远离v的弧的个数</p>
+<p>​                          顶点v的度<strong>TD(v)=ID(v)+OD(v)</strong></p>
+<p>3.握手定理：</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+
+2m = \sum_{n=1}^nTD(v_i)
+
+\end{equation*}</script><h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3><p>两个顶点间连通，等价于两个顶点之间有路径。</p>
+<p>连通图：<strong>无向图</strong>中任意两个顶点都连通（<strong>不存在孤立点</strong>）</p>
+<p>连通分量：无向图中的<strong>极大连通子图</strong></p>
+<p>强连通图/强连通分量：<strong>对于有向图</strong>，概念类似上两个。</p>
+<h3 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h3><p>对于<strong>连通图</strong>G，若其有n个顶点，则<strong>含有G中所有顶点，且边数为n-1</strong>的<strong>连通图</strong>称为G的一棵生成树。</p>
+<p>关键：原图是连通图，生成树有其全部n个顶点，有且仅有n-1条边。</p>
+<div class="note info flat"><p><strong>提示</strong></p>
+    <p>有n个顶点和n-1条边的图不一定是生成树</p>
+</div>
+
+<p>在有n个顶点的图中,<strong>如果边多于n-1条,则一定有环</strong>，<strong>如果边少于n-1条,则是非连通图。</strong></p>
+<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><h3 id="图的邻接矩阵"><a href="#图的邻接矩阵" class="headerlink" title="图的邻接矩阵"></a>图的邻接矩阵</h3><h4 id="从邻接矩阵判断度数"><a href="#从邻接矩阵判断度数" class="headerlink" title="从邻接矩阵判断度数"></a>从邻接矩阵判断度数</h4><p>对于无向图，顶点Vi的度为邻接矩阵中第i行（或第i列）<strong>元素个数之和</strong>（防止带权干扰）。</p>
+<p>对于有向图，第i<strong>行</strong>的元素个数之和为Vi的<strong>出度</strong>（从Vi到其他顶点）</p>
+<p>​                       第i<strong>列</strong>的元素个数之和为Vi的<strong>入度</strong>（从其他顶点到Vi）</p>
+<h4 id="时间复杂度和空间复杂度"><a href="#时间复杂度和空间复杂度" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接矩阵存储图，占用的<strong>存储空间大小与顶点数有关，与边数无关</strong>。</p>
+<p>时间复杂度为O(n²)</p>
+<h3 id="图的邻接表"><a href="#图的邻接表" class="headerlink" title="图的邻接表"></a>图的邻接表</h3><p>概念定义：</p>
+<p>邻接表是<strong>图的一种链式存储结构</strong>，图中的<strong>每一个顶点对应一个结点</strong>，并由所有顶点结点构成一个顺序表结构（竖着的链）</p>
+<p>图中<strong>每一个顶点建立一条链，该链由它的所有邻接点构成</strong>（横着的链）</p>
+<p>代码定义</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Anode</span></span></span><br><span class="line"><span class="class">&#123;</span>	<span class="keyword">int</span> Vi; <span class="comment">//邻接点在顺序表中的位置</span></span><br><span class="line">	<span class="keyword">int</span> Wi; <span class="comment">//权值(用于网。图可省略)</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Anode</span> *<span class="title">next</span>;</span> <span class="comment">//指向下一个邻接点</span></span><br><span class="line">&#125; ALink; <span class="comment">//邻接点存储结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Vnode</span></span></span><br><span class="line"><span class="class">&#123;</span>	Type data;</span><br><span class="line">	ALink *Vh; <span class="comment">//邻接点链表头指针</span></span><br><span class="line">&#125; Vnode; <span class="comment">//链表头指针结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span>	Vnode V [N];  <span class="comment">//链表头顺序表</span></span><br><span class="line">	<span class="keyword">int</span> n,m;  <span class="comment">//实际顶点数，边或弧数</span></span><br><span class="line">	<span class="keyword">int</span> visited[N];  <span class="comment">//访问标识</span></span><br><span class="line">&#125; AList; <span class="comment">//图的邻接表存储结构</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="从邻接表判断度数"><a href="#从邻接表判断度数" class="headerlink" title="从邻接表判断度数"></a>从邻接表判断度数</h4><p>无向图：顶点的度=邻接点链表中结点的数目</p>
+<p>有向图：顶点的<strong>出度</strong>=邻接点链表中结点的数目</p>
+<h4 id="时间复杂度和空间复杂度-1"><a href="#时间复杂度和空间复杂度-1" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接表存储图，占用的<strong>存储空间大小与顶点数和边数都有关</strong>。</p>
+<p>时间复杂度为O(n²)</p>
+<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h4 id="深度优先搜索遍历-更适用于找一条路径"><a href="#深度优先搜索遍历-更适用于找一条路径" class="headerlink" title="深度优先搜索遍历(更适用于找一条路径)"></a>深度优先搜索遍历(<strong>更适用于找一条路径</strong>)</h4><p>基本思想：</p>
+<p>①从图中某个顶点v出发，访问该顶点</p>
+<p>②查找顶点v的第一个未被访问的邻接点v1，访问该顶点。</p>
+<p>③重复第二步操作，直到图中没有未被访问的顶点为止。</p>
+<h4 id="广度优先搜索遍历-更适用于找最优路径"><a href="#广度优先搜索遍历-更适用于找最优路径" class="headerlink" title="广度优先搜索遍历(更适用于找最优路径)"></a>广度优先搜索遍历(<strong>更适用于找最优路径</strong>)</h4><p>基本思想：</p>
+<p>（1）从连通图中某个顶点v出发，访问该顶点，并置visited[v]的值为true，然后将v进队。</p>
+<p>（2）只要队列不空，则重复下述处理：</p>
+<p>​         ①队头顶点u出队</p>
+<p>​         ②依次检查u的所有邻接点w，如果visited[w]的值为false，则访问w，并置visited[w]的值为true，然后将w进队。</p>
+<p>代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(AList G, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;	G.visited[N]=&#123;<span class="number">0</span>&#125;;	<span class="comment">//访问标识初始化</span></span><br><span class="line">	Visit(k);	<span class="comment">//访问顶点k（或者写cout&lt;&lt;k&lt;&lt;endl;也可以）</span></span><br><span class="line">	G.visited[k<span class="number">-1</span>]=<span class="number">1</span>;	<span class="comment">//顶点k已访问</span></span><br><span class="line">	f=<span class="number">0</span>,r=<span class="number">0</span>,Q[N]=&#123;<span class="number">0</span>&#125;; <span class="comment">//队列Q[]初始化</span></span><br><span class="line">	Q[r++]=k<span class="number">-1</span>;  <span class="comment">//入队, r:队尾指针</span></span><br><span class="line">	<span class="keyword">while</span>(r&gt;=f)	<span class="comment">//当队列非空时</span></span><br><span class="line">	&#123;	i=Q[f++];  <span class="comment">//出队, f:队首指针</span></span><br><span class="line">        p=G.V[i].Vh;<span class="comment">//p是V[i]的链表头指针</span></span><br><span class="line">		<span class="keyword">while</span>(p)<span class="comment">//顺序访问链表的各个结点</span></span><br><span class="line">		&#123;	</span><br><span class="line">            j=p-&gt;Vi; <span class="comment">// j是邻接点在顺序表中的位置</span></span><br><span class="line">			<span class="keyword">if</span>(!G.visited[j])</span><br><span class="line">			&#123;	Visit(j+<span class="number">1</span>); <span class="comment">//访问顶点j+1</span></span><br><span class="line">				visited[j]=<span class="number">1</span>;</span><br><span class="line">				Q[r++]=j; <span class="comment">//入队</span></span><br><span class="line">			&#125;</span><br><span class="line">          	p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">//算法结束</span></span><br></pre></td></tr></table></figure>
+<p>以邻接表作存储结构时，深搜和广搜的时间复杂度都为O(n+e)</p>
+<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>定义：无向图G的所有生成树中各边权值之和最小的一颗生成树。</p>
+<p>Prim算法：加点法</p>
+<p>任取一个顶点v作为生成树的根，然后往生成树上添加新顶点u，顶点u满足其与生成树上某个顶点连通，并且在所有与生成树连通的边中权值最小，不断往生成树上添加顶点至生成树包含所有顶点为止。</p>
+<p>K算法：加边法</p>
+<p>为使生成树上边的权值之和达到最小，应使生成树中每一条边的权值尽可能地小(都能最小则最佳)。</p>
+<p>例：请描述出用K算法得到最小生成树的步骤</p>
+<p>①先构造一个只含n个顶点的子图S</p>
+<p>②然后从权值最小的边开始，若它的添加不使S中产生回路，则在S上加上这条边</p>
+<p>③如此重复，直至加上n-1条边为止。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="最小生成树比较.png" alt=""></p>
+<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>拓扑排序的一般操作方法：</p>
+<p>(1)从有向图中选取一个入度为0的顶点，输出它;</p>
+<p>(2)从有向图中删去该顶点以及所有以它为尾的弧;</p>
+<p>重复上述两步，直至图空或者找不到入度为0的顶点为止。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="拓扑排序.png" alt=""></p>
+<p>时间复杂度为O(n+m)</p>
+<h2 id="关键路径-从源点到汇点的最长路径"><a href="#关键路径-从源点到汇点的最长路径" class="headerlink" title="关键路径(从源点到汇点的最长路径)"></a>关键路径(<strong>从源点到汇点的最长路径</strong>)</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="关键路径.png" alt=""></p>
+<h1 id="第六章-排序"><a href="#第六章-排序" class="headerlink" title="第六章 排序"></a>第六章 排序</h1><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="排序.png" alt=""></p>
 ]]></content>
       <categories>
-        <category>汇编语言</category>
+        <category>数据结构与算法</category>
       </categories>
       <tags>
         <tag>课内学习笔记</tag>
         <tag>考试复习整理</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>紫罗兰永恒花园观后感</title>
+    <url>/2021/01/12/%E7%B4%AB%E7%BD%97%E5%85%B0%E6%B0%B8%E6%81%92%E8%8A%B1%E5%9B%AD%E8%A7%82%E5%90%8E%E6%84%9F/</url>
+    <content><![CDATA[<p>一直被人安利的京紫，终于在今天追完了，现在内心还是有点不能平静。</p>
+<p>上一个正正经经追的番还是《魔卡少女樱》，那是对童年的追忆和怀念。</p>
+<p>这部番，值得我写一篇文来纪念其上映三周年：2018.1.11~2020.1.12</p>
+<h2 id="矛盾"><a href="#矛盾" class="headerlink" title="矛盾"></a>矛盾</h2><p>以前的我，最不能理解的就是<strong>自我矛盾</strong>，正如前几集艾丽卡认为Violet不能胜任人偶的工作，却仍然力保她留在公司时，Violet发出的疑问，以前的我也常常有这种想法，觉得人总是心口不一，遇到矛盾的事就嗤之以鼻。</p>
+<p>但这部番从各种矛盾入手，对Violet进行了全面的人格塑造：14岁的少女与杀人机器、断送他人的性命与撰写替人结缘的书信，冷冰冰的人偶与不需要指令的”人“。一个个矛盾交织在一起，对每个关键点都有合适的flashback，将故事连贯起来，是我最喜欢的一个方面。</p>
+<h2 id="战争"><a href="#战争" class="headerlink" title="战争"></a>战争</h2><p>看到B站评论中有一句：”本来就是写战争的还硬洗，既然知道战争的残酷与无情，当初还发动战争，有点既当了**还想立牌坊的感觉”。诚然，战争是本番的一条主线，也正是战争将violet变成了这副模样。每集中都或多或少带有战争的元素：Violet失去了少佐后救赎了自己；未能保护好边线的士兵从自我沉沦中重生；待不到男友返乡的歌剧演员以一首情书彻底解冻时间线，每一个故事都反映出了战争的残忍，但只有战争才能避免更多的悲伤分别发生，EX集中那个归乡士兵的特写，人们在火车站的寻人启事墙上自发点起了蜡烛为他们祈福的举动，既让Violet得到感染，更让我体会到了离别后的振作之情。</p>
+<h2 id="信"><a href="#信" class="headerlink" title="信"></a>信</h2><p>信，则是全番中的另一个主线，从想要理解<strong>”我爱你“</strong>的含义而称为人偶，通过一系列的工作经历，violet不断懂得了那些她当兵时未曾体会到的情感，她懂得了如何去感受人的想法，做到”共情“，从一封封信的写作中，Violet也从之前那个只会写报告书的军人，变成了一个，她写给少佐的信躺在了丛中，也躺在了我心里。</p>
+<p>我也一直有写信的习惯，那些文字，通过纸笔变成了一个个心意，那是语言所无法表达的独特，只能通过”见信如面“和”XXX亲启“来传递的唯一，是不可替代的。</p>
+<p>看别人玩你画我猜的时候，有人在题目是这个番时只画了一封信，当时的我还不明白为什么，但现在我觉得，那封信就能代表一切，它是本番的<strong>灵魂所在</strong>。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>你们可能觉得我前面没有说这部番的画功怎么样，这么给你说，刚才举报了一个”因为画质高看得眼睛酸所以差评”的一星评论，懂了吧（</p>
+<p>漫画里最后Violet和少佐重逢了，算是一个HE，但我更喜欢动漫中的结局，少女带着全新的希望奔赴未来</p>
+<p>没有放图的原因是，看的很认真没有截图，而且每一帧都值得我去收藏，我就只存了几个自己喜欢的画面。</p>
+<div class="note primary no-icon flat">
+    <p>
+        希望大家多多给我推荐类似这种的优质番，俺在线拜谢你们（
+    </p>
+    <p>也希望我明白”爱“的意义的那天早日到来</p>
+</div>
+
+
+
+<p>最后，对于熬夜，薇酱这句话我觉得很有道理。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="熬夜.png" alt=""></p>
+<p>大家还是少熬夜，养生作息早睡早起它不香🐎？</p>
+<p>ps：有一说一日本人直接拿英文来起名字还挺好听的（Violet Evergarden)。感觉翻译成中文总差点感觉，就用英文打了。</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
   </entry>
   <entry>
     <title>汇编语言总复习(下)</title>
@@ -1025,39 +850,6 @@
         <tag>课内学习笔记</tag>
         <tag>考试复习整理</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>紫罗兰永恒花园观后感</title>
-    <url>/2021/01/12/%E7%B4%AB%E7%BD%97%E5%85%B0%E6%B0%B8%E6%81%92%E8%8A%B1%E5%9B%AD%E8%A7%82%E5%90%8E%E6%84%9F/</url>
-    <content><![CDATA[<p>一直被人安利的京紫，终于在今天追完了，现在内心还是有点不能平静。</p>
-<p>上一个正正经经追的番还是《魔卡少女樱》，那是对童年的追忆和怀念。</p>
-<p>这部番，值得我写一篇文来纪念其上映三周年：2018.1.11~2020.1.12</p>
-<h2 id="矛盾"><a href="#矛盾" class="headerlink" title="矛盾"></a>矛盾</h2><p>以前的我，最不能理解的就是<strong>自我矛盾</strong>，正如前几集艾丽卡认为Violet不能胜任人偶的工作，却仍然力保她留在公司时，Violet发出的疑问，以前的我也常常有这种想法，觉得人总是心口不一，遇到矛盾的事就嗤之以鼻。</p>
-<p>但这部番从各种矛盾入手，对Violet进行了全面的人格塑造：14岁的少女与杀人机器、断送他人的性命与撰写替人结缘的书信，冷冰冰的人偶与不需要指令的”人“。一个个矛盾交织在一起，对每个关键点都有合适的flashback，将故事连贯起来，是我最喜欢的一个方面。</p>
-<h2 id="战争"><a href="#战争" class="headerlink" title="战争"></a>战争</h2><p>看到B站评论中有一句：”本来就是写战争的还硬洗，既然知道战争的残酷与无情，当初还发动战争，有点既当了**还想立牌坊的感觉”。诚然，战争是本番的一条主线，也正是战争将violet变成了这副模样。每集中都或多或少带有战争的元素：Violet失去了少佐后救赎了自己；未能保护好边线的士兵从自我沉沦中重生；待不到男友返乡的歌剧演员以一首情书彻底解冻时间线，每一个故事都反映出了战争的残忍，但只有战争才能避免更多的悲伤分别发生，EX集中那个归乡士兵的特写，人们在火车站的寻人启事墙上自发点起了蜡烛为他们祈福的举动，既让Violet得到感染，更让我体会到了离别后的振作之情。</p>
-<h2 id="信"><a href="#信" class="headerlink" title="信"></a>信</h2><p>信，则是全番中的另一个主线，从想要理解<strong>”我爱你“</strong>的含义而称为人偶，通过一系列的工作经历，violet不断懂得了那些她当兵时未曾体会到的情感，她懂得了如何去感受人的想法，做到”共情“，从一封封信的写作中，Violet也从之前那个只会写报告书的军人，变成了一个，她写给少佐的信躺在了丛中，也躺在了我心里。</p>
-<p>我也一直有写信的习惯，那些文字，通过纸笔变成了一个个心意，那是语言所无法表达的独特，只能通过”见信如面“和”XXX亲启“来传递的唯一，是不可替代的。</p>
-<p>看别人玩你画我猜的时候，有人在题目是这个番时只画了一封信，当时的我还不明白为什么，但现在我觉得，那封信就能代表一切，它是本番的<strong>灵魂所在</strong>。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>你们可能觉得我前面没有说这部番的画功怎么样，这么给你说，刚才举报了一个”因为画质高看得眼睛酸所以差评”的一星评论，懂了吧（</p>
-<p>漫画里最后Violet和少佐重逢了，算是一个HE，但我更喜欢动漫中的结局，少女带着全新的希望奔赴未来</p>
-<p>没有放图的原因是，看的很认真没有截图，而且每一帧都值得我去收藏，我就只存了几个自己喜欢的画面。</p>
-<div class="note primary no-icon flat">
-    <p>
-        希望大家多多给我推荐类似这种的优质番，俺在线拜谢你们（
-    </p>
-    <p>也希望我明白”爱“的意义的那天早日到来</p>
-</div>
-
-
-
-<p>最后，对于熬夜，薇酱这句话我觉得很有道理。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="熬夜.png" alt=""></p>
-<p>大家还是少熬夜，养生作息早睡早起它不香🐎？</p>
-<p>ps：有一说一日本人直接拿英文来起名字还挺好听的（Violet Evergarden)。感觉翻译成中文总差点感觉，就用英文打了。</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
   </entry>
   <entry>
     <title>汇编语言总复习(中)</title>
@@ -1293,6 +1085,214 @@
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="THIS.png" alt=""></p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">.model small</span><br><span class="line">	   .stack</span><br><span class="line">	   .data</span><br><span class="line">V_byte  equ this byte</span><br><span class="line">V_word  dw 3332h,3735h</span><br><span class="line">Target  dw 5 dup(20h)</span><br><span class="line">Crlf    db 0dh,0ah, ‘<span class="formula">$’</span></span><br><span class="line"><span class="formula">Flag    db 0</span></span><br><span class="line"><span class="formula">N_point dw offset s_label</span></span><br><span class="line"><span class="formula">	   .code</span></span><br><span class="line"><span class="formula">	   .startup</span></span><br><span class="line"><span class="formula">	   mov al,byte ptr v_word</span></span><br><span class="line"><span class="formula">	   dec al</span></span><br><span class="line"><span class="formula">	   mov  v_byte ,al;v_word=3331h	</span></span><br><span class="line"><span class="formula">	   N_label:cmp flag,1 ;flag单元=0</span></span><br><span class="line"><span class="formula">	    jz s_label</span></span><br><span class="line"><span class="formula">	    inc flag  ；flag=1</span></span><br><span class="line"><span class="formula">	    jmp short n_label</span></span><br><span class="line"><span class="formula">S_label: cmp flag,2  ;flag=1</span></span><br><span class="line"><span class="formula">	    jz next</span></span><br><span class="line"><span class="formula">	    inc flag   ;flag=2</span></span><br><span class="line"><span class="formula">    jmp n_point ;段内间接转移，等同于jmp s_label</span></span><br><span class="line"><span class="formula">Next: mov ax,type v_word  ;ax=0002h</span></span><br><span class="line"><span class="formula">	    mov cx,lengthof target;5个数据项，cx=5</span></span><br><span class="line"><span class="formula">	    mov si,offset target</span></span><br><span class="line"><span class="formula">W_again: mov [si],ax</span></span><br><span class="line"><span class="formula">	    inc si</span></span><br><span class="line"><span class="formula">	    inc si</span></span><br><span class="line"><span class="formula">      loop w_again;对target填充5个字：0002h</span></span><br><span class="line"><span class="formula">mov cx,sizeof target;cx=10</span></span><br><span class="line"><span class="formula">	    mov al,’?’</span></span><br><span class="line"><span class="formula">	    mov di,offset target</span></span><br><span class="line"><span class="formula">B_again: mov [di],al</span></span><br><span class="line"><span class="formula">	    inc di</span></span><br><span class="line"><span class="formula">	    loop b_again ;对target填充10个‘？’</span></span><br><span class="line"><span class="formula">	    mov dx,offset v_word</span></span><br><span class="line"><span class="formula">	    mov ah,9</span></span><br><span class="line"><span class="formula">	    int 21h  ;显示结果为1357??????????</span></span><br><span class="line"><span class="formula">	    .exit 0</span></span><br><span class="line"><span class="formula">	    end</span></span><br></pre></td></tr></table></figure>
 <h2 id="十八、简化段定义标准格式"><a href="#十八、简化段定义标准格式" class="headerlink" title="十八、简化段定义标准格式"></a>十八、简化段定义标准格式</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="简化段.png" alt=""></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
+<p>后面看到这篇的人一定要好好学汇编啊。</p>
+<p>张海英你没有心（确信）</p>
+]]></content>
+      <categories>
+        <category>汇编语言</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>汇编语言总复习(上)</title>
+    <url>/2020/12/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%8A)/</url>
+    <content><![CDATA[<p>本文将结合老师说的考试范围与PPT，对所涉及的知识点作个人总结，面向考试复习（<del>高星，yyds</del>）</p>
+<p>顺序有点乱，如果有时间会再调一下。</p>
+<a id="more"></a>
+<h2 id="一、子程序与主程序"><a href="#一、子程序与主程序" class="headerlink" title="一、子程序与主程序"></a>一、子程序与主程序</h2><h3 id="（一）什么是子程序"><a href="#（一）什么是子程序" class="headerlink" title="（一）什么是子程序"></a>（一）什么是子程序</h3><p>把功能相对独立的程序段单独编写和调试，作为一个相对独立的模块供程序使用，就形成子程序</p>
+<p>子程序可以实现源程序的模块化，可简化源程序结构，可以提高编程效率</p>
+<p><strong>参数传递是子程序设计的重点和难点</strong></p>
+<p>子程序的调用和返回是由指令<strong>CALL和RET</strong>(return)来完成的</p>
+<p>•CALL指令分成4种类型（类似JMP）</p>
+<p>CALL label ；段内调用、相对寻址</p>
+<p>CALL r16/m16 ；段内调用、间接寻址</p>
+<p><strong>CALL far ptr label ；段间调用、直接寻址</strong></p>
+<p><strong>CALL far ptr mem ；段间调用、间接寻址</strong></p>
+<p>返回时，RET直接从当前栈顶取内容作为返回地址。因此要保证RET指令执行前堆栈栈顶的内容刚好是返回的地址。</p>
+<p>例：子程序的常见格式（实现回车换行的子程序）：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="子程序示例.png" alt=""></p>
+<p>注意：</p>
+<ol>
+<li>对简化段定义格式，在tiny和small下，过程(PROC)的默认属性为near；对完整段定义格式下，过程的默认属性为near。</li>
+<li>进行过程设计时，需要注意寄存器的保护和恢复，即<strong>开始时将要修改的寄存器内容压入栈，结束后再逆序弹出</strong>。</li>
+</ol>
+<h3 id="（二）如何进行参数传递"><a href="#（二）如何进行参数传递" class="headerlink" title="（二）如何进行参数传递"></a>（二）如何进行参数传递</h3><p>主程序在调用子程序时，通常需要提供一些数据，即<strong>入口参数（输入参数）</strong></p>
+<p>子程序执行结束后要返回主程序数据，即<strong>出口参数（输出参数）</strong></p>
+<p>参数的形式分为两种</p>
+<p>① 数据本身（传值）②数据的地址（传址）</p>
+<p>下面介绍如何传递参数</p>
+<h4 id="1-寄存器传递参数（共享寄存器）"><a href="#1-寄存器传递参数（共享寄存器）" class="headerlink" title="1.寄存器传递参数（共享寄存器）"></a>1.寄存器传递参数（共享寄存器）</h4><p>把参数存于约定的寄存器中，可以传值，也可以传址。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="寄存器传参.png" alt=""></p>
+<p>上图的子程序将和存在了al中，返回后再将其mov到result中，实现了参数传递。</p>
+<p>注:子程序对带有入口参数的寄存器可以保护，也可以不保护；上图未保护</p>
+<p>​     子程序对带有出口参数的寄存器不能保护和恢复</p>
+<h4 id="2-变量传递参数（共享变量）"><a href="#2-变量传递参数（共享变量）" class="headerlink" title="2.变量传递参数（共享变量）"></a>2.变量传递参数（共享变量）</h4><p>主程序和子程序直接采用同一个变量名共享同一个变量。</p>
+<p>类比于C++中的加引用，<strong>直接改变了变量的值</strong>。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="变量传参1.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="变量传参2.png" alt=""></p>
+<p>上图的子程序直接将al中的值mov到了result，随后返回到主程序。</p>
+<h4 id="3-堆栈传递参数（共享堆栈）"><a href="#3-堆栈传递参数（共享堆栈）" class="headerlink" title="3.堆栈传递参数（共享堆栈）"></a>3.堆栈传递参数（共享堆栈）</h4><p>主程序将子程序的入口参数压入堆栈，子程序从堆栈中取出参数</p>
+<p>子程序将出口参数压入堆栈，主程序弹出堆栈取得它们</p>
+<p>前方高能</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="堆栈传参1.png" alt=""></p>
+<p>入口参数为数组的偏移地址和数组的元素个数，通过压入堆栈进行传递。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="堆栈传参2.png" alt=""></p>
+<p>程序在保护bp后，将bp置为栈顶，并通过偏移位置来分别寻址获得压入的偏移地址和元素参数。最后按反序弹出栈内值和址。</p>
+<p>上述程序堆栈的使用情况如下图</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="堆栈情况.png" alt=""></p>
+<p>由于<strong>主程序压入了2个参数，使用了堆栈区的4字节</strong>，故采用上述办法平衡堆栈。</p>
+<p>注：由于寄存器的保护也存于堆栈中，所以在子程序退出时<strong>要特别注意pop的顺序</strong>。</p>
+<h2 id="二、缓冲区"><a href="#二、缓冲区" class="headerlink" title="二、缓冲区"></a>二、缓冲区</h2><h3 id="（一）如何定义缓冲区"><a href="#（一）如何定义缓冲区" class="headerlink" title="（一）如何定义缓冲区"></a>（一）如何定义缓冲区</h3><p>例</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="缓冲区定义.png" alt=""></p>
+<p>该例表示在内存中申请一个<strong>缓冲区为83个字节，首地址给BUF</strong>。</p>
+<p>缓冲区分为<strong>三个部分</strong></p>
+<p>第一个字节内放的是<strong>事先填入最多欲接收的字符个数</strong>（包括回车字符，可以是1～255），在例中为81，表示申请的存放数据的缓冲区的字节数为81个。</p>
+<p>第二个字节 ‘ ？‘表示的是实际存放的字节个数（不包括回车）</p>
+<p>就是说，你放入2个字节的数据，“？”变成2，放10个字节的数据，变成10）；</p>
+<p>DB表示的是分配一个或多个字节；</p>
+<p><strong>输入的数据（字符串）从第三个字节开始存放</strong>，存放至第82个字节，<strong>第81个字节存放回车符（0DH）,0DH作为输入数据的结束</strong>。</p>
+<p><strong>DUP(0)</strong>表示的是<strong>存放数据的81个字节初始值全为0</strong>，即为：81 0 0 0 0······（第82个字节）0 ODH。</p>
+<p>注：实际输入的字符数多于定义数时，多出的字符丢掉，且响铃</p>
+<h3 id="（二）如何使用缓冲区"><a href="#（二）如何使用缓冲区" class="headerlink" title="（二）如何使用缓冲区"></a>（二）如何使用缓冲区</h3><p>下例实现了字符串的输入</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符串输入.png" alt=""></p>
+<h2 id="三、串操作指令"><a href="#三、串操作指令" class="headerlink" title="三、串操作指令"></a>三、串操作指令</h2><p>串操作指令的操作对象是以字（W）为单位的<strong>字串</strong>，或是以字节（B）为单位的<strong>字节串</strong></p>
+<p>串操作指令采用了特殊的寻址方式</p>
+<ol>
+<li>源操作数用寄存器SI间接寻址，默认在数据段DS中，即DS:[DI]</li>
+<li><strong>目的操作数用寄存器DI间接寻址，默认在附加段ES中</strong>，即ES:[SI]</li>
+<li>每执行一次串操作，SI和DI将自动修改</li>
+<li><strong>源数据串可以段跨越，目的串不可。</strong></li>
+</ol>
+<p>注：由于要自动修改SI与DI，所以用户需要在进行串操作之前<strong>改变方向标志DF先确定增加或减小的方向</strong></p>
+<p>即：执行<strong>CLD</strong>（DF=0，主存地址增大，<strong>较为常用</strong>）或执行STD（DF=1，主存地址减小）</p>
+<p>串操作经出<strong>配合重复前缀指令</strong>，通过<strong>计数器CX</strong>控制重复执行串操作指令的次数。</p>
+<h3 id="（一）串传送指令"><a href="#（一）串传送指令" class="headerlink" title="（一）串传送指令"></a>（一）串传送指令</h3><p>①串传送 MOVSB/W（move string）</p>
+<p>把字节从主存的源地址传送至目标地址</p>
+<p><strong>MOVSB</strong> 字节串传送：<strong>ES:[DI]←DS:[SI]</strong></p>
+<p>②串存储 STOSB/W（store string）</p>
+<p>把<strong>AL或AX</strong>数据传送至目标地址</p>
+<p><strong>STOSB</strong>  字节串存储：<strong>ES:[DI]←AL</strong>（AL传字节）</p>
+<p><strong>STOSW</strong> 字串存储：    <strong>ES:[DI]←AX</strong>（AX传字）</p>
+<p>③串读取 LODSB/W（load string）</p>
+<p>把指定主存单元的数据传送给<strong>AL或AX</strong></p>
+<p><strong>LODSB</strong>  字节串读取： <strong>AL←DS:[SI]</strong></p>
+<p><strong>LODSW</strong> 字串读取：    <strong>AX←DS:[SI]</strong></p>
+<p>④REP重复前缀指令</p>
+<p><strong>REP</strong> <strong>；每执行一次串指令，CX减1直到CX＝0</strong>，重复执行结束</p>
+<p>即：当数据串没有结束（CX≠0），则继续传送</p>
+<h3 id="（二）串检测指令"><a href="#（二）串检测指令" class="headerlink" title="（二）串检测指令"></a>（二）串检测指令</h3><p>①串比较指令CMPS（compare string）</p>
+<p>将主存中的<strong>源操作数减去至目的操作数</strong>，以便设置标志，进而比较两操作数之间的关系</p>
+<p><strong>CMPSB</strong>  字节串比较：<strong>DS:[SI]－ES:[DI]</strong></p>
+<p>②串扫描SCAS（scan string）</p>
+<p>将<strong>AL/AX减去至目的操作数</strong>，以便设置标志，进而比较AL/AX与操作数之间的关系</p>
+<p><strong>SCASB</strong>  字节串扫描：<strong>AL－ES:[DI]</strong></p>
+<p><strong>SCASW</strong> 字串扫描：   <strong>AX－ES:[DI]</strong></p>
+<p>③REPZ/REPE重复前缀指令</p>
+<p>每执行一次串指令，CX减1并判断ZF是否为0，</p>
+<p>只要CX＝0或ZF＝0，重复执行结束。</p>
+<p>即：当数据串没有结束（CX≠0），<strong>并且串相等（ZF＝1），则继续比较</strong></p>
+<p>④REPNZ/REPNE重复前缀指令</p>
+<p>每执行一次串指令，CX减1并判断ZF是否为0，</p>
+<p>只要CX＝0或ZF＝0，重复执行结束。</p>
+<p>即：当数据串没有结束（CX≠0），<strong>并且串不相等（ZF＝0），则继续比较</strong></p>
+<p>REPNZ和LOOP的区别：</p>
+<p>REPNZ是先执行一次指令，之后将CX减一，判断CX是否为0。</p>
+<p>而LOOP是先将CX减一，然后判断CX是否为0，不为0则继续执行指令。</p>
+<p>例：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="比较字符串.png" alt=""></p>
+<p>在上例中，指令repz cmpsb结束有两种情况</p>
+<p>第一种：ZF=0，即<strong>出现不相等的字符</strong></p>
+<p>第二种：CX=0，即<strong>比较完了所有字符</strong></p>
+<p>注意，在这种情况下，<strong>如果ZF=0，则说明最后一个字符不相等，ZF=1才能说明两个字符串相同</strong>。</p>
+<p>所以，重复比较结束后，需要通过<strong>jnz</strong>指令 来判断<strong>zf位</strong>，若其=0，则字符串不相等。</p>
+<p>总流程图如下</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="串操作流程图.png" alt=""></p>
+<p>下例为SCAS在字符串中查找空格字符的用法</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="查找空格.png" alt=""></p>
+<h2 id="四、常用DOS命令"><a href="#四、常用DOS命令" class="headerlink" title="四、常用DOS命令"></a>四、常用DOS命令</h2><p>调用DOS功能一般方法如下：</p>
+<p>1、在<strong>AH寄存器</strong>中设置系统功能调用号，说明选择的功能</p>
+<p>2、在指定寄存器中设置入口参数。</p>
+<p>3、用中断调用指令 INT 21H 执行功能调用。</p>
+<h3 id="（一）字符输出（02H号）"><a href="#（一）字符输出（02H号）" class="headerlink" title="（一）字符输出（02H号）"></a>（一）字符输出（02H号）</h3><p>入口参数：<strong>DL</strong>=字符的ASCII码</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符输出.png" alt=""></p>
+<p>注：该功能可以识别响铃字符（07H），回车（0DH），换行（0AH）。</p>
+<h3 id="（二）字符串输出（09H号）"><a href="#（二）字符串输出（09H号）" class="headerlink" title="（二）字符串输出（09H号）"></a>（二）字符串输出（09H号）</h3><p>入口参数：<strong>DS:DX</strong>=欲显示字符串在主存中的首地址。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符串输出.png" alt=""></p>
+<p>注：顺序为先回车（0DH），再换行（0AH），且字符串应以’$’(24H)结束。</p>
+<h3 id="（三）字符输入（01H号）"><a href="#（三）字符输入（01H号）" class="headerlink" title="（三）字符输入（01H号）"></a>（三）字符输入（01H号）</h3><p>出口参数：<strong>AL</strong>=字符的ASCII码</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符输入.png" alt=""></p>
+<p>调用此功能时，若无键按下，则会一直等待，直到按键后才读取该键值</p>
+<h3 id="（四）字符串输入（0AH号）"><a href="#（四）字符串输入（0AH号）" class="headerlink" title="（四）字符串输入（0AH号）"></a>（四）字符串输入（0AH号）</h3><p>入口参数：<strong>DS:DX</strong>=缓冲区首地址</p>
+<p><strong>关键要定义好缓冲区</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字符串输入.png" alt=""></p>
+<h2 id="五、8086的机器代码格式"><a href="#五、8086的机器代码格式" class="headerlink" title="五、8086的机器代码格式"></a>五、8086的机器代码格式</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="机器代码.png" alt=""></p>
+<p>机器码我都不怎么懂，直接搬PPT了= =</p>
+<p>例1： </p>
+<p>MOV AX,BX ;机器代码是 89 D8(16进制)</p>
+<p>第1个字节89是操作码(含<strong>w＝1表示16位操作</strong>)</p>
+<p>第2个字节D8（11 011 000）是 “<strong>mod reg r/m</strong>”</p>
+<p>reg＝011表示目的操作数为BX</p>
+<p>mod＝11时，为<strong>寄存器寻址方式</strong>。</p>
+<p>mod＝11和r/m＝000表示源操作数为AX</p>
+<p>例2：</p>
+<p>MOV AL,[BX+SI+6] ;机器代码是 8A 40（16进制） 06</p>
+<p>前一个字节8A是操作码(含<strong>w＝0表示8位操作</strong>)</p>
+<p>中间一个字节40（01 000 000）(将16进制转为2进制，然后按2 3 3拆开)是 “<strong>mod reg r/m</strong>”字节</p>
+<p>reg＝000表示目的操作数为AL</p>
+<p>mod＝01时，为<strong>带有8位位移量的存储器寻址方式</strong></p>
+<p>mod＝01和r/m＝000表示源操作数为[BX+SI+D8]</p>
+<p>最后一个字节就是8位位移量[D8]=06</p>
+<h2 id="六、常用的ASCII码"><a href="#六、常用的ASCII码" class="headerlink" title="六、常用的ASCII码"></a>六、常用的ASCII码</h2><p><strong>回车：0DH    换行：0AH</strong>   响铃：07H</p>
+<p><strong>空格：20H</strong></p>
+<p><strong>数字0~9：30H~39H</strong></p>
+<p>大写字母A~Z：41H~5AH</p>
+<p>小写字母a~z：61H~7AH</p>
+<h2 id="七、BCD码"><a href="#七、BCD码" class="headerlink" title="七、BCD码"></a>七、BCD码</h2><p>Binary Coded Decimal（二进制编码的十进制数），即<strong>一个十进制数位（0-9）在计算机中用4位二进制编码表示</strong>。常用的BCD码是8421BCD码，即用4位二进制编码的低19个编码表示0-9这十个数字，如图。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="BCD码.png" alt=""></p>
+<p>例：0100 1001 0111 1000.0001 0100 1001  十进制真值：4978.149（上图对应）</p>
+<p>00111010B=3AH   F2H=11110010B</p>
+<p>10H=00010000B=16D                        ABH=10101011B=171D</p>
+<p>压缩BCD码：一个字节表达两位BCD码      10000111B（87H)</p>
+<p>非压缩BCD码：<strong>一个字节表达一位BCD码</strong>（<strong>低4位表达数值，高4位常设置为0</strong>）   </p>
+<p>00001000 00000111B（0807H）</p>
+<h2 id="八、变量的定义"><a href="#八、变量的定义" class="headerlink" title="八、变量的定义"></a>八、变量的定义</h2><h3 id="（一）符号常数"><a href="#（一）符号常数" class="headerlink" title="（一）符号常数"></a>（一）符号常数</h3><p>利用一个标识符表达的一个数值</p>
+<p>例：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="符号常数.png" alt=""></p>
+<p>注：在5.x版本中，<strong>字符串是用引号括起来的</strong></p>
+<p>例：<code>calldos  equ &quot;int 21h&quot;</code></p>
+<p>EQU用于数值等价时不能重复定义符号名,<strong>但”=“允许有重复赋值</strong></p>
+<p>X=7  X EQU 7 都是正确的</p>
+<p>X=X+5   但 X EQU X+5是错误的</p>
+<h3 id="（二）变量定义伪指令"><a href="#（二）变量定义伪指令" class="headerlink" title="（二）变量定义伪指令"></a>（二）变量定义伪指令</h3><p>变量定义（Define）伪指令为变量申请固定长度的存储空间，并可同时将相应的存储单元初始化</p>
+<p>其汇编格式为：<code>变量名    伪指令    初值表</code></p>
+<p>变量名：</p>
+<ol>
+<li>变量名为用户自定义标识符，<strong>表示初值表首元素的逻辑地址</strong>；用这个符号表示地址，<strong>常称为符号地址</strong></li>
+<li>变量名可以没有，此时无符号地址。</li>
+</ol>
+<p>初值表：</p>
+<ol>
+<li><p>初值表是用逗号分隔的参数</p>
+</li>
+<li><p>主要由数值常数、表达式或？、DUP组成</p>
+<p>？——表示初值不确定，即未赋初值</p>
+<p>DUP——表示重复初值</p>
+<p><strong>DUP的格式为：重复次数 DUP(重复参数)</strong></p>
+</li>
+</ol>
+<h3 id="（三）定义实例"><a href="#（三）定义实例" class="headerlink" title="（三）定义实例"></a>（三）定义实例</h3><p>1.字节单元定义实例</p>
+<p>DB伪指令用于分配一个或多个字节单元。初值表中每个数据一定是字节量（Byte），存放8位数据。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字节单元定义.png" alt=""></p>
+<p>2.字单元定义实例</p>
+<p>DW伪指令用于分配一个或多个字单元。初值表中每个数据一定是字量（Word），存放16位数据。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字单元.png" alt=""></p>
+<p>3.字变量和字常量的应用（重要）</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="字变量与字常量.png" alt=""></p>
+<p>即：字变量在程序中当作mem，即取其偏移地址元素的数值。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>只花了一天的时间去复习整理汇编语言，希望别挂科就好</p>
 <p>后面看到这篇的人一定要好好学汇编啊。</p>
 <p>张海英你没有心（确信）</p>
@@ -1751,9 +1751,18 @@
                         </tbody>
                     </table>
                 </div>                 
+## 一周总结：01-11 ~01-17
 
-<h2 id="一周总结：01-11-01-17"><a href="#一周总结：01-11-01-17" class="headerlink" title="一周总结：01-11 ~01-17"></a>一周总结：01-11 ~01-17</h2><h2 id="2020-01-18"><a href="#2020-01-18" class="headerlink" title="2020-01-18"></a>2020-01-18</h2><p>今天纯划水了，感觉到了带着小孩做工作的艰辛，以后我得唱白脸了（确信</p>
-<h2 id="2020-01-19"><a href="#2020-01-19" class="headerlink" title="2020-01-19"></a>2020-01-19</h2><div class="note warning no-icon flat">
+这周在网站的完善上面花了挺多功夫
+
+## 2020-01-18
+
+
+今天纯划水了，感觉到了带着小孩做工作的艰辛，以后我得唱白脸了（确信
+
+## 2020-01-19
+
+<div class="note warning no-icon flat">
                             <p>
                                 <strong>杂项⭐</strong>
                             </p>
@@ -1899,15 +1908,26 @@
                                         大概浏览完了《正确写作MCM论文》，感觉讲的都是一些用词的细节
                                     </td>
                                                                     </tr>
-                                <tr>
-                                <td>终于把之前一直没改好的成绩检测器给配好并挂在电脑的计划任务了</td>
-                                    <td >网上的源脚本（只支持python2.7，需要请改成3.7版）<a href="https://smartjinyu.com/python/2017/01/14/xmu_gpa_monitor.html">XMU出分检测脚本</a> </td>
-                                                            </tr>
                         </tbody>
                     </table>
                 </div>
 
-
+<div class="note primary no-icon flat">
+                            <p>
+                                <strong>今日所得⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    </thead>
+                            <tbody>
+                                <tr>
+                                    <tr>
+                                <td>终于把之前一直没改好的成绩检测器给配好并挂在电脑的计划任务了</td>
+                                    <td >网上的源脚本（只支持python2.7，需要3.7版请联系我）<a href="https://smartjinyu.com/python/2017/01/14/xmu_gpa_monitor.html">XMU出分检测脚本</a> </td>
+                                                            </tr>
+                        </tbody>
+                    </table>
+                </div>  
 
 <h2 id="2020-01-23"><a href="#2020-01-23" class="headerlink" title="2020-01-23"></a>2020-01-23</h2><div class="note warning no-icon flat">
                             <p>
@@ -1965,6 +1985,28 @@
                          </tr>
             </tbody>
         </table>
-    </div> ]]></content>
+    </div> 
+
+<div class="note primary no-icon flat">
+                            <p>
+                                <strong>今日所得⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        如何在获取网站的图标
+                                    </td>
+                                    <td>
+                                        参考网址：<a href="https://jingyan.baidu.com/article/a3f121e4a46a79fc9152bb75.html">取得某个网站的图标</a>
+                                    </td>
+                                                                    </tr>
+                        </tbody>
+                    </table>
+                </div>  
+
+]]></content>
   </entry>
 </search>
