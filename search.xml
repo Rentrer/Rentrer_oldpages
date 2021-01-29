@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>TED视频推荐(持续更新)</title>
+    <url>/2021/01/27/TED%E8%A7%86%E9%A2%91%E6%8E%A8%E8%8D%90-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<p>今天突发奇想，想把自己看过的觉得好的TED演讲整理分享一下，也算监督自己多看多学多思考。</p>
+<p>2021 1月27日更新</p>
+<h2 id="1-The-First-20-Hours-How-to-Learn-Anything"><a href="#1-The-First-20-Hours-How-to-Learn-Anything" class="headerlink" title="1 The First 20 Hours -How to Learn Anything"></a>1 The First 20 Hours -How to Learn Anything</h2><p>链接：<a href="https://www.bilibili.com/video/BV144411b7Uk?from=search&amp;seid=8826208027574668777">TED演讲：别不信，你只需20个小时，就能学会任何事情！</a></p>
+<p>喜欢的句子摘录：</p>
+<p><strong>The major barrier to learn something new is not intellectual, it’s not the process of you learning a bunch of little tips or tricks or things. The major barrier is emotional.</strong></p>
+<p><strong>What turns you on ? What lights you up ? Go out and do that thing. It only takes 20 hours.</strong></p>
+<div>
+
+
+
+]]></content>
+      <categories>
+        <category>日积月累的资源</category>
+      </categories>
+  </entry>
+  <entry>
     <title>XMLSPY考试应用</title>
     <url>/2021/01/02/XMLSPY%E8%80%83%E8%AF%95%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<p>今天我们来探索一下XMLSPY，看看这个软件里有多少我们上机考能用到的东西！</p>
@@ -88,6 +106,163 @@
       <tags>
         <tag>课内学习笔记</tag>
         <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>XML开发技术——第一章</title>
+    <url>/2020/11/14/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/</url>
+    <content><![CDATA[<p>可能你还不了解XML，只是听说课水分高就报了(<del>我也是</del>)，那就跟着我的笔记，来一起了解XML吧！</p>
+<p>本系列笔记适合读过课本后过来进行总结，所以还是要先预习啊(<del>双关</del>)</p>
+<p><code>注：这系列的笔记将多采用Q E C形式，即 Question Evidence Conclusion 的形式</code> </p>
+<a id="more"></a>
+<h1 id="XML基础知识"><a href="#XML基础知识" class="headerlink" title="XML基础知识"></a>XML基础知识</h1><h2 id="1-1-XML及其相关技术概述"><a href="#1-1-XML及其相关技术概述" class="headerlink" title="1.1 XML及其相关技术概述"></a>1.1 XML及其相关技术概述</h2><p>Q1：什么是XML？</p>
+<p>C1：XML(eXtensible Markup Language)，即<strong>可扩展性标记语言</strong>，是标记语言中的一种。</p>
+<p>Q2：什么是标记？</p>
+<p>C2：标记是指计算机所能理解的信息符号，通过标记，计算机之间可以相互表示包含各种信息的文档。</p>
+<h3 id="1-1-1-XML的发展史"><a href="#1-1-1-XML的发展史" class="headerlink" title="1.1.1 XML的发展史"></a>1.1.1 XML的发展史</h3><p>Q3：标记语言(ML)的发展过程是什么？</p>
+<p>C3：</p>
+<ol>
+<li>SGML，它是XML的前身，由三部分构成，即语法定义、文件类型定义DTD和文件实例。但由于它<strong>过于庞大复杂，难以理解学习</strong>，真正大行其道的是其子集，如HTML和XML。</li>
+<li>HTML，它是SGML的一种实际应用，其DTD作为标准被固定下来。因此，<strong>HTML的功能单一，只能用于编写网页</strong>。</li>
+<li>XML，它是一套使用上规则严谨，但是语法简单的信息描述语言。它的目的是以一种更中立的方式，让用户自行决定要如何理解、呈现从服务端所提供的信息，<strong>而着重表示数据以及数据之间的联系。</strong></li>
+</ol>
+<h3 id="1-1-2-XML的特点"><a href="#1-1-2-XML的特点" class="headerlink" title="1.1.2  XML的特点"></a>1.1.2  XML的特点</h3><p>Q4：XML的特点主要包含什么？</p>
+<p>C4：主要包含四个方面：</p>
+<ol>
+<li><strong>可扩展性</strong>：XML允许使用者<strong>创建和使用他们自己的标记</strong>，而不是HTML的有限词汇表。</li>
+<li><strong>灵活性</strong>：XML提供了一种<strong>结构化的数据表示方式</strong>，使得用户界面分离于结构化数据，使得Web用户所追求的许多先进功能在XML环境下更容易实现。</li>
+<li><strong>自描述性</strong>：XML文档通常包含一个文档类型声明，<strong>不仅人能读懂，计算机也能处理</strong>，XML表示数据的方式真正做到了独立于应用系统，并且数据能够重用。</li>
+</ol>
+<p>示例文档</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="示例.png" alt=""></p>
+<ol>
+<li><strong>简洁性</strong>：XML比完整的SGML简单得多，<strong>易学、易用并且以实现</strong>。</li>
+</ol>
+<p>XML文档包含三个不同的组成部分：</p>
+<ol>
+<li><p>数据内容：即文档本身（<strong>对应XML</strong>）</p>
+</li>
+<li><p>结构：文档类型及其元素的组织形式，文档包括何种类型的元素，以及他们的排列次序（<strong>对应DTD/SCHEMA</strong>)</p>
+</li>
+<li>表现形式：在一张纸上、浏览器屏幕上向读者描述数据的方法，还有对每种元素类型使用何种字体等。(<strong>对应XSL/CSS</strong>)</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="组成部分.png" alt=""></p>
+<h3 id="1-1-3-XML的实际应用"><a href="#1-1-3-XML的实际应用" class="headerlink" title="1.1.3 XML的实际应用"></a>1.1.3 XML的实际应用</h3><p>XML 成为一种<strong>与平台无关</strong>的、<strong>数据表示</strong>和<strong>数据交换</strong>的载体。</p>
+<h2 id="1-2-XML规范及XML文档分类"><a href="#1-2-XML规范及XML文档分类" class="headerlink" title="1.2 XML规范及XML文档分类"></a>1.2 XML规范及XML文档分类</h2><p>XML文档实际上是一个文本文件，但并不是任何文本文件都是正确的XML文档，W3C的XML1.0规范对XML文档的语法格式进行了严格的定义。</p>
+<h3 id="1-2-1-XML文档中的XML声明"><a href="#1-2-1-XML文档中的XML声明" class="headerlink" title="1.2.1 XML文档中的XML声明"></a>1.2.1 XML文档中的XML声明</h3><p>Q5：声明有哪些特点和注意事项？</p>
+<p>E5：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>C5：</p>
+<p>XML声明部分<strong>本身是可选的</strong>（可以没有声明）。但如果包含声明部分，必须是整个XML文档的第一行内容（<strong>第一行不能为注释或空行</strong>）。&lt;?xml要顶格，且中间无空格。</p>
+<p>完整的 XML 声明包括三个部分：</p>
+<p>(1) 版本声明 (<strong>version</strong>)通常情况下为1.0，<strong>在声明中是必须的</strong>，并且必须为作为<strong>第一个属性</strong>出现。</p>
+<p>(2) 编码声明 (<strong>encoding</strong>)该属性的取值用于指明当前XML文档中所使用的符号的编码方式。一般采用”UTF-8”,这个属性是<strong>可选</strong>的（默认为UTF-8)。</p>
+<p>注：<strong>这个编码方式与XML在文档在系统中保存时使用的编码方式没有直接关系</strong>。</p>
+<p>(3) 文档独立性声明 (<strong>standalone</strong>)该属性的取值表明当前XML文件是否独立使用、还是与其他标记文件配套使用。若为“yes”,则解析当前XML文档时无需其他的外部标记声明文件。若为”no“，则可能需要使用外部的标记声明文件。这个属性是<strong>可选</strong>的。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="独立性.png" alt=""></p>
+<p>示例中，no的原因是因为该文档引用了外部1.ent中定义的实体：<em>&amp;nbsp</em></p>
+<p>而<strong>如果存在外部标记声明</strong>，且没有standalone声明，则解析器将认为<strong>standalone的值为no</strong></p>
+<p>如果有encoding 属性和standalone属性，那么<strong>encoding属性必须放standalone属性前面</strong>。</p>
+<h3 id="1-2-2-处理指令和注释"><a href="#1-2-2-处理指令和注释" class="headerlink" title="1.2.2 处理指令和注释"></a>1.2.2 处理指令和注释</h3><p>Q6：什么是处理指令？</p>
+<p>E6：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml-stylesheet href=&quot;style.xsl&quot; type=&quot;text/xsl&quot;?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>C6：处理指令是表示将XML文档用于特殊的应用程序时表示需要执行的特定操作，而XML解析器不会执行特定的操作。</p>
+<p>语法格式：<code>&lt;? target-name data ?&gt;</code></p>
+<p>其中，<strong>&lt;?和?&gt;表示处理指令的开始与结束</strong>；target-name表示该处理指令的<strong>名称</strong>，data部分描述该指令的<strong>具体内容</strong>。E6的含义为：当XSL的执行引擎碰到这个处理指令时，将会根据href的取值获得指定的xsl文件，并对输入的xml文档进行相应的转换。</p>
+<p>Q7：注释的注意事项是什么？</p>
+<p>C7：语法格式 <code>&lt;!--......--&gt;</code>,与HTML一致。</p>
+<p>​        在注释的内容中，<strong>不应该出现两个连续的横线</strong>。</p>
+<p>​        注释不应该出现在元素的标记中，<strong>注释之中不应该嵌套注释</strong>。</p>
+<h3 id="1-2-3-XML文档中的元素和属性"><a href="#1-2-3-XML文档中的元素和属性" class="headerlink" title="1.2.3 XML文档中的元素和属性"></a>1.2.3 XML文档中的元素和属性</h3><p>Q8：什么是元素？</p>
+<p>E8：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">element_name</span> <span class="attr">att1</span>=<span class="string">&quot;val1&quot;</span> <span class="attr">att2</span>=<span class="string">&quot;val2&quot;</span>&gt;</span></span><br><span class="line">    ...content...</span><br><span class="line"><span class="tag">&lt;/<span class="name">element_name</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>C8：元素是最基本的组成单元，在元素的开始标记中还可以包含相关的属性。元素中可以包含文本、子元素、或者两者的组合。可以存在空元素，即<strong>不包含任何内容</strong>的元素，但它<strong>可以包含属性</strong>：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span>&gt;</span><span class="tag">&lt;/<span class="name">details</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">details</span>/&gt;</span><span class="comment">&lt;!--上述两种空元素是等价的--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">details</span> <span class="attr">about</span>=<span class="string">&quot;Location&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">details</span>&gt;</span><span class="comment">&lt;!--空元素可以包含属性--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>一个元素可以包含任意多个子元素，<strong>可以包含多个同名的子元素</strong>；子元素的<strong>顺序非常重要</strong>。</p>
+<p>Q9：什么是属性？</p>
+<p>E9：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">author</span> <span class="attr">firstname</span>=<span class="string">&quot;Tom&quot;</span> <span class="attr">lastname</span>=<span class="string">&quot;hanks&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>C9：<strong>属性不能独立于元素而存在</strong>，通常以名-值对的形式出现，用于描述当前元素的某个方面的特征。</p>
+<p>​        <strong>属性的取值必须加上引号（单引号或者双引号）</strong></p>
+<p>元素在其开始标记中可以包含任意多个属性，但<strong>不能包含同名的属性</strong>。</p>
+<p>对于一个元素所有的属性，<strong>它们不分先后顺序</strong>，因为它们之间可以通过名称相互区别。</p>
+<p>Q10：如何命名元素和属性？</p>
+<p>E10：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">example-one</span>/&gt;</span> <span class="tag">&lt;<span class="name">_example2</span>/&gt;</span> <span class="tag">&lt;<span class="name">:Example.Three</span>/&gt;</span> <span class="comment">&lt;!--这些标记名称都是正确的--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bad*character</span>/&gt;</span> <span class="tag">&lt;<span class="name">illegal</span> <span class="attr">space</span>/&gt;</span> <span class="tag">&lt;<span class="name">12number-start</span>/&gt;</span><span class="comment">&lt;!--这些都是错误的--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>C10：</p>
+<ol>
+<li>名称的开头必须以<strong>字母、下划线或者冒号</strong>开头。</li>
+<li>除开头之外的其他部分可以是字母、数字、<strong>横线(-)</strong>、下划线、<strong>点号(.)、冒号</strong>的任意组合。</li>
+<li><strong>元素名称分大小写</strong>。</li>
+<li>元素和属性的名称长度没有限制。</li>
+<li>可以使用非英文的元素名。</li>
+</ol>
+<p>Q11：如何选择子元素和属性的使用？</p>
+<p>C11：</p>
+<ol>
+<li>对于简单的标量数据（<strong>无结构的数据</strong>），可以采用属性，否则应该采用子元素。</li>
+<li>对于可能在<strong>数目上发生变化的特性</strong>，应该使用子元素，比如某本书籍可能有多个作者。</li>
+</ol>
+<h3 id="1-2-4-XML文档中的文本内容和CDATA段"><a href="#1-2-4-XML文档中的文本内容和CDATA段" class="headerlink" title="1.2.4 XML文档中的文本内容和CDATA段"></a>1.2.4 XML文档中的文本内容和CDATA段</h3><p>在文本内容中，一些符号会产生歧义，使得解析器不能正确辨识。比如</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;lessthan&gt;one&lt;two&lt;/lessthan&gt; &lt;!--文本中的小于号产生了歧义--&gt;</span><br></pre></td></tr></table></figure>
+<p>XML 1.0 规范中定义了五种预定义实体：而<strong>除此以外的的其他实体，必须在使用前进行声明</strong>。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="预定义实体.png" alt=""></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">lessthan</span>&gt;</span>one <span class="symbol">&amp;it;</span>two<span class="tag">&lt;/<span class="name">lessthan</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注：预定义实体<strong>以&amp;表示实体的开始</strong>，<strong>最后有一个分号</strong>表示实体的结束，容易遗漏，特别注意 </p>
+<p>Q12：什么是CDATA段？</p>
+<p>E12：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">customer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>&lt;![CDATA[YOU &amp; ME,&lt;Tom&gt;&amp;&lt;Jerry&gt;]]&gt;<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">customer</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>C12: 假设XML文档的某块文本内容中<strong>包含大量的特殊字符</strong>，那么可以将整个文本块的内容放入到一个CDATA段中</p>
+<p>即：<code>&lt;![CDATA[]]&gt;</code></p>
+<p>使用 CDATA 段，可以告诉<strong>解析器不要试图从该文本块中查找 XML 标记</strong>，<strong>它仅仅就是文本内容</strong>，从而避免了歧义的产生，因此<strong>可以使用非法字符</strong>。</p>
+<p>同理，CDATA段的文本内容中<strong>不能直接出现]]&gt;</strong>，并且CDATA段<strong>不应该嵌套使用</strong>。（与注释类似）</p>
+<p>Q13：什么是空白字符？</p>
+<p>C13：XML文档中的空白字符包括空格、回车、换行、制表等四种符号。</p>
+<p>注：在<strong>缺省</strong>的情况下，对于连续出现的空白字符，解析器会将其<strong>缩减为一个空格字符</strong>。如果准备<strong>显示标记包含的全部空格</strong>，在编辑xml文件时将输入法换成<strong>“中文”输入法</strong>，并选择“<strong>全角状态”来编辑空格字符</strong>。</p>
+<h3 id="1-2-5-XML文档的良构性规则"><a href="#1-2-5-XML文档的良构性规则" class="headerlink" title="1.2.5 XML文档的良构性规则"></a>1.2.5 XML文档的良构性规则</h3><p>Q14：良构的XML文档要满足什么要求？</p>
+<p>C14:</p>
+<ol>
+<li>开始标记必须与结束标记相对应。</li>
+<li>标记是大小写敏感的。</li>
+<li>标记必须正确的嵌套。</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">book</span>&gt;</span><span class="tag">&lt;<span class="name">author</span>&gt;</span>tom hanks<span class="tag">&lt;/<span class="name">book</span>&gt;</span><span class="tag">&lt;/<span class="name">author</span>&gt;</span> <span class="comment">&lt;!--这是错误的--&gt;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>属性值必须使用引号括起来：</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span> <span class="attr">about</span>=<span class="string">Location/</span>&gt;</span> <span class="comment">&lt;!--不加引号是错误的，可加单引号或双引号--&gt;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>有且只有一个根元素。</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">author</span>&gt;</span>tom hanks<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">author</span>&gt;</span>mike jimmy<span class="tag">&lt;/<span class="name">author</span>&gt;</span><span class="comment">&lt;!--这段内容称为XML片段--&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-2-6-XML文档的分类"><a href="#1-2-6-XML文档的分类" class="headerlink" title="1.2.6 XML文档的分类"></a>1.2.6 XML文档的分类</h3><p>XML 既可以是<strong>面向数据</strong>（Data Centric）的，又可以是<strong>面向文档</strong>（Document Centric）的。</p>
+<p>面向数据的文档主要利用 XML 来传送应用数据，这些文档包括销售订单（参见 data-centric.xml）、病人记录和科学数据等。</p>
+<p>面向数据的 XML 文档的物理结构，如元素的顺序、或者数据被存储为属性还是子元素，通常不是很重要。它们的特征是高度有序的结构，并且同时带有那些数据结构的多个项目，类似于关系数据库系统中的多条记录。 </p>
+<p>面向文档的 XML 文件几乎没有结构，元素结构粗糙。面向文档的文档是利用 XML 来获取自然（人类）语言的那些文档，如留言信息（参见 doc-centric.xml）、用户手册。 </p>
+<p>它们以复杂或无规则的结构和混合内容为特征，而且文档的物理结构非常重要。这些文档的处理侧重于给用户提供信息的最终表示，因此它们也被称作面向表示的文档。 </p>
+<h2 id="1-3-命名空间"><a href="#1-3-命名空间" class="headerlink" title="1.3 命名空间"></a>1.3 命名空间</h2><p>Q15：什么是命名空间？</p>
+<p>C15：命名空间 (namespace) 主要是通过某种形式来表示标识符 (identifier) 的上下文，可以将逻辑上相关的标识符组织成相应的命名空间，可使整个系统更加模块化。 </p>
+<h3 id="1-3-2-XML中命名空间的声明和使用"><a href="#1-3-2-XML中命名空间的声明和使用" class="headerlink" title="1.3.2 XML中命名空间的声明和使用"></a>1.3.2 XML中命名空间的声明和使用</h3><p>Q16：如何声明命名空间？</p>
+<p>E16：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">myns:element</span> <span class="attr">xmlns:myns</span>=<span class="string">&quot;http://www.myns.com&quot;</span>&gt;</span></span><br><span class="line">    .....</span><br><span class="line"><span class="tag">&lt;/<span class="name">myns:element</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>C16：声明XML命名空间的语法为：<strong>xmlns:prefix-name=”URI”</strong>。其中，<strong>xmlns是XML的保留属性，用来声明命名空间</strong>。命名空间的前缀名称是以字母或下划线（_）开头的、<strong>不包含空白字符和冒号（:）</strong>的字符串，通常规定<strong>不应该使用 XML 中的保留字</strong>，比如 xml、xsl 等等。</p>
+<p>对于例子，myns:element表示element元素属于myns这个命名空间，而myns只是命名空间的简称，后面的语句才是命名空间的声明，表示myns命名空间的全程为字符串”<a href="http://www.myns.com&quot;。">http://www.myns.com&quot;。</a></p>
+<p>Q17：为什么不建议用简短的字符串作为命名空间的全称？</p>
+<p>C17：为了减少不同命名空间标识符冲突的可能性。</p>
+<p>Q18：怎样使用缺省命名空间？</p>
+<p>E18：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">company</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.myns.com&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">company-info</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>SoftwareBG<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">fdate</span>&gt;</span>2007-03-17<span class="tag">&lt;/<span class="name">fdate</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">ns1:division</span> <span class="attr">xmlns:ns1</span>=<span class="string">&quot;http://www.myns.com/division&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">ns1:name</span>&gt;</span>Development<span class="tag">&lt;/<span class="name">ns1:name</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">ns1:employees</span>&gt;</span>100<span class="tag">&lt;/<span class="name">ns1:employees</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">ns1:division</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">company-info</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">company</span>&gt;</span> </span><br></pre></td></tr></table></figure>
+<p>C18：由例子：根元素company的<strong>开始标记中声明了一个无前缀名的命名空间，它的作用范围为整个XML文档</strong>。因此在该文档中，<strong>任何没有显示地指定命名空间的元素和属性</strong>（即除了disivion命名空间下的其他），都属于这个缺省的无名命名空间。</p>
+<p>教学要求：能较系统地了解XML及其相关技术概述，XML在各个领域方面的应用，XML规范及XML文档分类，命名空间，XML数据模型规范等；</p>
+<h2 id="1-4-XML文档的数据模型规范"><a href="#1-4-XML文档的数据模型规范" class="headerlink" title="1.4 XML文档的数据模型规范"></a>1.4 XML文档的数据模型规范</h2><p>以下片段都将转化为<code>&lt;a b=&#39;upcase&#39;&gt; Hello! &lt;/a&gt;</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">b</span>=<span class="string">&#x27;upcase&#x27;</span>&gt;</span> <span class="tag">&lt;<span class="name">[CDATA[Hello!]]</span>&gt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">b</span>=<span class="string">&#x27;upcase&#x27;</span>&gt;</span> Hello&amp;#33 <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>XML第一章的内容都属于基础，比较简单，多考于选择题，因此需要广覆盖知识点，不要在这里失分。</p>
+]]></content>
+      <categories>
+        <category>XML开发技术</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -363,276 +538,6 @@
       </categories>
   </entry>
   <entry>
-    <title>XML开发技术——第一章</title>
-    <url>/2020/11/14/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/</url>
-    <content><![CDATA[<p>可能你还不了解XML，只是听说课水分高就报了(<del>我也是</del>)，那就跟着我的笔记，来一起了解XML吧！</p>
-<p>本系列笔记适合读过课本后过来进行总结，所以还是要先预习啊(<del>双关</del>)</p>
-<p><code>注：这系列的笔记将多采用Q E C形式，即 Question Evidence Conclusion 的形式</code> </p>
-<a id="more"></a>
-<h1 id="XML基础知识"><a href="#XML基础知识" class="headerlink" title="XML基础知识"></a>XML基础知识</h1><h2 id="1-1-XML及其相关技术概述"><a href="#1-1-XML及其相关技术概述" class="headerlink" title="1.1 XML及其相关技术概述"></a>1.1 XML及其相关技术概述</h2><p>Q1：什么是XML？</p>
-<p>C1：XML(eXtensible Markup Language)，即<strong>可扩展性标记语言</strong>，是标记语言中的一种。</p>
-<p>Q2：什么是标记？</p>
-<p>C2：标记是指计算机所能理解的信息符号，通过标记，计算机之间可以相互表示包含各种信息的文档。</p>
-<h3 id="1-1-1-XML的发展史"><a href="#1-1-1-XML的发展史" class="headerlink" title="1.1.1 XML的发展史"></a>1.1.1 XML的发展史</h3><p>Q3：标记语言(ML)的发展过程是什么？</p>
-<p>C3：</p>
-<ol>
-<li>SGML，它是XML的前身，由三部分构成，即语法定义、文件类型定义DTD和文件实例。但由于它<strong>过于庞大复杂，难以理解学习</strong>，真正大行其道的是其子集，如HTML和XML。</li>
-<li>HTML，它是SGML的一种实际应用，其DTD作为标准被固定下来。因此，<strong>HTML的功能单一，只能用于编写网页</strong>。</li>
-<li>XML，它是一套使用上规则严谨，但是语法简单的信息描述语言。它的目的是以一种更中立的方式，让用户自行决定要如何理解、呈现从服务端所提供的信息，<strong>而着重表示数据以及数据之间的联系。</strong></li>
-</ol>
-<h3 id="1-1-2-XML的特点"><a href="#1-1-2-XML的特点" class="headerlink" title="1.1.2  XML的特点"></a>1.1.2  XML的特点</h3><p>Q4：XML的特点主要包含什么？</p>
-<p>C4：主要包含四个方面：</p>
-<ol>
-<li><strong>可扩展性</strong>：XML允许使用者<strong>创建和使用他们自己的标记</strong>，而不是HTML的有限词汇表。</li>
-<li><strong>灵活性</strong>：XML提供了一种<strong>结构化的数据表示方式</strong>，使得用户界面分离于结构化数据，使得Web用户所追求的许多先进功能在XML环境下更容易实现。</li>
-<li><strong>自描述性</strong>：XML文档通常包含一个文档类型声明，<strong>不仅人能读懂，计算机也能处理</strong>，XML表示数据的方式真正做到了独立于应用系统，并且数据能够重用。</li>
-</ol>
-<p>示例文档</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="示例.png" alt=""></p>
-<ol>
-<li><strong>简洁性</strong>：XML比完整的SGML简单得多，<strong>易学、易用并且以实现</strong>。</li>
-</ol>
-<p>XML文档包含三个不同的组成部分：</p>
-<ol>
-<li><p>数据内容：即文档本身（<strong>对应XML</strong>）</p>
-</li>
-<li><p>结构：文档类型及其元素的组织形式，文档包括何种类型的元素，以及他们的排列次序（<strong>对应DTD/SCHEMA</strong>)</p>
-</li>
-<li>表现形式：在一张纸上、浏览器屏幕上向读者描述数据的方法，还有对每种元素类型使用何种字体等。(<strong>对应XSL/CSS</strong>)</li>
-</ol>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="组成部分.png" alt=""></p>
-<h3 id="1-1-3-XML的实际应用"><a href="#1-1-3-XML的实际应用" class="headerlink" title="1.1.3 XML的实际应用"></a>1.1.3 XML的实际应用</h3><p>XML 成为一种<strong>与平台无关</strong>的、<strong>数据表示</strong>和<strong>数据交换</strong>的载体。</p>
-<h2 id="1-2-XML规范及XML文档分类"><a href="#1-2-XML规范及XML文档分类" class="headerlink" title="1.2 XML规范及XML文档分类"></a>1.2 XML规范及XML文档分类</h2><p>XML文档实际上是一个文本文件，但并不是任何文本文件都是正确的XML文档，W3C的XML1.0规范对XML文档的语法格式进行了严格的定义。</p>
-<h3 id="1-2-1-XML文档中的XML声明"><a href="#1-2-1-XML文档中的XML声明" class="headerlink" title="1.2.1 XML文档中的XML声明"></a>1.2.1 XML文档中的XML声明</h3><p>Q5：声明有哪些特点和注意事项？</p>
-<p>E5：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</span></span><br></pre></td></tr></table></figure>
-<p>C5：</p>
-<p>XML声明部分<strong>本身是可选的</strong>（可以没有声明）。但如果包含声明部分，必须是整个XML文档的第一行内容（<strong>第一行不能为注释或空行</strong>）。&lt;?xml要顶格，且中间无空格。</p>
-<p>完整的 XML 声明包括三个部分：</p>
-<p>(1) 版本声明 (<strong>version</strong>)通常情况下为1.0，<strong>在声明中是必须的</strong>，并且必须为作为<strong>第一个属性</strong>出现。</p>
-<p>(2) 编码声明 (<strong>encoding</strong>)该属性的取值用于指明当前XML文档中所使用的符号的编码方式。一般采用”UTF-8”,这个属性是<strong>可选</strong>的（默认为UTF-8)。</p>
-<p>注：<strong>这个编码方式与XML在文档在系统中保存时使用的编码方式没有直接关系</strong>。</p>
-<p>(3) 文档独立性声明 (<strong>standalone</strong>)该属性的取值表明当前XML文件是否独立使用、还是与其他标记文件配套使用。若为“yes”,则解析当前XML文档时无需其他的外部标记声明文件。若为”no“，则可能需要使用外部的标记声明文件。这个属性是<strong>可选</strong>的。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="独立性.png" alt=""></p>
-<p>示例中，no的原因是因为该文档引用了外部1.ent中定义的实体：<em>&amp;nbsp</em></p>
-<p>而<strong>如果存在外部标记声明</strong>，且没有standalone声明，则解析器将认为<strong>standalone的值为no</strong></p>
-<p>如果有encoding 属性和standalone属性，那么<strong>encoding属性必须放standalone属性前面</strong>。</p>
-<h3 id="1-2-2-处理指令和注释"><a href="#1-2-2-处理指令和注释" class="headerlink" title="1.2.2 处理指令和注释"></a>1.2.2 处理指令和注释</h3><p>Q6：什么是处理指令？</p>
-<p>E6：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml-stylesheet href=&quot;style.xsl&quot; type=&quot;text/xsl&quot;?&gt;</span></span><br></pre></td></tr></table></figure>
-<p>C6：处理指令是表示将XML文档用于特殊的应用程序时表示需要执行的特定操作，而XML解析器不会执行特定的操作。</p>
-<p>语法格式：<code>&lt;? target-name data ?&gt;</code></p>
-<p>其中，<strong>&lt;?和?&gt;表示处理指令的开始与结束</strong>；target-name表示该处理指令的<strong>名称</strong>，data部分描述该指令的<strong>具体内容</strong>。E6的含义为：当XSL的执行引擎碰到这个处理指令时，将会根据href的取值获得指定的xsl文件，并对输入的xml文档进行相应的转换。</p>
-<p>Q7：注释的注意事项是什么？</p>
-<p>C7：语法格式 <code>&lt;!--......--&gt;</code>,与HTML一致。</p>
-<p>​        在注释的内容中，<strong>不应该出现两个连续的横线</strong>。</p>
-<p>​        注释不应该出现在元素的标记中，<strong>注释之中不应该嵌套注释</strong>。</p>
-<h3 id="1-2-3-XML文档中的元素和属性"><a href="#1-2-3-XML文档中的元素和属性" class="headerlink" title="1.2.3 XML文档中的元素和属性"></a>1.2.3 XML文档中的元素和属性</h3><p>Q8：什么是元素？</p>
-<p>E8：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">element_name</span> <span class="attr">att1</span>=<span class="string">&quot;val1&quot;</span> <span class="attr">att2</span>=<span class="string">&quot;val2&quot;</span>&gt;</span></span><br><span class="line">    ...content...</span><br><span class="line"><span class="tag">&lt;/<span class="name">element_name</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>C8：元素是最基本的组成单元，在元素的开始标记中还可以包含相关的属性。元素中可以包含文本、子元素、或者两者的组合。可以存在空元素，即<strong>不包含任何内容</strong>的元素，但它<strong>可以包含属性</strong>：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span>&gt;</span><span class="tag">&lt;/<span class="name">details</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">details</span>/&gt;</span><span class="comment">&lt;!--上述两种空元素是等价的--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">details</span> <span class="attr">about</span>=<span class="string">&quot;Location&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">details</span>&gt;</span><span class="comment">&lt;!--空元素可以包含属性--&gt;</span></span><br></pre></td></tr></table></figure>
-<p>一个元素可以包含任意多个子元素，<strong>可以包含多个同名的子元素</strong>；子元素的<strong>顺序非常重要</strong>。</p>
-<p>Q9：什么是属性？</p>
-<p>E9：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">author</span> <span class="attr">firstname</span>=<span class="string">&quot;Tom&quot;</span> <span class="attr">lastname</span>=<span class="string">&quot;hanks&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>C9：<strong>属性不能独立于元素而存在</strong>，通常以名-值对的形式出现，用于描述当前元素的某个方面的特征。</p>
-<p>​        <strong>属性的取值必须加上引号（单引号或者双引号）</strong></p>
-<p>元素在其开始标记中可以包含任意多个属性，但<strong>不能包含同名的属性</strong>。</p>
-<p>对于一个元素所有的属性，<strong>它们不分先后顺序</strong>，因为它们之间可以通过名称相互区别。</p>
-<p>Q10：如何命名元素和属性？</p>
-<p>E10：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">example-one</span>/&gt;</span> <span class="tag">&lt;<span class="name">_example2</span>/&gt;</span> <span class="tag">&lt;<span class="name">:Example.Three</span>/&gt;</span> <span class="comment">&lt;!--这些标记名称都是正确的--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bad*character</span>/&gt;</span> <span class="tag">&lt;<span class="name">illegal</span> <span class="attr">space</span>/&gt;</span> <span class="tag">&lt;<span class="name">12number-start</span>/&gt;</span><span class="comment">&lt;!--这些都是错误的--&gt;</span></span><br></pre></td></tr></table></figure>
-<p>C10：</p>
-<ol>
-<li>名称的开头必须以<strong>字母、下划线或者冒号</strong>开头。</li>
-<li>除开头之外的其他部分可以是字母、数字、<strong>横线(-)</strong>、下划线、<strong>点号(.)、冒号</strong>的任意组合。</li>
-<li><strong>元素名称分大小写</strong>。</li>
-<li>元素和属性的名称长度没有限制。</li>
-<li>可以使用非英文的元素名。</li>
-</ol>
-<p>Q11：如何选择子元素和属性的使用？</p>
-<p>C11：</p>
-<ol>
-<li>对于简单的标量数据（<strong>无结构的数据</strong>），可以采用属性，否则应该采用子元素。</li>
-<li>对于可能在<strong>数目上发生变化的特性</strong>，应该使用子元素，比如某本书籍可能有多个作者。</li>
-</ol>
-<h3 id="1-2-4-XML文档中的文本内容和CDATA段"><a href="#1-2-4-XML文档中的文本内容和CDATA段" class="headerlink" title="1.2.4 XML文档中的文本内容和CDATA段"></a>1.2.4 XML文档中的文本内容和CDATA段</h3><p>在文本内容中，一些符号会产生歧义，使得解析器不能正确辨识。比如</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;lessthan&gt;one&lt;two&lt;/lessthan&gt; &lt;!--文本中的小于号产生了歧义--&gt;</span><br></pre></td></tr></table></figure>
-<p>XML 1.0 规范中定义了五种预定义实体：而<strong>除此以外的的其他实体，必须在使用前进行声明</strong>。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="预定义实体.png" alt=""></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">lessthan</span>&gt;</span>one <span class="symbol">&amp;it;</span>two<span class="tag">&lt;/<span class="name">lessthan</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>注：预定义实体<strong>以&amp;表示实体的开始</strong>，<strong>最后有一个分号</strong>表示实体的结束，容易遗漏，特别注意 </p>
-<p>Q12：什么是CDATA段？</p>
-<p>E12：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">customer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>&lt;![CDATA[YOU &amp; ME,&lt;Tom&gt;&amp;&lt;Jerry&gt;]]&gt;<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">customer</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>C12: 假设XML文档的某块文本内容中<strong>包含大量的特殊字符</strong>，那么可以将整个文本块的内容放入到一个CDATA段中</p>
-<p>即：<code>&lt;![CDATA[]]&gt;</code></p>
-<p>使用 CDATA 段，可以告诉<strong>解析器不要试图从该文本块中查找 XML 标记</strong>，<strong>它仅仅就是文本内容</strong>，从而避免了歧义的产生，因此<strong>可以使用非法字符</strong>。</p>
-<p>同理，CDATA段的文本内容中<strong>不能直接出现]]&gt;</strong>，并且CDATA段<strong>不应该嵌套使用</strong>。（与注释类似）</p>
-<p>Q13：什么是空白字符？</p>
-<p>C13：XML文档中的空白字符包括空格、回车、换行、制表等四种符号。</p>
-<p>注：在<strong>缺省</strong>的情况下，对于连续出现的空白字符，解析器会将其<strong>缩减为一个空格字符</strong>。如果准备<strong>显示标记包含的全部空格</strong>，在编辑xml文件时将输入法换成<strong>“中文”输入法</strong>，并选择“<strong>全角状态”来编辑空格字符</strong>。</p>
-<h3 id="1-2-5-XML文档的良构性规则"><a href="#1-2-5-XML文档的良构性规则" class="headerlink" title="1.2.5 XML文档的良构性规则"></a>1.2.5 XML文档的良构性规则</h3><p>Q14：良构的XML文档要满足什么要求？</p>
-<p>C14:</p>
-<ol>
-<li>开始标记必须与结束标记相对应。</li>
-<li>标记是大小写敏感的。</li>
-<li>标记必须正确的嵌套。</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">book</span>&gt;</span><span class="tag">&lt;<span class="name">author</span>&gt;</span>tom hanks<span class="tag">&lt;/<span class="name">book</span>&gt;</span><span class="tag">&lt;/<span class="name">author</span>&gt;</span> <span class="comment">&lt;!--这是错误的--&gt;</span></span><br></pre></td></tr></table></figure>
-<ol>
-<li>属性值必须使用引号括起来：</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span> <span class="attr">about</span>=<span class="string">Location/</span>&gt;</span> <span class="comment">&lt;!--不加引号是错误的，可加单引号或双引号--&gt;</span></span><br></pre></td></tr></table></figure>
-<ol>
-<li>有且只有一个根元素。</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">author</span>&gt;</span>tom hanks<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">author</span>&gt;</span>mike jimmy<span class="tag">&lt;/<span class="name">author</span>&gt;</span><span class="comment">&lt;!--这段内容称为XML片段--&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-2-6-XML文档的分类"><a href="#1-2-6-XML文档的分类" class="headerlink" title="1.2.6 XML文档的分类"></a>1.2.6 XML文档的分类</h3><p>XML 既可以是<strong>面向数据</strong>（Data Centric）的，又可以是<strong>面向文档</strong>（Document Centric）的。</p>
-<p>面向数据的文档主要利用 XML 来传送应用数据，这些文档包括销售订单（参见 data-centric.xml）、病人记录和科学数据等。</p>
-<p>面向数据的 XML 文档的物理结构，如元素的顺序、或者数据被存储为属性还是子元素，通常不是很重要。它们的特征是高度有序的结构，并且同时带有那些数据结构的多个项目，类似于关系数据库系统中的多条记录。 </p>
-<p>面向文档的 XML 文件几乎没有结构，元素结构粗糙。面向文档的文档是利用 XML 来获取自然（人类）语言的那些文档，如留言信息（参见 doc-centric.xml）、用户手册。 </p>
-<p>它们以复杂或无规则的结构和混合内容为特征，而且文档的物理结构非常重要。这些文档的处理侧重于给用户提供信息的最终表示，因此它们也被称作面向表示的文档。 </p>
-<h2 id="1-3-命名空间"><a href="#1-3-命名空间" class="headerlink" title="1.3 命名空间"></a>1.3 命名空间</h2><p>Q15：什么是命名空间？</p>
-<p>C15：命名空间 (namespace) 主要是通过某种形式来表示标识符 (identifier) 的上下文，可以将逻辑上相关的标识符组织成相应的命名空间，可使整个系统更加模块化。 </p>
-<h3 id="1-3-2-XML中命名空间的声明和使用"><a href="#1-3-2-XML中命名空间的声明和使用" class="headerlink" title="1.3.2 XML中命名空间的声明和使用"></a>1.3.2 XML中命名空间的声明和使用</h3><p>Q16：如何声明命名空间？</p>
-<p>E16：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">myns:element</span> <span class="attr">xmlns:myns</span>=<span class="string">&quot;http://www.myns.com&quot;</span>&gt;</span></span><br><span class="line">    .....</span><br><span class="line"><span class="tag">&lt;/<span class="name">myns:element</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>C16：声明XML命名空间的语法为：<strong>xmlns:prefix-name=”URI”</strong>。其中，<strong>xmlns是XML的保留属性，用来声明命名空间</strong>。命名空间的前缀名称是以字母或下划线（_）开头的、<strong>不包含空白字符和冒号（:）</strong>的字符串，通常规定<strong>不应该使用 XML 中的保留字</strong>，比如 xml、xsl 等等。</p>
-<p>对于例子，myns:element表示element元素属于myns这个命名空间，而myns只是命名空间的简称，后面的语句才是命名空间的声明，表示myns命名空间的全程为字符串”<a href="http://www.myns.com&quot;。">http://www.myns.com&quot;。</a></p>
-<p>Q17：为什么不建议用简短的字符串作为命名空间的全称？</p>
-<p>C17：为了减少不同命名空间标识符冲突的可能性。</p>
-<p>Q18：怎样使用缺省命名空间？</p>
-<p>E18：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">company</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.myns.com&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">company-info</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>SoftwareBG<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">fdate</span>&gt;</span>2007-03-17<span class="tag">&lt;/<span class="name">fdate</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">ns1:division</span> <span class="attr">xmlns:ns1</span>=<span class="string">&quot;http://www.myns.com/division&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">ns1:name</span>&gt;</span>Development<span class="tag">&lt;/<span class="name">ns1:name</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">ns1:employees</span>&gt;</span>100<span class="tag">&lt;/<span class="name">ns1:employees</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">ns1:division</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">company-info</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">company</span>&gt;</span> </span><br></pre></td></tr></table></figure>
-<p>C18：由例子：根元素company的<strong>开始标记中声明了一个无前缀名的命名空间，它的作用范围为整个XML文档</strong>。因此在该文档中，<strong>任何没有显示地指定命名空间的元素和属性</strong>（即除了disivion命名空间下的其他），都属于这个缺省的无名命名空间。</p>
-<p>教学要求：能较系统地了解XML及其相关技术概述，XML在各个领域方面的应用，XML规范及XML文档分类，命名空间，XML数据模型规范等；</p>
-<h2 id="1-4-XML文档的数据模型规范"><a href="#1-4-XML文档的数据模型规范" class="headerlink" title="1.4 XML文档的数据模型规范"></a>1.4 XML文档的数据模型规范</h2><p>以下片段都将转化为<code>&lt;a b=&#39;upcase&#39;&gt; Hello! &lt;/a&gt;</code></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">b</span>=<span class="string">&#x27;upcase&#x27;</span>&gt;</span> <span class="tag">&lt;<span class="name">[CDATA[Hello!]]</span>&gt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">b</span>=<span class="string">&#x27;upcase&#x27;</span>&gt;</span> Hello&amp;#33 <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>XML第一章的内容都属于基础，比较简单，多考于选择题，因此需要广覆盖知识点，不要在这里失分。</p>
-]]></content>
-      <categories>
-        <category>XML开发技术</category>
-      </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TED视频推荐(持续更新)</title>
-    <url>/2021/01/27/TED%E8%A7%86%E9%A2%91%E6%8E%A8%E8%8D%90-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</url>
-    <content><![CDATA[<p>今天突发奇想，想把自己看过的觉得好的TED演讲整理分享一下，也算监督自己多看多学多思考。</p>
-<p>2021 1月27日更新</p>
-<h2 id="1-The-First-20-Hours-How-to-Learn-Anything"><a href="#1-The-First-20-Hours-How-to-Learn-Anything" class="headerlink" title="1 The First 20 Hours -How to Learn Anything"></a>1 The First 20 Hours -How to Learn Anything</h2><p>链接：<a href="https://www.bilibili.com/video/BV144411b7Uk?from=search&amp;seid=8826208027574668777">TED演讲：别不信，你只需20个小时，就能学会任何事情！</a></p>
-<p>喜欢的句子摘录：</p>
-<p><strong>The major barrier to learn something new is not intellectual, it’s not the process of you learning a bunch of little tips or tricks or things. The major barrier is emotional.</strong></p>
-<p><strong>What turns you on ? What lights you up ? Go out and do that thing. It only takes 20 hours.</strong></p>
-<div>
-
-
-
-]]></content>
-      <categories>
-        <category>日积月累的资源</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>数据结构期末复习</title>
-    <url>/2021/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<p>面向考试复习数据结构2.0版正式上线了</p>
-<p>本文将整理后三章的相关知识点，并对例题习题进行整合梳理，存在不足，欢迎补充。</p>
-<h1 id="第四章-图"><a href="#第四章-图" class="headerlink" title="第四章 图"></a>第四章 图</h1><h2 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h2><p>图是由一个顶点集V和一个弧集(或边集)构成的数据结构，是一种<strong>非线性</strong>数据结构</p>
-<p>网：带权的图。<strong>在不会引起歧义时，网也直接称为图。</strong></p>
-<p>路径长度：路径上边的数目（两个点之间的距离即路径上<strong>除了起点，包括终点的顶点个数</strong>）</p>
-<p>简单路径：<strong>顶点不重复</strong>出现的路径（<strong>边可以重复</strong>）</p>
-<h3 id="关于图的顶点和边数目"><a href="#关于图的顶点和边数目" class="headerlink" title="关于图的顶点和边数目"></a>关于图的顶点和边数目</h3><p> 我们用 n 表示图中顶点数目；m表示图中边(或者弧)的数目；</p>
-<p>  对于无向图：<code>0≤m≤n(n-1)/2</code>  <strong>m=n(n-1)/2的无向图称为完全图</strong></p>
-<p> 对于有向图：<code>0≤m≤n(n-1)</code>       <strong>m=n(n-1)的有向图称为有向完全图</strong></p>
-<p>n=0: V为空集；<strong>m=0: 或许有1个顶点（平凡图）。</strong></p>
-<p>例一：设某个非连通无向图有28条边，则该图至少有(9)个顶点。</p>
-<p>解：此题的要点是<strong>非连通</strong>的无向图</p>
-<p>由上方公式可得，8*7/2=28，正好为8个顶点的完全图的边数</p>
-<p>但题目中要求是非连通的，所以在边不加的情况下，<strong>至少加一个孤立点，即至少有9个顶点</strong></p>
-<p>举一反三：若某个连通无向图有28条边，则该图至少有(8)个顶点。</p>
-<h3 id="关于图的度数"><a href="#关于图的度数" class="headerlink" title="关于图的度数"></a>关于图的度数</h3><p>什么是邻接点？</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="无向邻接点.png" alt=""></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="有向邻接点.png" alt=""></p>
-<p>什么是度数？</p>
-<p>1.对于无向图，顶点v的度就是和顶点v相邻接的边的数目，<strong>记为TD(v)</strong></p>
-<p>2.对于有向图，<strong>入度ID(v)</strong>是箭头指向v的弧的个数， <strong>出度OD(v)</strong>是箭头远离v的弧的个数</p>
-<p>​                          顶点v的度<strong>TD(v)=ID(v)+OD(v)</strong></p>
-<p>3.握手定理：</p>
-<script type="math/tex; mode=display">
-\begin{equation*}
-
-2m = \sum_{n=1}^nTD(v_i)
-
-\end{equation*}</script><h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3><p>两个顶点间连通，等价于两个顶点之间有路径。</p>
-<p>连通图：<strong>无向图</strong>中任意两个顶点都连通（<strong>不存在孤立点</strong>）</p>
-<p>连通分量：无向图中的<strong>极大连通子图</strong></p>
-<p>强连通图/强连通分量：<strong>对于有向图</strong>，概念类似上两个。</p>
-<h3 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h3><p>对于<strong>连通图</strong>G，若其有n个顶点，则<strong>含有G中所有顶点，且边数为n-1</strong>的<strong>连通图</strong>称为G的一棵生成树。</p>
-<p>关键：原图是连通图，生成树有其全部n个顶点，有且仅有n-1条边。</p>
-<div class="note info flat"><p><strong>提示</strong></p>
-    <p>有n个顶点和n-1条边的图不一定是生成树</p>
-</div>
-
-<p>在有n个顶点的图中,<strong>如果边多于n-1条,则一定有环</strong>，<strong>如果边少于n-1条,则是非连通图。</strong></p>
-<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><h3 id="图的邻接矩阵"><a href="#图的邻接矩阵" class="headerlink" title="图的邻接矩阵"></a>图的邻接矩阵</h3><h4 id="从邻接矩阵判断度数"><a href="#从邻接矩阵判断度数" class="headerlink" title="从邻接矩阵判断度数"></a>从邻接矩阵判断度数</h4><p>对于无向图，顶点Vi的度为邻接矩阵中第i行（或第i列）<strong>元素个数之和</strong>（防止带权干扰）。</p>
-<p>对于有向图，第i<strong>行</strong>的元素个数之和为Vi的<strong>出度</strong>（从Vi到其他顶点）</p>
-<p>​                       第i<strong>列</strong>的元素个数之和为Vi的<strong>入度</strong>（从其他顶点到Vi）</p>
-<h4 id="时间复杂度和空间复杂度"><a href="#时间复杂度和空间复杂度" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接矩阵存储图，占用的<strong>存储空间大小与顶点数有关，与边数无关</strong>。</p>
-<p>时间复杂度为O(n²)</p>
-<h3 id="图的邻接表"><a href="#图的邻接表" class="headerlink" title="图的邻接表"></a>图的邻接表</h3><p>概念定义：</p>
-<p>邻接表是<strong>图的一种链式存储结构</strong>，图中的<strong>每一个顶点对应一个结点</strong>，并由所有顶点结点构成一个顺序表结构（竖着的链）</p>
-<p>图中<strong>每一个顶点建立一条链，该链由它的所有邻接点构成</strong>（横着的链）</p>
-<p>代码定义</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Anode</span></span></span><br><span class="line"><span class="class">&#123;</span>	<span class="keyword">int</span> Vi; <span class="comment">//邻接点在顺序表中的位置</span></span><br><span class="line">	<span class="keyword">int</span> Wi; <span class="comment">//权值(用于网。图可省略)</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Anode</span> *<span class="title">next</span>;</span> <span class="comment">//指向下一个邻接点</span></span><br><span class="line">&#125; ALink; <span class="comment">//邻接点存储结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Vnode</span></span></span><br><span class="line"><span class="class">&#123;</span>	Type data;</span><br><span class="line">	ALink *Vh; <span class="comment">//邻接点链表头指针</span></span><br><span class="line">&#125; Vnode; <span class="comment">//链表头指针结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span>	Vnode V [N];  <span class="comment">//链表头顺序表</span></span><br><span class="line">	<span class="keyword">int</span> n,m;  <span class="comment">//实际顶点数，边或弧数</span></span><br><span class="line">	<span class="keyword">int</span> visited[N];  <span class="comment">//访问标识</span></span><br><span class="line">&#125; AList; <span class="comment">//图的邻接表存储结构</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="从邻接表判断度数"><a href="#从邻接表判断度数" class="headerlink" title="从邻接表判断度数"></a>从邻接表判断度数</h4><p>无向图：顶点的度=邻接点链表中结点的数目</p>
-<p>有向图：顶点的<strong>出度</strong>=邻接点链表中结点的数目</p>
-<h4 id="时间复杂度和空间复杂度-1"><a href="#时间复杂度和空间复杂度-1" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接表存储图，占用的<strong>存储空间大小与顶点数和边数都有关</strong>。</p>
-<p>时间复杂度为O(n²)</p>
-<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h4 id="深度优先搜索遍历-更适用于找一条路径"><a href="#深度优先搜索遍历-更适用于找一条路径" class="headerlink" title="深度优先搜索遍历(更适用于找一条路径)"></a>深度优先搜索遍历(<strong>更适用于找一条路径</strong>)</h4><p>基本思想：</p>
-<p>①从图中某个顶点v出发，访问该顶点</p>
-<p>②查找顶点v的第一个未被访问的邻接点v1，访问该顶点。</p>
-<p>③重复第二步操作，直到图中没有未被访问的顶点为止。</p>
-<h4 id="广度优先搜索遍历-更适用于找最优路径"><a href="#广度优先搜索遍历-更适用于找最优路径" class="headerlink" title="广度优先搜索遍历(更适用于找最优路径)"></a>广度优先搜索遍历(<strong>更适用于找最优路径</strong>)</h4><p>基本思想：</p>
-<p>（1）从连通图中某个顶点v出发，访问该顶点，并置visited[v]的值为true，然后将v进队。</p>
-<p>（2）只要队列不空，则重复下述处理：</p>
-<p>​         ①队头顶点u出队</p>
-<p>​         ②依次检查u的所有邻接点w，如果visited[w]的值为false，则访问w，并置visited[w]的值为true，然后将w进队。</p>
-<p>代码</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(AList G, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;	G.visited[N]=&#123;<span class="number">0</span>&#125;;	<span class="comment">//访问标识初始化</span></span><br><span class="line">	Visit(k);	<span class="comment">//访问顶点k（或者写cout&lt;&lt;k&lt;&lt;endl;也可以）</span></span><br><span class="line">	G.visited[k<span class="number">-1</span>]=<span class="number">1</span>;	<span class="comment">//顶点k已访问</span></span><br><span class="line">	f=<span class="number">0</span>,r=<span class="number">0</span>,Q[N]=&#123;<span class="number">0</span>&#125;; <span class="comment">//队列Q[]初始化</span></span><br><span class="line">	Q[r++]=k<span class="number">-1</span>;  <span class="comment">//入队, r:队尾指针</span></span><br><span class="line">	<span class="keyword">while</span>(r&gt;=f)	<span class="comment">//当队列非空时</span></span><br><span class="line">	&#123;	i=Q[f++];  <span class="comment">//出队, f:队首指针</span></span><br><span class="line">        p=G.V[i].Vh;<span class="comment">//p是V[i]的链表头指针</span></span><br><span class="line">		<span class="keyword">while</span>(p)<span class="comment">//顺序访问链表的各个结点</span></span><br><span class="line">		&#123;	</span><br><span class="line">            j=p-&gt;Vi; <span class="comment">// j是邻接点在顺序表中的位置</span></span><br><span class="line">			<span class="keyword">if</span>(!G.visited[j])</span><br><span class="line">			&#123;	Visit(j+<span class="number">1</span>); <span class="comment">//访问顶点j+1</span></span><br><span class="line">				visited[j]=<span class="number">1</span>;</span><br><span class="line">				Q[r++]=j; <span class="comment">//入队</span></span><br><span class="line">			&#125;</span><br><span class="line">          	p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">//算法结束</span></span><br></pre></td></tr></table></figure>
-<p>以邻接表作存储结构时，深搜和广搜的时间复杂度都为O(n+e)</p>
-<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>定义：无向图G的所有生成树中各边权值之和最小的一颗生成树。</p>
-<p>Prim算法：加点法</p>
-<p>任取一个顶点v作为生成树的根，然后往生成树上添加新顶点u，顶点u满足其与生成树上某个顶点连通，并且在所有与生成树连通的边中权值最小，不断往生成树上添加顶点至生成树包含所有顶点为止。</p>
-<p>K算法：加边法</p>
-<p>为使生成树上边的权值之和达到最小，应使生成树中每一条边的权值尽可能地小(都能最小则最佳)。</p>
-<p>例：请描述出用K算法得到最小生成树的步骤</p>
-<p>①先构造一个只含n个顶点的子图S</p>
-<p>②然后从权值最小的边开始，若它的添加不使S中产生回路，则在S上加上这条边</p>
-<p>③如此重复，直至加上n-1条边为止。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="最小生成树比较.png" alt=""></p>
-<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>拓扑排序的一般操作方法：</p>
-<p>(1)从有向图中选取一个入度为0的顶点，输出它;</p>
-<p>(2)从有向图中删去该顶点以及所有以它为尾的弧;</p>
-<p>重复上述两步，直至图空或者找不到入度为0的顶点为止。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="拓扑排序.png" alt=""></p>
-<p>时间复杂度为O(n+m)</p>
-<h2 id="关键路径-从源点到汇点的最长路径"><a href="#关键路径-从源点到汇点的最长路径" class="headerlink" title="关键路径(从源点到汇点的最长路径)"></a>关键路径(<strong>从源点到汇点的最长路径</strong>)</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="关键路径.png" alt=""></p>
-<h1 id="第六章-排序"><a href="#第六章-排序" class="headerlink" title="第六章 排序"></a>第六章 排序</h1><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="排序.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-        <tag>考试复习整理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构期中复习</title>
     <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
@@ -723,6 +628,101 @@
 <h3 id="5-2二叉树转换成树"><a href="#5-2二叉树转换成树" class="headerlink" title="5.2二叉树转换成树"></a>5.2二叉树转换成树</h3><p>（1）加虚线  若某结点i是其父结点的左子树的根结点，<strong>则将该结点ⅰ的右子结点以及沿右子链不断地搜索所有的右子结点，将所有这些右子结点与i结点的父结点之间加虚线相连</strong></p>
 <p>（2）去连线  去掉二叉树中所有其右子结点之间的连线<br>（3）规整化  将图中各结点按层次排列且将所有的虚线变成实线</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="E:/myblog/Procrastination/source/_posts/image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" /></p>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构期末复习</title>
+    <url>/2021/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>面向考试复习数据结构2.0版正式上线了</p>
+<p>本文将整理后三章的相关知识点，并对例题习题进行整合梳理，存在不足，欢迎补充。</p>
+<h1 id="第四章-图"><a href="#第四章-图" class="headerlink" title="第四章 图"></a>第四章 图</h1><h2 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h2><p>图是由一个顶点集V和一个弧集(或边集)构成的数据结构，是一种<strong>非线性</strong>数据结构</p>
+<p>网：带权的图。<strong>在不会引起歧义时，网也直接称为图。</strong></p>
+<p>路径长度：路径上边的数目（两个点之间的距离即路径上<strong>除了起点，包括终点的顶点个数</strong>）</p>
+<p>简单路径：<strong>顶点不重复</strong>出现的路径（<strong>边可以重复</strong>）</p>
+<h3 id="关于图的顶点和边数目"><a href="#关于图的顶点和边数目" class="headerlink" title="关于图的顶点和边数目"></a>关于图的顶点和边数目</h3><p> 我们用 n 表示图中顶点数目；m表示图中边(或者弧)的数目；</p>
+<p>  对于无向图：<code>0≤m≤n(n-1)/2</code>  <strong>m=n(n-1)/2的无向图称为完全图</strong></p>
+<p> 对于有向图：<code>0≤m≤n(n-1)</code>       <strong>m=n(n-1)的有向图称为有向完全图</strong></p>
+<p>n=0: V为空集；<strong>m=0: 或许有1个顶点（平凡图）。</strong></p>
+<p>例一：设某个非连通无向图有28条边，则该图至少有(9)个顶点。</p>
+<p>解：此题的要点是<strong>非连通</strong>的无向图</p>
+<p>由上方公式可得，8*7/2=28，正好为8个顶点的完全图的边数</p>
+<p>但题目中要求是非连通的，所以在边不加的情况下，<strong>至少加一个孤立点，即至少有9个顶点</strong></p>
+<p>举一反三：若某个连通无向图有28条边，则该图至少有(8)个顶点。</p>
+<h3 id="关于图的度数"><a href="#关于图的度数" class="headerlink" title="关于图的度数"></a>关于图的度数</h3><p>什么是邻接点？</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="无向邻接点.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="有向邻接点.png" alt=""></p>
+<p>什么是度数？</p>
+<p>1.对于无向图，顶点v的度就是和顶点v相邻接的边的数目，<strong>记为TD(v)</strong></p>
+<p>2.对于有向图，<strong>入度ID(v)</strong>是箭头指向v的弧的个数， <strong>出度OD(v)</strong>是箭头远离v的弧的个数</p>
+<p>​                          顶点v的度<strong>TD(v)=ID(v)+OD(v)</strong></p>
+<p>3.握手定理：</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+
+2m = \sum_{n=1}^nTD(v_i)
+
+\end{equation*}</script><h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3><p>两个顶点间连通，等价于两个顶点之间有路径。</p>
+<p>连通图：<strong>无向图</strong>中任意两个顶点都连通（<strong>不存在孤立点</strong>）</p>
+<p>连通分量：无向图中的<strong>极大连通子图</strong></p>
+<p>强连通图/强连通分量：<strong>对于有向图</strong>，概念类似上两个。</p>
+<h3 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h3><p>对于<strong>连通图</strong>G，若其有n个顶点，则<strong>含有G中所有顶点，且边数为n-1</strong>的<strong>连通图</strong>称为G的一棵生成树。</p>
+<p>关键：原图是连通图，生成树有其全部n个顶点，有且仅有n-1条边。</p>
+<div class="note info flat"><p><strong>提示</strong></p>
+    <p>有n个顶点和n-1条边的图不一定是生成树</p>
+</div>
+
+<p>在有n个顶点的图中,<strong>如果边多于n-1条,则一定有环</strong>，<strong>如果边少于n-1条,则是非连通图。</strong></p>
+<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><h3 id="图的邻接矩阵"><a href="#图的邻接矩阵" class="headerlink" title="图的邻接矩阵"></a>图的邻接矩阵</h3><h4 id="从邻接矩阵判断度数"><a href="#从邻接矩阵判断度数" class="headerlink" title="从邻接矩阵判断度数"></a>从邻接矩阵判断度数</h4><p>对于无向图，顶点Vi的度为邻接矩阵中第i行（或第i列）<strong>元素个数之和</strong>（防止带权干扰）。</p>
+<p>对于有向图，第i<strong>行</strong>的元素个数之和为Vi的<strong>出度</strong>（从Vi到其他顶点）</p>
+<p>​                       第i<strong>列</strong>的元素个数之和为Vi的<strong>入度</strong>（从其他顶点到Vi）</p>
+<h4 id="时间复杂度和空间复杂度"><a href="#时间复杂度和空间复杂度" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接矩阵存储图，占用的<strong>存储空间大小与顶点数有关，与边数无关</strong>。</p>
+<p>时间复杂度为O(n²)</p>
+<h3 id="图的邻接表"><a href="#图的邻接表" class="headerlink" title="图的邻接表"></a>图的邻接表</h3><p>概念定义：</p>
+<p>邻接表是<strong>图的一种链式存储结构</strong>，图中的<strong>每一个顶点对应一个结点</strong>，并由所有顶点结点构成一个顺序表结构（竖着的链）</p>
+<p>图中<strong>每一个顶点建立一条链，该链由它的所有邻接点构成</strong>（横着的链）</p>
+<p>代码定义</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Anode</span></span></span><br><span class="line"><span class="class">&#123;</span>	<span class="keyword">int</span> Vi; <span class="comment">//邻接点在顺序表中的位置</span></span><br><span class="line">	<span class="keyword">int</span> Wi; <span class="comment">//权值(用于网。图可省略)</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Anode</span> *<span class="title">next</span>;</span> <span class="comment">//指向下一个邻接点</span></span><br><span class="line">&#125; ALink; <span class="comment">//邻接点存储结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Vnode</span></span></span><br><span class="line"><span class="class">&#123;</span>	Type data;</span><br><span class="line">	ALink *Vh; <span class="comment">//邻接点链表头指针</span></span><br><span class="line">&#125; Vnode; <span class="comment">//链表头指针结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span>	Vnode V [N];  <span class="comment">//链表头顺序表</span></span><br><span class="line">	<span class="keyword">int</span> n,m;  <span class="comment">//实际顶点数，边或弧数</span></span><br><span class="line">	<span class="keyword">int</span> visited[N];  <span class="comment">//访问标识</span></span><br><span class="line">&#125; AList; <span class="comment">//图的邻接表存储结构</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="从邻接表判断度数"><a href="#从邻接表判断度数" class="headerlink" title="从邻接表判断度数"></a>从邻接表判断度数</h4><p>无向图：顶点的度=邻接点链表中结点的数目</p>
+<p>有向图：顶点的<strong>出度</strong>=邻接点链表中结点的数目</p>
+<h4 id="时间复杂度和空间复杂度-1"><a href="#时间复杂度和空间复杂度-1" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接表存储图，占用的<strong>存储空间大小与顶点数和边数都有关</strong>。</p>
+<p>时间复杂度为O(n²)</p>
+<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h4 id="深度优先搜索遍历-更适用于找一条路径"><a href="#深度优先搜索遍历-更适用于找一条路径" class="headerlink" title="深度优先搜索遍历(更适用于找一条路径)"></a>深度优先搜索遍历(<strong>更适用于找一条路径</strong>)</h4><p>基本思想：</p>
+<p>①从图中某个顶点v出发，访问该顶点</p>
+<p>②查找顶点v的第一个未被访问的邻接点v1，访问该顶点。</p>
+<p>③重复第二步操作，直到图中没有未被访问的顶点为止。</p>
+<h4 id="广度优先搜索遍历-更适用于找最优路径"><a href="#广度优先搜索遍历-更适用于找最优路径" class="headerlink" title="广度优先搜索遍历(更适用于找最优路径)"></a>广度优先搜索遍历(<strong>更适用于找最优路径</strong>)</h4><p>基本思想：</p>
+<p>（1）从连通图中某个顶点v出发，访问该顶点，并置visited[v]的值为true，然后将v进队。</p>
+<p>（2）只要队列不空，则重复下述处理：</p>
+<p>​         ①队头顶点u出队</p>
+<p>​         ②依次检查u的所有邻接点w，如果visited[w]的值为false，则访问w，并置visited[w]的值为true，然后将w进队。</p>
+<p>代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(AList G, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;	G.visited[N]=&#123;<span class="number">0</span>&#125;;	<span class="comment">//访问标识初始化</span></span><br><span class="line">	Visit(k);	<span class="comment">//访问顶点k（或者写cout&lt;&lt;k&lt;&lt;endl;也可以）</span></span><br><span class="line">	G.visited[k<span class="number">-1</span>]=<span class="number">1</span>;	<span class="comment">//顶点k已访问</span></span><br><span class="line">	f=<span class="number">0</span>,r=<span class="number">0</span>,Q[N]=&#123;<span class="number">0</span>&#125;; <span class="comment">//队列Q[]初始化</span></span><br><span class="line">	Q[r++]=k<span class="number">-1</span>;  <span class="comment">//入队, r:队尾指针</span></span><br><span class="line">	<span class="keyword">while</span>(r&gt;=f)	<span class="comment">//当队列非空时</span></span><br><span class="line">	&#123;	i=Q[f++];  <span class="comment">//出队, f:队首指针</span></span><br><span class="line">        p=G.V[i].Vh;<span class="comment">//p是V[i]的链表头指针</span></span><br><span class="line">		<span class="keyword">while</span>(p)<span class="comment">//顺序访问链表的各个结点</span></span><br><span class="line">		&#123;	</span><br><span class="line">            j=p-&gt;Vi; <span class="comment">// j是邻接点在顺序表中的位置</span></span><br><span class="line">			<span class="keyword">if</span>(!G.visited[j])</span><br><span class="line">			&#123;	Visit(j+<span class="number">1</span>); <span class="comment">//访问顶点j+1</span></span><br><span class="line">				visited[j]=<span class="number">1</span>;</span><br><span class="line">				Q[r++]=j; <span class="comment">//入队</span></span><br><span class="line">			&#125;</span><br><span class="line">          	p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">//算法结束</span></span><br></pre></td></tr></table></figure>
+<p>以邻接表作存储结构时，深搜和广搜的时间复杂度都为O(n+e)</p>
+<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>定义：无向图G的所有生成树中各边权值之和最小的一颗生成树。</p>
+<p>Prim算法：加点法</p>
+<p>任取一个顶点v作为生成树的根，然后往生成树上添加新顶点u，顶点u满足其与生成树上某个顶点连通，并且在所有与生成树连通的边中权值最小，不断往生成树上添加顶点至生成树包含所有顶点为止。</p>
+<p>K算法：加边法</p>
+<p>为使生成树上边的权值之和达到最小，应使生成树中每一条边的权值尽可能地小(都能最小则最佳)。</p>
+<p>例：请描述出用K算法得到最小生成树的步骤</p>
+<p>①先构造一个只含n个顶点的子图S</p>
+<p>②然后从权值最小的边开始，若它的添加不使S中产生回路，则在S上加上这条边</p>
+<p>③如此重复，直至加上n-1条边为止。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="最小生成树比较.png" alt=""></p>
+<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>拓扑排序的一般操作方法：</p>
+<p>(1)从有向图中选取一个入度为0的顶点，输出它;</p>
+<p>(2)从有向图中删去该顶点以及所有以它为尾的弧;</p>
+<p>重复上述两步，直至图空或者找不到入度为0的顶点为止。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="拓扑排序.png" alt=""></p>
+<p>时间复杂度为O(n+m)</p>
+<h2 id="关键路径-从源点到汇点的最长路径"><a href="#关键路径-从源点到汇点的最长路径" class="headerlink" title="关键路径(从源点到汇点的最长路径)"></a>关键路径(<strong>从源点到汇点的最长路径</strong>)</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="关键路径.png" alt=""></p>
+<h1 id="第六章-排序"><a href="#第六章-排序" class="headerlink" title="第六章 排序"></a>第六章 排序</h1><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="排序.png" alt=""></p>
 ]]></content>
       <categories>
         <category>数据结构与算法</category>
