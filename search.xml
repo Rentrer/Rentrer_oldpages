@@ -266,114 +266,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博客目录</title>
-    <url>/2020/09/28/%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<div class="note success no-icon flat">
-                            <p>
-                                <strong>数据结构复习⭐</strong>
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="/2021/01/10/数据结构期中复习/">数据结构期中复习</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2021/01/03/数据结构期末复习/">数据结构期末复习</a>
-                                        </td>
-                                                                        </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-
-<div class="note success no-icon flat">
-                            <p>
-                                <strong>汇编语言复习⭐</strong>
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="/2020/12/26/汇编语言总复习(上)/">汇编语言总复习(上)</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2020/12/26/汇编语言总复习(中)/">汇编语言总复习(中)</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2020/12/29/汇编语言总复习(下)/">汇编语言总复习(下)</a>
-                                        </td>
-                                         </tr>
-                            </tbody>
-                        </table>
-                    </div>                               
-
-<div class="note success no-icon flat">
-                            <p>
-                                <strong>XML学习笔记⭐</strong>
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="/2020/11/14/XML开发技术——第一章/">XML开发技术——第一章</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2020/11/25/XML开发技术——第五章/">XML开发技术——第五章</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2021/01/02/XMLSPY考试应用/">XMLSPY考试应用</a>
-                                        </td>
-                                         </tr>
-                            </tbody>
-                        </table>
-                    </div>      
-
-<div class="note primary no-icon flat">
-                            <p>
-                                <strong>杂谈⭐</strong>
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="/2020/09/28/序/">序</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2021/01/12/紫罗兰永恒花园观后感/">紫罗兰永恒花园观后感</a>
-                                        </td>
-                                                                        </tr>
-                            </tbody>
-                        </table>
-                    </div>]]></content>
-  </entry>
-  <entry>
     <title>XML开发技术——第五章</title>
     <url>/2020/11/25/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
     <content><![CDATA[<p>经过了上一次的学习，我们学到了用于查询的XPATH，它会在之后的很多地方予以应用。</p>
@@ -529,6 +421,218 @@
       </tags>
   </entry>
   <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>博客目录</title>
+    <url>/2020/09/28/%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<div class="note success no-icon flat">
+                            <p>
+                                <strong>数据结构复习⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="/2021/01/10/数据结构期中复习/">数据结构期中复习</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2021/01/03/数据结构期末复习/">数据结构期末复习</a>
+                                        </td>
+                                                                        </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+<div class="note success no-icon flat">
+                            <p>
+                                <strong>汇编语言复习⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="/2020/12/26/汇编语言总复习(上)/">汇编语言总复习(上)</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2020/12/26/汇编语言总复习(中)/">汇编语言总复习(中)</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2020/12/29/汇编语言总复习(下)/">汇编语言总复习(下)</a>
+                                        </td>
+                                         </tr>
+                            </tbody>
+                        </table>
+                    </div>                               
+
+<div class="note success no-icon flat">
+                            <p>
+                                <strong>XML学习笔记⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="/2020/11/14/XML开发技术——第一章/">XML开发技术——第一章</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2020/11/25/XML开发技术——第五章/">XML开发技术——第五章</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2021/01/02/XMLSPY考试应用/">XMLSPY考试应用</a>
+                                        </td>
+                                         </tr>
+                            </tbody>
+                        </table>
+                    </div>      
+
+<div class="note primary no-icon flat">
+                            <p>
+                                <strong>杂谈⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="/2020/09/28/序/">序</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2021/01/12/紫罗兰永恒花园观后感/">紫罗兰永恒花园观后感</a>
+                                        </td>
+                                                                        </tr>
+                            </tbody>
+                        </table>
+                    </div>]]></content>
+  </entry>
+  <entry>
+    <title>数据结构期末复习</title>
+    <url>/2021/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>面向考试复习数据结构2.0版正式上线了</p>
+<p>本文将整理后三章的相关知识点，并对例题习题进行整合梳理，存在不足，欢迎补充。</p>
+<h1 id="第四章-图"><a href="#第四章-图" class="headerlink" title="第四章 图"></a>第四章 图</h1><h2 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h2><p>图是由一个顶点集V和一个弧集(或边集)构成的数据结构，是一种<strong>非线性</strong>数据结构</p>
+<p>网：带权的图。<strong>在不会引起歧义时，网也直接称为图。</strong></p>
+<p>路径长度：路径上边的数目（两个点之间的距离即路径上<strong>除了起点，包括终点的顶点个数</strong>）</p>
+<p>简单路径：<strong>顶点不重复</strong>出现的路径（<strong>边可以重复</strong>）</p>
+<h3 id="关于图的顶点和边数目"><a href="#关于图的顶点和边数目" class="headerlink" title="关于图的顶点和边数目"></a>关于图的顶点和边数目</h3><p> 我们用 n 表示图中顶点数目；m表示图中边(或者弧)的数目；</p>
+<p>  对于无向图：<code>0≤m≤n(n-1)/2</code>  <strong>m=n(n-1)/2的无向图称为完全图</strong></p>
+<p> 对于有向图：<code>0≤m≤n(n-1)</code>       <strong>m=n(n-1)的有向图称为有向完全图</strong></p>
+<p>n=0: V为空集；<strong>m=0: 或许有1个顶点（平凡图）。</strong></p>
+<p>例一：设某个非连通无向图有28条边，则该图至少有(9)个顶点。</p>
+<p>解：此题的要点是<strong>非连通</strong>的无向图</p>
+<p>由上方公式可得，8*7/2=28，正好为8个顶点的完全图的边数</p>
+<p>但题目中要求是非连通的，所以在边不加的情况下，<strong>至少加一个孤立点，即至少有9个顶点</strong></p>
+<p>举一反三：若某个连通无向图有28条边，则该图至少有(8)个顶点。</p>
+<h3 id="关于图的度数"><a href="#关于图的度数" class="headerlink" title="关于图的度数"></a>关于图的度数</h3><p>什么是邻接点？</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="无向邻接点.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="有向邻接点.png" alt=""></p>
+<p>什么是度数？</p>
+<p>1.对于无向图，顶点v的度就是和顶点v相邻接的边的数目，<strong>记为TD(v)</strong></p>
+<p>2.对于有向图，<strong>入度ID(v)</strong>是箭头指向v的弧的个数， <strong>出度OD(v)</strong>是箭头远离v的弧的个数</p>
+<p>​                          顶点v的度<strong>TD(v)=ID(v)+OD(v)</strong></p>
+<p>3.握手定理：</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+
+2m = \sum_{n=1}^nTD(v_i)
+
+\end{equation*}</script><h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3><p>两个顶点间连通，等价于两个顶点之间有路径。</p>
+<p>连通图：<strong>无向图</strong>中任意两个顶点都连通（<strong>不存在孤立点</strong>）</p>
+<p>连通分量：无向图中的<strong>极大连通子图</strong></p>
+<p>强连通图/强连通分量：<strong>对于有向图</strong>，概念类似上两个。</p>
+<h3 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h3><p>对于<strong>连通图</strong>G，若其有n个顶点，则<strong>含有G中所有顶点，且边数为n-1</strong>的<strong>连通图</strong>称为G的一棵生成树。</p>
+<p>关键：原图是连通图，生成树有其全部n个顶点，有且仅有n-1条边。</p>
+<div class="note info flat"><p><strong>提示</strong></p>
+    <p>有n个顶点和n-1条边的图不一定是生成树</p>
+</div>
+
+<p>在有n个顶点的图中,<strong>如果边多于n-1条,则一定有环</strong>，<strong>如果边少于n-1条,则是非连通图。</strong></p>
+<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><h3 id="图的邻接矩阵"><a href="#图的邻接矩阵" class="headerlink" title="图的邻接矩阵"></a>图的邻接矩阵</h3><h4 id="从邻接矩阵判断度数"><a href="#从邻接矩阵判断度数" class="headerlink" title="从邻接矩阵判断度数"></a>从邻接矩阵判断度数</h4><p>对于无向图，顶点Vi的度为邻接矩阵中第i行（或第i列）<strong>元素个数之和</strong>（防止带权干扰）。</p>
+<p>对于有向图，第i<strong>行</strong>的元素个数之和为Vi的<strong>出度</strong>（从Vi到其他顶点）</p>
+<p>​                       第i<strong>列</strong>的元素个数之和为Vi的<strong>入度</strong>（从其他顶点到Vi）</p>
+<h4 id="时间复杂度和空间复杂度"><a href="#时间复杂度和空间复杂度" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接矩阵存储图，占用的<strong>存储空间大小与顶点数有关，与边数无关</strong>。</p>
+<p>时间复杂度为O(n²)</p>
+<h3 id="图的邻接表"><a href="#图的邻接表" class="headerlink" title="图的邻接表"></a>图的邻接表</h3><p>概念定义：</p>
+<p>邻接表是<strong>图的一种链式存储结构</strong>，图中的<strong>每一个顶点对应一个结点</strong>，并由所有顶点结点构成一个顺序表结构（竖着的链）</p>
+<p>图中<strong>每一个顶点建立一条链，该链由它的所有邻接点构成</strong>（横着的链）</p>
+<p>代码定义</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Anode</span></span></span><br><span class="line"><span class="class">&#123;</span>	<span class="keyword">int</span> Vi; <span class="comment">//邻接点在顺序表中的位置</span></span><br><span class="line">	<span class="keyword">int</span> Wi; <span class="comment">//权值(用于网。图可省略)</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Anode</span> *<span class="title">next</span>;</span> <span class="comment">//指向下一个邻接点</span></span><br><span class="line">&#125; ALink; <span class="comment">//邻接点存储结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Vnode</span></span></span><br><span class="line"><span class="class">&#123;</span>	Type data;</span><br><span class="line">	ALink *Vh; <span class="comment">//邻接点链表头指针</span></span><br><span class="line">&#125; Vnode; <span class="comment">//链表头指针结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span>	Vnode V [N];  <span class="comment">//链表头顺序表</span></span><br><span class="line">	<span class="keyword">int</span> n,m;  <span class="comment">//实际顶点数，边或弧数</span></span><br><span class="line">	<span class="keyword">int</span> visited[N];  <span class="comment">//访问标识</span></span><br><span class="line">&#125; AList; <span class="comment">//图的邻接表存储结构</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="从邻接表判断度数"><a href="#从邻接表判断度数" class="headerlink" title="从邻接表判断度数"></a>从邻接表判断度数</h4><p>无向图：顶点的度=邻接点链表中结点的数目</p>
+<p>有向图：顶点的<strong>出度</strong>=邻接点链表中结点的数目</p>
+<h4 id="时间复杂度和空间复杂度-1"><a href="#时间复杂度和空间复杂度-1" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接表存储图，占用的<strong>存储空间大小与顶点数和边数都有关</strong>。</p>
+<p>时间复杂度为O(n²)</p>
+<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h4 id="深度优先搜索遍历-更适用于找一条路径"><a href="#深度优先搜索遍历-更适用于找一条路径" class="headerlink" title="深度优先搜索遍历(更适用于找一条路径)"></a>深度优先搜索遍历(<strong>更适用于找一条路径</strong>)</h4><p>基本思想：</p>
+<p>①从图中某个顶点v出发，访问该顶点</p>
+<p>②查找顶点v的第一个未被访问的邻接点v1，访问该顶点。</p>
+<p>③重复第二步操作，直到图中没有未被访问的顶点为止。</p>
+<h4 id="广度优先搜索遍历-更适用于找最优路径"><a href="#广度优先搜索遍历-更适用于找最优路径" class="headerlink" title="广度优先搜索遍历(更适用于找最优路径)"></a>广度优先搜索遍历(<strong>更适用于找最优路径</strong>)</h4><p>基本思想：</p>
+<p>（1）从连通图中某个顶点v出发，访问该顶点，并置visited[v]的值为true，然后将v进队。</p>
+<p>（2）只要队列不空，则重复下述处理：</p>
+<p>​         ①队头顶点u出队</p>
+<p>​         ②依次检查u的所有邻接点w，如果visited[w]的值为false，则访问w，并置visited[w]的值为true，然后将w进队。</p>
+<p>代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(AList G, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;	G.visited[N]=&#123;<span class="number">0</span>&#125;;	<span class="comment">//访问标识初始化</span></span><br><span class="line">	Visit(k);	<span class="comment">//访问顶点k（或者写cout&lt;&lt;k&lt;&lt;endl;也可以）</span></span><br><span class="line">	G.visited[k<span class="number">-1</span>]=<span class="number">1</span>;	<span class="comment">//顶点k已访问</span></span><br><span class="line">	f=<span class="number">0</span>,r=<span class="number">0</span>,Q[N]=&#123;<span class="number">0</span>&#125;; <span class="comment">//队列Q[]初始化</span></span><br><span class="line">	Q[r++]=k<span class="number">-1</span>;  <span class="comment">//入队, r:队尾指针</span></span><br><span class="line">	<span class="keyword">while</span>(r&gt;=f)	<span class="comment">//当队列非空时</span></span><br><span class="line">	&#123;	i=Q[f++];  <span class="comment">//出队, f:队首指针</span></span><br><span class="line">        p=G.V[i].Vh;<span class="comment">//p是V[i]的链表头指针</span></span><br><span class="line">		<span class="keyword">while</span>(p)<span class="comment">//顺序访问链表的各个结点</span></span><br><span class="line">		&#123;	</span><br><span class="line">            j=p-&gt;Vi; <span class="comment">// j是邻接点在顺序表中的位置</span></span><br><span class="line">			<span class="keyword">if</span>(!G.visited[j])</span><br><span class="line">			&#123;	Visit(j+<span class="number">1</span>); <span class="comment">//访问顶点j+1</span></span><br><span class="line">				visited[j]=<span class="number">1</span>;</span><br><span class="line">				Q[r++]=j; <span class="comment">//入队</span></span><br><span class="line">			&#125;</span><br><span class="line">          	p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">//算法结束</span></span><br></pre></td></tr></table></figure>
+<p>以邻接表作存储结构时，深搜和广搜的时间复杂度都为O(n+e)</p>
+<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>定义：无向图G的所有生成树中各边权值之和最小的一颗生成树。</p>
+<p>Prim算法：加点法</p>
+<p>任取一个顶点v作为生成树的根，然后往生成树上添加新顶点u，顶点u满足其与生成树上某个顶点连通，并且在所有与生成树连通的边中权值最小，不断往生成树上添加顶点至生成树包含所有顶点为止。</p>
+<p>K算法：加边法</p>
+<p>为使生成树上边的权值之和达到最小，应使生成树中每一条边的权值尽可能地小(都能最小则最佳)。</p>
+<p>例：请描述出用K算法得到最小生成树的步骤</p>
+<p>①先构造一个只含n个顶点的子图S</p>
+<p>②然后从权值最小的边开始，若它的添加不使S中产生回路，则在S上加上这条边</p>
+<p>③如此重复，直至加上n-1条边为止。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="最小生成树比较.png" alt=""></p>
+<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>拓扑排序的一般操作方法：</p>
+<p>(1)从有向图中选取一个入度为0的顶点，输出它;</p>
+<p>(2)从有向图中删去该顶点以及所有以它为尾的弧;</p>
+<p>重复上述两步，直至图空或者找不到入度为0的顶点为止。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="拓扑排序.png" alt=""></p>
+<p>时间复杂度为O(n+m)</p>
+<h2 id="关键路径-从源点到汇点的最长路径"><a href="#关键路径-从源点到汇点的最长路径" class="headerlink" title="关键路径(从源点到汇点的最长路径)"></a>关键路径(<strong>从源点到汇点的最长路径</strong>)</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="关键路径.png" alt=""></p>
+<h1 id="第六章-排序"><a href="#第六章-排序" class="headerlink" title="第六章 排序"></a>第六章 排序</h1><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="排序.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构期中复习</title>
     <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
@@ -619,110 +723,6 @@
 <h3 id="5-2二叉树转换成树"><a href="#5-2二叉树转换成树" class="headerlink" title="5.2二叉树转换成树"></a>5.2二叉树转换成树</h3><p>（1）加虚线  若某结点i是其父结点的左子树的根结点，<strong>则将该结点ⅰ的右子结点以及沿右子链不断地搜索所有的右子结点，将所有这些右子结点与i结点的父结点之间加虚线相连</strong></p>
 <p>（2）去连线  去掉二叉树中所有其右子结点之间的连线<br>（3）规整化  将图中各结点按层次排列且将所有的虚线变成实线</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="E:/myblog/Procrastination/source/_posts/image-20201107155753914.png" alt="image-20201107155753914" style="zoom: 80%;" /></p>
-]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-        <tag>考试复习整理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>数据结构期末复习</title>
-    <url>/2021/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<p>面向考试复习数据结构2.0版正式上线了</p>
-<p>本文将整理后三章的相关知识点，并对例题习题进行整合梳理，存在不足，欢迎补充。</p>
-<h1 id="第四章-图"><a href="#第四章-图" class="headerlink" title="第四章 图"></a>第四章 图</h1><h2 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h2><p>图是由一个顶点集V和一个弧集(或边集)构成的数据结构，是一种<strong>非线性</strong>数据结构</p>
-<p>网：带权的图。<strong>在不会引起歧义时，网也直接称为图。</strong></p>
-<p>路径长度：路径上边的数目（两个点之间的距离即路径上<strong>除了起点，包括终点的顶点个数</strong>）</p>
-<p>简单路径：<strong>顶点不重复</strong>出现的路径（<strong>边可以重复</strong>）</p>
-<h3 id="关于图的顶点和边数目"><a href="#关于图的顶点和边数目" class="headerlink" title="关于图的顶点和边数目"></a>关于图的顶点和边数目</h3><p> 我们用 n 表示图中顶点数目；m表示图中边(或者弧)的数目；</p>
-<p>  对于无向图：<code>0≤m≤n(n-1)/2</code>  <strong>m=n(n-1)/2的无向图称为完全图</strong></p>
-<p> 对于有向图：<code>0≤m≤n(n-1)</code>       <strong>m=n(n-1)的有向图称为有向完全图</strong></p>
-<p>n=0: V为空集；<strong>m=0: 或许有1个顶点（平凡图）。</strong></p>
-<p>例一：设某个非连通无向图有28条边，则该图至少有(9)个顶点。</p>
-<p>解：此题的要点是<strong>非连通</strong>的无向图</p>
-<p>由上方公式可得，8*7/2=28，正好为8个顶点的完全图的边数</p>
-<p>但题目中要求是非连通的，所以在边不加的情况下，<strong>至少加一个孤立点，即至少有9个顶点</strong></p>
-<p>举一反三：若某个连通无向图有28条边，则该图至少有(8)个顶点。</p>
-<h3 id="关于图的度数"><a href="#关于图的度数" class="headerlink" title="关于图的度数"></a>关于图的度数</h3><p>什么是邻接点？</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="无向邻接点.png" alt=""></p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="有向邻接点.png" alt=""></p>
-<p>什么是度数？</p>
-<p>1.对于无向图，顶点v的度就是和顶点v相邻接的边的数目，<strong>记为TD(v)</strong></p>
-<p>2.对于有向图，<strong>入度ID(v)</strong>是箭头指向v的弧的个数， <strong>出度OD(v)</strong>是箭头远离v的弧的个数</p>
-<p>​                          顶点v的度<strong>TD(v)=ID(v)+OD(v)</strong></p>
-<p>3.握手定理：</p>
-<script type="math/tex; mode=display">
-\begin{equation*}
-
-2m = \sum_{n=1}^nTD(v_i)
-
-\end{equation*}</script><h3 id="关于图的连通性"><a href="#关于图的连通性" class="headerlink" title="关于图的连通性"></a>关于图的连通性</h3><p>两个顶点间连通，等价于两个顶点之间有路径。</p>
-<p>连通图：<strong>无向图</strong>中任意两个顶点都连通（<strong>不存在孤立点</strong>）</p>
-<p>连通分量：无向图中的<strong>极大连通子图</strong></p>
-<p>强连通图/强连通分量：<strong>对于有向图</strong>，概念类似上两个。</p>
-<h3 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h3><p>对于<strong>连通图</strong>G，若其有n个顶点，则<strong>含有G中所有顶点，且边数为n-1</strong>的<strong>连通图</strong>称为G的一棵生成树。</p>
-<p>关键：原图是连通图，生成树有其全部n个顶点，有且仅有n-1条边。</p>
-<div class="note info flat"><p><strong>提示</strong></p>
-    <p>有n个顶点和n-1条边的图不一定是生成树</p>
-</div>
-
-<p>在有n个顶点的图中,<strong>如果边多于n-1条,则一定有环</strong>，<strong>如果边少于n-1条,则是非连通图。</strong></p>
-<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><h3 id="图的邻接矩阵"><a href="#图的邻接矩阵" class="headerlink" title="图的邻接矩阵"></a>图的邻接矩阵</h3><h4 id="从邻接矩阵判断度数"><a href="#从邻接矩阵判断度数" class="headerlink" title="从邻接矩阵判断度数"></a>从邻接矩阵判断度数</h4><p>对于无向图，顶点Vi的度为邻接矩阵中第i行（或第i列）<strong>元素个数之和</strong>（防止带权干扰）。</p>
-<p>对于有向图，第i<strong>行</strong>的元素个数之和为Vi的<strong>出度</strong>（从Vi到其他顶点）</p>
-<p>​                       第i<strong>列</strong>的元素个数之和为Vi的<strong>入度</strong>（从其他顶点到Vi）</p>
-<h4 id="时间复杂度和空间复杂度"><a href="#时间复杂度和空间复杂度" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接矩阵存储图，占用的<strong>存储空间大小与顶点数有关，与边数无关</strong>。</p>
-<p>时间复杂度为O(n²)</p>
-<h3 id="图的邻接表"><a href="#图的邻接表" class="headerlink" title="图的邻接表"></a>图的邻接表</h3><p>概念定义：</p>
-<p>邻接表是<strong>图的一种链式存储结构</strong>，图中的<strong>每一个顶点对应一个结点</strong>，并由所有顶点结点构成一个顺序表结构（竖着的链）</p>
-<p>图中<strong>每一个顶点建立一条链，该链由它的所有邻接点构成</strong>（横着的链）</p>
-<p>代码定义</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Anode</span></span></span><br><span class="line"><span class="class">&#123;</span>	<span class="keyword">int</span> Vi; <span class="comment">//邻接点在顺序表中的位置</span></span><br><span class="line">	<span class="keyword">int</span> Wi; <span class="comment">//权值(用于网。图可省略)</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Anode</span> *<span class="title">next</span>;</span> <span class="comment">//指向下一个邻接点</span></span><br><span class="line">&#125; ALink; <span class="comment">//邻接点存储结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Vnode</span></span></span><br><span class="line"><span class="class">&#123;</span>	Type data;</span><br><span class="line">	ALink *Vh; <span class="comment">//邻接点链表头指针</span></span><br><span class="line">&#125; Vnode; <span class="comment">//链表头指针结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span>	Vnode V [N];  <span class="comment">//链表头顺序表</span></span><br><span class="line">	<span class="keyword">int</span> n,m;  <span class="comment">//实际顶点数，边或弧数</span></span><br><span class="line">	<span class="keyword">int</span> visited[N];  <span class="comment">//访问标识</span></span><br><span class="line">&#125; AList; <span class="comment">//图的邻接表存储结构</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="从邻接表判断度数"><a href="#从邻接表判断度数" class="headerlink" title="从邻接表判断度数"></a>从邻接表判断度数</h4><p>无向图：顶点的度=邻接点链表中结点的数目</p>
-<p>有向图：顶点的<strong>出度</strong>=邻接点链表中结点的数目</p>
-<h4 id="时间复杂度和空间复杂度-1"><a href="#时间复杂度和空间复杂度-1" class="headerlink" title="时间复杂度和空间复杂度"></a>时间复杂度和空间复杂度</h4><p>用邻接表存储图，占用的<strong>存储空间大小与顶点数和边数都有关</strong>。</p>
-<p>时间复杂度为O(n²)</p>
-<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h4 id="深度优先搜索遍历-更适用于找一条路径"><a href="#深度优先搜索遍历-更适用于找一条路径" class="headerlink" title="深度优先搜索遍历(更适用于找一条路径)"></a>深度优先搜索遍历(<strong>更适用于找一条路径</strong>)</h4><p>基本思想：</p>
-<p>①从图中某个顶点v出发，访问该顶点</p>
-<p>②查找顶点v的第一个未被访问的邻接点v1，访问该顶点。</p>
-<p>③重复第二步操作，直到图中没有未被访问的顶点为止。</p>
-<h4 id="广度优先搜索遍历-更适用于找最优路径"><a href="#广度优先搜索遍历-更适用于找最优路径" class="headerlink" title="广度优先搜索遍历(更适用于找最优路径)"></a>广度优先搜索遍历(<strong>更适用于找最优路径</strong>)</h4><p>基本思想：</p>
-<p>（1）从连通图中某个顶点v出发，访问该顶点，并置visited[v]的值为true，然后将v进队。</p>
-<p>（2）只要队列不空，则重复下述处理：</p>
-<p>​         ①队头顶点u出队</p>
-<p>​         ②依次检查u的所有邻接点w，如果visited[w]的值为false，则访问w，并置visited[w]的值为true，然后将w进队。</p>
-<p>代码</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(AList G, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;	G.visited[N]=&#123;<span class="number">0</span>&#125;;	<span class="comment">//访问标识初始化</span></span><br><span class="line">	Visit(k);	<span class="comment">//访问顶点k（或者写cout&lt;&lt;k&lt;&lt;endl;也可以）</span></span><br><span class="line">	G.visited[k<span class="number">-1</span>]=<span class="number">1</span>;	<span class="comment">//顶点k已访问</span></span><br><span class="line">	f=<span class="number">0</span>,r=<span class="number">0</span>,Q[N]=&#123;<span class="number">0</span>&#125;; <span class="comment">//队列Q[]初始化</span></span><br><span class="line">	Q[r++]=k<span class="number">-1</span>;  <span class="comment">//入队, r:队尾指针</span></span><br><span class="line">	<span class="keyword">while</span>(r&gt;=f)	<span class="comment">//当队列非空时</span></span><br><span class="line">	&#123;	i=Q[f++];  <span class="comment">//出队, f:队首指针</span></span><br><span class="line">        p=G.V[i].Vh;<span class="comment">//p是V[i]的链表头指针</span></span><br><span class="line">		<span class="keyword">while</span>(p)<span class="comment">//顺序访问链表的各个结点</span></span><br><span class="line">		&#123;	</span><br><span class="line">            j=p-&gt;Vi; <span class="comment">// j是邻接点在顺序表中的位置</span></span><br><span class="line">			<span class="keyword">if</span>(!G.visited[j])</span><br><span class="line">			&#123;	Visit(j+<span class="number">1</span>); <span class="comment">//访问顶点j+1</span></span><br><span class="line">				visited[j]=<span class="number">1</span>;</span><br><span class="line">				Q[r++]=j; <span class="comment">//入队</span></span><br><span class="line">			&#125;</span><br><span class="line">          	p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">//算法结束</span></span><br></pre></td></tr></table></figure>
-<p>以邻接表作存储结构时，深搜和广搜的时间复杂度都为O(n+e)</p>
-<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>定义：无向图G的所有生成树中各边权值之和最小的一颗生成树。</p>
-<p>Prim算法：加点法</p>
-<p>任取一个顶点v作为生成树的根，然后往生成树上添加新顶点u，顶点u满足其与生成树上某个顶点连通，并且在所有与生成树连通的边中权值最小，不断往生成树上添加顶点至生成树包含所有顶点为止。</p>
-<p>K算法：加边法</p>
-<p>为使生成树上边的权值之和达到最小，应使生成树中每一条边的权值尽可能地小(都能最小则最佳)。</p>
-<p>例：请描述出用K算法得到最小生成树的步骤</p>
-<p>①先构造一个只含n个顶点的子图S</p>
-<p>②然后从权值最小的边开始，若它的添加不使S中产生回路，则在S上加上这条边</p>
-<p>③如此重复，直至加上n-1条边为止。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="最小生成树比较.png" alt=""></p>
-<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>拓扑排序的一般操作方法：</p>
-<p>(1)从有向图中选取一个入度为0的顶点，输出它;</p>
-<p>(2)从有向图中删去该顶点以及所有以它为尾的弧;</p>
-<p>重复上述两步，直至图空或者找不到入度为0的顶点为止。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="拓扑排序.png" alt=""></p>
-<p>时间复杂度为O(n+m)</p>
-<h2 id="关键路径-从源点到汇点的最长路径"><a href="#关键路径-从源点到汇点的最长路径" class="headerlink" title="关键路径(从源点到汇点的最长路径)"></a>关键路径(<strong>从源点到汇点的最长路径</strong>)</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="关键路径.png" alt=""></p>
-<h1 id="第六章-排序"><a href="#第六章-排序" class="headerlink" title="第六章 排序"></a>第六章 排序</h1><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="排序.png" alt=""></p>
 ]]></content>
       <categories>
         <category>数据结构与算法</category>
@@ -2271,10 +2271,10 @@
                                                                     </tr>
                                 <tr>
                                     <td>
-                                        终于部署了评论推送功能，不然别人留言不回复太不好了
+                                        将LeanCloud换成了国际版，明天迁移一下数据
                                     </td>
                                     <td>
-                                        <a href="https://ac.nowcoder.com/acm/contest/11290?&headNav=www">西北工业大学编程之星设计挑战赛</a>
+                                        <a href="https://console.leancloud.app/apps">LeanCloud国际版</a>
                                     </td>
                                                                     </tr>
                         </tbody>
