@@ -266,6 +266,114 @@
       </tags>
   </entry>
   <entry>
+    <title>博客目录</title>
+    <url>/2020/09/28/%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<div class="note success no-icon flat">
+                            <p>
+                                <strong>数据结构复习⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="/2021/01/10/数据结构期中复习/">数据结构期中复习</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2021/01/03/数据结构期末复习/">数据结构期末复习</a>
+                                        </td>
+                                                                        </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+<div class="note success no-icon flat">
+                            <p>
+                                <strong>汇编语言复习⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="/2020/12/26/汇编语言总复习(上)/">汇编语言总复习(上)</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2020/12/26/汇编语言总复习(中)/">汇编语言总复习(中)</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2020/12/29/汇编语言总复习(下)/">汇编语言总复习(下)</a>
+                                        </td>
+                                         </tr>
+                            </tbody>
+                        </table>
+                    </div>                               
+
+<div class="note success no-icon flat">
+                            <p>
+                                <strong>XML学习笔记⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="/2020/11/14/XML开发技术——第一章/">XML开发技术——第一章</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2020/11/25/XML开发技术——第五章/">XML开发技术——第五章</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2021/01/02/XMLSPY考试应用/">XMLSPY考试应用</a>
+                                        </td>
+                                         </tr>
+                            </tbody>
+                        </table>
+                    </div>      
+
+<div class="note primary no-icon flat">
+                            <p>
+                                <strong>杂谈⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="/2020/09/28/序/">序</a>
+                                        </td>
+                                        <td>
+                                            <a href="/2021/01/12/紫罗兰永恒花园观后感/">紫罗兰永恒花园观后感</a>
+                                        </td>
+                                                                        </tr>
+                            </tbody>
+                        </table>
+                    </div>]]></content>
+  </entry>
+  <entry>
     <title>XML开发技术——第五章</title>
     <url>/2020/11/25/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/</url>
     <content><![CDATA[<p>经过了上一次的学习，我们学到了用于查询的XPATH，它会在之后的很多地方予以应用。</p>
@@ -421,123 +529,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博客目录</title>
-    <url>/2020/09/28/%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<div class="note success no-icon flat">
-                            <p>
-                                <strong>数据结构复习⭐</strong>
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="/2021/01/10/数据结构期中复习/">数据结构期中复习</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2021/01/03/数据结构期末复习/">数据结构期末复习</a>
-                                        </td>
-                                                                        </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-
-<div class="note success no-icon flat">
-                            <p>
-                                <strong>汇编语言复习⭐</strong>
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="/2020/12/26/汇编语言总复习(上)/">汇编语言总复习(上)</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2020/12/26/汇编语言总复习(中)/">汇编语言总复习(中)</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2020/12/29/汇编语言总复习(下)/">汇编语言总复习(下)</a>
-                                        </td>
-                                         </tr>
-                            </tbody>
-                        </table>
-                    </div>                               
-
-<div class="note success no-icon flat">
-                            <p>
-                                <strong>XML学习笔记⭐</strong>
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="/2020/11/14/XML开发技术——第一章/">XML开发技术——第一章</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2020/11/25/XML开发技术——第五章/">XML开发技术——第五章</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2021/01/02/XMLSPY考试应用/">XMLSPY考试应用</a>
-                                        </td>
-                                         </tr>
-                            </tbody>
-                        </table>
-                    </div>      
-
-<div class="note primary no-icon flat">
-                            <p>
-                                <strong>杂谈⭐</strong>
-                            </p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="/2020/09/28/序/">序</a>
-                                        </td>
-                                        <td>
-                                            <a href="/2021/01/12/紫罗兰永恒花园观后感/">紫罗兰永恒花园观后感</a>
-                                        </td>
-                                                                        </tr>
-                            </tbody>
-                        </table>
-                    </div>]]></content>
-  </entry>
-  <entry>
-    <title>序</title>
-    <url>/2020/09/28/%E5%BA%8F/</url>
-    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数据结构期中复习</title>
     <url>/2020/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>是时候面向考试复习一下数据结构了</p>
@@ -636,6 +627,15 @@
         <tag>课内学习笔记</tag>
         <tag>考试复习整理</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/2020/09/28/%E5%BA%8F/</url>
+    <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
   </entry>
   <entry>
     <title>数据结构期末复习</title>
@@ -1045,39 +1045,6 @@
       </tags>
   </entry>
   <entry>
-    <title>紫罗兰永恒花园观后感</title>
-    <url>/2021/01/12/%E7%B4%AB%E7%BD%97%E5%85%B0%E6%B0%B8%E6%81%92%E8%8A%B1%E5%9B%AD%E8%A7%82%E5%90%8E%E6%84%9F/</url>
-    <content><![CDATA[<p>一直被人安利的京紫，终于在今天追完了，现在内心还是有点不能平静。</p>
-<p>上一个正正经经追的番还是《魔卡少女樱》，那是对童年的追忆和怀念。</p>
-<p>这部番，值得我写一篇文来纪念其上映三周年：2018.1.11~2020.1.12</p>
-<h2 id="矛盾"><a href="#矛盾" class="headerlink" title="矛盾"></a>矛盾</h2><p>以前的我，最不能理解的就是<strong>自我矛盾</strong>，正如前几集艾丽卡认为Violet不能胜任人偶的工作，却仍然力保她留在公司时，Violet发出的疑问，以前的我也常常有这种想法，觉得人总是心口不一，遇到矛盾的事就嗤之以鼻。</p>
-<p>但这部番从各种矛盾入手，对Violet进行了全面的人格塑造：14岁的少女与杀人机器、断送他人的性命与撰写替人结缘的书信，冷冰冰的人偶与不需要指令的”人“。一个个矛盾交织在一起，对每个关键点都有合适的flashback，将故事连贯起来，是我最喜欢的一个方面。</p>
-<h2 id="战争"><a href="#战争" class="headerlink" title="战争"></a>战争</h2><p>看到B站评论中有一句：”本来就是写战争的还硬洗，既然知道战争的残酷与无情，当初还发动战争，有点既当了**还想立牌坊的感觉”。诚然，战争是本番的一条主线，也正是战争将violet变成了这副模样。每集中都或多或少带有战争的元素：Violet失去了少佐后救赎了自己；未能保护好边线的士兵从自我沉沦中重生；待不到男友返乡的歌剧演员以一首情书彻底解冻时间线，每一个故事都反映出了战争的残忍，但只有战争才能避免更多的悲伤分别发生，EX集中那个归乡士兵的特写，人们在火车站的寻人启事墙上自发点起了蜡烛为他们祈福的举动，既让Violet得到感染，更让我体会到了离别后的振作之情。</p>
-<h2 id="信"><a href="#信" class="headerlink" title="信"></a>信</h2><p>信，则是全番中的另一个主线，从想要理解<strong>”我爱你“</strong>的含义而称为人偶，通过一系列的工作经历，violet不断懂得了那些她当兵时未曾体会到的情感，她懂得了如何去感受人的想法，做到”共情“，从一封封信的写作中，Violet也从之前那个只会写报告书的军人，变成了一个，她写给少佐的信躺在了丛中，也躺在了我心里。</p>
-<p>我也一直有写信的习惯，那些文字，通过纸笔变成了一个个心意，那是语言所无法表达的独特，只能通过”见信如面“和”XXX亲启“来传递的唯一，是不可替代的。</p>
-<p>看别人玩你画我猜的时候，有人在题目是这个番时只画了一封信，当时的我还不明白为什么，但现在我觉得，那封信就能代表一切，它是本番的<strong>灵魂所在</strong>。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>你们可能觉得我前面没有说这部番的画功怎么样，这么给你说，刚才举报了一个”因为画质高看得眼睛酸所以差评”的一星评论，懂了吧（</p>
-<p>漫画里最后Violet和少佐重逢了，算是一个HE，但我更喜欢动漫中的结局，少女带着全新的希望奔赴未来</p>
-<p>没有放图的原因是，看的很认真没有截图，而且每一帧都值得我去收藏，我就只存了几个自己喜欢的画面。</p>
-<div class="note primary no-icon flat">
-    <p>
-        希望大家多多给我推荐类似这种的优质番，俺在线拜谢你们（
-    </p>
-    <p>也希望我明白”爱“的意义的那天早日到来</p>
-</div>
-
-
-
-<p>最后，对于熬夜，薇酱这句话我觉得很有道理。</p>
-<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="熬夜.png" alt=""></p>
-<p>大家还是少熬夜，养生作息早睡早起它不香🐎？</p>
-<p>ps：有一说一日本人直接拿英文来起名字还挺好听的（Violet Evergarden)。感觉翻译成中文总差点感觉，就用英文打了。</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>汇编语言总复习(中)</title>
     <url>/2020/12/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E5%A4%8D%E4%B9%A0(%E4%B8%AD)/</url>
     <content><![CDATA[<p>本文将结合老师说的考试范围与PPT，对所涉及的知识点作个人总结，面向考试复习（<del>高星，yyds</del>）</p>
@@ -1322,6 +1289,39 @@
         <tag>课内学习笔记</tag>
         <tag>考试复习整理</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>紫罗兰永恒花园观后感</title>
+    <url>/2021/01/12/%E7%B4%AB%E7%BD%97%E5%85%B0%E6%B0%B8%E6%81%92%E8%8A%B1%E5%9B%AD%E8%A7%82%E5%90%8E%E6%84%9F/</url>
+    <content><![CDATA[<p>一直被人安利的京紫，终于在今天追完了，现在内心还是有点不能平静。</p>
+<p>上一个正正经经追的番还是《魔卡少女樱》，那是对童年的追忆和怀念。</p>
+<p>这部番，值得我写一篇文来纪念其上映三周年：2018.1.11~2020.1.12</p>
+<h2 id="矛盾"><a href="#矛盾" class="headerlink" title="矛盾"></a>矛盾</h2><p>以前的我，最不能理解的就是<strong>自我矛盾</strong>，正如前几集艾丽卡认为Violet不能胜任人偶的工作，却仍然力保她留在公司时，Violet发出的疑问，以前的我也常常有这种想法，觉得人总是心口不一，遇到矛盾的事就嗤之以鼻。</p>
+<p>但这部番从各种矛盾入手，对Violet进行了全面的人格塑造：14岁的少女与杀人机器、断送他人的性命与撰写替人结缘的书信，冷冰冰的人偶与不需要指令的”人“。一个个矛盾交织在一起，对每个关键点都有合适的flashback，将故事连贯起来，是我最喜欢的一个方面。</p>
+<h2 id="战争"><a href="#战争" class="headerlink" title="战争"></a>战争</h2><p>看到B站评论中有一句：”本来就是写战争的还硬洗，既然知道战争的残酷与无情，当初还发动战争，有点既当了**还想立牌坊的感觉”。诚然，战争是本番的一条主线，也正是战争将violet变成了这副模样。每集中都或多或少带有战争的元素：Violet失去了少佐后救赎了自己；未能保护好边线的士兵从自我沉沦中重生；待不到男友返乡的歌剧演员以一首情书彻底解冻时间线，每一个故事都反映出了战争的残忍，但只有战争才能避免更多的悲伤分别发生，EX集中那个归乡士兵的特写，人们在火车站的寻人启事墙上自发点起了蜡烛为他们祈福的举动，既让Violet得到感染，更让我体会到了离别后的振作之情。</p>
+<h2 id="信"><a href="#信" class="headerlink" title="信"></a>信</h2><p>信，则是全番中的另一个主线，从想要理解<strong>”我爱你“</strong>的含义而称为人偶，通过一系列的工作经历，violet不断懂得了那些她当兵时未曾体会到的情感，她懂得了如何去感受人的想法，做到”共情“，从一封封信的写作中，Violet也从之前那个只会写报告书的军人，变成了一个，她写给少佐的信躺在了丛中，也躺在了我心里。</p>
+<p>我也一直有写信的习惯，那些文字，通过纸笔变成了一个个心意，那是语言所无法表达的独特，只能通过”见信如面“和”XXX亲启“来传递的唯一，是不可替代的。</p>
+<p>看别人玩你画我猜的时候，有人在题目是这个番时只画了一封信，当时的我还不明白为什么，但现在我觉得，那封信就能代表一切，它是本番的<strong>灵魂所在</strong>。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>你们可能觉得我前面没有说这部番的画功怎么样，这么给你说，刚才举报了一个”因为画质高看得眼睛酸所以差评”的一星评论，懂了吧（</p>
+<p>漫画里最后Violet和少佐重逢了，算是一个HE，但我更喜欢动漫中的结局，少女带着全新的希望奔赴未来</p>
+<p>没有放图的原因是，看的很认真没有截图，而且每一帧都值得我去收藏，我就只存了几个自己喜欢的画面。</p>
+<div class="note primary no-icon flat">
+    <p>
+        希望大家多多给我推荐类似这种的优质番，俺在线拜谢你们（
+    </p>
+    <p>也希望我明白”爱“的意义的那天早日到来</p>
+</div>
+
+
+
+<p>最后，对于熬夜，薇酱这句话我觉得很有道理。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="熬夜.png" alt=""></p>
+<p>大家还是少熬夜，养生作息早睡早起它不香🐎？</p>
+<p>ps：有一说一日本人直接拿英文来起名字还挺好听的（Violet Evergarden)。感觉翻译成中文总差点感觉，就用英文打了。</p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
   </entry>
   <entry>
     <title>假期每日总结</title>
@@ -2245,7 +2245,72 @@
 
 
 
-<h2 id="2020-01-29"><a href="#2020-01-29" class="headerlink" title="2020-01-29"></a>2020-01-29</h2><div class="note primary no-icon flat">
+<h2 id="2020-01-29"><a href="#2020-01-29" class="headerlink" title="2020-01-29"></a>2020-01-29</h2><div class="note success no-icon flat">
+                            <p>
+                                <strong>博客更新⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        终于部署了评论推送功能，不然别人留言不回复太不好了
+                                    </td>
+                                    <td>
+                                        配置教程：<a href="https://blog.hclonely.com/posts/409d3090/">Valine 添加验证码、博主标签及评论微信、QQ 通知</a>
+                                    </td>
+                                                                    </tr>
+                                <tr>
+                                    <td>
+                                        美化了Valine评论，换了js文件，增加了博主和小伙伴的标识
+                                    </td>
+                                    <td>
+                                        配置教程：<a href="https://blog.csdn.net/weixin_43868299/article/details/108894568">Butterfly主题Valine评论美化</a>
+                                    </td>
+                                                                    </tr>
+                                <tr>
+                                    <td>
+                                        终于部署了评论推送功能，不然别人留言不回复太不好了
+                                    </td>
+                                    <td>
+                                        <a href="https://ac.nowcoder.com/acm/contest/11290?&headNav=www">西北工业大学编程之星设计挑战赛</a>
+                                    </td>
+                                                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+<div class="note warning no-icon flat">
+                            <p>
+                                <strong>杂项⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                                                        </tr>
+                                </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                   晋级赛输了呜呜呜呜
+                                </td>
+                                                                </tr>
+                             <tr>
+                                <td>
+                                   快乐你画我猜，各种阴间大作
+                                </td>
+                                                                </tr>
+                             <tr>
+                                <td>
+                                   日常看TED，并且更新在了新的文章中
+                                </td>
+                                                                </tr>
+                            </tbody>
+    </table>
+</div>
+
+<div class="note primary no-icon flat">
                             <p>
                                 <strong>今日所得⭐</strong>
                             </p>
