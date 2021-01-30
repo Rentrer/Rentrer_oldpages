@@ -85,3 +85,12 @@
 #footer:before {
     background-color: rgba(0, 0, 0, 0);
 }
+
+#web_bg {
+    /* 背景图像的地址（url括号里）  */
+    background: url(https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/11/ca3347eed35bad49c5efd048587f7211.png);
+    /* 背景图像不重复 */
+    background-repeat: no-repeat;
+    /* 背景图像大小 */
+    background-size: cover;
+}
