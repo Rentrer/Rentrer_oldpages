@@ -86,7 +86,7 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
-#aside_content .card-widget,
+#aside-content .card-widget,
 #recent-posts>.recent-post-item,
 .layout_page>div:first-child:not(.recent-posts),
 .layout_post>#page,
@@ -94,4 +94,22 @@
 .read-mode .layout_post>#post {
     /* 以下代表白色透明度为0.7 */
     background: rgba(255, 255, 255, .7);
+}
+div#post{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#page{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#archive{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#tag{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#category{
+  background: rgba(255, 255, 255, 0.9);
+}
+#aside-content .card-widget,{
+  background: rgba(255, 255, 255, 0.1);
 }
