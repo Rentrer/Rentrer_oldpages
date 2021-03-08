@@ -446,7 +446,7 @@
   <entry>
     <title>博客目录</title>
     <url>/2020/09/28/%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<div class="note success no-icon flat">
+    <content><![CDATA[<h1 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h1><h2 id="大二上"><a href="#大二上" class="headerlink" title="大二上"></a>大二上</h2><div class="note success no-icon flat">
                             <p>
                                 <strong>数据结构复习⭐</strong>
                             </p>
@@ -523,8 +523,10 @@
                                          </tr>
                             </tbody>
                         </table>
-                    </div> 
-<div class="note info no-icon flat">
+                    </div>
+
+
+<h2 id="大二下"><a href="#大二下" class="headerlink" title="大二下"></a>大二下</h2><div class="note info no-icon flat">
                             <p>
                                 <strong>计算机网络学习笔记⭐</strong>
                             </p>
@@ -551,7 +553,6 @@
                             </tbody>
                         </table>
                     </div>  
-
 
 <div class="note primary no-icon flat">
                             <p>
@@ -3460,5 +3461,114 @@
 
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>读书书架整理</title>
+    <url>/2021/03/07/%E8%AF%BB%E4%B9%A6%E4%B9%A6%E6%9E%B6%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<div class="note info no-icon flat">
+                            <p>
+                                <strong>目前在看的书⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>书名</th>
+                                        <th>进度</th>
+                                    </tr>
+                                    </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/26912631/">道林格雷的画像</a>
+                                    </td>
+                                    <td align="center"><progress value="8" max="248">
+</progress></td></tr>
+                                <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/10785583/">思考快与慢</a>
+                                    </td>
+                                    <td align="center"><progress value="34" max="422">
+</progress></td></tr>
+                                <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/10785583/">数学之美</a>
+                                    </td>
+                                    <td align="center"><progress value="29" max="261"  class="cold">
+</progress></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+<div class="note warning no-icon flat">
+                            <p>
+                                <strong>目前准备要看的书籍⭐</strong>
+                            </p>
+                            <table>
+                                 <thead>
+                                    <tr>
+                                        <th>书名</th>
+                                        <th>预计开始看的时间</th>
+                                    </tr>
+                                    </thead>
+                        <tbody>
+                            <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/26954760/">月亮与六便士</a>
+                                    </td>
+                                    <td align="center">借到书就开始</td></tr>
+                            <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/34613713/">给仰望者的朝圣之旅</a>
+                                    </td>
+                                    <td align="center">3月份借到书就开始</td></tr>
+                            <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/6440343/">诗集：荒原</a>
+                                    </td>
+                                    <td align="center">闲暇时间就翻开读几页</td></tr>
+                            </tbody>
+    </table>
+</div>
+
+<div class="note success no-icon flat">
+                            <p>
+                                <strong>在书架上排队的书籍⭐</strong>
+                            </p>
+                            <table>
+                                 <thead>
+                                    <tr>
+                                        <th>书名</th>
+                                        <th>排队原因</th>
+                                    </tr>
+                                    </thead>
+                        <tbody>
+                            <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/3014444/">自深深处</a>
+                                    </td>
+                                    <td align="center">道林格雷的画像未看+这本书应静下心看</td></tr>
+                            <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/1863930/">看不见的城市</a>
+                                    </td>
+                                    <td align="center">到小学期再慢慢读</td></tr>
+                                <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/10785583/">鼠疫</a>
+                                    </td>
+                                    <td align="center">没看完，打算之后看完</td></tr>
+                            <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/3131626/">荒原狼</a>
+                                    </td>
+                                    <td align="center">看介绍挺好的，先码了</td></tr>
+                            </tbody>
+                    </table>
+                </div>      
+
+]]></content>
+      <categories>
+        <category>日积月累的资源</category>
+      </categories>
   </entry>
 </search>
