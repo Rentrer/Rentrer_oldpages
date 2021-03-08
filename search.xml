@@ -1403,7 +1403,69 @@
 <p>Q5: A/D之间如何进行转换？</p>
 <p>E5：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="AD.png" alt=""></p>
 <h2 id="（三）A-D和D-A通信系统模型"><a href="#（三）A-D和D-A通信系统模型" class="headerlink" title="（三）A/D和D/A通信系统模型"></a>（三）A/D和D/A通信系统模型</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="通信系统模型.png" alt=""></p>
-<h1 id="二、传输介质的分类"><a href="#二、传输介质的分类" class="headerlink" title="二、传输介质的分类"></a>二、传输介质的分类</h1><h1 id="三、传输介质介绍"><a href="#三、传输介质介绍" class="headerlink" title="三、传输介质介绍"></a>三、传输介质介绍</h1><h1 id="四、介质的选用标准"><a href="#四、介质的选用标准" class="headerlink" title="四、介质的选用标准"></a>四、介质的选用标准</h1><p>计算机网络协议有多种，将各种协议抽象为分层模型，就将通信过程划分为一个个协调工作的分块结构，有助于减少协议设计和实现的复杂性，可以使工程人员在某段时间内只集中考虑通信的一个方面。</p>
+<h1 id="二、传输介质的分类"><a href="#二、传输介质的分类" class="headerlink" title="二、传输介质的分类"></a>二、传输介质的分类</h1><h2 id="（一）按路径分类"><a href="#（一）按路径分类" class="headerlink" title="（一）按路径分类"></a>（一）按路径分类</h2><h3 id="①导引型-Guided-传输媒体"><a href="#①导引型-Guided-传输媒体" class="headerlink" title="①导引型(Guided)传输媒体"></a>①导引型(Guided)传输媒体</h3><p>Q6：为什么不直接用平行铜导线？</p>
+<p>C6：</p>
+<p>1、随机电磁辐射，又称噪声（noise），是系统正常操作下的一种副作用。</p>
+<p>2、电磁辐射碰到金属的时会产生微弱信号干扰通信信号。</p>
+<p>3、因为金属可以吸收辐射，所以<strong>它可以起到屏蔽（shield）的作用</strong></p>
+<h4 id="Q7：什么是双绞线？"><a href="#Q7：什么是双绞线？" class="headerlink" title="Q7：什么是双绞线？"></a>Q7：什么是双绞线？</h4><p>C7：双绞线(<strong>Twisted Pair</strong>)，就是把两根互相绝缘的铜导线并排放在一起，然后用规则的方法绞合（Twist）就构成了双绞线。</p>
+<p>双绞线既能传输模拟信号又能传输数字信号</p>
+<p><strong>通信距离一般为几到几十公里（短距离传输）</strong></p>
+<p>如果不绞合的话就是平行导线（ <strong>parallel pair wiring</strong>）</p>
+<p>&nbsp;</p>
+<p>Q8：为什么用双绞线而不是平行导线？</p>
+<p>C8：对于存在的电磁辐射干扰，双绞线的两根导线吸收的辐射相同，而平行导线吸收的不同，感应的电能也不同，就会出现电流，从而产生新的干扰。</p>
+<p>&nbsp;</p>
+<h4 id="Q9：什么是同轴电缆？"><a href="#Q9：什么是同轴电缆？" class="headerlink" title="Q9：什么是同轴电缆？"></a>Q9：什么是同轴电缆？</h4><p>E9:<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="同轴电缆.png" alt=""></p>
+<p>C9：同轴电缆（<strong>Coaxial cable</strong>)，由内导体，绝缘层，<strong>外导体屏蔽层</strong>和绝缘保护套层组成，</p>
+<p><strong>多用于传输有线电视的模拟信号。</strong></p>
+<p>为了进一步减少电气噪声的干扰，双绞线又分为下面三类</p>
+<p>Q10：无屏蔽双绞线（<strong>Unshielded TP</strong>)的优点和缺点是什么？</p>
+<p>E10：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="UTP.png" alt=""></p>
+<p>C10：缺点：如果辐射强度很高，如使用电弧焊设备的工厂（<strong>特别强的电子噪声</strong>），或者通信电缆需要在电气噪声源附近经过（<strong>与噪声源的物理距离非常近</strong>），或<strong>通信使用高频率时</strong>，双绞线都存在问题。</p>
+<p>优点：<strong>柔韧性较高，比较灵活</strong></p>
+<p>&nbsp;</p>
+<p>Q11：同轴电缆的优点和缺点是什么</p>
+<p>C11：优点：屏蔽能力、抗干扰性很强，厚实的屏蔽层及整体的对称性使得其可以免受噪声的干扰。适用于放在<strong>电气噪声源和其他电缆附近（如工厂）</strong>，而且可以<strong>用于高频率通信</strong>。</p>
+<p>缺点：</p>
+<p>&nbsp;</p>
+<p>Q12：如何折中二者？</p>
+<p>E12：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="STP.png" alt=""></p>
+<p>C12：采用屏蔽双绞线（Shielded TP）<strong>,直接在绝缘层上加一层屏蔽层</strong>，来提高双绞线抗电磁干扰的能力。</p>
+<p>&nbsp;</p>
+<h4 id="Q13：什么是光纤？"><a href="#Q13：什么是光纤？" class="headerlink" title="Q13：什么是光纤？"></a>Q13：什么是光纤？</h4><p>E13：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="光纤.png" alt=""></p>
+<p>C13：光纤（<strong>Optical fiber</strong>）通常由非常透明的石英玻璃拉成细丝，<strong>主要由纤芯和包层构成双层通信圆柱体</strong>。每根光纤是<strong>单个方向的</strong>，所以每个光缆至少包含两根光纤（来回）。</p>
+<p>&nbsp;</p>
+<p>Q14：光线为什么能保留在光纤里？</p>
+<p>C14：因为光纤被一层覆层物质包裹形成了一个边界，这个边界的折射率比纤芯要低。由于光线从高向低射出时，<strong>当入射角足够大时就会发生全反射</strong>，而光纤正好运用该原理，使光线碰到包层就反射回光纤，光一直传播下去。</p>
+<p>&nbsp;</p>
+<p>Q15：什么是色散？</p>
+<p>C15：光纤内的<strong>反射并不是完美</strong>的，它会<strong>吸收一小部分能量</strong>，形成色散。</p>
+<p>&nbsp;</p>
+<p>Q16：光纤有哪些类型？</p>
+<p>E16：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="两个光纤.png" alt=""></p>
+<p>C16：</p>
+<p>1、多模突变光纤，就是可以<strong>存在多条不同角度入射的光线</strong>在一条光纤中传输，<strong>纤芯与边界的密度是突变</strong>的。</p>
+<p><strong>特点：便宜、纤芯密度不变，但是色散程度高</strong>。</p>
+<p>2、多模渐变光纤，纤芯中心处的密度最高，从中心到边缘逐渐降低。</p>
+<p>特点：稍贵，但可以减少反射，<strong>降低色散程度</strong>。</p>
+<p>3、<strong>单模光纤</strong>，具有较小的直径，只有一个光的波长，可以使光线一直向前传播，而不会产生多次反射。</p>
+<p><strong>特点：最贵，色散最少，适合长距离及较高比特率传输的场合。</strong></p>
+<p>&nbsp;</p>
+<h4 id="Q17：光纤和铜导线有什么利弊？"><a href="#Q17：光纤和铜导线有什么利弊？" class="headerlink" title="Q17：光纤和铜导线有什么利弊？"></a>Q17：光纤和铜导线有什么利弊？</h4><p>C17：光纤免受电气噪声的干扰，信号损耗较少，<strong>适合长距离传播</strong>，可用于校区之间的通信</p>
+<p>铜导线的整体费用较低，不需要专门的人员和设备，且不易折断，<strong>适合企业内部的大量使用</strong>。</p>
+<h3 id="②非导引型-Unguided-传输媒体"><a href="#②非导引型-Unguided-传输媒体" class="headerlink" title="②非导引型(Unguided)传输媒体"></a>②非导引型(Unguided)传输媒体</h3><p>红外：不需要天线，适合于室内环境</p>
+<p>特点：扩散快，光滑坚硬的表面反射，不透明物体（包括水蒸气）都能阻挡。</p>
+<p>点对点激光通信</p>
+<p>特点 数据传输率高，正确率高，信号衰减小，<strong>适合于城市楼宇间传输。</strong></p>
+<h2 id="（二）按能量形式"><a href="#（二）按能量形式" class="headerlink" title="（二）按能量形式"></a>（二）按能量形式</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="能量.png" alt=""></p>
+<h1 id="三、介质的选用标准"><a href="#三、介质的选用标准" class="headerlink" title="三、介质的选用标准"></a>三、介质的选用标准</h1><p>成本：材料、安装、运营、维护</p>
+<p>数据速率：bps</p>
+<p>时延：信号传输的时间</p>
+<p>对信号的影响：衰减和失真</p>
+<p>环境：对干扰和电子噪声的敏感性</p>
+<p>安全：对窃听的敏感性</p>
+<p>计算机网络协议有多种，将各种协议抽象为分层模型，就将通信过程划分为一个个协调工作的分块结构，有助于减少协议设计和实现的复杂性，可以使工程人员在某段时间内只集中考虑通信的一个方面。</p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -3570,5 +3632,17 @@
       <categories>
         <category>日积月累的资源</category>
       </categories>
+  </entry>
+  <entry>
+    <title>计算机网络——局域异步通信</title>
+    <url>/2021/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E2%80%94%E2%80%94%E5%B1%80%E5%9F%9F%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+      </tags>
   </entry>
 </search>
