@@ -3549,7 +3549,7 @@
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/34613713/">给仰望者的朝圣之旅</a>
                                     </td>
-                                    <td align="center"><progress value="13" max="255">
+                                    <td align="center"><progress value="92" max="255">
 </progress></td></tr>
                                 <tr>
                                     <td align="center">
@@ -3559,13 +3559,17 @@
 </progress></td></tr>
                                 <tr>
                                     <td align="center">
-                                        <a href="https://book.douban.com/subject/10785583/">数学之美</a>
+                                        <a href="https://book.douban.com/subject/26163454/">数学之美</a>
                                     </td>
                                     <td align="center"><progress value="29" max="261"  class="cold">
 </progress></td></tr>
                 </tbody>
             </table>
         </div>
+
+
+
+
 
 <div class="note warning no-icon flat">
                             <p>
@@ -3616,6 +3620,11 @@
                                         <a href="https://book.douban.com/subject/1863930/">看不见的城市</a>
                                     </td>
                                     <td align="center">到小学期再慢慢读</td></tr>
+                            <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/4820710/">1984</a>
+                                    </td>
+                                    <td align="center">突然想读了，先码着</td></tr>
                                 <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/10785583/">鼠疫</a>
@@ -3636,15 +3645,17 @@
       </categories>
   </entry>
   <entry>
-    <title>计算机网络——局域异步通信</title>
-    <url>/2021/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E2%80%94%E2%80%94%E5%B1%80%E5%9F%9F%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1/</url>
-    <content><![CDATA[]]></content>
+    <title>Vscode——从零开始的美观编程之路</title>
+    <url>/2021/03/16/Vscode%E2%80%94%E2%80%94%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E7%BE%8E%E8%A7%82%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/</url>
+    <content><![CDATA[<p>大一上结束后，我不甘于继续用在我看来不够美观的Devc++（<strong>不够花里胡哨</strong>），开始搜索其他编译器。</p>
+<p>在同学的安利下，我下载了这款只能算得上编辑器（和编译器有很大区别）的Visual Studio Code,并开启了我的编程之路。</p>
+<p>从大一下的C++，到自己配置的Python3.7，再到建网站时修改yaml，css 和 js，甚至在其中运行生成Latex代码，大二下的Java，甚至还能刷力扣、实验课摸鱼等，Vscode作为一个轻量级的编辑器很大程度的方便了我的这些方面，</p>
+<p>加上有人想看配置环境，我就干脆从头写一份教程吧，希望可以帮到想用Vscode的你们</p>
+<p>先把坑挖好，周五下午如果有空就从虚拟机开始从头来一次。</p>
+<h1 id="1、下载安装流程"><a href="#1、下载安装流程" class="headerlink" title="1、下载安装流程"></a>1、下载安装流程</h1><p>官网网址：<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<h1 id="2、界面设置"><a href="#2、界面设置" class="headerlink" title="2、界面设置"></a>2、界面设置</h1><h1 id="3、C-C-的配置"><a href="#3、C-C-的配置" class="headerlink" title="3、C/C++的配置"></a>3、C/C++的配置</h1><h1 id="4、插件推荐"><a href="#4、插件推荐" class="headerlink" title="4、插件推荐"></a>4、插件推荐</h1><h1 id="5、结语"><a href="#5、结语" class="headerlink" title="5、结语"></a>5、结语</h1>]]></content>
       <categories>
-        <category>学习笔记</category>
-        <category>计算机网络</category>
+        <category>日积月累的资源</category>
       </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-      </tags>
   </entry>
 </search>
