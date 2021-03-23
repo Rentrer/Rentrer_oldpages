@@ -3646,14 +3646,76 @@
   </entry>
   <entry>
     <title>Vscode——从零开始的美观编程之路</title>
-    <url>/2021/03/16/Vscode%E2%80%94%E2%80%94%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E7%BE%8E%E8%A7%82%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/</url>
+    <url>/2021/03/21/Vscode%E2%80%94%E2%80%94%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E7%BE%8E%E8%A7%82%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/</url>
     <content><![CDATA[<p>大一上结束后，我不甘于继续用在我看来不够美观的Devc++（<strong>不够花里胡哨</strong>），开始搜索其他编译器。</p>
 <p>在同学的安利下，我下载了这款只能算得上编辑器（和编译器有很大区别）的Visual Studio Code,并开启了我的编程之路。</p>
 <p>从大一下的C++，到自己配置的Python3.7，再到建网站时修改yaml，css 和 js，甚至在其中运行生成Latex代码，大二下的Java，甚至还能刷力扣、实验课摸鱼等，Vscode作为一个轻量级的编辑器很大程度的方便了我的这些方面，</p>
 <p>加上有人想看配置环境，我就干脆从头写一份教程吧，希望可以帮到想用Vscode的你们</p>
-<p>先把坑挖好，周五下午如果有空就从虚拟机开始从头来一次。</p>
-<h1 id="1、下载安装流程"><a href="#1、下载安装流程" class="headerlink" title="1、下载安装流程"></a>1、下载安装流程</h1><p>官网网址：<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
-<h1 id="2、界面设置"><a href="#2、界面设置" class="headerlink" title="2、界面设置"></a>2、界面设置</h1><h1 id="3、C-C-的配置"><a href="#3、C-C-的配置" class="headerlink" title="3、C/C++的配置"></a>3、C/C++的配置</h1><h1 id="4、插件推荐"><a href="#4、插件推荐" class="headerlink" title="4、插件推荐"></a>4、插件推荐</h1><h1 id="5、结语"><a href="#5、结语" class="headerlink" title="5、结语"></a>5、结语</h1>]]></content>
+<h1 id="1、下载安装流程"><a href="#1、下载安装流程" class="headerlink" title="1、下载安装流程"></a>1、下载安装流程</h1><p>2021 3 22更新：今天突然找到了一位大佬编写的自动配置Vscode的软件，链接：<a href="http://guyutongxue.gitee.io/vscodeconfighelper/">Vs Code Config Helper</a></p>
+<p>让我们一步一步开始吧</p>
+<p>首先下载上方链接的压缩包，并<strong>解压到一个文件夹里</strong>，不要在压缩包里直接双击软件。图例如下</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="1.png" alt=""></p>
+<p>之后双击文件夹里的 VSCodeConfigHelper，进入程序。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="2.png" alt=""></p>
+<p>这里要选择一个文件夹，用来放你的C/C++的程序代码，建议<strong>不要放在C盘</strong>，可以在<strong>D或E中新建一个文件夹</strong>。</p>
+<p>注意：这里由于软件设置，<strong>存储的路径不能包含空格和中文字符</strong>，所以不要放在Program files文件夹下，直接在D/E盘根目录下新建一个文件夹即可，例如这样：（因为我使用的是虚拟机配置，只有C盘，忽略这个C盘）。之后点击下一步。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="3.png" alt=""></p>
+<p>第二步就是要安装C++相关的编译文件，这里我们采用MinGW，Devc++就是内置了MinGW的编译器。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="4.png" alt=""></p>
+<p>首先点击右侧的链接进行下载，下载下来发现是一个<strong>后缀名为.7z</strong>的文件，这个与常见的.zip,.rar同属压缩文件，用常见的解压缩器即可成功解压。用常规解压缩可能会导致解压时间较长，请耐心等待。</p>
+<p>这里注意，要把mingw64文件夹整体解压缩出来，建议保存在与你第一步创建文件夹同级的地方，示例如下</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="5.png" alt=""></p>
+<p>之后回到软件界面，选择你刚解压缩出来的mingw64文件夹，单击并确定，若出现绿字则说明路径正确。示例如下</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="6.png" alt=""></p>
+<p>点击下一步，进入下载网址下载我们梦寐以求的Vscode</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="7.png" alt=""></p>
+<p>这一步中，尽量不要把Vscode安装在自己的C盘，我C盘红了就是因为年少轻狂不懂事，血的教训QAQ</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="8.png" alt=""></p>
+<p>这一步按如下设置进行勾选</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="9.png" alt=""></p>
+<p>安装完成之后，<strong>可以选择重启</strong>，也可以继续先完成扩展的下载。</p>
+<p>回到软件界面，先点击界面上的刷新按钮，当显示找到vscode后，再点击安装扩展。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="10.png" alt=""></p>
+<p>注：这一步可能会耗时较长，因为最近的github访问不稳定，若长时间无反应可以先关闭cmd窗口，再次点击“安装扩展“即可。出现如下画面即为安装成功：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="11.png" alt=""></p>
+<p>回到软件界面，发现C/C++扩展已经安装好了，我们点击下一步。</p>
+<p>样式可以自行选择自己喜欢的，个人推荐第一个。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="12.png" alt=""></p>
+<p>最后点击下一步，我们的第一阶段的配置就完成了！</p>
+<h1 id="2、测试环节"><a href="#2、测试环节" class="headerlink" title="2、测试环节"></a>2、测试环节</h1><p>在配置好之后，软件会自动生成一个Hello World.cpp，供我们测试，此时我们只需要单击键盘上的F5，就可以在下面的Terminal看到令人激动的Hello World了！</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="12.1.png" alt=""></p>
+<p>啊这。咋失败了呢</p>
+<p>出现这个情况的小伙伴先不要惊慌，这只是Vscode第一次编译没有完全，你可以先关闭Vscode的进程，再重新打开，再按F5，就能看到如下的输出辣</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="12.2.png" alt=""></p>
+<p>芜湖，这样就可以在Vscode上快乐的写C++作业辣</p>
+<h1 id="3、常见设置的配置"><a href="#3、常见设置的配置" class="headerlink" title="3、常见设置的配置"></a>3、常见设置的配置</h1><h2 id="（1）代码字体大小-amp-amp-自动保存问题"><a href="#（1）代码字体大小-amp-amp-自动保存问题" class="headerlink" title="（1）代码字体大小&amp;&amp;自动保存问题"></a>（1）代码字体大小&amp;&amp;自动保存问题</h2><p>Vscode默认的代码有点小，看上去有点费眼睛，怎么办呢？</p>
+<p>当年修改程序后点击运行，却发现自己没有保存，程序仍然按之前的结果运行，怎么办呢？</p>
+<p>我们首先点击界面左下角的齿轮按钮，进入设置界面</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="20.png" alt=""></p>
+<p>两项都可以按照自己进行设置</p>
+<h2 id="（2）主题设置"><a href="#（2）主题设置" class="headerlink" title="（2）主题设置"></a>（2）主题设置</h2><p>不想要纯黑的编辑器，想换个颜色？换！换大份的！</p>
+<p>在Vscode界面，先按下Ctrl+K，再按下Ctrl+T，即可出现切换主题的界面，自行挑选辣，可以按上下键预览</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="22.png" alt=""></p>
+<h1 id="4、插件推荐"><a href="#4、插件推荐" class="headerlink" title="4、插件推荐"></a>4、插件推荐</h1><p>接下来就是Vscode的核心部分：插件的合理运用。下面我会推荐几个好用的插件，供大家选取，</p>
+<p>插件（其实应该叫扩展），在界面左边的五个按钮的最下面，点击即可出现搜索界面了，如下图</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="13.png" alt=""></p>
+<h2 id="（1）Chinese"><a href="#（1）Chinese" class="headerlink" title="（1）Chinese"></a>（1）Chinese</h2><p>在能运行代码之后，我们却发现，Vscode的默认界面是英文版的，我喜欢中文版该怎么办呢？</p>
+<p>在插件界面搜索Chinese，直接点击Install即可</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="14.png" alt=""></p>
+<p>安装完成后，点击弹出的该界面的Restart，就可以看到熟悉的中文辣</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="15.png" alt=""></p>
+<h2 id="（2）Code-Runner"><a href="#（2）Code-Runner" class="headerlink" title="（2）Code Runner"></a>（2）Code Runner</h2><p>不习惯按F5，想<strong>点一个按钮就直接运行</strong>自己的代码怎么办？</p>
+<p>在插件界面搜索Code Runner，点击安装</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="16.png" alt=""></p>
+<p>之后我们回到helloworld.cpp文件，我们发现，右上角多了一个小三角，点击他，终端就会简洁的直接输出了！</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="17.png" alt=""></p>
+<h2 id="（3）Bracket-Pair-Colorizer-2"><a href="#（3）Bracket-Pair-Colorizer-2" class="headerlink" title="（3）Bracket Pair Colorizer 2"></a>（3）Bracket Pair Colorizer 2</h2><p>当一个程序，括号套括号套括号套括号套括号，这时候是不是就不好辨认了？我们有办法！</p>
+<p>在插件界面搜索Bracket Pair Colorizer 2，点击安装</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="18.png" alt=""></p>
+<p>在自己的代码中尝试括号的嵌套，就会发现括号的颜色变了！</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="19.png" alt=""></p>
+<h2 id="（4）持续更新"><a href="#（4）持续更新" class="headerlink" title="（4）持续更新"></a>（4）持续更新</h2><h1 id="4、结语"><a href="#4、结语" class="headerlink" title="4、结语"></a>4、结语</h1><p>一直想写这篇教程，因为挺多人问我该怎么配置Vscode，而且恰好找到了一个可以一键配置的大佬写的软件，就花了一个半小时在虚拟机上完成了配置，写下了这篇教程。希望看完教程的大家都能收获一个全新的编程体验，以后更多地方都会用上Vscode的！有别人问你的话你也可以直接把链接分享给ta，大家都方便。</p>
+]]></content>
       <categories>
         <category>日积月累的资源</category>
       </categories>
