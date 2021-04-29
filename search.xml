@@ -3720,4 +3720,117 @@
         <category>日积月累的资源</category>
       </categories>
   </entry>
+  <entry>
+    <title>数据库期中复习</title>
+    <url>/2021/04/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>Q：关系模型的三个部分分别是什么？</p>
+<p>C：关系数据结构，关系操作集合 关系完整性约束</p>
+<p>Q：候选码 主码 和主属性都是什么？</p>
+<p>C：若关系中的某一个属性组的值能唯一地标识一个元组，而其子集不能，则该属性组被称为候选码，从候选码中选定一个为主码，<strong>候选码的诸属性称为主属性</strong></p>
+<p>即：主码的属性不是主属性，主属性是候选码的所有属性。</p>
+<p>关系是笛卡尔积的有限子集，<strong>无限关系在数据库系统中是无意义的</strong>。</p>
+<p><strong>关系的每一个分量必须是不可分的数据项。</strong></p>
+<p>关系模式的形式化定义：R(U,D,DOM,F)</p>
+<p>Q：什么是关系模型的完整性规则？</p>
+<p>C：关系模型中可以有三类完整性约束：实体完整性，参照完整性，用户定义的完整性。</p>
+<p>关系模型的完整性规则就是对关系的某种约束条件。</p>
+<p>①主属性不能取空值</p>
+<p>②若外码是该表的主码，则此时外码不能取空值。</p>
+<p>Q：查询操作的基本操作是哪些？</p>
+<p>C：选择、投影、并、差、笛卡尔积，其他的如除，交等都可以导出。</p>
+<p>Q：关系操作的特点是什么？</p>
+<p>C：操作的对象和结果都是集合。</p>
+<p>R∩S=R-（R-S）</p>
+<p>Q：投影有什么注意事项？</p>
+<p>C：投影之后不仅取消了原关系中的某些列，而且还可能取消某些元组（避免重复行）</p>
+<p>E：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="4.png" alt=""></p>
+<p><strong>在投影后，取消了重复的CS元组，这点要特别注意，用在之后的SELECT DISTINCT</strong></p>
+<p>Q：等值连接和自然连接有什么区别？</p>
+<p>C：自然连接是一种特殊的等值连接，它要求两个关系中进行比较的分量必须是相同的属性组，并且要在结果中去掉其中一个重复的属性。<strong>自然连接会去除掉重复列，而等值连接不会。</strong></p>
+<p>E：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="5.png" alt=""></p>
+<p>Q：什么是外连接？</p>
+<p>C：即将悬浮元组保存至结果关系中，在其他属性处填上空值(NULL)，左外连接就是全要左边的，右边可以有NULL值，右外连接相反。</p>
+<p>Q：什么是除运算？如何理解除运算？</p>
+<p>C：设关系R除以关系S的结果为关系T，则 T包含所有在R但不在S中的属性及其值，且T的元组与S的元组的所有组合都在R中。</p>
+<p>除的实际含义：有一个现实意义的集合，<strong>希望在另一个集合中找出“包含”该集合的元组集</strong></p>
+<p>–例1：找出选修了所有课程的学生</p>
+<p>“所有课程”</p>
+<p>“学生”</p>
+<p>“学生”÷“所有课程”</p>
+<p><strong>要找学生，什么学生，选修了所有课程的学生，学生包含了“所有课程”，即学生÷所有课程</strong></p>
+<p>注：被除数和除数必须有公共部分，</p>
+<p>押题：</p>
+<p>解释候选码和主码的关系：</p>
+<p>若关系中的某一个属性组的值能唯一地标识一个元组，而其子集不能，则该属性组被称为候选码，从候选码中选定一个为主码，候选码可以有多个，主码是其中的一个。</p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>DROP SHCEMA CASCADE RESTRICT</p>
+<p>CASCADE:删除模式时将该模式下所有的数据库对象删除</p>
+<p>RESTRICT可以拒绝执行</p>
+<p>常用的数据类型：</p>
+<p>VARCHAR(n)：最大长度为n的变长字符串</p>
+<p>NUMERIC(p，d)：定点数，p位数字d位小数，等于decimal</p>
+<p>Q：如何修改基本表？</p>
+<p>C：ALTER TABLE STUDENT</p>
+<p>ADD CONSTRAINT （可以增添约束条件、新列）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ALTER TABLE STUDENT</span><br><span class="line">ALTER COLUMN SAGE INT; --将原来的类型改为整数</span><br></pre></td></tr></table></figure>
+<p>在删除时，默认的删除方式是RESTRICT</p>
+<p>Q：怎么查询数据？</p>
+<p>Q：GROUP BY 语句怎么使用？</p>
+<p>如果有GROUP BY语句，则将结果按照列名1进行分组。通常会在每组中作用聚集函数，若有HAVING短语，则只有满足指定条件的组才会输出。</p>
+<p>Q：怎么使用别名？</p>
+<p>C：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT SNAME NAME,2014-SSAGE AGE</span><br><span class="line">FROM STUDENT;</span><br></pre></td></tr></table></figure>
+<p>在原名之后加一个空格，再加上别名即可以</p>
+<p>Q：怎么去重？</p>
+<p>C：SELECT DISTINCT SNO</p>
+<p>Q：怎么匹配字符串？</p>
+<p>C：WHERE SNAME LIKE ‘刘%’</p>
+<p>WHERE SNAME LIKE ‘_阳%’</p>
+<p>\_用来转义</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT SNO,GRADE</span><br><span class="line">FROM SC</span><br><span class="line">WHERE CNO&#x3D;&#39;3&#39;</span><br><span class="line">ORDER BY GRADE DESC</span><br></pre></td></tr></table></figure>
+<p>聚集函数只能用于select语句和group by的having子句</p>
+<p>Q：GRUOP BY 是什么含义？</p>
+<p>C：分组后聚集函数将作用于每一个组，即每一个组都有一个函数值。</p>
+<p>常见错误：WHERE子句不能用聚集函数作为表达式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT SNO,AVG(GRADE)</span><br><span class="line">FROM SC</span><br><span class="line">GROUP BY SNO</span><br><span class="line">HAVING AVG(GRADE)&gt;90</span><br></pre></td></tr></table></figure>
+<p>Q：怎么自身连接？</p>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><p>Q：什么是数据库的完整性？</p>
+<p>C：数据库的完整性包括数据库的正确性和相容性、</p>
+<p>Q：PRIMARY KEY有几种定义方式，分别怎么定义？（属于实体完整性）</p>
+<p>C：对于单属性构成的码，可以是列级说明：SNO INTEGER PRIMARY</p>
+<p>或者是表级说明：PRIMARY KEY(SNO)</p>
+<p>对多个属性构成的码只能是表级：PRIMARY KEY(SNO,CNO)</p>
+<p>Q：FOREIGN KEY怎么定义？（属于参照完整性）</p>
+<p>C：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">FOREIGN KEY(SNO) REFERENCES Student(SNO),</span><br><span class="line"></span><br><span class="line">FOREIGN KEY(CNO) REFERENCES Course(CNO);</span><br></pre></td></tr></table></figure>
+<p>Q：对于违反参照完整性的操作，该怎么办？</p>
+<p>C：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="1.png" alt=""></p>
+<p>Q：用户定义的完整性怎么写？</p>
+<p>C：</p>
+<p>对于列值，可以检查NOT NULL ,UNIQUE ,CHECK子句，如</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GRADE SMALLINT CHECK(GRADE &gt;&#x3D;0 AND GRADE&lt;&#x3D;100)</span><br></pre></td></tr></table></figure>
+<p>对于元组值，可以用CHECK来限制</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="2.png" alt=""></p>
+<p>Q：如何写完整性约束命名子句？</p>
+<p>C：完整性约束条件包括 <code>NOT NULL UNIQUE CHECK PRIMARY KEY FOREIGN KEY</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CONSTRAINT PK_DEPTNO PRIMARY KEY(SNO)，</span><br><span class="line">CONSTRAINT SSEX_CK CHECK(SSEX IN (&#39;男&#39;,&#39;女&#39;))</span><br></pre></td></tr></table></figure>
+<p>Q：如何修改表的完整性限制？</p>
+<p>C：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ALTER TABLE STUDENT</span><br><span class="line">DROP CONSTRAINT SSEX_CK</span><br></pre></td></tr></table></figure>
+<p>对于重新变更限制条件的，<strong>需要先删除原有的限制，再重新加入新的限制</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ALTER TABLE STUDENT</span><br><span class="line">DROP CONSTRAINT STUDNET_SNO_CK; --注意分号</span><br><span class="line"></span><br><span class="line">ALTER TABLE STUDENT</span><br><span class="line">ADD CONSTRAINT STUDENT_SNO_CK CHECK(SNO BETWEEN 9000 AND 9999);</span><br></pre></td></tr></table></figure>
+<p>Q：如何定义触发器？</p>
+<p>C：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="3.png" alt=""></p>
+<p>习题押题：</p>
+<p>1.关系R的属性A参照引用关系T的属性A，T的某条元组对应的A属性在R中出现，当要删除T的这条元组时，系统可以采用的策略包括 <strong>拒绝执行 级联删除 置为空值</strong></p>
+<p><strong>2.综合题（自己完整做一遍）</strong></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>数据库系统</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
 </search>
