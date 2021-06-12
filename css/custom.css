@@ -1,1 +1,19 @@
-@import url(https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap);div#post{background:rgba(255,255,255,.9)}div#page{background:rgba(255,255,255,.9)}div#archive{background:rgba(255,255,255,.9)}div#tag{background:rgba(255,255,255,.9)}div#category{background:rgba(255,255,255,.9)}div#aside-content{background:rgba(255,255,255,.9)}
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+div#post{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#page{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#archive{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#tag{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#category{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#aside-content{
+  background: rgba(255, 255, 255, 0.9);
+}
