@@ -3,14 +3,66 @@
   <entry>
     <title>SQL_review</title>
     <url>/2021/06/10/SQL-review/</url>
-    <content><![CDATA[<h2>目前要做的</h2>
+    <content><![CDATA[<h2 id="目前要做的">目前要做的</h2>
+<h3 id="第七章画E-R图">第七章画E-R图</h3>
+<p>第九章画语法分析树</p>
 <h3 id="第九章画语法分析树">第九章画语法分析树</h3>
 <p>第九章画语法分析树</p>
 <h3 id="第三章所有SQL语句熟悉">第三章所有SQL语句熟悉</h3>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="14.png" alt=""></p>
+<p>ALTER TABLE TEST</p>
+<p>ADD UNIQUE(NAME)</p>
+<p>ADD CONSTRAINT C1 CHECK(NT&gt;0)</p>
+<p>ADD c1 INTEGER</p>
+<p>ALTER Sage INT</p>
+<p>DROP TABLE CASACDE;</p>
+<p>CREATE UNIQUE INDEX NAME ON Student(Sno)</p>
+<p>指定别名</p>
+<p>SELECT Sname Name（用空格将属性与别名分开）</p>
+<p>去重：SELECT DISTINCT SNO</p>
+<p>范围内判断：WHERE Sage BETWEEN 20 AND 23;（包括20和23）</p>
+<p>字符匹配：</p>
+<p>%：表示任意长度的字符串（可以为0），例如a%b</p>
+<p>注意：<strong>WHERE子句中是不能用聚集函数作为条件表达式的</strong>，聚集函数只能用于SELECT子句和GROUP BY中的HAVING 子句。</p>
+<p>GROUP BY子句示例：</p>
+<p>SELECT Sno，AVG(Grade)</p>
+<p>FROM SC</p>
+<p><strong>GROUP BY Sno</strong></p>
+<p><strong>HAVING AVG（Grade）&gt;=90;</strong></p>
+<p>即，WHERE子句作用于基本表或视图，而HAVING作用于组，从中选择出满足条件的组。</p>
+<p>外连接：</p>
+<p>SELECT *</p>
+<p>FROM Student LEFT OUTER JOIN SC ON（Student.Sno=SC.Sno);</p>
+<p>相关子查询：</p>
+<p>SELECT SNO,CNO</p>
+<p>FROM SC X</p>
+<p>WHERE GRADE&gt;=</p>
+<p>(SELECT AVG(GRADE)</p>
+<p>FROM SC Y</p>
+<p>WHERE X.SNO=Y.SNO);</p>
+<p><strong>派生表</strong></p>
+<p>FROM SC,(SELECT SNO,AVG(GRADE) FROM SC GROUP BY SNO) <strong>AS T2</strong></p>
+<p>UPDATE TABLE</p>
+<p>SET VALUE=</p>
+<p>WHERE SNO=</p>
 <p>第九章画语法分析树</p>
-<h3 id="第九章画语法分析树-v2">第九章画语法分析树</h3>
+<h3 id="第五章SQL语句书写（ON-DELETE-CASCADE-CREATE-TRIGGER">第五章SQL语句书写（ON DELETE CASCADE CREATE TRIGGER)</h3>
 <p>第九章画语法分析树</p>
-<h2>概念清晰</h2>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="10.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="11.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="12.png" alt=""></p>
+<h3 id="第四章SQL语句书写（GRANT-TO-REVOKE-FROM">第四章SQL语句书写（GRANT TO REVOKE FROM)</h3>
+<p>GRANT ALL PRIVILEGES</p>
+<p>ON TABLE SC</p>
+<p>TO PUBLIC</p>
+<p>WITH ADMIN OPTION;</p>
+<p>REVOKE UPDATE(SNO)</p>
+<p>ON TABLE SC</p>
+<p>FROM PUBLIC;</p>
+<p>CREATE VIEW CS_Student</p>
+<p><strong>AS</strong></p>
+<p>第九章画语法分析树</p>
+<h2 id="概念清晰">概念清晰</h2>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="4.png" alt=""></p>
 <p>BCNF在函数依赖范畴内实现了模式的彻底分解，消除了插入异常和删除异常。</p>
 <p>关系数据库中的的所有关系模式<strong>必须满足第一范式</strong></p>
@@ -22,6 +74,7 @@
 <p>它属于内部的体系结构</p>
 <p>模式：也称逻辑模式，是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图。</p>
 <p>外模式也称用户模式，它是数据库用户能够看见和使用的局部数据的逻辑结构和特征的描述。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="13.png" alt=""></p>
 <p>自然连接和等值连接</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="C:%5CUsers%5C10971%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210610220301902.png" alt="image-20210610220301902"></p>
 <p><strong>在等值连接中把目标列种重复的属性列去掉就成了自然连接</strong>，即自然连接是特殊的等值连接</p>
@@ -39,18 +92,42 @@
 <p>2、不可重复读：<strong>T1读取数据后，T2进行了更新操作</strong>，导致T1无法再现前一次读取结果。</p>
 <p>3、读脏数据：在T1执行完事务后T2读取了1中的数据，<strong>但1之后进行了ROLLBACK</strong>，此时T2读取了脏数据。</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="1.png" alt=""></p>
-<h2>选择题押题</h2>
+<h2 id="选择题押题">选择题押题</h2>
+<p>概念模型：<strong>现实世界到机器世界</strong>的中间层次</p>
+<p>数据模型通常由数据结构、数据操作和完整性约束三部分构成。</p>
+<p>DBMS是一类系统软件，它是建立在<strong>操作系统</strong>之上的</p>
+<p>从逻辑模型到物理模型的转换一般是由<strong>DBMS</strong>完成的</p>
+<p>在数据管理技术发展过程中，需要应用程序管理数据的系统是（<strong>人工管理阶段</strong>）</p>
+<p>关系是笛卡尔积的有限子集，<strong>无限关系在数据库系统中是无意义的</strong>。</p>
+<p>关系模型中可以有三类完整性约束：<strong>实体完整性</strong>，<strong>参照完整性</strong>，<strong>用户定义的完整性</strong>。</p>
+<p>关系模型的完整性规则就是对关系的某种约束条件。</p>
+<p>①主属性不能取空值</p>
+<p>②<strong>若外码是该表的主码，则此时外码不能取空值</strong>。</p>
 <p>关系数据库规范化是为解决关系数据库中的（操作异常和数据冗余）问题而引入的。</p>
 <p>封锁就是事务T<strong>在对某个数据对象（如表、记录）操作之前</strong>，先向系统发出请求，对其加锁。</p>
 <p>避免活锁的简单办法：采用先来先服务的策略</p>
 <p>若并发执行的所有事务都遵守<strong>两端锁协议</strong>，则对这些事务的任何并发调度都是可串行化的</p>
 <p>遵守两端锁协议的事务可能发生死锁</p>
-<h2>填空题押题</h2>
+<h2 id="填空题押题">填空题押题</h2>
 <p>数据库系统和文件系统的本质区别是：数据库系统实现了<strong>数据的结构化</strong>。</p>
+<p>数据独立性包括数据的<strong>物理独立性</strong>和<strong>逻辑独立性</strong></p>
+<p>最经常使用的概念模型是E-R模型</p>
+<p>关系模型的三个部分分别是 <strong>关系数据结构</strong> <strong>关系操作集合</strong> <strong>关系完整性约束</strong></p>
+<p>代数的基本运算有<strong>选择</strong>、<strong>投影</strong>、<strong>并</strong>、<strong>差</strong>、<strong>笛卡尔积</strong>五种</p>
+<p><strong>关系的每一个分量必须是不可分的数据项。</strong></p>
+<p>关系操作的对象和结果都是<strong>集合</strong></p>
 <p>数据库角色是<strong>权限的集合</strong></p>
 <p>当且仅当调度是<strong>可串行化调度</strong>时，多个并发事务才能正确执行</p>
+<p>数据库的安全性是指保护数据库以防止不合法使用所造成的<strong>数据泄露</strong>、<strong>更改或破坏</strong></p>
+<p>被认为是真正意义上的安全产品处于<strong>B1</strong>等级</p>
+<p>每个用户标识由用户名和<strong>用户标识号</strong>两部分组成</p>
+<p>存取控制机制主要包括<strong>定义用户权限</strong>和<strong>合法权限检查</strong>两部分</p>
+<p><strong>用户对某一数据对象的操作权力</strong>称为权限，有两个要素构成：数据库对象和操作类型</p>
+<p>主体的敏感度标记称为<strong>许可证</strong>，客体的敏感度标记称为<strong>密级</strong>。</p>
+<p>在对用户授予列INSERT权限时，一定要包含对<strong>主码</strong>的INSERT权限，否则用户的插入会因为空值被拒绝。除了授权的列，其他列的值或者取<strong>默认值</strong>，或者为<strong>空值</strong>。</p>
 <p>在数据库故障恢复策略中，系统能自动恢复的是<strong>事务故障</strong>和<strong>系统故障</strong></p>
 <p><strong>数据库的完整性是指数据库的正确性和相容性</strong></p>
+<p>关系R的属性A参照引用关系T的属性A，T的某条元组对应的A属性在R中出现，当要删除T的这条元组时，系统可以采用的策略包括 <strong>拒绝执行 级联删除 置为空值</strong></p>
 <p>数据依赖最重要的是<strong>函数依赖</strong>和<strong>多值依赖</strong></p>
 <p><strong>事务</strong>是<strong>恢复</strong>和<strong>并发控制</strong>的基本单位</p>
 <p>事务的ACID特性：原子性、一致性、隔离性、持续性（永久性）</p>
@@ -62,7 +139,14 @@
 <p>解决介质故障的一种常用方法是<strong>数据库镜像</strong></p>
 <p>并发控制可以保证事务的<strong>一致性</strong>和<strong>隔离性</strong></p>
 <p>可串行性是并发事务正确调度的准则</p>
-<h2>简答题押题</h2>
+<h2 id="简答题押题">简答题押题</h2>
+<h3 id="概念问答：">概念问答：</h3>
+<p>数据库系统的特点：</p>
+<p>（1）数据结构化</p>
+<p>（2）数据的共享性高、冗余度低、易于扩充</p>
+<p>（3）数据的独立性高</p>
+<p>什么是DAC：DAC，<strong>在C2级</strong>，即自主存取控制，用户对不同的数据库对象有不同的存取权限，定义存取权限称为授权</p>
+<p>什么是MAC：MAC，<strong>在B1级</strong>，即强制存取控制，每一个数据库对象被标以一定的密级，对于任意一个对象，只有具有合法许可证的用户才可以存取。</p>
 <h3 id="关于除法：">关于除法：</h3>
 <p>做题步骤：以下图为例题</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="2.png" alt=""></p>
@@ -109,7 +193,7 @@
 <p>第四题属于排序合并连接，分为已排序和未排序两种情况，若<strong>已排序，块数就为二者的块数之和</strong>。</p>
 <p>若<strong>未排序</strong>，则还要加上分别对两个表排序的代价：<strong>2B+2BlogB</strong></p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="8.png" alt=""></p>
-<h2>设计题押题</h2>
+<h2 id="设计题押题">设计题押题</h2>
 <p>如何从头画E-R图？</p>
 <p>（1）找出所有实体和联系</p>
 <p>（2）实体画矩形，联系进行概括，画菱形</p>
@@ -120,7 +204,7 @@
 <p>（2）一个1：n联系可以转换为一个独立的关系模式，<strong>也可以与n端对应的关系模式合并</strong></p>
 <p>本题中，医院——科室、科室——医生均进行了合并，<strong>需要在n端的属性中加入1端的主码作为外码</strong></p>
 <p>（3）一个m：n联系转换为一个关系模式，<strong>与该联系相连的各实体的码以及联系本身的属性均转换为关系的属性，各实体的码组成关系的码（即存在多个候选码）。</strong></p>
-<h2>综合题押题</h2>
+<h2 id="综合题押题">综合题押题</h2>
 <p>易错点：</p>
 <p>select <strong>distinct</strong> sno，在商品表，成绩表中，查询结果要记得去重</p>
 <p>insert的使用：可以只插入部分属性</p>
@@ -145,7 +229,7 @@
 <h3 id="如何画SQL查询树">如何画SQL查询树</h3>
 <p>问初始化的，先画最原始的语法树（带project的那个）</p>
 <p>优化时，先对表进行选择，再对表进行连接，最后再select</p>
-<h2>重点：看一遍第十章，不太熟,去第三章熟悉各个SQL语句的语法</h2>
+<h2 id="重点：看一遍第十章，不太熟-去第三章熟悉各个SQL语句的语法">重点：看一遍第十章，不太熟,去第三章熟悉各个SQL语句的语法</h2>
 <p>注意：<strong>在投影中，默认是要去重的</strong></p>
 <p>注意通配符的使用：没复习</p>
 ]]></content>
@@ -881,8 +965,7 @@
   <entry>
     <title>数据库期中复习</title>
     <url>/2021/04/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h2>第二章</h2>
-<p>Q：关系模型的三个部分分别是什么？</p>
+    <content><![CDATA[<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>Q：关系模型的三个部分分别是什么？</p>
 <p>C：关系数据结构，关系操作集合 关系完整性约束</p>
 <p>Q：候选码 主码 和主属性都是什么？</p>
 <p>C：若关系中的某一个属性组的值能唯一地标识一个元组，而其子集不能，则该属性组被称为候选码，从候选码中选定一个为主码，<strong>候选码的诸属性称为主属性</strong></p>
@@ -921,8 +1004,7 @@
 <p>押题：</p>
 <p>解释候选码和主码的关系：</p>
 <p>若关系中的某一个属性组的值能唯一地标识一个元组，而其子集不能，则该属性组被称为候选码，从候选码中选定一个为主码，候选码可以有多个，主码是其中的一个。</p>
-<h2>第三章</h2>
-<p>DROP SHCEMA CASCADE RESTRICT</p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>DROP SHCEMA CASCADE RESTRICT</p>
 <p>CASCADE:删除模式时将该模式下所有的数据库对象删除</p>
 <p>RESTRICT可以拒绝执行</p>
 <p>常用的数据类型：</p>
@@ -953,9 +1035,13 @@
 <p>常见错误：WHERE子句不能用聚集函数作为表达式</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT SNO,AVG(GRADE)</span><br><span class="line">FROM SC</span><br><span class="line">GROUP BY SNO</span><br><span class="line">HAVING AVG(GRADE)&gt;90</span><br></pre></td></tr></table></figure>
 <p>Q：怎么自身连接？</p>
-<h2>第四章</h2>
-<h2>第五章</h2>
-<p>Q：什么是数据库的完整性？</p>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p>数据库的安全性是指保护数据库以防止不合法使用所造成的数据泄露、更改或破坏</p>
+<p>C2实现DAC（自主存取控制）B1实现MAC（强制存取控制）</p>
+<p>Q：什么是DAC？</p>
+<p>C：</p>
+<p>Q：什么是MAC？</p>
+<p>C：</p>
+<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><p>Q：什么是数据库的完整性？</p>
 <p>C：数据库的完整性包括数据库的正确性和相容性、</p>
 <p>Q：PRIMARY KEY有几种定义方式，分别怎么定义？（属于实体完整性）</p>
 <p>C：对于单属性构成的码，可以是列级说明：SNO INTEGER PRIMARY</p>
