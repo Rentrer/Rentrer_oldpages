@@ -4240,4 +4240,174 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
 </div>
 ]]></content>
   </entry>
+  <entry>
+    <title>Java期末复习</title>
+    <url>/2021/06/22/Java%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>1、Java的特性有哪些？（至少写五种）</p>
+<p>答：（1）简单的（Simple）</p>
+<p>​	    （2）强壮的（Robustness）</p>
+<p>​	    （3）面向对象的</p>
+<p>​	    （4）高性能的</p>
+<p>​	    （5）多线程的</p>
+<p>​	    （6）安全的</p>
+<p>2、Java程序经历的五个阶段</p>
+<p>答：（1）编辑（Edit）</p>
+<p>​	    （2）编译（Compile）</p>
+<p>​	    （3）加载（Load）：将程序加载到内存中</p>
+<p>​	    （4）验证（Verify）：验证字节码</p>
+<p>​	    （5）执行（Execute）</p>
+<p>3、使用命令行测试Java应用程序</p>
+<p>先cd到文件夹下，然后javac test.java</p>
+<p>然后发现文件夹下有了一个.class文件</p>
+<p>之后再 java test ，则会运行程序</p>
+<p>4、Java SDK的三种版本：J2SE、J2ME、J2EE</p>
+<p>5、写main函数</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6、使用输入输出语句</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line">Scanner a=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">OutputStream(System.out.println(<span class="string">&quot;&quot;</span>))</span><br></pre></td></tr></table></figure>
+<p><strong>注意，Scanner需要包来导入，但是OutputStream它是java.lang包的一部分，不在程序开始时随导入声明一起导入</strong></p>
+<p>7、Java的基本类型</p>
+<p>boolean、<strong>byte</strong>、char、short、int、long、float、double</p>
+<p>8、标识符（Identifier)</p>
+<p>由字母，数字，下划线(_)和**美元符号($)**组成的一系列字符，<strong>不以数字开头</strong>，不包含空格。</p>
+<p>9、基本内存概念</p>
+<p>Garbage Collection（<strong>自动垃圾回收</strong>）</p>
+<p>Java采用一种不同的，很方便的方法：Garbage Collection。垃圾回收机制放在JVM里。JVM完全负责垃圾回收事宜，应用只在需要时申请空间，而在<strong>抛弃对象时不必关心空间回收问题，不受个人控制</strong>。</p>
+<p>可以通过调用库方法：<strong>System.gc()</strong>，对JVM进行请求，使垃圾回收操作容易发生</p>
+<p>当对象即将被销毁时，有时需要做一些善后工作，可以把这些操作写在**finalize()**方法中</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//finalization code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>10、实例变量和局部变量⭐️</p>
+<p>（1）实例变量：声明在类声明中，但是在类方法的主体之外的<strong>非静态</strong>变量</p>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;<span class="comment">//实例变量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String name;<span class="comment">//不是实例变量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//balabala</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建类的对象时，其<strong>实例变量默认初始化</strong></p>
+<p>（2）局部变量：局部变量不会自动初始化，必须要<strong>先初始化再使用</strong></p>
+<p>11、基本类型和引用类型（Primitive /reference Type）</p>
+<p>(1)   基本类型：boolean, <strong>byte</strong>, char, short, int, long, float, double</p>
+<p>(2)   引用类型：所有非基本类型，<strong>默认值为null</strong></p>
+<p>①程序使用引用类型的变量来<strong>存储对象在计算机内存中的位置</strong>，称为引用一个对象</p>
+<p>②当使用另一个类的对象时，需要对该对象的引用来调用其方法（invoke its methods），也称为向对象发送信息</p>
+<p>12、成员访问修饰符（Member access modifier）</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="1.png" alt=""></p>
+<p>除了<strong>private只能在类内部访问</strong>，其他三种都可以<strong>在同一个包下</strong>进行访问调用。</p>
+<p>13、关于switch</p>
+<p>类型可以为基本类型和<strong>ENUM，string</strong>，但是<strong>不能为float和double</strong>,在Java13中<strong>可以不写break</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="2.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="3.png" alt=""></p>
+<p>14、enhanced for-statement(冒号for循环)</p>
+<p><strong>不能修改，只能遍历</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] str = &#123;</span><br><span class="line">				<span class="string">&quot;hello&quot;</span>,<span class="string">&quot;world&quot;</span>,<span class="string">&quot;he&quot;</span>,<span class="string">&quot;he&quot;</span>,<span class="string">&quot;da&quot;</span></span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="keyword">for</span>(String item:str) &#123;</span><br><span class="line">			System.out.println(item);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>15、静态方法和字段</p>
+<p>（1）静态变量：被static修饰的成员,被类的所有对象所共享</p>
+<p>（2）静态方法：只能调用其他静态方法，<strong>不能直接调用非静态成员</strong></p>
+<p>16、final 表示<strong>常量</strong>⭐️</p>
+<p><strong>必须在使用之前初始化，且以后不能修改</strong></p>
+<p>final类不能被继承，方法不能被重写，变量赋值不能被修改。</p>
+<p>17、Math</p>
+<p>Math类也在java.lang包下，不需要导包</p>
+<p>18、在方法之间传递信息：值传递</p>
+<p>19、method overloading（方法重载）</p>
+<p>（1）对象：在同一类声明的同名方法</p>
+<p>（2）要求：<strong>必须有不同的参数集</strong></p>
+<p>（3）区分：通过不同的<strong>参数个数进行区分</strong></p>
+<p>（4）特点：返回类型可相同可不同，但参数列表必须不同。</p>
+<p>对比：method overriding：</p>
+<p>重写是子类对父类的允许访问的方法的实现过程进行重新编写, <strong>返回值和形参都不能改变</strong>。</p>
+<p>20、可变长度的参数列表</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">sum</span><span class="params">(<span class="keyword">double</span>... ds)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">double</span> item:ds)</span><br><span class="line">        sum+=item;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(1)   参数类型后面跟着省略号（…）表示该方法接收到该类型的可变数量的参数</p>
+<p>(2)   <strong>只能在参数列表的末尾发生一次</strong>。</p>
+<p>21、封装与数据隐藏</p>
+<p>问题：为什么用private的get、set方法？</p>
+<p>适当的封装可以让程式码更容易理解与维护，也<strong>加强了程式码的安全性。</strong></p>
+<p>封装的概念：</p>
+<p>在面向对象程式设计方法中，封装（英语：Encapsulation）是指一种将抽象性函式接口的<strong>实现细节部分包装、隐藏起来</strong>的方法。</p>
+<p>22、this：是对象访问对自身的引用</p>
+<p>1）<strong>用在构造函数中第一句中 来调用其他的构造函数</strong></p>
+<p>2）当字段名与局部变量名重名时用来区分</p>
+<p>3）内部类中需要调用外部类时</p>
+<p>23、String.format</p>
+<p>格式化字符串，注意不输出，<strong>只是将它格式化</strong>（老师多次提到</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(String.format(<span class="string">&quot;%d\t%s&quot;</span>, <span class="number">1</span>,<span class="string">&quot;hehe&quot;</span>));</span><br></pre></td></tr></table></figure>
+<p>24、<strong>组合（composition） 和继承 如何选择？</strong></p>
+<p>组合的耦合度更小 继承耦合紧密 建议选用组合 但看具体情况（<strong>继承——动态绑定</strong>）</p>
+<p>25、枚举类</p>
+<p>里面都是常量，用大写，逗号分开</p>
+<p>enum<strong>不能用new来创建</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">Book</span> </span>&#123;</span><br><span class="line">	   <span class="comment">// declare constants of enum type             </span></span><br><span class="line">	   JHTP(<span class="string">&quot;Java How to Program&quot;</span>, <span class="string">&quot;2018&quot;</span>),         </span><br><span class="line">	   CHTP(<span class="string">&quot;C How to Program&quot;</span>, <span class="string">&quot;2016&quot;</span>),             </span><br><span class="line">	   IW3HTP(<span class="string">&quot;Internet &amp; World Wide Web How to Program&quot;</span>, <span class="string">&quot;2012&quot;</span>),</span><br><span class="line">	   CPPHTP(<span class="string">&quot;C++ How to Program&quot;</span>, <span class="string">&quot;2017&quot;</span>),         </span><br><span class="line">	   VBHTP(<span class="string">&quot;Visual Basic How to Program&quot;</span>, <span class="string">&quot;2014&quot;</span>), </span><br><span class="line">	   CSHARPHTP(<span class="string">&quot;Visual C# How to Program&quot;</span>, <span class="string">&quot;2017&quot;</span>);             </span><br><span class="line">	   <span class="comment">// instance fields </span></span><br><span class="line">	   <span class="keyword">private</span> <span class="keyword">final</span> String title; <span class="comment">// book title</span></span><br><span class="line">	   <span class="keyword">private</span> <span class="keyword">final</span> String copyrightYear; <span class="comment">// copyright year</span></span><br><span class="line">	   <span class="comment">// enum constructor</span></span><br><span class="line">	   Book(String title, String copyrightYear) &#123;</span><br><span class="line">	      <span class="keyword">this</span>.title = title;</span><br><span class="line">	      <span class="keyword">this</span>.copyrightYear = copyrightYear;</span><br><span class="line">	   &#125; </span><br><span class="line">	   <span class="comment">// accessor for field title</span></span><br><span class="line">	   <span class="function"><span class="keyword">public</span> String <span class="title">getTitle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	      <span class="keyword">return</span> title;</span><br><span class="line">	   &#125; </span><br><span class="line">	   <span class="comment">// accessor for field copyrightYear</span></span><br><span class="line">	   <span class="function"><span class="keyword">public</span> String <span class="title">getCopyrightYear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	      <span class="keyword">return</span> copyrightYear;</span><br><span class="line">	   &#125; </span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>使用方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;All books:&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// print all books in enum Book </span></span><br><span class="line">    <span class="keyword">for</span> (Book book : Book.values()) </span><br><span class="line">    &#123;               </span><br><span class="line">       System.out.printf(<span class="string">&quot;%-10s%-45s%s%n&quot;</span>, book,</span><br><span class="line">           book.getTitle(),book.getCopyrightYear());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>26、super</p>
+<p><strong>同名时，采用super.name调用父类方法</strong></p>
+<p>27、抽象类、接口和具体类的区别？</p>
+<p>抽象类不能被实例化，只能被继承</p>
+<p>接口是对于<strong>将公共功能分配给可能不相关的类</strong></p>
+<p><strong>接口的变量为public static final类型，方法只能被public（默认）和protected修饰</strong></p>
+<p>具体类：可以用来实例化对象的类称为具体类，提供了它们声明的每个方法的实现。</p>
+<p>28、instance of</p>
+<p>用来测试<strong>一个对象是否为一个类的实例</strong></p>
+<p>boolean result=obj instanceof Class</p>
+<p>其中 <strong>obj 为一个对象</strong>，Class 表示<strong>一个类或者一个接口</strong>，当 obj 为 Class 的对象，或者<strong>是其直接或间接子类</strong>，或者是<strong>其接口的实现类</strong>，结果result 都返回 true，否则返回false。</p>
+<p>29、<strong>Throw throws</strong>二者区别？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span><span class="keyword">throws</span> NumberFormatException</span></span><br></pre></td></tr></table></figure>
+<p>Throws表示出现异常的一种可能性，不一定发生这些异常；throw如果执行，一定抛出异常</p>
+<p>30、Checked exceptions和unchecked exceptions</p>
+<p>(1)   unchecked exceptions：类<strong>RuntimeException</strong>(java.lang包)的直接或间接子类，即<strong>运行异常</strong></p>
+<p>①   通常是由<strong>程序代码中的缺陷</strong>引起的</p>
+<p>②   编译器<strong>不检查代码</strong>以确定未检查的异常是否被捕获或声明。这些通常可以通过适当的编码来防止。不需要在方法的抛出子句中列出unchecked exceptions。</p>
+<p>(2)   checked exceptions：Exception的子类但不是RuntimeException，如I/O Exception，即<strong>编译错误</strong></p>
+<p>①   由不在<strong>程序控制范围内</strong>的条件引起</p>
+<p>②   编译器<strong>检查</strong>每个方法调用和方法声明，以确定该方法是否抛出checked exceptions。如果是，编译器将验证选中的异常是否被catch或在throws子句中声明。如果未满足catch或declare要求，编译器将发出一条错误消息，指示必须捕获或声明异常。</p>
+<p>31、listener</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="4.png" alt=""></p>
+<p>32、String与StringBuilder</p>
+<p>String 是<strong>final类，不能修改</strong>，每次修改都要重新创建对象；</p>
+<p>StringBuilder能改善，<strong>在同一对象上执行</strong></p>
+<p>用法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">		System.out.println(sb);</span><br><span class="line">		System.out.println(sb.append(<span class="string">&quot;hello2&quot;</span>));</span><br><span class="line">		System.out.println(sb.insert(<span class="number">6</span>, <span class="string">&quot;new &quot;</span>));</span><br><span class="line">		System.out.println(sb.replace(<span class="number">0</span>, <span class="number">5</span>, <span class="string">&quot;byebye&quot;</span>));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>33、常用的正则表达式</p>
+<p>34、流的分类</p>
+<p>字符流：文本文件：Reader、Writer</p>
+<p>和字节流：二进制文件：InputStream OutputStream</p>
+<p>35、Paths<strong>类</strong>：Paths类提供静态方法，用于<strong>获取表示文件或目录位置的</strong>Path对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Path path = Paths.get(input.nextLine());</span><br><span class="line">Scanner input=<span class="keyword">new</span> Scanner(Paths.get(<span class="string">&quot;clients.txt&quot;</span>));</span><br></pre></td></tr></table></figure>
+<p>36、Collection集合接口的一些方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//List and set</span></span><br><span class="line">List&lt;String&gt; list =Arrays.aslist(color);</span><br><span class="line">Set&lt;String&gt; set=<span class="keyword">new</span> HashSet&lt;&gt;(list);</span><br><span class="line">Sorted&lt;String&gt; tree=<span class="keyword">new</span> TreeSet&lt;&gt;(list);</span><br><span class="line">List&lt;String&gt; list2=<span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">Iterator iter=list.iterator();</span><br><span class="line"><span class="keyword">while</span>(iter.hasNext())</span><br><span class="line">&#123;</span><br><span class="line">    system.out.println(iter.next());</span><br><span class="line">&#125;</span><br><span class="line">Collections.sort(list2);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Map</span></span><br><span class="line">Map&lt;Integer,String&gt; map=<span class="keyword">new</span> HashMap&lt;Integer,String&gt;();</span><br></pre></td></tr></table></figure>
+<p>37、什么是函数式接口？</p>
+<p>只有一个抽象方法的接口</p>
+<p>什么是函数式编程？</p>
+<p>把函数的特性应用于编程语言中，是面向行为的编程。</p>
+<p>38、lambda表达式</p>
+<p>表示匿名方法，用于实现函数接口的简写表示法，类似于匿名内部类。由后跟箭头标记（-&gt;）的参数列表和正文组成</p>
+<p>39、泛型类，泛型方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Stack</span>&lt;<span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;T&gt; elements;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(T[] list)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(T element:list)</span><br><span class="line">        system.out.println(element);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>40、关于通配符（Wildcards）</p>
+<p>作用：不需要参数的精确类型信息时使用，代表了一种未知类型</p>
+<p>41、如何创建线程？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String Tname;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">ExecutorService thread=Executors.newCachedThreadPool();</span><br><span class="line">thread.execute(task1);</span><br><span class="line">thread.shutdown();</span><br></pre></td></tr></table></figure>
+<p>42、一个线程的生命周期</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="5.png" alt=""></p>
+<p>43、线程同步</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> ArrayBlockingQueue&lt;Integer&gt; buffer;</span><br><span class="line"></span><br><span class="line">buffer=<span class="keyword">new</span> ArrayBlockingQueue&lt;Integer&gt;(<span class="number">1</span>);</span><br><span class="line">buffer.put(value);</span><br><span class="line"><span class="keyword">int</span> a=buffer.take();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>44、JDBC</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> String SELECT_QUERY=<span class="string">&quot;SELECT * FROM SC&quot;</span>;</span><br><span class="line">Connection connection=Driver</span><br><span class="line">Statement statement=connection.creatStatement();</span><br><span class="line">ResultSet resultSet=statement.executeQuery(SELECT_QUERY)</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>45、NetWork</p>
+<p>Server端</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ServerSocket server=<span class="keyword">new</span> ServerSocket(portNumber,queueLength);</span><br><span class="line">Socket connection=server.accept();</span><br><span class="line">Socket.getOutputStream();</span><br><span class="line">Socket.getInputStream();</span><br><span class="line">Socket.close();</span><br></pre></td></tr></table></figure>
+<p>Client端</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket connection=<span class="keyword">new</span> Socket(serverAddress,port);</span><br><span class="line">Socket.getInputStream();</span><br><span class="line">Socket.getOutputStream();</span><br><span class="line">Socket.close();</span><br></pre></td></tr></table></figure>
+<p>数据报：传输单个信息包，无连接，协议是UDP，不能保证传输顺序，可能丢包、重复</p>
+<p><strong>DatagramPacket</strong>用于发送和接收信息，<strong>DatagramSocket发送和接收数据包。</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">socket=<span class="keyword">new</span> DatagramSocket(<span class="number">5000</span>);</span><br><span class="line"><span class="keyword">byte</span>[]data =<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">100</span>];</span><br><span class="line">DatagramPacket receivePacket=<span class="keyword">new</span> DatagramPacket(data,data.length);</span><br><span class="line">socket.receive(receivePacket);</span><br><span class="line">DatagramPacket sendPacket=<span class="keyword">new</span> DatagramPacket(receivePacket.getData(),receivePacket.getLength(),receivePacket.getAddress(),receivePacket.getPort());</span><br><span class="line">    </span><br><span class="line">socket.send(sendPacket);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
 </search>
