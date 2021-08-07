@@ -970,7 +970,8 @@
   <entry>
     <title>数据库期中复习</title>
     <url>/2021/04/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>Q：关系模型的三个部分分别是什么？</p>
+    <content><![CDATA[<h2 id="第二章">第二章</h2>
+<p>Q：关系模型的三个部分分别是什么？</p>
 <p>C：关系数据结构，关系操作集合 关系完整性约束</p>
 <p>Q：候选码 主码 和主属性都是什么？</p>
 <p>C：若关系中的某一个属性组的值能唯一地标识一个元组，而其子集不能，则该属性组被称为候选码，从候选码中选定一个为主码，<strong>候选码的诸属性称为主属性</strong></p>
@@ -1009,7 +1010,8 @@
 <p>押题：</p>
 <p>解释候选码和主码的关系：</p>
 <p>若关系中的某一个属性组的值能唯一地标识一个元组，而其子集不能，则该属性组被称为候选码，从候选码中选定一个为主码，候选码可以有多个，主码是其中的一个。</p>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>DROP SHCEMA CASCADE RESTRICT</p>
+<h2 id="第三章">第三章</h2>
+<p>DROP SHCEMA CASCADE RESTRICT</p>
 <p>CASCADE:删除模式时将该模式下所有的数据库对象删除</p>
 <p>RESTRICT可以拒绝执行</p>
 <p>常用的数据类型：</p>
@@ -1040,13 +1042,15 @@
 <p>常见错误：WHERE子句不能用聚集函数作为表达式</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT SNO,AVG(GRADE)</span><br><span class="line">FROM SC</span><br><span class="line">GROUP BY SNO</span><br><span class="line">HAVING AVG(GRADE)&gt;90</span><br></pre></td></tr></table></figure>
 <p>Q：怎么自身连接？</p>
-<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p>数据库的安全性是指保护数据库以防止不合法使用所造成的数据泄露、更改或破坏</p>
+<h2 id="第四章">第四章</h2>
+<p>数据库的安全性是指保护数据库以防止不合法使用所造成的数据泄露、更改或破坏</p>
 <p>C2实现DAC（自主存取控制）B1实现MAC（强制存取控制）</p>
 <p>Q：什么是DAC？</p>
 <p>C：</p>
 <p>Q：什么是MAC？</p>
 <p>C：</p>
-<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><p>Q：什么是数据库的完整性？</p>
+<h2 id="第五章">第五章</h2>
+<p>Q：什么是数据库的完整性？</p>
 <p>C：数据库的完整性包括数据库的正确性和相容性、</p>
 <p>Q：PRIMARY KEY有几种定义方式，分别怎么定义？（属于实体完整性）</p>
 <p>C：对于单属性构成的码，可以是列级说明：SNO INTEGER PRIMARY</p>
