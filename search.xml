@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>SQL_review</title>
+    <title>数据库期末复习</title>
     <url>/posts/SQL-final-review/</url>
     <content><![CDATA[<h2 id="目前要做的">目前要做的</h2>
 <h3 id="第七章画E-R图">第七章画E-R图</h3>
@@ -1340,9 +1340,7 @@ $$</p>
   <entry>
     <title>暑假每日总结</title>
     <url>/posts/2021-summer/</url>
-    <content><![CDATA[<h1>小学期</h1>
-<h2 id="2021-06-26">2021-06-26</h2>
-<p>今天算是这学期第一次没有定闹钟早上和午觉都自然醒的一天，虽然八点半就醒了，但是真的睡得很舒服，第一天考完试的周六假期，早上买了baba is you，然后各种卡关，下午整理了一下大二下的资料，准备整理好发给别人，晚上和舍友第一次去外面聚餐（吃了东门外的麻辣香锅），现在打算重开一下每日总结，每天都干一些事都进步一些吧</p>
+    <content><![CDATA[<h1 id="小学期"><a href="#小学期" class="headerlink" title="小学期"></a>小学期</h1><h2 id="2021-06-26"><a href="#2021-06-26" class="headerlink" title="2021-06-26"></a>2021-06-26</h2><p>今天算是这学期第一次没有定闹钟早上和午觉都自然醒的一天，虽然八点半就醒了，但是真的睡得很舒服，第一天考完试的周六假期，早上买了baba is you，然后各种卡关，下午整理了一下大二下的资料，准备整理好发给别人，晚上和舍友第一次去外面聚餐（吃了东门外的麻辣香锅），现在打算重开一下每日总结，每天都干一些事都进步一些吧</p>
 <div class="note info no-icon flat">
                             <p>
                                 <strong>📖读书</strong>
@@ -1366,6 +1364,7 @@ $$</p>
                 </tbody>
             </table>
         </div>
+
 <div class="note warning no-icon flat">
                             <p>
                                 <strong>🍨杂项</strong>
@@ -1395,8 +1394,9 @@ $$</p>
                 </tbody>
             </table>
         </div>
-<h2 id="2021-06-27">2021-06-27</h2>
-<p>今天起来收拾了一下宿舍桌面，虽然还是很乱，之后整理了大三上的几本电子书，打算小学期提前学一下算法设计（菜逼先飞），找了北航的网课看着还行，之后慢慢看吧</p>
+
+
+<h2 id="2021-06-27"><a href="#2021-06-27" class="headerlink" title="2021-06-27"></a>2021-06-27</h2><p>今天起来收拾了一下宿舍桌面，虽然还是很乱，之后整理了大三上的几本电子书，打算小学期提前学一下算法设计（菜逼先飞），找了北航的网课看着还行，之后慢慢看吧</p>
 <p>晚上去新店玩了！吃了麦当劳，在商场逛了好多家店，还探讨了好多人生哲学），在车站唱天后，进学校一路扰民回去，组合《存在主义初学者》当场出道好吧，还解锁了共享电动车带人的成就（虽然带的胆战心惊），超开心！</p>
 <div class="note warning no-icon flat">
                             <p>
@@ -1427,8 +1427,8 @@ $$</p>
                 </tbody>
             </table>
         </div>
-<h2 id="2021-06-28">2021-06-28</h2>
-<p>中午本来想好好睡一觉再去机房，但eclosion来报说插座紧张，便12：40入眠睡了25min就匆匆赶往机房，正好避开了大雨，听窗外天雷滚滚，大河滔滔，顿觉血赚。</p>
+
+<h2 id="2021-06-28"><a href="#2021-06-28" class="headerlink" title="2021-06-28"></a>2021-06-28</h2><p>中午本来想好好睡一觉再去机房，但eclosion来报说插座紧张，便12：40入眠睡了25min就匆匆赶往机房，正好避开了大雨，听窗外天雷滚滚，大河滔滔，顿觉血赚。</p>
 <p>下午在不情愿组好队伍后开始找github上的图书管理系统进行参考，临下课才运行成功（虽然没有界面），明天早上争取运出界面，然后读代码，不过分完座位后不用担心插座问题了，</p>
 <div class="note warning no-icon flat">
                             <p>
@@ -1459,6 +1459,7 @@ $$</p>
                 </tbody>
             </table>
         </div>
+
 <div class="note primary no-icon flat">
                             <p>
                                 <strong>💡今日所得</strong>
@@ -1478,8 +1479,9 @@ $$</p>
                         </tbody>
                     </table>
                 </div>     
-<h2 id="2021-06-29">2021-06-29</h2>
-<p>今天算是用IDEA把管理系统的网页在本地跑出来了，花了快一早上进行配置，但是系统中文乱码的问题到现在还没解决，希望明天下午swn可以解决或者自己找到解决办法QAQ</p>
+
+
+<h2 id="2021-06-29"><a href="#2021-06-29" class="headerlink" title="2021-06-29"></a>2021-06-29</h2><p>今天算是用IDEA把管理系统的网页在本地跑出来了，花了快一早上进行配置，但是系统中文乱码的问题到现在还没解决，希望明天下午swn可以解决或者自己找到解决办法QAQ</p>
 <p>晚上在二期跑了4圈，走了3圈，晚上锻炼的人还挺多，下次争取跑五圈= =</p>
 <p>回来一起听歌码了几首喜欢的，之后单曲循环听听（后补：一直在循环郭源潮，有点上头了）</p>
 <div class="note warning no-icon flat">
@@ -1501,18 +1503,19 @@ $$</p>
                 </tbody>
             </table>
         </div>
-<h2 id="2021-06-30">2021-06-30</h2>
-<p>早上去A201修改志愿书，给好多人用胶带救场，大国工匠精神笑死了。中间等谈话的时候去楼下试了试钢琴，声音确实挺好的，比琴房好听多了呜呜呜呜，之后可以偷着去练练。</p>
+
+
+<h2 id="2021-06-30"><a href="#2021-06-30" class="headerlink" title="2021-06-30"></a>2021-06-30</h2><p>早上去A201修改志愿书，给好多人用胶带救场，大国工匠精神笑死了。中间等谈话的时候去楼下试了试钢琴，声音确实挺好的，比琴房好听多了呜呜呜呜，之后可以偷着去练练。</p>
 <p>下午在swn的带领下终于解决了乱码问题，开始了加功能和改页面的阶段，进度还算可以，感觉一周内就能改个差不多出来，改出来就开始大改特改前端了</p>
-<h2 id="2021-07-01">2021-07-01</h2>
-<p>早上在宿舍躺尸，啥都没干= =，</p>
+<h2 id="2021-07-01"><a href="#2021-07-01" class="headerlink" title="2021-07-01"></a>2021-07-01</h2><p>早上在宿舍躺尸，啥都没干= =，</p>
 <p>早上去A201修改志愿书，给好多人用胶带救场，大国工匠精神笑死了。中间等谈话的时候去楼下试了试钢琴，声音确实挺好的，比琴房好听多了呜呜呜呜，之后可以偷着去练练。</p>
 <p>下午开始了加功能环节，把第一阶段的需求大致都完成了，还剩个人修改资料那里给了其他人完成，完成后再整合吧</p>
 <p>临下课一条邮件划破了宁静，颤颤巍巍点进去发现军理出了，马上昭告天下（一起受折磨），这个软件还是挺靠谱的23333</p>
-<h2 id="2021-07-02">2021-07-02</h2>
-<p>今天算是感觉到了社畜的感觉，没有课程的限制，早晨在机房摸鱼，看着别人改代码，之后又对没实现的功能一顿操作，结果还是没完成= =，一个续借功能折磨快一天了还没改出来，这个系统要是从头写怕是得自闭了，从头写的组是真的厉害。</p>
+<h2 id="2021-07-02"><a href="#2021-07-02" class="headerlink" title="2021-07-02"></a>2021-07-02</h2><p>今天算是感觉到了社畜的感觉，没有课程的限制，早晨在机房摸鱼，看着别人改代码，之后又对没实现的功能一顿操作，结果还是没完成= =，一个续借功能折磨快一天了还没改出来，这个系统要是从头写怕是得自闭了，从头写的组是真的厉害。</p>
 <p>中午摸着打了一把LOL，单带挖坟人是真的厉害，上单绝活了</p>
-]]></content>
+<div class="tip "><p>默认情况</p>
+</div>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip success %&#125;success&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip error %&#125;error&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip warning %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip bolt %&#125;bolt&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban %&#125;ban&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip home %&#125;home&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip sync %&#125;sync&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip cogs %&#125;cogs&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip key %&#125;key&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip bell %&#125;bell&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip fa-atom %&#125;自定义font awesome图标&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>汇编语言总复习(上)</title>
@@ -4585,6 +4588,103 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
       <categories>
         <category>学习笔记</category>
         <category>Java</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统期中复习</title>
+    <url>/posts/os_review/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件工程导论期中复习</title>
+    <url>/posts/software_review/</url>
+    <content><![CDATA[<p>呜呜呜呜呜呜呜</p>
+<h1 id="第一章、软件工程介绍"><a href="#第一章、软件工程介绍" class="headerlink" title="第一章、软件工程介绍"></a>第一章、软件工程介绍</h1><p>主要复习内容：软件工程的概念、<strong>软件工程层次图（重要）</strong>、软件危机与软件工程的关系、软件神话一些错误认识</p>
+<h2 id="软件工程的概念（过程，方法和工具）"><a href="#软件工程的概念（过程，方法和工具）" class="headerlink" title="软件工程的概念（过程，方法和工具）"></a>软件工程的概念（过程，方法和工具）</h2><p>Q1：软件工程的定义是什么？</p>
+<p>C1：将系统化的、严格约束的、可量化的方法应用于软件的开发、运行和维护，即将工程化应用于软件。</p>
+<p>Q2：软件工程的三要素分别是什么？</p>
+<p>C2：过程、方法和工具</p>
+<p>（1）过程</p>
+<p>软件过程是工作产品构建时所执行的一系列活动、动作和任务的集合。</p>
+<p>过程框架定义了若干<strong>框架活动</strong>，为实现完整的软件工程过程建立的基础。</p>
+<p><strong>通用过程框架</strong>包含以下五个活动：</p>
+<p><strong>沟通、策划、建模、构建、部署</strong></p>
+<p>（2）方法：为构建软件提供技术上的解决方法（如何做）</p>
+<p>（3）工具：为过程和方法提供自动化或半自动化的支持。</p>
+<h2 id="软件工程层次图"><a href="#软件工程层次图" class="headerlink" title="软件工程层次图"></a>软件工程层次图</h2><p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="层次.png" alt=""></p>
+<p>Q3：软件工程的根基是什么？</p>
+<p>C3：支持软件工程的根基在于质量焦点</p>
+<p>Q4：软件工程的基础是什么？</p>
+<p>C4：软件工程的基础是过程层，它将各个技术层次结合在一起，使得合理、及时地开发计算机软件成为可能。</p>
+<h2 id="软件危机"><a href="#软件危机" class="headerlink" title="软件危机"></a>软件危机</h2><p>Q5：什么是软件危机？</p>
+<p>C5：软件危机是指在计算机软件的开发和维护过程中所遇到的一系列严重问题。</p>
+<p>Q6：软件工程是什么时候提出的？</p>
+<p>C6：软件工程主要是针对20世纪60年代的软件危机而提出的</p>
+<p>Q7：软件危机的具体表现有哪些？</p>
+<p>C7：</p>
+<p>（1）成本和进度估计常不准确</p>
+<p>（2）用户的满意度常不高</p>
+<p>（3）质量往往靠不住</p>
+<p>（4）软件通常很难维护</p>
+<p>（5）文档资料不完整、不合格</p>
+<p>（6）软件的成本高，所占比例逐年上升</p>
+<p>（7）软件开发生产率提高的速度慢。</p>
+<p>Q8：产生软件危机的原因有哪些？</p>
+<p>C8：</p>
+<p>（1）客观原因：软件缺乏可见性，管理和控制其开发过程相对困难。</p>
+<p>软件大多规模庞大，复杂性随着规模以指数速度上升。</p>
+<p>（2）主观原因：错误的认识与做法（重点）</p>
+<p><strong>①忽视软件需求分析的重要性</strong>：急于求成，仓促上阵</p>
+<p><strong>②认为软件开发就是写程序</strong></p>
+<p><strong>③轻视软件维护</strong></p>
+<h2 id="软件神话"><a href="#软件神话" class="headerlink" title="软件神话"></a>软件神话</h2><p>Q9：软件神话都有哪些？</p>
+<p>C9：管理神话、用户神话、从业者神话</p>
+<h1 id="第二章、过程模型"><a href="#第二章、过程模型" class="headerlink" title="第二章、过程模型"></a>第二章、过程模型</h1><p>主要复习内容：掌握五个最基本的框架活动：<strong>沟通、策划、建模、构建和部署</strong>；了解什么是CMMI；<strong>理解瀑布模型；增量模型；RAD模型；原型模型；螺旋模型</strong>；<strong>统一过程</strong> –适用范围、特点、优缺点</p>
+<h2 id="过程框架"><a href="#过程框架" class="headerlink" title="过程框架"></a>过程框架</h2><p>Q10：什么是过程框架？</p>
+<p>C10：将整个软件过程再进一步细分为各个相对独立的功能块，即过程框架</p>
+<p>Q11：通用过程框架包括什么？</p>
+<p>C11：</p>
+<p>（1）沟通：与客户之间的交流与写作</p>
+<p>（2）策划：为后续的软件工程工作制定计划</p>
+<p>（3）建模：包括分析与设计</p>
+<p>（4）构建：编码和测试</p>
+<p>（5）部署：软件交付用户，用户对其进行评估并反馈意见</p>
+<h2 id="CMMI"><a href="#CMMI" class="headerlink" title="CMMI"></a>CMMI</h2><p>Q12：什么是CMMI？</p>
+<p>C12：能力成熟度模型集成（CMMI），<strong>用于预测软件开发组织所开发的系统和软件工程能力</strong>，它定义了每一个过程域的“特定目标”，以及达到该目标所需的“特定实践“。</p>
+<p>Q13：CMMI都有哪些能力成熟度等级？</p>
+<p>C13：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="CMMI.png" alt=""></p>
+<p>Q14：每一级的关注焦点是什么？</p>
+<p>C14：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="CMMI_2.png" alt=""></p>
+<h2 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型"></a>瀑布模型</h2><p>Q15：什么是瀑布模型？</p>
+<p>E15：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="瀑布模型.png" alt=""></p>
+<p>C15：瀑布模型，也称为<strong>线性模型</strong>或传统生存周期，V模型</p>
+<p>Q16：瀑布模型的适用范围是什么？</p>
+<p>C16：</p>
+<p>（1）通常发生在对一个已有系统进行<strong>明确定义</strong>的适应性调整和增强的时候</p>
+<p>（2）对于一个新的项目，需求必须是<strong>准确定义和相对稳定</strong>的。</p>
+<p>Q17：瀑布模型的优缺点是什么？</p>
+<p>C17：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="瀑布优缺点.png" alt=""></p>
+<p>补充：</p>
+<p>瀑布模型的缺点：</p>
+<p>1.顺序太严格。实际工作经常是在多个环节之间来回反馈调整，而不是将一个环节完成后再继续前进。</p>
+<p>2.产品在最后阶段才与客户见面，从心里学的角度讲有些考验客户。另外，如果此时才发现问题，需要改正，工作量将会很大。</p>
+<p>3.效率可能不高。</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>软件工程导论</category>
       </categories>
       <tags>
         <tag>课内学习笔记</tag>
