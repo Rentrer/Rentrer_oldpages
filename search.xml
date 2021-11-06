@@ -4608,8 +4608,8 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
       </tags>
   </entry>
   <entry>
-    <title>软件工程导论期中复习</title>
-    <url>/posts/software_review/</url>
+    <title>软件工程导论期中复习（第一第二章）</title>
+    <url>/posts/software_review_1/</url>
     <content><![CDATA[<p>呜呜呜呜呜呜呜</p>
 <h1 id="第一章、软件工程介绍"><a href="#第一章、软件工程介绍" class="headerlink" title="第一章、软件工程介绍"></a>第一章、软件工程介绍</h1><p>主要复习内容：软件工程的概念、<strong>软件工程层次图（重要）</strong>、软件危机与软件工程的关系、软件神话一些错误认识</p>
 <h2 id="软件工程的概念（过程，方法和工具）"><a href="#软件工程的概念（过程，方法和工具）" class="headerlink" title="软件工程的概念（过程，方法和工具）"></a>软件工程的概念（过程，方法和工具）</h2><p>Q1：软件工程的定义是什么？</p>
@@ -4681,10 +4681,158 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
 <p>1.顺序太严格。实际工作经常是在多个环节之间来回反馈调整，而不是将一个环节完成后再继续前进。</p>
 <p>2.产品在最后阶段才与客户见面，从心里学的角度讲有些考验客户。另外，如果此时才发现问题，需要改正，工作量将会很大。</p>
 <p>3.效率可能不高。</p>
+<h2 id="增量模型"><a href="#增量模型" class="headerlink" title="增量模型"></a>增量模型</h2><p>Q18：什么是增量模型？</p>
+<p>E18：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="增量.png" alt=""></p>
+<p>C18：所谓增量，指增加的功能。即<strong>把一个软件所要实现的功能分为若干步</strong>，每一步实现其中的一块。在每一块中采用瀑布模型的方式，这样反复进行的工作，即称为迭代。</p>
+<p>Q19：增量模型的适用范围是什么？</p>
+<p>C19：</p>
+<p>（1）初始的软件需求有明确的定义，但是整个开发过程不宜单纯运用线性模型</p>
+<p>（2）迫切需要为用户提供一套功能有限的产品，在后续的版本再进行功能扩展和细化</p>
+<p>Q20：瀑布模型的特点是什么？</p>
+<p>C20：</p>
+<p>（1）最重要的增量放在前面（第一个增量往往是核心产品）</p>
+<p>（2）每次交付的增量产品都是可用的</p>
+<p>（3）适合于功能可以划分，而且时间不紧迫的情况</p>
+<p>（4）可以规避一定的风险。如有些技术还不稳定，可以放到后边。</p>
+<p>Q21：增量模型的优缺点是什么？</p>
+<p>C21：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="增量优缺点.png" alt=""></p>
+<h2 id="RAD模型"><a href="#RAD模型" class="headerlink" title="RAD模型"></a>RAD模型</h2><p>Q22：什么是RAD模型？</p>
+<p>E22：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="RAD.png" alt=""></p>
+<p>C22：快速应用程序开发（Rapid Application Development）是一种侧重于<strong>短暂的开发周期</strong>的<strong>增量软件模型</strong></p>
+<p>Q23：RAD模型的适用范围是什么？</p>
+<p>C23：适于工期紧张，又可细分功能，还要有合适的构件。</p>
+<p>Q24：RAD模型的特点是什么？</p>
+<p>C24：</p>
+<p>（1）它是瀑布模型的高速变体，通过基于<strong>构件</strong>的方法快速实现。</p>
+<p>（2）是一种侧重于<strong>短暂的开发周期</strong>的增量软件模型</p>
+<p>Q25：RAD模型的缺点是什么？</p>
+<p>C25：</p>
+<p>（1）需要投入更多的人力</p>
+<p>（2）各团队要紧密协作</p>
+<h2 id="原型模型"><a href="#原型模型" class="headerlink" title="原型模型"></a>原型模型</h2><p>Q26：什么是原型模型？</p>
+<p>E26：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="原型模型.png" alt=""></p>
+<p>Q27：原型模型的适用范围是什么？</p>
+<p>C27：</p>
+<p>（1）客户不能给出确切的要求</p>
+<p>（2）开发人员对算法的效率、操作系统的兼容性和人机交互的形式不确定。</p>
+<p>Q28：对原型有什么基本要求？</p>
+<p>C28：</p>
+<p>（1）体现主要的功能</p>
+<p>（2）提供基本的界面风格</p>
+<p>（3）展示比较模糊的部分，以便于确定或进一步明确，防患于未然。</p>
+<p>（4）原型最好是可以运行的，最少要在各主要功能模块之间能够建立相互连接。</p>
+<p>Q29：如何处理原型？</p>
+<p>C29：</p>
+<p>（1）抛弃型：在获取的明确需求的基础上，重新设计与开发（成本较高，小公司慎用）</p>
+<p>（2）演化型：在原型的基础上继续开发</p>
+<p>Q30：原型模型的优缺点是什么？</p>
+<p>C30：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="原型优缺点.png" alt=""></p>
+<p>补充：</p>
+<p>优点：</p>
+<p>1.能让人（开发者或客户）很快见到产品，有成就感。</p>
+<p>2.能渐进地启发客户提出新的要求或任务。</p>
+<p>缺点：</p>
+<p>1.容易蒙骗客户，也可能由此给自己带来麻烦。</p>
+<p>2.往往只为结果，而不考虑技术手段，为今后埋下隐患。</p>
+<p>3.系统可能考虑不周全。</p>
+<p>Q31：原型模型与增量模型有什么区别？</p>
+<p>C31：（1）增量模型在开发以前基本能确定系统的<strong>需求</strong>，而原型开发适应于预先不太清楚系统的需求</p>
+<p>（2）增量模型的<strong>反馈</strong>较少，而原型开发需要不断的大量反馈信息。</p>
+<h2 id="螺旋模型"><a href="#螺旋模型" class="headerlink" title="螺旋模型"></a>螺旋模型</h2><p>Q32：什么是螺旋模型？</p>
+<p>E32：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="螺旋.png" alt=""></p>
+<p>Q33：螺旋模型的适用范围是什么？</p>
+<p>C33：适合于大型软件的开发</p>
+<p>Q34：螺旋模型的特点是什么？</p>
+<p>C34：</p>
+<p>（1）结合了原型的迭代性质和瀑布模型的系统性和可控性特点</p>
+<p>（2）引入了非常严格的风险识别、风险分析和风险控制</p>
+<p>（3）早期迭代可能是一个理论模型或原型</p>
+<p>Q35：螺旋模型的优缺点是什么？</p>
+<p>C35：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="螺旋优缺点.png" alt=""></p>
+<h2 id="统一过程"><a href="#统一过程" class="headerlink" title="统一过程"></a>统一过程</h2><p>Q36：什么是统一过程？</p>
+<p>E36：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="统一过程.png" alt=""></p>
+<p>C36：统一过程试图将传统软件模型（惯例软件模型）和敏捷过程模型的优点结合起来，即统一起来，统一过程包括：起始，细化，构建，转换，生产等步骤</p>
+<p>Q37：螺旋模型的优缺点是什么？</p>
+<p>C37：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="统一过程优缺点.png" alt=""></p>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>软件工程导论</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件工程导论期中复习（三到五章）</title>
+    <url>/posts/software_review_2/</url>
+    <content><![CDATA[<h1 id="第三章、敏捷开发"><a href="#第三章、敏捷开发" class="headerlink" title="第三章、敏捷开发"></a>第三章、敏捷开发</h1><p>主要复习内容：掌握敏捷开发宣言、理解有哪些敏捷过程模型、了解一些过程模型</p>
+<h2 id="敏捷开发宣言"><a href="#敏捷开发宣言" class="headerlink" title="敏捷开发宣言"></a>敏捷开发宣言</h2><p>Q1：什么是敏捷？</p>
+<p>C1：通俗的讲，敏捷是指在软件的开发活动中，坚持一些基本原则，灵活运用各种方法，快速地开发出令客户满意的产品。敏捷是一种态度，是敏捷建模者坚持的价值观。</p>
+<p>普遍存在的变化是敏捷的基本动力，敏捷需要有效的响应变化，它鼓励在共利益者之间进行更便利的沟通和协作，强调可运行软件的快速交付。敏捷允许项目团队调整并合理安排任务，理解易变性并制定计划。精简并维持最基本的工作产品，强调增量交付，快速提供可运行软件。</p>
+<p>Q2：敏捷开发宣言都有哪些？</p>
+<p>C2：</p>
+<p>个体和交互         胜过过程和工具</p>
+<p>可以工作的软件 胜过面面俱到的文档</p>
+<p>客户合作             胜过合同谈判</p>
+<p>响应变化             胜过遵循计划</p>
+<h2 id="敏捷开发过程模型"><a href="#敏捷开发过程模型" class="headerlink" title="敏捷开发过程模型"></a>敏捷开发过程模型</h2><h3 id="Scrum关键思想"><a href="#Scrum关键思想" class="headerlink" title="Scrum关键思想"></a>Scrum关键思想</h3><p>Q3：什么是Scrum？</p>
+<p>C3：Scrum是一个轻量级的项目管理的框架，它的核心在于迭代。</p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
         <category>软件工程导论</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法设计与分析期中复习暨押题</title>
+    <url>/posts/algorithm_midterm/</url>
+    <content><![CDATA[<p>s本次算法期中考内容如下</p>
+<p>五道选择题，四道简答题，四道算法设计题</p>
+<p>时长为一个半小时</p>
+<p>下面先进行复习，之后对复习内容进行分类整理。</p>
+<h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h1><p>Q1：什么是算法？</p>
+<p>C1：算法是由若干条指令组成的<strong>有穷序列</strong>，它满足4条性质</p>
+<p>（1）输入</p>
+<p>（2）输出</p>
+<p>（3）确定性</p>
+<p>（4）<strong>有限性</strong></p>
+<p>Q2：程序和算法的区别是什么？</p>
+<p>C2：程序是算法用某种程序设计语言的具体实现，<strong>算法具有有限性，而程序可以没有</strong>。</p>
+<p>Q3：分治法和动态规划的区别是什么？</p>
+<p>C3：（1）分治是将一个规模为n的问题分解为k个规模较小的子问题，<strong>这些子问题互相独立并且与原问题相同</strong>，通过递归地求解这些子问题，然后再<strong>将各个子问题的解合并</strong>，就可实现对原问题的求解。</p>
+<h1 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h1><h2 id="渐进式各种符号的认识与互化"><a href="#渐进式各种符号的认识与互化" class="headerlink" title="渐进式各种符号的认识与互化"></a>渐进式各种符号的认识与互化</h2><p>自己的理解：</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="渐进阶理解.png" alt=""></p>
+<p>例一：<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="渐进阶例题.png" alt=""></p>
+<p>答：（1）fn=1（gn）</p>
+<p>（2）fn=2（gn）</p>
+<p>（3）fn=2（gn）</p>
+<p><strong>注意：</strong>log为底的<strong>对数之间等阶</strong>，但<strong>a^n之间是O的关系</strong></p>
+<h2 id="递归函数的优缺点"><a href="#递归函数的优缺点" class="headerlink" title="递归函数的优缺点"></a>递归函数的优缺点</h2><p>优点：<strong>结构清晰，可读性强</strong>，容易用数学归纳法证明算法的正确性，设计算法十分便捷。</p>
+<p>缺点：<strong>运行效率较低</strong>，耗费的计算时间和占用的存储空间都比非递归算法要多。</p>
+<h2 id="分治算法的特点"><a href="#分治算法的特点" class="headerlink" title="分治算法的特点"></a>分治算法的特点</h2><p>（1）该问题的规模缩小到一定的程度就可以容易的解决</p>
+<p>（2）该问题可以分解为若干个规模较小的相同问题</p>
+<p>（3）分解出的子问题的解可以合并为原问题的解</p>
+<p>（4）分解出的各个子问题是相互独立的</p>
+<h1 id="代码填空题"><a href="#代码填空题" class="headerlink" title="代码填空题"></a>代码填空题</h1><h2 id="二分搜索问题"><a href="#二分搜索问题" class="headerlink" title="二分搜索问题"></a>二分搜索问题</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BinarySearch</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> x,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(left&lt;=right)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(x==a[mid])</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">if</span>(x&lt;a[mid])</span><br><span class="line">            right=mid<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            left=mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="归并排序问题"><a href="#归并排序问题" class="headerlink" title="归并排序问题"></a>归并排序问题</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergesort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(left&lt;right)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">        mergesort(a,left,mid);</span><br><span class="line">        mergesort(a,mid+<span class="number">1</span>,right);</span><br><span class="line">        merge(a,b,left,mid,right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> b[],<span class="keyword">int</span> left,<span class="keyword">int</span> mid,<span class="keyword">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=left;</span><br><span class="line">    <span class="keyword">int</span> j=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid &amp;&amp; j&lt;=right)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;=a[j])</span><br><span class="line">            b[t++]=a[i++];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            b[t++]=a[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid)</span><br><span class="line">        temp[t++]=a[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=right)</span><br><span class="line">        temp[t++]=a[j++];</span><br><span class="line">    t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(left&lt;=right)</span><br><span class="line">        a[left++]=temp[t++];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="快速排序问题"><a href="#快速排序问题" class="headerlink" title="快速排序问题"></a>快速排序问题</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quicksort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(low&lt;high)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> pivot=Paritition(a,low,high);</span><br><span class="line">        quicksort(a,low,pivot<span class="number">-1</span>);</span><br><span class="line">        quicksort(a,pivot+<span class="number">1</span>,high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Paritition</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> low ,<span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pivot=a[low];</span><br><span class="line">    <span class="keyword">while</span>(low&lt;high)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(low&lt;high&amp;&amp;a[high]&gt;=pivot)</span><br><span class="line">            --high;</span><br><span class="line">        a[low]=a[high];</span><br><span class="line">        <span class="keyword">while</span>(low&lt;high &amp;&amp;a[low]&lt;=pivot)</span><br><span class="line">            ++low;</span><br><span class="line">        a[high]=a[low];</span><br><span class="line">    &#125;</span><br><span class="line">    a[low]=pivot;</span><br><span class="line">    <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="算法设计题"><a href="#算法设计题" class="headerlink" title="算法设计题"></a>算法设计题</h1><h2 id="线性时间选择问题"><a href="#线性时间选择问题" class="headerlink" title="线性时间选择问题"></a>线性时间选择问题</h2><p>题目：给定线性续集中的n个元素和一个整数k，要求找出这n个元素中第k小的元素</p>
+<p>k=1时，找最小元素</p>
+<p>k=n时，找最大元素</p>
+<p>k=（n+1）/2时，找中位数</p>
+<p>对输入数组进行递归划分.</p>
+<p>例：请在不排序的情况下，用分治法解最大最小问题，写出算法代码，并解释A=（48，12，61，3，5，19，32，7）中求最大最小的过程。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">part</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(left==right)</span><br><span class="line">        <span class="keyword">return</span> a[left];</span><br><span class="line">    <span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> min(part(a, left, mid), part(a, mid + <span class="number">1</span>, right));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>算法</category>
       </categories>
       <tags>
         <tag>课内学习笔记</tag>
