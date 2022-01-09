@@ -4792,7 +4792,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
   <entry>
     <title>算法设计与分析期中复习暨押题</title>
     <url>/posts/algorithm_midterm/</url>
-    <content><![CDATA[<p>s本次算法期中考内容如下</p>
+    <content><![CDATA[<p>本次算法期中考内容如下</p>
 <p>五道选择题，四道简答题，四道算法设计题</p>
 <p>时长为一个半小时</p>
 <p>下面先进行复习，之后对复习内容进行分类整理。</p>
@@ -4864,6 +4864,12 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">countX</span><span class="params">(<span class="keyword">int</span> A[],<span class="keyword">int</span> x,<span class="keyword">int</span> p,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p==r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(A[p]==x)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> q=(p+r)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> (countX(A,p,q,x)+countX(A,q+<span class="number">1</span>,r,x));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度：O(n^2)</p>
 <p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E5%88%86%E6%B2%BB1.png" alt=""></p>
+<h2 id="最长单调递增子序列">最长单调递增子序列</h2>
+<p>题目：分别从O（n方）和O（nlogn）两方面设计算法</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%9C%80%E9%95%BF%E5%8D%95%E8%B0%83%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97.png" alt="">：On方</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LISdyna</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="%E6%9C%80%E9%95%BF%E5%8D%95%E8%B0%83%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%972.png" alt="">：Onlogn</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LIS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    b[<span class="number">1</span>]=a[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,k=<span class="number">1</span>;i&lt;n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&gt;=b[k])</span><br><span class="line">            b[++k]=a[i];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            b[binary(i,k)]=a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a[i]&lt;b[<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> h=<span class="number">1</span>,j=k;h!=j<span class="number">-1</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b[k=(h+j)/<span class="number">2</span>]&lt;=a[i])</span><br><span class="line">            h=k;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            j=k;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -4873,5 +4879,136 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
         <tag>课内学习笔记</tag>
         <tag>考试复习整理</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>2022每日碎碎念</title>
+    <url>/posts/2022-daily/</url>
+    <content><![CDATA[<h1>一月份</h1>
+<h2 id="2022-01-01">2022-01-01</h2>
+<div class="note success no-icon flat">
+                            <p>
+                                <strong>编程⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        在VSCODE上配置了java运行环境
+                                    </td>
+                                    <td>
+                                        参考网址：<a href="https://www.cnblogs.com/bpf-1024/p/13375253.html">vscode 配置 Java 环境</a>
+                                    </td>
+                                                                    </tr>
+                                 <tr>
+                                    <td>
+                                        安装并激活了用于JAVA的IDEA
+                                    </td>
+                                    <td>
+                                        参考网址：<a href="https://www.jb51.net/softs/543014.html">IDEA 2020.3.1激活汉化</a>
+                                    </td>
+                                                                    </tr>
+                        </tbody>
+                    </table>
+                </div>                              
+  <div class="note info no-icon flat">
+                            <p>
+                                <strong>读书⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>书名</th>
+                                        <th>进度</th>
+                                    </tr>
+                                    </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/10785583/">思考快与慢</a>
+                                    </td>
+                                    <td align="center">20-34页</td></tr>
+                                <tr>
+                                                                </tr>
+                             </tr>
+                </tbody>
+            </table>
+        </div>
+<div class="note warning no-icon flat">
+                            <p>
+                                <strong>杂项⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                                                        </tr>
+                                </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                   吃到了回家的第一碗牛肉面！
+                                </td>
+                             </tr>
+                                <tr>
+                                <td>
+                                   整理了大二上的相关资料
+                                </td>
+                                                                </tr>
+                             </tr>
+                </tbody>
+            </table>
+        </div>
+  <div class="note info default no-icon flat">
+                            <p>
+                                <strong>番剧⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>剧名</th>
+                                        <th>进度</th>
+                                    </tr>
+                                    </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">
+                                        <a href="https://www.bilibili.com/bangumi/play/ss21542/?from=search&seid=3279280140502349102">紫罗兰永恒花园</a>
+                                    </td>
+                                    <td align="center">
+                                        1-6集
+                                    </td>
+                                 </tr>
+                                </tr>
+                </tbody>
+            </table>
+        </div>            
+<div class="note primary no-icon flat">
+                            <p>
+                                <strong>今日所得⭐</strong>
+                            </p>
+                            <table>
+                                <thead>
+                                    </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        如何在HTML中构造表格
+                                    </td>
+                                    <td>
+                                        参考网址：<a href="http://c.biancheng.net/view/7540.html">HTMLtable标签（表格）</a>
+                                    </td>
+                                                                    </tr>
+                        </tbody>
+                    </table>
+                </div>                                
+<h2 id="2022-01-02">2022-01-02</h2>
+<p>刚从昨日的难受中缓过劲来，</p>
+<h2 id="2022-01-03">2022-01-03</h2>
+<p>南强的牛肉饭还是很好吃的，就是有点贵= =</p>
+<h2 id="2022-01-04">2022-01-04</h2>
+<h2 id="2022-01-05">2022-01-05</h2>
+<p>考完操作系统，趁着冬促结束末尾入了灵魂摆渡者</p>
+]]></content>
   </entry>
 </search>
