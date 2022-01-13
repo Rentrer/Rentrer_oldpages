@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh_TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ideas | My Utopia</title><meta name="author" content="Shenyyyyyu"><meta name="copyright" content="Shenyyyyyu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<!DOCTYPE html><html lang="zh_TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ideas | My Utopia</title><meta name="author" content="Shenyyyyyu"><meta name="copyright" content="Shenyyyyyu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta property="og:type" content="website">
 <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta property="og:title" content="ideas">
 <meta property="og:url" content="http://shenyyu.site/ideas/index.html">
 <meta property="og:site_name" content="My Utopia">
@@ -8,31 +8,31 @@
 <meta property="article:modified_time" content="2021-01-31T02:29:35.847Z">
 <meta property="article:author" content="Shenyyyyyu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://shenyyu.site/img/cover2.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shenyyu.site/ideas/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="http://shenyyu.site/img/cover2.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shenyyu.site/ideas/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
-  localSearch: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
   copy: {
-    success: 'Copy successfully',
-    error: 'Copy error',
-    noSupport: 'The browser does not support'
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
   },
   relativeDate: {
     homepage: false,
     post: false
   },
-  runtime: '',
+  runtime: '天',
   date_suffix: {
-    just: 'Just',
-    min: 'minutes ago',
-    hour: 'hours ago',
-    day: 'days ago',
-    month: 'months ago'
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
   },
-  copyright: undefined,
+  copyright: {"limitCount":50,"languages":{"author":"作者: Shenyyyyyu","link":"链接: ","source":"来源: My Utopia","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
   lightbox: 'fancybox',
   Snackbar: undefined,
   source: {
@@ -47,10 +47,52 @@
     }
   },
   isPhotoFigcaption: false,
-  islazyload: false,
+  islazyload: true,
   isanchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'ideas',
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
   isPost: false,
   isHome: false,
   isHighlightShrink: false,
@@ -68,89 +110,153 @@
   #post-meta time {
     display: inline !important
   }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
     }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
       }
-      document.head.appendChild(script)
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="/css/background.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css"><script async src="/js/FunnyTitle.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" ><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_1.css" ><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.min.css" media="defer" onload="this.media='all'"><script async src="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/carousel-touch.min.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/Avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-diamond"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-address-card"></i><span> 关于我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/intro/"><i class="fa-fw fas fa-battery-full"></i><span> 简介</span></a></li><li><a class="site-page" href="/ideas/"><i class="fa-fw fa-fw fas fa-signature"></i><span> 想法</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-index-bg" id="page-header" style="background-image: url(/img/cover3.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/" data-title="Stay in My Utopia">ideas</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-diamond"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-address-card"></i><span> 关于我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/intro/"><i class="fa-fw fas fa-battery-full"></i><span> 简介</span></a></li><li><a class="site-page" href="/ideas/"><i class="fa-fw fa-fw fas fa-signature"></i><span> 想法</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">ideas</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="artitalk_main"></div><script>(()=><!-- hexo-inject:begin --><!-- hexo-inject:end -->{
+  let setting = {
+    appId: 'mDd7ItkosSjqnRjA0hJGgMEU-MdYXbMMI',
+    appKey: 'gcmah7LKpHTFxMFxcDc7Ab9F',
+  }
+
+  if (false) {
+    const otherSetting = false
+    setting = Object.assign(setting, otherSetting)
+  }
+
+  const init = () => {
+    new Artitalk(setting)
+  }
+
+  if (typeof Artitalk === 'function') {
+    init()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/artitalk').then(init)
+  }
+})()</script><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/Avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Shenyyyyyu</div><div class="author-info__description">Narcissus</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Rentrer"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Rentrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://steamcommunity.com/id/Rentrer" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1097187031&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">开学辣！继续更新笔记+杂谈了<img src="/img/aside.gif"></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/2022-winter/" title="2022寒假每日总结"><img data-lazy-src="/img/2022.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022寒假每日总结"/></a><div class="content"><a class="title" href="/posts/2022-winter/" title="2022寒假每日总结">2022寒假每日总结</a><time datetime="2022-01-12T16:00:00.000Z" title="发表于 2022-01-13 00:00:00">2022-01-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题"><img data-lazy-src="/img/algorithm.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法设计与分析期中复习暨押题"/></a><div class="content"><a class="title" href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题">算法设计与分析期中复习暨押题</a><time datetime="2021-11-06T02:00:31.000Z" title="发表于 2021-11-06 10:00:31">2021-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）"><img data-lazy-src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（三到五章）"/></a><div class="content"><a class="title" href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）">软件工程导论期中复习（三到五章）</a><time datetime="2021-11-01T13:47:36.000Z" title="发表于 2021-11-01 21:47:36">2021-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）"><img data-lazy-src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（第一第二章）"/></a><div class="content"><a class="title" href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）">软件工程导论期中复习（第一第二章）</a><time datetime="2021-10-28T05:34:11.000Z" title="发表于 2021-10-28 13:34:11">2021-10-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/os_review/" title="操作系统期中复习"><img data-lazy-src="/img/os.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统期中复习"/></a><div class="content"><a class="title" href="/posts/os_review/" title="操作系统期中复习">操作系统期中复习</a><time datetime="2021-10-17T08:02:30.000Z" title="发表于 2021-10-17 16:02:30">2021-10-17</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item parent"><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">学习笔记</span><span class="card-category-list-count">16</span><i class="fas fa-caret-left "></i></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">XML开发技术</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">数据库系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">数据结构与算法</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"><span class="card-category-list-name">汇编语言</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">1</span></a></li></ul></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories/">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E8%AF%BE%E5%86%85%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.5em; color: rgb(104, 187, 67)">课内学习笔记</a><a href="/tags/%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" style="font-size: 1.1em; color: rgb(183, 52, 159)">考试复习整理</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives/">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">25</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-09-28T10:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">字数统计 :</div><div class="item-count">43.4k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-01-13T14:27:57.044Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Shenyyyyyu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div id="running-time"><script>setInterval(()=>{let create_time=Math.round(new Date('2020-09-28 18:00:00').getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
+</script></div><div class="footer_custom_text">我也不会再对谁满怀期待</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script async src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
     })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: '2Rf8ngVFghXdL30ojbUUXJNE-MdYXbMMI',
+      appKey: 'jgFQxhvHKfVHnTTNofBPI04z',
+      placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: {"兔斯基-0001":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0001.gif","兔斯基-0002":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0002.gif","兔斯基-0003":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0003.gif","兔斯基-0004":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0004.gif","兔斯基-0005":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0005.gif","兔斯基-0006":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0006.gif","兔斯基-0007":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0007.gif","兔斯基-0008":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0008.gif","兔斯基-0009":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0009.gif","兔斯基-0010":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0010.gif","兔斯基-0011":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0011.gif","兔斯基-0012":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0012.gif","兔斯基-0013":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0013.gif","兔斯基-0014":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0014.gif","兔斯基-0015":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0015.gif","兔斯基-0016":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0016.gif","兔斯基-0017":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0017.gif","兔斯基-0018":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0018.gif","兔斯基-0019":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0019.gif","兔斯基-0020":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0020.gif","兔斯基-0021":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0021.gif","兔斯基-0022":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0022.gif","兔斯基-0023":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0023.gif","兔斯基-0024":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0024.gif","兔斯基-0025":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0025.gif","兔斯基-0026":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0026.gif","兔斯基-0027":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0027.gif","兔斯基-0028":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0028.gif","兔斯基-0029":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0029.gif","兔斯基-0030":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0030.gif","兔斯基-0031":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0031.gif","兔斯基-0032":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0032.gif","兔斯基-0033":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0033.gif","兔斯基-0034":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0034.gif","兔斯基-0035":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0035.gif","兔斯基-0036":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0036.gif","兔斯基-0037":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0037.gif","兔斯基-0038":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0038.gif","兔斯基-0039":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0039.gif","兔斯基-0040":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/兔斯基/0040.gif","not easy":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/微博/bingbujiandan.png","bilibili_2333-卖萌":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/卖萌.png","bilibili_2333-吃惊":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/吃惊.png","bilibili_2333-吐魂":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/吐魂.png","bilibili_2333-喝水":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/喝水.png","bilibili_2333-困惑":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/困惑.png","bilibili_2333-大哭":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/大哭.png","bilibili_2333-大笑":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/大笑.png","bilibili_2333-委屈":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/委屈.png","bilibili_2333-怒":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/怒.png","bilibili_2333-无言":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/无言.png","bilibili_2333-汗":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/汗.png","bilibili_2333-疑问":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/疑问.png","bilibili_2333-第一":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/第一.png","bilibili_2333-耶":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/耶.png","bilibili_2333-郁闷":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_2333/郁闷.png","bilibili_tv_gif-doge":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/doge.gif","bilibili_tv_gif-亲亲":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/亲亲.gif","bilibili_tv_gif-偷笑":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/偷笑.gif","bilibili_tv_gif-再见":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/再见.gif","bilibili_tv_gif-发怒":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/发怒.gif","bilibili_tv_gif-发财":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/发财.gif","bilibili_tv_gif-可爱":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/可爱.gif","bilibili_tv_gif-吐血":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/吐血.gif","bilibili_tv_gif-呆":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/呆.gif","bilibili_tv_gif-呕吐":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/呕吐.gif","bilibili_tv_gif-困":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/困.gif","bilibili_tv_gif-坏笑":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/坏笑.gif","bilibili_tv_gif-大佬":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/大佬.gif","bilibili_tv_gif-大哭":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/大哭.gif","bilibili_tv_gif-委屈":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/委屈.gif","bilibili_tv_gif-害羞":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/害羞.gif","bilibili_tv_gif-尴尬":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/尴尬.gif","bilibili_tv_gif-微笑":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/微笑.gif","bilibili_tv_gif-思考":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/思考.gif","bilibili_tv_gif-惊吓":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/惊吓.gif","bilibili_tv_gif-打脸":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/打脸.gif","bilibili_tv_gif-抓狂":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/抓狂.gif","bilibili_tv_gif-抠鼻子":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/抠鼻子.gif","bilibili_tv_gif-斜眼笑":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/斜眼笑.gif","bilibili_tv_gif-无奈":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/无奈.gif","bilibili_tv_gif-晕":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/晕.gif","bilibili_tv_gif-流汗":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/流汗.gif","bilibili_tv_gif-流鼻血":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/流鼻血.gif","bilibili_tv_gif-点赞":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/点赞.gif","bilibili_tv_gif-生气":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/生气.gif","bilibili_tv_gif-生病":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/生病.gif","bilibili_tv_gif-疑问":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/疑问.gif","bilibili_tv_gif-白眼":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/白眼.gif","bilibili_tv_gif-睡着":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/睡着.gif","bilibili_tv_gif-笑哭":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/笑哭.gif","bilibili_tv_gif-腼腆":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/腼腆.gif","bilibili_tv_gif-色":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/色.gif","bilibili_tv_gif-调皮":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/调皮.gif","bilibili_tv_gif-鄙视":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/鄙视.gif","bilibili_tv_gif-闭嘴":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/闭嘴.gif","bilibili_tv_gif-难过":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/难过.gif","bilibili_tv_gif-馋":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/馋.gif","bilibili_tv_gif-黑人问号":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/黑人问号.gif","bilibili_tv_gif-鼓掌":"https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/bilibili_tv_gif/鼓掌.gif"},
+      enableQQ: false,
+      path: window.location.pathname,
+      master: 'b52e841ab6cd7ab930ebd4edffda7931',
+      tagMeta: ["博主","小伙伴","访客"],
+      friends: ["9fcf18d2ffc77bfaacaa9674626265d0","e0906974f3385942526e03a3ba6d8496","6f8e40b7ec47bddf54ef671356b18e2c"],
     }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">25</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">My Utopia</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">ideas</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Shenyyyyyu</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">25</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/2022-winter/" title="2022寒假每日总结"><img src="/img/2022.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022寒假每日总结"/></a><div class="content"><a class="title" href="/posts/2022-winter/" title="2022寒假每日总结">2022寒假每日总结</a><time datetime="2022-01-12T16:00:00.000Z" title="Created 2022-01-13 00:00:00">2022-01-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题"><img src="/img/algorithm.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法设计与分析期中复习暨押题"/></a><div class="content"><a class="title" href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题">算法设计与分析期中复习暨押题</a><time datetime="2021-11-06T02:00:31.000Z" title="Created 2021-11-06 10:00:31">2021-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）"><img src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（三到五章）"/></a><div class="content"><a class="title" href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）">软件工程导论期中复习（三到五章）</a><time datetime="2021-11-01T13:47:36.000Z" title="Created 2021-11-01 21:47:36">2021-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）"><img src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（第一第二章）"/></a><div class="content"><a class="title" href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）">软件工程导论期中复习（第一第二章）</a><time datetime="2021-10-28T05:34:11.000Z" title="Created 2021-10-28 13:34:11">2021-10-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/os_review/" title="操作系统期中复习"><img src="/img/os.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统期中复习"/></a><div class="content"><a class="title" href="/posts/os_review/" title="操作系统期中复习">操作系统期中复习</a><time datetime="2021-10-17T08:02:30.000Z" title="Created 2021-10-17 16:02:30">2021-10-17</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <!-- hexo-inject:begin --><!-- hexo-inject:end --><i class="fas fa-folder-open"></i>
-            <span>Categories</span>
-            <a class="card-more-btn" href="/categories/" title="More">
-    <i class="fas fa-angle-right"></i></a>
-            </div>
-            <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">学习笔记</span><span class="card-category-list-count">16</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">XML开发技术</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">数据库系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">数据结构与算法</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"><span class="card-category-list-name">汇编语言</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">1</span></a></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" style="font-size: 1.1em; color: #999">考试复习整理</a> <a href="/tags/%E8%AF%BE%E5%86%85%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.5em; color: #99a9bf">课内学习笔记</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="More">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">25</div></div><div class="webinfo-item"><div class="item-name">Total Count :</div><div class="item-count">43.4k</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-01-13T14:22:37.937Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Shenyyyyyu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo-inject:begin --><!-- hexo-inject:end --></body></html>
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></body></html>
