@@ -124,8 +124,6 @@ div#category {
     font-display: swap;
 }
 
-body,
-.gitcalendar {
+body {
     font-family: tzy !important;
 }
-
