@@ -1,36 +1,36 @@
-<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Utopia</title><meta name="author" content="Shenyyyyyu"><meta name="copyright" content="Shenyyyyyu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta property="og:type" content="website">
+<!DOCTYPE html><html lang="zh_TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Utopia</title><meta name="author" content="Shenyyyyyu"><meta name="copyright" content="Shenyyyyyu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta property="og:title" content="My Utopia">
 <meta property="og:url" content="http://shenyyu.site/index.html">
 <meta property="og:site_name" content="My Utopia">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://shenyyu.site/img/Avatar.png">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="Shenyyyyyu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://shenyyu.site/img/Avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shenyyu.site/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shenyyu.site/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  localSearch: undefined,
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
   },
   relativeDate: {
     homepage: false,
     post: false
   },
-  runtime: '天',
+  runtime: '',
   date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
   },
-  copyright: {"limitCount":50,"languages":{"author":"作者: Shenyyyyyu","link":"链接: ","source":"来源: My Utopia","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  copyright: undefined,
   lightbox: 'fancybox',
   Snackbar: undefined,
   source: {
@@ -45,57 +45,15 @@
     }
   },
   isPhotoFigcaption: false,
-  islazyload: true,
+  islazyload: false,
   isanchor: false
-};
-
-var saveToLocal = {
-  set: function setWithExpiry(key, value, ttl) {
-    const now = new Date()
-    const expiryDay = ttl * 86400000
-    const item = {
-      value: value,
-      expiry: now.getTime() + expiryDay,
-    }
-    localStorage.setItem(key, JSON.stringify(item))
-  },
-
-  get: function getWithExpiry(key) {
-    const itemStr = localStorage.getItem(key)
-
-    if (!itemStr) {
-      return undefined
-    }
-    const item = JSON.parse(itemStr)
-    const now = new Date()
-
-    if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key)
-      return undefined
-    }
-    return item.value
-  }
-}
-
-// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
-const getScript = url => new Promise((resolve, reject) => {
-  const script = document.createElement('script')
-  script.src = url
-  script.async = true
-  script.onerror = reject
-  script.onload = script.onreadystatechange = function() {
-    const loadState = this.readyState
-    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-    script.onload = script.onreadystatechange = null
-    resolve()
-  }
-  document.head.appendChild(script)
-})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'My Utopia',
   isPost: false,
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2022-01-09 23:59:01'
+  postUpdate: '2022-01-13 22:22:38'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -108,110 +66,243 @@ const getScript = url => new Promise((resolve, reject) => {
   #post-meta time {
     display: inline !important
   }
-</style></noscript><script>(function () {  window.activateDarkMode = function () {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-    }
-  }
-  window.activateLightMode = function () {
-    document.documentElement.setAttribute('data-theme', 'light')
-   if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-    }
-  }
-  const autoChangeMode = 'false'
-  const t = saveToLocal.get('theme')
-  if (autoChangeMode === '1') {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-    if (t === undefined) {
-      if (isLightMode) activateLightMode()
-      else if (isDarkMode) activateDarkMode()
-      else if (isNotSpecified || hasNoSupport) {
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
         const now = new Date()
-        const hour = now.getHours()
-        const isNight = hour <= 6 || hour >= 18
-        isNight ? activateDarkMode() : activateLightMode()
-      }
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-        if (saveToLocal.get('theme') === undefined) {
-          e.matches ? activateDarkMode() : activateLightMode()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
         }
-      })
-    } else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else if (autoChangeMode === '2') {
-    const now = new Date()
-    const hour = now.getHours()
-    const isNight = hour <= 6 || hour >= 18
-    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-    else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else {
-    if (t === 'dark') activateDarkMode()
-    else if (t === 'light') activateLightMode()
-  }const asideStatus = saveToLocal.get('aside-status')
-if (asideStatus !== undefined) {
-   if (asideStatus === 'hide') {
-     document.documentElement.classList.add('hide-aside')
-   } else {
-     document.documentElement.classList.remove('hide-aside')
-   }
-}})()</script><link rel="stylesheet" href="/css/background.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css"><script async src="/js/FunnyTitle.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" ><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_1.css" ><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.min.css" media="defer" onload="this.media='all'"><script async src="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/carousel-touch.min.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/Avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-diamond"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-address-card"></i><span> 关于我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/intro/"><i class="fa-fw fas fa-battery-full"></i><span> 简介</span></a></li><li><a class="site-page" href="/ideas/"><i class="fa-fw fa-fw fas fa-signature"></i><span> 想法</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/cover3.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/" data-title="Stay in My Utopia">My Utopia</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-diamond"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-address-card"></i><span> 关于我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/intro/"><i class="fa-fw fas fa-battery-full"></i><span> 简介</span></a></li><li><a class="site-page" href="/ideas/"><i class="fa-fw fa-fw fas fa-signature"></i><span> 想法</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">My Utopia</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Rentrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://steamcommunity.com/id/Rentrer" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1097187031&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item" style="height:auto;width:100%;"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="/posts/ted/" alt=""><img width="48" height="48" src="/img/TED.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-01-27</span><a class="blog-slider__title" href="/posts/ted/" alt="">🍡TED视频推荐(持续更新)</a><div class="blog-slider__text">把自己看过的觉得好的TED演讲整理分享一下.</div><a class="blog-slider__button" href="/posts/ted/" alt="">🍡详情</a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="/posts/Vscode/" alt=""><img width="48" height="48" src="/img/vscode.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt=""/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-03-21</span><a class="blog-slider__title" href="/posts/Vscode/" alt="">📁Vscode——从零开始的美观编程之路</a><div class="blog-slider__text">进来上Vscode的贼船！</div><a class="blog-slider__button" href="/posts/Vscode/" alt="">🍡详情</a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div><script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script><script defer="defer" data-pjax="data-pjax" src="/js/swiper_init.js"></script></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/contents/" title="博客目录">     <img class="post_bg" data-lazy-src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客目录"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/contents/" title="博客目录">博客目录</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack article-meta__icon sticky"></i><span class="sticky">置顶</span><span class="article-meta__separator">|</span></span><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-28T14:35:20.000Z" title="发表于 2020-09-28 22:35:20">2020-09-28</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-08T03:37:30.213Z" title="更新于 2021-08-08 11:37:30">2021-08-08</time></span></div><div class="content">文章分类目录导航</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/2022-daily/" title="2022每日碎碎念">     <img class="post_bg" data-lazy-src="/img/2022.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022每日碎碎念"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2022-daily/" title="2022每日碎碎念">2022每日碎碎念</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-31T16:00:00.000Z" title="发表于 2022-01-01 00:00:00">2022-01-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-05T14:54:33.169Z" title="更新于 2022-01-05 22:54:33">2022-01-05</time></span></div><div class="content">每日一非进阶版</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题">     <img class="post_bg" data-lazy-src="/img/algorithm.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法设计与分析期中复习暨押题"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题">算法设计与分析期中复习暨押题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-06T02:00:31.000Z" title="发表于 2021-11-06 10:00:31">2021-11-06</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-08T07:45:52.431Z" title="更新于 2021-11-08 15:45:52">2021-11-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">算法极限女娲补天押题了</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）">     <img class="post_bg" data-lazy-src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（三到五章）"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）">软件工程导论期中复习（三到五章）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-01T13:47:36.000Z" title="发表于 2021-11-01 21:47:36">2021-11-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-01T16:53:40.046Z" title="更新于 2021-11-02 00:53:40">2021-11-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/">软件工程导论</a></span></div><div class="content">突然通知期中考试，气死了，过来女娲补天</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）">     <img class="post_bg" data-lazy-src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（第一第二章）"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）">软件工程导论期中复习（第一第二章）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-28T05:34:11.000Z" title="发表于 2021-10-28 13:34:11">2021-10-28</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-01T13:48:49.631Z" title="更新于 2021-11-01 21:48:49">2021-11-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/">软件工程导论</a></span></div><div class="content">突然通知期中考试，气死了，过来女娲补天</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/os_review/" title="操作系统期中复习">     <img class="post_bg" data-lazy-src="/img/os.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统期中复习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/os_review/" title="操作系统期中复习">操作系统期中复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-17T08:02:30.000Z" title="发表于 2021-10-17 16:02:30">2021-10-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-17T08:08:46.190Z" title="更新于 2021-10-17 16:08:46">2021-10-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">操作系统好难啊，来一起复习一遍吧</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/2021-summer/" title="暑假每日总结">     <img class="post_bg" data-lazy-src="/img/summer.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="暑假每日总结"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2021-summer/" title="暑假每日总结">暑假每日总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-26T02:41:17.000Z" title="发表于 2021-06-26 10:41:17">2021-06-26</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-08T08:09:55.358Z" title="更新于 2021-08-08 16:09:55">2021-08-08</time></span></div><div class="content">以此来监督我不想被荒废掉的假期</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/java_review/" title="Java期末复习">     <img class="post_bg" data-lazy-src="/img/JAVA.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java期末复习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/java_review/" title="Java期末复习">Java期末复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-22T06:13:04.000Z" title="发表于 2021-06-22 14:13:04">2021-06-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-08T03:39:19.194Z" title="更新于 2021-08-08 11:39:19">2021-08-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java/">Java</a></span></div><div class="content">完了Java没怎么复习，赶快来抱佛脚</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/SQL-final-review/" title="数据库期末复习">     <img class="post_bg" data-lazy-src="/img/DB.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库期末复习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/SQL-final-review/" title="数据库期末复习">数据库期末复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-10T06:36:59.000Z" title="发表于 2021-06-10 14:36:59">2021-06-10</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-28T05:40:55.186Z" title="更新于 2021-10-28 13:40:55">2021-10-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></span></div><div class="content">时间不多了，数据库只能复习一点点了，总结一下后面六章的知识，顺便押题填空题。</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/SQL-middle-review/" title="数据库期中复习">     <img class="post_bg" data-lazy-src="/img/DB.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库期中复习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/SQL-middle-review/" title="数据库期中复习">数据库期中复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-27T09:53:31.000Z" title="发表于 2021-04-27 17:53:31">2021-04-27</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-08T03:48:25.021Z" title="更新于 2021-08-08 11:48:25">2021-08-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></span></div><div class="content">是时候面向考试复习一下数据库了 本文只针对作者认为可能考到的知识点进行整理，存在不足，欢迎补充。</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/Avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Shenyyyyyu</div><div class="author-info__description">Narcissus</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Rentrer"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Rentrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://steamcommunity.com/id/Rentrer" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1097187031&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">开学辣！继续更新笔记+杂谈了<img src="/img/aside.gif"></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/2022-daily/" title="2022每日碎碎念"><img data-lazy-src="/img/2022.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022每日碎碎念"/></a><div class="content"><a class="title" href="/posts/2022-daily/" title="2022每日碎碎念">2022每日碎碎念</a><time datetime="2021-12-31T16:00:00.000Z" title="发表于 2022-01-01 00:00:00">2022-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题"><img data-lazy-src="/img/algorithm.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法设计与分析期中复习暨押题"/></a><div class="content"><a class="title" href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题">算法设计与分析期中复习暨押题</a><time datetime="2021-11-06T02:00:31.000Z" title="发表于 2021-11-06 10:00:31">2021-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）"><img data-lazy-src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（三到五章）"/></a><div class="content"><a class="title" href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）">软件工程导论期中复习（三到五章）</a><time datetime="2021-11-01T13:47:36.000Z" title="发表于 2021-11-01 21:47:36">2021-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）"><img data-lazy-src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（第一第二章）"/></a><div class="content"><a class="title" href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）">软件工程导论期中复习（第一第二章）</a><time datetime="2021-10-28T05:34:11.000Z" title="发表于 2021-10-28 13:34:11">2021-10-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/os_review/" title="操作系统期中复习"><img data-lazy-src="/img/os.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统期中复习"/></a><div class="content"><a class="title" href="/posts/os_review/" title="操作系统期中复习">操作系统期中复习</a><time datetime="2021-10-17T08:02:30.000Z" title="发表于 2021-10-17 16:02:30">2021-10-17</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
-            <!-- hexo-inject:begin --><!-- hexo-inject:end --><li class="card-category-list-item parent"><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">学习笔记</span><span class="card-category-list-count">16</span><i class="fas fa-caret-left "></i></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">XML开发技术</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">数据库系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">数据结构与算法</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"><span class="card-category-list-name">汇编语言</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">1</span></a></li></ul></li>
-            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories/">
-                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E8%AF%BE%E5%86%85%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.5em; color: rgb(32, 161, 52)">课内学习笔记</a><a href="/tags/%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" style="font-size: 1.1em; color: rgb(176, 93, 53)">考试复习整理</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives/">
-              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">25</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-09-28T10:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">字数统计 :</div><div class="item-count">43.6k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-01-09T15:59:00.765Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Shenyyyyyu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div id="running-time"><script>setInterval(()=>{let create_time=Math.round(new Date('2020-09-28 18:00:00').getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
-</script></div><div class="footer_custom_text">我也不会再对谁满怀期待</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script async src="/js/search/local-search.js"></script><script>var preloader = {
-  endLoading: () => {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = '';
-    document.getElementById('loading-box').classList.remove("loaded")
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-  }
-}
-window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function subtitleType () {
-  if (true) { 
-    var typed = new Typed("#subtitle", {
-      strings: "面朝大海，春暖花开,想要的都拥有，得不到的都释怀".split(","),
-      startDelay: 300,
-      typeSpeed: 150,
-      loop: true,
-      backSpeed: 50
-    })
-  } else {
-    document.getElementById("subtitle").innerHTML = '面朝大海，春暖花开'
-  }
-}
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
-if (true) {
-  if (typeof Typed === 'function') {
-    subtitleType()
-  } else {
-    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
-  }
-} else {
-  subtitleType()
-}</script><script>if (document.getElementsByClassName('mermaid').length) {
-  if (window.mermaidJsLoad) mermaid.init()
-  else {
-    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
-      window.mermaidJsLoad = true
-      mermaid.initialize({
-        theme: 'default',
-      })
-      false && mermaid.init()
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
     })
-  }
-}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = false;
-POWERMODE.mobile = false;
-document.body.addEventListener('input', POWERMODE);
-</script></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></body></html>
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">25</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">My Utopia</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">My Utopia</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/contents/" title="博客目录">     <img class="post_bg" src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客目录"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/contents/" title="博客目录">博客目录</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack sticky"></i><span class="sticky">Sticky</span><span class="article-meta__separator">|</span></span><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-09-28T14:35:20.000Z" title="Created 2020-09-28 22:35:20">2020-09-28</time></span></div><div class="content"><!-- hexo-inject:begin --><!-- hexo-inject:end -->学习笔记
+大二上
+
+                            
+                                数据结构复习⭐
+                            
+                            
+                                
+                                    
+                                        
+                                        
+                                    
+                                
+                                
+                                    
+                                        
+                               ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/2022-winter/" title="2022寒假每日总结">     <img class="post_bg" src="/img/2022.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022寒假每日总结"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2022-winter/" title="2022寒假每日总结">2022寒假每日总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-01-12T16:00:00.000Z" title="Created 2022-01-13 00:00:00">2022-01-13</time></span></div><div class="content">一月份
+2022-01-13
+考完操作系统，趁着冬促结束末尾入了灵魂摆渡者
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题">     <img class="post_bg" src="/img/algorithm.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法设计与分析期中复习暨押题"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题">算法设计与分析期中复习暨押题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-06T02:00:31.000Z" title="Created 2021-11-06 10:00:31">2021-11-06</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">本次算法期中考内容如下
+五道选择题，四道简答题，四道算法设计题
+时长为一个半小时
+下面先进行复习，之后对复习内容进行分类整理。
+选择题
+Q1：什么是算法？
+C1：算法是由若干条指令组成的有穷序列，它满足4条性质
+（1）输入
+（2）输出
+（3）确定性
+（4）有限性
+Q2：程序和算法的区别是什么？
+C2：程序是算法用某种程序设计语言的具体实现，算法具有有限性，而程序可以没有。
+Q3：分治法和动态规划的区别是什么？
+C3：（1）分治是将一个规模为n的问题分解为k个规模较小的子问题，这些子问题互相独立并且与原问题相同，通过递归地求解这些子问题，然后再将各个子问题的解合并，就可实现对原问题的求解。
+Q4：分治法的作用是什么？
+C4：分治法通过把问题化为较小的问题来解决原问题，从而简化或减少了原问题的复杂度。
+Q5：在快速排序算法中引入随机过程的主要目的是什么？
+C5：改善了确定性算法最坏情形下的平均运行时间。
+引入随机过程，在每次划分过程中，主元素是随机选取的，在平均情况下，对输入数组的划分是比较均衡的，从而使算法的期望运行时间为O（nlogn）
+关于Tn
+
+简答题
+渐进式各种符号的认识与互化
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）">     <img class="post_bg" src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（三到五章）"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）">软件工程导论期中复习（三到五章）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-01T13:47:36.000Z" title="Created 2021-11-01 21:47:36">2021-11-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/">软件工程导论</a></span></div><div class="content">第三章、敏捷开发主要复习内容：掌握敏捷开发宣言、理解有哪些敏捷过程模型、了解一些过程模型
+敏捷开发宣言Q1：什么是敏捷？
+C1：通俗的讲，敏捷是指在软件的开发活动中，坚持一些基本原则，灵活运用各种方法，快速地开发出令客户满意的产品。敏捷是一种态度，是敏捷建模者坚持的价值观。
+普遍存在的变化是敏捷的基本动力，敏捷需要有效的响应变化，它鼓励在共利益者之间进行更便利的沟通和协作，强调可运行软件的快速交付。敏捷允许项目团队调整并合理安排任务，理解易变性并制定计划。精简并维持最基本的工作产品，强调增量交付，快速提供可运行软件。
+Q2：敏捷开发宣言都有哪些？
+C2：
+个体和交互         胜过过程和工具
+可以工作的软件 胜过面面俱到的文档
+客户合作             胜过合同谈判
+响应变化             胜过遵循计划
+敏捷开发过程模型Scrum关键思想Q3：什么是Scrum？
+C3：Scrum是一个轻量级的项目管理的框架，它的核心在于迭代。
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）">     <img class="post_bg" src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（第一第二章）"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）">软件工程导论期中复习（第一第二章）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-10-28T05:34:11.000Z" title="Created 2021-10-28 13:34:11">2021-10-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/">软件工程导论</a></span></div><div class="content">呜呜呜呜呜呜呜
+第一章、软件工程介绍主要复习内容：软件工程的概念、软件工程层次图（重要）、软件危机与软件工程的关系、软件神话一些错误认识
+软件工程的概念（过程，方法和工具）Q1：软件工程的定义是什么？
+C1：将系统化的、严格约束的、可量化的方法应用于软件的开发、运行和维护，即将工程化应用于软件。
+Q2：软件工程的三要素分别是什么？
+C2：过程、方法和工具
+（1）过程
+软件过程是工作产品构建时所执行的一系列活动、动作和任务的集合。
+过程框架定义了若干框架活动，为实现完整的软件工程过程建立的基础。
+通用过程框架包含以下五个活动：
+沟通、策划、建模、构建、部署
+（2）方法：为构建软件提供技术上的解决方法（如何做）
+（3）工具：为过程和方法提供自动化或半自动化的支持。
+软件工程层次图
+Q3：软件工程的根基是什么？
+C3：支持软件工程的根基在于质量焦点
+Q4：软件工程的基础是什么？
+C4：软件工程的基础是过程层，它将各个技术层次结合在一起，使得合理、及时地开发计算机软件成为可能。
+软件危机Q5：什么是软件危机？
+C5：软件危机是指在计算机软件的开发和维护过程中所遇到的一系列严重问题。
+Q6：软件 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/os_review/" title="操作系统期中复习">     <img class="post_bg" src="/img/os.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统期中复习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/os_review/" title="操作系统期中复习">操作系统期中复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-10-17T08:02:30.000Z" title="Created 2021-10-17 16:02:30">2021-10-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/2021-summer/" title="暑假每日总结">     <img class="post_bg" src="/img/summer.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="暑假每日总结"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2021-summer/" title="暑假每日总结">暑假每日总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-06-26T02:41:17.000Z" title="Created 2021-06-26 10:41:17">2021-06-26</time></span></div><div class="content">小学期2021-06-26今天算是这学期第一次没有定闹钟早上和午觉都自然醒的一天，虽然八点半就醒了，但是真的睡得很舒服，第一天考完试的周六假期，早上买了baba is you，然后各种卡关，下午整理了一下大二下的资料，准备整理好发给别人，晚上和舍友第一次去外面聚餐（吃了东门外的麻辣香锅），现在打算重开一下每日总结，每天都干一些事都进步一些吧
+
+                            
+                                📖读书
+                            
+                            
+                                
+                                    
+                                        书名
+                                        进度
+                                    
+           ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/java_review/" title="Java期末复习">     <img class="post_bg" src="/img/JAVA.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java期末复习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/java_review/" title="Java期末复习">Java期末复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-06-22T06:13:04.000Z" title="Created 2021-06-22 14:13:04">2021-06-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java/">Java</a></span></div><div class="content">1、Java的特性有哪些？（至少写五种）
+答：（1）简单的（Simple）
+​	    （2）强壮的（Robustness）
+​	    （3）面向对象的
+​	    （4）高性能的
+​	    （5）多线程的
+​	    （6）安全的
+2、Java程序经历的五个阶段
+答：（1）编辑（Edit）
+​	    （2）编译（Compile）
+​	    （3）加载（Load）：将程序加载到内存中
+​	    （4）验证（Verify）：验证字节码
+​	    （5）执行（Execute）
+3、使用命令行测试Java应用程序
+先cd到文件夹下，然后javac test.java
+然后发现文件夹下有了一个.class文件
+之后再 java test ，则会运行程序
+4、Java SDK的三种版本：J2SE、J2ME、J2EE
+5、写main函数
+1234public static void main(String args[])&#123;    System.out.println(&quot;Hello world&quot;);&#125;
+6、使用输入输出语句
+123import ja ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/SQL-final-review/" title="数据库期末复习">     <img class="post_bg" src="/img/DB.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库期末复习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/SQL-final-review/" title="数据库期末复习">数据库期末复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-06-10T06:36:59.000Z" title="Created 2021-06-10 14:36:59">2021-06-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></span></div><div class="content">目前要做的
+第七章画E-R图
+第九章画语法分析树
+第九章画语法分析树
+第九章画语法分析树
+第三章所有SQL语句熟悉
+
+ALTER TABLE TEST
+ADD UNIQUE(NAME)
+ADD CONSTRAINT C1 CHECK(NT&gt;0)
+ADD c1 INTEGER
+ALTER Sage INT
+DROP TABLE CASACDE;
+CREATE UNIQUE INDEX NAME ON Student(Sno)
+指定别名
+SELECT Sname Name（用空格将属性与别名分开）
+去重：SELECT DISTINCT SNO
+范围内判断：WHERE Sage BETWEEN 20 AND 23;（包括20和23）
+字符匹配：
+%：表示任意长度的字符串（可以为0），例如a%b
+注意：WHERE子句中是不能用聚集函数作为条件表达式的，聚集函数只能用于SELECT子句和GROUP BY中的HAVING 子句。
+GROUP BY子句示例：
+SELECT Sno，AVG(Grade)
+FROM SC
+GROUP BY Sno
+HAVING AVG（Grade）&gt;=90; ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/SQL-middle-review/" title="数据库期中复习">     <img class="post_bg" src="/img/DB.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库期中复习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/SQL-middle-review/" title="数据库期中复习">数据库期中复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-04-27T09:53:31.000Z" title="Created 2021-04-27 17:53:31">2021-04-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></span></div><div class="content">第二章
+Q：关系模型的三个部分分别是什么？
+C：关系数据结构，关系操作集合 关系完整性约束
+Q：候选码 主码 和主属性都是什么？
+C：若关系中的某一个属性组的值能唯一地标识一个元组，而其子集不能，则该属性组被称为候选码，从候选码中选定一个为主码，候选码的诸属性称为主属性
+即：主码的属性不是主属性，主属性是候选码的所有属性。
+关系是笛卡尔积的有限子集，无限关系在数据库系统中是无意义的。
+关系的每一个分量必须是不可分的数据项。
+关系模式的形式化定义：R(U,D,DOM,F)
+Q：什么是关系模型的完整性规则？
+C：关系模型中可以有三类完整性约束：实体完整性，参照完整性，用户定义的完整性。
+关系模型的完整性规则就是对关系的某种约束条件。
+①主属性不能取空值
+②若外码是该表的主码，则此时外码不能取空值。
+Q：查询操作的基本操作是哪些？
+C：选择、投影、并、差、笛卡尔积，其他的如除，交等都可以导出。
+Q：关系操作的特点是什么？
+C：操作的对象和结果都是集合。
+R∩S=R-（R-S）
+Q：投影有什么注意事项？
+C：投影之后不仅取消了原关系中的某些列，而且还可能取消某些元组（避免重复行）
+E：
+在投影 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Shenyyyyyu</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">25</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/2022-winter/" title="2022寒假每日总结"><img src="/img/2022.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022寒假每日总结"/></a><div class="content"><a class="title" href="/posts/2022-winter/" title="2022寒假每日总结">2022寒假每日总结</a><time datetime="2022-01-12T16:00:00.000Z" title="Created 2022-01-13 00:00:00">2022-01-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题"><img src="/img/algorithm.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法设计与分析期中复习暨押题"/></a><div class="content"><a class="title" href="/posts/algorithm_midterm/" title="算法设计与分析期中复习暨押题">算法设计与分析期中复习暨押题</a><time datetime="2021-11-06T02:00:31.000Z" title="Created 2021-11-06 10:00:31">2021-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）"><img src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（三到五章）"/></a><div class="content"><a class="title" href="/posts/software_review_2/" title="软件工程导论期中复习（三到五章）">软件工程导论期中复习（三到五章）</a><time datetime="2021-11-01T13:47:36.000Z" title="Created 2021-11-01 21:47:36">2021-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）"><img src="/img/software.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论期中复习（第一第二章）"/></a><div class="content"><a class="title" href="/posts/software_review_1/" title="软件工程导论期中复习（第一第二章）">软件工程导论期中复习（第一第二章）</a><time datetime="2021-10-28T05:34:11.000Z" title="Created 2021-10-28 13:34:11">2021-10-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/os_review/" title="操作系统期中复习"><img src="/img/os.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统期中复习"/></a><div class="content"><a class="title" href="/posts/os_review/" title="操作系统期中复习">操作系统期中复习</a><time datetime="2021-10-17T08:02:30.000Z" title="Created 2021-10-17 16:02:30">2021-10-17</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            <a class="card-more-btn" href="/categories/" title="More">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">学习笔记</span><span class="card-category-list-count">16</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/XML%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">XML开发技术</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">数据库系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">数据结构与算法</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"><span class="card-category-list-name">汇编语言</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">1</span></a></li></ul></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" style="font-size: 1.1em; color: #999">考试复习整理</a> <a href="/tags/%E8%AF%BE%E5%86%85%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.5em; color: #99a9bf">课内学习笔记</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="More">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">25</div></div><div class="webinfo-item"><div class="item-name">Total Count :</div><div class="item-count">43.4k</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-01-13T14:22:37.937Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Shenyyyyyu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo-inject:begin --><!-- hexo-inject:end --></body></html>
