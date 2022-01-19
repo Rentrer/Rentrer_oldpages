@@ -2493,9 +2493,10 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
       </tags>
   </entry>
   <entry>
-    <title>📖读书书架整理</title>
+    <title>📖读书书架整理(持续更新)</title>
     <url>/posts/books/</url>
-    <content><![CDATA[<div class="note info no-icon flat">
+    <content><![CDATA[<h1>目前在看的书</h1>
+<div class="note info no-icon flat">
                             <p>
                                 <strong>目前在看的书⭐</strong>
                             </p>
@@ -2503,20 +2504,36 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                 <thead>
                                     <tr>
                                         <th>书名</th>
+                                        <th>类型</th>
                                         <th>进度</th>
                                     </tr>
                                     </thead>
                             <tbody>
                                 <tr>
                                     <td align="center">
+                                        <a href="https://book.douban.com/subject/35546311/">这么多年（上）</a>
+                                    </td>
+                                    <td align="center">青春文学小说</td>
+                                    <td align="center"><progress value="17" max="274">
+</progress></td></tr>
+                                <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/6792270/">佩德罗·巴拉莫</a>
+                                    </td>
+                                    <td align="center">魔幻现实主义小说</td>
+                                    <td align="center"><progress value="1" max="182">
+</progress></td></tr>
+                                <tr>
+                                    <td align="center">
                                         <a href="https://book.douban.com/subject/10785583/">思考快与慢</a>
                                     </td>
+                                    <td align="center">心理学</td>
                                     <td align="center"><progress value="34" max="422">
 </progress></td></tr>
                 </tbody>
             </table>
         </div>
-
+<h1>已经看完的书</h1>
 <div class="note info no-icon flat">
                             <p>
                                 <strong>已经看完的书⭐</strong>
@@ -2525,6 +2542,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                 <thead>
                                     <tr>
                                         <th>书名</th>
+                                        <th>类型</th>
                                         <th>进度</th>
                                     </tr>
                                     </thead>
@@ -2533,29 +2551,37 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/34613713/">给仰望者的朝圣之旅</a>
                                     </td>
+                                    <td align="center">天文学科普</td>
                                     <td align="center"><progress value="255" max="255">
 </progress></td></tr>
                                 <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/26912631/">道林格雷的画像</a>
                                     </td>
+                                    <td align="center">王尔德小说</td>
                                     <td align="center"><progress value="248" max="248">
 </progress></td></tr>
                                 <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/26163454/">数学之美</a>
                                     </td>
+                                    <td align="center">数学类科普</td>
+                                    <td align="center"><progress value="248" max="248">
+</progress></td></tr>
+                                 <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/34326931/">掌控习惯</a>
+                                    </td>
+                                     <td align="center">自我管理</td>
                                     <td align="center"><progress value="248" max="248">
 </progress></td></tr>
                 </tbody>
             </table>
         </div>
-
-
-
+<h1>目前准备要看的书</h1>
 <div class="note warning no-icon flat">
                             <p>
-                                <strong>目前准备要看的书籍⭐</strong>
+                                <strong>目前准备要看的书⭐</strong>
                             </p>
                             <table>
                                  <thead>
@@ -2578,12 +2604,10 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                             </tbody>
     </table>
 </div>
-
-
-
+<h1>在书架上排队的书</h1>
 <div class="note success no-icon flat">
                             <p>
-                                <strong>在书架上排队的书籍⭐</strong>
+                                <strong>在书架上排队的书⭐</strong>
                             </p>
                             <table>
                                  <thead>
@@ -2625,10 +2649,13 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                     <td align="center">待定</td></tr>
                             </tbody>
                     </table>
-                </div>      ]]></content>
+                </div>      <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
         <category>日积月累的资源</category>
       </categories>
+      <tags>
+        <tag>📕爱好读书</tag>
+      </tags>
   </entry>
   <entry>
     <title>2021寒假每日总结</title>
@@ -5238,7 +5265,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
             </details>
 <details class="folding-tag" yellow><summary> 时间线梳理 </summary>
               <div class='content'>
-              <div class="timeline"><div class="timenode"><div class="meta"><p><p>2022-01-02</p></p></div><div class="body"><p>被myy拐骗（bushi），投递简历</p></div></div><div class="timenode"><div class="meta"><p><p>2022-01-13</p></p></div><div class="body"><div class="tip cogs"><p>队长分配整体任务：</p><p>myy和syy要完成的东西:<br>brochure<br>宣传video<br>交互平台的设计(如果允许可以代码实现出来)<br>计划书的美化与内容完善<br>ppt的完善<br>属于美工部分的要求都力求精美甚至完美，</p></div></div></div><div class="timenode"><div class="meta"><p><p>2022-01-15</p></p></div><div class="body"><p>第一次队长与老师的会议</p></div></div></div>
+              <div class="timeline"><div class="timenode"><div class="meta"><p><p>2022-01-02</p></p></div><div class="body"><p>被myy拐骗（bushi），投递简历</p></div></div><div class="timenode"><div class="meta"><p><p>2022-01-13</p></p></div><div class="body"><div class="tip cogs"><p>队长分配整体任务：</p><p>myy和syy要完成的东西:<br>brochure<br>宣传video<br>交互平台的设计(如果允许可以代码实现出来)<br>计划书的美化与内容完善<br>ppt的完善<br>属于美工部分的要求都力求精美甚至完美，</p></div></div></div><div class="timenode"><div class="meta"><p><p>2022-01-15</p></p></div><div class="body"><p>第一次队长与老师的会议</p></div></div><div class="timenode"><div class="meta"><p><p>2022-01-17</p></p></div><div class="body"><p>三创赛启动会议及讨论</p></div></div></div>
               </div>
             </details>
 <p>假期主要任务：</p>
@@ -5249,6 +5276,33 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
 <li>计划书的美化与内容完善</li>
 <li>ppt的完善</li>
 </ol>
-]]></content>
+<p>2022.1.17更新</p>
+<p>交互设计聚焦的并不单纯是的把某个界面&amp;流程设计好，还需要充分的理解自己产品的业务，挖掘用户痛点或者产品的增长点，思考如何将产品目标与用户体验相结合，把设计转化为产品价值，平衡设计和成本等等。这些我认为才是交互设计的核心价值</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+  </entry>
+  <entry>
+    <title>三创赛记录</title>
+    <url>/posts/meta-fit/</url>
+    <content><![CDATA[<details class="folding-tag" cyan><summary> 前情提要 </summary>
+              <div class='content'>
+              <p>事情要起源于1月2号的一则招募转发</p><p>在我认为很合适的xd说他不打比赛后</p><p>自己对三创有了一丶心动</p><p>虽然算是不务正业，但也一直想提升一下自己设计和做视频的能力</p><p>就这么在考试周第二天要考OOAD的压力下，准备了简单的简历</p><p>但还是有点慌，因为交互设计和视频制作我都不擅长</p><p>罢了，既来之则安之，学！</p><p>为了成为一个更专业的宣中人加油哈哈哈哈哈</p>
+              </div>
+            </details>
+<details class="folding-tag" yellow><summary> 时间线梳理 </summary>
+              <div class='content'>
+              <div class="timeline"><div class="timenode"><div class="meta"><p><p>2022-01-02</p></p></div><div class="body"><p>被myy拐骗（bushi），投递简历</p></div></div><div class="timenode"><div class="meta"><p><p>2022-01-13</p></p></div><div class="body"><div class="tip cogs"><p>队长分配整体任务：</p><p>myy和syy要完成的东西:<br>brochure<br>宣传video<br>交互平台的设计(如果允许可以代码实现出来)<br>计划书的美化与内容完善<br>ppt的完善<br>属于美工部分的要求都力求精美甚至完美，</p></div></div></div><div class="timenode"><div class="meta"><p><p>2022-01-15</p></p></div><div class="body"><p>第一次队长与老师的会议</p></div></div><div class="timenode"><div class="meta"><p><p>2022-01-17</p></p></div><div class="body"><p>三创赛启动会议及讨论</p></div></div></div>
+              </div>
+            </details>
+<p>假期主要任务：</p>
+<ol>
+<li>brochure</li>
+<li>宣传video</li>
+<li>交互平台的设计(如果允许可以代码实现出来)</li>
+<li>计划书的美化与内容完善</li>
+<li>ppt的完善</li>
+</ol>
+<p>2022.1.17更新</p>
+<p>交互设计聚焦的并不单纯是的把某个界面&amp;流程设计好，还需要充分的理解自己产品的业务，挖掘用户痛点或者产品的增长点，思考如何将产品目标与用户体验相结合，把设计转化为产品价值，平衡设计和成本等等。这些我认为才是交互设计的核心价值</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
   </entry>
 </search>
