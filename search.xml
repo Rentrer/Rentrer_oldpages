@@ -791,17 +791,17 @@
 <p>回到软件界面，先点击界面上的刷新按钮，当显示找到vscode后，再点击安装扩展。</p>
 <p><img src="10.png" alt=""></p>
 <p>注：这一步可能会耗时较长，因为最近的github访问不稳定，若长时间无反应可以先关闭cmd窗口，再次点击“安装扩展“即可。出现如下画面即为安装成功：</p>
-<p><img src="11.png" alt=""></p>
+<div align=center><img src="11.png" width="92%" height="92%"></div>
 <p>回到软件界面，发现C/C++扩展已经安装好了，我们点击下一步。</p>
 <p>样式可以自行选择自己喜欢的，个人推荐第一个。</p>
 <p><img src="12.png" alt=""></p>
 <p>最后点击下一步，我们的第一阶段的配置就完成了！</p>
 <h1>2、测试环节</h1>
 <p>在配置好之后，软件会自动生成一个Hello World.cpp，供我们测试，此时我们只需要单击键盘上的F5，就可以在下面的Terminal看到令人激动的Hello World了！</p>
-<p><img src="12.1.png" alt=""></p>
+<div align=center><img src="12.1.png" width="92%" height="92%"></div>
 <p>啊这。咋失败了呢</p>
 <p>出现这个情况的小伙伴先不要惊慌，这只是Vscode第一次编译没有完全，你可以先关闭Vscode的进程，再重新打开，再按F5，就能看到如下的输出辣</p>
-<p><img src="12.2.png" alt=""></p>
+<div align=center><img src="12.2.png" width="92%" height="92%"></div>
 <p>芜湖，这样就可以在Vscode上快乐的写C++作业辣</p>
 <h1>3、常见设置的配置</h1>
 <h2 id="（1）代码字体大小-自动保存问题">（1）代码字体大小&amp;&amp;自动保存问题</h2>
@@ -821,19 +821,19 @@
 <h2 id="（1）Chinese">（1）Chinese</h2>
 <p>在能运行代码之后，我们却发现，Vscode的默认界面是英文版的，我喜欢中文版该怎么办呢？</p>
 <p>在插件界面搜索Chinese，直接点击Install即可</p>
-<p><img src="14.png" alt=""></p>
+<div align=center><img src="14.png" width="92%" height="92%"></div>
 <p>安装完成后，点击弹出的该界面的Restart，就可以看到熟悉的中文辣</p>
 <p><img src="15.png" alt=""></p>
 <h2 id="（2）Code-Runner">（2）Code Runner</h2>
 <p>不习惯按F5，想<strong>点一个按钮就直接运行</strong>自己的代码怎么办？</p>
 <p>在插件界面搜索Code Runner，点击安装</p>
-<p><img src="16.png" alt=""></p>
+<div align=center><img src="16.png" width="92%" height="92%"></div>
 <p>之后我们回到helloworld.cpp文件，我们发现，右上角多了一个小三角，点击他，终端就会简洁的直接输出了！</p>
-<p><img src="17.png" alt=""></p>
+<div align=center><img src="17.png" width="92%" height="92%"></div>
 <h2 id="（3）Bracket-Pair-Colorizer-2">（3）Bracket Pair Colorizer 2</h2>
 <p>当一个程序，括号套括号套括号套括号套括号，这时候是不是就不好辨认了？我们有办法！</p>
 <p>在插件界面搜索Bracket Pair Colorizer 2，点击安装</p>
-<p><img src="18.png" alt=""></p>
+<div align=center><img src="18.png" width="92%" height="92%"></div>
 <p>在自己的代码中尝试括号的嵌套，就会发现括号的颜色变了！</p>
 <p><img src="19.png" alt=""></p>
 <h2 id="（4）持续更新">（4）持续更新</h2>
@@ -2384,11 +2384,11 @@ $$</p>
 <p>C5：<strong>改善了确定性算法最坏情形下的平均运行时间</strong>。</p>
 <p>引入随机过程，在每次划分过程中，主元素是随机选取的，在平均情况下，对输入数组的划分是比较均衡的，从而使算法的期望运行时间为O（nlogn）</p>
 <h2 id="关于Tn">关于Tn</h2>
-<p><img src="Tn.png" alt=""></p>
+<div align=center><img src="Tn.png" width="70%" height="70%"></div> 
 <h1>简答题</h1>
 <h2 id="渐进式各种符号的认识与互化">渐进式各种符号的认识与互化</h2>
 <p>自己的理解：</p>
-<p><img src="%E6%B8%90%E8%BF%9B%E9%98%B6%E7%90%86%E8%A7%A3.png" alt=""></p>
+<div align=center><img src="渐进阶理解.png" width="70%" height="70%"></div>
 <p>例一：<img src="%E6%B8%90%E8%BF%9B%E9%98%B6%E4%BE%8B%E9%A2%98.png" alt=""></p>
 <p>答：（1）fn=1（gn）</p>
 <p>（2）fn=2（gn）</p>
@@ -2437,9 +2437,11 @@ $$</p>
 <p><img src="%E5%88%86%E6%B2%BB1.png" alt=""></p>
 <h2 id="最长单调递增子序列">最长单调递增子序列</h2>
 <p>题目：分别从O（n方）和O（nlogn）两方面设计算法</p>
-<p><img src="%E6%9C%80%E9%95%BF%E5%8D%95%E8%B0%83%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97.png" alt="">：On方</p>
+<div align=center><img src="最长单调递增子序列.png" width="90%" height="90%"></div>
+<p>On方</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LISdyna</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="%E6%9C%80%E9%95%BF%E5%8D%95%E8%B0%83%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%972.png" alt="">：Onlogn</p>
+<div align=center><img src="最长单调递增子序列2.png" width="90%" height="90%"></div>
+<p>Onlogn</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LIS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    b[<span class="number">1</span>]=a[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,k=<span class="number">1</span>;i&lt;n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&gt;=b[k])</span><br><span class="line">            b[++k]=a[i];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            b[binary(i,k)]=a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a[i]&lt;b[<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> h=<span class="number">1</span>,j=k;h!=j<span class="number">-1</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b[k=(h+j)/<span class="number">2</span>]&lt;=a[i])</span><br><span class="line">            h=k;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            j=k;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
@@ -2760,7 +2762,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
     <p>也希望我明白”爱“的意义的那天早日到来</p>
 </div>
 <p>最后，对于熬夜，薇酱这句话我觉得很有道理。</p>
-<p><img src="%E7%86%AC%E5%A4%9C.png" alt=""></p>
+<div align=center><img src="熬夜.png" width="80%" height="80%"></div>
 <p>大家还是少熬夜，养生作息早睡早起它不香🐎？</p>
 <p>ps：有一说一日本人直接拿英文来起名字还挺好听的（Violet Evergarden)。感觉翻译成中文总差点感觉，就用英文打了。</p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
@@ -3061,7 +3063,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
   <entry>
     <title>📖读书书架整理(持续更新)</title>
     <url>/posts/books/</url>
-    <content><![CDATA[<h1>目前在看的书</h1>
+    <content><![CDATA[<h1 id="目前在看的书"><a class="markdownIt-Anchor" href="#目前在看的书"></a> 目前在看的书</h1>
 <div class="note info no-icon flat">
                             <p>
                                 <strong>目前在看的书⭐</strong>
@@ -3099,7 +3101,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                 </tbody>
             </table>
         </div>
-<h1>已经看完的书</h1>
+<h1 id="已经看完的书"><a class="markdownIt-Anchor" href="#已经看完的书"></a> 已经看完的书</h1>
 <div class="note info no-icon flat">
                             <p>
                                 <strong>已经看完的书⭐</strong>
@@ -3144,7 +3146,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                 </tbody>
             </table>
         </div>
-<h1>目前准备要看的书</h1>
+<h1 id="目前准备要看的书"><a class="markdownIt-Anchor" href="#目前准备要看的书"></a> 目前准备要看的书</h1>
 <div class="note warning no-icon flat">
                             <p>
                                 <strong>目前准备要看的书⭐</strong>
@@ -3159,9 +3161,14 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                         <tbody>
                             <tr>
                                     <td align="center">
+                                        <a href="https://book.douban.com/subject/1013208/">如何阅读一本书</a>
+                                    </td>
+                                    <td align="center">春节后开</td></tr>
+                            <tr>
+                                    <td align="center">
                                         <a href="https://book.douban.com/subject/1863930/">看不见的城市</a>
                                     </td>
-                                    <td align="center">到小学期就开</td></tr>
+                                    <td align="center">待定</td></tr>
                              <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/26267263/">八月之光</a>
@@ -3170,7 +3177,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                             </tbody>
     </table>
 </div>
-<h1>在书架上排队的书</h1>
+<h1 id="在书架上排队的书"><a class="markdownIt-Anchor" href="#在书架上排队的书"></a> 在书架上排队的书</h1>
 <div class="note success no-icon flat">
                             <p>
                                 <strong>在书架上排队的书⭐</strong>
@@ -3187,7 +3194,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/3014444/">自深深处</a>
                                     </td>
-                                    <td align="center">道林格雷的画像未看+这本书应静下心看</td></tr>
+                                    <td align="center">这本书应静下心看</td></tr>
                             <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/4820710/">1984</a>
@@ -5245,7 +5252,6 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
 </ol>
 <p>2022.1.17更新</p>
 <p>交互设计聚焦的并不单纯是的把某个界面&amp;流程设计好，还需要充分的理解自己产品的业务，挖掘用户痛点或者产品的增长点，思考如何将产品目标与用户体验相结合，把设计转化为产品价值，平衡设计和成本等等。这些我认为才是交互设计的核心价值</p>
-<p>水水水水</p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <tags>
         <tag>新事物尝试</tag>
