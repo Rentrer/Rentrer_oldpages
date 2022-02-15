@@ -3,121 +3,18 @@
   <entry>
     <title>2022寒假每日总结</title>
     <url>/posts/2022-winter/</url>
-    <content><![CDATA[<h1 id="一月份"><a href="#一月份" class="headerlink" title="一月份"></a>一月份</h1><h2 id="2022-01-13"><a href="#2022-01-13" class="headerlink" title="2022-01-13"></a>2022-01-13</h2><p>今天回归初心继续对博客进行美化</p>
-<p>终于解决了valine评论不显示的bug</p>
-<p>改了网站的字体（好看多了）</p>
-<p>把文章下方的推荐文章移到右边了</p>
-<p>救命SOA大作业一点没动，明天一定要编完QAQ</p>
-<div class="tip cogs"><p>待办事项：</p>
-<div class="checkbox blue checked"><input type="checkbox" checked="checked">
-            <p>SOA大作业</p>
-            </div>
-
-<div class="checkbox red"><input type="checkbox">
-            <p>找到好一点的碎碎念格式，类似表格</p>
-            </div>
-
-<p>上面的没找到倒是找到待办事项的好格式了，笑死了</p>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="104515b2fa4b673586491c99ffc130d3f1b7eac5b5bb9fb616894a10a51bf43e">1b693c4938223286468132b2f7068bf6843f685a75b91ea775f5232a30882919096599a4c145b1177c1420e86c94922354c6b47eee135c786c8ae16653d756f21ee37e9525fd0b22ae592070eb3276f4a7ac6b2a1af46fafddd69c7e045d7e8ab4fa18a04ba764d9834d1a66a9da346e9c5b3a6c7901b84857dad82462a7e749cace06d1443d8f0f7684c10c7b0799ca98dc881919b4a72f9af2c6ae7354836727d17924d48be7bbc78540b3233f2b482708b0e10e593a966f90b2766eaf3a5cc985cf93473cb39ebd77aa9cd03a75b5ff519729a8818d736e7f06b831d235312a9aae4b9f0d55a3473ae1148e05cf179c2b2ff2098e42cb9851cecf73db25709c0b2c4184a79c23ce77dfdee9c100574ca196375bb0a63a0eb0c2a4cc9b3ac93c3d5d1649ccfeb4cf35f6b12c37e4ef0add17d6558a4429a540695682dd8e817edb2b16e95a259d1d8069469e6a170dbf1a8813d6878e24ca360fca81f9f0b0b70eba9b3b0b555055ecd4aca563e00b34524549b911a9e040d66816b6d6a84a9c4ca086dd5020a6c2f38a8839dbbcebe5b65d8d4d821a4f371e325457d00c2e701cc593caa84d066d7ab9a20b4b0e99dcc0a9effd802df2e317cf6c45ba79778962d9fe901946a716ef952a6ffd49bea1efe8d1213b1f1ca439edc7a3ba0eedf46bdaf6c604691debc89d576d33fcbf456a3c392579f2ecad99f47fad6a502a73da88a3da60683216cbad778fab6ff340cc0907b7c5fd4b1a0685ed8bf68bbe305a52e48a37b3a85741515d4fa4040df186f68a06c6710e38d1862e5a4f2f64220694067967b76589cb5713f2cf4f7fbf41a9311c637ea71ecefc9eca0b393fcdaa7fca0a3c9043abce232a0d44b60b0dc3c78e39f0d7bcca8fe83fa0e41294f0eb98a1a0fdfb5ab33828fae2c606129200fadeb19769f368bc0023cc111b088f8626e65603fba70ef49f77c3bc0a5b1c199a6bd884efd48309f32a6d2e13190784891313b9d5af8831d41741a930193332aceb2077aced43e56657ef5a2a8c15d33b8d42102048583ac79bc07433b89cbd8bf22a760a2bce48f5090849c9c37ab94cf7ebdf59098b757e1bc37f0d588ed083f6a899611a09a326a887690665287ca1cc158d1a9eee3c343bf713a3b81010935f038407e574177d5e70cb8eecfb24d3e8c61d8186b11ab6d7f0395d1a122dcd414ef7b6aa8d039d2b12ef85ae7825526eb55ab2756312d7966016d0b8de69b4c9a485039ff01545f6379a203c8c7fb911faf4faf26c428c2f1f94a6a88531234e0882b164f8138fa1d45e2b18aec0762e36f8cf708fe33104ff469acaa2d5a9e12af2ca756da4d82eb6c86c430401ad23ee44dad5e4e37adbe2dacfc2b7e09c7ba8ab7c8f5f375a1dab40c3ed117d4dd4e591342eaa270296276df16b14a8fc2d2187ffbab330b558209329078cc9034b18a1c80c1ec0ac2785a386ed9b5137579217d4fc355faf444b3e0192a1d2e163f99a0da66e51f92dabb7f6415e510de86b03b0cca0a72552611a8615ea561001eae7b37acd13bb5a16a702e9e7e9667004a11ab7093bb61dd408d3773eb22a05aab1583dddb44d9ced0ad6287c065bae0374a01524ebe9d31e3e56e0ff8aa5bd43174d249605ab43a50eb5cb27d3beb753117bacdbaf171899fd76e2008b2ef17b63a11b7d8df05d202fb4168627deb81781d0f68877c5e27a217760d18bfce25246772bbc9f5a18066b58a8138ab9e02eac34382272d7b6e5cfe2f8462740029d1b7e44edd5e3c44fcd1779a1274497b5e6a8ff0481ffdc9bb1ab7ab3ce0ff945e752ada2f37e0f9d4b98b8e4dc39e47b1611cc4a25a55ce7dc157efac9d414b23795284dc4cd29b38a1b5a20ea760e81bec497ed6dbcc9de15e02b62de05fe4b64634583de743a81bd2fbf75688284a2af965837d0be9ee8e1696706364a302345f808104760840d02366cac3492af4581aa6348b2f58c47f7daa4bd50946fa8b0abb0a4710eebbbab0a2eb335b60b9f4cb5fcda9c31836a0c4a1ee9664ac29c3dd280401d4305fd43204e213f97ce4e76f6762297714b444a104865f0c320757c7c5159761b989cdd300f50d9e8839e64383747ece7c6dc1476432389259bc335e17c5cad2754cfe7f670846c591e8f7255f96a854c08d8b7e6e66ad077396c97e7935960b6d8548fc702c883b831e811331ff6a839ff2bd9f72d8ba98919519725cf14473da312e20ec533758f57441dacb0d724d4fbbc08088291af7e403801e0bb0d14fa458695e21e503cb23aef308519b21c0a25e6df0f11f1599aecd8587abce97417b23d8892d8118e308316bc49d788561a80cacc4651a96d3a9e2d93ae5e9268144fbdc5bc21f4a9dce81b2731494369bb8fbbb86097106c5ee2456cbbe45118faca26618c095927a0a528ee97e41249961c396b82ce49138590ff2cf9f4efecf8d69d900d19571c0a93df1a34fcaf8c9d7f3e500736583c471e2365367771b39457b401fa07697533cc783d0e3b0588da81c217b951f8cf5cd0aabff5f7ee61844c05fda8616f99682eeb52f5656a6ace2fca9cd8f2a45ed4c08c336c15673024ae6205d84edb0bd51816c1c07d83cc92d98d41d7c8c4d2956dcbdce4b950f89fd2b8bcc498c542b7401c8f2db597d6e9ab990538427353e13a8c5cd03816a1253a2b8cae0d8519cb4dd3c179c2626e636c907825476ba65aa24f61636d061ca218c39403bd264a824cd795c05faf117e6b3ed4711e079cbee6045093ea13a95277390dca0eae315f6cf61aaa529046b54280dbcb2797c8c67c4fd2f4108a6060642760409f6468ac2fe22273ff7300dc22d0c028e7ff528700c5d4ae1791c9850ef3569d4d9db6ea8693d5fb04e6b5d29d10b075b5c594e38b526f0228d570f15b5648ad44f2bfb5039cc1fd90d98f6c8f05b5724ad615efdf415f54e5d9052312205a99f9bc85208ed641475573649215405f03a9f2f3d61f16e5454c160786d9a5a69a1a47c4abb1259fa2d753058122d2b371bfe0adb63a42fc575e9124f92735f4f20ac6442ac826ef991e609758b380d175943222ccc46af7f5ae0d274c81d2b18418c84cd972b60712e33086143f0c261c0fdf6f28d9146f117df62844746398bc491ccbe2738ad3753cd21e94593afef617e5fa3e2261fcda139c6bafc7af0105472d9a64cfb032c957bb94d522a21cbca646c6beaf905d667d51e3d80b69e196cbb500f2911806e7fa092a569ac906eac0a9e9bf27460ab622d036ed1e051ed80df31ad7d2a8d7288fc240671c4da19b450c9ac5e2d8930300744b805e19aa5c97810f427b5606b01157bd78e1f47c898be81c4a4431d9b538b4f481dcb6f6d2c1a8a1a49241b8739302c33f9c9cc0c081570461761e54dfd53916c164147cdad0b1828995ae01c9b7511b739eedad9aa6f9fe853a805c1996362c343ffe92e1c39c45168ebdb6b7aac68135997fc7c16720112333d4e22554924c7aea958adf7e3ed679f99c91d44996af18e1e6e0032d7c03670872acff9c850eef926fe1a2980cb764a226fe3242d2456b144ccf312acec1ff6246c327801acc5efc86989a0de847d5287ef5834176d56ca2fa81a48967e27602aae3eef41cd2df50567f8327e897108e6fecbe6ca81d6d219c96a2564260ee7e71a2c1c8a74b44bb2f2a68ce1f43828f8962218d637423e51be64aa1dc31feba952aeabd7c1294e88948c0a23103a77eac5c46faaaa6753f975fdc7fdcfd5917b3b56e0c7dae2d72fc470a177840a056c7cfa9ec1ee693cf2b5e4d075af19b0dbe6488bff591db6235fb5765521e015c4ba89fc386889fca5b1cf98b7035addd8b58b772e3fe042249e61f7aa74be087c917f39e831df5eb0f723a58e332092e13085e481becc60deed0b5fecf08c319dc68fac55052bb383478b76965d7735e81510cecc9122ab4acff60ba944802e446f352181247241cc3e04760844a455ae3b85a26f96e4696120ebdbc9535d8c6d3effd94be6424550c341c93fc3c6753644c7457c1293a1971033e868cdebbc9d650efaf4c63d51e1bcae8941eacc14af759a6445ae9175777ea198b876a6809ed5b2e910601e3f1dda512d12c0f655e899adf3e6cb691ab5b54464bf8acf363e9fe99572ddf08e7913dd00ba8452685b79dd4e587cb0bc2dc39b53d3f6ae79269f3c765bf42f979c25872678bae585046c8c1a7b6183a2d9a6936a64bc9b47df048baf3be870a91a87c6e14f3b3d0faeddc2ac1cb56483659e263c9f32d773a57ce6d865909f79c5f3bb6b19915114aa30dd0c98f3053200640d13f1e9ff518270b874683f532fd254308953589fa8ae17f4bf4d0037d86d4f07cfdbceafe852267f8b3129029c90c59828f77c27dd36b3ff4d47c84db16a4672f439211b319947a113f2952d2fd6edb18739972f5c95cd5751662b142a4057b6f617bec79aca114459b5bb0dedab4f22febd10672b21247621af4e5f42cb086aa5ca13429c8e5aea25a232369cc274f258b61bd61566ef5c0f2a94c4dd07c6a62a521390980266e5657c294ac7465fb5cafebb3e54131a5c4d129343d8c5624fa1ab1469814ddcade361ce7c91e8ebface24b3fe00c770c586935a33d4839d774476c84d686fd12d9c40341cc4d8c2f22990483aa987b75592ef8a39ddfa572ce03842f6e38cf783dedc8795cdb72dd17a0d25da79b526c8a6ba9226b92d69716bcef6fdbdc9626fc7f525c0f9577341222c2c82021c81e7add2608ee8a4b454490de749a1f2f09fe8a2060a6b9476af58b728086a8def8840100428256de161bc949599b9d5e81a091804e33d46d00f86969afd00d8b361333b49c590454cfbf8593c8a929f772267bd743f1d0e7ead7f7fd2b8241d574235ff0679eb5062db22a1e754ae1e492f272bc87a9042a13db9343ab7e44098eaf3ffe64714f7fb7c3e35616fb49e959865c6714e0064e2dca93436e8e6541c18503563a780456cfe5f7dab54280b41c90a89295f3128cd9400207257bd3a78608e5c6c8692275e78876a97599c16079cd94a4d143ff2ced363c88158673b1a34c378717e2b8f09eee5ed9ccbe2c83f5c81ea4d3bb791675fa500690354541b8ca34f7fcb775bd3a104312feaebe3f757bc8e84ce9e5c9ae67ef23223b7171df679f5c25dbb11acca35b821807032b2774c720c47003361dd3cc60099218653b5e8101253f189eeecb3e7e88636579e7263b19ac2689c20d0b13d9e72115f1dd137ef933b350d5c8bf7220aea21a5051de5dd6e03942dd19de7266c5eaac1c29ffbacd65ac7010d6fa34a94717eb6ac221ced7604c895493cb70fee3aff9ba69e18e9c9b5f13bb85032238921301241bf9be2908a7321a22c6d0955bbaccc7feb2e6c08b3a06bfcbde99c777182bee474379a11403ed7d8656d6e59f9aa8dec636392daa1eea62305ff40bbfab3dbe5a80209eb7216af85f438c930ff63273147aedd0c3c421ec26893cdaf3d6488014fca9ce5f87986822141a519f4643e05aa220fbd179910aeafe617276aa99dfc72a2eb2dd7f8d511f9c0b327ab418d2aae948c32da8914b7004e1d86fcd5d5d76f750e3ca793700d0b1327fafb26e3140b2e37142482bc23a1dc6207fd162d7ff09c0c3361e850867947e8be9b4d78c7eb5c15deaaf4c509e962e4418923d611e2cebb87ab7c3a539d45d170c1ea646bf0a57350d27baf13d49ec8c6116012ec18c2ee7cbd7effde2b0fc907426b7dae08d238a5df09a288e0fdee8f763c79860d85d0f68a3df7bbdacc420efbf5a871aedc8d4fa6aa2b87f3873cc70f268c1e8ae2be21d0eb32ccccb2975e9349e3851db6180df7f8ccb020d728cb33339bb2bdfab6a39cb644e7038a75ed0127d260cbd641f60a0816e927b2c0367147832e6b76f6a9a051d85deace637025111618d830944451d5b2e4eb2cc2983faf0200f6d7331446a0065e990ca72c04ee9f2c4dd250db3bda5160fecce1fc9c859ee5f5b89a98205aaaf1b867f1cec5febae5b0c01eef66ef9d16496a748b24b3b6b5f3d56b3ee896986c2a03af12e8fe7cdef4a1cc612a76b31e7e284ad852b44bb121049961de22c28dd23451bc9bb799c514b619f23a6fe244e5195eb330b247ccc59a8f1d81757b24dc1ba111a9c253880a6a05897edb38f7c9747baeb0a7990feb255e7ac52c102914cb4997cc9b6d00a1218e17fde265b35641af2a29409bfe49c1cfaa8e843f35f1faadab7dbedfe0e3886a465991c4d96597834169afa502556d918da41da7da4b4e2b3776106829ef27acc737b3d1803474de108cc49ac6c620d65a9b463a684b8e7dbc67a144391baf1f1bfc82fee6cc91162ac15d8de73d22aafed7cd9f73ea4018a4e3c3aa54b99306304f8f937621871dc4a04bccf59f309660d87eba1a170c478ac0ebdf839834c58d54eb6bee744799800f007155004bb8f759a69c2db8019a87a4c33759cbb934c968f32e5f73b3c9e211979bdd4530e2dd935a6e7a299033df993135af2df82f466e8edcc097486a2c6058250bd6e280935ca2d5ee3554fa4b9a891024bc4a0c0e2d078ca8612a12357576d4e32024bf9bf0986f7e4fcb4c115dcd6606a7caf04e1f2df69f412d71729291ce8d250d777ddb0bbab4c485a825bb385885a5970e45d2e17eba31862cfb8f8f21d6315206ae956c758a456bfdaf59c1f519077e1b917eb9c67178e931af58588ff74f74aee917c44ab780da4fcd533afbf31111b2c864d2e7a9af09674a16acbee2c136f947829d722a1c16952f8e2952326f9c5a96f31a39100e00c1e9bd2450b0d4af59fd66950d89cfd28b16308bd8d0606a89b1e23251d1d6bc361d4cc7dfeed0f0a2e7656b0ba3c2cdee7371f1bc848a5742bba43e3d00b7658d65ad21461524d241df5098abe46085e3a8ee1185c42db32c2d0be816454c53cdb3d5108d65cf448966716ea211420bd076517c0524035134efda3ce83bf15cf97c642687003af1c18845944b67b59ece56551394bb61a83b49ab624a4b3d6d9a22ced5c13214b382a0834abed72487e6a6e0fe9702e77f66b7a3736bb966df31edb31f2c3dc8ad0a1e27ce051f1440354a6400c9f87fe1fac83e44373153c15d8f9da1c21d8b5c3218cd9efb5580e853ce1dc3b2dc18047fce3a437665d0a93</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-shrink">
+      <input class="hbe hbe-input-field hbe-input-field-shrink" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-shrink" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-shrink">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
 </div>
-<h2 id="2022-01-14"><a href="#2022-01-14" class="headerlink" title="2022-01-14"></a>2022-01-14</h2><p>终于摆烂做完了SOA大作业，可以放心做自己喜欢的事情了</p>
-<p>今天废了好长时间把artitalk布置回来了，但是网页版还是有点小问题</p>
-<p>明天开始要搞三创的东西了，有点麻烦（但还是会好好学习）</p>
-<div class="tip cogs"><p>明日计划：</p>
-<div class="checkbox green checked"><input type="checkbox" checked="checked">
-            <p>早上看三创赛发的文档，大致准备一下想法</p>
-            </div>
-
-<div class="checkbox blue checked"><input type="checkbox" checked="checked">
-            <p>中午和myy讨论一下细节</p>
-            </div>
-
-<div class="checkbox red checked"><input type="checkbox" checked="checked">
-            <p>下午3点和老师对线</p>
-            </div>
-
-<div class="checkbox green"><input type="checkbox">
-            <p>对线结束看一会这么多年</p>
-            </div>
-
-<div class="checkbox red checked"><input type="checkbox" checked="checked">
-            <p>晚上背单词：50+30</p>
-            </div>
-</div>
-<p>摸鱼期间继续美化网站</p>
-<h2 id="2022-01-15"><a href="#2022-01-15" class="headerlink" title="2022-01-15"></a>2022-01-15</h2><p>今天凌晨把主页的slidebar换成插件版了，感觉更正式了</p>
-<div class="tip bell"><p>今日所做</p>
-</div>
-<div class="tip cogs"><p>明日计划：</p>
-<div class="checkbox green checked"><input type="checkbox" checked="checked">
-            <p>整理19软工导论试卷</p>
-            </div>
-
-<div class="checkbox green checked"><input type="checkbox" checked="checked">
-            <p>清理电脑桌面</p>
-            </div>
-
-<div class="checkbox red"><input type="checkbox">
-            <p>继续看这么多年和图书馆借的书</p>
-            </div>
-
-<div class="checkbox red"><input type="checkbox">
-            <p>看一个TED并做摘抄</p>
-            </div>
-
-<div class="checkbox red checked"><input type="checkbox" checked="checked">
-            <p>晚上背单词：50+36</p>
-            </div>
-
-<p>睡前记得运动</p>
-</div>
-<h2 id="2022-01-16"><a href="#2022-01-16" class="headerlink" title="2022-01-16"></a>2022-01-16</h2><div class="tip success"><p>读书</p>
-<table>
-                                <thead>
-                                    <tr>
-                                        <th>书名</th>
-                                        <th>进度</th>
-                                    </tr>
-                                    </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center">
-                                        <a href="https://book.douban.com/subject/35546311/">这么多年</a>
-                                    </td>
-                                    <td align="center">1-16页</td></tr>
-                                <tr>
-                                                                </tr>
-                             
-                </tbody>
-            </table>
-
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-yellow" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"><p>测试</p></div></div></div>
-<div class="tip cogs"><p>明日计划：</p>
-<div class="checkbox green"><input type="checkbox">
-            <p>早起烫头and中午吃麻辣烫！</p>
-            </div>
-
-<div class="checkbox green"><input type="checkbox">
-            <p>下午通知宣中开会事项，确定时间</p>
-            </div>
-
-<div class="checkbox green"><input type="checkbox">
-            <p>继续看这么多年</p>
-            </div>
-
-<div class="checkbox green"><input type="checkbox">
-            <p>看一个TED并做摘抄</p>
-            </div>
-
-<div class="checkbox green"><input type="checkbox">
-            <p>晚上参与启动会</p>
-            </div>
-
-<div class="checkbox red"><input type="checkbox">
-            <p>晚上背单词：50+150</p>
-            </div>
-
-<p>睡前记得运动</p>
-</div><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
         <category>假期总结</category>
       </categories>
@@ -2233,9 +2130,7 @@ $$</p>
     <content><![CDATA[<p>下篇主要是临考试的挣扎，挑了一些觉得可能会考的用来押题，希望全都考到</p>
 <p>孩子哭了，汇编一定要好好学啊</p>
 <a id="more"></a>
-<h2 id="选择题：">选择题：</h2>
-<h3 id="例一：下列语句没错的是：">例一：下列语句没错的是：</h3>
-<p>MOV AL，050AH</p>
+<h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a>选择题：</h2><h3 id="例一：下列语句没错的是："><a href="#例一：下列语句没错的是：" class="headerlink" title="例一：下列语句没错的是："></a>例一：下列语句没错的是：</h3><p>MOV AL，050AH</p>
 <p>MOV [SI],0AH</p>
 <p>MOV DS,100H</p>
 <p>MOV CS,[SI]</p>
@@ -2247,19 +2142,15 @@ $$</p>
 <p>第三句中，立即数不能直接送到段寄存器中，故错。</p>
 <p>第四句中，CS是专用寄存器，碰不得</p>
 <p>第五句中，段寄存器之间不能相互传递，故错。</p>
-<h3 id="例二：下列语句等值的是：">例二：下列语句等值的是：</h3>
-<h2 id="简答题：">简答题：</h2>
-<h3 id="例一：解释TEST和AND指令的异同，并说明其使用注意点">例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</h3>
-<p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
+<h3 id="例二：下列语句等值的是："><a href="#例二：下列语句等值的是：" class="headerlink" title="例二：下列语句等值的是："></a>例二：下列语句等值的是：</h3><h2 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h2><h3 id="例一：解释TEST和AND指令的异同，并说明其使用注意点"><a href="#例一：解释TEST和AND指令的异同，并说明其使用注意点" class="headerlink" title="例一：解释TEST和AND指令的异同，并说明其使用注意点"></a>例一：解释TEST和AND指令的<strong>异同</strong>，并说明其使用注意点</h3><p>答：相同点：TEST和AND指令属于逻辑运算指令，<strong>对两个操作数进行按位的逻辑与运算</strong>，且均<em>设置CF=OF=0</em>，对AF无定义。</p>
 <p>​       不同点：AND指令会将逻辑与的结果送给目的操作数，而TEST指令不会。</p>
 <p>举一反三.1：解释TEST和CMP指令的异同</p>
 <p>答：相同点：TEST指令和CMP指令都不会将结果送回给操作数，只修改标志位。</p>
-<p>​		test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
-<p>​		cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
-<p>​		不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
-<p>​					   而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
-<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码">例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3>
-<p>答：<img src="MOV%E5%9B%BE.png" alt=""></p>
+<p>​        test<strong>逻辑与（AND）运算结果为零</strong>,就把ZF(零标志)置1;</p>
+<p>​        cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)置1.</p>
+<p>​        不同点：TEST指令是<strong>逻辑运算符</strong>，对两个操作数进行按位的逻辑与运算，</p>
+<p>​                       而CMP指令是<strong>算术运算指令</strong>，将<strong>目的操作数减去源操作数（后减前）</strong></p>
+<h3 id="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"><a href="#例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码" class="headerlink" title="例二：画图并解释说明MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H放入DS寄存器的代码"></a>例二：<strong>画图并解释说明</strong>MOV指令在立即数、通用寄存器、段寄存器和存储器之间可能转移关系，并写出将立即数0102H<strong>放入DS寄存器</strong>的代码</h3><p>答：<img src="/posts/Assembly_review-03/MOV图.png" alt></p>
 <p><code>MOV AX,0102H</code></p>
 <p><code>MOV DS,AX</code></p>
 <p>解释说明：</p>
@@ -2274,8 +2165,7 @@ $$</p>
 <p><code>MOV DX,BUF2</code></p>
 <p><code>MOV BUF2,AX</code></p>
 <p><code>MOV BUF1,DX</code></p>
-<h3 id="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。">例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</h3>
-<p>答：一共有五种</p>
+<h3 id="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"><a href="#例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。" class="headerlink" title="例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。"></a>例三：8086有多少种存储器寻址方式？写出相对基址变址寻址方式的公式并解释何为变址。</h3><p>答：一共有五种</p>
 <p>分别为：</p>
 <p>1.直接寻址 ：MOV AX,[2077H]</p>
 <p>2.寄存器间接寻址 ：MOV AX,[SI]</p>
@@ -2284,25 +2174,20 @@ $$</p>
 <p>5.相对基址变址寻址：MOV AX,[BX+SI+06H]</p>
 <p>解释：<strong>基址是指基址寄存器（BX/BP），变址是指变址寄存器（SI/DI）</strong></p>
 <p>相对基址变址寻址，即使用基址寄存器和变址寄存器，再加上一个8/16位的<strong>位移量（即为相对）</strong>，<strong>这三者之和构成操作数的有效地址EA</strong></p>
-<h3 id="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？">例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</h3>
-<p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
-<p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。**（默认要补齐5位）**如图</p>
-<p><img src="%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E8%BD%AC%E5%8C%96.png" alt=""></p>
-<h3 id="例五：编写定义缓冲区，及实现输入字符串的核心代码">例五：编写定义缓冲区，及实现输入字符串的核心代码</h3>
-<p>答：<code>string db 'Im a string',0dh,0ah,'$'</code></p>
+<h3 id="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？"><a href="#例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址-？" class="headerlink" title="例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？"></a>例四：什么是8086中的逻辑地址和物理地址？逻辑地址如何转换成物理地址 ？</h3><p>答：<strong>”段地址：偏移地址“被称为逻辑地址</strong>。其中段地址说明逻辑段在主存中的起始位置，偏移地址说明主存单元距离段起始位置的偏移量。</p>
+<p>物理地址：在8086中，每个存储器单元都有一个20位的地址，被称为 单元的物理地址，也为实际地址。<strong>（默认要补齐5位）</strong>如图</p>
+<p><img src="/posts/Assembly_review-03/逻辑地址转化.png" alt></p>
+<h3 id="例五：编写定义缓冲区，及实现输入字符串的核心代码"><a href="#例五：编写定义缓冲区，及实现输入字符串的核心代码" class="headerlink" title="例五：编写定义缓冲区，及实现输入字符串的核心代码"></a>例五：编写定义缓冲区，及实现输入字符串的核心代码</h3><p>答：<code>string db &#39;Im a string&#39;,0dh,0ah,&#39;$&#39;</code></p>
 <p><code>buffer  db 81</code></p>
-<pre><code>		`db ?`
+<pre><code>         `db ?`
 
-		`db 81 dup(0)`
-</code></pre>
-<p><code>mov dx,seg buffer</code></p>
+         `db 81 dup(0)`
+</code></pre><p><code>mov dx,seg buffer</code></p>
 <p><code>mov ds,dx</code></p>
 <p><code>mov ah,0ah</code></p>
 <p><code>mov dx,offset buffer</code></p>
 <p><code>int 21h</code></p>
-<h2 id="编程题">编程题</h2>
-<h3 id="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07">例一：编写一个程序，要求能从<strong>键盘接收</strong>一个个位数N，然后<strong>响铃N</strong> 次(响铃的ASCII 码为07)</h3>
-<p>分析：采用字符串输入功能接受一个数，传入CX中，再调用输出字符功能，输出直到CX为0</p>
+<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><h3 id="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07"><a href="#例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N-次-响铃的ASCII-码为07" class="headerlink" title="例一：编写一个程序，要求能从键盘接收一个个位数N，然后响铃N 次(响铃的ASCII 码为07)"></a>例一：编写一个程序，要求能从<strong>键盘接收</strong>一个个位数N，然后<strong>响铃N</strong> 次(响铃的ASCII 码为07)</h3><p>分析：采用字符串输入功能接受一个数，传入CX中，再调用输出字符功能，输出直到CX为0</p>
 <p>代码如下：</p>
 <p><code>.model small</code></p>
 <p><code>.stack</code></p>
@@ -2317,23 +2202,21 @@ $$</p>
 <p><code>mov dl,0ah</code></p>
 <p><code>int 21h</code></p>
 <p><code>again:</code></p>
-<p>​	<code>cmp cl,0</code></p>
-<p>​	<code>jz over</code></p>
-<p>​	<code>mov ah,02h</code></p>
-<p>​	<code>mov dl,07h</code></p>
-<p>​	<code>int 21h</code></p>
-<p>​	<code>mov dl,'1'</code></p>
-<p>​	<code>int 21h</code></p>
-<p>​	<code>dec cl</code></p>
-<p>​	<code>jmp again</code></p>
+<p>​    <code>cmp cl,0</code></p>
+<p>​    <code>jz over</code></p>
+<p>​    <code>mov ah,02h</code></p>
+<p>​    <code>mov dl,07h</code></p>
+<p>​    <code>int 21h</code></p>
+<p>​    <code>mov dl,&#39;1&#39;</code></p>
+<p>​    <code>int 21h</code></p>
+<p>​    <code>dec cl</code></p>
+<p>​    <code>jmp again</code></p>
 <p><code>over: .exit 0</code></p>
-<p>​		<code>end</code></p>
-<h3 id="例二：实现字符串的冒泡排序">例二：实现字符串的冒泡排序</h3>
-<p>分析：使用两层循环，结合跳转实现</p>
+<p>​        <code>end</code></p>
+<h3 id="例二：实现字符串的冒泡排序"><a href="#例二：实现字符串的冒泡排序" class="headerlink" title="例二：实现字符串的冒泡排序"></a>例二：实现字符串的冒泡排序</h3><p>分析：使用两层循环，结合跳转实现</p>
 <p>代码如下：</p>
-<p><img src="%E4%BB%A3%E7%A0%81.png" alt=""></p>
-<h2 id="结语">结语</h2>
-<p>明天上刑场</p>
+<p><img src="/posts/Assembly_review-03/代码.png" alt></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>明天上刑场</p>
 <p>概统还没复习</p>
 <p>高星救我</p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
@@ -2759,19 +2642,17 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
   <entry>
     <title>计算机网络——传输媒介</title>
     <url>/posts/Cn-01/</url>
-    <content><![CDATA[<h1>一、通信的基本概念</h1>
-<h2 id="（一）通信模型">（一）通信模型</h2>
-<p>Q1：通信的基本模型是什么？</p>
-<p>E1:<img src="%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B.png" alt=""></p>
+    <content><![CDATA[<h1 id="一、通信的基本概念"><a href="#一、通信的基本概念" class="headerlink" title="一、通信的基本概念"></a>一、通信的基本概念</h1><h2 id="（一）通信模型"><a href="#（一）通信模型" class="headerlink" title="（一）通信模型"></a>（一）通信模型</h2><p>Q1：通信的基本模型是什么？</p>
+<p>E1:<img src="/posts/Cn-01/通信模型.png" alt></p>
 <p>C1：</p>
 <p>其中：信源是产生和发送数据的源头，信宿是接收数据的终点。</p>
 <p><strong>信道是信号的传输媒介</strong>，它与电路并不等同，一般用来表示<strong>向某一个方向</strong>传送信息的媒体。因此<strong>一条通信线路往往包含一条发送信道和一条接受信道</strong>。</p>
 <p>信道噪声：噪声和干扰的总称。</p>
 <p>Q2：数据通信的要点（特点）是什么？</p>
 <p>C2：</p>
-<p>①信息是任意形式</p>
-<p>②传输系统采用物理系统</p>
-<p>③多个信息源可以共用底层的传输介质 （即共享是根本）</p>
+<p>①信息是任意形式 </p>
+<p>②传输系统采用物理系统 </p>
+<p> ③多个信息源可以共用底层的传输介质 （即共享是根本）</p>
 <p>Q3：信息的基本单位是什么？</p>
 <p>E3: <strong>bit</strong>和<strong>byte</strong>的关系与区别</p>
 <p>C3: 比特（bit,b），来源于binary digit（二进制数字），即一个比特就是1或0。</p>
@@ -2780,65 +2661,57 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
 <p><strong>推广：2的N次种事件发生的概率相同（只和概率有关，和事件的具体意义无关）。其信息量为Nbit</strong></p>
 <p>而字节（byte,B）是内存存储的基本单位     <strong>1byte=2^3=8bits</strong></p>
 <p>注意：K M G 在表示字节时不是10^N次方，</p>
-<p>KB（2<sup>10B)、MB（2</sup>20B）、GB（2^30B）</p>
-<h2 id="（二）信号">（二）信号</h2>
-<p>Q4：什么是信号？可以怎么分类？</p>
+<p>KB（2^10B)、MB（2^20B）、GB（2^30B）</p>
+<h2 id="（二）信号"><a href="#（二）信号" class="headerlink" title="（二）信号"></a>（二）信号</h2><p>Q4：什么是信号？可以怎么分类？</p>
 <p>E4：A/D信号</p>
 <p>C4：信号就是信息的载体，它利用物理量携带信息，<strong>是数据的具体表示形式</strong>。通常可以分为</p>
 <p>①<strong>数字信号（Digital</strong> signal）：自变量和因变量都是<strong>离散</strong>的信号。</p>
 <p>②<strong>模拟信号（Analog</strong> signal）：信息参数表现为<strong>连续</strong>的信号。</p>
 <p><strong>数据无论是数字的还是模拟的，为了传输的目的都必须转变为信号</strong></p>
 <p>Q5: A/D之间如何进行转换？</p>
-<p>E5：<img src="AD.png" alt=""></p>
-<h2 id="（三）A-D和D-A通信系统模型">（三）A/D和D/A通信系统模型</h2>
-<p><img src="%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9E%8B.png" alt=""></p>
-<h1>二、传输介质的分类</h1>
-<h2 id="（一）按路径分类">（一）按路径分类</h2>
-<h3 id="①导引型-Guided-传输媒体">①导引型(Guided)传输媒体</h3>
-<p>Q6：为什么不直接用平行铜导线？</p>
+<p>E5：<img src="/posts/Cn-01/AD.png" alt></p>
+<h2 id="（三）A-D和D-A通信系统模型"><a href="#（三）A-D和D-A通信系统模型" class="headerlink" title="（三）A/D和D/A通信系统模型"></a>（三）A/D和D/A通信系统模型</h2><p><img src="/posts/Cn-01/通信系统模型.png" alt></p>
+<h1 id="二、传输介质的分类"><a href="#二、传输介质的分类" class="headerlink" title="二、传输介质的分类"></a>二、传输介质的分类</h1><h2 id="（一）按路径分类"><a href="#（一）按路径分类" class="headerlink" title="（一）按路径分类"></a>（一）按路径分类</h2><h3 id="①导引型-Guided-传输媒体"><a href="#①导引型-Guided-传输媒体" class="headerlink" title="①导引型(Guided)传输媒体"></a>①导引型(Guided)传输媒体</h3><p>Q6：为什么不直接用平行铜导线？</p>
 <p>C6：</p>
 <p>1、随机电磁辐射，又称噪声（noise），是系统正常操作下的一种副作用。</p>
 <p>2、电磁辐射碰到金属的时会产生微弱信号干扰通信信号。</p>
 <p>3、因为金属可以吸收辐射，所以<strong>它可以起到屏蔽（shield）的作用</strong></p>
-<h4 id="Q7：什么是双绞线？">Q7：什么是双绞线？</h4>
-<p>C7：双绞线(<strong>Twisted Pair</strong>)，就是把两根互相绝缘的铜导线并排放在一起，然后用规则的方法绞合（Twist）就构成了双绞线。</p>
+<h4 id="Q7：什么是双绞线？"><a href="#Q7：什么是双绞线？" class="headerlink" title="Q7：什么是双绞线？"></a>Q7：什么是双绞线？</h4><p>C7：双绞线(<strong>Twisted Pair</strong>)，就是把两根互相绝缘的铜导线并排放在一起，然后用规则的方法绞合（Twist）就构成了双绞线。</p>
 <p>双绞线既能传输模拟信号又能传输数字信号</p>
 <p><strong>通信距离一般为几到几十公里（短距离传输）</strong></p>
 <p>如果不绞合的话就是平行导线（ <strong>parallel pair wiring</strong>）</p>
-<p> </p>
+<p>&nbsp;</p>
 <p>Q8：为什么用双绞线而不是平行导线？</p>
 <p>C8：对于存在的电磁辐射干扰，双绞线的两根导线吸收的辐射相同，而平行导线吸收的不同，感应的电能也不同，就会出现电流，从而产生新的干扰。</p>
-<p> </p>
-<h4 id="Q9：什么是同轴电缆？">Q9：什么是同轴电缆？</h4>
-<p>E9:<img src="%E5%90%8C%E8%BD%B4%E7%94%B5%E7%BC%86.png" alt=""></p>
+<p>&nbsp;</p>
+<h4 id="Q9：什么是同轴电缆？"><a href="#Q9：什么是同轴电缆？" class="headerlink" title="Q9：什么是同轴电缆？"></a>Q9：什么是同轴电缆？</h4><p>E9:<img src="/posts/Cn-01/同轴电缆.png" alt></p>
 <p>C9：同轴电缆（<strong>Coaxial cable</strong>)，由内导体，绝缘层，<strong>外导体屏蔽层</strong>和绝缘保护套层组成，</p>
 <p><strong>多用于传输有线电视的模拟信号。</strong></p>
 <p>为了进一步减少电气噪声的干扰，双绞线又分为下面三类</p>
 <p>Q10：无屏蔽双绞线（<strong>Unshielded TP</strong>)的优点和缺点是什么？</p>
-<p>E10：<img src="UTP.png" alt=""></p>
+<p>E10：<img src="/posts/Cn-01/UTP.png" alt></p>
 <p>C10：缺点：如果辐射强度很高，如使用电弧焊设备的工厂（<strong>特别强的电子噪声</strong>），或者通信电缆需要在电气噪声源附近经过（<strong>与噪声源的物理距离非常近</strong>），或<strong>通信使用高频率时</strong>，双绞线都存在问题。</p>
 <p>优点：<strong>柔韧性较高，比较灵活</strong></p>
-<p> </p>
+<p>&nbsp;</p>
 <p>Q11：同轴电缆的优点和缺点是什么</p>
 <p>C11：优点：屏蔽能力、抗干扰性很强，厚实的屏蔽层及整体的对称性使得其可以免受噪声的干扰。适用于放在<strong>电气噪声源和其他电缆附近（如工厂）</strong>，而且可以<strong>用于高频率通信</strong>。</p>
 <p>缺点：</p>
-<p> </p>
+<p>&nbsp;</p>
 <p>Q12：如何折中二者？</p>
-<p>E12：<img src="STP.png" alt=""></p>
+<p>E12：<img src="/posts/Cn-01/STP.png" alt></p>
 <p>C12：采用屏蔽双绞线（Shielded TP）<strong>,直接在绝缘层上加一层屏蔽层</strong>，来提高双绞线抗电磁干扰的能力。</p>
-<p> </p>
-<h4 id="Q13：什么是光纤？">Q13：什么是光纤？</h4>
-<p>E13：<img src="%E5%85%89%E7%BA%A4.png" alt=""></p>
+<p>&nbsp;</p>
+<h4 id="Q13：什么是光纤？"><a href="#Q13：什么是光纤？" class="headerlink" title="Q13：什么是光纤？"></a>Q13：什么是光纤？</h4><p>E13：<img src="/posts/Cn-01/光纤.png" alt></p>
 <p>C13：光纤（<strong>Optical fiber</strong>）通常由非常透明的石英玻璃拉成细丝，<strong>主要由纤芯和包层构成双层通信圆柱体</strong>。每根光纤是<strong>单个方向的</strong>，所以每个光缆至少包含两根光纤（来回）。</p>
-<p> </p>
+<p>&nbsp;</p>
 <p>Q14：光线为什么能保留在光纤里？</p>
 <p>C14：因为光纤被一层覆层物质包裹形成了一个边界，这个边界的折射率比纤芯要低。由于光线从高向低射出时，<strong>当入射角足够大时就会发生全反射</strong>，而光纤正好运用该原理，使光线碰到包层就反射回光纤，光一直传播下去。</p>
-<p> </p>
+<p>&nbsp;</p>
 <p>Q15：什么是色散？</p>
 <p>C15：光纤内的<strong>反射并不是完美</strong>的，它会<strong>吸收一小部分能量</strong>，形成色散。</p>
-<p> </p>
+<p>&nbsp;</p>
 <p>Q16：光纤有哪些类型？</p>
-<p>E16：<img src="%E4%B8%A4%E4%B8%AA%E5%85%89%E7%BA%A4.png" alt=""></p>
+<p>E16：<img src="/posts/Cn-01/两个光纤.png" alt></p>
 <p>C16：</p>
 <p>1、多模突变光纤，就是可以<strong>存在多条不同角度入射的光线</strong>在一条光纤中传输，<strong>纤芯与边界的密度是突变</strong>的。</p>
 <p><strong>特点：便宜、纤芯密度不变，但是色散程度高</strong>。</p>
@@ -2846,19 +2719,15 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
 <p>特点：稍贵，但可以减少反射，<strong>降低色散程度</strong>。</p>
 <p>3、<strong>单模光纤</strong>，具有较小的直径，只有一个光的波长，可以使光线一直向前传播，而不会产生多次反射。</p>
 <p><strong>特点：最贵，色散最少，适合长距离及较高比特率传输的场合。</strong></p>
-<p> </p>
-<h4 id="Q17：光纤和铜导线有什么利弊？">Q17：光纤和铜导线有什么利弊？</h4>
-<p>C17：光纤免受电气噪声的干扰，信号损耗较少，<strong>适合长距离传播</strong>，可用于校区之间的通信</p>
+<p>&nbsp;</p>
+<h4 id="Q17：光纤和铜导线有什么利弊？"><a href="#Q17：光纤和铜导线有什么利弊？" class="headerlink" title="Q17：光纤和铜导线有什么利弊？"></a>Q17：光纤和铜导线有什么利弊？</h4><p>C17：光纤免受电气噪声的干扰，信号损耗较少，<strong>适合长距离传播</strong>，可用于校区之间的通信</p>
 <p>铜导线的整体费用较低，不需要专门的人员和设备，且不易折断，<strong>适合企业内部的大量使用</strong>。</p>
-<h3 id="②非导引型-Unguided-传输媒体">②非导引型(Unguided)传输媒体</h3>
-<p>红外：不需要天线，适合于室内环境</p>
+<h3 id="②非导引型-Unguided-传输媒体"><a href="#②非导引型-Unguided-传输媒体" class="headerlink" title="②非导引型(Unguided)传输媒体"></a>②非导引型(Unguided)传输媒体</h3><p>红外：不需要天线，适合于室内环境</p>
 <p>特点：扩散快，光滑坚硬的表面反射，不透明物体（包括水蒸气）都能阻挡。</p>
 <p>点对点激光通信</p>
 <p>特点 数据传输率高，正确率高，信号衰减小，<strong>适合于城市楼宇间传输。</strong></p>
-<h2 id="（二）按能量形式">（二）按能量形式</h2>
-<p><img src="%E8%83%BD%E9%87%8F.png" alt=""></p>
-<h1>三、介质的选用标准</h1>
-<p>成本：材料、安装、运营、维护</p>
+<h2 id="（二）按能量形式"><a href="#（二）按能量形式" class="headerlink" title="（二）按能量形式"></a>（二）按能量形式</h2><p><img src="/posts/Cn-01/能量.png" alt></p>
+<h1 id="三、介质的选用标准"><a href="#三、介质的选用标准" class="headerlink" title="三、介质的选用标准"></a>三、介质的选用标准</h1><p>成本：材料、安装、运营、维护</p>
 <p>数据速率：bps</p>
 <p>时延：信号传输的时间</p>
 <p>对信号的影响：衰减和失真</p>
@@ -3049,8 +2918,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
   <entry>
     <title>📖读书书架整理(持续更新)</title>
     <url>/posts/books/</url>
-    <content><![CDATA[<h1 id="目前在看的书"><a class="markdownIt-Anchor" href="#目前在看的书"></a> 目前在看的书</h1>
-<div class="note info no-icon flat">
+    <content><![CDATA[<h1 id="目前在看的书"><a href="#目前在看的书" class="headerlink" title="目前在看的书"></a>目前在看的书</h1><div class="note info no-icon flat">
                             <p>
                                 <strong>目前在看的书⭐</strong>
                             </p>
@@ -3068,7 +2936,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                         <a href="https://book.douban.com/subject/6792270/">佩德罗·巴拉莫</a>
                                     </td>
                                     <td align="center">魔幻现实主义小说</td>
-                                    <td align="center"><progress value="1" max="182">
+                                    <td align="center"><progress value="10" max="182">
 </progress></td></tr>
                                  <tr>
                                     <td align="center">
@@ -3087,8 +2955,8 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                 </tbody>
             </table>
         </div>
-<h1 id="已经看完的书"><a class="markdownIt-Anchor" href="#已经看完的书"></a> 已经看完的书</h1>
-<div class="note info no-icon flat">
+
+<h1 id="已经看完的书"><a href="#已经看完的书" class="headerlink" title="已经看完的书"></a>已经看完的书</h1><div class="note info no-icon flat">
                             <p>
                                 <strong>已经看完的书⭐</strong>
                             </p>
@@ -3139,8 +3007,8 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                 </tbody>
             </table>
         </div>
-<h1 id="目前准备要看的书"><a class="markdownIt-Anchor" href="#目前准备要看的书"></a> 目前准备要看的书</h1>
-<div class="note warning no-icon flat">
+
+<h1 id="目前准备要看的书"><a href="#目前准备要看的书" class="headerlink" title="目前准备要看的书"></a>目前准备要看的书</h1><div class="note warning no-icon flat">
                             <p>
                                 <strong>目前准备要看的书⭐</strong>
                             </p>
@@ -3165,8 +3033,8 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                             </tbody>
     </table>
 </div>
-<h1 id="在书架上排队的书"><a class="markdownIt-Anchor" href="#在书架上排队的书"></a> 在书架上排队的书</h1>
-<div class="note success no-icon flat">
+
+<h1 id="在书架上排队的书"><a href="#在书架上排队的书" class="headerlink" title="在书架上排队的书"></a>在书架上排队的书</h1><div class="note success no-icon flat">
                             <p>
                                 <strong>在书架上排队的书⭐</strong>
                             </p>
@@ -3210,7 +3078,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                     <td align="center">待定</td></tr>
                             </tbody>
                     </table>
-                </div>      <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+                </div><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
         <category>日积月累的资源</category>
       </categories>
