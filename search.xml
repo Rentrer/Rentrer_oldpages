@@ -2936,7 +2936,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                         <a href="https://book.douban.com/subject/6792270/">佩德罗·巴拉莫</a>
                                     </td>
                                     <td align="center">魔幻现实主义小说</td>
-                                    <td align="center"><progress value="10" max="182">
+                                    <td align="center"><progress value="71" max="182">
 </progress></td></tr>
                                  <tr>
                                     <td align="center">
@@ -2952,6 +2952,13 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                     <td align="center">心理学</td>
                                     <td align="center"><progress value="34" max="422">
 </progress></td></tr>
+<tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/1003986/">病隙碎笔</a>
+                                    </td>
+                                    <td align="center">史铁生小说</td>
+                                    <td align="center"><progress value="34" max="422">
+</progress></td></tr>
                 </tbody>
             </table>
         </div>
@@ -2965,7 +2972,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                     <tr>
                                         <th>书名</th>
                                         <th>类型</th>
-                                        <th>进度</th>
+                                        <th>时间</th>
                                     </tr>
                                     </thead>
                             <tbody>
@@ -2974,36 +2981,31 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                         <a href="https://book.douban.com/subject/34613713/">给仰望者的朝圣之旅</a>
                                     </td>
                                     <td align="center">天文学科普</td>
-                                    <td align="center"><progress value="255" max="255">
-</progress></td></tr>
+                                    <td align="center">2021-05-23</td></tr>
                                 <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/26912631/">道林格雷的画像</a>
                                     </td>
                                     <td align="center">王尔德小说</td>
-                                    <td align="center"><progress value="248" max="248">
-</progress></td></tr>
+                                    <td align="center">2021-09-10</td></tr>
                                 <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/26163454/">数学之美</a>
                                     </td>
                                     <td align="center">数学类科普</td>
-                                    <td align="center"><progress value="248" max="248">
-</progress></td></tr>
+                                    <td align="center">2021-10-14</td></tr>
                                  <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/34326931/">掌控习惯</a>
                                     </td>
                                      <td align="center">自我管理</td>
-                                    <td align="center"><progress value="248" max="248">
-</progress></td></tr>
+                                    <td align="center">2021-11-24</td></tr>
                                 <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/35546311/">这么多年</a>
                                     </td>
                                     <td align="center">青春文学小说</td>
-                                    <td align="center"><progress value="796" max="796">
-</progress></td></tr>
+                                    <td align="center">2022-02-05</td></tr>
                 </tbody>
             </table>
         </div>
@@ -3020,6 +3022,11 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                     </tr>
                                     </thead>
                         <tbody>
+<tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/6425901/">务虚笔记</a>
+                                    </td>
+                                    <td align="center">待定</td></tr>
                             <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/1863930/">看不见的城市</a>
@@ -3046,6 +3053,12 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                     </tr>
                                     </thead>
                         <tbody>
+ <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/6781808/">杀死一只知更鸟</a>
+                                    </td>
+                                    <td align="center">高中就想读的书，先码着</td></tr>
+
                             <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/3014444/">自深深处</a>
@@ -5095,7 +5108,7 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
             </details>
 <details class="folding-tag" yellow><summary> 时间线梳理 </summary>
               <div class="content">
-              <div class="timeline"><div class="timenode"><div class="meta"><p></p><p>2022-01-02</p><p></p></div><div class="body"><p>被myy拐骗（bushi），投递简历</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-13</p><p></p></div><div class="body"><div class="tip cogs"><p>队长分配整体任务：</p><p>myy和syy要完成的东西:<br>brochure<br>宣传video<br>交互平台的设计(如果允许可以代码实现出来)<br>计划书的美化与内容完善<br>ppt的完善<br>属于美工部分的要求都力求精美甚至完美，</p></div></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-15</p><p></p></div><div class="body"><p>第一次队长与老师的会议</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-17</p><p></p></div><div class="body"><p>三创赛启动会议及讨论</p></div></div></div>
+              <div class="timeline"><div class="timenode"><div class="meta"><p></p><p>2022-01-02</p><p></p></div><div class="body"><p>被myy拐骗（bushi），投递简历</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-13</p><p></p></div><div class="body"><div class="tip cogs"><p>队长分配整体任务：</p><p>myy和syy要完成的东西:<br>brochure<br>宣传video<br>交互平台的设计(如果允许可以代码实现出来)<br>计划书的美化与内容完善<br>ppt的完善<br>属于美工部分的要求都力求精美甚至完美，</p></div></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-15</p><p></p></div><div class="body"><p>第一次队长与老师的会议</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-17</p><p></p></div><div class="body"><p>三创赛启动会议及讨论</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-02-20</p><p></p></div><div class="body"><p>美工第一次会议</p><p>任务：更新具体的任务看板，3天内规划完成</p></div></div></div>
               </div>
             </details>
 <p>假期主要任务：</p>
