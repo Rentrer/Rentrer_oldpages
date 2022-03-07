@@ -2931,13 +2931,6 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                     </tr>
                                     </thead>
                             <tbody>
-                                <tr>
-                                    <td align="center">
-                                        <a href="https://book.douban.com/subject/6792270/">佩德罗·巴拉莫</a>
-                                    </td>
-                                    <td align="center">魔幻现实主义小说</td>
-                                    <td align="center"><progress value="71" max="182">
-</progress></td></tr>
                                  <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/1013208/">如何阅读一本书</a>
@@ -3006,6 +2999,12 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                     </td>
                                     <td align="center">青春文学小说</td>
                                     <td align="center">2022-02-05</td></tr>
+<tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/6792270/">佩德罗·巴拉莫</a>
+                                    </td>
+                                    <td align="center">魔幻现实主义小说</td>
+                                    <td align="center">2022-02-25</td></tr>
                 </tbody>
             </table>
         </div>
@@ -3058,40 +3057,39 @@ cmp <strong>算术减法运算（SUB）结果为零</strong>,就把ZF(零标志)
                                         <a href="https://book.douban.com/subject/6781808/">杀死一只知更鸟</a>
                                     </td>
                                     <td align="center">高中就想读的书，先码着</td></tr>
-
+                        <tr>
+                                <td align="center">
+                                    <a href="https://book.douban.com/subject/3014444/">自深深处</a>
+                                </td>
+                                <td align="center">这本书应静下心看</td></tr>
+                        <tr>
+                                <td align="center">
+                                    <a href="https://book.douban.com/subject/4820710/">1984</a>
+                                </td>
+                                <td align="center">突然想读了，先码着</td></tr>
                             <tr>
-                                    <td align="center">
-                                        <a href="https://book.douban.com/subject/3014444/">自深深处</a>
-                                    </td>
-                                    <td align="center">这本书应静下心看</td></tr>
-                            <tr>
-                                    <td align="center">
-                                        <a href="https://book.douban.com/subject/4820710/">1984</a>
-                                    </td>
-                                    <td align="center">突然想读了，先码着</td></tr>
-                                <tr>
-                                    <td align="center">
-                                        <a href="https://book.douban.com/subject/10785583/">鼠疫</a>
-                                    </td>
-                                    <td align="center">没看完，打算之后看完</td></tr>
-                            <tr>
-                                    <td align="center">
-                                        <a href="https://book.douban.com/subject/3131626/">荒原狼</a>
-                                    </td>
-                                    <td align="center">看介绍挺好的，先码了</td></tr>
-                            <tr>
-                                    <td align="center">
-                                        <a href="https://book.douban.com/subject/26954760/">月亮与六便士</a>
-                                    </td>
-                                    <td align="center">看完之前的两本就开始</td></tr>
-                            <tr>
-                                    <td align="center">
-                                        <a href="https://book.douban.com/subject/6440343/">诗集：荒原</a>
-                                    </td>
-                                    <td align="center">待定</td></tr>
-                            </tbody>
-                    </table>
-                </div><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+                                <td align="center">
+                                    <a href="https://book.douban.com/subject/10785583/">鼠疫</a>
+                                </td>
+                                <td align="center">没看完，打算之后看完</td></tr>
+                        <tr>
+                                <td align="center">
+                                    <a href="https://book.douban.com/subject/3131626/">荒原狼</a>
+                                </td>
+                                <td align="center">看介绍挺好的，先码了</td></tr>
+                        <tr>
+                                <td align="center">
+                                    <a href="https://book.douban.com/subject/26954760/">月亮与六便士</a>
+                                </td>
+                                <td align="center">看完之前的两本就开始</td></tr>
+                        <tr>
+                                <td align="center">
+                                    <a href="https://book.douban.com/subject/6440343/">诗集：荒原</a>
+                                </td>
+                                <td align="center">待定</td></tr>
+                        </tbody>
+                </table>
+            </div><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
         <category>日积月累的资源</category>
       </categories>
