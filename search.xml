@@ -428,10 +428,10 @@
                 <p class="card-status">
                     <span class="play-num">
                         <i class="fa fa-youtube-play"></i>
-                        <span>164.3万</span></span>
+                        <span>219.7万</span></span>
                     <span>
                         <i class="fa fa-list-alt"></i>
-                        <span>2842</span></span></p>
+                        <span>3874</span></span></p>
                 <div class="partition">
                     <label class="card-label">视频</label>
                     <label class="up-label"></label>
@@ -461,10 +461,10 @@
                 <p class="card-status">
                     <span class="play-num">
                         <i class="fa fa-youtube-play"></i>
-                        <span>9.3万</span></span>
+                        <span>12.8万</span></span>
                     <span>
                         <i class="fa fa-list-alt"></i>
-                        <span>757</span></span></p>
+                        <span>832</span></span></p>
                 <div class="partition">
                     <label class="card-label">视频</label>
                     <label class="up-label"></label>
@@ -491,10 +491,10 @@
                 <p class="card-status">
                     <span class="play-num">
                         <i class="fa fa-youtube-play"></i>
-                        <span>26.9万</span></span>
+                        <span>45.5万</span></span>
                     <span>
                         <i class="fa fa-list-alt"></i>
-                        <span>537</span></span></p>
+                        <span>751</span></span></p>
                 <div class="partition">
                     <label class="card-label">视频</label>
                     <label class="up-label"></label>
@@ -525,10 +525,10 @@
                 <p class="card-status">
                     <span class="play-num">
                         <i class="fa fa-youtube-play"></i>
-                        <span>32.0万</span></span>
+                        <span>47.8万</span></span>
                     <span>
                         <i class="fa fa-list-alt"></i>
-                        <span>732</span></span></p>
+                        <span>998</span></span></p>
                 <div class="partition">
                     <label class="card-label">视频</label>
                     <label class="up-label"></label>
@@ -545,24 +545,24 @@
         <div class="bvideo-box">
             <div class="bvideo-cover">
                 <div class="cover-default"></div>
-                <div class="bvideo-cover-layer" style="background-image:url(https://images.weserv.nl/?url=http://i2.hdslb.com/bfs/archive/f0054443971ea28e0d0633847acbaa1a6075e9ce.jpg)">
+                <div class="bvideo-cover-layer" style="background-image:url(https://images.weserv.nl/?url=)">
                     <i class="icon-video"></i>
                 </div>
-                <span class="duration">00:44:30</span>
+                <span class="duration"></span>
             </div>
             <div class="bvideo-info">
-                <p class="title">20岁到30岁，是你最不可挥霍的光阴（T君译）</p>
+                <p class="title">出错了！</p>
                 <p class="card-status">
                     <span class="play-num">
                         <i class="fa fa-youtube-play"></i>
-                        <span>39.2万</span></span>
+                        <span></span></span>
                     <span>
                         <i class="fa fa-list-alt"></i>
-                        <span>925</span></span></p>
+                        <span></span></span></p>
                 <div class="partition">
-                    <label class="card-label">视频</label>
+                    <label class="card-label"></label>
                     <label class="up-label"></label>
-                    <label class="up-name">T君T酱</label>
+                    <label class="up-name"></label>
                 </div>
                 <div class="actions hide"></div>
             </div>
@@ -587,10 +587,10 @@
                 <p class="card-status">
                     <span class="play-num">
                         <i class="fa fa-youtube-play"></i>
-                        <span>37.1万</span></span>
+                        <span>52.2万</span></span>
                     <span>
                         <i class="fa fa-list-alt"></i>
-                        <span>564</span></span></p>
+                        <span>820</span></span></p>
                 <div class="partition">
                     <label class="card-label">视频</label>
                     <label class="up-label"></label>
@@ -619,10 +619,10 @@
                 <p class="card-status">
                     <span class="play-num">
                         <i class="fa fa-youtube-play"></i>
-                        <span>37.1万</span></span>
+                        <span>52.2万</span></span>
                     <span>
                         <i class="fa fa-list-alt"></i>
-                        <span>564</span></span></p>
+                        <span>820</span></span></p>
                 <div class="partition">
                     <label class="card-label">视频</label>
                     <label class="up-label"></label>
@@ -633,6 +633,89 @@
         </div>
     </a>
 </div><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>日积月累的资源</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>📁Vscode——从零开始的美观编程之路</title>
+    <url>/posts/Vscode/</url>
+    <content><![CDATA[<p>大一上结束后，我不甘于继续用在我看来不够美观的Devc++（<strong>不够花里胡哨</strong>），开始搜索其他编译器。</p>
+<p>在同学的安利下，我下载了这款只能算得上编辑器（和编译器有很大区别）的Visual Studio Code,并开启了我的编程之路。</p>
+<p>从大一下的C++，到自己配置的Python3.7，再到建网站时修改yaml，css 和 js，甚至在其中运行生成Latex代码，大二下的Java，甚至还能刷力扣、实验课摸鱼等，Vscode作为一个轻量级的编辑器很大程度的方便了我的这些方面，</p>
+<p>加上有人想看配置环境，我就干脆从头写一份教程吧，希望可以帮到想用Vscode的你们</p>
+<h1 id="1、下载安装流程"><a href="#1、下载安装流程" class="headerlink" title="1、下载安装流程"></a>1、下载安装流程</h1><p>2021 3 22更新：今天突然找到了一位大佬编写的自动配置Vscode的软件，链接：<a href="http://guyutongxue.gitee.io/vscodeconfighelper/">Vs Code Config Helper</a></p>
+<p>让我们一步一步开始吧</p>
+<p>首先下载上方链接的压缩包，并<strong>解压到一个文件夹里</strong>，不要在压缩包里直接双击软件。图例如下</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/1.png" alt></p>
+<p>之后双击文件夹里的 VSCodeConfigHelper，进入程序。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/2.png" alt></p>
+<p>这里要选择一个文件夹，用来放你的C/C++的程序代码，建议<strong>不要放在C盘</strong>，可以在<strong>D或E中新建一个文件夹</strong>。</p>
+<p>注意：这里由于软件设置，<strong>存储的路径不能包含空格和中文字符</strong>，所以不要放在Program files文件夹下，直接在D/E盘根目录下新建一个文件夹即可，例如这样：（因为我使用的是虚拟机配置，只有C盘，忽略这个C盘）。之后点击下一步。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/3.png" alt></p>
+<p>第二步就是要安装C++相关的编译文件，这里我们采用MinGW，Devc++就是内置了MinGW的编译器。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/4.png" alt></p>
+<p>首先点击右侧的链接进行下载，下载下来发现是一个<strong>后缀名为.7z</strong>的文件，这个与常见的.zip,.rar同属压缩文件，用常见的解压缩器即可成功解压。用常规解压缩可能会导致解压时间较长，请耐心等待。</p>
+<p>这里注意，要把mingw64文件夹整体解压缩出来，建议保存在与你第一步创建文件夹同级的地方，示例如下</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/5.png" alt></p>
+<p>之后回到软件界面，选择你刚解压缩出来的mingw64文件夹，单击并确定，若出现绿字则说明路径正确。示例如下</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/6.png" alt></p>
+<p>点击下一步，进入下载网址下载我们梦寐以求的Vscode</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/7.png" alt></p>
+<p>这一步中，尽量不要把Vscode安装在自己的C盘，我C盘红了就是因为年少轻狂不懂事，血的教训QAQ</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/8.png" alt></p>
+<p>这一步按如下设置进行勾选</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/9.png" alt></p>
+<p>安装完成之后，<strong>可以选择重启</strong>，也可以继续先完成扩展的下载。</p>
+<p>回到软件界面，先点击界面上的刷新按钮，当显示找到vscode后，再点击安装扩展。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/10.png" alt></p>
+<p>注：这一步可能会耗时较长，因为最近的github访问不稳定，若长时间无反应可以先关闭cmd窗口，再次点击“安装扩展“即可。出现如下画面即为安装成功：</p>
+<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/11.png" width="92%" height="92%"></div>
+
+<p>回到软件界面，发现C/C++扩展已经安装好了，我们点击下一步。</p>
+<p>样式可以自行选择自己喜欢的，个人推荐第一个。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/12.png" alt></p>
+<p>最后点击下一步，我们的第一阶段的配置就完成了！</p>
+<h1 id="2、测试环节"><a href="#2、测试环节" class="headerlink" title="2、测试环节"></a>2、测试环节</h1><p>在配置好之后，软件会自动生成一个Hello World.cpp，供我们测试，此时我们只需要单击键盘上的F5，就可以在下面的Terminal看到令人激动的Hello World了！</p>
+<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/12.1.png" width="92%" height="92%"></div>
+
+<p>啊这。咋失败了呢</p>
+<p>出现这个情况的小伙伴先不要惊慌，这只是Vscode第一次编译没有完全，你可以先关闭Vscode的进程，再重新打开，再按F5，就能看到如下的输出辣</p>
+<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/12.2.png" width="92%" height="92%"></div>
+
+<p>芜湖，这样就可以在Vscode上快乐的写C++作业辣</p>
+<h1 id="3、常见设置的配置"><a href="#3、常见设置的配置" class="headerlink" title="3、常见设置的配置"></a>3、常见设置的配置</h1><h2 id="（1）代码字体大小-amp-amp-自动保存问题"><a href="#（1）代码字体大小-amp-amp-自动保存问题" class="headerlink" title="（1）代码字体大小&amp;&amp;自动保存问题"></a>（1）代码字体大小&amp;&amp;自动保存问题</h2><p>Vscode默认的代码有点小，看上去有点费眼睛，怎么办呢？</p>
+<p>当年修改程序后点击运行，却发现自己没有保存，程序仍然按之前的结果运行，怎么办呢？</p>
+<p>我们首先点击界面左下角的齿轮按钮，进入设置界面</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/20.png" alt></p>
+<p>两项都可以按照自己进行设置</p>
+<h2 id="（2）主题设置"><a href="#（2）主题设置" class="headerlink" title="（2）主题设置"></a>（2）主题设置</h2><p>不想要纯黑的编辑器，想换个颜色？换！换大份的！</p>
+<p>在Vscode界面，先按下Ctrl+K，再按下Ctrl+T，即可出现切换主题的界面，自行挑选辣，可以按上下键预览</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/22.png" alt></p>
+<h1 id="4、插件推荐"><a href="#4、插件推荐" class="headerlink" title="4、插件推荐"></a>4、插件推荐</h1><p>接下来就是Vscode的核心部分：插件的合理运用。下面我会推荐几个好用的插件，供大家选取，</p>
+<p>插件（其实应该叫扩展），在界面左边的五个按钮的最下面，点击即可出现搜索界面了，如下图</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/13.png" alt></p>
+<h2 id="（1）Chinese"><a href="#（1）Chinese" class="headerlink" title="（1）Chinese"></a>（1）Chinese</h2><p>在能运行代码之后，我们却发现，Vscode的默认界面是英文版的，我喜欢中文版该怎么办呢？</p>
+<p>在插件界面搜索Chinese，直接点击Install即可</p>
+<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/14.png" width="92%" height="92%"></div>
+
+<p>安装完成后，点击弹出的该界面的Restart，就可以看到熟悉的中文辣</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/15.png" alt></p>
+<h2 id="（2）Code-Runner"><a href="#（2）Code-Runner" class="headerlink" title="（2）Code Runner"></a>（2）Code Runner</h2><p>不习惯按F5，想<strong>点一个按钮就直接运行</strong>自己的代码怎么办？</p>
+<p>在插件界面搜索Code Runner，点击安装</p>
+<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/16.png" width="92%" height="92%"></div>
+
+<p>之后我们回到helloworld.cpp文件，我们发现，右上角多了一个小三角，点击他，终端就会简洁的直接输出了！</p>
+<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/17.png" width="92%" height="92%"></div>
+
+<h2 id="（3）Bracket-Pair-Colorizer-2"><a href="#（3）Bracket-Pair-Colorizer-2" class="headerlink" title="（3）Bracket Pair Colorizer 2"></a>（3）Bracket Pair Colorizer 2</h2><p>当一个程序，括号套括号套括号套括号套括号，这时候是不是就不好辨认了？我们有办法！</p>
+<p>在插件界面搜索Bracket Pair Colorizer 2，点击安装</p>
+<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/18.png" width="92%" height="92%"></div>
+
+<p>在自己的代码中尝试括号的嵌套，就会发现括号的颜色变了！</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/19.png" alt></p>
+<h2 id="（4）持续更新"><a href="#（4）持续更新" class="headerlink" title="（4）持续更新"></a>（4）持续更新</h2><h1 id="4、结语"><a href="#4、结语" class="headerlink" title="4、结语"></a>4、结语</h1><p>一直想写这篇教程，因为挺多人问我该怎么配置Vscode，而且恰好找到了一个可以一键配置的大佬写的软件，就花了一个半小时在虚拟机上完成了配置，写下了这篇教程。希望看完教程的大家都能收获一个全新的编程体验，以后更多地方都会用上Vscode的！有别人问你的话你也可以直接把链接分享给ta，大家都方便。</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
         <category>日积月累的资源</category>
       </categories>
@@ -727,89 +810,6 @@
         <tag>课内学习笔记</tag>
         <tag>考试复习整理</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>📁Vscode——从零开始的美观编程之路</title>
-    <url>/posts/Vscode/</url>
-    <content><![CDATA[<p>大一上结束后，我不甘于继续用在我看来不够美观的Devc++（<strong>不够花里胡哨</strong>），开始搜索其他编译器。</p>
-<p>在同学的安利下，我下载了这款只能算得上编辑器（和编译器有很大区别）的Visual Studio Code,并开启了我的编程之路。</p>
-<p>从大一下的C++，到自己配置的Python3.7，再到建网站时修改yaml，css 和 js，甚至在其中运行生成Latex代码，大二下的Java，甚至还能刷力扣、实验课摸鱼等，Vscode作为一个轻量级的编辑器很大程度的方便了我的这些方面，</p>
-<p>加上有人想看配置环境，我就干脆从头写一份教程吧，希望可以帮到想用Vscode的你们</p>
-<h1 id="1、下载安装流程"><a href="#1、下载安装流程" class="headerlink" title="1、下载安装流程"></a>1、下载安装流程</h1><p>2021 3 22更新：今天突然找到了一位大佬编写的自动配置Vscode的软件，链接：<a href="http://guyutongxue.gitee.io/vscodeconfighelper/">Vs Code Config Helper</a></p>
-<p>让我们一步一步开始吧</p>
-<p>首先下载上方链接的压缩包，并<strong>解压到一个文件夹里</strong>，不要在压缩包里直接双击软件。图例如下</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/1.png" alt></p>
-<p>之后双击文件夹里的 VSCodeConfigHelper，进入程序。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/2.png" alt></p>
-<p>这里要选择一个文件夹，用来放你的C/C++的程序代码，建议<strong>不要放在C盘</strong>，可以在<strong>D或E中新建一个文件夹</strong>。</p>
-<p>注意：这里由于软件设置，<strong>存储的路径不能包含空格和中文字符</strong>，所以不要放在Program files文件夹下，直接在D/E盘根目录下新建一个文件夹即可，例如这样：（因为我使用的是虚拟机配置，只有C盘，忽略这个C盘）。之后点击下一步。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/3.png" alt></p>
-<p>第二步就是要安装C++相关的编译文件，这里我们采用MinGW，Devc++就是内置了MinGW的编译器。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/4.png" alt></p>
-<p>首先点击右侧的链接进行下载，下载下来发现是一个<strong>后缀名为.7z</strong>的文件，这个与常见的.zip,.rar同属压缩文件，用常见的解压缩器即可成功解压。用常规解压缩可能会导致解压时间较长，请耐心等待。</p>
-<p>这里注意，要把mingw64文件夹整体解压缩出来，建议保存在与你第一步创建文件夹同级的地方，示例如下</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/5.png" alt></p>
-<p>之后回到软件界面，选择你刚解压缩出来的mingw64文件夹，单击并确定，若出现绿字则说明路径正确。示例如下</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/6.png" alt></p>
-<p>点击下一步，进入下载网址下载我们梦寐以求的Vscode</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/7.png" alt></p>
-<p>这一步中，尽量不要把Vscode安装在自己的C盘，我C盘红了就是因为年少轻狂不懂事，血的教训QAQ</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/8.png" alt></p>
-<p>这一步按如下设置进行勾选</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/9.png" alt></p>
-<p>安装完成之后，<strong>可以选择重启</strong>，也可以继续先完成扩展的下载。</p>
-<p>回到软件界面，先点击界面上的刷新按钮，当显示找到vscode后，再点击安装扩展。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/10.png" alt></p>
-<p>注：这一步可能会耗时较长，因为最近的github访问不稳定，若长时间无反应可以先关闭cmd窗口，再次点击“安装扩展“即可。出现如下画面即为安装成功：</p>
-<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/11.png" width="92%" height="92%"></div>
-
-<p>回到软件界面，发现C/C++扩展已经安装好了，我们点击下一步。</p>
-<p>样式可以自行选择自己喜欢的，个人推荐第一个。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/12.png" alt></p>
-<p>最后点击下一步，我们的第一阶段的配置就完成了！</p>
-<h1 id="2、测试环节"><a href="#2、测试环节" class="headerlink" title="2、测试环节"></a>2、测试环节</h1><p>在配置好之后，软件会自动生成一个Hello World.cpp，供我们测试，此时我们只需要单击键盘上的F5，就可以在下面的Terminal看到令人激动的Hello World了！</p>
-<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/12.1.png" width="92%" height="92%"></div>
-
-<p>啊这。咋失败了呢</p>
-<p>出现这个情况的小伙伴先不要惊慌，这只是Vscode第一次编译没有完全，你可以先关闭Vscode的进程，再重新打开，再按F5，就能看到如下的输出辣</p>
-<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/12.2.png" width="92%" height="92%"></div>
-
-<p>芜湖，这样就可以在Vscode上快乐的写C++作业辣</p>
-<h1 id="3、常见设置的配置"><a href="#3、常见设置的配置" class="headerlink" title="3、常见设置的配置"></a>3、常见设置的配置</h1><h2 id="（1）代码字体大小-amp-amp-自动保存问题"><a href="#（1）代码字体大小-amp-amp-自动保存问题" class="headerlink" title="（1）代码字体大小&amp;&amp;自动保存问题"></a>（1）代码字体大小&amp;&amp;自动保存问题</h2><p>Vscode默认的代码有点小，看上去有点费眼睛，怎么办呢？</p>
-<p>当年修改程序后点击运行，却发现自己没有保存，程序仍然按之前的结果运行，怎么办呢？</p>
-<p>我们首先点击界面左下角的齿轮按钮，进入设置界面</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/20.png" alt></p>
-<p>两项都可以按照自己进行设置</p>
-<h2 id="（2）主题设置"><a href="#（2）主题设置" class="headerlink" title="（2）主题设置"></a>（2）主题设置</h2><p>不想要纯黑的编辑器，想换个颜色？换！换大份的！</p>
-<p>在Vscode界面，先按下Ctrl+K，再按下Ctrl+T，即可出现切换主题的界面，自行挑选辣，可以按上下键预览</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/22.png" alt></p>
-<h1 id="4、插件推荐"><a href="#4、插件推荐" class="headerlink" title="4、插件推荐"></a>4、插件推荐</h1><p>接下来就是Vscode的核心部分：插件的合理运用。下面我会推荐几个好用的插件，供大家选取，</p>
-<p>插件（其实应该叫扩展），在界面左边的五个按钮的最下面，点击即可出现搜索界面了，如下图</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/13.png" alt></p>
-<h2 id="（1）Chinese"><a href="#（1）Chinese" class="headerlink" title="（1）Chinese"></a>（1）Chinese</h2><p>在能运行代码之后，我们却发现，Vscode的默认界面是英文版的，我喜欢中文版该怎么办呢？</p>
-<p>在插件界面搜索Chinese，直接点击Install即可</p>
-<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/14.png" width="92%" height="92%"></div>
-
-<p>安装完成后，点击弹出的该界面的Restart，就可以看到熟悉的中文辣</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/15.png" alt></p>
-<h2 id="（2）Code-Runner"><a href="#（2）Code-Runner" class="headerlink" title="（2）Code Runner"></a>（2）Code Runner</h2><p>不习惯按F5，想<strong>点一个按钮就直接运行</strong>自己的代码怎么办？</p>
-<p>在插件界面搜索Code Runner，点击安装</p>
-<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/16.png" width="92%" height="92%"></div>
-
-<p>之后我们回到helloworld.cpp文件，我们发现，右上角多了一个小三角，点击他，终端就会简洁的直接输出了！</p>
-<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/17.png" width="92%" height="92%"></div>
-
-<h2 id="（3）Bracket-Pair-Colorizer-2"><a href="#（3）Bracket-Pair-Colorizer-2" class="headerlink" title="（3）Bracket Pair Colorizer 2"></a>（3）Bracket Pair Colorizer 2</h2><p>当一个程序，括号套括号套括号套括号套括号，这时候是不是就不好辨认了？我们有办法！</p>
-<p>在插件界面搜索Bracket Pair Colorizer 2，点击安装</p>
-<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/18.png" width="92%" height="92%"></div>
-
-<p>在自己的代码中尝试括号的嵌套，就会发现括号的颜色变了！</p>
-<p><img src= "/img/loading.gif" data-lazy-src="/posts/Vscode/19.png" alt></p>
-<h2 id="（4）持续更新"><a href="#（4）持续更新" class="headerlink" title="（4）持续更新"></a>（4）持续更新</h2><h1 id="4、结语"><a href="#4、结语" class="headerlink" title="4、结语"></a>4、结语</h1><p>一直想写这篇教程，因为挺多人问我该怎么配置Vscode，而且恰好找到了一个可以一键配置的大佬写的软件，就花了一个半小时在虚拟机上完成了配置，写下了这篇教程。希望看完教程的大家都能收获一个全新的编程体验，以后更多地方都会用上Vscode的！有别人问你的话你也可以直接把链接分享给ta，大家都方便。</p>
-<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <categories>
-        <category>日积月累的资源</category>
-      </categories>
   </entry>
   <entry>
     <title>XML开发技术——第一章</title>
@@ -1126,6 +1126,34 @@
       </tags>
   </entry>
   <entry>
+    <title>三创赛记录</title>
+    <url>/posts/meta-fit/</url>
+    <content><![CDATA[<details class="folding-tag" cyan><summary> 前情提要 </summary>
+              <div class="content">
+              <p>事情要起源于1月2号的一则招募转发</p><p>在我认为很合适的xd说他不打比赛后</p><p>自己对三创有了一丶心动</p><p>虽然算是不务正业，但也一直想提升一下自己设计和做视频的能力</p><p>就这么在考试周第二天要考OOAD的压力下，准备了简单的简历</p><p>但还是有点慌，因为交互设计和视频制作我都不擅长</p><p>罢了，既来之则安之，学！</p><p>为了成为一个更专业的宣中人加油哈哈哈哈哈</p>
+              </div>
+            </details>
+<details class="folding-tag" yellow><summary> 时间线梳理 </summary>
+              <div class="content">
+              <div class="timeline"><div class="timenode"><div class="meta"><p></p><p>2022-01-02</p><p></p></div><div class="body"><p>被myy拐骗（bushi），投递简历</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-13</p><p></p></div><div class="body"><div class="tip cogs"><p>队长分配整体任务：</p><p>myy和syy要完成的东西:<br>brochure<br>宣传video<br>交互平台的设计(如果允许可以代码实现出来)<br>计划书的美化与内容完善<br>ppt的完善<br>属于美工部分的要求都力求精美甚至完美，</p></div></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-15</p><p></p></div><div class="body"><p>第一次队长与老师的会议</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-17</p><p></p></div><div class="body"><p>三创赛启动会议及讨论</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-02-20</p><p></p></div><div class="body"><p>美工第一次会议</p><p>任务：更新具体的任务看板，3天内规划完成</p></div></div></div>
+              </div>
+            </details>
+<p>假期主要任务：</p>
+<ol>
+<li>brochure</li>
+<li>宣传video</li>
+<li>交互平台的设计(如果允许可以代码实现出来)</li>
+<li>计划书的美化与内容完善</li>
+<li>ppt的完善</li>
+</ol>
+<p>2022.1.17更新</p>
+<p>交互设计聚焦的并不单纯是的把某个界面&amp;流程设计好，还需要充分的理解自己产品的业务，挖掘用户痛点或者产品的增长点，思考如何将产品目标与用户体验相结合，把设计转化为产品价值，平衡设计和成本等等。这些我认为才是交互设计的核心价值</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <tags>
+        <tag>新事物尝试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客目录</title>
     <url>/posts/contents/</url>
     <content><![CDATA[<h1 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h1><h2 id="大二上"><a href="#大二上" class="headerlink" title="大二上"></a>大二上</h2><div class="note success no-icon flat">
@@ -1263,34 +1291,6 @@
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
   </entry>
   <entry>
-    <title>三创赛记录</title>
-    <url>/posts/meta-fit/</url>
-    <content><![CDATA[<details class="folding-tag" cyan><summary> 前情提要 </summary>
-              <div class="content">
-              <p>事情要起源于1月2号的一则招募转发</p><p>在我认为很合适的xd说他不打比赛后</p><p>自己对三创有了一丶心动</p><p>虽然算是不务正业，但也一直想提升一下自己设计和做视频的能力</p><p>就这么在考试周第二天要考OOAD的压力下，准备了简单的简历</p><p>但还是有点慌，因为交互设计和视频制作我都不擅长</p><p>罢了，既来之则安之，学！</p><p>为了成为一个更专业的宣中人加油哈哈哈哈哈</p>
-              </div>
-            </details>
-<details class="folding-tag" yellow><summary> 时间线梳理 </summary>
-              <div class="content">
-              <div class="timeline"><div class="timenode"><div class="meta"><p></p><p>2022-01-02</p><p></p></div><div class="body"><p>被myy拐骗（bushi），投递简历</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-13</p><p></p></div><div class="body"><div class="tip cogs"><p>队长分配整体任务：</p><p>myy和syy要完成的东西:<br>brochure<br>宣传video<br>交互平台的设计(如果允许可以代码实现出来)<br>计划书的美化与内容完善<br>ppt的完善<br>属于美工部分的要求都力求精美甚至完美，</p></div></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-15</p><p></p></div><div class="body"><p>第一次队长与老师的会议</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-01-17</p><p></p></div><div class="body"><p>三创赛启动会议及讨论</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-02-20</p><p></p></div><div class="body"><p>美工第一次会议</p><p>任务：更新具体的任务看板，3天内规划完成</p></div></div></div>
-              </div>
-            </details>
-<p>假期主要任务：</p>
-<ol>
-<li>brochure</li>
-<li>宣传video</li>
-<li>交互平台的设计(如果允许可以代码实现出来)</li>
-<li>计划书的美化与内容完善</li>
-<li>ppt的完善</li>
-</ol>
-<p>2022.1.17更新</p>
-<p>交互设计聚焦的并不单纯是的把某个界面&amp;流程设计好，还需要充分的理解自己产品的业务，挖掘用户痛点或者产品的增长点，思考如何将产品目标与用户体验相结合，把设计转化为产品价值，平衡设计和成本等等。这些我认为才是交互设计的核心价值</p>
-<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <tags>
-        <tag>新事物尝试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>序</title>
     <url>/posts/13091/</url>
     <content><![CDATA[<p>很久之前就想拥有，在得知朋友尝试搭建了之后便立刻(不要脸)的索取了教程。会在这里记录一些心情和一些笔记（但愿）</p>
@@ -1298,6 +1298,87 @@
       <categories>
         <category>杂谈</category>
       </categories>
+  </entry>
+  <entry>
+    <title>操作系统期中复习</title>
+    <url>/posts/os_review/</url>
+    <content><![CDATA[<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>支教笔面试整理</title>
+    <url>/posts/volunteer_pre/</url>
+    <content><![CDATA[<p>该开始系统的准备一下笔试面试啦，面试完会更新面经在后面</p>
+<details class="folding-tag" cyan><summary> 前情提要 </summary>
+              <div class="content">
+              <p>可能确实是巧合吧</p><p>大三巧合的开始团学工作，一年间接触到了很多人很多事，锻炼了很多自己之前没有的特质，和毛毛聊了之后突然想gap一年去洗涤一下自己，想着自己以前还自诩很会教别人学东西，加之自己一家其实都是老师哈哈哈哈哈不知道有没有遗传到，于是很早就决定走这条路啦，只是现在才正式开始准备，要加油啦</p>
+              </div>
+            </details>
+<details class="folding-tag" yellow><summary> 时间线梳理 </summary>
+              <div class="content">
+              <div class="timeline"><div class="timenode"><div class="meta"><p></p><p>2022-07-17</p><p></p></div><div class="body"><p>学校下发第25届通知</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-07-28</p><p></p></div><div class="body"><p>开始阅读第一本书</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-08-02</p><p></p></div><div class="body"><p>在小红书上找到了上一届的学姐的经验分享</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-08-26</p><p></p></div><div class="body"><p>报名材料截止提交，本院交了四个人</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-08-30</p><p></p></div><div class="body"><p>材料初审通过，候选人剩下58人，通知了初步的体检、心理测试及笔面试时间</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-08-31</p><p></p></div><div class="body"><p>通知体检时间为9月2日早上七点半，厦门大学附属中山医院厦禾体检部。</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-09-02</p><p></p></div><div class="body"><p>体检，自费311元，入选后凭发票报销</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-09-03</p><p></p></div><div class="body"><p>线上心理测试，做了187道题，15min</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-09-05</p><p></p></div><div class="body"><p>思明线下笔试，群贤二105，时长两个小时，考试范围为党团理论知识，教育教学知识，时事政治，研支团基本情况，习近平总书记关于青年及共青团的重要讲话精神，参加考试人数为56人</p></div></div><div class="timenode"><div class="meta"><p></p><p>2022-09-09</p><p></p></div><div class="body"><p>思明面试</p></div></div></div>
+              </div>
+            </details>
+<h2 id="阅读准备"><a href="#阅读准备" class="headerlink" title="阅读准备"></a>阅读准备</h2><h3 id="《让建南钟声传响大山深处》"><a href="#《让建南钟声传响大山深处》" class="headerlink" title="《让建南钟声传响大山深处》"></a>《让建南钟声传响大山深处》</h3><p>一些摘抄+心得</p>
+<h3 id="《扶贫接力-中国青年志愿者扶贫接力计划研究生支教团项目二十年思考》"><a href="#《扶贫接力-中国青年志愿者扶贫接力计划研究生支教团项目二十年思考》" class="headerlink" title="《扶贫接力:中国青年志愿者扶贫接力计划研究生支教团项目二十年思考》"></a>《扶贫接力:中国青年志愿者扶贫接力计划研究生支教团项目二十年思考》</h3><p>一些摘抄+心得</p>
+<h2 id="笔试准备（精力不用投入太多）"><a href="#笔试准备（精力不用投入太多）" class="headerlink" title="笔试准备（精力不用投入太多）"></a>笔试准备（精力不用投入太多）</h2><p>笔试题型（by咨询群王心君老师）</p>
+<p>选择、填空、案例、作文</p>
+<p>挨个分析：</p>
+<p>笔试方面，内容主要如下（by妥妥学姐）（选择+简答？）</p>
+<ol>
+<li>党团相关常识</li>
+<li>教师相关常识：教师资格证有关内容，如：什么是四有老师、教师观、学生观、教学观等</li>
+<li>对“西部计划”志愿者、本校研究生支教团光荣历史的了解</li>
+<li>参选研究生支教团的原因（志愿精神与情怀）</li>
+<li>课堂情景题（如果出现….的教学事故，你会如何处理/如果出现…的学生，你会如何对待他）</li>
+</ol>
+<h3 id="研支团相关整理（刷公众号为主）"><a href="#研支团相关整理（刷公众号为主）" class="headerlink" title="研支团相关整理（刷公众号为主）"></a>研支团相关整理（刷公众号为主）</h3><p>厦门大学研究生支教团是习近平总书记在福建工作期间亲自部署、亲自推动的<strong>“闵宁对口扶贫协作”援宁群体</strong>的重要成员，同时也是全国<strong>首批参加“中国青年志愿者扶贫接力研究生支教团项目”</strong>的团队。自1999年起，扎根“西海固”，先后派遣<strong>24届共345名</strong>优秀本科毕业生参加支教团工作。目前24届服务于宁夏回族自治区<strong>海原县、隆德县、彭阳县和永宁县</strong>。24届和25届及以后研究生支教团培训全部纳入<strong>“青年马克思主义培养工程”体系</strong>。</p>
+<p>所获得的一些荣誉：</p>
+<p>作为“闽宁协作援宁群体之一”，被中宣部授予了“时代楷模”的称号；曾获“福建青年五四奖章集体标兵”“志愿者扶贫案例50佳”等荣誉；曾登上世界青年发展论坛（第九届林杨琼）</p>
+<p>西海固，是指的是西吉 、海原 、固原三县</p>
+<h3 id="教育教学知识（教师资格证相关）"><a href="#教育教学知识（教师资格证相关）" class="headerlink" title="教育教学知识（教师资格证相关）"></a>教育教学知识（教师资格证相关）</h3><p>什么是四有老师？</p>
+<p>有理想信念、有道德情操、有扎实学识、有仁爱之心</p>
+<p>教师观</p>
+<p>学生观</p>
+<p>教育观</p>
+<h3 id="案例？课堂情景题（教师资格证结构化面试相关问题，应急应变模块）"><a href="#案例？课堂情景题（教师资格证结构化面试相关问题，应急应变模块）" class="headerlink" title="案例？课堂情景题（教师资格证结构化面试相关问题，应急应变模块）"></a>案例？课堂情景题（教师资格证结构化面试相关问题，应急应变模块）</h3><p>33.班里有一个学生的父母离异，学生的状态不好。作为老师，你怎么办？</p>
+<p>离异家庭的孩子容易出现孤独、自责、焦虑、自闭等不健康的心理问题，导致状态不好。作为老师，我会积极采取措施，与家长沟通协作，给予该生最大的关爱和信任。我认为可以从以下几个方面着手解决。</p>
+<p>首先，我会找到家长耐心沟通孩子的问题，让家长意识到离异家庭的孩子特别需要关爱，指导家长如何去“爱”孩子，比如告诉孩子父母离异的原因，引导孩子接受，并给予孩子更多的爱，使孩子获得足够的安全感。</p>
+<p>其次，我会多给予学生关爱，多鼓励赞美他，多与他耐心沟通，多进行积极正面引导，及时疏导学生的心理，使其感觉到温暖、爱和信任，消除不良情绪的影响。</p>
+<p>最后，我会积极鼓励他参与集体活动，多与同学交流，并鼓励其他同学多去关心他，从而促进该生的身心健康发展。</p>
+<h3 id="志愿精神与情怀"><a href="#志愿精神与情怀" class="headerlink" title="志愿精神与情怀"></a>志愿精神与情怀</h3><p>八个字：</p>
+<h3 id="党团知识整理"><a href="#党团知识整理" class="headerlink" title="党团知识整理"></a>党团知识整理</h3><p>毛思想：党的七大</p>
+<h2 id="面试准备（重点）"><a href="#面试准备（重点）" class="headerlink" title="面试准备（重点）"></a>面试准备（重点）</h2><p>一些准备（by23届段颖学姐）</p>
+<p>一分钟个人介绍（要体现之所以选你支教的优势，但不需要写很多，方便留给老师们提问的空间，尽可能多一些展示的机会）</p>
+<p>想一下自己为什么想支教</p>
+<p>想一下如果参加支教的优势</p>
+<p>看下习大大关于教师节的一些话</p>
+<p>穿着：着正装，佩戴党徽/团徽，体态端正，语气语调铿锵有力、充满能量，有礼貌。</p>
+<p>“用一年不长的时间，做一件终身难忘的事”</p>
+<h3 id="自我介绍（一到两分钟左右）"><a href="#自我介绍（一到两分钟左右）" class="headerlink" title="自我介绍（一到两分钟左右）"></a>自我介绍（一到两分钟左右）</h3><p>各位老师大家好，很荣幸能够参加本次研究生支教团的面试。我叫申昱，是信息学院软件工程专业的学生，来自甘肃张掖，我想从以下三个方面来介绍我自己。</p>
+<p>首先是平时的知识学习。我的专业是计算机相关的，所以办公软件运用的熟练度自然不在话下，我还很喜欢发挥自己的编程知识解决一系列问题，这使我培养出了较强的理性思维。除了工科知识外，我也一直在不断拓宽自己的知识面，阅读了许多其他领域的书籍，同时积极参加跨专业竞赛取得了不错的成绩，我认为广博的知识可以让我更好的从事支教活动。</p>
+<p>第二点是我的个人经历，自入学以来我就担任学生干部，三年以来从未间断。在担任本院团总支书记的一年来，我们多次与校团委、校学生会、及其他学院合作开展大型活动，我接触到了很多优秀的人，也积累了丰富的学生工作经验。同时作为学院的宣传工作人员，我也能够运用自己的宣传技能为每一项活动添上不一样的色彩。</p>
+<p>最后，我想从几个身份来表明我的决心：身为一名光荣的中共党员，发挥先锋带头作用是我的责任；身为一名青年学生干部，投身基层能够更好的磨砺我；身为一个从西北长大的孩子，我已经具备了吃苦耐劳的品质，对那里的环境更加熟悉。我一直想回去尽自己的一份力，去帮助像曾经的自己一样的，对大山外面世界充满幻想的孩子们，更好的成长，用一年不长的时间，做一件终身难忘的事。</p>
+<p>以上就是我的个人介绍，请老师批评指正，谢谢大家。</p>
+<h3 id="为什么想支教"><a href="#为什么想支教" class="headerlink" title="为什么想支教"></a>为什么想支教</h3><p><del>这个问题在我放弃走普通推免的时候就有老师和同学问过我，为什么不走轻松一点的路反而要多花一年时间吃苦受累。我觉得其实很明了</del></p>
+<p>对我而言最重要的其实就是向往。我的父亲是一名教龄34年的中学老师，从他的身上我看到了一名老师能对学生产生的积极影响有多大，同时小时候的上学经历也让我感到教学资源的贫瘠，我对外界了解的方式很少，所以我想让他们通过我们对外面的世界有更多的认识。也可以让他们有更明确的目标去奋斗。</p>
+<p>其次是满足感，在做学生工作期间，每次看到自己做的事真正帮助到了人，或是所办的活动受到了大家的称赞，这段时间的苦与累也值得了。在志愿活动中也是一样，可以看到需要的人得到了帮助，我就觉得很满足。</p>
+<p>最后我也想通过这一年的培训和一年的实地支教中锻炼自己，将理论知识应用在实践中，让自己学到更多的知识，增进自己各方面的能力。</p>
+<h3 id="个人的优势在哪（我能为研支团带来什么）"><a href="#个人的优势在哪（我能为研支团带来什么）" class="headerlink" title="个人的优势在哪（我能为研支团带来什么）"></a>个人的优势在哪（我能为研支团带来什么）</h3><p>体现核心竞争力，突出重点</p>
+<h3 id="习近平总书记关于教师节的发言"><a href="#习近平总书记关于教师节的发言" class="headerlink" title="习近平总书记关于教师节的发言"></a>习近平总书记关于教师节的发言</h3><p>体现核心竞争力，突出重点</p>
+<h2 id="笔试复盘"><a href="#笔试复盘" class="headerlink" title="笔试复盘"></a>笔试复盘</h2><h3 id="选择题（15×2）"><a href="#选择题（15×2）" class="headerlink" title="选择题（15×2）"></a>选择题（15×2）</h3><p>党团知识（5题）、教育教学知识（5题）、志愿者相关知识（2题）、研支团相关（3题）</p>
+<h3 id="填空题（5×2）"><a href="#填空题（5×2）" class="headerlink" title="填空题（5×2）"></a>填空题（5×2）</h3><p>四种意识、习近平总书记给复旦学子的回信、入队入团入党、四种志愿精神、四有好老师</p>
+<h3 id="公文写作题（15×1）"><a href="#公文写作题（15×1）" class="headerlink" title="公文写作题（15×1）"></a>公文写作题（15×1）</h3><p>草拟一份启动计划的活动策划方案</p>
+<h3 id="案例分析题（15×1）"><a href="#案例分析题（15×1）" class="headerlink" title="案例分析题（15×1）"></a>案例分析题（15×1）</h3><p>作为一名研支团的老师，如何处理校园暴力</p>
+<h3 id="论述题（30×1）"><a href="#论述题（30×1）" class="headerlink" title="论述题（30×1）"></a>论述题（30×1）</h3><p>在习近平总书记在建团100周年的重要讲话中，你最喜欢哪一句？结合自身，讲讲如何将“小我”融入“大我”。</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
   </entry>
   <entry>
     <title>数据库期中复习</title>
@@ -1412,19 +1493,6 @@
       <categories>
         <category>学习笔记</category>
         <category>数据库系统</category>
-      </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-        <tag>考试复习整理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统期中复习</title>
-    <url>/posts/os_review/</url>
-    <content><![CDATA[<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>操作系统</category>
       </categories>
       <tags>
         <tag>课内学习笔记</tag>
@@ -2452,6 +2520,39 @@
       </tags>
   </entry>
   <entry>
+    <title>💌紫罗兰永恒花园观后感</title>
+    <url>/posts/review%E2%80%94%E2%80%94Evergarden/</url>
+    <content><![CDATA[<p>一直被人安利的京紫，终于在今天追完了，现在内心还是有点不能平静。</p>
+<p>上一个正正经经追的番还是《魔卡少女樱》，那是对童年的追忆和怀念。</p>
+<p>这部番，值得我写一篇文来纪念其上映三周年：2018.1.11~2020.1.12</p>
+<h2 id="矛盾"><a href="#矛盾" class="headerlink" title="矛盾"></a>矛盾</h2><p>以前的我，最不能理解的就是<strong>自我矛盾</strong>，正如前几集艾丽卡认为Violet不能胜任人偶的工作，却仍然力保她留在公司时，Violet发出的疑问，以前的我也常常有这种想法，觉得人总是心口不一，遇到矛盾的事就嗤之以鼻。</p>
+<p>但这部番从各种矛盾入手，对Violet进行了全面的人格塑造：14岁的少女与杀人机器、断送他人的性命与撰写替人结缘的书信，冷冰冰的人偶与不需要指令的”人“。一个个矛盾交织在一起，对每个关键点都有合适的flashback，将故事连贯起来，是我最喜欢的一个方面。</p>
+<h2 id="战争"><a href="#战争" class="headerlink" title="战争"></a>战争</h2><p>看到B站评论中有一句：”本来就是写战争的还硬洗，既然知道战争的残酷与无情，当初还发动战争，有点既当了**还想立牌坊的感觉”。诚然，战争是本番的一条主线，也正是战争将violet变成了这副模样。每集中都或多或少带有战争的元素：Violet失去了少佐后救赎了自己；未能保护好边线的士兵从自我沉沦中重生；待不到男友返乡的歌剧演员以一首情书彻底解冻时间线，每一个故事都反映出了战争的残忍，但只有战争才能避免更多的悲伤分别发生，EX集中那个归乡士兵的特写，人们在火车站的寻人启事墙上自发点起了蜡烛为他们祈福的举动，既让Violet得到感染，更让我体会到了离别后的振作之情。</p>
+<h2 id="信"><a href="#信" class="headerlink" title="信"></a>信</h2><p>信，则是全番中的另一个主线，从想要理解<strong>”我爱你“</strong>的含义而称为人偶，通过一系列的工作经历，violet不断懂得了那些她当兵时未曾体会到的情感，她懂得了如何去感受人的想法，做到”共情“，从一封封信的写作中，Violet也从之前那个只会写报告书的军人，变成了一个，她写给少佐的信躺在了丛中，也躺在了我心里。</p>
+<p>我也一直有写信的习惯，那些文字，通过纸笔变成了一个个心意，那是语言所无法表达的独特，只能通过”见信如面“和”XXX亲启“来传递的唯一，是不可替代的。</p>
+<p>看别人玩你画我猜的时候，有人在题目是这个番时只画了一封信，当时的我还不明白为什么，但现在我觉得，那封信就能代表一切，它是本番的<strong>灵魂所在</strong>。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>你们可能觉得我前面没有说这部番的画功怎么样，这么给你说，刚才举报了一个”因为画质高看得眼睛酸所以差评”的一星评论，懂了吧（</p>
+<p>漫画里最后Violet和少佐重逢了，算是一个HE，但我更喜欢动漫中的结局，少女带着全新的希望奔赴未来</p>
+<p>没有放图的原因是，看的很认真没有截图，而且每一帧都值得我去收藏，我就只存了几个自己喜欢的画面。</p>
+<div class="note primary no-icon flat">
+    <p>
+        希望大家多多给我推荐类似这种的优质番，俺在线拜谢你们（
+    </p>
+    <p>也希望我明白”爱“的意义的那天早日到来</p>
+</div>
+
+
+<p>最后，对于熬夜，薇酱这句话我觉得很有道理。</p>
+<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/review%E2%80%94%E2%80%94Evergarden/熬夜.png" width="80%" height="80%"></div>
+
+<p>大家还是少熬夜，养生作息早睡早起它不香🐎？</p>
+<p>ps：有一说一日本人直接拿英文来起名字还挺好听的（Violet Evergarden)。感觉翻译成中文总差点感觉，就用英文打了。</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
     <title>计算机网络——传输媒介</title>
     <url>/posts/Cn-01/</url>
     <content><![CDATA[<h1 id="一、通信的基本概念"><a href="#一、通信的基本概念" class="headerlink" title="一、通信的基本概念"></a>一、通信的基本概念</h1><h2 id="（一）通信模型"><a href="#（一）通信模型" class="headerlink" title="（一）通信模型"></a>（一）通信模型</h2><p>Q1：通信的基本模型是什么？</p>
@@ -2556,39 +2657,6 @@
       </tags>
   </entry>
   <entry>
-    <title>💌紫罗兰永恒花园观后感</title>
-    <url>/posts/review%E2%80%94%E2%80%94Evergarden/</url>
-    <content><![CDATA[<p>一直被人安利的京紫，终于在今天追完了，现在内心还是有点不能平静。</p>
-<p>上一个正正经经追的番还是《魔卡少女樱》，那是对童年的追忆和怀念。</p>
-<p>这部番，值得我写一篇文来纪念其上映三周年：2018.1.11~2020.1.12</p>
-<h2 id="矛盾"><a href="#矛盾" class="headerlink" title="矛盾"></a>矛盾</h2><p>以前的我，最不能理解的就是<strong>自我矛盾</strong>，正如前几集艾丽卡认为Violet不能胜任人偶的工作，却仍然力保她留在公司时，Violet发出的疑问，以前的我也常常有这种想法，觉得人总是心口不一，遇到矛盾的事就嗤之以鼻。</p>
-<p>但这部番从各种矛盾入手，对Violet进行了全面的人格塑造：14岁的少女与杀人机器、断送他人的性命与撰写替人结缘的书信，冷冰冰的人偶与不需要指令的”人“。一个个矛盾交织在一起，对每个关键点都有合适的flashback，将故事连贯起来，是我最喜欢的一个方面。</p>
-<h2 id="战争"><a href="#战争" class="headerlink" title="战争"></a>战争</h2><p>看到B站评论中有一句：”本来就是写战争的还硬洗，既然知道战争的残酷与无情，当初还发动战争，有点既当了**还想立牌坊的感觉”。诚然，战争是本番的一条主线，也正是战争将violet变成了这副模样。每集中都或多或少带有战争的元素：Violet失去了少佐后救赎了自己；未能保护好边线的士兵从自我沉沦中重生；待不到男友返乡的歌剧演员以一首情书彻底解冻时间线，每一个故事都反映出了战争的残忍，但只有战争才能避免更多的悲伤分别发生，EX集中那个归乡士兵的特写，人们在火车站的寻人启事墙上自发点起了蜡烛为他们祈福的举动，既让Violet得到感染，更让我体会到了离别后的振作之情。</p>
-<h2 id="信"><a href="#信" class="headerlink" title="信"></a>信</h2><p>信，则是全番中的另一个主线，从想要理解<strong>”我爱你“</strong>的含义而称为人偶，通过一系列的工作经历，violet不断懂得了那些她当兵时未曾体会到的情感，她懂得了如何去感受人的想法，做到”共情“，从一封封信的写作中，Violet也从之前那个只会写报告书的军人，变成了一个，她写给少佐的信躺在了丛中，也躺在了我心里。</p>
-<p>我也一直有写信的习惯，那些文字，通过纸笔变成了一个个心意，那是语言所无法表达的独特，只能通过”见信如面“和”XXX亲启“来传递的唯一，是不可替代的。</p>
-<p>看别人玩你画我猜的时候，有人在题目是这个番时只画了一封信，当时的我还不明白为什么，但现在我觉得，那封信就能代表一切，它是本番的<strong>灵魂所在</strong>。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>你们可能觉得我前面没有说这部番的画功怎么样，这么给你说，刚才举报了一个”因为画质高看得眼睛酸所以差评”的一星评论，懂了吧（</p>
-<p>漫画里最后Violet和少佐重逢了，算是一个HE，但我更喜欢动漫中的结局，少女带着全新的希望奔赴未来</p>
-<p>没有放图的原因是，看的很认真没有截图，而且每一帧都值得我去收藏，我就只存了几个自己喜欢的画面。</p>
-<div class="note primary no-icon flat">
-    <p>
-        希望大家多多给我推荐类似这种的优质番，俺在线拜谢你们（
-    </p>
-    <p>也希望我明白”爱“的意义的那天早日到来</p>
-</div>
-
-
-<p>最后，对于熬夜，薇酱这句话我觉得很有道理。</p>
-<div align="center"><img src= "/img/loading.gif" data-lazy-src="/posts/review%E2%80%94%E2%80%94Evergarden/熬夜.png" width="80%" height="80%"></div>
-
-<p>大家还是少熬夜，养生作息早睡早起它不香🐎？</p>
-<p>ps：有一说一日本人直接拿英文来起名字还挺好听的（Violet Evergarden)。感觉翻译成中文总差点感觉，就用英文打了。</p>
-<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>📖读书书架整理(持续更新)</title>
     <url>/posts/books/</url>
     <content><![CDATA[<h1 id="目前在看的书"><a href="#目前在看的书" class="headerlink" title="目前在看的书"></a>目前在看的书</h1><div class="note info no-icon flat">
@@ -2604,6 +2672,13 @@
                                     </tr>
                                     </thead>
                             <tbody>
+                                <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/2259383/">让建南钟声传响大山深处</a>
+                                    </td>
+                                    <td align="center">研支团</td>
+                                    <td align="center"><progress value="224" max="224">
+</progress></td></tr>
                                  <tr>
                                     <td align="center">
                                         <a href="https://book.douban.com/subject/1013208/">如何阅读一本书</a>
@@ -2628,6 +2703,9 @@
                 </tbody>
             </table>
         </div>
+
+
+
 
 <h1 id="已经看完的书"><a href="#已经看完的书" class="headerlink" title="已经看完的书"></a>已经看完的书</h1><div class="note info no-icon flat">
                             <p>
@@ -2678,9 +2756,16 @@
                                     </td>
                                     <td align="center">魔幻现实主义小说</td>
                                     <td align="center">2022-02-25</td></tr>
+                                <tr>
+                                    <td align="center">
+                                        <a href="https://book.douban.com/subject/2259383/">让建南钟声传响大山深处</a>
+                                    </td>
+                                    <td align="center">研支团</td>
+                                    <td align="center">2022-08-03</td></tr>
                 </tbody>
             </table>
         </div>
+
 
 <h1 id="目前准备要看的书"><a href="#目前准备要看的书" class="headerlink" title="目前准备要看的书"></a>目前准备要看的书</h1><div class="note warning no-icon flat">
                             <p>
@@ -2768,31 +2853,6 @@
       </categories>
       <tags>
         <tag>📕爱好读书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>软件工程导论期中复习（三到五章）</title>
-    <url>/posts/software_review_2/</url>
-    <content><![CDATA[<h1 id="第三章、敏捷开发"><a href="#第三章、敏捷开发" class="headerlink" title="第三章、敏捷开发"></a>第三章、敏捷开发</h1><p>主要复习内容：掌握敏捷开发宣言、理解有哪些敏捷过程模型、了解一些过程模型</p>
-<h2 id="敏捷开发宣言"><a href="#敏捷开发宣言" class="headerlink" title="敏捷开发宣言"></a>敏捷开发宣言</h2><p>Q1：什么是敏捷？</p>
-<p>C1：通俗的讲，敏捷是指在软件的开发活动中，坚持一些基本原则，灵活运用各种方法，快速地开发出令客户满意的产品。敏捷是一种态度，是敏捷建模者坚持的价值观。</p>
-<p>普遍存在的变化是敏捷的基本动力，敏捷需要有效的响应变化，它鼓励在共利益者之间进行更便利的沟通和协作，强调可运行软件的快速交付。敏捷允许项目团队调整并合理安排任务，理解易变性并制定计划。精简并维持最基本的工作产品，强调增量交付，快速提供可运行软件。</p>
-<p>Q2：敏捷开发宣言都有哪些？</p>
-<p>C2：</p>
-<p>个体和交互         胜过过程和工具</p>
-<p>可以工作的软件 胜过面面俱到的文档</p>
-<p>客户合作             胜过合同谈判</p>
-<p>响应变化             胜过遵循计划</p>
-<h2 id="敏捷开发过程模型"><a href="#敏捷开发过程模型" class="headerlink" title="敏捷开发过程模型"></a>敏捷开发过程模型</h2><h3 id="Scrum关键思想"><a href="#Scrum关键思想" class="headerlink" title="Scrum关键思想"></a>Scrum关键思想</h3><p>Q3：什么是Scrum？</p>
-<p>C3：Scrum是一个轻量级的项目管理的框架，它的核心在于迭代。</p>
-<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>软件工程导论</category>
-      </categories>
-      <tags>
-        <tag>课内学习笔记</tag>
-        <tag>考试复习整理</tag>
       </tags>
   </entry>
   <entry>
@@ -2943,6 +3003,31 @@
 <p>Q37：螺旋模型的优缺点是什么？</p>
 <p>C37：<img src= "/img/loading.gif" data-lazy-src="/posts/software_review_1/统一过程优缺点.png" alt></p>
 <h2 id><a href="#" class="headerlink" title=" "></a> </h2><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>软件工程导论</category>
+      </categories>
+      <tags>
+        <tag>课内学习笔记</tag>
+        <tag>考试复习整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件工程导论期中复习（三到五章）</title>
+    <url>/posts/software_review_2/</url>
+    <content><![CDATA[<h1 id="第三章、敏捷开发"><a href="#第三章、敏捷开发" class="headerlink" title="第三章、敏捷开发"></a>第三章、敏捷开发</h1><p>主要复习内容：掌握敏捷开发宣言、理解有哪些敏捷过程模型、了解一些过程模型</p>
+<h2 id="敏捷开发宣言"><a href="#敏捷开发宣言" class="headerlink" title="敏捷开发宣言"></a>敏捷开发宣言</h2><p>Q1：什么是敏捷？</p>
+<p>C1：通俗的讲，敏捷是指在软件的开发活动中，坚持一些基本原则，灵活运用各种方法，快速地开发出令客户满意的产品。敏捷是一种态度，是敏捷建模者坚持的价值观。</p>
+<p>普遍存在的变化是敏捷的基本动力，敏捷需要有效的响应变化，它鼓励在共利益者之间进行更便利的沟通和协作，强调可运行软件的快速交付。敏捷允许项目团队调整并合理安排任务，理解易变性并制定计划。精简并维持最基本的工作产品，强调增量交付，快速提供可运行软件。</p>
+<p>Q2：敏捷开发宣言都有哪些？</p>
+<p>C2：</p>
+<p>个体和交互         胜过过程和工具</p>
+<p>可以工作的软件 胜过面面俱到的文档</p>
+<p>客户合作             胜过合同谈判</p>
+<p>响应变化             胜过遵循计划</p>
+<h2 id="敏捷开发过程模型"><a href="#敏捷开发过程模型" class="headerlink" title="敏捷开发过程模型"></a>敏捷开发过程模型</h2><h3 id="Scrum关键思想"><a href="#Scrum关键思想" class="headerlink" title="Scrum关键思想"></a>Scrum关键思想</h3><p>Q3：什么是Scrum？</p>
+<p>C3：Scrum是一个轻量级的项目管理的框架，它的核心在于迭代。</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
         <category>学习笔记</category>
         <category>软件工程导论</category>
